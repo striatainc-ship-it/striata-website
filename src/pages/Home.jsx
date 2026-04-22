@@ -190,7 +190,7 @@ export default function Home() {
           playsInline
           className="absolute inset-0 w-full h-full object-cover opacity-30"
         >
-          <source src="/assets/hero-video.mp4" type="video/mp4" />
+          <source src={`${import.meta.env.BASE_URL}assets/hero-video.mp4`} type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A1628]/60 via-transparent to-[#0A1628]" />
 
@@ -250,7 +250,7 @@ export default function Home() {
       <section ref={scrollBeatRef} className="relative">
         <div ref={beatInnerRef} className="h-[100svh] flex items-center justify-center overflow-hidden">
           <img
-            src="/assets/vial layouts 2.png"
+            src={`${import.meta.env.BASE_URL}assets/vial layouts 2.png`}
             alt="STRIATA peptide vials"
             className="absolute inset-0 w-full h-full object-cover opacity-20"
           />
@@ -329,7 +329,7 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8 grid md:grid-cols-2 gap-16 items-center">
           <div className="relative">
             <img
-              src="/assets/athlete.png"
+              src={`${import.meta.env.BASE_URL}assets/athlete.png`}
               alt="STRIATA athlete"
               className="rounded-3xl w-full object-cover aspect-[4/5]"
             />
@@ -424,7 +424,7 @@ export default function Home() {
 
         <div className="relative rounded-3xl overflow-hidden">
           <img
-            src="/assets/purity.png"
+            src={`${import.meta.env.BASE_URL}assets/purity.png`}
             alt="Lab purity standards"
             className="w-full h-72 object-cover"
           />
@@ -558,7 +558,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-br from-[#00B4B4]/15 to-transparent" />
         <div
           className="absolute inset-0 bg-cover bg-center opacity-5"
-          style={{ backgroundImage: 'url(/assets/helix 2.png)' }}
+          style={{ backgroundImage: `url(${import.meta.env.BASE_URL}assets/helix 2.png)` }}
         />
         <div className="relative z-10 text-center max-w-3xl mx-auto px-6">
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-white mb-4" style={{ fontFamily: 'Montserrat, sans-serif' }}>

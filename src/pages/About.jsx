@@ -104,7 +104,7 @@ export default function About() {
       <section className="relative pt-40 pb-28 px-6 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-8"
-          style={{ backgroundImage: 'url(/assets/lab equipment 1.png)' }}
+          style={{ backgroundImage: `url(${import.meta.env.BASE_URL}assets/lab equipment 1.png)` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A1628]/70 to-[#0A1628]" />
         <div className="relative z-10 max-w-4xl mx-auto text-center">
@@ -163,7 +163,7 @@ export default function About() {
           </div>
           <div className="relative">
             <img
-              src="/assets/image 1.png"
+              src={`${import.meta.env.BASE_URL}assets/image 1.png`}
               alt="STRIATA lab"
               className="rounded-3xl w-full object-cover aspect-[4/5]"
             />
@@ -184,7 +184,7 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8 grid md:grid-cols-2 gap-16 items-center">
           <div className="relative">
             <img
-              src="/assets/athlete 2.png"
+              src={`${import.meta.env.BASE_URL}assets/athlete 2.png`}
               alt="Training athlete"
               className="rounded-3xl w-full object-cover aspect-[4/5]"
             />
@@ -237,7 +237,7 @@ export default function About() {
           </div>
           <div className="relative">
             <img
-              src="/assets/helix 2.png"
+              src={`${import.meta.env.BASE_URL}assets/helix 2.png`}
               alt="DNA helix"
               className="rounded-3xl w-full object-cover aspect-square"
             />
@@ -269,7 +269,7 @@ export default function About() {
       <section ref={addRef} className="py-24 max-w-7xl mx-auto px-6 lg:px-8">
         <div className="relative rounded-3xl overflow-hidden">
           <img
-            src="/assets/hero background 2.png"
+            src={`${import.meta.env.BASE_URL}assets/hero background 2.png`}
             alt="South Africa"
             className="w-full h-96 object-cover"
           />

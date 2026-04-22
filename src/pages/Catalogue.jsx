@@ -83,7 +83,7 @@ export default function Catalogue() {
       <section className="relative pt-36 pb-20 px-6 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-8"
-          style={{ backgroundImage: 'url(/assets/vial layouts.png)' }}
+          style={{ backgroundImage: `url(${import.meta.env.BASE_URL}assets/vial layouts.png)` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A1628]/80 to-[#0A1628]" />
         <div className="relative z-10 max-w-4xl mx-auto text-center">
