@@ -116,6 +116,7 @@ export default function Home() {
   const beatInnerRef = useRef(null)
   const beatTextRefs = useRef([])
   const sectionsRef = useRef([])
+  const videoRef = useRef(null)
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -146,7 +147,7 @@ export default function Home() {
           ScrollTrigger.create({
             trigger: beatInnerRef.current,
             start: 'top top',
-            end: '+=300%',
+            end: '+=210%',
             pin: true,
             scrub: 1,
             animation: tl,
@@ -172,6 +173,10 @@ export default function Home() {
     return () => ctx.revert()
   }, [])
 
+  useEffect(() => {
+    if (videoRef.current) videoRef.current.playbackRate = 0.5
+  }, [])
+
   const addSectionRef = (el) => {
     if (el && !sectionsRef.current.includes(el)) sectionsRef.current.push(el)
   }
@@ -184,6 +189,7 @@ export default function Home() {
         className="relative min-h-screen flex items-center justify-center overflow-hidden"
       >
         <video
+          ref={videoRef}
           autoPlay
           muted
           loop
@@ -200,12 +206,11 @@ export default function Home() {
             South Africa's Premier Research Peptide Source
           </div>
           <h1
-            className="hero-animate text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-black text-white leading-none tracking-tight mb-6"
+            className="hero-animate font-black text-white leading-none tracking-tight mb-6"
             style={{ fontFamily: 'Montserrat, sans-serif' }}
           >
-            THINK STRONG.
-            <br />
-            <span className="text-[#00B4B4]">TRAIN SMARTER.</span>
+            <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl">THINK STRONG.</span>
+            <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#00B4B4]">TRAIN SMARTER.</span>
           </h1>
           <p className="hero-animate text-base md:text-xl text-white/70 max-w-2xl mx-auto mb-10 leading-relaxed">
             South Africa's premier source for research-grade peptides. Purity you can trust. Performance you can feel.
@@ -288,19 +293,19 @@ export default function Home() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
           {categories.map(({ icon, label, desc, to }) => (
             <Link
               key={label}
               to={to}
-              className="group bg-[#0d1e35] border border-white/8 rounded-2xl p-6 hover:border-[#00B4B4]/40 hover:bg-[#0f2340] transition-all duration-300 hover:shadow-lg hover:shadow-[#00B4B4]/5 hover:-translate-y-1"
+              className="group bg-[#0d1e35] border border-white/8 rounded-2xl p-6 flex flex-col items-center text-center hover:border-[#00B4B4]/40 hover:bg-[#0f2340] transition-all duration-300 hover:shadow-lg hover:shadow-[#00B4B4]/5 hover:-translate-y-1"
             >
               {icon}
               <h3 className="text-white font-bold text-lg mb-2 group-hover:text-[#00B4B4] transition-colors" style={{ fontFamily: 'Montserrat, sans-serif' }}>
                 {label}
               </h3>
               <p className="text-white/50 text-sm">{desc}</p>
-              <div className="mt-4 flex items-center gap-1 text-[#00B4B4] text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
+              <div className="mt-4 flex items-center justify-center gap-1 text-[#00B4B4] text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
                 Explore
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -329,8 +334,8 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8 grid md:grid-cols-2 gap-16 items-center">
           <div className="relative">
             <img
-              src={`${import.meta.env.BASE_URL}assets/athlete.png`}
-              alt="STRIATA athlete"
+              src={`${import.meta.env.BASE_URL}assets/purity 2.png`}
+              alt="STRIATA"
               className="rounded-3xl w-full object-cover aspect-[4/5]"
             />
             <div className="absolute bottom-4 right-4 md:-bottom-6 md:-right-6 bg-[#00B4B4] rounded-2xl p-4 md:p-6 shadow-xl">
@@ -499,7 +504,7 @@ export default function Home() {
                 title: 'Dedicated Support', desc: 'Your business gets direct WhatsApp support and a dedicated contact for all orders, queries and restocking needs.',
               },
             ].map(({ icon, title, desc }) => (
-              <div key={title} className="bg-[#0d1e35] border border-white/8 rounded-2xl p-7">
+              <div key={title} className="bg-[#0d1e35] border border-white/8 rounded-2xl p-7 flex flex-col items-center text-center">
                 {icon}
                 <h3 className="text-white font-bold text-lg mb-2" style={{ fontFamily: 'Montserrat, sans-serif' }}>{title}</h3>
                 <p className="text-white/50 text-sm leading-relaxed">{desc}</p>

@@ -13,10 +13,10 @@ const WA_ICON = (
 )
 
 const stats = [
-  { value: '100+', label: 'Research-Grade Compounds' },
-  { value: '99%', label: 'Purity Guaranteed' },
-  { value: '500+', label: 'Happy Clients' },
-  { value: '50+', label: 'Businesses Supplied' },
+  { num: 100, suffix: '+', label: 'Research-Grade Compounds' },
+  { num: 99, suffix: '%', label: 'Purity Guaranteed' },
+  { num: 500, suffix: '+', label: 'Happy Clients' },
+  { num: 50, suffix: '+', label: 'Businesses Supplied' },
 ]
 
 const IC = ({ children }) => (
@@ -74,6 +74,7 @@ const values = [
 
 export default function About() {
   const sectionsRef = useRef([])
+  const statRefs = useRef([])
 
   useEffect(() => {
     const ctx = gsap.context(() => {
@@ -90,6 +91,20 @@ export default function About() {
           }
         )
       })
+
+      statRefs.current.forEach((el, i) => {
+        if (!el) return
+        const { num, suffix } = stats[i]
+        const obj = { val: 0 }
+        gsap.to(obj, {
+          val: num,
+          duration: 2,
+          ease: 'power2.out',
+          snap: { val: 1 },
+          onUpdate: () => { el.textContent = Math.round(obj.val) + suffix },
+          scrollTrigger: { trigger: el, start: 'top 90%', once: true },
+        })
+      })
     })
     return () => ctx.revert()
   }, [])
@@ -97,6 +112,8 @@ export default function About() {
   const addRef = (el) => {
     if (el && !sectionsRef.current.includes(el)) sectionsRef.current.push(el)
   }
+
+  const addStatRef = (el, i) => { statRefs.current[i] = el }
 
   return (
     <div className="bg-[#0A1628]">
@@ -124,10 +141,14 @@ export default function About() {
       <section className="py-12 bg-[#060e1a] border-y border-white/8">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
-            {stats.map(({ value, label }) => (
+            {stats.map(({ num, suffix, label }, i) => (
               <div key={label} className="text-center">
-                <p className="text-3xl md:text-5xl font-black text-[#00B4B4] mb-1" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-                  {value}
+                <p
+                  ref={(el) => addStatRef(el, i)}
+                  className="text-3xl md:text-5xl font-black text-[#00B4B4] mb-1"
+                  style={{ fontFamily: 'Montserrat, sans-serif' }}
+                >
+                  0{suffix}
                 </p>
                 <p className="text-white/50 text-sm">{label}</p>
               </div>

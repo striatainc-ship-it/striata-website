@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { whatsappLink } from '../data/products'
 
 const WA_ICON = (
@@ -226,6 +227,52 @@ export default function FAQ() {
             </button>
           </div>
         )}
+      </section>
+
+      {/* Legal Section */}
+      <section className="max-w-3xl mx-auto px-6 pb-10">
+        <div className="bg-[#0d1e35] border border-white/8 rounded-2xl p-7">
+          <div className="flex items-start gap-4 mb-5">
+            <div className="w-10 h-10 rounded-xl bg-[#00B4B4]/10 border border-[#00B4B4]/20 flex items-center justify-center shrink-0">
+              <svg className="w-5 h-5 text-[#00B4B4]" fill="none" stroke="currentColor" strokeWidth={1.75} viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
+              </svg>
+            </div>
+            <div>
+              <h2 className="text-white font-bold text-lg mb-1" style={{ fontFamily: 'Montserrat, sans-serif' }}>Legal & Policies</h2>
+              <p className="text-white/50 text-sm">Read our full terms, privacy policy, shipping and refund policies.</p>
+            </div>
+          </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2 mb-5">
+            {[
+              { label: 'Terms & Conditions', anchor: 'terms' },
+              { label: 'Privacy Policy', anchor: 'privacy' },
+              { label: 'Research Disclaimer', anchor: 'disclaimer' },
+              { label: 'Shipping Policy', anchor: 'shipping' },
+              { label: 'Refund Policy', anchor: 'refunds' },
+              { label: 'Governing Law', anchor: 'governing' },
+            ].map(({ label, anchor }) => (
+              <Link
+                key={anchor}
+                to={`/legal#${anchor}`}
+                className="text-white/60 hover:text-[#00B4B4] text-xs border border-white/8 hover:border-[#00B4B4]/30 rounded-xl px-3 py-2.5 transition-all duration-200 text-center"
+                style={{ fontFamily: 'Inter, sans-serif' }}
+              >
+                {label}
+              </Link>
+            ))}
+          </div>
+          <Link
+            to="/legal"
+            className="inline-flex items-center gap-2 text-[#00B4B4] hover:text-white text-sm font-semibold transition-colors"
+            style={{ fontFamily: 'Inter, sans-serif' }}
+          >
+            View all legal policies
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+            </svg>
+          </Link>
+        </div>
       </section>
 
       {/* CTA */}

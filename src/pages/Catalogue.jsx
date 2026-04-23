@@ -1,4 +1,4 @@
-import { useState, useEffect, useMemo } from 'react'
+import { useState, useEffect, useRef, useMemo } from 'react'
 import { useLocation } from 'react-router-dom'
 import { products, categories, whatsappLink } from '../data/products'
 import ProductCard from '../components/ProductCard'
@@ -56,12 +56,30 @@ export default function Catalogue() {
   const location = useLocation()
   const [activeCategory, setActiveCategory] = useState('all')
   const [search, setSearch] = useState('')
+  const [filterVisible, setFilterVisible] = useState(true)
+  const lastScrollY = useRef(0)
 
   useEffect(() => {
     const params = new URLSearchParams(location.search)
     const cat = params.get('cat')
     if (cat) setActiveCategory(cat)
   }, [location.search])
+
+  useEffect(() => {
+    const onScroll = () => {
+      const y = window.scrollY
+      if (y < 120) {
+        setFilterVisible(true)
+      } else if (y > lastScrollY.current + 6) {
+        setFilterVisible(false)
+      } else if (y < lastScrollY.current - 6) {
+        setFilterVisible(true)
+      }
+      lastScrollY.current = y
+    }
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [])
 
   const filtered = useMemo(() => {
     return products.filter((p) => {
@@ -97,7 +115,7 @@ export default function Catalogue() {
       </section>
 
       {/* Filter Bar */}
-      <section className="sticky top-20 z-30 bg-[#0A1628]/95 backdrop-blur-md border-b border-white/8 py-4 px-6">
+      <section className={`sticky top-20 z-30 bg-[#0A1628]/95 backdrop-blur-md border-b border-white/8 py-4 px-6 transition-transform duration-300 ${filterVisible ? 'translate-y-0' : '-translate-y-[200%]'}`}>
         <div className="max-w-7xl mx-auto">
           {/* Search */}
           <div className="mb-4 relative max-w-md">
