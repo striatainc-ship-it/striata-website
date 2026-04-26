@@ -59,7 +59,7 @@ const faqSections = [
       },
       {
         q: 'Can I get a price list?',
-        a: 'Yes, simply message us on WhatsApp and we will send you our full current price list. Pricing is not displayed on the website as it is subject to change based on stock and order size.',
+        a: 'Our retail pricing is displayed directly on each product in the catalogue. Simply browse by category, select your preferred concentration and you will see the price before you order. For bulk pricing or custom quotations, message us on WhatsApp.',
       },
       {
         q: 'Do you offer bulk pricing for businesses?',
