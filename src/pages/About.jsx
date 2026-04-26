@@ -78,7 +78,19 @@ export default function About() {
   const statRefs = useRef([])
 
   useEffect(() => {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
     const ctx = gsap.context(() => {
+      if (prefersReduced) {
+        sectionsRef.current.filter(Boolean).forEach((el) => gsap.set(el, { opacity: 1, y: 0 }))
+        statRefs.current.forEach((el, i) => {
+          if (!el) return
+          const { num, suffix } = stats[i]
+          el.textContent = num + suffix
+        })
+        return
+      }
+
       sectionsRef.current.filter(Boolean).forEach((el) => {
         gsap.fromTo(
           el,
@@ -195,6 +207,7 @@ export default function About() {
             <img
               src={`${import.meta.env.BASE_URL}assets/image 1.png`}
               alt="STRIATA lab"
+              loading="lazy"
               className="rounded-3xl w-full object-cover aspect-[4/5]"
             />
             <div className="hidden sm:block absolute -top-4 -left-4 bg-[#0d1e35] border border-white/10 rounded-2xl p-5 shadow-xl">
@@ -216,6 +229,7 @@ export default function About() {
             <img
               src={`${import.meta.env.BASE_URL}assets/athlete 2.png`}
               alt="Training athlete"
+              loading="lazy"
               className="rounded-3xl w-full object-cover aspect-[4/5]"
             />
           </div>
@@ -269,6 +283,7 @@ export default function About() {
             <img
               src={`${import.meta.env.BASE_URL}assets/helix 2.png`}
               alt="DNA helix"
+              loading="lazy"
               className="rounded-3xl w-full object-cover aspect-square"
             />
           </div>
@@ -301,6 +316,7 @@ export default function About() {
           <img
             src={`${import.meta.env.BASE_URL}assets/hero background 2.png`}
             alt="South Africa"
+            loading="lazy"
             className="w-full h-96 object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0A1628]/95 via-[#0A1628]/70 to-transparent flex items-center">
@@ -349,7 +365,7 @@ export default function About() {
           {WA_ICON}
           Chat to Us on WhatsApp
         </a>
-        <p className="mt-5 text-white/30 text-sm flex items-center justify-center gap-1.5">
+        <p className="mt-5 text-white/50 text-sm flex items-center justify-center gap-1.5">
           <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
           Typically responds within 1 hour during business hours
         </p>

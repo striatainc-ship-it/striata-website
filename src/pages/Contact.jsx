@@ -105,7 +105,7 @@ export default function Contact() {
                   </a>
                 ))}
               </div>
-              <p className="mt-4 text-white/30 text-xs flex items-center gap-1.5">
+              <p className="mt-4 text-white/50 text-xs flex items-center gap-1.5">
                 <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
                 Tap any number to open a WhatsApp chat directly
               </p>
@@ -196,7 +196,11 @@ export default function Contact() {
 
             {status === 'success' ? (
               <div className="text-center py-12">
-                <div className="text-5xl mb-4">✅</div>
+                <div className="w-16 h-16 rounded-full bg-[#00B4B4]/15 border border-[#00B4B4]/30 flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-[#00B4B4]" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                  </svg>
+                </div>
                 <h3 className="text-white font-bold text-xl mb-2" style={{ fontFamily: 'Montserrat, sans-serif' }}>Message Sent!</h3>
                 <p className="text-white/60 text-sm">We'll get back to you within 1 business day.</p>
                 <button
@@ -299,7 +303,7 @@ export default function Contact() {
                     'Send Message →'
                   )}
                 </button>
-                <p className="text-white/30 text-xs text-center">
+                <p className="text-white/50 text-xs text-center">
                   Your message will be sent to info@striatalabs.co.za. We aim to respond within 1 business day.
                 </p>
               </form>

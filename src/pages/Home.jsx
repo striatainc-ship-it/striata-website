@@ -120,7 +120,18 @@ export default function Home() {
   const videoRef = useRef(null)
 
   useEffect(() => {
+    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
     const ctx = gsap.context(() => {
+      if (prefersReduced) {
+        heroTextRef.current?.querySelectorAll('.hero-animate').forEach((el) => {
+          gsap.set(el, { opacity: 1, y: 0 })
+        })
+        beatTextRefs.current.filter(Boolean).forEach((el) => gsap.set(el, { opacity: 1, y: 0 }))
+        sectionsRef.current.filter(Boolean).forEach((el) => gsap.set(el, { opacity: 1, y: 0 }))
+        return
+      }
+
       // Hero text entrance
       gsap.fromTo(
         heroTextRef.current?.querySelectorAll('.hero-animate') || [],
@@ -203,6 +214,7 @@ export default function Home() {
           muted
           loop
           playsInline
+          poster={`${import.meta.env.BASE_URL}assets/vial layouts 2.png`}
           className="absolute inset-0 w-full h-full object-cover opacity-30"
         >
           <source src={`${import.meta.env.BASE_URL}assets/hero-video.mp4`} type="video/mp4" />
@@ -246,7 +258,7 @@ export default function Home() {
               </svg>
             </Link>
           </div>
-          <p className="hero-animate mt-6 text-white/30 text-sm flex items-center justify-center gap-1.5">
+          <p className="hero-animate mt-6 text-white/50 text-sm flex items-center justify-center gap-1.5">
             <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
             Typically responds within 1 hour during business hours
           </p>
@@ -314,7 +326,7 @@ export default function Home() {
                 {label}
               </h3>
               <p className="text-white/50 text-sm">{desc}</p>
-              <div className="mt-4 flex items-center justify-center gap-1 text-[#00B4B4] text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity">
+              <div className="mt-4 flex items-center justify-center gap-1 text-[#00B4B4] text-sm font-semibold opacity-50 group-hover:opacity-100 transition-opacity">
                 Explore
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -345,6 +357,7 @@ export default function Home() {
             <img
               src={`${import.meta.env.BASE_URL}assets/purity 2.png`}
               alt="STRIATA"
+              loading="lazy"
               className="rounded-3xl w-full object-cover aspect-[4/5]"
             />
             <div className="absolute bottom-4 right-4 md:-bottom-6 md:-right-6 bg-[#00B4B4] rounded-2xl p-4 md:p-6 shadow-xl">
@@ -440,6 +453,7 @@ export default function Home() {
           <img
             src={`${import.meta.env.BASE_URL}assets/purity.png`}
             alt="Lab purity standards"
+            loading="lazy"
             className="w-full h-72 object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0A1628]/90 to-transparent flex items-center">
@@ -550,9 +564,9 @@ export default function Home() {
               key={i}
               className={`bg-[#0d1e35] border border-white/8 rounded-2xl p-7 ${i === 2 ? 'lg:col-span-1' : ''}`}
             >
-              <div className="flex gap-0.5 mb-4">
+              <div className="flex gap-0.5 mb-4" role="img" aria-label="5 out of 5 stars">
                 {[...Array(5)].map((_, j) => (
-                  <svg key={j} className="w-4 h-4 text-[#00B4B4]" fill="currentColor" viewBox="0 0 20 20">
+                  <svg key={j} className="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
                     <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                   </svg>
                 ))}
@@ -591,7 +605,7 @@ export default function Home() {
             {WA_ICON}
             Chat to Us on WhatsApp
           </a>
-          <p className="mt-5 text-white/30 text-sm flex items-center justify-center gap-1.5">
+          <p className="mt-5 text-white/50 text-sm flex items-center justify-center gap-1.5">
             <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
             Typically responds within 1 hour during business hours
           </p>

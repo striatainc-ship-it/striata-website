@@ -302,7 +302,7 @@ export default function FAQ() {
           {WA_ICON}
           Chat to Us on WhatsApp
         </a>
-        <p className="mt-4 text-white/30 text-sm flex items-center justify-center gap-1.5">
+        <p className="mt-4 text-white/50 text-sm flex items-center justify-center gap-1.5">
           <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
           Typically responds within 1 hour during business hours
         </p>

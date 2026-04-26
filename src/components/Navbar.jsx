@@ -32,10 +32,10 @@ export default function Navbar() {
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+      className={`fixed z-50 transition-all duration-500 ${
         scrolled
-          ? 'bg-[#0A1628]/95 backdrop-blur-md shadow-lg shadow-black/20'
-          : 'bg-transparent'
+          ? 'top-0 left-0 right-0 md:top-3 md:left-3 md:right-3 bg-[#0A1628]/96 backdrop-blur-md shadow-xl shadow-black/40 border-b md:border md:rounded-2xl border-white/10'
+          : 'top-0 left-0 right-0 bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -80,7 +80,7 @@ export default function Navbar() {
           {/* Mobile menu button */}
           <button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="md:hidden text-white p-3 -mr-1"
+            className="md:hidden text-white p-3.5 -mr-1 min-h-[44px] min-w-[44px] flex flex-col justify-center"
             aria-label="Toggle menu"
           >
             <div className={`w-6 h-0.5 bg-white transition-all duration-200 ${menuOpen ? 'rotate-45 translate-y-2' : ''}`} />
