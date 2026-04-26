@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 import { whatsappLink } from '../data/products'
 
 const WA_ICON = (
@@ -176,6 +177,14 @@ export default function FAQ() {
 
   return (
     <div className="bg-[#0A1628] min-h-screen">
+      <Helmet>
+        <title>FAQ | STRIATA Peptides South Africa</title>
+        <meta name="description" content="Answers to common questions about STRIATA's research peptides — ordering, shipping, purity testing, reconstitution, payments and more." />
+        <link rel="canonical" href="https://striatalabs.co.za/faq" />
+        <meta property="og:title" content="FAQ | STRIATA Peptides South Africa" />
+        <meta property="og:description" content="Common questions about ordering, shipping, purity and reconstitution of research peptides from STRIATA." />
+        <meta property="og:url" content="https://striatalabs.co.za/faq" />
+      </Helmet>
       {/* Hero */}
       <section className="relative pt-40 pb-20 px-6 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-[#00B4B4]/5 to-transparent" />

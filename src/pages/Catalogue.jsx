@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, useMemo } from 'react'
 import { useLocation } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 import { products, categories, whatsappLink } from '../data/products'
 import ProductCard from '../components/ProductCard'
 
@@ -109,6 +110,14 @@ export default function Catalogue() {
 
   return (
     <div className="bg-[#0A1628] min-h-screen">
+      <Helmet>
+        <title>Peptide Catalogue | STRIATA South Africa</title>
+        <meta name="description" content="Browse 80+ research-grade peptides with transparent pricing. Recovery, weight loss, anti-aging, hormonal health, nootropics and more. Delivered nationwide across South Africa." />
+        <link rel="canonical" href="https://striatalabs.co.za/catalogue" />
+        <meta property="og:title" content="Peptide Catalogue | STRIATA South Africa" />
+        <meta property="og:description" content="Browse 80+ research-grade peptides with transparent pricing. Delivered nationwide." />
+        <meta property="og:url" content="https://striatalabs.co.za/catalogue" />
+      </Helmet>
       {/* Hero Banner */}
       <section className="relative pt-36 pb-20 px-6 overflow-hidden">
         <div

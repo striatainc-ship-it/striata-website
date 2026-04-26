@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 import { blogPosts, blogCategories } from '../data/blogPosts'
 import { whatsappLink } from '../data/products'
 
@@ -104,6 +105,14 @@ export default function Blog() {
 
   return (
     <div className="bg-[#0A1628] min-h-screen">
+      <Helmet>
+        <title>Peptide Research & Guides | STRIATA Learn</title>
+        <meta name="description" content="In-depth guides, research insights and protocols for peptides. Learn about BPC-157, Semaglutide, GHK-Cu, nootropics and anti-aging compounds from STRIATA." />
+        <link rel="canonical" href="https://striatalabs.co.za/learn" />
+        <meta property="og:title" content="Peptide Research & Guides | STRIATA Learn" />
+        <meta property="og:description" content="In-depth guides and research insights on peptides — recovery, weight loss, anti-aging and nootropics." />
+        <meta property="og:url" content="https://striatalabs.co.za/learn" />
+      </Helmet>
 
       {/* ── HERO ── */}
       <section className="relative pt-40 pb-16 px-6 overflow-hidden">

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Helmet } from 'react-helmet-async'
 import emailjs from '@emailjs/browser'
 import { whatsappNumbers } from '../data/products'
 
@@ -52,6 +53,14 @@ export default function Contact() {
 
   return (
     <div className="bg-[#0A1628] min-h-screen">
+      <Helmet>
+        <title>Contact STRIATA | WhatsApp +27 78 213 7905</title>
+        <meta name="description" content="Order or enquire via WhatsApp +27 78 213 7905 or email info@striatalabs.co.za. STRIATA delivers research-grade peptides nationwide from Johannesburg." />
+        <link rel="canonical" href="https://striatalabs.co.za/contact" />
+        <meta property="og:title" content="Contact STRIATA | WhatsApp +27 78 213 7905" />
+        <meta property="og:description" content="Reach STRIATA on WhatsApp or email. We deliver research-grade peptides nationwide from Johannesburg." />
+        <meta property="og:url" content="https://striatalabs.co.za/contact" />
+      </Helmet>
       {/* Hero */}
       <section className="relative pt-40 pb-24 px-6 overflow-hidden">
         <div

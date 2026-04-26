@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { whatsappLink } from '../data/products'
@@ -117,6 +118,14 @@ export default function About() {
 
   return (
     <div className="bg-[#0A1628]">
+      <Helmet>
+        <title>About STRIATA | Research-Grade Peptides Johannesburg</title>
+        <meta name="description" content="STRIATA is South Africa's trusted source for pharmaceutical-grade peptides. Based in Johannesburg, we supply clinics, athletes and biohackers with 99%+ purity compounds." />
+        <link rel="canonical" href="https://striatalabs.co.za/about" />
+        <meta property="og:title" content="About STRIATA | Research-Grade Peptides Johannesburg" />
+        <meta property="og:description" content="South Africa's trusted source for pharmaceutical-grade peptides. Based in Johannesburg." />
+        <meta property="og:url" content="https://striatalabs.co.za/about" />
+      </Helmet>
       {/* Hero Banner */}
       <section className="relative pt-40 pb-28 px-6 overflow-hidden">
         <div

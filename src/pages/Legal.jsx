@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { useLocation, Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 
 const navLinks = [
   { label: 'Terms & Conditions', anchor: 'terms' },
@@ -47,6 +48,14 @@ export default function Legal() {
 
   return (
     <div className="bg-[#0A1628] min-h-screen">
+      <Helmet>
+        <title>Legal & Privacy Policy | STRIATA</title>
+        <meta name="description" content="STRIATA's terms and conditions, privacy policy, shipping policy and legal disclaimer for research peptide supply in South Africa." />
+        <link rel="canonical" href="https://striatalabs.co.za/legal" />
+        <meta property="og:title" content="Legal & Privacy Policy | STRIATA" />
+        <meta property="og:description" content="Terms, privacy policy, shipping and legal disclaimer for STRIATA research peptides." />
+        <meta property="og:url" content="https://striatalabs.co.za/legal" />
+      </Helmet>
       {/* Hero */}
       <section className="relative pt-40 pb-16 px-6 overflow-hidden">
         <div
