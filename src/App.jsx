@@ -11,6 +11,7 @@ import FAQ from './pages/FAQ'
 import Blog from './pages/Blog'
 import BlogPost from './pages/BlogPost'
 import Legal from './pages/Legal'
+import Stacks from './pages/Stacks'
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -35,6 +36,7 @@ function Layout() {
           <Route path="/learn" element={<Blog />} />
           <Route path="/learn/:slug" element={<BlogPost />} />
           <Route path="/legal" element={<Legal />} />
+          <Route path="/stacks" element={<Stacks />} />
         </Routes>
       </main>
       <Footer />

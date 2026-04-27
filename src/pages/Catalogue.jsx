@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useMemo } from 'react'
-import { useLocation } from 'react-router-dom'
+import { useLocation, Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { products, categories, whatsappLink } from '../data/products'
 import ProductCard from '../components/ProductCard'
@@ -133,6 +133,29 @@ export default function Catalogue() {
             Research-grade peptides with transparent pricing across every category. Select your concentration and order directly on WhatsApp.
           </p>
         </div>
+      </section>
+
+      {/* Stacks promo bar */}
+      <section className="max-w-7xl mx-auto px-4 md:px-6 pb-6 -mt-6 relative z-10">
+        <Link
+          to="/stacks"
+          className="flex items-center justify-between gap-4 px-5 py-4 rounded-2xl border border-[#00B4B4]/20 bg-[#00B4B4]/5 hover:bg-[#00B4B4]/10 hover:border-[#00B4B4]/35 transition-all duration-200 group cursor-pointer"
+        >
+          <div className="flex items-center gap-3">
+            <span className="w-8 h-8 rounded-full bg-[#00B4B4]/15 flex items-center justify-center flex-shrink-0">
+              <svg className="w-4 h-4 text-[#00B4B4]" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
+              </svg>
+            </span>
+            <div>
+              <p className="text-white font-semibold text-sm" style={{ fontFamily: 'Montserrat, sans-serif' }}>Not sure what to order?</p>
+              <p className="text-white/50 text-xs">Browse our 10 curated peptide stacks — goal-specific protocols with tier pricing.</p>
+            </div>
+          </div>
+          <svg className="w-4 h-4 text-[#00B4B4] flex-shrink-0 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+            <polyline points="9 18 15 12 9 6" />
+          </svg>
+        </Link>
       </section>
 
       {/* Filter Bar */}
