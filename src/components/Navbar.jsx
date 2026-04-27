@@ -23,6 +23,9 @@ const STACKS_ICON = (
 
 const navLinks = [
   { to: '/', label: 'Home' },
+]
+
+const navLinksAfterShop = [
   { to: '/about', label: 'About' },
   { to: '/learn', label: 'Learn' },
   { to: '/faq', label: 'FAQ' },
@@ -81,7 +84,20 @@ export default function Navbar() {
           {/* Desktop nav */}
           <div className="hidden md:flex items-center gap-8">
 
-            {/* Catalogue dropdown */}
+            {navLinks.map(({ to, label }) => (
+              <Link
+                key={to}
+                to={to}
+                className={`text-sm font-medium transition-colors duration-200 ${
+                  isActive(to) ? 'text-[#00B4B4]' : 'text-white/80 hover:text-white'
+                }`}
+                style={{ fontFamily: 'Inter, sans-serif' }}
+              >
+                {label}
+              </Link>
+            ))}
+
+            {/* Shop dropdown */}
             <div className="relative" ref={dropdownRef}>
               <button
                 onClick={() => setCatalogueOpen(!catalogueOpen)}
@@ -139,7 +155,7 @@ export default function Navbar() {
               </div>
             </div>
 
-            {navLinks.map(({ to, label }) => (
+            {navLinksAfterShop.map(({ to, label }) => (
               <Link
                 key={to}
                 to={to}
@@ -188,6 +204,14 @@ export default function Navbar() {
       >
         <div className="bg-[#0A1628]/98 backdrop-blur-md px-6 pb-6 pt-2 border-t border-white/10">
 
+          {/* Home */}
+          <Link
+            to="/"
+            className={`block py-3 text-base font-medium border-b border-white/5 transition-colors ${isActive('/') ? 'text-[#00B4B4]' : 'text-white/80'}`}
+          >
+            Home
+          </Link>
+
           {/* Shop expandable section */}
           <button
             onClick={() => setMobileShopOpen(!mobileShopOpen)}
@@ -215,7 +239,7 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {navLinks.map(({ to, label }) => (
+          {navLinksAfterShop.map(({ to, label }) => (
             <Link
               key={to}
               to={to}
