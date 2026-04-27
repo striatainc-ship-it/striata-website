@@ -4,6 +4,7 @@ import recoveryMd from './blog/striata_recovery_articles.md?raw'
 import antiAgingMd from './blog/striata_antiaging_articles.md?raw'
 import brainMoodMd from './blog/striata_brain_mood_articles.md?raw'
 import hormonalMd from './blog/striata_hormonal_health_articles.md?raw'
+import saTargetedMd from './blog/striata_sa_targeted_articles.md?raw'
 
 function parseArticles(md) {
   md = md.replace(/\r\n/g, '\n')
@@ -50,6 +51,7 @@ const allArticles = [
   ...parseArticles(antiAgingMd),
   ...parseArticles(brainMoodMd),
   ...parseArticles(hormonalMd),
+  ...parseArticles(saTargetedMd),
 ]
 
 if (allArticles.length > 0) allArticles[0].featured = true
