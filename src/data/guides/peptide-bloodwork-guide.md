@@ -480,7 +480,7 @@ Six to eight weeks. This is the most critical safety window and the one most com
 If you're running a Striata protocol and want help interpreting a set of results, get in touch. We'll walk through the numbers with you and flag anything worth discussing with your practitioner.
 
 **Website:** striatalabs.co.za
-**Email:** striata.inc@gmail.com
+**Email:** info@striatalabs.co.za
 **WhatsApp:** +27 78 213 7905
 
 ---

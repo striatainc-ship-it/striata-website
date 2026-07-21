@@ -296,7 +296,7 @@ Discard it and do not inject. Then consider the cause: cloudiness well inside th
 If you're unsure about a reconstitution volume, a dose calculation, or whether a vial is still good to use, message us. We'd rather answer a question than have someone guess.
 
 **Website:** striatalabs.co.za
-**Email:** striata.inc@gmail.com
+**Email:** info@striatalabs.co.za
 **WhatsApp:** +27 78 213 7905
 
 ---
