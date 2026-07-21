@@ -51,10 +51,10 @@ export default function Legal() {
       <Helmet>
         <title>Legal & Privacy Policy | STRIATA</title>
         <meta name="description" content="STRIATA's terms and conditions, privacy policy, shipping policy and legal disclaimer for research peptide supply in South Africa." />
-        <link rel="canonical" href="https://striatalabs.co.za/legal" />
+        <link rel="canonical" href="https://www.striatalabs.co.za/legal" />
         <meta property="og:title" content="Legal & Privacy Policy | STRIATA" />
         <meta property="og:description" content="Terms, privacy policy, shipping and legal disclaimer for STRIATA research peptides." />
-        <meta property="og:url" content="https://striatalabs.co.za/legal" />
+        <meta property="og:url" content="https://www.striatalabs.co.za/legal" />
       </Helmet>
       {/* Hero */}
       <section className="relative pt-40 pb-16 px-6 overflow-hidden">

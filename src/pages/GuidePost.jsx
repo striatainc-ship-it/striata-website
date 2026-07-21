@@ -215,10 +215,10 @@ export default function GuidePost() {
       <Helmet>
         <title>{guide.title} | STRIATA Guides</title>
         <meta name="description" content={guide.preview} />
-        <link rel="canonical" href={`https://striatalabs.co.za/guides/${guide.slug}`} />
+        <link rel="canonical" href={`https://www.striatalabs.co.za/guides/${guide.slug}`} />
         <meta property="og:title" content={`${guide.title} | STRIATA Guides`} />
         <meta property="og:description" content={guide.preview} />
-        <meta property="og:url" content={`https://striatalabs.co.za/guides/${guide.slug}`} />
+        <meta property="og:url" content={`https://www.striatalabs.co.za/guides/${guide.slug}`} />
       </Helmet>
 
       {/* ── HEADER ── */}

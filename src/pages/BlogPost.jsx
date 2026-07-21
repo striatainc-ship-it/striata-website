@@ -1,4 +1,5 @@
 import { useParams, Link } from 'react-router-dom'
+import { Helmet } from 'react-helmet-async'
 import { getBlogPost, blogPosts } from '../data/blogPosts'
 import { whatsappLink } from '../data/products'
 
@@ -188,6 +189,15 @@ export default function BlogPost() {
 
   return (
     <div className="bg-[#0A1628] min-h-screen">
+      <Helmet>
+        <title>{article.title} | STRIATA Learn</title>
+        <meta name="description" content={article.preview} />
+        <link rel="canonical" href={`https://www.striatalabs.co.za/learn/${article.slug}`} />
+        <meta property="og:type" content="article" />
+        <meta property="og:title" content={`${article.title} | STRIATA Learn`} />
+        <meta property="og:description" content={article.preview} />
+        <meta property="og:url" content={`https://www.striatalabs.co.za/learn/${article.slug}`} />
+      </Helmet>
 
       {/* ── HEADER ── */}
       <section className="relative pt-36 pb-12 px-6 overflow-hidden">

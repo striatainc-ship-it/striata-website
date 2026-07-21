@@ -113,10 +113,10 @@ export default function Catalogue() {
       <Helmet>
         <title>Peptide Catalogue | STRIATA South Africa</title>
         <meta name="description" content="Browse 80+ research-grade peptides with transparent pricing. Recovery, weight loss, anti-aging, hormonal health, nootropics and more. Delivered nationwide across South Africa." />
-        <link rel="canonical" href="https://striatalabs.co.za/catalogue" />
+        <link rel="canonical" href="https://www.striatalabs.co.za/catalogue" />
         <meta property="og:title" content="Peptide Catalogue | STRIATA South Africa" />
         <meta property="og:description" content="Browse 80+ research-grade peptides with transparent pricing. Delivered nationwide." />
-        <meta property="og:url" content="https://striatalabs.co.za/catalogue" />
+        <meta property="og:url" content="https://www.striatalabs.co.za/catalogue" />
       </Helmet>
       {/* Hero Banner */}
       <section className="relative pt-36 pb-20 px-6 overflow-hidden">

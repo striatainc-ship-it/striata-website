@@ -56,10 +56,10 @@ export default function Contact() {
       <Helmet>
         <title>Contact STRIATA | WhatsApp +27 78 213 7905</title>
         <meta name="description" content="Order or enquire via WhatsApp +27 78 213 7905 or email info@striatalabs.co.za. STRIATA delivers research-grade peptides nationwide from Johannesburg." />
-        <link rel="canonical" href="https://striatalabs.co.za/contact" />
+        <link rel="canonical" href="https://www.striatalabs.co.za/contact" />
         <meta property="og:title" content="Contact STRIATA | WhatsApp +27 78 213 7905" />
         <meta property="og:description" content="Reach STRIATA on WhatsApp or email. We deliver research-grade peptides nationwide from Johannesburg." />
-        <meta property="og:url" content="https://striatalabs.co.za/contact" />
+        <meta property="og:url" content="https://www.striatalabs.co.za/contact" />
       </Helmet>
       {/* Hero */}
       <section className="relative pt-40 pb-24 px-6 overflow-hidden">

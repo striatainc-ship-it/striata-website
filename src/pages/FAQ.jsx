@@ -180,10 +180,10 @@ export default function FAQ() {
       <Helmet>
         <title>FAQ | STRIATA Peptides South Africa</title>
         <meta name="description" content="Answers to common questions about STRIATA's research peptides — ordering, shipping, purity testing, reconstitution, payments and more." />
-        <link rel="canonical" href="https://striatalabs.co.za/faq" />
+        <link rel="canonical" href="https://www.striatalabs.co.za/faq" />
         <meta property="og:title" content="FAQ | STRIATA Peptides South Africa" />
         <meta property="og:description" content="Common questions about ordering, shipping, purity and reconstitution of research peptides from STRIATA." />
-        <meta property="og:url" content="https://striatalabs.co.za/faq" />
+        <meta property="og:url" content="https://www.striatalabs.co.za/faq" />
       </Helmet>
       {/* Hero */}
       <section className="relative pt-40 pb-20 px-6 overflow-hidden">

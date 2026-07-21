@@ -62,10 +62,10 @@ export default function Guides() {
       <Helmet>
         <title>Peptide Guides | STRIATA</title>
         <meta name="description" content="Practical, step-by-step peptide guides — reconstitution and dosage calculation, and the bloodwork to run before, during and after a protocol." />
-        <link rel="canonical" href="https://striatalabs.co.za/guides" />
+        <link rel="canonical" href="https://www.striatalabs.co.za/guides" />
         <meta property="og:title" content="Peptide Guides | STRIATA" />
         <meta property="og:description" content="Practical, step-by-step peptide guides — reconstitution, dosing and bloodwork monitoring." />
-        <meta property="og:url" content="https://striatalabs.co.za/guides" />
+        <meta property="og:url" content="https://www.striatalabs.co.za/guides" />
       </Helmet>
 
       {/* ── HERO ── */}

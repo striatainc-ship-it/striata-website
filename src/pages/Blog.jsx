@@ -108,10 +108,10 @@ export default function Blog() {
       <Helmet>
         <title>Peptide Research & Guides | STRIATA Learn</title>
         <meta name="description" content="In-depth guides, research insights and protocols for peptides. Learn about BPC-157, Semaglutide, GHK-Cu, nootropics and anti-aging compounds from STRIATA." />
-        <link rel="canonical" href="https://striatalabs.co.za/learn" />
+        <link rel="canonical" href="https://www.striatalabs.co.za/learn" />
         <meta property="og:title" content="Peptide Research & Guides | STRIATA Learn" />
         <meta property="og:description" content="In-depth guides and research insights on peptides — recovery, weight loss, anti-aging and nootropics." />
-        <meta property="og:url" content="https://striatalabs.co.za/learn" />
+        <meta property="og:url" content="https://www.striatalabs.co.za/learn" />
       </Helmet>
 
       {/* ── HERO ── */}

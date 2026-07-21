@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://striatalabs.co.za/sitemap.xml
+Sitemap: https://www.striatalabs.co.za/sitemap.xml

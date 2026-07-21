@@ -341,10 +341,10 @@ export default function Stacks() {
       <Helmet>
         <title>Peptide Stacks | STRIATA South Africa</title>
         <meta name="description" content="Browse STRIATA's 10 recommended peptide stacks for recovery, weight loss, anti-aging, and performance. Pharmaceutical grade, 99%+ purity. Enquire on WhatsApp." />
-        <link rel="canonical" href="https://striatalabs.co.za/stacks" />
+        <link rel="canonical" href="https://www.striatalabs.co.za/stacks" />
         <meta property="og:title" content="Peptide Stacks | STRIATA South Africa" />
         <meta property="og:description" content="10 curated peptide stacks across gym, weight loss, anti-aging and wellness. Tier pricing from Entry to Premium." />
-        <meta property="og:url" content="https://striatalabs.co.za/stacks" />
+        <meta property="og:url" content="https://www.striatalabs.co.za/stacks" />
       </Helmet>
 
       {/* ── Hero ── */}
