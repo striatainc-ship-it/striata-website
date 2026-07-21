@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { getGuide, guides } from '../data/guidesData'
 import { whatsappLink } from '../data/products'
+import JsonLd from '../components/JsonLd'
 
 const WA_ICON = (
   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -213,13 +214,37 @@ export default function GuidePost() {
   return (
     <div className="bg-[#0A1628] min-h-screen">
       <Helmet>
-        <title>{guide.title} | STRIATA Guides</title>
+        <title>{`${guide.title} | STRIATA Guides`}</title>
         <meta name="description" content={guide.preview} />
         <link rel="canonical" href={`https://www.striatalabs.co.za/guides/${guide.slug}`} />
         <meta property="og:title" content={`${guide.title} | STRIATA Guides`} />
         <meta property="og:description" content={guide.preview} />
         <meta property="og:url" content={`https://www.striatalabs.co.za/guides/${guide.slug}`} />
       </Helmet>
+
+      <JsonLd data={{
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: guide.title,
+        description: guide.preview,
+        articleSection: guide.category,
+        author: { '@type': 'Organization', name: 'STRIATA' },
+        publisher: {
+          '@type': 'Organization',
+          name: 'STRIATA',
+          logo: { '@type': 'ImageObject', url: 'https://www.striatalabs.co.za/assets/helix.png' },
+        },
+        mainEntityOfPage: `https://www.striatalabs.co.za/guides/${guide.slug}`,
+        url: `https://www.striatalabs.co.za/guides/${guide.slug}`,
+      }} />
+      <JsonLd data={{
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Guides', item: 'https://www.striatalabs.co.za/guides' },
+          { '@type': 'ListItem', position: 2, name: guide.title, item: `https://www.striatalabs.co.za/guides/${guide.slug}` },
+        ],
+      }} />
 
       {/* ── HEADER ── */}
       <section className="relative pt-36 pb-12 px-6 overflow-hidden">

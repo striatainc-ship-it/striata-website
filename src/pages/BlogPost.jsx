@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { getBlogPost, blogPosts } from '../data/blogPosts'
 import { whatsappLink } from '../data/products'
+import JsonLd from '../components/JsonLd'
 
 const WA_ICON = (
   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -190,7 +191,7 @@ export default function BlogPost() {
   return (
     <div className="bg-[#0A1628] min-h-screen">
       <Helmet>
-        <title>{article.title} | STRIATA Learn</title>
+        <title>{`${article.title} | STRIATA Learn`}</title>
         <meta name="description" content={article.preview} />
         <link rel="canonical" href={`https://www.striatalabs.co.za/learn/${article.slug}`} />
         <meta property="og:type" content="article" />
@@ -198,6 +199,30 @@ export default function BlogPost() {
         <meta property="og:description" content={article.preview} />
         <meta property="og:url" content={`https://www.striatalabs.co.za/learn/${article.slug}`} />
       </Helmet>
+
+      <JsonLd data={{
+        '@context': 'https://schema.org',
+        '@type': 'Article',
+        headline: article.title,
+        description: article.preview,
+        articleSection: article.category,
+        author: { '@type': 'Organization', name: 'STRIATA' },
+        publisher: {
+          '@type': 'Organization',
+          name: 'STRIATA',
+          logo: { '@type': 'ImageObject', url: 'https://www.striatalabs.co.za/assets/helix.png' },
+        },
+        mainEntityOfPage: `https://www.striatalabs.co.za/learn/${article.slug}`,
+        url: `https://www.striatalabs.co.za/learn/${article.slug}`,
+      }} />
+      <JsonLd data={{
+        '@context': 'https://schema.org',
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Learn', item: 'https://www.striatalabs.co.za/learn' },
+          { '@type': 'ListItem', position: 2, name: article.title, item: `https://www.striatalabs.co.za/learn/${article.slug}` },
+        ],
+      }} />
 
       {/* ── HEADER ── */}
       <section className="relative pt-36 pb-12 px-6 overflow-hidden">

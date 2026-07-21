@@ -6,24 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Primary SEO -->
+    <!-- title is a fallback only: react-helmet-async replaces it per route.
+         Per-page description / canonical / og:url / og:title / og:description /
+         twitter:title / twitter:description are set by each page's <Helmet> and are
+         intentionally NOT duplicated here (a static canonical would add a second,
+         homepage-pointing canonical to every route and break indexing). -->
     <title>STRIATA | Research-Grade Peptides South Africa</title>
-    <meta name="description" content="South Africa's premier source for research-grade peptides. 99%+ purity guaranteed. BPC-157, Semaglutide, Tirzepatide, GHK-Cu and 80+ compounds. Johannesburg. Order on WhatsApp." />
     <meta name="keywords" content="peptides South Africa, research peptides, BPC-157, TB-500, semaglutide, tirzepatide, GHK-Cu, nootropics, anti-aging peptides, buy peptides SA, Johannesburg peptides" />
-    <link rel="canonical" href="https://www.striatalabs.co.za/" />
 
-    <!-- Open Graph -->
+    <!-- Open Graph (global defaults; per-page og:title/description/url come from Helmet) -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="STRIATA" />
-    <meta property="og:url" content="https://www.striatalabs.co.za/" />
-    <meta property="og:title" content="STRIATA | Research-Grade Peptides South Africa" />
-    <meta property="og:description" content="South Africa's premier source for research-grade peptides. 99%+ purity guaranteed. Think Strong. Train Smarter." />
     <meta property="og:image" content="https://www.striatalabs.co.za/assets/helix.png" />
     <meta property="og:locale" content="en_ZA" />
 
-    <!-- Twitter Card -->
+    <!-- Twitter Card (global defaults; per-page title/description fall back to og:*) -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="STRIATA | Research-Grade Peptides South Africa" />
-    <meta name="twitter:description" content="South Africa's premier source for research-grade peptides. 99%+ purity guaranteed." />
     <meta name="twitter:image" content="https://www.striatalabs.co.za/assets/helix.png" />
 
     <!-- Structured Data: Organization -->
@@ -52,6 +50,16 @@
         "https://instagram.com/striata.za",
         "https://tiktok.com/@striata.za"
       ]
+    }
+    </script>
+
+    <!-- Structured Data: WebSite -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebSite",
+      "name": "STRIATA",
+      "url": "https://www.striatalabs.co.za"
     }
     </script>
   </head>

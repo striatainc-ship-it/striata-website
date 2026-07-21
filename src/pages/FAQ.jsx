@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { whatsappLink } from '../data/products'
+import JsonLd from '../components/JsonLd'
 
 const WA_ICON = (
   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -185,6 +186,16 @@ export default function FAQ() {
         <meta property="og:description" content="Common questions about ordering, shipping, purity and reconstitution of research peptides from STRIATA." />
         <meta property="og:url" content="https://www.striatalabs.co.za/faq" />
       </Helmet>
+
+      <JsonLd data={{
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: faqSections.flatMap((s) => s.questions).map(({ q, a }) => ({
+          '@type': 'Question',
+          name: q,
+          acceptedAnswer: { '@type': 'Answer', text: a },
+        })),
+      }} />
       {/* Hero */}
       <section className="relative pt-40 pb-20 px-6 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-[#00B4B4]/5 to-transparent" />

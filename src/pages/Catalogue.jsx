@@ -3,6 +3,7 @@ import { useLocation, Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { products, categories, whatsappLink } from '../data/products'
 import ProductCard from '../components/ProductCard'
+import JsonLd from '../components/JsonLd'
 
 const CAT_ICONS = {
   all: (
@@ -118,6 +119,36 @@ export default function Catalogue() {
         <meta property="og:description" content="Browse 80+ research-grade peptides with transparent pricing. Delivered nationwide." />
         <meta property="og:url" content="https://www.striatalabs.co.za/catalogue" />
       </Helmet>
+
+      <JsonLd data={{
+        '@context': 'https://schema.org',
+        '@type': 'ItemList',
+        itemListElement: products
+          .filter((p) => p.prices && p.prices.length > 0)
+          .map((p, i) => {
+            const amounts = p.prices.map((v) => v.price)
+            return {
+              '@type': 'ListItem',
+              position: i + 1,
+              item: {
+                '@type': 'Product',
+                name: p.name,
+                description: p.description,
+                category: p.category,
+                brand: { '@type': 'Brand', name: 'STRIATA' },
+                offers: {
+                  '@type': 'AggregateOffer',
+                  priceCurrency: 'ZAR',
+                  lowPrice: Math.min(...amounts),
+                  highPrice: Math.max(...amounts),
+                  offerCount: p.prices.length,
+                  availability: 'https://schema.org/InStock',
+                  url: 'https://www.striatalabs.co.za/catalogue',
+                },
+              },
+            }
+          }),
+      }} />
       {/* Hero Banner */}
       <section className="relative pt-36 pb-20 px-6 overflow-hidden">
         <div
