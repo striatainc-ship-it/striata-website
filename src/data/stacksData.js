@@ -252,4 +252,4 @@ export const UNIVERSAL_CONTRAINDICATIONS = [
 ]
 
 export const waLink = (stackName) =>
-  `https://wa.me/27601428649?text=${encodeURIComponent(`Hi, I'm interested in the ${stackName} stack. Can you help me?`)}`
+  `https://wa.me/27782137905?text=${encodeURIComponent(`Hi, I'm interested in the ${stackName} stack. Can you help me?`)}`

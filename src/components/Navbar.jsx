@@ -28,6 +28,7 @@ const navLinks = [
 const navLinksAfterShop = [
   { to: '/about', label: 'About' },
   { to: '/learn', label: 'Learn' },
+  { to: '/guides', label: 'Guides' },
   { to: '/faq', label: 'FAQ' },
   { to: '/contact', label: 'Contact' },
 ]

@@ -10,6 +10,8 @@ import Contact from './pages/Contact'
 import FAQ from './pages/FAQ'
 import Blog from './pages/Blog'
 import BlogPost from './pages/BlogPost'
+import Guides from './pages/Guides'
+import GuidePost from './pages/GuidePost'
 import Legal from './pages/Legal'
 import Stacks from './pages/Stacks'
 
@@ -35,6 +37,8 @@ function Layout() {
           <Route path="/faq" element={<FAQ />} />
           <Route path="/learn" element={<Blog />} />
           <Route path="/learn/:slug" element={<BlogPost />} />
+          <Route path="/guides" element={<Guides />} />
+          <Route path="/guides/:slug" element={<GuidePost />} />
           <Route path="/legal" element={<Legal />} />
           <Route path="/stacks" element={<Stacks />} />
         </Routes>
