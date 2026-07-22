@@ -23,9 +23,9 @@ export const STACKS = [
       'Under 18 years of age.',
     ],
     tiers: [
-      { label: 'Entry',   products: 'BPC+TB Wolverine Stack 10mg (BPC 5mg + TB 5mg)',                                     price: 'R 618'   },
-      { label: 'Mid',     products: 'BPC+TB 20mg (BPC 10mg + TB 10mg) + MGF 2mg',                                         price: 'R 1 152' },
-      { label: 'Premium', products: 'BPC+TB 30mg (BPC 15mg + TB 15mg) + MGF 2mg + IGF-1 LR3 100mcg',                     price: 'R 2 167' },
+      { label: 'Entry',   products: 'BPC+TB Wolverine Stack 10mg (BPC 5mg + TB 5mg)',                                     price: 'R 620'   },
+      { label: 'Mid',     products: 'BPC+TB 20mg (BPC 10mg + TB 10mg) + MGF 2mg',                                         price: 'R 1 150' },
+      { label: 'Premium', products: 'BPC+TB 30mg (BPC 15mg + TB 15mg) + MGF 2mg + IGF-1 LR3 100mcg',                     price: 'R 2 170' },
     ],
   },
   {
@@ -46,9 +46,9 @@ export const STACKS = [
       'Under 18 years of age.',
     ],
     tiers: [
-      { label: 'Entry',   products: 'CJC-1295 DAC 2mg + GHRP-6 5mg',                                 price: 'R 594'   },
-      { label: 'Mid',     products: 'CJC-1295 DAC 2mg + GHRP-2 10mg + IGF-1 LR3 100mcg',             price: 'R 939'   },
-      { label: 'Premium', products: 'CJC-1295 DAC 2mg + GHRP-2 15mg + IGF-1 LR3 1mg',                price: 'R 2 008' },
+      { label: 'Entry',   products: 'CJC-1295 DAC 2mg + GHRP-6 5mg',                                 price: 'R 590'   },
+      { label: 'Mid',     products: 'CJC-1295 DAC 2mg + GHRP-2 10mg + IGF-1 LR3 100mcg',             price: 'R 940'   },
+      { label: 'Premium', products: 'CJC-1295 DAC 2mg + GHRP-2 15mg + IGF-1 LR3 1mg',                price: 'R 2 010' },
     ],
   },
   {
@@ -68,9 +68,9 @@ export const STACKS = [
       'Under 18 years of age.',
     ],
     tiers: [
-      { label: 'Entry',   products: 'HGH Fragment 176-191 2mg + Ipamorelin 5mg',                                             price: 'R 546'   },
-      { label: 'Mid',     products: 'HGH Fragment 176-191 5mg + Tesa10 + Ipamorelin 5 Stack',                                 price: 'R 1 619' },
-      { label: 'Premium', products: 'Retatrutide 30mg (Month 1) then IGF-1 LR3 1mg + CJC-1295 DAC 2mg (Month 2)',           price: 'R 3 405' },
+      { label: 'Entry',   products: 'HGH Fragment 176-191 2mg + Ipamorelin 5mg',                                             price: 'R 550'   },
+      { label: 'Mid',     products: 'HGH Fragment 176-191 5mg + Tesa10 + Ipamorelin 5 Stack',                                 price: 'R 1 620' },
+      { label: 'Premium', products: 'Retatrutide 30mg (Month 1) then IGF-1 LR3 1mg + CJC-1295 DAC 2mg (Month 2)',           price: 'R 3 410' },
     ],
   },
   {
@@ -92,7 +92,7 @@ export const STACKS = [
     ],
     tiers: [
       { label: 'Entry',   products: 'Tirzepatide 30mg + AOD-9604 5mg',                                              price: 'R 1 900' },
-      { label: 'Mid',     products: 'Tirzepatide 30mg + AOD-9604 5mg + L-Carnitine 600mg',                          price: 'R 2 266' },
+      { label: 'Mid',     products: 'Tirzepatide 30mg + AOD-9604 5mg + L-Carnitine 600mg',                          price: 'R 2 270' },
       { label: 'Premium', products: 'Retatrutide 30mg + AOD-9604 5mg + Tesamorelin 5mg + L-Carnitine 600mg',        price: 'R 3 520' },
     ],
   },
@@ -114,8 +114,8 @@ export const STACKS = [
       'Under 18 years of age.',
     ],
     tiers: [
-      { label: 'Entry',   products: 'Tirzepatide 30mg then GLOW Stack 70mg (BPC 5mg + GHK-Cu 50mg)',                       price: 'R 2 518' },
-      { label: 'Mid',     products: 'Tirzepatide 30mg + AOD-9604 5mg then GLOW Stack + AHK-Cu 20mg',                       price: 'R 3 145' },
+      { label: 'Entry',   products: 'Tirzepatide 30mg then GLOW Stack 70mg (BPC 5mg + GHK-Cu 50mg)',                       price: 'R 2 520' },
+      { label: 'Mid',     products: 'Tirzepatide 30mg + AOD-9604 5mg then GLOW Stack + AHK-Cu 20mg',                       price: 'R 3 150' },
       { label: 'Premium', products: 'Retatrutide 30mg + AOD-9604 5mg then GHK-Cu 100mg + AHK-Cu 20mg + Snap-8 10mg + Matrixyl 10mg', price: 'R 3 850' },
     ],
   },
@@ -138,8 +138,8 @@ export const STACKS = [
       'Under 18 years of age.',
     ],
     tiers: [
-      { label: 'Entry',   products: 'Epithalon 10mg + NAD+ 500mg',                                                        price: 'R 808'   },
-      { label: 'Mid',     products: 'Epithalon 10mg + NAD+ 500mg + GHK-Cu 100mg',                                         price: 'R 1 203' },
+      { label: 'Entry',   products: 'Epithalon 10mg + NAD+ 500mg',                                                        price: 'R 810'   },
+      { label: 'Mid',     products: 'Epithalon 10mg + NAD+ 500mg + GHK-Cu 100mg',                                         price: 'R 1 200' },
       { label: 'Premium', products: 'Epithalon 10mg + NAD+ 500mg + GHK-Cu 100mg + Thymalin 10mg + Thymosin Alpha-1 5mg',  price: 'R 2 640' },
     ],
   },
@@ -160,9 +160,9 @@ export const STACKS = [
       'Under 18 years of age.',
     ],
     tiers: [
-      { label: 'Entry',   products: 'GHK-Cu 100mg + Matrixyl 10mg',                                            price: 'R 665'   },
-      { label: 'Mid',     products: 'GHK-Cu 100mg + Matrixyl 10mg + Snap-8 10mg',                              price: 'R 925'   },
-      { label: 'Premium', products: 'GHK-Cu 100mg + AHK-Cu 20mg + Snap-8 10mg + Matrixyl 10mg + BPC-157 2mg', price: 'R 1 678' },
+      { label: 'Entry',   products: 'GHK-Cu 100mg + Matrixyl 10mg',                                            price: 'R 670'   },
+      { label: 'Mid',     products: 'GHK-Cu 100mg + Matrixyl 10mg + Snap-8 10mg',                              price: 'R 930'   },
+      { label: 'Premium', products: 'GHK-Cu 100mg + AHK-Cu 20mg + Snap-8 10mg + Matrixyl 10mg + BPC-157 2mg', price: 'R 1 680' },
     ],
   },
   {
@@ -183,9 +183,9 @@ export const STACKS = [
       'Under 18 years of age.',
     ],
     tiers: [
-      { label: 'Entry',   products: 'Semax 10mg + Melatonin 10mg',                                                      price: 'R 1 031' },
-      { label: 'Mid',     products: 'Semax 10mg + Selank 10mg + Melatonin 10mg',                                        price: 'R 1 605' },
-      { label: 'Premium', products: 'Semax 10mg + Selank 10mg + NAD+ 500mg + Melatonin 10mg + Pinealon 5mg (BEFORE BED ONLY)', price: 'R 2 624' },
+      { label: 'Entry',   products: 'Semax 10mg + Melatonin 10mg',                                                      price: 'R 1 030' },
+      { label: 'Mid',     products: 'Semax 10mg + Selank 10mg + Melatonin 10mg',                                        price: 'R 1 610' },
+      { label: 'Premium', products: 'Semax 10mg + Selank 10mg + NAD+ 500mg + Melatonin 10mg + Pinealon 5mg (BEFORE BED ONLY)', price: 'R 2 620' },
     ],
   },
   {
@@ -208,7 +208,7 @@ export const STACKS = [
     ],
     tiers: [
       { label: 'Entry',   products: 'Thymalin 10mg + BPC-157 5mg',                                                              price: 'R 760'   },
-      { label: 'Mid',     products: 'Thymosin Alpha-1 5mg + BPC-157 5mg + Thymalin 10mg',                                       price: 'R 1 341' },
+      { label: 'Mid',     products: 'Thymosin Alpha-1 5mg + BPC-157 5mg + Thymalin 10mg',                                       price: 'R 1 340' },
       { label: 'Premium', products: 'Thymosin Alpha-1 5mg + BPC-157 5mg + Thymalin 10mg + Epithalon 10mg + NAD+ 500mg',         price: 'R 2 530' },
     ],
   },
@@ -231,9 +231,9 @@ export const STACKS = [
       'Under 18 years of age.',
     ],
     tiers: [
-      { label: 'Entry',   products: 'CJC-1295 DAC 2mg + GHRP-2 5mg + BPC-157 2mg',                                       price: 'R 874'   },
-      { label: 'Mid',     products: 'CJC-1295 DAC 2mg + GHRP-2 10mg + BPC+TB Wolverine Stack 10mg',                       price: 'R 1 263' },
-      { label: 'Premium', products: 'CJC-1295 DAC 2mg + GHRP-2 15mg + BPC+TB 20mg (Month 1) then IGF-1 LR3 1mg + MGF 2mg (Month 2)', price: 'R 3 377' },
+      { label: 'Entry',   products: 'CJC-1295 DAC 2mg + GHRP-2 5mg + BPC-157 2mg',                                       price: 'R 870'   },
+      { label: 'Mid',     products: 'CJC-1295 DAC 2mg + GHRP-2 10mg + BPC+TB Wolverine Stack 10mg',                       price: 'R 1 260' },
+      { label: 'Premium', products: 'CJC-1295 DAC 2mg + GHRP-2 15mg + BPC+TB 20mg (Month 1) then IGF-1 LR3 1mg + MGF 2mg (Month 2)', price: 'R 3 380' },
     ],
   },
 ]
