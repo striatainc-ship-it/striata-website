@@ -210,7 +210,7 @@ export default function BlogPost() {
         publisher: {
           '@type': 'Organization',
           name: 'STRIATA',
-          logo: { '@type': 'ImageObject', url: 'https://www.striatalabs.co.za/assets/helix.png' },
+          logo: { '@type': 'ImageObject', url: 'https://www.striatalabs.co.za/assets/opt/logo-640.png' },
         },
         mainEntityOfPage: `https://www.striatalabs.co.za/learn/${article.slug}`,
         url: `https://www.striatalabs.co.za/learn/${article.slug}`,

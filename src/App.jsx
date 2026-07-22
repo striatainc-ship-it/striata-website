@@ -1,26 +1,26 @@
-import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom'
-import { useEffect, useRef, lazy, Suspense } from 'react'
+import { BrowserRouter, useLocation } from 'react-router-dom'
+import { useEffect, useRef, lazy } from 'react'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import WhatsAppFAB from './components/WhatsAppFAB'
 import { initGA, trackPageview } from './lib/analytics'
-import { loaders } from './routeLoaders'
-
-// Eager: the homepage is the most common landing point.
-import Home from './pages/Home'
+import { loaders, resolved } from './routeLoaders'
+import AppRoutes from './AppRoutes'
 
 // Lazy: each route ships as its own chunk, keeping the initial bundle small.
 // This also splits the ~340 KB of blog/guide markdown out of the main bundle.
-const Catalogue = lazy(loaders['/catalogue'])
-const About = lazy(loaders['/about'])
-const Contact = lazy(loaders['/contact'])
-const FAQ = lazy(loaders['/faq'])
-const Blog = lazy(loaders['/learn'])
-const BlogPost = lazy(loaders['/learn/:slug'])
-const Guides = lazy(loaders['/guides'])
-const GuidePost = lazy(loaders['/guides/:slug'])
-const Legal = lazy(loaders['/legal'])
-const Stacks = lazy(loaders['/stacks'])
+// (The homepage is eager — see AppRoutes.)
+const lazyComponents = Object.fromEntries(
+  Object.entries(loaders).map(([path, load]) => [path, lazy(load)]),
+)
+
+// Prefer an already-loaded component over its lazy wrapper — main.jsx resolves
+// the landing route before hydrating so that route mounts without suspending.
+function routeComponents() {
+  return Object.fromEntries(
+    Object.keys(loaders).map(path => [path, resolved.get(path) ?? lazyComponents[path]]),
+  )
+}
 
 function ScrollToTop() {
   const { pathname } = useLocation()
@@ -59,30 +59,14 @@ function Analytics() {
   return null
 }
 
-export function Layout() {
+export function Layout({ routes = <AppRoutes components={routeComponents()} /> }) {
   return (
     <>
       <ScrollToTop />
       <PrerenderedHeadCleanup />
       <Analytics />
       <Navbar />
-      <main>
-        <Suspense fallback={<div className="min-h-screen bg-[#0A1628]" />}>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/catalogue" element={<Catalogue />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/faq" element={<FAQ />} />
-            <Route path="/learn" element={<Blog />} />
-            <Route path="/learn/:slug" element={<BlogPost />} />
-            <Route path="/guides" element={<Guides />} />
-            <Route path="/guides/:slug" element={<GuidePost />} />
-            <Route path="/legal" element={<Legal />} />
-            <Route path="/stacks" element={<Stacks />} />
-          </Routes>
-        </Suspense>
-      </main>
+      <main>{routes}</main>
       <Footer />
       <WhatsAppFAB />
     </>

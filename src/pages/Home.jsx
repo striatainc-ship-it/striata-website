@@ -214,7 +214,7 @@ export default function Home() {
           muted
           loop
           playsInline
-          poster={`${import.meta.env.BASE_URL}assets/vial layouts 2.png`}
+          poster={`${import.meta.env.BASE_URL}assets/opt/vial-layouts-2-1920.webp`}
           className="absolute inset-0 w-full h-full object-cover opacity-30"
         >
           <source src={`${import.meta.env.BASE_URL}assets/hero-video.mp4`} type="video/mp4" />
@@ -276,8 +276,14 @@ export default function Home() {
       <section ref={scrollBeatRef} className="relative">
         <div ref={beatInnerRef} className="h-[100svh] flex items-center justify-center overflow-hidden">
           <img
-            src={`${import.meta.env.BASE_URL}assets/vial layouts 2.png`}
+            src={`${import.meta.env.BASE_URL}assets/opt/vial-layouts-2-1920.webp`}
+            srcSet={`${import.meta.env.BASE_URL}assets/opt/vial-layouts-2-768.webp 768w, ${import.meta.env.BASE_URL}assets/opt/vial-layouts-2-1280.webp 1280w, ${import.meta.env.BASE_URL}assets/opt/vial-layouts-2-1920.webp 1920w`}
+            sizes="100vw"
             alt="STRIATA peptide vials"
+            width={3104}
+            height={1376}
+            loading="lazy"
+            decoding="async"
             className="absolute inset-0 w-full h-full object-cover opacity-20"
           />
           <div className="absolute inset-0 bg-gradient-to-b from-[#0A1628]/70 via-transparent to-[#0A1628]/70" />
@@ -355,9 +361,14 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8 grid md:grid-cols-2 gap-16 items-center">
           <div className="relative">
             <img
-              src={`${import.meta.env.BASE_URL}assets/purity 2.png`}
+              src={`${import.meta.env.BASE_URL}assets/opt/purity-2-1280.webp`}
+              srcSet={`${import.meta.env.BASE_URL}assets/opt/purity-2-640.webp 640w, ${import.meta.env.BASE_URL}assets/opt/purity-2-1280.webp 1280w`}
+              sizes="(min-width: 768px) 576px, 100vw"
               alt="STRIATA"
+              width={2752}
+              height={1536}
               loading="lazy"
+              decoding="async"
               className="rounded-3xl w-full object-cover aspect-[4/5]"
             />
             <div className="absolute bottom-4 right-4 md:-bottom-6 md:-right-6 bg-[#00B4B4] rounded-2xl p-4 md:p-6 shadow-xl">
@@ -451,9 +462,14 @@ export default function Home() {
 
         <div className="relative rounded-3xl overflow-hidden">
           <img
-            src={`${import.meta.env.BASE_URL}assets/purity.png`}
+            src={`${import.meta.env.BASE_URL}assets/opt/purity-1920.webp`}
+            srcSet={`${import.meta.env.BASE_URL}assets/opt/purity-768.webp 768w, ${import.meta.env.BASE_URL}assets/opt/purity-1280.webp 1280w, ${import.meta.env.BASE_URL}assets/opt/purity-1920.webp 1920w`}
+            sizes="(min-width: 1280px) 1216px, 100vw"
             alt="Lab purity standards"
+            width={2816}
+            height={1536}
             loading="lazy"
+            decoding="async"
             className="w-full h-72 object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0A1628]/90 to-transparent flex items-center">
@@ -586,7 +602,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-gradient-to-br from-[#00B4B4]/15 to-transparent" />
         <div
           className="absolute inset-0 bg-cover bg-center opacity-5"
-          style={{ backgroundImage: `url(${import.meta.env.BASE_URL}assets/helix 2.png)` }}
+          style={{ backgroundImage: `url(${import.meta.env.BASE_URL}assets/opt/helix-2-1280.webp)` }}
         />
         <div className="relative z-10 text-center max-w-3xl mx-auto px-6">
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-white mb-4" style={{ fontFamily: 'Montserrat, sans-serif' }}>

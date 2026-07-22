@@ -142,7 +142,7 @@ export default function About() {
       <section className="relative pt-40 pb-28 px-6 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-8"
-          style={{ backgroundImage: `url(${import.meta.env.BASE_URL}assets/lab equipment 1.png)` }}
+          style={{ backgroundImage: `url(${import.meta.env.BASE_URL}assets/opt/lab-equipment-1-1280.webp)` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A1628]/70 to-[#0A1628]" />
         <div className="relative z-10 max-w-4xl mx-auto text-center">
@@ -205,9 +205,14 @@ export default function About() {
           </div>
           <div className="relative">
             <img
-              src={`${import.meta.env.BASE_URL}assets/image 1.png`}
+              src={`${import.meta.env.BASE_URL}assets/opt/image-1-1280.webp`}
+              srcSet={`${import.meta.env.BASE_URL}assets/opt/image-1-640.webp 640w, ${import.meta.env.BASE_URL}assets/opt/image-1-1280.webp 1280w`}
+              sizes="(min-width: 768px) 576px, 100vw"
               alt="STRIATA lab"
+              width={2752}
+              height={1536}
               loading="lazy"
+              decoding="async"
               className="rounded-3xl w-full object-cover aspect-[4/5]"
             />
             <div className="hidden sm:block absolute -top-4 -left-4 bg-[#0d1e35] border border-white/10 rounded-2xl p-5 shadow-xl">
@@ -227,9 +232,14 @@ export default function About() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8 grid md:grid-cols-2 gap-16 items-center">
           <div className="relative">
             <img
-              src={`${import.meta.env.BASE_URL}assets/athlete 2.png`}
+              src={`${import.meta.env.BASE_URL}assets/opt/athlete-2-1280.webp`}
+              srcSet={`${import.meta.env.BASE_URL}assets/opt/athlete-2-640.webp 640w, ${import.meta.env.BASE_URL}assets/opt/athlete-2-1280.webp 1280w`}
+              sizes="(min-width: 768px) 576px, 100vw"
               alt="Training athlete"
+              width={1376}
+              height={768}
               loading="lazy"
+              decoding="async"
               className="rounded-3xl w-full object-cover aspect-[4/5]"
             />
           </div>
@@ -281,9 +291,14 @@ export default function About() {
           </div>
           <div className="relative">
             <img
-              src={`${import.meta.env.BASE_URL}assets/helix 2.png`}
+              src={`${import.meta.env.BASE_URL}assets/opt/helix-2-1280.webp`}
+              srcSet={`${import.meta.env.BASE_URL}assets/opt/helix-2-640.webp 640w, ${import.meta.env.BASE_URL}assets/opt/helix-2-1280.webp 1280w`}
+              sizes="(min-width: 768px) 576px, 100vw"
               alt="DNA helix"
+              width={2752}
+              height={1536}
               loading="lazy"
+              decoding="async"
               className="rounded-3xl w-full object-cover aspect-square"
             />
           </div>
@@ -314,9 +329,14 @@ export default function About() {
       <section ref={addRef} className="py-24 max-w-7xl mx-auto px-6 lg:px-8">
         <div className="relative rounded-3xl overflow-hidden">
           <img
-            src={`${import.meta.env.BASE_URL}assets/hero background 2.png`}
+            src={`${import.meta.env.BASE_URL}assets/opt/hero-background-2-1920.webp`}
+            srcSet={`${import.meta.env.BASE_URL}assets/opt/hero-background-2-768.webp 768w, ${import.meta.env.BASE_URL}assets/opt/hero-background-2-1280.webp 1280w, ${import.meta.env.BASE_URL}assets/opt/hero-background-2-1920.webp 1920w`}
+            sizes="(min-width: 1280px) 1216px, 100vw"
             alt="South Africa"
+            width={2752}
+            height={1536}
             loading="lazy"
+            decoding="async"
             className="w-full h-96 object-cover"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0A1628]/95 via-[#0A1628]/70 to-transparent flex items-center">

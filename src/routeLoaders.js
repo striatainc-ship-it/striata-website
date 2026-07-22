@@ -19,19 +19,34 @@ export const loaders = {
 }
 
 /**
- * Load the chunk for `pathname` before hydration.
+ * Route components that have finished loading, keyed the same way.
  *
- * Prerendered pages ship the real markup, but a lazy route's chunk isn't in
- * memory yet at hydrate time, so the boundary would suspend and React would
- * throw away the server HTML and re-render it on the client. Awaiting the
- * chunk first makes hydration match what the prerenderer wrote.
+ * App.jsx prefers one of these over the React.lazy wrapper. That matters for
+ * the landing route: a lazy component suspends on its first render even when
+ * the module is already in memory, and a boundary that suspends mid-hydration
+ * makes React throw away the prerendered HTML and rebuild it on the client.
  */
-export function preloadRoute(pathname) {
+export const resolved = new Map()
+
+/** Which loader key handles this pathname, or null for the eager homepage. */
+function matchLoader(pathname) {
   const path = pathname.replace(/\/+$/, '') || '/'
 
-  if (loaders[path]) return loaders[path]()
-  if (path.startsWith('/learn/')) return loaders['/learn/:slug']()
-  if (path.startsWith('/guides/')) return loaders['/guides/:slug']()
+  if (loaders[path]) return path
+  if (path.startsWith('/learn/')) return '/learn/:slug'
+  if (path.startsWith('/guides/')) return '/guides/:slug'
 
-  return Promise.resolve() // '/' is eager, and unknown paths render the SPA shell.
+  return null
+}
+
+/**
+ * Load the chunk for `pathname` and record it, so the first render after this
+ * resolves can mount the component synchronously.
+ */
+export async function preloadRoute(pathname) {
+  const key = matchLoader(pathname)
+  if (!key) return // '/' is eager, and unknown paths render the SPA shell.
+
+  const module = await loaders[key]()
+  resolved.set(key, module.default)
 }

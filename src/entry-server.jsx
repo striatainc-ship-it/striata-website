@@ -1,11 +1,28 @@
 import { StrictMode } from 'react'
-import { Writable } from 'node:stream'
-import { renderToPipeableStream } from 'react-dom/server'
+import { renderToString } from 'react-dom/server'
 import { StaticRouter } from 'react-router'
 import { HelmetProvider } from 'react-helmet-async'
 import { Layout } from './App.jsx'
+import AppRoutes from './AppRoutes'
+import { loaders } from './routeLoaders'
 import { blogPosts } from './data/blogPosts'
 import { guides } from './data/guidesData'
+
+/**
+ * Import every route component up front.
+ *
+ * Code splitting is pointless here — the server bundle is never sent to a
+ * browser — and it is actively harmful: a React.lazy component suspends, and
+ * anything that suspends gets emitted as a deferred Suspense boundary rather
+ * than inline HTML. Resolving them first means the render is fully synchronous.
+ */
+const routesElement = AppRoutes({
+  components: Object.fromEntries(
+    await Promise.all(
+      Object.entries(loaders).map(async ([path, load]) => [path, (await load()).default]),
+    ),
+  ),
+})
 
 /**
  * Every URL the site serves, derived from the same data the pages render from.
@@ -39,62 +56,36 @@ export function getRoutes() {
 /**
  * Render one route to a complete HTML string.
  *
- * Uses renderToPipeableStream (not renderToString) because the routes are
- * React.lazy: onAllReady fires only once every Suspense boundary has resolved,
- * so the markup we collect is the real page, never the fallback.
+ * renderToString, not one of the streaming renderers. Streaming (and
+ * react-dom/static, which shares the machinery) flushes the shell as soon as it
+ * is ready and defers the contents of a Suspense boundary into a hidden
+ * <div id="S:0"> plus a script that moves it into place on the next animation
+ * frame. It does that whether or not the boundary actually suspended. Right for
+ * a live server, wrong here: the page would be invisible to anything reading
+ * the raw HTML, and blank in a background tab, where requestAnimationFrame
+ * never fires.
+ *
+ * renderToString has no such phase. It cannot wait on anything — which is
+ * exactly why the route components above are imported up front — and it writes
+ * the Suspense boundary inline, with the same hydration markers the browser
+ * expects.
  *
  * Returns the markup only. On React 19 the per-page title/meta/canonical are
  * hoisted into the front of this markup rather than into Helmet's context —
  * scripts/prerender.mjs lifts them from there into <head>.
  */
-export function render(url) {
+export async function render(url) {
   const helmetContext = {}
 
-  return new Promise((resolve, reject) => {
-    const chunks = []
-    let settled = false
+  const html = renderToString(
+    <StrictMode>
+      <HelmetProvider context={helmetContext}>
+        <StaticRouter location={url}>
+          <Layout routes={routesElement} />
+        </StaticRouter>
+      </HelmetProvider>
+    </StrictMode>,
+  )
 
-    const sink = new Writable({
-      write(chunk, _enc, cb) {
-        chunks.push(Buffer.from(chunk))
-        cb()
-      },
-      final(cb) {
-        if (!settled) {
-          settled = true
-          resolve({ html: Buffer.concat(chunks).toString('utf8') })
-        }
-        cb()
-      },
-    })
-
-    const { pipe, abort } = renderToPipeableStream(
-      <StrictMode>
-        <HelmetProvider context={helmetContext}>
-          <StaticRouter location={url}>
-            <Layout />
-          </StaticRouter>
-        </HelmetProvider>
-      </StrictMode>,
-      {
-        onAllReady() {
-          pipe(sink)
-        },
-        onError(error) {
-          if (settled) return
-          settled = true
-          reject(error)
-        },
-      },
-    )
-
-    // Guard against a route that never resolves.
-    const timer = setTimeout(() => {
-      if (settled) return
-      settled = true
-      abort()
-      reject(new Error(`Timed out prerendering ${url}`))
-    }, 30000)
-    timer.unref?.()
-  })
+  return { html }
 }
