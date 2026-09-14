@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { whatsappLink } from '../data/products'
+import Reveal from '../components/Reveal'
 import JsonLd from '../components/JsonLd'
 
 const WA_ICON = (
@@ -142,7 +143,7 @@ function FAQItem({ q, a }) {
         onClick={() => setOpen(!open)}
         className="w-full flex items-start justify-between gap-4 py-5 text-left"
       >
-        <span className="text-white font-semibold text-sm md:text-base leading-snug" style={{ fontFamily: 'Inter, sans-serif' }}>
+        <span className="text-white font-semibold text-sm md:text-base leading-snug" style={{ fontFamily: 'var(--font-body)' }}>
           {q}
         </span>
         <svg
@@ -199,8 +200,8 @@ export default function FAQ() {
       {/* Hero */}
       <section className="relative pt-40 pb-20 px-6 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-[#00B4B4]/5 to-transparent" />
-        <div className="relative z-10 max-w-3xl mx-auto text-center">
-          <h1 className="text-3xl sm:text-4xl md:text-6xl font-black text-white mb-5" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+        <Reveal stagger delay={0.1} className="relative z-10 max-w-3xl mx-auto text-center">
+          <h1 className="text-3xl sm:text-4xl md:text-6xl font-black text-white mb-5 tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>
             Frequently Asked <span className="text-[#00B4B4]">Questions</span>
           </h1>
           <p className="text-white/60 text-lg mb-8">
@@ -218,7 +219,7 @@ export default function FAQ() {
               className="w-full bg-[#0d1e35] border border-white/10 rounded-full pl-11 pr-5 py-3.5 text-white placeholder-white/30 text-sm focus:outline-none focus:border-[#00B4B4]/50 transition-colors"
             />
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* FAQ Sections */}
@@ -228,7 +229,7 @@ export default function FAQ() {
             <div key={title} className="mb-10">
               <h2
                 className="text-[#00B4B4] text-xs font-bold uppercase tracking-widest mb-4"
-                style={{ fontFamily: 'Montserrat, sans-serif' }}
+                style={{ fontFamily: 'var(--font-heading)' }}
               >
                 {title}
               </h2>
@@ -259,7 +260,7 @@ export default function FAQ() {
               </svg>
             </div>
             <div>
-              <h2 className="text-white font-bold text-lg mb-1" style={{ fontFamily: 'Montserrat, sans-serif' }}>Legal & Policies</h2>
+              <h2 className="text-white font-bold text-lg mb-1" style={{ fontFamily: 'var(--font-heading)' }}>Legal & Policies</h2>
               <p className="text-white/50 text-sm">Read our full terms, privacy policy, shipping and refund policies.</p>
             </div>
           </div>
@@ -276,7 +277,7 @@ export default function FAQ() {
                 key={anchor}
                 to={`/legal#${anchor}`}
                 className="text-white/60 hover:text-[#00B4B4] text-xs border border-white/8 hover:border-[#00B4B4]/30 rounded-xl px-3 py-2.5 transition-all duration-200 text-center"
-                style={{ fontFamily: 'Inter, sans-serif' }}
+                style={{ fontFamily: 'var(--font-body)' }}
               >
                 {label}
               </Link>
@@ -285,7 +286,7 @@ export default function FAQ() {
           <Link
             to="/legal"
             className="inline-flex items-center gap-2 text-[#00B4B4] hover:text-white text-sm font-semibold transition-colors"
-            style={{ fontFamily: 'Inter, sans-serif' }}
+            style={{ fontFamily: 'var(--font-body)' }}
           >
             View all legal policies
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -297,7 +298,7 @@ export default function FAQ() {
 
       {/* CTA */}
       <section className="py-20 border-t border-white/8 text-center px-6">
-        <h2 className="text-2xl md:text-4xl font-black text-white mb-4" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+        <h2 className="text-2xl md:text-4xl font-black text-white mb-4" style={{ fontFamily: 'var(--font-heading)' }}>
           Still Have <span className="text-[#00B4B4]">Questions?</span>
         </h2>
         <p className="text-white/60 mb-8 max-w-md mx-auto">
@@ -307,8 +308,7 @@ export default function FAQ() {
           href={whatsappLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2.5 bg-[#00B4B4] hover:bg-[#009999] text-white font-bold text-base px-8 py-4 rounded-full transition-all duration-200 hover:shadow-xl hover:shadow-teal-500/30"
-          style={{ fontFamily: 'Montserrat, sans-serif' }}
+          className="btn btn-primary btn-lg"
         >
           {WA_ICON}
           Chat to Us on WhatsApp

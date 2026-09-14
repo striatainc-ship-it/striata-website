@@ -73,7 +73,7 @@ function renderBlock(block, key) {
   // h2
   if (first.startsWith('## ')) {
     return (
-      <h2 key={key} className="text-xl md:text-2xl font-black text-white mt-12 mb-4 pb-3 border-b border-white/8" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+      <h2 key={key} className="text-xl md:text-2xl font-black text-white mt-12 mb-4 pb-3 border-b border-white/8" style={{ fontFamily: 'var(--font-heading)' }}>
         {renderInline(first.slice(3))}
       </h2>
     )
@@ -82,7 +82,7 @@ function renderBlock(block, key) {
   // h3
   if (first.startsWith('### ')) {
     return (
-      <h3 key={key} className="text-base md:text-lg font-bold text-[#00B4B4] mt-9 mb-3 uppercase tracking-wide" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+      <h3 key={key} className="text-base md:text-lg font-bold text-[#00B4B4] mt-9 mb-3 uppercase tracking-wide" style={{ fontFamily: 'var(--font-heading)' }}>
         {renderInline(first.slice(4))}
       </h3>
     )
@@ -91,7 +91,7 @@ function renderBlock(block, key) {
   // h4
   if (first.startsWith('#### ')) {
     return (
-      <h4 key={key} className="text-base md:text-lg font-bold text-white mt-7 mb-2" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+      <h4 key={key} className="text-base md:text-lg font-bold text-white mt-7 mb-2" style={{ fontFamily: 'var(--font-heading)' }}>
         {renderInline(first.slice(5))}
       </h4>
     )
@@ -109,7 +109,7 @@ function renderBlock(block, key) {
             <thead className="bg-[#0d1e35]">
               <tr>
                 {headers.map((h, j) => (
-                  <th key={j} className="text-[#00B4B4] text-left py-3 px-4 font-semibold border-b border-white/8 whitespace-nowrap" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                  <th key={j} className="text-[#00B4B4] text-left py-3 px-4 font-semibold border-b border-white/8 whitespace-nowrap" style={{ fontFamily: 'var(--font-heading)' }}>
                     {renderInline(h)}
                   </th>
                 ))}
@@ -198,7 +198,7 @@ export default function GuidePost() {
     return (
       <div className="bg-[#0A1628] min-h-screen flex items-center justify-center px-6">
         <div className="text-center">
-          <h1 className="text-3xl font-black text-white mb-4" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+          <h1 className="text-3xl font-black text-white mb-4" style={{ fontFamily: 'var(--font-heading)' }}>
             Guide not found
           </h1>
           <Link to="/guides" className="text-[#00B4B4] hover:text-white transition-colors">
@@ -262,7 +262,7 @@ export default function GuidePost() {
           <div className="flex flex-wrap items-center gap-3 mb-6">
             <span
               className="text-[#00B4B4] text-xs font-bold uppercase tracking-widest bg-[#00B4B4]/10 border border-[#00B4B4]/20 px-3 py-1.5 rounded-full"
-              style={{ fontFamily: 'Montserrat, sans-serif' }}
+              style={{ fontFamily: 'var(--font-heading)' }}
             >
               {guide.category}
             </span>
@@ -270,7 +270,7 @@ export default function GuidePost() {
           </div>
           <h1
             className="text-2xl sm:text-3xl md:text-4xl font-black text-white leading-tight mb-5"
-            style={{ fontFamily: 'Montserrat, sans-serif' }}
+            style={{ fontFamily: 'var(--font-heading)' }}
           >
             {guide.title}
           </h1>
@@ -295,7 +295,7 @@ export default function GuidePost() {
           <div className="max-w-3xl mx-auto">
             <h2
               className="text-[#00B4B4] text-xs font-bold uppercase tracking-widest mb-5"
-              style={{ fontFamily: 'Montserrat, sans-serif' }}
+              style={{ fontFamily: 'var(--font-heading)' }}
             >
               More Guides
             </h2>
@@ -308,7 +308,7 @@ export default function GuidePost() {
                 >
                   <p
                     className="text-white font-semibold text-sm leading-snug mb-2 group-hover:text-[#00B4B4] transition-colors"
-                    style={{ fontFamily: 'Montserrat, sans-serif' }}
+                    style={{ fontFamily: 'var(--font-heading)' }}
                   >
                     {g.title}
                   </p>
@@ -326,7 +326,7 @@ export default function GuidePost() {
         <div className="relative z-10 max-w-2xl mx-auto text-center px-6">
           <h2
             className="text-2xl md:text-4xl font-black text-white mb-4"
-            style={{ fontFamily: 'Montserrat, sans-serif' }}
+            style={{ fontFamily: 'var(--font-heading)' }}
           >
             Still Have <span className="text-[#00B4B4]">Questions?</span>
           </h2>
@@ -337,8 +337,7 @@ export default function GuidePost() {
             href={whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2.5 bg-[#00B4B4] hover:bg-[#009999] text-white font-bold text-base px-8 py-4 rounded-full transition-all duration-200 hover:shadow-xl hover:shadow-teal-500/30"
-            style={{ fontFamily: 'Montserrat, sans-serif' }}
+            className="btn btn-primary btn-lg"
           >
             {WA_ICON}
             Chat to Us on WhatsApp →

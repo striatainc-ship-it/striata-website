@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { guides } from '../data/guidesData'
 import { whatsappLink } from '../data/products'
+import Reveal from '../components/Reveal'
 
 const WA_ICON = (
   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -35,12 +36,12 @@ function GuideCard({ guide }) {
           </span>
           <span className="text-white/30 text-xs">{guide.readTime}</span>
         </div>
-        <span className="text-[#00B4B4] text-xs font-bold uppercase tracking-widest mb-3" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+        <span className="text-[#00B4B4] text-xs font-bold uppercase tracking-widest mb-3" style={{ fontFamily: 'var(--font-heading)' }}>
           {guide.category}
         </span>
         <h3
           className="text-white font-bold text-lg leading-snug mb-3 group-hover:text-[#00B4B4] transition-colors"
-          style={{ fontFamily: 'Montserrat, sans-serif' }}
+          style={{ fontFamily: 'var(--font-heading)' }}
         >
           {guide.title}
         </h3>
@@ -71,24 +72,24 @@ export default function Guides() {
       {/* ── HERO ── */}
       <section className="relative pt-40 pb-16 px-6 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-[#00B4B4]/5 to-transparent" />
-        <div className="relative z-10 max-w-3xl mx-auto text-center">
+        <Reveal stagger delay={0.1} className="relative z-10 max-w-3xl mx-auto text-center">
           <div
             className="inline-flex items-center gap-2 text-[#00B4B4] text-xs font-bold uppercase tracking-widest mb-6 bg-[#00B4B4]/10 border border-[#00B4B4]/20 px-4 py-2 rounded-full"
-            style={{ fontFamily: 'Montserrat, sans-serif' }}
+            style={{ fontFamily: 'var(--font-heading)' }}
           >
             <span className="w-1.5 h-1.5 rounded-full bg-[#00B4B4]" />
             Practical Guides
           </div>
           <h1
             className="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-5 leading-tight"
-            style={{ fontFamily: 'Montserrat, sans-serif' }}
+            style={{ fontFamily: 'var(--font-heading)' }}
           >
             STRIATA <span className="text-[#00B4B4]">Guides</span>
           </h1>
           <p className="text-white/60 text-lg max-w-xl mx-auto">
             Step-by-step, reference-grade guides for handling peptides properly — from the vial to the bloodwork. Written to be printed, followed and trusted.
           </p>
-        </div>
+        </Reveal>
       </section>
 
       {/* ── GUIDE GRID ── */}
@@ -108,7 +109,7 @@ export default function Guides() {
         <div className="relative z-10 max-w-2xl mx-auto text-center">
           <h2
             className="text-2xl md:text-4xl font-black text-white mb-4"
-            style={{ fontFamily: 'Montserrat, sans-serif' }}
+            style={{ fontFamily: 'var(--font-heading)' }}
           >
             Need a Hand <span className="text-[#00B4B4]">Getting Started?</span>
           </h2>
@@ -119,8 +120,7 @@ export default function Guides() {
             href={whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2.5 bg-[#00B4B4] hover:bg-[#009999] text-white font-bold text-base px-8 py-4 rounded-full transition-all duration-200 hover:shadow-xl hover:shadow-teal-500/30"
-            style={{ fontFamily: 'Montserrat, sans-serif' }}
+            className="btn btn-primary btn-lg"
           >
             {WA_ICON}
             Chat to Us on WhatsApp →

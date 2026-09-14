@@ -21,6 +21,18 @@ const STACKS_ICON = (
   </svg>
 )
 
+const PENS_ICON = (
+  <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" />
+  </svg>
+)
+
+const SERUM_ICON = (
+  <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M12 21a8.25 8.25 0 005.83-14.08L12 1.5 6.17 6.92A8.25 8.25 0 0012 21z" />
+  </svg>
+)
+
 const navLinks = [
   { to: '/', label: 'Home' },
 ]
@@ -66,7 +78,10 @@ export default function Navbar() {
     to === '/' ? location.pathname === '/' : location.pathname.startsWith(to)
 
   const isCatalogueActive =
-    location.pathname.startsWith('/catalogue') || location.pathname.startsWith('/stacks')
+    location.pathname.startsWith('/catalogue') ||
+    location.pathname.startsWith('/stacks') ||
+    location.pathname.startsWith('/pens') ||
+    location.pathname.startsWith('/ghk-serum')
 
   return (
     <nav
@@ -92,7 +107,7 @@ export default function Navbar() {
                 className={`text-sm font-medium transition-colors duration-200 ${
                   isActive(to) ? 'text-[#00B4B4]' : 'text-white/80 hover:text-white'
                 }`}
-                style={{ fontFamily: 'Inter, sans-serif' }}
+                style={{ fontFamily: 'var(--font-body)' }}
               >
                 {label}
               </Link>
@@ -107,7 +122,7 @@ export default function Navbar() {
                 className={`flex items-center gap-1.5 text-sm font-medium transition-colors duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00B4B4] rounded-sm ${
                   isCatalogueActive ? 'text-[#00B4B4]' : 'text-white/80 hover:text-white'
                 }`}
-                style={{ fontFamily: 'Inter, sans-serif' }}
+                style={{ fontFamily: 'var(--font-body)' }}
               >
                 Shop
                 <svg
@@ -136,20 +151,44 @@ export default function Navbar() {
                       {CATALOGUE_ICON}
                     </span>
                     <div>
-                      <p className="text-white text-sm font-semibold" style={{ fontFamily: 'Montserrat, sans-serif' }}>Complete Catalogue</p>
+                      <p className="text-white text-sm font-semibold" style={{ fontFamily: 'var(--font-heading)' }}>Complete Catalogue</p>
                       <p className="text-white/45 text-xs mt-0.5">80+ research-grade peptides</p>
                     </div>
                   </Link>
                   <Link
+                    to="/pens"
+                    className="flex items-center gap-4 px-5 py-4 hover:bg-white/5 transition-colors duration-150 group border-b border-white/8"
+                  >
+                    <span className="w-10 h-10 rounded-xl bg-[#00B4B4]/10 flex items-center justify-center text-[#00B4B4] flex-shrink-0 group-hover:bg-[#00B4B4]/20 transition-colors duration-150">
+                      {PENS_ICON}
+                    </span>
+                    <div>
+                      <p className="text-white text-sm font-semibold" style={{ fontFamily: 'var(--font-heading)' }}>Peptide Pens</p>
+                      <p className="text-white/45 text-xs mt-0.5">Pre-filled pens, no reconstitution</p>
+                    </div>
+                  </Link>
+                  <Link
                     to="/stacks"
-                    className="flex items-center gap-4 px-5 py-4 hover:bg-white/5 transition-colors duration-150 group"
+                    className="flex items-center gap-4 px-5 py-4 hover:bg-white/5 transition-colors duration-150 group border-b border-white/8"
                   >
                     <span className="w-10 h-10 rounded-xl bg-[#00B4B4]/10 flex items-center justify-center text-[#00B4B4] flex-shrink-0 group-hover:bg-[#00B4B4]/20 transition-colors duration-150">
                       {STACKS_ICON}
                     </span>
                     <div>
-                      <p className="text-white text-sm font-semibold" style={{ fontFamily: 'Montserrat, sans-serif' }}>Peptide Stacks</p>
+                      <p className="text-white text-sm font-semibold" style={{ fontFamily: 'var(--font-heading)' }}>Peptide Stacks</p>
                       <p className="text-white/45 text-xs mt-0.5">10 curated goal-specific protocols</p>
+                    </div>
+                  </Link>
+                  <Link
+                    to="/ghk-serum"
+                    className="flex items-center gap-4 px-5 py-4 hover:bg-white/5 transition-colors duration-150 group"
+                  >
+                    <span className="w-10 h-10 rounded-xl bg-[#00B4B4]/10 flex items-center justify-center text-[#00B4B4] flex-shrink-0 group-hover:bg-[#00B4B4]/20 transition-colors duration-150">
+                      {SERUM_ICON}
+                    </span>
+                    <div>
+                      <p className="text-white text-sm font-semibold" style={{ fontFamily: 'var(--font-heading)' }}>GHK-Cu Serum</p>
+                      <p className="text-white/45 text-xs mt-0.5">Copper peptide skincare · 1% & 2%</p>
                     </div>
                   </Link>
                 </div>
@@ -163,7 +202,7 @@ export default function Navbar() {
                 className={`text-sm font-medium transition-colors duration-200 ${
                   isActive(to) ? 'text-[#00B4B4]' : 'text-white/80 hover:text-white'
                 }`}
-                style={{ fontFamily: 'Inter, sans-serif' }}
+                style={{ fontFamily: 'var(--font-body)' }}
               >
                 {label}
               </Link>
@@ -175,8 +214,7 @@ export default function Navbar() {
               href={whatsappLink}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 bg-[#00B4B4] hover:bg-[#009999] text-white text-sm font-semibold px-5 py-2.5 rounded-full transition-all duration-200 hover:shadow-lg hover:shadow-teal-500/30"
-              style={{ fontFamily: 'Inter, sans-serif' }}
+              className="btn btn-primary btn-sm"
             >
               {WA_SVG}
               WhatsApp
@@ -229,14 +267,22 @@ export default function Navbar() {
             </svg>
           </button>
 
-          <div className={`overflow-hidden transition-all duration-200 ${mobileShopOpen ? 'max-h-40' : 'max-h-0'}`}>
+          <div className={`overflow-hidden transition-all duration-200 ${mobileShopOpen ? 'max-h-80' : 'max-h-0'}`}>
             <Link to="/catalogue" className="flex items-center gap-3 pl-4 py-3 text-sm text-white/70 border-b border-white/5 hover:text-[#00B4B4] transition-colors">
               <svg className="w-4 h-4 text-[#00B4B4]/60" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 010 3.75H5.625a1.875 1.875 0 010-3.75z" /></svg>
               Complete Catalogue
             </Link>
+            <Link to="/pens" className="flex items-center gap-3 pl-4 py-3 text-sm text-white/70 border-b border-white/5 hover:text-[#00B4B4] transition-colors">
+              <svg className="w-4 h-4 text-[#00B4B4]/60" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" /></svg>
+              Peptide Pens
+            </Link>
             <Link to="/stacks" className="flex items-center gap-3 pl-4 py-3 text-sm text-white/70 border-b border-white/5 hover:text-[#00B4B4] transition-colors">
               <svg className="w-4 h-4 text-[#00B4B4]/60" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0l4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0l-5.571 3-5.571-3" /></svg>
               Peptide Stacks
+            </Link>
+            <Link to="/ghk-serum" className="flex items-center gap-3 pl-4 py-3 text-sm text-white/70 border-b border-white/5 hover:text-[#00B4B4] transition-colors">
+              <svg className="w-4 h-4 text-[#00B4B4]/60" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M12 21a8.25 8.25 0 005.83-14.08L12 1.5 6.17 6.92A8.25 8.25 0 0012 21z" /></svg>
+              GHK-Cu Serum
             </Link>
           </div>
 

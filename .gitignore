@@ -13,6 +13,9 @@ dist-ssr
 .ssr-dist
 *.local
 
+# Working notes, kept out of the repo deliberately
+docs/
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json

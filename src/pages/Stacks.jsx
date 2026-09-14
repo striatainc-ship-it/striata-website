@@ -1,6 +1,9 @@
 import { useState, useEffect, useRef } from 'react'
+import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
+import { spotlightProps } from '../lib/motion'
 import { STACKS, UNIVERSAL_CONTRAINDICATIONS, CATEGORY_META, waLink } from '../data/stacksData'
+import Reveal from '../components/Reveal'
 
 // ─── Tier colour system ──────────────────────────────────────────────────────
 // Entry = blue (accessible, introductory)
@@ -156,7 +159,7 @@ function StackCard({ stack }) {
               {String(stack.num).padStart(2, '0')}
             </span>
             <div className="min-w-0">
-              <h2 className="text-base font-black text-white leading-tight" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+              <h2 className="text-base font-black text-white leading-tight" style={{ fontFamily: 'var(--font-heading)' }}>
                 {stack.name}
               </h2>
               <p className="text-white/50 text-xs mt-0.5 italic">{stack.tagline}</p>
@@ -289,7 +292,7 @@ function UniversalContraindications() {
       >
         <div>
           <p className="text-xs font-bold uppercase tracking-widest text-white/35 mb-0.5">Applies to All Stacks</p>
-          <h3 className="text-base font-black text-white" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+          <h3 className="text-base font-black text-white" style={{ fontFamily: 'var(--font-heading)' }}>
             Universal Contraindications
           </h3>
         </div>
@@ -354,11 +357,11 @@ export default function Stacks() {
           className="absolute inset-0 opacity-5"
           style={{ backgroundImage: 'radial-gradient(circle at 20% 50%, #00B4B4 0%, transparent 50%), radial-gradient(circle at 80% 20%, #8B5CF6 0%, transparent 40%)' }}
         />
-        <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#00B4B4]/10 border border-[#00B4B4]/20 text-[#00B4B4] text-xs font-semibold uppercase tracking-widest mb-6">
+        <Reveal stagger delay={0.1} className="relative z-10 max-w-4xl mx-auto text-center">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#00B4B4]/10 border border-[#00B4B4]/20 text-[#00B4B4] text-xs font-semibold uppercase tracking-widest mb-6" style={{ fontFamily: 'var(--font-heading)' }}>
             Curated Protocols
           </span>
-          <h1 className="text-3xl md:text-6xl font-black text-white mb-5 leading-tight" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+          <h1 className="text-3xl md:text-6xl font-black text-white mb-5 leading-tight tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>
             Recommended <span className="text-[#00B4B4]">Peptide Stacks</span>
           </h1>
           <p className="text-white/60 text-lg max-w-2xl mx-auto mb-3">
@@ -382,7 +385,56 @@ export default function Stacks() {
           <div className="mt-3 pt-3 border-t border-white/8">
             <TierLegend />
           </div>
-        </div>
+        </Reveal>
+      </section>
+
+      {/* ── Featured protocol ── */}
+      <section className="max-w-7xl mx-auto px-4 md:px-6 pb-10 relative z-10">
+        <Reveal delay={0.4}>
+          <Link
+            to="/stacks/menopause-reset"
+            {...spotlightProps()}
+            className="spot group relative block rounded-3xl border border-[#F2B8A0]/25 hover:border-[#F2B8A0]/50 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-[#F2B8A0]/10"
+          >
+            <div
+              className="absolute inset-0 opacity-[0.12] transition-opacity duration-500 group-hover:opacity-[0.18]"
+              style={{ backgroundImage: 'radial-gradient(circle at 10% 50%, #F2B8A0 0%, transparent 45%), radial-gradient(circle at 90% 30%, #00B4B4 0%, transparent 45%), radial-gradient(circle at 60% 100%, #8B9CF6 0%, transparent 40%)' }}
+            />
+            <div className="absolute inset-0 bg-[#0d1e35]/80" />
+
+            <div className="relative grid lg:grid-cols-[1.4fr_1fr] gap-8 lg:gap-12 items-center p-7 md:p-10">
+              <div>
+                <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#F2B8A0]/10 border border-[#F2B8A0]/25 text-[#F2B8A0] text-[11px] font-bold uppercase tracking-widest mb-5" style={{ fontFamily: 'var(--font-heading)' }}>
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#F2B8A0]" />
+                  Featured Protocol · New
+                </span>
+                <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight leading-[1.05] mb-4" style={{ fontFamily: 'var(--font-heading)' }}>
+                  The Menopause <span className="text-[#F2B8A0]">Reset</span>
+                </h2>
+                <p className="text-white/65 text-base md:text-lg leading-relaxed max-w-xl mb-6">
+                  A 12-week, four-stack protocol built around the four symptom clusters that tend to arrive together: broken sleep, collagen loss, loss of libido, and aging in fast-forward. Supplied through your practitioner.
+                </p>
+                <span className="btn btn-primary btn-lg">
+                  Explore the Reset
+                  <svg className="w-4 h-4 btn-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" /></svg>
+                </span>
+              </div>
+
+              <div className="grid grid-cols-3 lg:grid-cols-1 gap-3">
+                {[
+                  { n: '12', l: 'Weeks' },
+                  { n: '4', l: 'Targeted stacks' },
+                  { n: '21', l: 'Vials, water included' },
+                ].map(({ n, l }) => (
+                  <div key={l} className="rounded-2xl bg-white/[0.04] border border-white/8 px-4 py-4 lg:flex lg:items-baseline lg:gap-3">
+                    <p className="text-white font-black text-3xl md:text-4xl leading-none tabular-nums" style={{ fontFamily: 'var(--font-heading)' }}>{n}</p>
+                    <p className="text-white/45 text-xs mt-1 lg:mt-0">{l}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </Link>
+        </Reveal>
       </section>
 
       {/* ── Filter Bar ── */}

@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Helmet } from 'react-helmet-async'
 import emailjs from '@emailjs/browser'
 import { whatsappNumbers } from '../data/products'
+import Reveal from '../components/Reveal'
 
 const WA_ICON = (
   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -68,14 +69,14 @@ export default function Contact() {
           style={{ backgroundImage: `url(${import.meta.env.BASE_URL}assets/opt/background-overlay-2-1920.webp)` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A1628]/60 to-[#0A1628]" />
-        <div className="relative z-10 max-w-3xl mx-auto text-center">
-          <h1 className="text-3xl md:text-6xl font-black text-white mb-5" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+        <Reveal stagger delay={0.1} className="relative z-10 max-w-3xl mx-auto text-center">
+          <h1 className="text-3xl md:text-6xl font-black text-white mb-5 tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>
             Get In <span className="text-[#00B4B4]">Touch</span>
           </h1>
           <p className="text-white/60 text-lg max-w-2xl mx-auto">
             Whether you have a question about our products, need help with an order or want to discuss bulk supply. We're here and we respond fast. Reach out on WhatsApp for the quickest response.
           </p>
-        </div>
+        </Reveal>
       </section>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 pb-24">
@@ -84,7 +85,7 @@ export default function Contact() {
           <div>
             {/* WhatsApp Buttons */}
             <div className="bg-[#0d1e35] border border-white/8 rounded-2xl p-5 md:p-7 mb-6">
-              <h2 className="text-white font-bold text-xl mb-2" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+              <h2 className="text-white font-bold text-xl mb-2" style={{ fontFamily: 'var(--font-heading)' }}>
                 Chat to Us Directly
               </h2>
               <p className="text-white/50 text-sm mb-5">
@@ -98,7 +99,7 @@ export default function Contact() {
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-3 bg-[#25D366]/10 hover:bg-[#25D366] border border-[#25D366]/20 hover:border-[#25D366] text-[#25D366] hover:text-white px-5 py-3.5 rounded-xl transition-all duration-200 font-semibold text-sm"
-                    style={{ fontFamily: 'Inter, sans-serif' }}
+                    style={{ fontFamily: 'var(--font-body)' }}
                   >
                     {WA_ICON}
                     Chat on WhatsApp: {display}
@@ -113,7 +114,7 @@ export default function Contact() {
 
             {/* Contact Details */}
             <div className="bg-[#0d1e35] border border-white/8 rounded-2xl p-5 md:p-7 mb-6">
-              <h2 className="text-white font-bold text-xl mb-5" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+              <h2 className="text-white font-bold text-xl mb-5" style={{ fontFamily: 'var(--font-heading)' }}>
                 Contact Us
               </h2>
               <ul className="space-y-4">
@@ -154,7 +155,7 @@ export default function Contact() {
 
             {/* Social */}
             <div className="bg-[#0d1e35] border border-white/8 rounded-2xl p-5 md:p-7">
-              <h2 className="text-white font-bold text-xl mb-2" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+              <h2 className="text-white font-bold text-xl mb-2" style={{ fontFamily: 'var(--font-heading)' }}>
                 Follow Us
               </h2>
               <p className="text-white/50 text-sm mb-5">Stay up to date with new products, research insights and STRIATA news.</p>
@@ -187,7 +188,7 @@ export default function Contact() {
 
           {/* Right — Contact Form */}
           <div className="bg-[#0d1e35] border border-white/8 rounded-2xl p-5 md:p-7">
-            <h2 className="text-white font-bold text-xl mb-2" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+            <h2 className="text-white font-bold text-xl mb-2" style={{ fontFamily: 'var(--font-heading)' }}>
               Send Us a Message
             </h2>
             <p className="text-white/50 text-sm mb-6">
@@ -201,7 +202,7 @@ export default function Contact() {
                     <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                   </svg>
                 </div>
-                <h3 className="text-white font-bold text-xl mb-2" style={{ fontFamily: 'Montserrat, sans-serif' }}>Message Sent!</h3>
+                <h3 className="text-white font-bold text-xl mb-2" style={{ fontFamily: 'var(--font-heading)' }}>Message Sent!</h3>
                 <p className="text-white/60 text-sm">We'll get back to you within 1 business day.</p>
                 <button
                   onClick={() => setStatus('idle')}
@@ -289,7 +290,7 @@ export default function Contact() {
                   type="submit"
                   disabled={status === 'sending'}
                   className="w-full bg-[#00B4B4] hover:bg-[#009999] disabled:opacity-60 text-white font-bold py-4 rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-teal-500/20 flex items-center justify-center gap-2"
-                  style={{ fontFamily: 'Montserrat, sans-serif' }}
+                  style={{ fontFamily: 'var(--font-heading)' }}
                 >
                   {status === 'sending' ? (
                     <>

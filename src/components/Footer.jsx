@@ -15,20 +15,21 @@ export default function Footer() {
             <p className="text-white/50 text-sm leading-relaxed">
               South Africa's premier source for research-grade peptides. Purity you can trust.
             </p>
-            <p className="text-[#00B4B4] text-sm font-semibold mt-3 tracking-wide" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+            <p className="text-[#00B4B4] text-sm font-semibold mt-3 tracking-wide" style={{ fontFamily: 'var(--font-heading)' }}>
               Think Strong. Train Smarter.
             </p>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h4 className="text-white font-semibold text-sm uppercase tracking-widest mb-4" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+            <h4 className="text-white font-semibold text-sm uppercase tracking-widest mb-4" style={{ fontFamily: 'var(--font-heading)' }}>
               Quick Links
             </h4>
             <ul className="space-y-2.5">
               {[
                 { to: '/', label: 'Home' },
                 { to: '/catalogue', label: 'Catalogue' },
+                { to: '/pens', label: 'Peptide Pens' },
                 { to: '/about', label: 'About Us' },
                 { to: '/guides', label: 'Guides' },
                 { to: '/faq', label: 'FAQ' },
@@ -45,7 +46,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-white font-semibold text-sm uppercase tracking-widest mb-4" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+            <h4 className="text-white font-semibold text-sm uppercase tracking-widest mb-4" style={{ fontFamily: 'var(--font-heading)' }}>
               Contact
             </h4>
             <ul className="space-y-3">
@@ -87,7 +88,7 @@ export default function Footer() {
 
           {/* Hours & Social */}
           <div>
-            <h4 className="text-white font-semibold text-sm uppercase tracking-widest mb-4" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+            <h4 className="text-white font-semibold text-sm uppercase tracking-widest mb-4" style={{ fontFamily: 'var(--font-heading)' }}>
               Business Hours
             </h4>
             <ul className="space-y-1.5 text-sm text-white/50 mb-6">

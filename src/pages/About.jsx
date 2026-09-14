@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet-async'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { whatsappLink } from '../data/products'
+import Reveal from '../components/Reveal'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -145,17 +146,17 @@ export default function About() {
           style={{ backgroundImage: `url(${import.meta.env.BASE_URL}assets/opt/lab-equipment-1-1280.webp)` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A1628]/70 to-[#0A1628]" />
-        <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 text-[#00B4B4] text-xs font-bold uppercase tracking-widest mb-6 bg-[#00B4B4]/10 border border-[#00B4B4]/20 px-4 py-2 rounded-full" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+        <Reveal stagger delay={0.1} className="relative z-10 max-w-4xl mx-auto text-center">
+          <div className="inline-flex items-center gap-2 text-[#00B4B4] text-xs font-bold uppercase tracking-widest mb-6 bg-[#00B4B4]/10 border border-[#00B4B4]/20 px-4 py-2 rounded-full" style={{ fontFamily: 'var(--font-heading)' }}>
             Our Story
           </div>
-          <h1 className="text-3xl sm:text-5xl md:text-7xl font-black text-white mb-6 leading-none" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+          <h1 className="text-3xl sm:text-5xl md:text-7xl font-black text-white mb-6 leading-none tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>
             About <span className="text-[#00B4B4]">STRIATA</span>
           </h1>
           <p className="text-white/60 text-base md:text-xl max-w-2xl mx-auto">
             South Africa's benchmark for peptide purity and trust.
           </p>
-        </div>
+        </Reveal>
       </section>
 
       {/* Stats Banner */}
@@ -167,7 +168,7 @@ export default function About() {
                 <p
                   ref={(el) => addStatRef(el, i)}
                   className="text-3xl md:text-5xl font-black text-[#00B4B4] mb-1"
-                  style={{ fontFamily: 'Montserrat, sans-serif' }}
+                  style={{ fontFamily: 'var(--font-heading)' }}
                 >
                   0{suffix}
                 </p>
@@ -182,10 +183,10 @@ export default function About() {
       <section ref={addRef} className="py-24 max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div>
-            <div className="inline-flex items-center gap-2 text-[#00B4B4] text-xs font-bold uppercase tracking-widest mb-5 bg-[#00B4B4]/10 border border-[#00B4B4]/20 px-4 py-2 rounded-full" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+            <div className="inline-flex items-center gap-2 text-[#00B4B4] text-xs font-bold uppercase tracking-widest mb-5 bg-[#00B4B4]/10 border border-[#00B4B4]/20 px-4 py-2 rounded-full" style={{ fontFamily: 'var(--font-heading)' }}>
               Where It Started
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-white mb-6 leading-tight" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-white mb-6 leading-tight" style={{ fontFamily: 'var(--font-heading)' }}>
               Born from a <span className="text-[#00B4B4]">Crisis.</span> Built for <span className="text-[#00B4B4]">Performance.</span>
             </h2>
             <div className="space-y-4 text-white/60 leading-relaxed">
@@ -216,11 +217,11 @@ export default function About() {
               className="rounded-3xl w-full object-cover aspect-[4/5]"
             />
             <div className="hidden sm:block absolute -top-4 -left-4 bg-[#0d1e35] border border-white/10 rounded-2xl p-5 shadow-xl">
-              <p className="text-[#00B4B4] font-black text-2xl" style={{ fontFamily: 'Montserrat, sans-serif' }}>2021</p>
+              <p className="text-[#00B4B4] font-black text-2xl" style={{ fontFamily: 'var(--font-heading)' }}>2021</p>
               <p className="text-white/60 text-xs mt-0.5">Founded in SA</p>
             </div>
             <div className="hidden sm:block absolute -bottom-4 -right-4 bg-[#00B4B4] rounded-2xl p-5 shadow-xl">
-              <p className="text-white font-black text-2xl" style={{ fontFamily: 'Montserrat, sans-serif' }}>99%</p>
+              <p className="text-white font-black text-2xl" style={{ fontFamily: 'var(--font-heading)' }}>99%</p>
               <p className="text-white/80 text-xs mt-0.5">Purity Standard</p>
             </div>
           </div>
@@ -244,10 +245,10 @@ export default function About() {
             />
           </div>
           <div>
-            <div className="inline-flex items-center gap-2 text-[#00B4B4] text-xs font-bold uppercase tracking-widest mb-5 bg-[#00B4B4]/10 border border-[#00B4B4]/20 px-4 py-2 rounded-full" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+            <div className="inline-flex items-center gap-2 text-[#00B4B4] text-xs font-bold uppercase tracking-widest mb-5 bg-[#00B4B4]/10 border border-[#00B4B4]/20 px-4 py-2 rounded-full" style={{ fontFamily: 'var(--font-heading)' }}>
               Our Mission
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-white mb-6" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-white mb-6" style={{ fontFamily: 'var(--font-heading)' }}>
               Why We <span className="text-[#00B4B4]">Exist</span>
             </h2>
             <blockquote className="border-l-4 border-[#00B4B4] pl-5 mb-6">
@@ -271,10 +272,10 @@ export default function About() {
       <section ref={addRef} className="py-24 max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div>
-            <div className="inline-flex items-center gap-2 text-[#00B4B4] text-xs font-bold uppercase tracking-widest mb-5 bg-[#00B4B4]/10 border border-[#00B4B4]/20 px-4 py-2 rounded-full" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+            <div className="inline-flex items-center gap-2 text-[#00B4B4] text-xs font-bold uppercase tracking-widest mb-5 bg-[#00B4B4]/10 border border-[#00B4B4]/20 px-4 py-2 rounded-full" style={{ fontFamily: 'var(--font-heading)' }}>
               The Science
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-white mb-6 leading-tight" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-white mb-6 leading-tight" style={{ fontFamily: 'var(--font-heading)' }}>
               The Science Behind <span className="text-[#00B4B4]">the Compound</span>
             </h2>
             <div className="space-y-4 text-white/60 leading-relaxed">
@@ -309,7 +310,7 @@ export default function About() {
       <section ref={addRef} className="py-24 bg-[#060e1a]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-black text-white mb-4" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+            <h2 className="text-3xl md:text-5xl font-black text-white mb-4" style={{ fontFamily: 'var(--font-heading)' }}>
               What We <span className="text-[#00B4B4]">Stand For</span>
             </h2>
           </div>
@@ -317,7 +318,7 @@ export default function About() {
             {values.map(({ icon, title, desc }) => (
               <div key={title} className="bg-[#0d1e35] border border-white/8 rounded-2xl p-5 md:p-7 hover:border-[#00B4B4]/30 transition-colors">
                 {icon}
-                <h3 className="text-white font-bold text-xl mb-3" style={{ fontFamily: 'Montserrat, sans-serif' }}>{title}</h3>
+                <h3 className="text-white font-bold text-xl mb-3" style={{ fontFamily: 'var(--font-heading)' }}>{title}</h3>
                 <p className="text-white/50 text-sm leading-relaxed">{desc}</p>
               </div>
             ))}
@@ -346,7 +347,7 @@ export default function About() {
                   <path d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" /><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
                 </svg>
               </div>
-              <h2 className="text-3xl md:text-4xl font-black text-white mb-4" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+              <h2 className="text-3xl md:text-4xl font-black text-white mb-4" style={{ fontFamily: 'var(--font-heading)' }}>
                 Local Stock. Local Support. <span className="text-[#00B4B4]">Nationwide Delivery.</span>
               </h2>
               <p className="text-white/60 text-sm leading-relaxed mb-6">
@@ -354,11 +355,10 @@ export default function About() {
               </p>
               <Link
                 to="/catalogue"
-                className="inline-flex items-center gap-2 bg-[#00B4B4] hover:bg-[#009999] text-white font-bold px-6 py-3 rounded-full text-sm transition-all"
-                style={{ fontFamily: 'Montserrat, sans-serif' }}
+                className="btn btn-primary btn-md"
               >
                 Browse the Catalogue
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 btn-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </Link>
@@ -369,7 +369,7 @@ export default function About() {
 
       {/* CTA */}
       <section ref={addRef} className="py-24 text-center px-6">
-        <h2 className="text-3xl md:text-5xl font-black text-white mb-4" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+        <h2 className="text-3xl md:text-5xl font-black text-white mb-4" style={{ fontFamily: 'var(--font-heading)' }}>
           Ready to Experience <span className="text-[#00B4B4]">the Difference?</span>
         </h2>
         <p className="text-white/60 text-lg mb-10 max-w-xl mx-auto">
@@ -379,8 +379,7 @@ export default function About() {
           href={whatsappLink}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex items-center gap-2.5 bg-[#00B4B4] hover:bg-[#009999] text-white font-bold text-base px-8 py-4 rounded-full transition-all duration-200 hover:shadow-xl hover:shadow-teal-500/30"
-          style={{ fontFamily: 'Montserrat, sans-serif' }}
+          className="btn btn-primary btn-lg"
         >
           {WA_ICON}
           Chat to Us on WhatsApp

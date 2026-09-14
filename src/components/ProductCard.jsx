@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { whatsappLink } from '../data/products'
+import { whatsappLink, isInStock } from '../data/products'
+import { spotlightProps } from '../lib/motion'
 
 const WA_ICON = (
   <svg className="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24">
@@ -19,6 +20,11 @@ const ChevronDown = ({ open }) => (
   </svg>
 )
 
+const StockDot = ({ tier }) =>
+  tier.inStock ? (
+    <span className="w-1.5 h-1.5 rounded-full bg-green-400 shrink-0" aria-label="In stock" />
+  ) : null
+
 function fmtFull(price) {
   return `R ${price.toLocaleString('en-ZA')}`
 }
@@ -29,7 +35,10 @@ function fmtShort(price) {
     : `R ${price}`
 }
 
-export default function ProductCard({ product }) {
+export default function ProductCard({ product, format: formatProp = 'Vial' }) {
+  // A product can name its own format (the topical serum is a bottle);
+  // otherwise the page decides, e.g. the pens page passes "Pen".
+  const format = product.format || formatProp
   const [selectedTier, setSelectedTier] = useState(null)
   const [isPricingOpen, setIsPricingOpen] = useState(false)
 
@@ -37,12 +46,19 @@ export default function ProductCard({ product }) {
   const isSingleTier = hasPrices && product.prices.length === 1
   const lowestPrice = hasPrices ? Math.min(...product.prices.map((p) => p.price)) : null
   const useTwoCols = hasPrices && product.prices.length >= 4
+  const inStock = isInStock(product)
 
   const buildWaLink = () => {
     const tier = selectedTier || (isSingleTier ? product.prices[0] : null)
-    const msg = tier
-      ? `Hi STRIATA, I'd like to order *${product.name}* — ${tier.dose} @ ${fmtFull(tier.price)}. Please confirm availability.`
-      : `Hi STRIATA, I'd like to enquire about *${product.name}*. Please send me pricing and availability.`
+    const label = format === 'Vial' ? product.name : `${product.name} (${format})`
+    let msg
+    if (tier && tier.inStock) {
+      msg = `Hi STRIATA, I'd like to order *${label}* — ${tier.dose} @ ${fmtFull(tier.price)}. Please send me payment details.`
+    } else if (tier) {
+      msg = `Hi STRIATA, I'm interested in *${label}* — ${tier.dose} @ ${fmtFull(tier.price)}. Is it currently available or when will it be back in stock?`
+    } else {
+      msg = `Hi STRIATA, I'd like to enquire about *${label}*. Please send me pricing and availability.`
+    }
     return `${whatsappLink}?text=${encodeURIComponent(msg)}`
   }
 
@@ -55,22 +71,43 @@ export default function ProductCard({ product }) {
     : `from ${fmtShort(lowestPrice)} · ${product.prices.length} sizes`
 
   return (
-    <div className="group bg-[#0d1e35] border border-white/8 rounded-2xl p-3.5 md:p-5 flex flex-col hover:border-[#00B4B4]/40 hover:bg-[#0f2340] transition-all duration-300 hover:shadow-lg hover:shadow-[#00B4B4]/5">
+    <div
+      {...spotlightProps()}
+      className="spot group bg-[#0d1e35] border border-white/8 rounded-2xl p-3.5 md:p-5 flex flex-col hover:border-[#00B4B4]/40 transition-all duration-300 hover:shadow-xl hover:shadow-[#00B4B4]/10 md:hover:-translate-y-1"
+    >
 
-      {/* Popular badge */}
-      {product.featured && (
-        <span
-          className="self-start text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-[#00B4B4] bg-[#00B4B4]/10 border border-[#00B4B4]/20 px-2 py-0.5 rounded-full mb-2.5"
-          style={{ fontFamily: 'Montserrat, sans-serif' }}
-        >
-          Popular
-        </span>
-      )}
+      {/* Badges */}
+      <div className="flex flex-wrap items-center gap-1.5 mb-2.5">
+        {product.featured && (
+          <span
+            className="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-[#00B4B4] bg-[#00B4B4]/10 border border-[#00B4B4]/20 px-2 py-0.5 rounded-full"
+            style={{ fontFamily: 'var(--font-heading)' }}
+          >
+            Popular
+          </span>
+        )}
+        {inStock ? (
+          <span
+            className="inline-flex items-center gap-1 text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-green-400 bg-green-400/10 border border-green-400/20 px-2 py-0.5 rounded-full"
+            style={{ fontFamily: 'var(--font-heading)' }}
+          >
+            <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
+            In Stock
+          </span>
+        ) : (
+          <span
+            className="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-white/35 bg-white/5 border border-white/10 px-2 py-0.5 rounded-full"
+            style={{ fontFamily: 'var(--font-heading)' }}
+          >
+            Out of Stock
+          </span>
+        )}
+      </div>
 
       {/* Name */}
       <h3
         className="text-white font-bold text-sm md:text-base mb-1.5 md:mb-2 group-hover:text-[#00B4B4] transition-colors leading-snug line-clamp-2"
-        style={{ fontFamily: 'Montserrat, sans-serif' }}
+        style={{ fontFamily: 'var(--font-heading)' }}
       >
         {product.name}
       </h3>
@@ -101,7 +138,8 @@ export default function ProductCard({ product }) {
           {/* Single tier — same on all screen sizes */}
           {isSingleTier ? (
             <div className="flex items-center justify-between bg-[#00B4B4]/8 border border-[#00B4B4]/20 rounded-xl px-3 py-2.5">
-              <span className="text-white/70 text-xs font-mono tracking-wide">
+              <span className="inline-flex items-center gap-1.5 text-white/70 text-xs font-mono tracking-wide">
+                <StockDot tier={product.prices[0]} />
                 {product.prices[0].dose}
               </span>
               <span className="text-white text-sm font-bold">
@@ -135,10 +173,15 @@ export default function ProductCard({ product }) {
                         className={`flex items-center justify-between px-3 py-2 rounded-xl text-xs transition-all duration-150 ${
                           isSelected
                             ? 'bg-[#00B4B4]/15 border border-[#00B4B4]/60 text-white'
-                            : 'bg-white/[0.04] border border-white/8 text-white/60'
+                            : tier.inStock
+                              ? 'bg-white/[0.04] border border-white/8 text-white/60'
+                              : 'bg-white/[0.02] border border-white/5 text-white/35'
                         }`}
                       >
-                        <span className="font-mono tracking-wide">{tier.dose}</span>
+                        <span className="inline-flex items-center gap-1.5 font-mono tracking-wide">
+                          <StockDot tier={tier} />
+                          {tier.dose}
+                        </span>
                         <span className={`font-bold tabular-nums ${isSelected ? 'text-[#00B4B4]' : ''}`}>
                           {fmtFull(tier.price)}
                         </span>
@@ -152,7 +195,7 @@ export default function ProductCard({ product }) {
               <div className="hidden md:block">
                 <div className="flex items-center justify-between mb-2">
                   <span className="text-white/30 text-[10px] font-bold uppercase tracking-widest">
-                    Pricing · 1 Vial
+                    Pricing · 1 {format}
                   </span>
                   <span className="text-[#00B4B4] text-xs font-bold">
                     from {fmtShort(lowestPrice)}
@@ -168,10 +211,15 @@ export default function ProductCard({ product }) {
                         className={`flex items-center justify-between px-3 py-2 rounded-xl text-xs transition-all duration-150 ${
                           isSelected
                             ? 'bg-[#00B4B4]/15 border border-[#00B4B4]/60 text-white shadow-sm shadow-[#00B4B4]/10'
-                            : 'bg-white/[0.04] border border-white/8 text-white/60 hover:border-white/20 hover:text-white/80 hover:bg-white/[0.07]'
+                            : tier.inStock
+                              ? 'bg-white/[0.04] border border-white/8 text-white/60 hover:border-white/20 hover:text-white/80 hover:bg-white/[0.07]'
+                              : 'bg-white/[0.02] border border-white/5 text-white/35 hover:border-white/15 hover:text-white/60'
                         }`}
                       >
-                        <span className="font-mono tracking-wide">{tier.dose}</span>
+                        <span className="inline-flex items-center gap-1.5 font-mono tracking-wide">
+                          <StockDot tier={tier} />
+                          {tier.dose}
+                        </span>
                         <span className={`font-bold tabular-nums ${isSelected ? 'text-[#00B4B4]' : ''}`}>
                           {fmtFull(tier.price)}
                         </span>
@@ -180,7 +228,11 @@ export default function ProductCard({ product }) {
                   })}
                 </div>
                 <p className="mt-1.5 text-white/25 text-[10px]">
-                  {selectedTier ? `✓ ${selectedTier.dose} selected` : 'Tap a concentration to select'}
+                  {selectedTier
+                    ? `✓ ${selectedTier.dose} selected${selectedTier.inStock ? '' : ' · available on request'}`
+                    : inStock
+                      ? 'Green dot = in stock · others on request'
+                      : 'Tap a concentration to select'}
                 </p>
               </div>
             </>
@@ -198,11 +250,13 @@ export default function ProductCard({ product }) {
             ? 'bg-[#00B4B4] border-[#00B4B4] text-white hover:bg-[#009999] hover:border-[#009999] shadow-md shadow-[#00B4B4]/20'
             : 'bg-[#00B4B4]/10 hover:bg-[#00B4B4] border-[#00B4B4]/30 hover:border-[#00B4B4] text-[#00B4B4] hover:text-white'
         }`}
-        style={{ fontFamily: 'Inter, sans-serif' }}
+        style={{ fontFamily: 'var(--font-body)' }}
       >
         {WA_ICON}
         <span className="truncate">
-          {selectedTier ? `Order ${selectedTier.dose}` : 'Enquire on WhatsApp'}
+          {selectedTier
+            ? selectedTier.inStock ? `Order ${selectedTier.dose}` : `Check ${selectedTier.dose} availability`
+            : inStock ? 'Enquire on WhatsApp' : 'Check availability'}
         </span>
       </a>
     </div>

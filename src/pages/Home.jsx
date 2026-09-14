@@ -4,6 +4,8 @@ import { Helmet } from 'react-helmet-async'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { whatsappLink } from '../data/products'
+import { prefersReducedMotion, spotlightProps } from '../lib/motion'
+import Reveal from '../components/Reveal'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -13,8 +15,14 @@ const WA_ICON = (
   </svg>
 )
 
+const ARROW = (
+  <svg className="w-4 h-4 btn-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+  </svg>
+)
+
 const IC = ({ children }) => (
-  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#00B4B4]/20 to-[#004444]/5 border border-[#00B4B4]/25 flex items-center justify-center mb-4">
+  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#00B4B4]/20 to-[#004444]/5 border border-[#00B4B4]/25 flex items-center justify-center mb-4 transition-transform duration-300 group-hover:scale-105">
     {children}
   </div>
 )
@@ -82,105 +90,174 @@ const categories = [
   },
 ]
 
+// Verbatim from the STRIATA Google Business listing.
 const testimonials = [
   {
-    text: "I've been using BPC-157 for recovery after training and the difference is night and day. My joints feel better than they have in years. STRIATA's quality is unmatched and the WhatsApp support is incredibly responsive.",
-    name: 'Luca M.',
-    location: 'Johannesburg',
+    text: 'Excellent service from start to finish! The ordering process was smooth, communication was fantastic, and all our questions were answered quickly. We received regular updates and, best of all, our product arrived the very next day. Highly recommended — outstanding service!',
+    name: 'Francois Bezuidenhout',
   },
   {
-    text: "Started on the Wolverine Stack about 8 weeks ago. Recovery time has dropped significantly and I'm training harder than ever. Delivery was fast and the product arrived perfectly packaged.",
-    name: 'Ashleigh P.',
-    location: 'Cape Town',
+    text: 'Thank you for answering all my questions and showing certification without hesitation. I had a smooth ordering process and the products were well recieved. Great quality and great service 👏 👍',
+    name: 'Ashleigh Gunning',
   },
   {
-    text: "As a wellness clinic we've been sourcing peptides for our clients through STRIATA for several months now. The consistency of quality and reliability of stock availability makes them our go-to supplier.",
-    name: 'Dr. K. Naidoo',
-    location: 'Durban',
-  },
-  {
-    text: "The NAD+ has completely changed my energy levels. I used to hit a wall every afternoon. That's gone. Ordered twice now and both times the process was seamless.",
-    name: 'Ruan V.',
-    location: 'Pretoria',
-  },
-  {
-    text: "Skeptical at first but the results speak for themselves. Three months on Semax and my focus and mental clarity are on another level. STRIATA made the whole process easy.",
-    name: 'Taryn O.',
-    location: 'Stellenbosch',
+    text: 'Wow, what a great experience very help full and professional, they realy do make an effort not like all the other places i have ordered from i would really recommend using them doing a gr8 job keep ot going striata labs you are really helping people to become their best self and we all Appreciate it thank you very much',
+    name: 'Bianca Botha',
   },
 ]
 
+const GOOGLE_G = (
+  <svg className="w-4 h-4" viewBox="0 0 24 24" aria-hidden="true">
+    <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92a5.06 5.06 0 01-2.2 3.32v2.77h3.57c2.08-1.92 3.27-4.74 3.27-8.1z" />
+    <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
+    <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" />
+    <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
+  </svg>
+)
+
+const trustPillars = [
+  {
+    icon: (
+      <svg className="w-8 h-8 text-[#00B4B4]" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+        <path d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.746 3.746 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
+      </svg>
+    ),
+    title: '99% Purity Guaranteed',
+    desc: 'Every batch is held to a minimum 99% purity standard. No fillers, no compromises. Just the compound, exactly as it should be.',
+  },
+  {
+    icon: (
+      <svg className="w-8 h-8 text-[#00B4B4]" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+        <path d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" />
+      </svg>
+    ),
+    title: 'Research Grade Only',
+    desc: 'All STRIATA peptides are research-grade quality, sourced from trusted suppliers and handled with the precision the science demands.',
+  },
+  {
+    icon: (
+      <svg className="w-8 h-8 text-[#00B4B4]" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+        <path d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" /><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
+      </svg>
+    ),
+    title: 'South African Based',
+    desc: 'We are proudly South African. Local stock, local support and fast nationwide delivery, with no waiting weeks for international shipments.',
+  },
+]
+
+const bulkPoints = [
+  {
+    icon: (
+      <svg className="w-6 h-6 text-[#00B4B4]" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+        <path d="M9.568 3H5.25A2.25 2.25 0 003 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 005.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 009.568 3z" /><path d="M6 6h.008v.008H6V6z" />
+      </svg>
+    ),
+    title: 'Competitive Bulk Pricing', desc: 'The more you order, the better your rate. We work with businesses of all sizes to find a pricing structure that makes sense.',
+  },
+  {
+    icon: (
+      <svg className="w-6 h-6 text-[#00B4B4]" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+        <path d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
+      </svg>
+    ),
+    title: 'Reliable Stock Availability', desc: 'We maintain consistent local stock levels so your business never has to wait. No backorders, no surprises.',
+  },
+  {
+    icon: (
+      <svg className="w-6 h-6 text-[#00B4B4]" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+        <path d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
+      </svg>
+    ),
+    title: 'Dedicated Support', desc: 'Your business gets direct WhatsApp support and a dedicated contact for all orders, queries and restocking needs.',
+  },
+]
+
+function TestimonialCard({ t, ...rest }) {
+  return (
+    <div {...rest} className="w-[320px] md:w-[380px] mr-5 shrink-0 bg-[#0d1e35] border border-white/8 rounded-2xl p-7 flex flex-col">
+      <div className="flex gap-0.5 mb-4" role="img" aria-label="5 out of 5 stars">
+        {[...Array(5)].map((_, j) => (
+          <svg key={j} className="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+          </svg>
+        ))}
+      </div>
+      <p className="text-white/70 text-sm leading-relaxed mb-5 flex-1">"{t.text}"</p>
+      <div className="flex items-center justify-between gap-3">
+        <p className="text-white font-semibold text-sm" style={{ fontFamily: 'var(--font-heading)' }}>{t.name}</p>
+        <span className="inline-flex items-center gap-1.5 text-white/40 text-[11px]">
+          {GOOGLE_G}
+          Google review
+        </span>
+      </div>
+    </div>
+  )
+}
+
 export default function Home() {
   const heroRef = useRef(null)
+  const heroBgRef = useRef(null)
   const heroTextRef = useRef(null)
-  const scrollBeatRef = useRef(null)
   const beatInnerRef = useRef(null)
   const beatTextRefs = useRef([])
-  const sectionsRef = useRef([])
   const videoRef = useRef(null)
 
   useEffect(() => {
-    const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches
+    if (prefersReducedMotion()) {
+      beatTextRefs.current.filter(Boolean).forEach((el) => gsap.set(el, { opacity: 1, y: 0 }))
+      return
+    }
 
     const ctx = gsap.context(() => {
-      if (prefersReduced) {
-        heroTextRef.current?.querySelectorAll('.hero-animate').forEach((el) => {
-          gsap.set(el, { opacity: 1, y: 0 })
+      // Scroll beat: three lines swap as the pinned section scrubs
+      const beats = beatTextRefs.current.filter(Boolean)
+      if (beatInnerRef.current && beats.length === 3) {
+        gsap.set(beats, { opacity: 0, y: 40 })
+
+        const tl = gsap.timeline()
+        tl.to(beats[0], { opacity: 1, y: 0, duration: 1, ease: 'power2.out' })
+        tl.to({}, { duration: 2 })
+        tl.to(beats[0], { opacity: 0, y: -40, duration: 1, ease: 'power2.in' })
+        tl.to(beats[1], { opacity: 1, y: 0, duration: 1, ease: 'power2.out' }, '<')
+        tl.to({}, { duration: 2 })
+        tl.to(beats[1], { opacity: 0, y: -40, duration: 1, ease: 'power2.in' })
+        tl.to(beats[2], { opacity: 1, y: 0, duration: 1, ease: 'power2.out' }, '<')
+        tl.to({}, { duration: 2 })
+        tl.to(beats[2], { opacity: 0, y: -40, duration: 1, ease: 'power2.in' })
+
+        ScrollTrigger.create({
+          trigger: beatInnerRef.current,
+          start: 'top top',
+          end: '+=210%',
+          pin: true,
+          scrub: 1,
+          animation: tl,
         })
-        beatTextRefs.current.filter(Boolean).forEach((el) => gsap.set(el, { opacity: 1, y: 0 }))
-        sectionsRef.current.filter(Boolean).forEach((el) => gsap.set(el, { opacity: 1, y: 0 }))
-        return
       }
 
-      // Hero text entrance
-      gsap.fromTo(
-        heroTextRef.current?.querySelectorAll('.hero-animate') || [],
-        { opacity: 0, y: 40 },
-        { opacity: 1, y: 0, stagger: 0.15, duration: 0.9, ease: 'power3.out', delay: 0.3 }
-      )
-
-      // Scroll beat text animation
-      if (beatInnerRef.current) {
-        const beats = beatTextRefs.current.filter(Boolean)
-        if (beats.length === 3) {
-          gsap.set(beats, { opacity: 0, y: 40 })
-
-          const tl = gsap.timeline()
-          tl.to(beats[0], { opacity: 1, y: 0, duration: 1, ease: 'power2.out' })
-          tl.to({}, { duration: 2 })
-          tl.to(beats[0], { opacity: 0, y: -40, duration: 1, ease: 'power2.in' })
-          tl.to(beats[1], { opacity: 1, y: 0, duration: 1, ease: 'power2.out' }, '<')
-          tl.to({}, { duration: 2 })
-          tl.to(beats[1], { opacity: 0, y: -40, duration: 1, ease: 'power2.in' })
-          tl.to(beats[2], { opacity: 1, y: 0, duration: 1, ease: 'power2.out' }, '<')
-          tl.to({}, { duration: 2 })
-          tl.to(beats[2], { opacity: 0, y: -40, duration: 1, ease: 'power2.in' })
-
-          ScrollTrigger.create({
-            trigger: beatInnerRef.current,
-            start: 'top top',
-            end: '+=210%',
-            pin: true,
-            scrub: 1,
-            animation: tl,
-          })
+      // Hero parallax: background drifts with the cursor, text counters it.
+      // Pointer devices only — there is no cursor to follow on touch.
+      const hero = heroRef.current
+      if (hero && window.matchMedia('(hover: hover)').matches) {
+        const bgX = gsap.quickTo(heroBgRef.current, 'x', { duration: 1.2, ease: 'power3.out' })
+        const bgY = gsap.quickTo(heroBgRef.current, 'y', { duration: 1.2, ease: 'power3.out' })
+        const txX = gsap.quickTo(heroTextRef.current, 'x', { duration: 1.2, ease: 'power3.out' })
+        const txY = gsap.quickTo(heroTextRef.current, 'y', { duration: 1.2, ease: 'power3.out' })
+        const onMove = (e) => {
+          const r = hero.getBoundingClientRect()
+          const dx = (e.clientX - r.left) / r.width - 0.5
+          const dy = (e.clientY - r.top) / r.height - 0.5
+          bgX(dx * 24); bgY(dy * 16)
+          txX(dx * -10); txY(dy * -6)
+        }
+        const onLeave = () => { bgX(0); bgY(0); txX(0); txY(0) }
+        hero.addEventListener('mousemove', onMove)
+        hero.addEventListener('mouseleave', onLeave)
+        return () => {
+          hero.removeEventListener('mousemove', onMove)
+          hero.removeEventListener('mouseleave', onLeave)
         }
       }
-
-      // Fade-in sections
-      sectionsRef.current.filter(Boolean).forEach((el) => {
-        gsap.fromTo(
-          el,
-          { opacity: 0, y: 50 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 0.8,
-            ease: 'power2.out',
-            scrollTrigger: { trigger: el, start: 'top 85%' },
-          }
-        )
-      })
     })
     return () => ctx.revert()
   }, [])
@@ -188,10 +265,6 @@ export default function Home() {
   useEffect(() => {
     if (videoRef.current) videoRef.current.playbackRate = 0.5
   }, [])
-
-  const addSectionRef = (el) => {
-    if (el && !sectionsRef.current.includes(el)) sectionsRef.current.push(el)
-  }
 
   return (
     <div className="bg-[#0A1628]">
@@ -203,65 +276,55 @@ export default function Home() {
         <meta property="og:description" content="South Africa's premier source for research-grade peptides. 99%+ purity guaranteed. Think Strong. Train Smarter." />
         <meta property="og:url" content="https://www.striatalabs.co.za/" />
       </Helmet>
+
       {/* ── HERO ─────────────────────────────────── */}
       <section
         ref={heroRef}
         className="relative min-h-screen flex items-center justify-center overflow-hidden"
       >
-        <video
-          ref={videoRef}
-          autoPlay
-          muted
-          loop
-          playsInline
-          poster={`${import.meta.env.BASE_URL}assets/opt/vial-layouts-2-1920.webp`}
-          className="absolute inset-0 w-full h-full object-cover opacity-30"
-        >
-          <source src={`${import.meta.env.BASE_URL}assets/hero-video.mp4`} type="video/mp4" />
-        </video>
+        {/* Oversized so the parallax drift never exposes an edge */}
+        <div ref={heroBgRef} className="absolute -inset-8 will-change-transform">
+          <video
+            ref={videoRef}
+            autoPlay
+            muted
+            loop
+            playsInline
+            poster={`${import.meta.env.BASE_URL}assets/opt/vial-layouts-2-1920.webp`}
+            className="kenburns absolute inset-0 w-full h-full object-cover opacity-30"
+          >
+            <source src={`${import.meta.env.BASE_URL}assets/hero-video.mp4`} type="video/mp4" />
+          </video>
+        </div>
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A1628]/60 via-transparent to-[#0A1628]" />
 
-        <div ref={heroTextRef} className="relative z-10 text-center px-6 max-w-4xl mx-auto">
-          <div className="hero-animate inline-flex items-center gap-2 text-[#00B4B4] text-xs font-bold uppercase tracking-widest mb-6 bg-[#00B4B4]/10 border border-[#00B4B4]/20 px-4 py-2 rounded-full" style={{ fontFamily: 'Montserrat, sans-serif' }}>
-            <span className="w-1.5 h-1.5 rounded-full bg-[#00B4B4]" />
-            South Africa's Premier Research Peptide Source
-          </div>
-          <h1
-            className="hero-animate font-black text-white leading-none tracking-tight mb-6"
-            style={{ fontFamily: 'Montserrat, sans-serif' }}
-          >
-            <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl">THINK STRONG.</span>
-            <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-[#00B4B4]">TRAIN SMARTER.</span>
-          </h1>
-          <p className="hero-animate text-base md:text-xl text-white/70 max-w-2xl mx-auto mb-10 leading-relaxed">
-            South Africa's premier source for research-grade peptides. Purity you can trust. Performance you can feel.
-          </p>
-          <div className="hero-animate flex flex-col sm:flex-row items-center justify-center gap-4">
-            <a
-              href={whatsappLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2.5 bg-[#00B4B4] hover:bg-[#009999] text-white font-bold text-base px-8 py-4 rounded-full transition-all duration-200 hover:shadow-xl hover:shadow-teal-500/30 hover:-translate-y-0.5"
-              style={{ fontFamily: 'Montserrat, sans-serif' }}
+        <div ref={heroTextRef} className="relative z-10 text-center px-6 max-w-4xl mx-auto will-change-transform">
+          <Reveal stagger delay={0.25} y={36}>
+            <div className="inline-flex items-center gap-2 text-[#00B4B4] text-xs font-bold uppercase tracking-widest mb-6 bg-[#00B4B4]/10 border border-[#00B4B4]/20 px-4 py-2 rounded-full" style={{ fontFamily: 'var(--font-heading)' }}>
+              <span className="w-1.5 h-1.5 rounded-full bg-[#00B4B4]" />
+              South Africa's Premier Research Peptide Source
+            </div>
+            <h1
+              className="font-black text-white leading-none tracking-tight mb-6"
+              style={{ fontFamily: 'var(--font-heading)' }}
             >
-              {WA_ICON}
-              Enquire on WhatsApp
-            </a>
-            <Link
-              to="/catalogue"
-              className="flex items-center gap-2 text-white/70 hover:text-white font-semibold text-base px-8 py-4 rounded-full border border-white/20 hover:border-white/40 transition-all duration-200"
-              style={{ fontFamily: 'Inter, sans-serif' }}
-            >
-              Browse Catalogue
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
-            </Link>
-          </div>
-          <p className="hero-animate mt-6 text-white/50 text-sm flex items-center justify-center gap-1.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
-            Typically responds within 1 hour during business hours
-          </p>
+              <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl">THINK STRONG.</span>
+              <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-shimmer">TRAIN SMARTER.</span>
+            </h1>
+            <p className="text-base md:text-xl text-white/70 max-w-2xl mx-auto mb-10 leading-relaxed">
+              South Africa's premier source for research-grade peptides. Purity you can trust. Performance you can feel.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+              <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg">
+                {WA_ICON}
+                Enquire on WhatsApp
+              </a>
+              <Link to="/catalogue" className="btn btn-ghost btn-lg">
+                Browse Catalogue
+                {ARROW}
+              </Link>
+            </div>
+          </Reveal>
         </div>
 
         {/* Scroll indicator */}
@@ -273,7 +336,7 @@ export default function Home() {
       </section>
 
       {/* ── SCROLL BEAT ANIMATION ──────────────────── */}
-      <section ref={scrollBeatRef} className="relative">
+      <section className="relative">
         <div ref={beatInnerRef} className="h-[100svh] flex items-center justify-center overflow-hidden">
           <img
             src={`${import.meta.env.BASE_URL}assets/opt/vial-layouts-2-1920.webp`}
@@ -299,7 +362,7 @@ export default function Home() {
                   key={i}
                   ref={(el) => (beatTextRefs.current[i] = el)}
                   className="absolute inset-x-0 text-3xl sm:text-4xl md:text-6xl lg:text-7xl font-black text-white leading-tight"
-                  style={{ fontFamily: 'Montserrat, sans-serif', opacity: 0 }}
+                  style={{ fontFamily: 'var(--font-heading)', opacity: 0 }}
                 >
                   {content}
                 </p>
@@ -310,56 +373,51 @@ export default function Home() {
       </section>
 
       {/* ── CATEGORIES ────────────────────────────── */}
-      <section ref={addSectionRef} className="py-24 px-6 max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-black text-white mb-4" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+      <section className="py-24 px-6 max-w-7xl mx-auto">
+        <Reveal stagger className="text-center mb-16">
+          <h2 className="text-3xl md:text-5xl font-black text-white mb-4 tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>
             What Are You <span className="text-[#00B4B4]">Training For?</span>
           </h2>
           <p className="text-white/60 text-lg max-w-2xl mx-auto">
             Explore our full catalogue of research-grade peptides, each category precision-selected to support your goals.
           </p>
-        </div>
+        </Reveal>
 
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-4">
+        <Reveal stagger className="grid grid-cols-2 lg:grid-cols-3 gap-4">
           {categories.map(({ icon, label, desc, to }) => (
             <Link
               key={label}
               to={to}
-              className="group bg-[#0d1e35] border border-white/8 rounded-2xl p-6 flex flex-col items-center text-center hover:border-[#00B4B4]/40 hover:bg-[#0f2340] transition-all duration-300 hover:shadow-lg hover:shadow-[#00B4B4]/5 hover:-translate-y-1"
+              {...spotlightProps()}
+              className="spot group bg-[#0d1e35] border border-white/8 rounded-2xl p-6 flex flex-col items-center text-center hover:border-[#00B4B4]/40 transition-all duration-300 hover:shadow-xl hover:shadow-[#00B4B4]/10 hover:-translate-y-1.5"
             >
               {icon}
-              <h3 className="text-white font-bold text-lg mb-2 group-hover:text-[#00B4B4] transition-colors" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+              <h3 className="text-white font-bold text-lg mb-2 group-hover:text-[#00B4B4] transition-colors" style={{ fontFamily: 'var(--font-heading)' }}>
                 {label}
               </h3>
               <p className="text-white/50 text-sm">{desc}</p>
-              <div className="mt-4 flex items-center justify-center gap-1 text-[#00B4B4] text-sm font-semibold opacity-50 group-hover:opacity-100 transition-opacity">
+              <div className="mt-4 flex items-center justify-center gap-1 text-[#00B4B4] text-sm font-semibold opacity-50 group-hover:opacity-100 transition-all duration-300">
                 Explore
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
                 </svg>
               </div>
             </Link>
           ))}
-        </div>
+        </Reveal>
 
-        <div className="text-center mt-10">
-          <Link
-            to="/catalogue"
-            className="inline-flex items-center gap-2 text-[#00B4B4] hover:text-white font-semibold text-base border border-[#00B4B4]/30 hover:bg-[#00B4B4] px-8 py-3.5 rounded-full transition-all duration-200"
-            style={{ fontFamily: 'Inter, sans-serif' }}
-          >
+        <Reveal className="text-center mt-10">
+          <Link to="/catalogue" className="btn btn-outline btn-lg">
             Browse the Full Catalogue
-            <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-            </svg>
+            {ARROW}
           </Link>
-        </div>
+        </Reveal>
       </section>
 
       {/* ── ABOUT SNAPSHOT ────────────────────────── */}
-      <section ref={addSectionRef} className="py-24 bg-[#060e1a]">
+      <section className="py-24 bg-[#060e1a]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 grid md:grid-cols-2 gap-16 items-center">
-          <div className="relative">
+          <Reveal className="relative">
             <img
               src={`${import.meta.env.BASE_URL}assets/opt/purity-2-1280.webp`}
               srcSet={`${import.meta.env.BASE_URL}assets/opt/purity-2-640.webp 640w, ${import.meta.env.BASE_URL}assets/opt/purity-2-1280.webp 1280w`}
@@ -371,16 +429,16 @@ export default function Home() {
               decoding="async"
               className="rounded-3xl w-full object-cover aspect-[4/5]"
             />
-            <div className="absolute bottom-4 right-4 md:-bottom-6 md:-right-6 bg-[#00B4B4] rounded-2xl p-4 md:p-6 shadow-xl">
-              <p className="text-white font-black text-2xl md:text-3xl" style={{ fontFamily: 'Montserrat, sans-serif' }}>2021</p>
+            <div className="absolute bottom-4 right-4 md:-bottom-6 md:-right-6 bg-[#00B4B4] rounded-2xl p-4 md:p-6 shadow-xl shadow-[#00B4B4]/20">
+              <p className="text-white font-black text-2xl md:text-3xl" style={{ fontFamily: 'var(--font-heading)' }}>2021</p>
               <p className="text-white/80 text-sm">Founded in SA</p>
             </div>
-          </div>
-          <div>
-            <div className="inline-flex items-center gap-2 text-[#00B4B4] text-xs font-bold uppercase tracking-widest mb-5 bg-[#00B4B4]/10 border border-[#00B4B4]/20 px-4 py-2 rounded-full" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+          </Reveal>
+          <Reveal stagger delay={0.1}>
+            <div className="inline-flex items-center gap-2 text-[#00B4B4] text-xs font-bold uppercase tracking-widest mb-5 bg-[#00B4B4]/10 border border-[#00B4B4]/20 px-4 py-2 rounded-full" style={{ fontFamily: 'var(--font-heading)' }}>
               Our Story
             </div>
-            <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-white mb-6 leading-tight" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+            <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-white mb-6 leading-tight tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>
               Built by People Who <span className="text-[#00B4B4]">Believe in Better</span>
             </h2>
             <p className="text-white/60 leading-relaxed mb-4">
@@ -389,78 +447,44 @@ export default function Home() {
             <p className="text-white/60 leading-relaxed mb-8">
               STRIATA was built to fill the gap. To bring world-class, research-grade peptides to South Africans at pricing that doesn't punish you for wanting to take your health seriously.
             </p>
-            <Link
-              to="/about"
-              className="inline-flex items-center gap-2 bg-[#00B4B4] hover:bg-[#009999] text-white font-bold px-8 py-4 rounded-full transition-all duration-200 hover:shadow-lg hover:shadow-teal-500/30"
-              style={{ fontFamily: 'Montserrat, sans-serif' }}
-            >
+            <Link to="/about" className="btn btn-primary btn-lg">
               Learn More About Us
-              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-              </svg>
+              {ARROW}
             </Link>
-          </div>
+          </Reveal>
         </div>
       </section>
 
       {/* ── TRUST PILLARS ─────────────────────────── */}
-      <section ref={addSectionRef} className="py-24 px-6 max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-black text-white mb-4" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+      <section className="py-24 px-6 max-w-7xl mx-auto">
+        <Reveal stagger className="text-center mb-16">
+          <h2 className="text-3xl md:text-5xl font-black text-white mb-4 tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>
             Purity You Can <span className="text-[#00B4B4]">Count On</span>
           </h2>
           <p className="text-white/60 text-lg max-w-2xl mx-auto">
             We don't cut corners. Every product in the STRIATA catalogue meets strict research-grade standards so you always know exactly what you're getting.
           </p>
-        </div>
+        </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
-          {[
-            {
-              icon: (
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#00B4B4]/20 to-[#004444]/5 border border-[#00B4B4]/25 flex items-center justify-center mx-auto mb-5">
-                  <svg className="w-8 h-8 text-[#00B4B4]" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-                    <path d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.746 3.746 0 01-3.296 1.043A3.745 3.745 0 0112 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.746 3.746 0 013.296-1.043A3.746 3.746 0 0112 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" />
-                  </svg>
-                </div>
-              ),
-              title: '99% Purity Guaranteed',
-              desc: 'Every batch is held to a minimum 99% purity standard. No fillers, no compromises. Just the compound, exactly as it should be.',
-            },
-            {
-              icon: (
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#00B4B4]/20 to-[#004444]/5 border border-[#00B4B4]/25 flex items-center justify-center mx-auto mb-5">
-                  <svg className="w-8 h-8 text-[#00B4B4]" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-                    <path d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" />
-                  </svg>
-                </div>
-              ),
-              title: 'Research Grade Only',
-              desc: 'All STRIATA peptides are research-grade quality, sourced from trusted suppliers and handled with the precision the science demands.',
-            },
-            {
-              icon: (
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#00B4B4]/20 to-[#004444]/5 border border-[#00B4B4]/25 flex items-center justify-center mx-auto mb-5">
-                  <svg className="w-8 h-8 text-[#00B4B4]" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-                    <path d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" /><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
-                  </svg>
-                </div>
-              ),
-              title: 'South African Based',
-              desc: 'We are proudly South African. Local stock, local support and fast nationwide delivery, with no waiting weeks for international shipments.',
-            },
-          ].map(({ icon, title, desc }) => (
-            <div key={title} className="bg-[#0d1e35] border border-white/8 rounded-2xl p-5 md:p-8 text-center">
-              {icon}
-              <h3 className="text-white font-bold text-xl mb-3" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+        <Reveal stagger className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
+          {trustPillars.map(({ icon, title, desc }) => (
+            <div
+              key={title}
+              {...spotlightProps()}
+              className="spot group bg-[#0d1e35] border border-white/8 rounded-2xl p-5 md:p-8 text-center hover:border-[#00B4B4]/30 transition-all duration-300 hover:-translate-y-1"
+            >
+              <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#00B4B4]/20 to-[#004444]/5 border border-[#00B4B4]/25 flex items-center justify-center mx-auto mb-5 transition-transform duration-300 group-hover:scale-105">
+                {icon}
+              </div>
+              <h3 className="text-white font-bold text-xl mb-3" style={{ fontFamily: 'var(--font-heading)' }}>
                 {title}
               </h3>
               <p className="text-white/50 text-sm leading-relaxed">{desc}</p>
             </div>
           ))}
-        </div>
+        </Reveal>
 
-        <div className="relative rounded-3xl overflow-hidden">
+        <Reveal className="relative rounded-3xl overflow-hidden group">
           <img
             src={`${import.meta.env.BASE_URL}assets/opt/purity-1920.webp`}
             srcSet={`${import.meta.env.BASE_URL}assets/opt/purity-768.webp 768w, ${import.meta.env.BASE_URL}assets/opt/purity-1280.webp 1280w, ${import.meta.env.BASE_URL}assets/opt/purity-1920.webp 1920w`}
@@ -470,154 +494,113 @@ export default function Home() {
             height={1536}
             loading="lazy"
             decoding="async"
-            className="w-full h-72 object-cover"
+            className="w-full h-72 object-cover transition-transform duration-[1500ms] ease-out group-hover:scale-105"
           />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0A1628]/90 to-transparent flex items-center">
             <div className="px-10 max-w-lg">
-              <p className="text-[#00B4B4] text-sm font-bold uppercase tracking-widest mb-2" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+              <p className="text-[#00B4B4] text-sm font-bold uppercase tracking-widest mb-2" style={{ fontFamily: 'var(--font-heading)' }}>
                 Certificate of Analysis
               </p>
-              <h3 className="text-white text-3xl font-black mb-4" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+              <h3 className="text-white text-3xl font-black mb-4 tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>
                 Ask Us for the CoA. We'll Send It.
               </h3>
               <p className="text-white/60 text-sm mb-6">
                 Full transparency on every product. Third-party verified, no questions asked.
               </p>
-              <a
-                href={whatsappLink}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-[#00B4B4] hover:bg-[#009999] text-white font-bold px-6 py-3 rounded-full text-sm transition-all duration-200"
-                style={{ fontFamily: 'Montserrat, sans-serif' }}
-              >
+              <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-md">
                 {WA_ICON}
                 Request a CoA
               </a>
             </div>
           </div>
-        </div>
+        </Reveal>
       </section>
 
       {/* ── BULK & BUSINESS ───────────────────────── */}
-      <section ref={addSectionRef} className="py-24 bg-gradient-to-br from-[#00B4B4]/10 via-[#060e1a] to-[#0A1628]">
+      <section className="py-24 bg-gradient-to-br from-[#00B4B4]/10 via-[#060e1a] to-[#0A1628]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-black text-white mb-4" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+          <Reveal stagger className="text-center mb-16">
+            <h2 className="text-3xl md:text-5xl font-black text-white mb-4 tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>
               Stocking for <span className="text-[#00B4B4]">Your Business?</span>
             </h2>
             <p className="text-white/60 text-lg max-w-2xl mx-auto">
               STRIATA supplies clinics, wellness centres, gyms and health retailers across South Africa with bulk research-grade peptides at competitive pricing.
             </p>
-          </div>
+          </Reveal>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-            {[
-              {
-                icon: (
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#00B4B4]/20 to-[#004444]/5 border border-[#00B4B4]/25 flex items-center justify-center mb-4">
-                    <svg className="w-6 h-6 text-[#00B4B4]" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-                      <path d="M9.568 3H5.25A2.25 2.25 0 003 5.25v4.318c0 .597.237 1.17.659 1.591l9.581 9.581c.699.699 1.78.872 2.607.33a18.095 18.095 0 005.223-5.223c.542-.827.369-1.908-.33-2.607L11.16 3.66A2.25 2.25 0 009.568 3z" /><path d="M6 6h.008v.008H6V6z" />
-                    </svg>
-                  </div>
-                ),
-                title: 'Competitive Bulk Pricing', desc: 'The more you order, the better your rate. We work with businesses of all sizes to find a pricing structure that makes sense.',
-              },
-              {
-                icon: (
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#00B4B4]/20 to-[#004444]/5 border border-[#00B4B4]/25 flex items-center justify-center mb-4">
-                    <svg className="w-6 h-6 text-[#00B4B4]" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-                      <path d="M21 7.5l-9-5.25L3 7.5m18 0l-9 5.25m9-5.25v9l-9 5.25M3 7.5l9 5.25M3 7.5v9l9 5.25m0-9v9" />
-                    </svg>
-                  </div>
-                ),
-                title: 'Reliable Stock Availability', desc: 'We maintain consistent local stock levels so your business never has to wait. No backorders, no surprises.',
-              },
-              {
-                icon: (
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#00B4B4]/20 to-[#004444]/5 border border-[#00B4B4]/25 flex items-center justify-center mb-4">
-                    <svg className="w-6 h-6 text-[#00B4B4]" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
-                      <path d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155" />
-                    </svg>
-                  </div>
-                ),
-                title: 'Dedicated Support', desc: 'Your business gets direct WhatsApp support and a dedicated contact for all orders, queries and restocking needs.',
-              },
-            ].map(({ icon, title, desc }) => (
-              <div key={title} className="bg-[#0d1e35] border border-white/8 rounded-2xl p-7 flex flex-col items-center text-center">
-                {icon}
-                <h3 className="text-white font-bold text-lg mb-2" style={{ fontFamily: 'Montserrat, sans-serif' }}>{title}</h3>
+          <Reveal stagger className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+            {bulkPoints.map(({ icon, title, desc }) => (
+              <div
+                key={title}
+                {...spotlightProps()}
+                className="spot bg-[#0d1e35] border border-white/8 rounded-2xl p-7 flex flex-col items-center text-center hover:border-[#00B4B4]/30 transition-all duration-300 hover:-translate-y-1"
+              >
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#00B4B4]/20 to-[#004444]/5 border border-[#00B4B4]/25 flex items-center justify-center mb-4">
+                  {icon}
+                </div>
+                <h3 className="text-white font-bold text-lg mb-2" style={{ fontFamily: 'var(--font-heading)' }}>{title}</h3>
                 <p className="text-white/50 text-sm leading-relaxed">{desc}</p>
               </div>
             ))}
-          </div>
+          </Reveal>
 
-          <div className="text-center">
-            <a
-              href={whatsappLink}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2.5 bg-[#00B4B4] hover:bg-[#009999] text-white font-bold text-base px-8 py-4 rounded-full transition-all duration-200 hover:shadow-xl hover:shadow-teal-500/30"
-              style={{ fontFamily: 'Montserrat, sans-serif' }}
-            >
+          <Reveal className="text-center">
+            <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg">
               {WA_ICON}
               Enquire About Bulk Orders
             </a>
-          </div>
+          </Reveal>
         </div>
       </section>
 
       {/* ── TESTIMONIALS ──────────────────────────── */}
-      <section ref={addSectionRef} className="py-24 px-6 max-w-7xl mx-auto">
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-black text-white mb-4" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+      <section className="py-24 overflow-hidden">
+        <Reveal stagger className="text-center mb-14 px-6">
+          <span className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/[0.04] border border-white/10 mb-6">
+            {GOOGLE_G}
+            <span className="text-white/80 text-xs font-semibold" style={{ fontFamily: 'var(--font-heading)' }}>Google Reviews</span>
+            <span className="flex gap-0.5" role="img" aria-label="5 out of 5 stars">
+              {[...Array(5)].map((_, j) => (
+                <svg key={j} className="w-3.5 h-3.5 text-amber-400" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+                  <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                </svg>
+              ))}
+            </span>
+            <span className="text-white/60 text-xs tabular-nums">5.0</span>
+          </span>
+          <h2 className="text-3xl md:text-5xl font-black text-white mb-4 tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>
             What Our Customers <span className="text-[#00B4B4]">Are Saying</span>
           </h2>
-        </div>
+          <p className="text-white/40 text-sm">Real reviews from real customers · Hover to pause</p>
+        </Reveal>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5">
-          {testimonials.map((t, i) => (
-            <div
-              key={i}
-              className={`bg-[#0d1e35] border border-white/8 rounded-2xl p-7 ${i === 2 ? 'lg:col-span-1' : ''}`}
-            >
-              <div className="flex gap-0.5 mb-4" role="img" aria-label="5 out of 5 stars">
-                {[...Array(5)].map((_, j) => (
-                  <svg key={j} className="w-4 h-4 text-amber-400" fill="currentColor" viewBox="0 0 20 20">
-                    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                  </svg>
-                ))}
-              </div>
-              <p className="text-white/70 text-sm leading-relaxed mb-5 italic">"{t.text}"</p>
-              <div>
-                <p className="text-white font-semibold text-sm" style={{ fontFamily: 'Montserrat, sans-serif' }}>{t.name}</p>
-                <p className="text-white/40 text-xs">{t.location}</p>
-              </div>
-            </div>
-          ))}
-        </div>
+        {/* Four copies so three reviews still fill wide screens; -50% lands on copy three, which matches copy one. */}
+        <Reveal className="marquee">
+          <div className="marquee-track">
+            {[0, 1, 2, 3].map((copy) =>
+              testimonials.map((t, i) => (
+                <TestimonialCard key={`${copy}-${i}`} t={t} aria-hidden={copy > 0 ? 'true' : undefined} />
+              )),
+            )}
+          </div>
+        </Reveal>
       </section>
 
       {/* ── FINAL CTA ─────────────────────────────── */}
-      <section ref={addSectionRef} className="py-32 relative overflow-hidden">
+      <section className="py-32 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-[#00B4B4]/15 to-transparent" />
         <div
           className="absolute inset-0 bg-cover bg-center opacity-5"
           style={{ backgroundImage: `url(${import.meta.env.BASE_URL}assets/opt/helix-2-1280.webp)` }}
         />
-        <div className="relative z-10 text-center max-w-3xl mx-auto px-6">
-          <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-white mb-4" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+        <Reveal stagger className="relative z-10 text-center max-w-3xl mx-auto px-6">
+          <h2 className="text-3xl md:text-5xl lg:text-6xl font-black text-white mb-4 tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>
             Ready to <span className="text-[#00B4B4]">Start?</span>
           </h2>
           <p className="text-white/60 text-base md:text-xl mb-10">
             Browse our full catalogue, get a personalised price list or ask us anything. All on WhatsApp. Our team responds fast.
           </p>
-          <a
-            href={whatsappLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2.5 bg-[#00B4B4] hover:bg-[#009999] text-white font-bold text-lg px-10 py-5 rounded-full transition-all duration-200 hover:shadow-2xl hover:shadow-teal-500/30 hover:-translate-y-1"
-            style={{ fontFamily: 'Montserrat, sans-serif' }}
-          >
+          <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-xl">
             {WA_ICON}
             Chat to Us on WhatsApp
           </a>
@@ -625,7 +608,7 @@ export default function Home() {
             <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
             Typically responds within 1 hour during business hours
           </p>
-        </div>
+        </Reveal>
       </section>
     </div>
   )

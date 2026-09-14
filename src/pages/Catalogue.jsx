@@ -1,9 +1,12 @@
 import { useState, useEffect, useRef, useMemo } from 'react'
 import { useLocation, Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
-import { products, categories, whatsappLink } from '../data/products'
+import { products, categories, whatsappLink, isInStock } from '../data/products'
 import ProductCard from '../components/ProductCard'
 import JsonLd from '../components/JsonLd'
+import Reveal from '../components/Reveal'
+import FilterChips from '../components/FilterChips'
+import { useStaggerGrid } from '../lib/motion'
 
 const CAT_ICONS = {
   all: (
@@ -68,8 +71,10 @@ export default function Catalogue() {
   const location = useLocation()
   const [activeCategory, setActiveCategory] = useState('all')
   const [search, setSearch] = useState('')
+  const [inStockOnly, setInStockOnly] = useState(false)
   const [filterVisible, setFilterVisible] = useState(true)
   const lastScrollY = useRef(0)
+  const gridRef = useRef(null)
 
   useEffect(() => {
     const params = new URLSearchParams(location.search)
@@ -94,7 +99,7 @@ export default function Catalogue() {
   }, [])
 
   const filtered = useMemo(() => {
-    return products.filter((p) => {
+    const list = products.filter((p) => {
       const matchesCat =
         activeCategory === 'all' ||
         (activeCategory === 'popular' ? p.featured === true : p.category === activeCategory)
@@ -103,9 +108,18 @@ export default function Catalogue() {
         p.name.toLowerCase().includes(search.toLowerCase()) ||
         p.description.toLowerCase().includes(search.toLowerCase()) ||
         p.tags.some((t) => t.toLowerCase().includes(search.toLowerCase()))
-      return matchesCat && matchesSearch
+      const matchesStock = !inStockOnly || isInStock(p)
+      return matchesCat && matchesSearch && matchesStock
     })
-  }, [activeCategory, search])
+    // In-stock products lead; sort is stable so catalogue order is kept within each group
+    return list.sort((a, b) => Number(isInStock(b)) - Number(isInStock(a)))
+  }, [activeCategory, search, inStockOnly])
+
+  useStaggerGrid(gridRef, [filtered])
+
+  const inStockCount = useMemo(() => filtered.filter(isInStock).length, [filtered])
+  const hasActiveFilters = activeCategory !== 'all' || search || inStockOnly
+  const clearFilters = () => { setActiveCategory('all'); setSearch(''); setInStockOnly(false) }
 
   const currentCategory = categories.find((c) => c.id === activeCategory)
 
@@ -142,7 +156,7 @@ export default function Catalogue() {
                   lowPrice: Math.min(...amounts),
                   highPrice: Math.max(...amounts),
                   offerCount: p.prices.length,
-                  availability: 'https://schema.org/InStock',
+                  availability: isInStock(p) ? 'https://schema.org/InStock' : 'https://schema.org/BackOrder',
                   url: 'https://www.striatalabs.co.za/catalogue',
                 },
               },
@@ -156,14 +170,18 @@ export default function Catalogue() {
           style={{ backgroundImage: `url(${import.meta.env.BASE_URL}assets/opt/vial-layouts-1920.webp)` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A1628]/80 to-[#0A1628]" />
-        <div className="relative z-10 max-w-4xl mx-auto text-center">
-          <h1 className="text-3xl md:text-6xl font-black text-white mb-5" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+        <Reveal stagger delay={0.1} className="relative z-10 max-w-4xl mx-auto text-center">
+          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#00B4B4]/10 border border-[#00B4B4]/20 text-[#00B4B4] text-xs font-semibold uppercase tracking-widest mb-6" style={{ fontFamily: 'var(--font-heading)' }}>
+            <span className="w-1.5 h-1.5 rounded-full bg-[#00B4B4]" />
+            Complete Catalogue
+          </span>
+          <h1 className="text-3xl md:text-6xl font-black text-white mb-5 tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>
             Explore the <span className="text-[#00B4B4]">Catalogue</span>
           </h1>
           <p className="text-white/60 text-lg max-w-2xl mx-auto">
             Research-grade peptides with transparent pricing across every category. Select your concentration and order directly on WhatsApp.
           </p>
-        </div>
+        </Reveal>
       </section>
 
       {/* Stacks promo bar */}
@@ -179,7 +197,7 @@ export default function Catalogue() {
               </svg>
             </span>
             <div>
-              <p className="text-white font-semibold text-sm" style={{ fontFamily: 'Montserrat, sans-serif' }}>Not sure what to order?</p>
+              <p className="text-white font-semibold text-sm" style={{ fontFamily: 'var(--font-heading)' }}>Not sure what to order?</p>
               <p className="text-white/50 text-xs">Browse our 10 curated peptide stacks — goal-specific protocols with tier pricing.</p>
             </div>
           </div>
@@ -192,49 +210,57 @@ export default function Catalogue() {
       {/* Filter Bar */}
       <section className={`sticky top-20 z-30 bg-[#0A1628]/95 backdrop-blur-md border-b border-white/8 py-3 md:py-4 transition-transform duration-300 ${filterVisible ? 'translate-y-0' : '-translate-y-[200%]'}`}>
         <div className="max-w-7xl mx-auto px-4 md:px-6">
-          {/* Search */}
-          <div className="mb-3 relative">
-            <svg className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-white/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-            </svg>
-            <input
-              type="text"
-              placeholder="Search peptides..."
-              value={search}
-              onChange={(e) => setSearch(e.target.value)}
-              className="w-full md:max-w-md bg-[#0d1e35] border border-white/10 rounded-xl pl-10 pr-4 py-2.5 text-white placeholder-white/30 text-sm focus:outline-none focus:border-[#00B4B4]/50 transition-colors"
-            />
-            {search && (
-              <button onClick={() => setSearch('')} className="absolute right-3 top-1/2 -translate-y-1/2 text-white/40 hover:text-white">
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                </svg>
-              </button>
-            )}
+          {/* Search + stock toggle */}
+          <div className="mb-3 flex items-center gap-2">
+            <div className="relative flex-1 md:flex-none md:w-full md:max-w-md">
+              <svg className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-white/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+              <input
+                type="text"
+                placeholder="Search peptides..."
+                value={search}
+                onChange={(e) => setSearch(e.target.value)}
+                className="w-full bg-[#0d1e35] border border-white/10 rounded-xl pl-10 pr-9 py-2.5 text-white placeholder-white/30 text-sm focus:outline-none focus:border-[#00B4B4]/50 transition-colors"
+              />
+              {search && (
+                <button onClick={() => setSearch('')} className="absolute right-3 top-1/2 -translate-y-1/2 text-white/40 hover:text-white">
+                  <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              )}
+            </div>
+            <button
+              type="button"
+              onClick={() => setInStockOnly((v) => !v)}
+              aria-pressed={inStockOnly}
+              className={`flex-none inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl text-xs md:text-sm font-semibold whitespace-nowrap transition-all duration-200 ${
+                inStockOnly
+                  ? 'bg-green-400/15 border border-green-400/50 text-green-300'
+                  : 'bg-[#0d1e35] border border-white/10 text-white/60 hover:text-white hover:border-green-400/30'
+              }`}
+              style={{ fontFamily: 'var(--font-body)' }}
+            >
+              <span className={`w-1.5 h-1.5 rounded-full ${inStockOnly ? 'bg-green-400' : 'bg-white/30'}`} />
+              In stock
+            </button>
           </div>
 
           {/* Category filters — horizontal scroll on mobile */}
-          <div className="flex overflow-x-auto scrollbar-hide gap-2 pb-0.5">
-            {categories.map(({ id, label }) => (
-              <button
-                key={id}
-                onClick={() => setActiveCategory(id)}
-                className={`flex-none flex items-center gap-1.5 px-3.5 md:px-4 py-2 rounded-full text-xs md:text-sm font-semibold whitespace-nowrap transition-all duration-200 ${
-                  activeCategory === id
-                    ? 'bg-[#00B4B4] text-white shadow-lg shadow-[#00B4B4]/20'
-                    : 'bg-[#0d1e35] border border-white/10 text-white/60 hover:text-white hover:border-[#00B4B4]/30'
-                }`}
-                style={{ fontFamily: 'Inter, sans-serif' }}
-              >
-                {CAT_ICONS[id] && (
-                  <span className={`hidden md:inline-flex ${activeCategory === id ? 'text-white' : 'text-[#00B4B4]'}`}>
-                    {CAT_ICONS[id]}
-                  </span>
-                )}
-                {label}
-              </button>
-            ))}
-          </div>
+          <FilterChips
+            className="overflow-x-auto scrollbar-hide pb-0.5"
+            options={categories}
+            value={activeCategory}
+            onChange={setActiveCategory}
+            renderIcon={({ id }, active) =>
+              CAT_ICONS[id] && (
+                <span className={`hidden md:inline-flex transition-colors duration-300 ${active ? 'text-white' : 'text-[#00B4B4]'}`}>
+                  {CAT_ICONS[id]}
+                </span>
+              )
+            }
+          />
         </div>
       </section>
 
@@ -247,10 +273,13 @@ export default function Catalogue() {
               <> in <span className="text-[#00B4B4]">{currentCategory.label}</span></>
             )}
             {search && <> matching "<span className="text-white/60">{search}</span>"</>}
+            {!inStockOnly && inStockCount > 0 && (
+              <> · <span className="text-green-400">{inStockCount} in stock</span></>
+            )}
           </p>
-          {(activeCategory !== 'all' || search) && (
+          {hasActiveFilters && (
             <button
-              onClick={() => { setActiveCategory('all'); setSearch('') }}
+              onClick={clearFilters}
               className="text-white/40 hover:text-white text-sm transition-colors"
             >
               Clear filters
@@ -259,16 +288,18 @@ export default function Catalogue() {
         </div>
 
         {filtered.length > 0 ? (
-          <div className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-4">
+          <div ref={gridRef} className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-4">
             {filtered.map((product) => (
               <ProductCard key={product.id} product={product} />
             ))}
           </div>
         ) : (
           <div className="text-center py-24">
-            <p className="text-white/30 text-lg">No compounds match your search.</p>
+            <p className="text-white/30 text-lg">
+              {inStockOnly ? 'Nothing in stock matches your search. Untick "In stock" to see everything we can source.' : 'No compounds match your search.'}
+            </p>
             <button
-              onClick={() => { setActiveCategory('all'); setSearch('') }}
+              onClick={clearFilters}
               className="mt-4 text-[#00B4B4] hover:text-white text-sm transition-colors"
             >
               Clear filters
@@ -279,20 +310,14 @@ export default function Catalogue() {
 
       {/* Bottom CTA */}
       <section className="py-20 border-t border-white/8">
-        <div className="max-w-2xl mx-auto px-6 text-center">
-          <h2 className="text-3xl md:text-4xl font-black text-white mb-4" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+        <Reveal stagger className="max-w-2xl mx-auto px-6 text-center">
+          <h2 className="text-3xl md:text-4xl font-black text-white mb-4 tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>
             Can't Find What You're <span className="text-[#00B4B4]">Looking For?</span>
           </h2>
           <p className="text-white/60 mb-8">
             We stock over 100 research-grade peptides. If you don't see what you need, message us directly and we'll source it for you.
           </p>
-          <a
-            href={whatsappLink}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex items-center gap-2.5 bg-[#00B4B4] hover:bg-[#009999] text-white font-bold text-base px-8 py-4 rounded-full transition-all duration-200 hover:shadow-xl hover:shadow-teal-500/30"
-            style={{ fontFamily: 'Montserrat, sans-serif' }}
-          >
+          <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg">
             {WA_ICON}
             Chat to Us on WhatsApp
           </a>
@@ -300,7 +325,7 @@ export default function Catalogue() {
             <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
             Typically responds within 1 hour during business hours
           </p>
-        </div>
+        </Reveal>
       </section>
     </div>
   )

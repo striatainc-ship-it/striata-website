@@ -1,5 +1,7 @@
 import { BrowserRouter, useLocation } from 'react-router-dom'
 import { useEffect, useRef, lazy } from 'react'
+import gsap from 'gsap'
+import { prefersReducedMotion } from './lib/motion'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import WhatsAppFAB from './components/WhatsAppFAB'
@@ -52,6 +54,33 @@ function PrerenderedHeadCleanup() {
   return null
 }
 
+/**
+ * Fade each new page in on client-side navigation.
+ *
+ * The first render is skipped so a prerendered page never re-animates on
+ * hydration. `clearProps` removes the inline transform when done — while it
+ * is present <main> is a containing block, which would break any fixed
+ * descendant, and sticky filter bars must be free to work afterwards.
+ */
+function PageTransition({ children }) {
+  const { pathname } = useLocation()
+  const ref = useRef(null)
+  const isFirst = useRef(true)
+
+  useEffect(() => {
+    if (isFirst.current) { isFirst.current = false; return }
+    if (prefersReducedMotion()) return
+    const tween = gsap.fromTo(
+      ref.current,
+      { opacity: 0, y: 12 },
+      { opacity: 1, y: 0, duration: 0.4, ease: 'power2.out', clearProps: 'all' },
+    )
+    return () => tween.kill()
+  }, [pathname])
+
+  return <main ref={ref}>{children}</main>
+}
+
 function Analytics() {
   const { pathname, search } = useLocation()
   useEffect(() => { initGA() }, [])
@@ -66,7 +95,7 @@ export function Layout({ routes = <AppRoutes components={routeComponents()} /> }
       <PrerenderedHeadCleanup />
       <Analytics />
       <Navbar />
-      <main>{routes}</main>
+      <PageTransition>{routes}</PageTransition>
       <Footer />
       <WhatsAppFAB />
     </>

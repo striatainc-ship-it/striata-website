@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { blogPosts, blogCategories } from '../data/blogPosts'
 import { whatsappLink } from '../data/products'
+import Reveal from '../components/Reveal'
 
 const BLOG_CAT_ICONS = {
   all: (
@@ -61,14 +62,14 @@ function ArticleCard({ article }) {
       className="group bg-[#0d1e35] border border-white/8 rounded-2xl p-6 hover:border-[#00B4B4]/40 hover:bg-[#0f2340] transition-all duration-300 hover:shadow-lg hover:shadow-[#00B4B4]/5 hover:-translate-y-1 flex flex-col"
     >
       <div className="flex items-center justify-between mb-4">
-        <span className="text-[#00B4B4] text-xs font-bold uppercase tracking-widest" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+        <span className="text-[#00B4B4] text-xs font-bold uppercase tracking-widest" style={{ fontFamily: 'var(--font-heading)' }}>
           {article.category}
         </span>
         <span className="text-white/30 text-xs">{article.readTime}</span>
       </div>
       <h3
         className="text-white font-bold text-base leading-snug mb-3 group-hover:text-[#00B4B4] transition-colors flex-1"
-        style={{ fontFamily: 'Montserrat, sans-serif' }}
+        style={{ fontFamily: 'var(--font-heading)' }}
       >
         {article.title}
       </h3>
@@ -117,24 +118,24 @@ export default function Blog() {
       {/* ── HERO ── */}
       <section className="relative pt-40 pb-16 px-6 overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-[#00B4B4]/5 to-transparent" />
-        <div className="relative z-10 max-w-3xl mx-auto text-center">
+        <Reveal stagger delay={0.1} className="relative z-10 max-w-3xl mx-auto text-center">
           <div
             className="inline-flex items-center gap-2 text-[#00B4B4] text-xs font-bold uppercase tracking-widest mb-6 bg-[#00B4B4]/10 border border-[#00B4B4]/20 px-4 py-2 rounded-full"
-            style={{ fontFamily: 'Montserrat, sans-serif' }}
+            style={{ fontFamily: 'var(--font-heading)' }}
           >
             <span className="w-1.5 h-1.5 rounded-full bg-[#00B4B4]" />
             Learning Hub
           </div>
           <h1
             className="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-5 leading-tight"
-            style={{ fontFamily: 'Montserrat, sans-serif' }}
+            style={{ fontFamily: 'var(--font-heading)' }}
           >
             The STRIATA <span className="text-[#00B4B4]">Learning Hub</span>
           </h1>
           <p className="text-white/60 text-lg max-w-xl mx-auto">
             No jargon. No gatekeeping. Just clear, honest information about peptides, performance and what the science actually says.
           </p>
-        </div>
+        </Reveal>
       </section>
 
       {/* ── CATEGORY FILTERS ── */}
@@ -150,7 +151,7 @@ export default function Blog() {
                     ? 'bg-[#00B4B4] text-white shadow-lg shadow-teal-500/20'
                     : 'bg-[#0d1e35] text-white/60 border border-white/8 hover:border-[#00B4B4]/40 hover:text-white'
                 }`}
-                style={{ fontFamily: 'Inter, sans-serif' }}
+                style={{ fontFamily: 'var(--font-body)' }}
               >
                 {BLOG_CAT_ICONS[key]}
                 {label}
@@ -173,19 +174,19 @@ export default function Blog() {
                 <div className="flex flex-wrap items-center gap-3 mb-5">
                   <span
                     className="inline-flex items-center gap-1.5 bg-[#00B4B4] text-white text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full"
-                    style={{ fontFamily: 'Montserrat, sans-serif' }}
+                    style={{ fontFamily: 'var(--font-heading)' }}
                   >
                     <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
                     Start Here
                   </span>
-                  <span className="text-[#00B4B4] text-xs font-bold uppercase tracking-widest" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+                  <span className="text-[#00B4B4] text-xs font-bold uppercase tracking-widest" style={{ fontFamily: 'var(--font-heading)' }}>
                     🧬 {featured.category}
                   </span>
                   <span className="text-white/30 text-xs">{featured.readTime}</span>
                 </div>
                 <h2
                   className="text-2xl md:text-3xl font-black text-white mb-4 leading-tight group-hover:text-[#00B4B4] transition-colors"
-                  style={{ fontFamily: 'Montserrat, sans-serif' }}
+                  style={{ fontFamily: 'var(--font-heading)' }}
                 >
                   {featured.title}
                 </h2>
@@ -224,13 +225,13 @@ export default function Blog() {
         <div className="max-w-xl mx-auto px-6 text-center">
           <div
             className="inline-flex items-center gap-2 text-[#00B4B4] text-xs font-bold uppercase tracking-widest mb-5 bg-[#00B4B4]/10 border border-[#00B4B4]/20 px-4 py-2 rounded-full"
-            style={{ fontFamily: 'Montserrat, sans-serif' }}
+            style={{ fontFamily: 'var(--font-heading)' }}
           >
             Newsletter
           </div>
           <h2
             className="text-2xl md:text-4xl font-black text-white mb-3"
-            style={{ fontFamily: 'Montserrat, sans-serif' }}
+            style={{ fontFamily: 'var(--font-heading)' }}
           >
             Stay in the <span className="text-[#00B4B4]">Loop</span>
           </h2>
@@ -253,8 +254,7 @@ export default function Blog() {
               />
               <button
                 type="submit"
-                className="bg-[#00B4B4] hover:bg-[#009999] text-white font-bold px-6 py-3 rounded-full text-sm transition-all duration-200 hover:shadow-lg hover:shadow-teal-500/30 shrink-0"
-                style={{ fontFamily: 'Montserrat, sans-serif' }}
+                className="btn btn-primary btn-md shrink-0"
               >
                 Subscribe →
               </button>
@@ -270,7 +270,7 @@ export default function Blog() {
         <div className="relative z-10 max-w-2xl mx-auto text-center">
           <h2
             className="text-2xl md:text-4xl font-black text-white mb-4"
-            style={{ fontFamily: 'Montserrat, sans-serif' }}
+            style={{ fontFamily: 'var(--font-heading)' }}
           >
             Found Something That <span className="text-[#00B4B4]">Interests You?</span>
           </h2>
@@ -281,8 +281,7 @@ export default function Blog() {
             href={whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2.5 bg-[#00B4B4] hover:bg-[#009999] text-white font-bold text-base px-8 py-4 rounded-full transition-all duration-200 hover:shadow-xl hover:shadow-teal-500/30"
-            style={{ fontFamily: 'Montserrat, sans-serif' }}
+            className="btn btn-primary btn-lg"
           >
             {WA_ICON}
             Chat to Us on WhatsApp →

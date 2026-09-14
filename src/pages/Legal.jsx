@@ -16,7 +16,7 @@ function Section({ id, title, children }) {
     <div id={id} className="mb-14 scroll-mt-28">
       <h2
         className="text-xl md:text-2xl font-black text-white mb-6 pb-3 border-b border-white/8"
-        style={{ fontFamily: 'Montserrat, sans-serif' }}
+        style={{ fontFamily: 'var(--font-heading)' }}
       >
         {title}
       </h2>
@@ -28,7 +28,7 @@ function Section({ id, title, children }) {
 function Sub({ title, children }) {
   return (
     <div>
-      <h3 className="text-white/80 font-semibold text-sm mb-2" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+      <h3 className="text-white/80 font-semibold text-sm mb-2" style={{ fontFamily: 'var(--font-heading)' }}>
         {title}
       </h3>
       <p className="text-white/55 text-sm leading-relaxed">{children}</p>
@@ -64,7 +64,7 @@ export default function Legal() {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A1628]/60 to-[#0A1628]" />
         <div className="relative z-10 max-w-3xl mx-auto text-center">
-          <h1 className="text-3xl md:text-5xl font-black text-white mb-4" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+          <h1 className="text-3xl md:text-5xl font-black text-white mb-4" style={{ fontFamily: 'var(--font-heading)' }}>
             Legal & <span className="text-[#00B4B4]">Policies</span>
           </h1>
           <p className="text-white/55 text-base max-w-2xl mx-auto mb-2">
@@ -77,7 +77,7 @@ export default function Legal() {
       <div className="max-w-5xl mx-auto px-6 lg:px-8 pb-24">
         {/* Quick Nav */}
         <div className="mb-12 bg-[#0d1e35] border border-white/8 rounded-2xl p-5">
-          <p className="text-white/40 text-xs uppercase tracking-widest mb-4" style={{ fontFamily: 'Montserrat, sans-serif' }}>
+          <p className="text-white/40 text-xs uppercase tracking-widest mb-4" style={{ fontFamily: 'var(--font-heading)' }}>
             Quick Navigation
           </p>
           <div className="flex flex-wrap gap-2">
@@ -86,7 +86,7 @@ export default function Legal() {
                 key={anchor}
                 href={`#${anchor}`}
                 className="text-white/60 hover:text-[#00B4B4] text-xs border border-white/8 hover:border-[#00B4B4]/30 rounded-lg px-3 py-2 transition-all duration-200"
-                style={{ fontFamily: 'Inter, sans-serif' }}
+                style={{ fontFamily: 'var(--font-body)' }}
               >
                 {label}
               </a>
@@ -208,7 +208,7 @@ export default function Legal() {
           <Link
             to="/faq"
             className="inline-flex items-center gap-2 text-white/40 hover:text-[#00B4B4] text-sm transition-colors"
-            style={{ fontFamily: 'Inter, sans-serif' }}
+            style={{ fontFamily: 'var(--font-body)' }}
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Montserrat:wght@600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Manrope:wght@400;500;600;700;800&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -9,8 +9,8 @@
   --color-navy-light: #12213D;
   --color-steel: #F4F6F8;
   --color-steel-dark: #E2E8F0;
-  --font-heading: 'Montserrat', sans-serif;
-  --font-body: 'Inter', sans-serif;
+  --font-heading: 'Bricolage Grotesque', 'Segoe UI', sans-serif;
+  --font-body: 'Manrope', 'Segoe UI', sans-serif;
 }
 
 * {
@@ -23,10 +23,11 @@ html {
 
 body {
   margin: 0;
-  font-family: 'Inter', sans-serif;
+  font-family: var(--font-body);
   background-color: #0A1628;
   color: #F4F6F8;
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
 #root {
@@ -34,8 +35,19 @@ body {
 }
 
 .font-heading {
-  font-family: 'Montserrat', sans-serif;
+  font-family: var(--font-heading);
 }
+
+/* Bricolage Grotesque tops out at 800 and carries an optical-size axis;
+   let it use the display cut at large sizes and tighten the fit so the
+   heavy headings read as set type rather than stacked words. */
+h1, h2, h3, .font-heading {
+  font-variation-settings: 'opsz' 96;
+  letter-spacing: -0.02em;
+}
+h1 { font-variation-settings: 'opsz' 96; }
+h3 { font-variation-settings: 'opsz' 48; letter-spacing: -0.01em; }
+.font-black { font-weight: 800; }
 
 .scrollbar-hide {
   scrollbar-width: none;
@@ -49,4 +61,158 @@ body {
   outline: 2px solid #00B4B4;
   outline-offset: 3px;
   border-radius: 4px;
+}
+
+/* ── Buttons ─────────────────────────────────────────────────────────────
+   One system for every call to action. Size + variant, nothing else.
+   .btn-arrow on a trailing icon makes it nudge right on hover. */
+@layer components {
+  .btn {
+    @apply inline-flex items-center justify-center gap-2.5 rounded-full font-bold whitespace-nowrap
+           transition-all duration-300 ease-out cursor-pointer select-none;
+    font-family: var(--font-heading);
+    letter-spacing: -0.005em;
+  }
+  .btn-sm { @apply px-5 py-2.5 text-sm; }
+  .btn-md { @apply px-6 py-3 text-sm; }
+  .btn-lg { @apply px-8 py-4 text-base; }
+  .btn-xl { @apply px-10 py-5 text-lg; }
+
+  .btn-primary { @apply bg-teal text-white; }
+  .btn-primary:hover { @apply bg-teal-dark -translate-y-0.5 shadow-xl shadow-teal/30; }
+  .btn-primary:active { @apply translate-y-0 shadow-md shadow-teal/20; }
+
+  .btn-ghost { @apply border border-white/20 text-white/75; }
+  .btn-ghost:hover { @apply border-white/45 text-white bg-white/5 -translate-y-0.5; }
+
+  .btn-outline { @apply border border-teal/35 text-teal; }
+  .btn-outline:hover { @apply bg-teal border-teal text-white -translate-y-0.5 shadow-xl shadow-teal/25; }
+
+  .btn-arrow { @apply transition-transform duration-300 ease-out; }
+  .btn:hover .btn-arrow { transform: translateX(3px); }
+}
+
+/* ── Spotlight cards ─────────────────────────────────────────────────────
+   A teal glow that follows the cursor. --mx/--my are set by spotlightProps()
+   in lib/motion.js; the ::before sits between the card background and its
+   content thanks to isolation + z-index -1. */
+.spot {
+  position: relative;
+  isolation: isolate;
+  --mx: 50%;
+  --my: 50%;
+}
+.spot::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  background: radial-gradient(340px circle at var(--mx) var(--my), rgba(0, 180, 180, 0.16), transparent 45%);
+}
+.spot:hover::before {
+  opacity: 1;
+}
+
+/* ── Hero motion ──────────────────────────────────────────────────────── */
+.text-shimmer {
+  background: linear-gradient(100deg, #00B4B4 0%, #00B4B4 35%, #9FF3F3 50%, #00B4B4 65%, #00B4B4 100%);
+  background-size: 250% 100%;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 6s ease-in-out infinite;
+}
+@keyframes shimmer {
+  0%   { background-position: 125% 0; }
+  100% { background-position: -125% 0; }
+}
+
+.kenburns {
+  animation: kenburns 30s ease-in-out infinite alternate;
+  will-change: transform;
+}
+@keyframes kenburns {
+  from { transform: scale(1) translate(0, 0); }
+  to   { transform: scale(1.08) translate(-1.2%, 0.8%); }
+}
+
+/* ── GHK-Cu Serum product stage ────────────────────────────────────────── */
+.serum-perspective {
+  perspective: 1200px;
+}
+.serum-card {
+  transform-style: preserve-3d;
+  will-change: transform;
+}
+.serum-float {
+  animation: serum-float 6s ease-in-out infinite;
+}
+@keyframes serum-float {
+  0%, 100% { transform: translateY(0) rotate(-1deg); }
+  50%      { transform: translateY(-16px) rotate(1deg); }
+}
+.serum-reflection {
+  transform: scaleY(-1);
+  mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.45) 0%, transparent 55%);
+  -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.45) 0%, transparent 55%);
+}
+.serum-badge {
+  animation: serum-bob 5s ease-in-out infinite;
+}
+@keyframes serum-bob {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-9px); }
+}
+.serum-glow {
+  animation: serum-glow 5.5s ease-in-out infinite;
+}
+@keyframes serum-glow {
+  0%, 100% { opacity: 0.55; transform: translate(-50%, -50%) scale(1); }
+  50%      { opacity: 0.9;  transform: translate(-50%, -50%) scale(1.1); }
+}
+
+/* ── Testimonial marquee ──────────────────────────────────────────────────
+   The track holds two copies of the list; translating by exactly -50% loops
+   seamlessly. Items carry their own right margin so the track width is an
+   exact multiple with no trailing gap. */
+.marquee {
+  overflow: hidden;
+  mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 6%, black 94%, transparent);
+}
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marquee 60s linear infinite;
+}
+.marquee:hover .marquee-track,
+.marquee:focus-within .marquee-track {
+  animation-play-state: paused;
+}
+@keyframes marquee {
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .text-shimmer,
+  .kenburns,
+  .marquee-track,
+  .serum-float,
+  .serum-badge,
+  .serum-glow {
+    animation: none;
+  }
+  .marquee {
+    overflow-x: auto;
+    mask-image: none;
+    -webkit-mask-image: none;
+  }
+  .btn:hover,
+  .btn:hover .btn-arrow {
+    transform: none;
+  }
 }
