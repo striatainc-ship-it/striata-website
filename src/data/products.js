@@ -46,7 +46,7 @@ export const products = [
     featured: true,
     prices: [
       { dose: '5mg+5mg', price: 650 },
-      { dose: '10mg+10mg', price: 825 },
+      { dose: '10mg+10mg', price: 825, inStock: true },
       { dose: '15mg+15mg', price: 1250 },
     ],
   },
@@ -113,7 +113,7 @@ export const products = [
     tags: ['GH Release', 'Lean Mass', 'Appetite'],
     prices: [
       { dose: '5mg', price: 250 },
-      { dose: '10mg', price: 350 },
+      { dose: '10mg', price: 350, inStock: true },
     ],
   },
   {
@@ -146,7 +146,7 @@ export const products = [
     description: 'A synergistic GHRH and ghrelin mimetic stack for optimised pulsatile growth hormone release.',
     tags: ['Stack', 'GHRH', 'GH Release'],
     prices: [
-      { dose: '5mg+5mg', price: 425 },
+      { dose: '5mg+5mg', price: 425, inStock: true },
     ],
   },
   {
@@ -174,13 +174,24 @@ export const products = [
   },
   {
     id: 15,
-    name: 'GLOW Stack (BPC+GHK-Cu)',
+    name: 'GLOW Stack (GHK-Cu+BPC+TB)',
     category: 'recovery',
-    description: 'A dual-action beauty and healing stack combining BPC-157 for tissue repair with GHK-Cu for skin regeneration and anti-aging.',
+    description: 'A triple-action beauty and healing stack: GHK-Cu 50mg for skin regeneration and anti-aging, with BPC-157 10mg and TB-500 10mg for tissue repair and recovery.',
     tags: ['Stack', 'Beauty', 'Anti-Aging'],
     featured: true,
     prices: [
-      { dose: '10mg+50mg', price: 1150 },
+      { dose: '70mg', price: 1150, inStock: true },
+    ],
+  },
+  {
+    id: 89,
+    name: 'KLOW Stack (KPV+GHK-Cu+BPC+TB)',
+    category: 'recovery',
+    description: 'The GLOW Stack plus KPV 10mg: GHK-Cu 50mg, BPC-157 10mg and TB-500 10mg for skin and tissue regeneration, with KPV added for gut health and systemic anti-inflammatory support.',
+    tags: ['Stack', 'Anti-Inflammatory', 'Gut Health'],
+    featured: true,
+    prices: [
+      { dose: '80mg', price: 1300, inStock: true },
     ],
   },
   {
@@ -224,7 +235,7 @@ export const products = [
     featured: true,
     prices: [
       { dose: '5mg', price: 350 },
-      { dose: '10mg', price: 600 },
+      { dose: '10mg', price: 600, inStock: true },
     ],
   },
   {
@@ -257,7 +268,20 @@ export const products = [
     tags: ['Skin Rejuvenation', 'Collagen', 'Anti-Aging'],
     featured: true,
     prices: [
-      { dose: '100mg', price: 450 },
+      { dose: '100mg', price: 450, inStock: true },
+    ],
+  },
+  {
+    id: 91,
+    name: 'GHK-Cu Serum (Topical)',
+    category: 'skin',
+    format: 'Bottle',
+    description: 'Our copper peptide face serum: GHK-Cu with 1% hyaluronic acid in a 30 ml dropper, for all skin types. Restore, hydrate, renew. Available in 1% and 2% strengths.',
+    tags: ['Skincare', 'Copper Peptide', 'Hyaluronic Acid'],
+    featured: true,
+    prices: [
+      { dose: '1% · 30ml', price: 549, inStock: true },
+      { dose: '2% · 30ml', price: 795, inStock: true },
     ],
   },
   {
@@ -268,7 +292,7 @@ export const products = [
     tags: ['Telomerase', 'Longevity', 'Anti-Aging'],
     featured: true,
     prices: [
-      { dose: '10mg', price: 450 },
+      { dose: '10mg', price: 450, inStock: true },
     ],
   },
   {
@@ -322,8 +346,8 @@ export const products = [
     tags: ['Antioxidant', 'Detox', 'Skin Brightening'],
     prices: [
       { dose: '400mg', price: 250 },
-      { dose: '600mg', price: 350 },
-      { dose: '1500mg', price: 580 },
+      { dose: '600mg', price: 350, inStock: true },
+      { dose: '1500mg', price: 580, inStock: true },
     ],
   },
   {
@@ -376,7 +400,8 @@ export const products = [
     tags: ['Mitochondrial', 'Metabolic', 'Energy'],
     featured: true,
     prices: [
-      { dose: '20mg', price: 650 },
+      { dose: '10mg', price: 400, inStock: true },
+      { dose: '20mg', price: 650, inStock: true },
       { dose: '40mg', price: 940 },
     ],
   },
@@ -388,7 +413,7 @@ export const products = [
     tags: ['Libido', 'Sexual Health', 'Clinically Proven'],
     featured: true,
     prices: [
-      { dose: '10mg', price: 450 },
+      { dose: '10mg', price: 450, inStock: true },
     ],
   },
   {
@@ -398,7 +423,7 @@ export const products = [
     description: 'Stimulates melanin production for tanning, appetite suppression and libido enhancement.',
     tags: ['Tanning', 'Libido', 'Melanin'],
     prices: [
-      { dose: '10mg', price: 400 },
+      { dose: '10mg', price: 400, inStock: true },
     ],
   },
   {
@@ -450,7 +475,7 @@ export const products = [
     tags: ['Bonding', 'Stress Reduction', 'Wellbeing'],
     prices: [
       { dose: '2mg', price: 225 },
-      { dose: '5mg', price: 380 },
+      { dose: '5mg', price: 380, inStock: true },
       { dose: '10mg', price: 530 },
     ],
   },
@@ -462,7 +487,7 @@ export const products = [
     tags: ['HPG Axis', 'Testosterone', 'Hormonal Deficiency'],
     prices: [
       { dose: '5mg', price: 350 },
-      { dose: '10mg', price: 600 },
+      { dose: '10mg', price: 600, inStock: true },
     ],
   },
 
@@ -474,7 +499,17 @@ export const products = [
     description: 'Inhibits NNMT enzyme activity to promote fat loss and improved cellular metabolism.',
     tags: ['NNMT Inhibitor', 'Fat Loss', 'Metabolism'],
     prices: [
-      { dose: '10mg', price: 450 },
+      { dose: '10mg', price: 450, inStock: true },
+    ],
+  },
+  {
+    id: 90,
+    name: 'SLU-PP-332',
+    category: 'weight',
+    description: 'An exercise mimetic that activates ERR receptors to boost mitochondrial activity, fat oxidation and endurance, replicating the metabolic benefits of training.',
+    tags: ['Exercise Mimetic', 'Fat Oxidation', 'Endurance'],
+    prices: [
+      { dose: '5mg', price: 400, inStock: true },
     ],
   },
   {
@@ -484,7 +519,7 @@ export const products = [
     description: 'An HGH fragment that stimulates lipolysis and inhibits fat storage without affecting blood sugar or growth.',
     tags: ['Lipolysis', 'Fat Loss', 'HGH Fragment'],
     prices: [
-      { dose: '5mg', price: 500 },
+      { dose: '5mg', price: 500, inStock: true },
     ],
   },
   {
@@ -495,8 +530,8 @@ export const products = [
     tags: ['Visceral Fat', 'Body Composition', 'Cognitive'],
     featured: true,
     prices: [
-      { dose: '5mg', price: 500 },
-      { dose: '10mg', price: 1050 },
+      { dose: '5mg', price: 500, inStock: true },
+      { dose: '10mg', price: 1050, inStock: true },
       { dose: '20mg', price: 1650 },
     ],
   },
@@ -518,8 +553,8 @@ export const products = [
     tags: ['Triple Agonist', 'Advanced', 'Fat Loss'],
     featured: true,
     prices: [
-      { dose: '30mg', price: 1750 },
-      { dose: '50mg', price: 2750 },
+      { dose: '30mg', price: 1750, inStock: true },
+      { dose: '50mg', price: 2750, inStock: true },
       { dose: '60mg', price: 3600 },
     ],
   },
@@ -531,7 +566,7 @@ export const products = [
     tags: ['GLP-1', 'Weight Loss', 'Blood Sugar'],
     featured: true,
     prices: [
-      { dose: '30mg', price: 1500 },
+      { dose: '30mg', price: 1500, inStock: true },
       { dose: '50mg', price: 2250 },
       { dose: '60mg', price: 2600 },
     ],
@@ -559,7 +594,7 @@ export const products = [
     tags: ['Amylin', 'Appetite Suppression', 'GLP-1'],
     prices: [
       { dose: '2mg', price: 300 },
-      { dose: '5mg', price: 600 },
+      { dose: '5mg', price: 600, inStock: true },
       { dose: '10mg', price: 1080 },
     ],
   },
@@ -682,6 +717,7 @@ export const products = [
     tags: ['Anxiolytic', 'Nootropic', 'Mood'],
     featured: true,
     prices: [
+      { dose: '5mg', price: 400, inStock: true },
       { dose: '10mg', price: 650 },
     ],
   },
@@ -693,6 +729,7 @@ export const products = [
     tags: ['Nootropic', 'Focus', 'Memory'],
     featured: true,
     prices: [
+      { dose: '5mg', price: 400, inStock: true },
       { dose: '10mg', price: 650 },
     ],
   },
@@ -704,7 +741,7 @@ export const products = [
     tags: ['Sleep', 'Delta Sleep', 'Circadian'],
     prices: [
       { dose: '2mg', price: 290 },
-      { dose: '5mg', price: 350 },
+      { dose: '5mg', price: 350, inStock: true },
       { dose: '10mg', price: 600 },
     ],
   },
@@ -727,7 +764,7 @@ export const products = [
     tags: ['Geroprotective', 'Cognitive', 'Pineal Gland'],
     prices: [
       { dose: '5mg', price: 250 },
-      { dose: '10mg', price: 400 },
+      { dose: '10mg', price: 400, inStock: true },
     ],
   },
   {
@@ -768,7 +805,18 @@ export const products = [
     tags: ['NAD+', 'Longevity', 'Cellular Energy'],
     featured: true,
     prices: [
-      { dose: '500mg', price: 400 },
+      { dose: '500mg', price: 400, inStock: true },
+    ],
+  },
+  {
+    id: 85,
+    name: 'Adamax',
+    category: 'brain',
+    description: 'A next-generation Semax analogue with a modified structure for enhanced potency, supporting focus, memory, neuroplasticity and stress resilience.',
+    tags: ['Nootropic', 'Semax Analogue', 'Neuroplasticity'],
+    prices: [
+      { dose: '5mg', price: 450 },
+      { dose: '10mg', price: 680, inStock: true },
     ],
   },
 
@@ -803,7 +851,7 @@ export const products = [
     featured: true,
     prices: [
       { dose: '5mg', price: 650 },
-      { dose: '10mg', price: 1040 },
+      { dose: '10mg', price: 1040, inStock: true },
     ],
   },
   {
@@ -824,7 +872,7 @@ export const products = [
     description: 'Vasoactive Intestinal Peptide, a neuropeptide with anti-inflammatory, bronchodilatory and immunomodulatory effects.',
     tags: ['Immunomodulatory', 'Anti-Inflammatory', 'Neuropeptide'],
     prices: [
-      { dose: '5mg', price: 550 },
+      { dose: '5mg', price: 550, inStock: true },
       { dose: '10mg', price: 900 },
     ],
   },
@@ -945,17 +993,6 @@ export const products = [
     ],
   },
   {
-    id: 85,
-    name: 'ADMAX',
-    category: 'weight',
-    description: 'An advanced adaptogenic peptide compound that enhances stress resilience, cognitive performance and sustained energy.',
-    tags: ['Adaptogen', 'Stress Resilience', 'Energy'],
-    prices: [
-      { dose: '5mg', price: 450 },
-      { dose: '10mg', price: 680 },
-    ],
-  },
-  {
     id: 86,
     name: 'FTPP Adipotide',
     category: 'weight',
@@ -991,6 +1028,11 @@ export const products = [
     ],
   },
 ]
+
+// A product is in stock when at least one concentration is flagged inStock.
+// Unflagged concentrations are treated as out of stock (available on request).
+export const isInStock = (product) =>
+  Array.isArray(product.prices) && product.prices.some((tier) => tier.inStock === true)
 
 export const whatsappNumbers = [
   { number: '+27782137905', display: '+27 78 213 7905' },

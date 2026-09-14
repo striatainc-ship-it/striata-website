@@ -16,6 +16,9 @@ export const loaders = {
   '/guides/:slug': () => import('./pages/GuidePost'),
   '/legal': () => import('./pages/Legal'),
   '/stacks': () => import('./pages/Stacks'),
+  '/stacks/menopause-reset': () => import('./pages/MenopauseReset'),
+  '/pens': () => import('./pages/Pens'),
+  '/ghk-serum': () => import('./pages/GhkSerum'),
 }
 
 /**

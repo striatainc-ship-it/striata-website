@@ -42,6 +42,12 @@ const images = [
   { file: 'helix 2.png', slug: 'helix-2', widths: COLUMN },
   // Rendered at h-14 (56px tall), so 640px wide covers well past 2x.
   { file: 'logo-white.png', slug: 'logo-white', widths: [320, 640] },
+  // Original product shot on white — used for og:image / structured data.
+  { file: 'ghk-serum.jpg', slug: 'ghk-serum', widths: [480, 960] },
+  // Background knocked out by scripts/cutout-serum.mjs and trimmed to the
+  // bottle, which is only 336px wide in the 1080px source. Emitted at native
+  // size; the hero renders it at ~210-260px so that is still ~1.5x.
+  { file: 'ghk-serum-cut.png', slug: 'ghk-serum-cut', widths: [336] },
 ]
 
 const kb = bytes => `${Math.round(bytes / 1024)} KB`
