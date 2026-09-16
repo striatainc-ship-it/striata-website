@@ -2,7 +2,9 @@ import { useParams, Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { getGuide, guides } from '../data/guidesData'
 import { whatsappLink } from '../data/products'
+import { AUTHOR_SCHEMA, DEFAULT_IMAGE } from '../data/site'
 import JsonLd from '../components/JsonLd'
+import { Byline, AuthorCard } from '../components/AuthorCard'
 
 const WA_ICON = (
   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -10,20 +12,35 @@ const WA_ICON = (
   </svg>
 )
 
-// ── Inline markdown renderer — handles **bold** and *italic* ──
+// ── Inline markdown renderer — **bold**, *italic* and [text](url) links ──
+// Links let a guide cite its sources (a "## Sources" list of PubMed or
+// SAHPRA URLs renders as a normal heading + bullet list).
 function renderInline(text) {
   if (!text) return null
   const nodes = []
-  const regex = /\*\*([^*]+)\*\*|\*([^*]+)\*/g
+  const regex = /\[([^\]]+)\]\(([^)\s]+)\)|\*\*([^*]+)\*\*|\*([^*]+)\*/g
   let last = 0
   let m
   let i = 0
   while ((m = regex.exec(text)) !== null) {
     if (m.index > last) nodes.push(text.slice(last, m.index))
     if (m[1] !== undefined) {
-      nodes.push(<strong key={i++} className="text-white font-semibold">{m[1]}</strong>)
+      const external = /^https?:\/\//.test(m[2])
+      nodes.push(
+        <a
+          key={i++}
+          href={m[2]}
+          className="text-[#00B4B4] underline underline-offset-2 hover:text-white transition-colors"
+          target={external ? '_blank' : undefined}
+          rel={external ? 'noopener noreferrer' : undefined}
+        >
+          {m[1]}
+        </a>,
+      )
+    } else if (m[3] !== undefined) {
+      nodes.push(<strong key={i++} className="text-white font-semibold">{m[3]}</strong>)
     } else {
-      nodes.push(<em key={i++} className="text-[#00B4B4]/80 not-italic font-medium">{m[2]}</em>)
+      nodes.push(<em key={i++} className="text-[#00B4B4]/80 not-italic font-medium">{m[4]}</em>)
     }
     last = regex.lastIndex
   }
@@ -220,6 +237,10 @@ export default function GuidePost() {
         <meta property="og:title" content={`${guide.title} | STRIATA Guides`} />
         <meta property="og:description" content={guide.preview} />
         <meta property="og:url" content={`https://www.striatalabs.co.za/guides/${guide.slug}`} />
+        <meta property="og:type" content="article" />
+        <meta property="article:published_time" content={guide.datePublished} />
+        <meta property="article:modified_time" content={guide.dateModified} />
+        <meta property="article:author" content="James Kriel" />
       </Helmet>
 
       <JsonLd data={{
@@ -228,7 +249,10 @@ export default function GuidePost() {
         headline: guide.title,
         description: guide.preview,
         articleSection: guide.category,
-        author: { '@type': 'Organization', name: 'STRIATA' },
+        image: DEFAULT_IMAGE,
+        datePublished: guide.datePublished,
+        dateModified: guide.dateModified,
+        author: AUTHOR_SCHEMA,
         publisher: {
           '@type': 'Organization',
           name: 'STRIATA',
@@ -266,7 +290,6 @@ export default function GuidePost() {
             >
               {guide.category}
             </span>
-            <span className="text-white/30 text-sm">{guide.readTime}</span>
           </div>
           <h1
             className="text-2xl sm:text-3xl md:text-4xl font-black text-white leading-tight mb-5"
@@ -274,6 +297,7 @@ export default function GuidePost() {
           >
             {guide.title}
           </h1>
+          <Byline datePublished={guide.datePublished} dateModified={guide.dateModified} readTime={guide.readTime} />
           <p className="text-white/60 text-lg leading-relaxed border-l-2 border-[#00B4B4]/40 pl-4">
             {guide.preview}
           </p>
@@ -283,9 +307,31 @@ export default function GuidePost() {
       {/* ── GUIDE CONTENT ── */}
       <section className="px-6 pb-16">
         <div className="max-w-3xl mx-auto">
+          {guide.slug === 'peptide-reconstitution-dosage-calculator' && (
+            <Link
+              to="/tools/reconstitution-calculator"
+              className="group mb-6 flex items-center justify-between gap-4 rounded-2xl border border-[#00B4B4]/30 bg-[#00B4B4]/[0.07] px-6 py-5 hover:bg-[#00B4B4]/[0.12] hover:border-[#00B4B4]/50 transition-colors"
+            >
+              <div>
+                <p className="text-white font-bold text-base" style={{ fontFamily: 'var(--font-heading)' }}>
+                  Skip the maths: use the calculator
+                </p>
+                <p className="text-white/55 text-sm mt-1">
+                  Pick your vial, enter the water, and read off the units to draw.
+                </p>
+              </div>
+              <span className="btn btn-primary btn-sm shrink-0">
+                Open
+                <svg className="w-4 h-4 btn-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </span>
+            </Link>
+          )}
           <div className="bg-[#0d1e35] border border-white/8 rounded-2xl p-7 md:p-10">
             <MarkdownContent content={guide.content} />
           </div>
+          <AuthorCard />
         </div>
       </section>
 

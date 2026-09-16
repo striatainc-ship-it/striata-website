@@ -145,7 +145,8 @@ function StackCard({ stack }) {
 
   return (
     <article
-      className="rounded-2xl overflow-hidden border border-white/8 bg-[#0d1e35] flex flex-col hover:border-white/15 transition-colors duration-200"
+      id={stack.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}
+      className="rounded-2xl overflow-hidden border border-white/8 bg-[#0d1e35] flex flex-col hover:border-white/15 transition-colors duration-200 scroll-mt-28"
       style={{ borderLeft: `4px solid ${meta.color}` }}
     >
       {/* ── Header ── */}
@@ -370,6 +371,13 @@ export default function Stacks() {
           <p className="text-white/35 text-sm">
             Pharmaceutical Grade · 99%+ Purity · Research Purposes Only
           </p>
+          <Link
+            to="/quiz"
+            className="inline-flex items-center gap-1.5 mt-5 text-[#00B4B4] text-sm font-semibold hover:text-white transition-colors"
+          >
+            Not sure which one? Take the 60-second quiz
+            <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
+          </Link>
 
           {/* Category legend */}
           <div className="flex flex-wrap justify-center gap-4 mt-8">

@@ -28,9 +28,15 @@ function parseGuide(md) {
     preview: meta.meta_description || '',
     category: meta.category || 'Guide',
     readTime: meta.read_time || '',
+    // Frontmatter `published:` / `updated:` (YYYY-MM-DD) override the defaults;
+    // both guides shipped on 21 July 2026.
+    datePublished: meta.published || GUIDES_PUBLISHED,
+    dateModified: meta.updated || meta.published || GUIDES_PUBLISHED,
     content,
   }
 }
+
+const GUIDES_PUBLISHED = '2026-07-21'
 
 export const guides = [
   parseGuide(reconstitutionMd),

@@ -203,6 +203,20 @@ export default function About() {
                 STRIATA was built to fill that gap. To bring world-class, research-grade peptides to South Africans at pricing that doesn't punish you for wanting to take your health seriously.
               </p>
             </div>
+            {/* Anchor target for article bylines (/about#founder) */}
+            <div id="founder" className="mt-8 pt-6 border-t border-white/8 flex items-center gap-4 scroll-mt-28">
+              <span
+                className="w-12 h-12 rounded-full bg-[#00B4B4]/15 border border-[#00B4B4]/30 text-[#00B4B4] text-sm font-bold flex items-center justify-center shrink-0"
+                style={{ fontFamily: 'var(--font-heading)' }}
+                aria-hidden="true"
+              >
+                JK
+              </span>
+              <div>
+                <p className="text-white font-bold" style={{ fontFamily: 'var(--font-heading)' }}>James Kriel</p>
+                <p className="text-white/45 text-sm">Founder of STRIATA · writes every article in the Learn and Guides library</p>
+              </div>
+            </div>
           </div>
           <div className="relative">
             <img

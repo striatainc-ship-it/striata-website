@@ -1,10 +1,23 @@
-import { useEffect } from 'react'
+import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
 
 /** True when the visitor has asked the OS for less motion. Safe on the server. */
 export const prefersReducedMotion = () =>
   typeof window !== 'undefined' &&
   window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+/**
+ * True until the first client-side navigation.
+ *
+ * Prerendered pages arrive fully visible, so an entrance tween on the landing
+ * route can only hide what the visitor is already looking at and fade it back
+ * in — a flash, and a second paint of the largest element. Above-the-fold
+ * reveals and the product-grid stagger skip themselves while this is true;
+ * from the first navigation on, every page animates as before.
+ */
+let initialLoad = true
+export const isInitialLoad = () => initialLoad
+export const markNavigated = () => { initialLoad = false }
 
 /**
  * Props for a cursor-tracking glow card. Spread onto any element that also
@@ -32,9 +45,16 @@ export function spotlightProps() {
  * so hover lifts keep working afterwards.
  */
 export function useStaggerGrid(ref, deps) {
+  const firstRun = useRef(true)
   useEffect(() => {
     const el = ref.current
     if (!el || prefersReducedMotion()) return
+    // The prerendered grid is already on screen when the page lands; tweening
+    // 90 cards from opacity 0 at that point is pure cost (see isInitialLoad).
+    if (firstRun.current) {
+      firstRun.current = false
+      if (isInitialLoad()) return
+    }
     const items = Array.from(el.children)
     if (items.length === 0) return
 

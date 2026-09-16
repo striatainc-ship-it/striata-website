@@ -90,11 +90,13 @@ for (const route of routes) {
 }
 
 // sitemap.xml is generated from the same route list, so a new blog post or
-// guide can never be left out of it.
+// guide can never be left out of it. Routes flagged `sitemap: false` are
+// prerendered but noindex, and listing them would only confuse Search Console.
 const lastmod = new Date().toISOString().slice(0, 10)
+const sitemapRoutes = routes.filter(r => r.sitemap !== false)
 const sitemap = `<?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-${routes
+${sitemapRoutes
   .map(
     r => `  <url>
     <loc>${ORIGIN}${r.path}</loc>
@@ -109,7 +111,7 @@ ${routes
 await writeFile(join(distDir, 'sitemap.xml'), sitemap, 'utf8')
 
 console.log(
-  `\nPrerendered ${routes.length - failures.length}/${routes.length} routes; sitemap.xml written with ${routes.length} URLs.`,
+  `\nPrerendered ${routes.length - failures.length}/${routes.length} routes; sitemap.xml written with ${sitemapRoutes.length} URLs.`,
 )
 
 if (failures.length) {

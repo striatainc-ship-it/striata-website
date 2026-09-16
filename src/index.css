@@ -1,5 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500..800&family=Manrope:wght@400;500;600;700;800&display=swap');
 @import "tailwindcss";
+
+/* ── Fonts ────────────────────────────────────────────────────────────────
+   Self-hosted variable fonts (latin subsets from @fontsource-variable 5.3.0,
+   copied to public/fonts). The Google Fonts @import they replace was a
+   render-blocking chain — stylesheet → fonts.googleapis CSS → gstatic woff2 —
+   that held first paint back ~1.5 s on mobile. index.html preloads both files. */
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 800;
+  src: url('/fonts/bricolage-grotesque-latin-opsz.woff2') format('woff2-variations');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Manrope';
+  font-style: normal;
+  font-display: swap;
+  font-weight: 200 800;
+  src: url('/fonts/manrope-latin-wght.woff2') format('woff2-variations');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
 
 @theme {
   --color-teal: #00B4B4;
@@ -48,6 +69,14 @@ h1, h2, h3, .font-heading {
 h1 { font-variation-settings: 'opsz' 96; }
 h3 { font-variation-settings: 'opsz' 48; letter-spacing: -0.01em; }
 .font-black { font-weight: 800; }
+
+/* Product cards: let the browser skip layout and paint for cards below the
+   fold. The 91-card catalogue spent ~5 s in style & layout on a mid-range
+   phone before this; the intrinsic size keeps the scrollbar honest. */
+.cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 340px;
+}
 
 .scrollbar-hide {
   scrollbar-width: none;
@@ -175,6 +204,15 @@ h3 { font-variation-settings: 'opsz' 48; letter-spacing: -0.01em; }
   50%      { opacity: 0.9;  transform: translate(-50%, -50%) scale(1.1); }
 }
 
+/* ── Protocol quiz steps ─────────────────────────────────────────────── */
+.quiz-step {
+  animation: quiz-in 0.35s ease-out both;
+}
+@keyframes quiz-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 /* ── Testimonial marquee ──────────────────────────────────────────────────
    The track holds two copies of the list; translating by exactly -50% loops
    seamlessly. Items carry their own right margin so the track width is an
@@ -201,6 +239,7 @@ h3 { font-variation-settings: 'opsz' 48; letter-spacing: -0.01em; }
   .text-shimmer,
   .kenburns,
   .marquee-track,
+  .quiz-step,
   .serum-float,
   .serum-badge,
   .serum-glow {

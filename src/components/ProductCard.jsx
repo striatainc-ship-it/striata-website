@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { memo, useState } from 'react'
 import { whatsappLink, isInStock } from '../data/products'
 import { spotlightProps } from '../lib/motion'
 
@@ -35,7 +35,7 @@ function fmtShort(price) {
     : `R ${price}`
 }
 
-export default function ProductCard({ product, format: formatProp = 'Vial' }) {
+function ProductCard({ product, format: formatProp = 'Vial' }) {
   // A product can name its own format (the topical serum is a bottle);
   // otherwise the page decides, e.g. the pens page passes "Pen".
   const format = product.format || formatProp
@@ -73,7 +73,7 @@ export default function ProductCard({ product, format: formatProp = 'Vial' }) {
   return (
     <div
       {...spotlightProps()}
-      className="spot group bg-[#0d1e35] border border-white/8 rounded-2xl p-3.5 md:p-5 flex flex-col hover:border-[#00B4B4]/40 transition-all duration-300 hover:shadow-xl hover:shadow-[#00B4B4]/10 md:hover:-translate-y-1"
+      className="spot cv-auto group bg-[#0d1e35] border border-white/8 rounded-2xl p-3.5 md:p-5 flex flex-col hover:border-[#00B4B4]/40 transition-all duration-300 hover:shadow-xl hover:shadow-[#00B4B4]/10 md:hover:-translate-y-1"
     >
 
       {/* Badges */}
@@ -262,3 +262,7 @@ export default function ProductCard({ product, format: formatProp = 'Vial' }) {
     </div>
   )
 }
+
+// The catalogue re-renders on every scroll-direction change (the filter bar
+// hides and shows); memoising keeps that from touching 90 cards at a time.
+export default memo(ProductCard)

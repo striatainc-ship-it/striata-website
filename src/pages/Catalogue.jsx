@@ -80,6 +80,8 @@ export default function Catalogue() {
     const params = new URLSearchParams(location.search)
     const cat = params.get('cat')
     if (cat) setActiveCategory(cat)
+    const q = params.get('q')
+    if (q) setSearch(q)
   }, [location.search])
 
   useEffect(() => {
@@ -132,6 +134,10 @@ export default function Catalogue() {
         <meta property="og:title" content="Peptide Catalogue | STRIATA South Africa" />
         <meta property="og:description" content="Browse 80+ research-grade peptides with transparent pricing. Delivered nationwide." />
         <meta property="og:url" content="https://www.striatalabs.co.za/catalogue" />
+        {/* The banner background is a CSS background-image, which the browser
+            only discovers after parsing the stylesheet; it is the page's LCP
+            element, so ask for it up front. */}
+        <link rel="preload" as="image" href={`${import.meta.env.BASE_URL}assets/opt/vial-layouts-1920.webp`} />
       </Helmet>
 
       <JsonLd data={{

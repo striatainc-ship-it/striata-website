@@ -6,6 +6,11 @@
     <link rel="apple-touch-icon" sizes="180x180" href="/assets/opt/favicon-180.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+    <!-- Self-hosted fonts (see src/index.css). Preloaded so the heading and body
+         faces are in flight before the stylesheet is parsed. -->
+    <link rel="preload" href="/fonts/bricolage-grotesque-latin-opsz.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="/fonts/manrope-latin-wght.woff2" as="font" type="font/woff2" crossorigin />
+
     <!-- Primary SEO -->
     <!-- title is a fallback only: react-helmet-async replaces it per route.
          Per-page description / canonical / og:url / og:title / og:description /
@@ -66,16 +71,6 @@
   </head>
   <body>
     <div id="root"></div>
-    <script>
-      (function(l) {
-        if (l.search[1] === '/') {
-          var decoded = l.search.slice(1).split('&').map(function(s) {
-            return s.replace(/~and~/g, '&')
-          }).join('?')
-          window.history.replaceState(null, null, l.pathname.slice(0, -1) + decoded + l.hash)
-        }
-      }(window.location))
-    </script>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

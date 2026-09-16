@@ -41,6 +41,7 @@ const navLinksAfterShop = [
   { to: '/about', label: 'About' },
   { to: '/learn', label: 'Learn' },
   { to: '/guides', label: 'Guides' },
+  { to: '/tools', label: 'Tools' },
   { to: '/faq', label: 'FAQ' },
   { to: '/contact', label: 'Contact' },
 ]
@@ -191,6 +192,15 @@ export default function Navbar() {
                       <p className="text-white/45 text-xs mt-0.5">Copper peptide skincare · 1% & 2%</p>
                     </div>
                   </Link>
+                  <Link
+                    to="/quiz"
+                    className="flex items-center justify-between gap-3 px-5 py-3.5 bg-[#00B4B4]/8 hover:bg-[#00B4B4]/15 transition-colors duration-150 border-t border-white/8"
+                  >
+                    <span className="text-[#00B4B4] text-xs font-bold uppercase tracking-widest" style={{ fontFamily: 'var(--font-heading)' }}>
+                      Not sure? Take the 60-second quiz
+                    </span>
+                    <svg className="w-3.5 h-3.5 text-[#00B4B4]" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -267,7 +277,7 @@ export default function Navbar() {
             </svg>
           </button>
 
-          <div className={`overflow-hidden transition-all duration-200 ${mobileShopOpen ? 'max-h-80' : 'max-h-0'}`}>
+          <div className={`overflow-hidden transition-all duration-200 ${mobileShopOpen ? 'max-h-96' : 'max-h-0'}`}>
             <Link to="/catalogue" className="flex items-center gap-3 pl-4 py-3 text-sm text-white/70 border-b border-white/5 hover:text-[#00B4B4] transition-colors">
               <svg className="w-4 h-4 text-[#00B4B4]/60" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 010 3.75H5.625a1.875 1.875 0 010-3.75z" /></svg>
               Complete Catalogue
@@ -283,6 +293,10 @@ export default function Navbar() {
             <Link to="/ghk-serum" className="flex items-center gap-3 pl-4 py-3 text-sm text-white/70 border-b border-white/5 hover:text-[#00B4B4] transition-colors">
               <svg className="w-4 h-4 text-[#00B4B4]/60" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M12 21a8.25 8.25 0 005.83-14.08L12 1.5 6.17 6.92A8.25 8.25 0 0012 21z" /></svg>
               GHK-Cu Serum
+            </Link>
+            <Link to="/quiz" className="flex items-center gap-3 pl-4 py-3 text-sm text-[#00B4B4] border-b border-white/5 font-semibold">
+              <svg className="w-4 h-4 text-[#00B4B4]/60" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z" /></svg>
+              Not sure? Take the quiz
             </Link>
           </div>
 

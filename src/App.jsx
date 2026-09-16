@@ -1,7 +1,7 @@
 import { BrowserRouter, useLocation } from 'react-router-dom'
 import { useEffect, useRef, lazy } from 'react'
 import gsap from 'gsap'
-import { prefersReducedMotion } from './lib/motion'
+import { prefersReducedMotion, markNavigated } from './lib/motion'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import WhatsAppFAB from './components/WhatsAppFAB'
@@ -24,11 +24,32 @@ function routeComponents() {
   )
 }
 
+/**
+ * Scroll to the top on every navigation, or to the `#anchor` when the URL
+ * has one. Lazy routes mount a beat after the location changes, so the
+ * anchor lookup retries for up to a second before giving up.
+ */
 function ScrollToTop() {
-  const { pathname } = useLocation()
+  const { pathname, hash } = useLocation()
   useEffect(() => {
-    window.scrollTo(0, 0)
-  }, [pathname])
+    if (!hash) {
+      window.scrollTo(0, 0)
+      return
+    }
+    const id = decodeURIComponent(hash.slice(1))
+    let tries = 0
+    let frame
+    const seek = () => {
+      const el = document.getElementById(id)
+      if (el) {
+        el.scrollIntoView({ behavior: 'auto', block: 'start' })
+        return
+      }
+      if (tries++ < 60) frame = requestAnimationFrame(seek)
+    }
+    seek()
+    return () => cancelAnimationFrame(frame)
+  }, [pathname, hash])
   return null
 }
 
@@ -48,6 +69,7 @@ function PrerenderedHeadCleanup() {
 
   useEffect(() => {
     if (pathname === landing.current) return
+    markNavigated()
     document.querySelectorAll('head [data-prerendered-head]').forEach(el => el.remove())
   }, [pathname])
 

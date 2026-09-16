@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, useMemo } from 'react'
-import { Link } from 'react-router-dom'
+import { Link, useLocation } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { categories, whatsappLink } from '../data/products'
 import { pens, penCount } from '../data/pensData'
@@ -46,11 +46,19 @@ const BENEFITS = [
 ]
 
 export default function Pens() {
+  const location = useLocation()
   const [activeCategory, setActiveCategory] = useState('all')
   const [search, setSearch] = useState('')
   const [filterVisible, setFilterVisible] = useState(true)
   const lastScrollY = useRef(0)
   const gridRef = useRef(null)
+
+  // `/pens?q=KPV` pre-fills the search, so other pages can deep-link a pen.
+  useEffect(() => {
+    const q = new URLSearchParams(location.search).get('q')
+    // eslint-disable-next-line react-hooks/set-state-in-effect -- syncing from the URL, same pattern as Catalogue
+    if (q) setSearch(q)
+  }, [location.search])
 
   useEffect(() => {
     const onScroll = () => {

@@ -32,6 +32,8 @@ export default function Footer() {
                 { to: '/pens', label: 'Peptide Pens' },
                 { to: '/about', label: 'About Us' },
                 { to: '/guides', label: 'Guides' },
+                { to: '/tools', label: 'Tools' },
+                { to: '/quiz', label: 'Protocol Quiz' },
                 { to: '/faq', label: 'FAQ' },
                 { to: '/contact', label: 'Contact' },
               ].map(({ to, label }) => (

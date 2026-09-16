@@ -7,6 +7,7 @@ import AppRoutes from './AppRoutes'
 import { loaders } from './routeLoaders'
 import { blogPosts } from './data/blogPosts'
 import { guides } from './data/guidesData'
+import { quizResultPaths } from './data/quizProtocols'
 
 /**
  * Import every route component up front.
@@ -37,6 +38,9 @@ export function getRoutes() {
     { path: '/stacks/menopause-reset', priority: '0.8', changefreq: 'monthly' },
     { path: '/pens', priority: '0.8', changefreq: 'weekly' },
     { path: '/ghk-serum', priority: '0.8', changefreq: 'monthly' },
+    { path: '/tools', priority: '0.8', changefreq: 'monthly' },
+    { path: '/tools/reconstitution-calculator', priority: '0.8', changefreq: 'monthly' },
+    { path: '/quiz', priority: '0.8', changefreq: 'monthly' },
     { path: '/guides', priority: '0.8', changefreq: 'weekly' },
     { path: '/learn', priority: '0.8', changefreq: 'weekly' },
     { path: '/about', priority: '0.7', changefreq: 'monthly' },
@@ -47,6 +51,9 @@ export function getRoutes() {
 
   return [
     ...staticRoutes,
+    // Prerendered so shared result links open instantly, but `sitemap: false`
+    // keeps them out of sitemap.xml: they carry noindex (see QuizResult.jsx).
+    ...quizResultPaths.map(path => ({ path, priority: '0.7', changefreq: 'monthly', sitemap: false })),
     ...guides
       .filter(g => g.slug)
       .map(g => ({ path: `/guides/${g.slug}`, priority: '0.7', changefreq: 'monthly' })),

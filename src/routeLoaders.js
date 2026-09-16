@@ -19,6 +19,10 @@ export const loaders = {
   '/stacks/menopause-reset': () => import('./pages/MenopauseReset'),
   '/pens': () => import('./pages/Pens'),
   '/ghk-serum': () => import('./pages/GhkSerum'),
+  '/tools': () => import('./pages/Tools'),
+  '/tools/reconstitution-calculator': () => import('./pages/ReconstitutionCalculatorPage'),
+  '/quiz': () => import('./pages/Quiz'),
+  '/quiz/result/:slug': () => import('./pages/QuizResult'),
 }
 
 /**
@@ -38,6 +42,7 @@ function matchLoader(pathname) {
   if (loaders[path]) return path
   if (path.startsWith('/learn/')) return '/learn/:slug'
   if (path.startsWith('/guides/')) return '/guides/:slug'
+  if (path.startsWith('/quiz/result/')) return '/quiz/result/:slug'
 
   return null
 }

@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react'
 import gsap from 'gsap'
-import { prefersReducedMotion } from '../lib/motion'
+import { prefersReducedMotion, isInitialLoad } from '../lib/motion'
 
 /**
  * Fade-and-rise a block into view the first time it scrolls into the viewport.
@@ -34,6 +34,11 @@ export default function Reveal({
   useEffect(() => {
     const el = ref.current
     if (!el || prefersReducedMotion()) return
+
+    // On the landing page anything already in the viewport is left exactly
+    // as prerendered: hiding it after first paint only to fade it back in
+    // flashes, and delays the largest contentful paint by the tween length.
+    if (isInitialLoad() && el.getBoundingClientRect().top < window.innerHeight) return
 
     const targets = stagger ? Array.from(el.children) : [el]
     if (targets.length === 0) return

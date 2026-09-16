@@ -2,7 +2,9 @@ import { useParams, Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { getBlogPost, blogPosts } from '../data/blogPosts'
 import { whatsappLink } from '../data/products'
+import { AUTHOR_SCHEMA, DEFAULT_IMAGE } from '../data/site'
 import JsonLd from '../components/JsonLd'
+import { Byline, AuthorCard } from '../components/AuthorCard'
 
 const WA_ICON = (
   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
@@ -10,14 +12,31 @@ const WA_ICON = (
   </svg>
 )
 
-// ── Inline markdown renderer ──────────────────────────────
+// ── Inline markdown renderer — **bold** and [text](url) links ─────────
+// Links let an article cite its sources (a "## Sources" list of PubMed or
+// SAHPRA URLs renders as a normal heading + bullet list).
 function renderInline(text) {
   if (!text) return null
-  const parts = text.split(/(\*\*(?:[^*]|\*(?!\*))+\*\*)/)
+  const parts = text.split(/(\*\*(?:[^*]|\*(?!\*))+\*\*|\[[^\]]+\]\([^)\s]+\))/)
   if (parts.length === 1) return text
   return parts.map((part, i) => {
     if (part.startsWith('**') && part.endsWith('**')) {
       return <strong key={i} className="text-white font-semibold">{part.slice(2, -2)}</strong>
+    }
+    const link = part.match(/^\[([^\]]+)\]\(([^)\s]+)\)$/)
+    if (link) {
+      const external = /^https?:\/\//.test(link[2])
+      return (
+        <a
+          key={i}
+          href={link[2]}
+          className="text-[#00B4B4] underline underline-offset-2 hover:text-white transition-colors"
+          target={external ? '_blank' : undefined}
+          rel={external ? 'noopener noreferrer' : undefined}
+        >
+          {link[1]}
+        </a>
+      )
     }
     return part || null
   })
@@ -198,6 +217,9 @@ export default function BlogPost() {
         <meta property="og:title" content={`${article.title} | STRIATA Learn`} />
         <meta property="og:description" content={article.preview} />
         <meta property="og:url" content={`https://www.striatalabs.co.za/learn/${article.slug}`} />
+        <meta property="article:published_time" content={article.datePublished} />
+        <meta property="article:modified_time" content={article.dateModified} />
+        <meta property="article:author" content="James Kriel" />
       </Helmet>
 
       <JsonLd data={{
@@ -206,7 +228,10 @@ export default function BlogPost() {
         headline: article.title,
         description: article.preview,
         articleSection: article.category,
-        author: { '@type': 'Organization', name: 'STRIATA' },
+        image: DEFAULT_IMAGE,
+        datePublished: article.datePublished,
+        dateModified: article.dateModified,
+        author: AUTHOR_SCHEMA,
         publisher: {
           '@type': 'Organization',
           name: 'STRIATA',
@@ -244,7 +269,6 @@ export default function BlogPost() {
             >
               {article.category}
             </span>
-            <span className="text-white/30 text-sm">{article.readTime}</span>
           </div>
           <h1
             className="text-2xl sm:text-3xl md:text-4xl font-black text-white leading-tight mb-5"
@@ -252,6 +276,7 @@ export default function BlogPost() {
           >
             {article.title}
           </h1>
+          <Byline datePublished={article.datePublished} dateModified={article.dateModified} readTime={article.readTime} />
           <p className="text-white/60 text-lg leading-relaxed border-l-2 border-[#00B4B4]/40 pl-4">
             {article.preview}
           </p>
@@ -264,6 +289,7 @@ export default function BlogPost() {
           <div className="bg-[#0d1e35] border border-white/8 rounded-2xl p-7 md:p-10">
             <MarkdownContent content={article.content} />
           </div>
+          <AuthorCard />
         </div>
       </section>
 

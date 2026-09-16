@@ -1,18 +1,97 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <meta charset="utf-8">
-  <title>STRIATA</title>
-  <script>
-    var l = window.location;
-    l.replace(
-      l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-      l.pathname.split('/').slice(0, 2).join('/') + '/?/' +
-      l.pathname.slice(1).split('/').slice(1).join('/').replace(/&/g, '~and~') +
-      (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-      l.hash
-    );
-  </script>
-</head>
-<body></body>
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="robots" content="noindex" />
+    <title>Page not found | STRIATA</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/opt/favicon-32.png" />
+    <link rel="preload" href="/fonts/bricolage-grotesque-latin-opsz.woff2" as="font" type="font/woff2" crossorigin />
+    <style>
+      @font-face {
+        font-family: 'Bricolage Grotesque';
+        font-style: normal;
+        font-display: swap;
+        font-weight: 200 800;
+        src: url('/fonts/bricolage-grotesque-latin-opsz.woff2') format('woff2-variations');
+      }
+      @font-face {
+        font-family: 'Manrope';
+        font-style: normal;
+        font-display: swap;
+        font-weight: 200 800;
+        src: url('/fonts/manrope-latin-wght.woff2') format('woff2-variations');
+      }
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 24px;
+        background: #0A1628;
+        color: #F4F6F8;
+        font-family: 'Manrope', 'Segoe UI', sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      main { max-width: 560px; text-align: center; }
+      .logo { height: 44px; width: auto; margin-bottom: 40px; }
+      .code {
+        font-family: 'Bricolage Grotesque', 'Segoe UI', sans-serif;
+        font-variation-settings: 'opsz' 96;
+        font-weight: 800;
+        font-size: clamp(64px, 16vw, 112px);
+        line-height: 1;
+        letter-spacing: -0.03em;
+        color: #00B4B4;
+        margin: 0 0 12px;
+      }
+      h1 {
+        font-family: 'Bricolage Grotesque', 'Segoe UI', sans-serif;
+        font-variation-settings: 'opsz' 96;
+        font-weight: 800;
+        font-size: clamp(24px, 5vw, 34px);
+        letter-spacing: -0.02em;
+        margin: 0 0 14px;
+      }
+      p { color: rgba(255, 255, 255, 0.6); line-height: 1.6; margin: 0 0 32px; }
+      .actions { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 14px 28px;
+        border-radius: 999px;
+        font-family: 'Bricolage Grotesque', 'Segoe UI', sans-serif;
+        font-weight: 700;
+        font-size: 15px;
+        text-decoration: none;
+        transition: transform 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+      }
+      .btn:hover { transform: translateY(-2px); }
+      .primary { background: #00B4B4; color: #fff; }
+      .primary:hover { background: #009999; }
+      .ghost { border: 1px solid rgba(255, 255, 255, 0.2); color: rgba(255, 255, 255, 0.8); }
+      .ghost:hover { border-color: rgba(255, 255, 255, 0.45); color: #fff; }
+      .links { margin-top: 36px; font-size: 14px; color: rgba(255, 255, 255, 0.4); }
+      .links a { color: rgba(255, 255, 255, 0.7); text-decoration: none; margin: 0 8px; }
+      .links a:hover { color: #00B4B4; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <img class="logo" src="/assets/opt/logo-white-320.webp" alt="STRIATA" width="320" height="111" />
+      <p class="code" aria-hidden="true">404</p>
+      <h1>That page doesn't exist</h1>
+      <p>The link may be out of date, or the address was typed incorrectly. The catalogue and learning hub are one tap away.</p>
+      <div class="actions">
+        <a class="btn primary" href="/catalogue">Browse the catalogue</a>
+        <a class="btn ghost" href="/">Back to home</a>
+      </div>
+      <p class="links">
+        <a href="/learn">Learn</a> · <a href="/guides">Guides</a> · <a href="/stacks">Stacks</a> · <a href="/faq">FAQ</a> · <a href="/contact">Contact</a>
+      </p>
+    </main>
+  </body>
 </html>

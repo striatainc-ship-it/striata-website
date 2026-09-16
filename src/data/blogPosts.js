@@ -6,6 +6,11 @@ import brainMoodMd from './blog/striata_brain_mood_articles.md?raw'
 import hormonalMd from './blog/striata_hormonal_health_articles.md?raw'
 import saTargetedMd from './blog/striata_sa_targeted_articles.md?raw'
 
+// The Learn library went live on 1 April 2026. An article that is revised later
+// declares it in its meta block — `**Updated:** 2026-05-14` — and that date is
+// shown as "Updated" and emitted as dateModified; otherwise both dates match.
+const PUBLISHED = '2026-04-01'
+
 function parseArticles(md) {
   md = md.replace(/\r\n/g, '\n')
   const blocks = md.split(/(?=^# Article \d+:)/m).filter(b => /^# Article \d+:/.test(b.trim()))
@@ -31,6 +36,7 @@ function parseArticles(md) {
     const slugMatch = metaBlock.match(/\*\*Slug:\*\* \/learn\/(.+)$/m)
     const categoryMatch = metaBlock.match(/\*\*Category:\*\* (.+)$/m)
     const readTimeMatch = metaBlock.match(/\*\*Read time:\*\* (.+)$/m)
+    const updatedMatch = metaBlock.match(/\*\*Updated:\*\* (\d{4}-\d{2}-\d{2})/m)
 
     return {
       slug: slugMatch?.[1]?.trim() || '',
@@ -38,6 +44,8 @@ function parseArticles(md) {
       category: categoryMatch?.[1]?.trim() || '',
       readTime: readTimeMatch?.[1]?.trim() || '',
       preview: metaDescMatch?.[1]?.trim() || '',
+      datePublished: PUBLISHED,
+      dateModified: updatedMatch?.[1] || PUBLISHED,
       content: contentBlock,
       featured: false,
     }

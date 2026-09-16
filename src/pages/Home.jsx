@@ -262,8 +262,43 @@ export default function Home() {
     return () => ctx.revert()
   }, [])
 
+  // The hero clip is decorative, so it is attached from here rather than in
+  // the markup: desktop only, and only once the main thread is idle. Served
+  // eagerly it was 2.1 MB — three quarters of the homepage's bytes on a phone
+  // that never shows it well anyway. The poster carries the look until then.
   useEffect(() => {
-    if (videoRef.current) videoRef.current.playbackRate = 0.5
+    const video = videoRef.current
+    if (!video) return
+    if (
+      !window.matchMedia('(min-width: 768px)').matches ||
+      prefersReducedMotion() ||
+      navigator.connection?.saveData
+    ) return
+
+    let cancelled = false
+    const start = () => {
+      if (cancelled) return
+      const base = import.meta.env.BASE_URL
+      for (const [ext, type] of [['webm', 'video/webm'], ['mp4', 'video/mp4']]) {
+        const source = document.createElement('source')
+        source.src = `${base}assets/hero-video.${ext}`
+        source.type = type
+        video.appendChild(source)
+      }
+      video.playbackRate = 0.5
+      video.load()
+      video.play().catch(() => {})
+    }
+
+    const hasIdle = 'requestIdleCallback' in window
+    const handle = hasIdle
+      ? window.requestIdleCallback(start, { timeout: 3000 })
+      : window.setTimeout(start, 1500)
+    return () => {
+      cancelled = true
+      if (hasIdle) window.cancelIdleCallback(handle)
+      else window.clearTimeout(handle)
+    }
   }, [])
 
   return (
@@ -286,15 +321,13 @@ export default function Home() {
         <div ref={heroBgRef} className="absolute -inset-8 will-change-transform">
           <video
             ref={videoRef}
-            autoPlay
             muted
             loop
             playsInline
+            preload="none"
             poster={`${import.meta.env.BASE_URL}assets/opt/vial-layouts-2-1920.webp`}
             className="kenburns absolute inset-0 w-full h-full object-cover opacity-30"
-          >
-            <source src={`${import.meta.env.BASE_URL}assets/hero-video.mp4`} type="video/mp4" />
-          </video>
+          />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A1628]/60 via-transparent to-[#0A1628]" />
 
