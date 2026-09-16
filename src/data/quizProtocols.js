@@ -158,35 +158,17 @@ export const quizProtocols = [
   },
 
   // ── Weight loss ──────────────────────────────────────────────────────
-  {
-    slug: 'tirzepatide',
-    name: 'Tirzepatide',
-    kind: 'product',
-    goalTags: ['weight'],
-    deliveryTags: ['injectable', 'pen'],
-    experienceTags: ['new', 'experienced'],
-    summary:
-      'Dual GIP/GLP-1 agonist delivering powerful weight loss and blood sugar optimisation (the Mounjaro generic). The most common starting point in the GLP-1 class, available as a 30mg vial or a pre-filled pen for dial-in dosing without reconstitution.',
-    usedFor: ['GLP-1', 'Weight loss', 'Blood sugar'],
-    fromPrice: 1500,
-    primary: { label: 'View Tirzepatide in the catalogue', to: catalogue('Tirzepatide') },
-    secondary: [
-      { label: 'Tirzepatide pre-filled pen', to: pens('Tirzepatide') },
-      { label: 'The Shred Protocol, Tirzepatide with AOD-9604', to: stack('the-shred-protocol') },
-    ],
-    posts: ['semaglutide-vs-tirzepatide-vs-retatrutide', 'glp-1-peptides-explained', 'why-your-diet-isnt-working-metabolic-peptides'],
-    metaTitle: 'Tirzepatide for Weight Loss | STRIATA Quiz Result',
-    metaDescription: 'Matched to weight loss: Tirzepatide, the dual GIP/GLP-1 agonist, as a vial or pre-filled pen from STRIATA, South Africa.',
-  },
+  // Retatrutide is listed first on purpose: matchProtocols() keeps array
+  // order for ties, so it wins every weight-loss path (tests pin this).
   {
     slug: 'retatrutide',
     name: 'Retatrutide',
     kind: 'product',
     goalTags: ['weight'],
     deliveryTags: ['injectable', 'pen'],
-    experienceTags: ['experienced'],
+    experienceTags: ['new', 'experienced'],
     summary:
-      'The most advanced weight loss peptide available: a triple agonist delivering superior fat reduction and metabolic control. Typically chosen by people who have already used a GLP-1 and want the next step up, as a vial or pre-filled pen.',
+      'The most advanced weight loss peptide available: a triple agonist delivering superior fat reduction and metabolic control. STRIATA\'s first recommendation for weight loss and appetite control, available as a vial or a pre-filled pen for dial-in dosing without reconstitution.',
     usedFor: ['Triple agonist', 'Fat loss', 'Metabolic control'],
     fromPrice: 1900,
     primary: { label: 'View Retatrutide in the catalogue', to: catalogue('Retatrutide') },
@@ -196,7 +178,27 @@ export const quizProtocols = [
     ],
     posts: ['semaglutide-vs-tirzepatide-vs-retatrutide', 'glp-1-peptides-explained'],
     metaTitle: 'Retatrutide Triple Agonist for Weight Loss | STRIATA Quiz Result',
-    metaDescription: 'Matched to weight loss for experienced users: Retatrutide, the triple agonist, as a vial or pre-filled pen from STRIATA, South Africa.',
+    metaDescription: 'Matched to weight loss: Retatrutide, the triple agonist, as a vial or pre-filled pen from STRIATA, South Africa.',
+  },
+  {
+    slug: 'tirzepatide',
+    name: 'Tirzepatide',
+    kind: 'product',
+    goalTags: ['weight'],
+    deliveryTags: ['injectable', 'pen'],
+    experienceTags: ['new', 'experienced'],
+    summary:
+      'Dual GIP/GLP-1 agonist delivering powerful weight loss and blood sugar optimisation (the Mounjaro generic). The dual-agonist alternative to Retatrutide, available as a 30mg vial or a pre-filled pen for dial-in dosing without reconstitution.',
+    usedFor: ['GLP-1', 'Weight loss', 'Blood sugar'],
+    fromPrice: 1500,
+    primary: { label: 'View Tirzepatide in the catalogue', to: catalogue('Tirzepatide') },
+    secondary: [
+      { label: 'Tirzepatide pre-filled pen', to: pens('Tirzepatide') },
+      { label: 'The Shred Protocol, Tirzepatide with AOD-9604', to: stack('the-shred-protocol') },
+    ],
+    posts: ['semaglutide-vs-tirzepatide-vs-retatrutide', 'glp-1-peptides-explained', 'why-your-diet-isnt-working-metabolic-peptides'],
+    metaTitle: 'Tirzepatide for Weight Loss | STRIATA Quiz Result',
+    metaDescription: 'Also matched to weight loss: Tirzepatide, the dual GIP/GLP-1 agonist, as a vial or pre-filled pen from STRIATA, South Africa.',
   },
   {
     slug: 'shred-protocol',
@@ -210,7 +212,7 @@ export const quizProtocols = [
     usedFor: ['Appetite control', 'Lipolysis', 'Metabolic support'],
     fromPrice: 1900,
     primary: { label: 'View The Shred Protocol on the stacks page', to: stack('the-shred-protocol') },
-    secondary: [{ label: 'Tirzepatide on its own', to: catalogue('Tirzepatide') }],
+    secondary: [{ label: 'Retatrutide on its own', to: catalogue('Retatrutide') }],
     posts: ['glp-1-peptides-explained', 'aod-9604-vs-hgh-fragment-176-191', 'why-your-diet-isnt-working-metabolic-peptides'],
     metaTitle: 'The Shred Protocol: GLP-1 + AOD-9604 Stack | STRIATA Quiz Result',
     metaDescription: 'Matched to weight loss for experienced users: The Shred Protocol pairs a GLP-1 agonist with AOD-9604 and L-Carnitine. STRIATA, South Africa.',

@@ -145,3 +145,13 @@ test('protocol data is well-formed and slugs are unique', () => {
     assert.ok(p.metaDescription.length <= 170, `${p.slug} meta description length`)
   }
 })
+
+test('weight loss always matches Retatrutide first', () => {
+  for (const experience of ['new', 'experienced']) {
+    for (const delivery of ['injectable', 'pen', undefined]) {
+      const tags = ['weight', delivery, experience].filter(Boolean)
+      const { top } = matchProtocols(quizProtocols, tags)
+      assert.equal(top.protocol.slug, 'retatrutide', `tags: ${tags.join(', ')}`)
+    }
+  }
+})
