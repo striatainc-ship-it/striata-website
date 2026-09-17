@@ -5,10 +5,13 @@ import antiAgingMd from './blog/striata_antiaging_articles.md?raw'
 import brainMoodMd from './blog/striata_brain_mood_articles.md?raw'
 import hormonalMd from './blog/striata_hormonal_health_articles.md?raw'
 import saTargetedMd from './blog/striata_sa_targeted_articles.md?raw'
+import saTargeted2Md from './blog/striata_sa_targeted_articles_2.md?raw'
 
-// The Learn library went live on 1 April 2026. An article that is revised later
-// declares it in its meta block — `**Updated:** 2026-05-14` — and that date is
-// shown as "Updated" and emitted as dateModified; otherwise both dates match.
+// The Learn library went live on 1 April 2026, which is the default date for
+// the articles published with it. A post written later declares its own
+// `**Published:** 2026-09-17`, and one revised after publication declares
+// `**Updated:** 2026-05-14`; those are shown in the byline and emitted as
+// datePublished / dateModified. Absent both, the two dates match the default.
 const PUBLISHED = '2026-04-01'
 
 function parseArticles(md) {
@@ -36,7 +39,9 @@ function parseArticles(md) {
     const slugMatch = metaBlock.match(/\*\*Slug:\*\* \/learn\/(.+)$/m)
     const categoryMatch = metaBlock.match(/\*\*Category:\*\* (.+)$/m)
     const readTimeMatch = metaBlock.match(/\*\*Read time:\*\* (.+)$/m)
+    const publishedMatch = metaBlock.match(/\*\*Published:\*\* (\d{4}-\d{2}-\d{2})/m)
     const updatedMatch = metaBlock.match(/\*\*Updated:\*\* (\d{4}-\d{2}-\d{2})/m)
+    const published = publishedMatch?.[1] || PUBLISHED
 
     return {
       slug: slugMatch?.[1]?.trim() || '',
@@ -44,8 +49,8 @@ function parseArticles(md) {
       category: categoryMatch?.[1]?.trim() || '',
       readTime: readTimeMatch?.[1]?.trim() || '',
       preview: metaDescMatch?.[1]?.trim() || '',
-      datePublished: PUBLISHED,
-      dateModified: updatedMatch?.[1] || PUBLISHED,
+      datePublished: published,
+      dateModified: updatedMatch?.[1] || published,
       content: contentBlock,
       featured: false,
     }
@@ -60,6 +65,7 @@ const allArticles = [
   ...parseArticles(brainMoodMd),
   ...parseArticles(hormonalMd),
   ...parseArticles(saTargetedMd),
+  ...parseArticles(saTargeted2Md),
 ]
 
 if (allArticles.length > 0) allArticles[0].featured = true

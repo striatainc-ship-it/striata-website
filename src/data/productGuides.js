@@ -22,7 +22,7 @@ export const PRODUCT_GUIDES = {
   41: 'kisspeptin-testosterone-hormonal-health',
   43: 'aod-9604-vs-hgh-fragment-176-191',
   46: 'semaglutide-vs-tirzepatide-vs-retatrutide',
-  47: 'semaglutide-vs-tirzepatide-vs-retatrutide',
+  47: 'tirzepatide-south-africa',
   48: 'semaglutide-south-africa',
   84: 'semaglutide-vs-tirzepatide-vs-retatrutide',
   49: 'glp-1-peptides-explained',
