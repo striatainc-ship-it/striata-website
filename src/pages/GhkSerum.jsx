@@ -38,7 +38,7 @@ const STRENGTHS = [
     price: 795,
     tag: 'Concentrated',
     blurb: 'Double the copper peptide for skin that is already comfortable with actives, or for targeted work on fine lines, texture and post-procedure recovery.',
-    points: ['GHK-Cu 2% + Hyaluronic Acid', 'Once daily, building to twice', 'For established routines'],
+    points: ['GHK-Cu 2% + Hyaluronic Acid 1%', 'Once daily, building to twice', 'For established routines'],
   },
 ]
 
