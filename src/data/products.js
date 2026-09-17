@@ -1076,8 +1076,8 @@ export const products = [
     description: 'Sterile bacteriostatic water for reconstituting lyophilised peptides. Contains 0.9% benzyl alcohol for multi-dose stability.',
     tags: ['Reconstitution', 'Sterile', 'Multi-Dose'],
     prices: [
-      { dose: '3ml', price: 90 },
-      { dose: '10ml', price: 150 },
+      { dose: '3ml', price: 90, inStock: true },
+      { dose: '10ml', price: 150, inStock: true },
     ],
   },
   {
