@@ -2,7 +2,7 @@ import { useParams, Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { getBlogPost, blogPosts } from '../data/blogPosts'
 import { whatsappLink } from '../data/products'
-import { AUTHOR_SCHEMA, DEFAULT_IMAGE } from '../data/site'
+import { AUTHOR_SCHEMA, DEFAULT_IMAGE, citationSchema } from '../data/site'
 import { SA_ESSENTIALS, MENOPAUSE_CATEGORIES } from '../data/learnLinks'
 import JsonLd from '../components/JsonLd'
 import { Byline, AuthorCard } from '../components/AuthorCard'
@@ -283,6 +283,7 @@ export default function BlogPost() {
         datePublished: article.datePublished,
         dateModified: article.dateModified,
         author: AUTHOR_SCHEMA,
+        citation: citationSchema(article.content),
         publisher: {
           '@type': 'Organization',
           name: 'STRIATA',

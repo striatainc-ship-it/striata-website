@@ -77,6 +77,15 @@ If you have questions about specific compounds or want to understand more before
 
 ---
 
+### Sources
+
+The research, regulatory documents and clinical guidelines behind the claims in this article:
+
+- South African Health Products Regulatory Authority. [Medicines and Related Substances Act, 1965 (Act 101 of 1965), as amended](https://www.sahpra.org.za/document/medicines-and-related-substances-act-1965-act-no-101-of-1965-as-amended/). SAHPRA.
+- South African Health Products Regulatory Authority. [Frequently asked questions: semaglutide, including what is and is not registered in South Africa](https://www.sahpra.org.za/faqs-semaglutide/). SAHPRA.
+- US Food and Drug Administration. [Step 3: clinical research, describing the phase 1 to phase 3 trial process](https://www.fda.gov/patients/drug-development-process/step-3-clinical-research). FDA.
+- DiMasi JA, Grabowski HG, Hansen RW. [Innovation in the pharmaceutical industry: new estimates of R&D costs](https://pubmed.ncbi.nlm.nih.gov/26928437/). Journal of Health Economics, 2016.
+
 # Article 32: BPC-157 in South Africa: Before You Buy
 
 **Meta description:** BPC-157 in South Africa: what the research says, who uses it, how it is typically used and what to check for purity before you buy.
@@ -165,6 +174,19 @@ BPC-157 is one of the most well-researched recovery peptides available. The anim
 If you are dealing with a persistent injury that is not resolving on its own, it warrants investigation. Just make sure you are sourcing it properly.
 
 ---
+
+### Sources
+
+The research, regulatory documents and clinical guidelines behind the claims in this article:
+
+- Staresinic M, Sebecic B, et al. [Gastric pentadecapeptide BPC 157 accelerates healing of transected rat Achilles tendon and in vitro stimulates tendocytes growth](https://pubmed.ncbi.nlm.nih.gov/14554208/). Journal of Orthopaedic Research, 2003.
+- Chang CH, Tsai WC, et al. [The promoting effect of pentadecapeptide BPC 157 on tendon healing involves tendon outgrowth, cell survival, and cell migration](https://pubmed.ncbi.nlm.nih.gov/21030672/). Journal of Applied Physiology, 2011.
+- Chang CH, Tsai WC, et al. [Pentadecapeptide BPC 157 enhances the growth hormone receptor expression in tendon fibroblasts](https://pubmed.ncbi.nlm.nih.gov/25415472/). Molecules, 2014.
+- Hsieh MJ, Liu HT, et al. [Therapeutic potential of pro-angiogenic BPC157 is associated with VEGFR2 activation and up-regulation](https://pubmed.ncbi.nlm.nih.gov/27847966/). Journal of Molecular Medicine, 2017.
+- Sikiric P, Seiwerth S, et al. [Focus on ulcerative colitis: stable gastric pentadecapeptide BPC 157](https://pubmed.ncbi.nlm.nih.gov/22300085/). Current Medicinal Chemistry, 2012.
+- Sikiric P, Seiwerth S, et al. [Stable gastric pentadecapeptide BPC 157 as a therapy and safety key](https://pubmed.ncbi.nlm.nih.gov/40573323/). Pharmaceuticals, 2025.
+- South African Health Products Regulatory Authority. [Medicines and Related Substances Act, 1965 (Act 101 of 1965), as amended](https://www.sahpra.org.za/document/medicines-and-related-substances-act-1965-act-no-101-of-1965-as-amended/). SAHPRA.
+- World Anti-Doping Agency. [The Prohibited List, which covers BPC-157 under S0 and thymosin beta-4 and its derivatives under S2](https://www.wada-ama.org/en/prohibited-list). WADA.
 
 # Article 33: Semaglutide in South Africa: 2026 Guide
 
@@ -262,6 +284,17 @@ Semaglutide is the most evidence-backed weight loss intervention available outsi
 
 ---
 
+### Sources
+
+The research, regulatory documents and clinical guidelines behind the claims in this article:
+
+- Wilding JPH, Batterham RL, et al. [Once-weekly semaglutide in adults with overweight or obesity (STEP 1)](https://pubmed.ncbi.nlm.nih.gov/33567185/). New England Journal of Medicine, 2021.
+- Rubino D, Abrahamsson N, et al. [Effect of continued weekly subcutaneous semaglutide vs placebo on weight loss maintenance (STEP 4)](https://pubmed.ncbi.nlm.nih.gov/33755728/). JAMA, 2021.
+- Garvey WT, Batterham RL, et al. [Two-year effects of semaglutide in adults with overweight or obesity (STEP 5)](https://pubmed.ncbi.nlm.nih.gov/36216945/). Nature Medicine, 2022.
+- Drucker DJ. [Mechanisms of action and therapeutic application of glucagon-like peptide-1](https://pubmed.ncbi.nlm.nih.gov/29617641/). Cell Metabolism, 2018.
+- US Food and Drug Administration. [WEGOVY (semaglutide) prescribing information, including the boxed warning on thyroid C-cell tumours](https://www.accessdata.fda.gov/drugsatfda_docs/label/2021/215256s000lbl.pdf). FDA label, 2021.
+- South African Health Products Regulatory Authority. [Frequently asked questions: semaglutide, including what is and is not registered in South Africa](https://www.sahpra.org.za/faqs-semaglutide/). SAHPRA.
+
 # Article 34: Peptides for South African Athletes: Guide
 
 **Meta description:** An honest look at peptides for South African athletes: recovery, performance, what the research supports and what it does not.
@@ -357,6 +390,17 @@ Research peptides offer South African athletes a meaningful recovery tool backed
 If you are competing at a level where anti-doping applies, they are off the table. If you are not, and you are approaching them with proper sourcing and realistic expectations, the evidence is encouraging.
 
 ---
+
+### Sources
+
+The research, regulatory documents and clinical guidelines behind the claims in this article:
+
+- Staresinic M, Sebecic B, et al. [Gastric pentadecapeptide BPC 157 accelerates healing of transected rat Achilles tendon and in vitro stimulates tendocytes growth](https://pubmed.ncbi.nlm.nih.gov/14554208/). Journal of Orthopaedic Research, 2003.
+- Chang CH, Tsai WC, et al. [The promoting effect of pentadecapeptide BPC 157 on tendon healing involves tendon outgrowth, cell survival, and cell migration](https://pubmed.ncbi.nlm.nih.gov/21030672/). Journal of Applied Physiology, 2011.
+- Goldstein AL, Hannappel E, Kleinman HK. [Thymosin beta-4: actin-sequestering protein moonlights to repair injured tissues](https://pubmed.ncbi.nlm.nih.gov/16099219/). Trends in Molecular Medicine, 2005.
+- Philp D, Huff T, et al. [The actin binding site on thymosin beta-4 promotes angiogenesis](https://pubmed.ncbi.nlm.nih.gov/14500546/). FASEB Journal, 2003.
+- World Anti-Doping Agency. [The Prohibited List, which covers BPC-157 under S0 and thymosin beta-4 and its derivatives under S2](https://www.wada-ama.org/en/prohibited-list). WADA.
+- D'Hondt M, Bracke N, et al. [Related impurities in peptide medicines](https://pubmed.ncbi.nlm.nih.gov/25044089/). Journal of Pharmaceutical and Biomedical Analysis, 2014.
 
 # Article 35: Where to Buy Peptides in South Africa Safely
 
@@ -467,3 +511,13 @@ We do not make guaranteed therapeutic claims because the science does not suppor
 If you want to know more before you buy anything, reach us on WhatsApp. We are here.
 
 ---
+
+### Sources
+
+The research, regulatory documents and clinical guidelines behind the claims in this article:
+
+- D'Hondt M, Bracke N, et al. [Related impurities in peptide medicines](https://pubmed.ncbi.nlm.nih.gov/25044089/). Journal of Pharmaceutical and Biomedical Analysis, 2014.
+- Manning MC, Chou DK, et al. [Stability of protein pharmaceuticals: an update](https://pubmed.ncbi.nlm.nih.gov/20143256/). Pharmaceutical Research, 2010.
+- South African Health Products Regulatory Authority. [Medicines and Related Substances Act, 1965 (Act 101 of 1965), as amended](https://www.sahpra.org.za/document/medicines-and-related-substances-act-1965-act-no-101-of-1965-as-amended/). SAHPRA.
+- South African Health Products Regulatory Authority. [Frequently asked questions: semaglutide, including what is and is not registered in South Africa](https://www.sahpra.org.za/faqs-semaglutide/). SAHPRA.
+

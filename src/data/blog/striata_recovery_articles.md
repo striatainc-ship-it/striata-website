@@ -110,6 +110,20 @@ This does not mean BPC-157 is without risk for any individual, and the usual cau
 
 ---
 
+### Sources
+
+The research, regulatory documents and clinical guidelines behind the claims in this article:
+
+- Staresinic M, Sebecic B, et al. [Gastric pentadecapeptide BPC 157 accelerates healing of transected rat Achilles tendon and in vitro stimulates tendocytes growth](https://pubmed.ncbi.nlm.nih.gov/14554208/). Journal of Orthopaedic Research, 2003.
+- Chang CH, Tsai WC, et al. [The promoting effect of pentadecapeptide BPC 157 on tendon healing involves tendon outgrowth, cell survival, and cell migration](https://pubmed.ncbi.nlm.nih.gov/21030672/). Journal of Applied Physiology, 2011.
+- Chang CH, Tsai WC, et al. [Pentadecapeptide BPC 157 enhances the growth hormone receptor expression in tendon fibroblasts](https://pubmed.ncbi.nlm.nih.gov/25415472/). Molecules, 2014.
+- Hsieh MJ, Liu HT, et al. [Therapeutic potential of pro-angiogenic BPC157 is associated with VEGFR2 activation and up-regulation](https://pubmed.ncbi.nlm.nih.gov/27847966/). Journal of Molecular Medicine, 2017.
+- Sikiric P, Seiwerth S, et al. [Stable gastric pentadecapeptide BPC 157-NO-system relation](https://pubmed.ncbi.nlm.nih.gov/23755725/). Current Pharmaceutical Design, 2014.
+- Sikiric P, Seiwerth S, et al. [Brain-gut axis and pentadecapeptide BPC 157: theoretical and practical implications](https://pubmed.ncbi.nlm.nih.gov/27138887/). Current Neuropharmacology, 2016.
+- Sikiric P, Seiwerth S, et al. [Stable gastric pentadecapeptide BPC 157 as a therapy and safety key](https://pubmed.ncbi.nlm.nih.gov/40573323/). Pharmaceuticals, 2025.
+- Seiwerth S, Milavic M, et al. [Stable gastric pentadecapeptide BPC 157 and wound healing](https://pubmed.ncbi.nlm.nih.gov/34267654/). Frontiers in Pharmacology, 2021.
+
+
 *Disclaimer: The information in this article is for educational purposes only. STRIATA peptides are research compounds and are not approved medicines. Always consult a qualified healthcare professional before beginning any protocol.*
 
 ---
@@ -221,6 +235,22 @@ TB-500 has a well-regarded safety profile in the research literature. Animal stu
 One practical consideration is that TB-500 vials often contain larger amounts of lyophilised powder than other peptides (commonly 5mg per vial rather than 2 or 5mg). Reconstitution calculations should account for this, and accurate measurement is important given the higher absolute doses involved.
 
 ---
+
+### Sources
+
+The research, regulatory documents and clinical guidelines behind the claims in this article:
+
+- Goldstein AL, Hannappel E, Kleinman HK. [Thymosin beta-4: actin-sequestering protein moonlights to repair injured tissues](https://pubmed.ncbi.nlm.nih.gov/16099219/). Trends in Molecular Medicine, 2005.
+- Philp D, Badamchian M, et al. [Thymosin beta-4 and a synthetic peptide containing its actin-binding domain promote dermal wound repair in db/db diabetic mice and in aged mice](https://pubmed.ncbi.nlm.nih.gov/12581423/). Wound Repair and Regeneration, 2003.
+- Philp D, Huff T, et al. [The actin binding site on thymosin beta-4 promotes angiogenesis](https://pubmed.ncbi.nlm.nih.gov/14500546/). FASEB Journal, 2003.
+- Bock-Marquette I, Saxena A, et al. [Thymosin beta-4 activates integrin-linked kinase and promotes cardiac cell migration, survival and cardiac repair](https://pubmed.ncbi.nlm.nih.gov/15565145/). Nature, 2004.
+- Qiu P, Wheater MK, et al. [Thymosin beta-4 inhibits TNF-alpha-induced NF-kappaB activation, IL-8 expression, and the sensitizing effects by its partners PINCH-1 and ILK](https://pubmed.ncbi.nlm.nih.gov/21343177/). FASEB Journal, 2011.
+- Smart N, Risebro CA, et al. [Thymosin beta-4 induces adult epicardial progenitor mobilization and neovascularization](https://pubmed.ncbi.nlm.nih.gov/17108969/). Nature, 2007.
+- Blain EJ, Mason DJ, Duance VC. [The effect of thymosin beta-4 on articular cartilage chondrocyte matrix metalloproteinase expression](https://pubmed.ncbi.nlm.nih.gov/12440937/). Biochemical Society Transactions, 2002.
+- Guarnera G, DeRosa A, Camerini R. [The effect of thymosin treatment of venous ulcers](https://pubmed.ncbi.nlm.nih.gov/20536470/). Annals of the New York Academy of Sciences, 2010.
+- Morris DC, Chopp M, et al. [Thymosin beta-4 improves functional neurological outcome in a rat model of embolic stroke](https://pubmed.ncbi.nlm.nih.gov/20627173/). Neuroscience, 2010.
+- Xiong Y, Mahmood A, et al. [Treatment of traumatic brain injury with thymosin beta-4 in rats](https://pubmed.ncbi.nlm.nih.gov/20486893/). Journal of Neurosurgery, 2011.
+
 
 *Disclaimer: The information in this article is for educational purposes only. STRIATA peptides are research compounds and are not approved medicines. Always consult a qualified healthcare professional before beginning any protocol.*
 
@@ -358,6 +388,20 @@ If you are new to peptides and have a specific injury driving your interest, the
 
 ---
 
+### Sources
+
+The research, regulatory documents and clinical guidelines behind the claims in this article:
+
+- Staresinic M, Sebecic B, et al. [Gastric pentadecapeptide BPC 157 accelerates healing of transected rat Achilles tendon and in vitro stimulates tendocytes growth](https://pubmed.ncbi.nlm.nih.gov/14554208/). Journal of Orthopaedic Research, 2003.
+- Chang CH, Tsai WC, et al. [The promoting effect of pentadecapeptide BPC 157 on tendon healing involves tendon outgrowth, cell survival, and cell migration](https://pubmed.ncbi.nlm.nih.gov/21030672/). Journal of Applied Physiology, 2011.
+- Chang CH, Tsai WC, et al. [Pentadecapeptide BPC 157 enhances the growth hormone receptor expression in tendon fibroblasts](https://pubmed.ncbi.nlm.nih.gov/25415472/). Molecules, 2014.
+- Hsieh MJ, Liu HT, et al. [Therapeutic potential of pro-angiogenic BPC157 is associated with VEGFR2 activation and up-regulation](https://pubmed.ncbi.nlm.nih.gov/27847966/). Journal of Molecular Medicine, 2017.
+- Goldstein AL, Hannappel E, Kleinman HK. [Thymosin beta-4: actin-sequestering protein moonlights to repair injured tissues](https://pubmed.ncbi.nlm.nih.gov/16099219/). Trends in Molecular Medicine, 2005.
+- Philp D, Huff T, et al. [The actin binding site on thymosin beta-4 promotes angiogenesis](https://pubmed.ncbi.nlm.nih.gov/14500546/). FASEB Journal, 2003.
+- Qiu P, Wheater MK, et al. [Thymosin beta-4 inhibits TNF-alpha-induced NF-kappaB activation, IL-8 expression, and the sensitizing effects by its partners PINCH-1 and ILK](https://pubmed.ncbi.nlm.nih.gov/21343177/). FASEB Journal, 2011.
+- Sikiric P, Seiwerth S, et al. [Stable gastric pentadecapeptide BPC 157 as a therapy and safety key](https://pubmed.ncbi.nlm.nih.gov/40573323/). Pharmaceuticals, 2025.
+
+
 *Disclaimer: The information in this article is for educational purposes only. STRIATA peptides are research compounds and are not approved medicines. Always consult a qualified healthcare professional before beginning any protocol.*
 
 ---
@@ -472,6 +516,15 @@ IGF-1 signalling is also a growth signal for cells generally, not just muscle ce
 Cycle lengths are typically kept shorter than other recovery peptides, often four weeks on followed by an extended break, to avoid chronic receptor desensitisation and to manage the considerations around sustained IGF-1 elevation.
 
 ---
+
+### Sources
+
+The research, regulatory documents and clinical guidelines behind the claims in this article:
+
+- Francis GL, Ross M, Ballard FJ, et al. [Novel recombinant fusion protein analogues of insulin-like growth factor (IGF)-I indicate the relative importance of IGF-binding protein and receptor binding for enhanced biological potency](https://pubmed.ncbi.nlm.nih.gov/1378742/). Journal of Molecular Endocrinology, 1992.
+- Schiaffino S, Mammucari C. [Regulation of skeletal muscle growth by the IGF1-Akt/PKB pathway: insights from genetic models](https://pubmed.ncbi.nlm.nih.gov/21798082/). Skeletal Muscle, 2011.
+- Junnila RK, List EO, et al. [The GH/IGF-1 axis in ageing and longevity](https://pubmed.ncbi.nlm.nih.gov/23591370/). Nature Reviews Endocrinology, 2013.
+
 
 *Disclaimer: The information in this article is for educational purposes only. STRIATA peptides are research compounds and are not approved medicines. Always consult a qualified healthcare professional, especially before using compounds with systemic hormonal effects like IGF-1 LR3.*
 
@@ -603,4 +656,18 @@ If you want to talk through your specific situation, reach out on WhatsApp. We a
 
 ---
 
+### Sources
+
+The research, regulatory documents and clinical guidelines behind the claims in this article:
+
+- Staresinic M, Sebecic B, et al. [Gastric pentadecapeptide BPC 157 accelerates healing of transected rat Achilles tendon and in vitro stimulates tendocytes growth](https://pubmed.ncbi.nlm.nih.gov/14554208/). Journal of Orthopaedic Research, 2003.
+- Chang CH, Tsai WC, et al. [The promoting effect of pentadecapeptide BPC 157 on tendon healing involves tendon outgrowth, cell survival, and cell migration](https://pubmed.ncbi.nlm.nih.gov/21030672/). Journal of Applied Physiology, 2011.
+- Goldstein AL, Hannappel E, Kleinman HK. [Thymosin beta-4: actin-sequestering protein moonlights to repair injured tissues](https://pubmed.ncbi.nlm.nih.gov/16099219/). Trends in Molecular Medicine, 2005.
+- Philp D, Huff T, et al. [The actin binding site on thymosin beta-4 promotes angiogenesis](https://pubmed.ncbi.nlm.nih.gov/14500546/). FASEB Journal, 2003.
+- Blain EJ, Mason DJ, Duance VC. [The effect of thymosin beta-4 on articular cartilage chondrocyte matrix metalloproteinase expression](https://pubmed.ncbi.nlm.nih.gov/12440937/). Biochemical Society Transactions, 2002.
+- Schiaffino S, Mammucari C. [Regulation of skeletal muscle growth by the IGF1-Akt/PKB pathway: insights from genetic models](https://pubmed.ncbi.nlm.nih.gov/21798082/). Skeletal Muscle, 2011.
+- Morton RW, Murphy KT, et al. [A systematic review, meta-analysis and meta-regression of the effect of protein supplementation on resistance training-induced gains in muscle mass and strength in healthy adults](https://pubmed.ncbi.nlm.nih.gov/28698222/). British Journal of Sports Medicine, 2018.
+
+
 *Disclaimer: The information in this article is for educational purposes only. STRIATA peptides are research compounds and are not approved medicines. Always consult a qualified healthcare professional before beginning any protocol, particularly for serious or post-surgical injuries.*
+

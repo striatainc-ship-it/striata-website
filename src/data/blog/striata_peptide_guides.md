@@ -132,6 +132,16 @@ The peptide space can feel overwhelming at first, but it does not have to be. St
 
 ---
 
+### Sources
+
+The research, regulatory documents and clinical guidelines behind the claims in this article:
+
+- Fosgerau K, Hoffmann T. [Peptide therapeutics: current status and future directions](https://pubmed.ncbi.nlm.nih.gov/25450771/). Drug Discovery Today, 2015.
+- South African Health Products Regulatory Authority. [Medicines and Related Substances Act, 1965 (Act 101 of 1965), as amended](https://www.sahpra.org.za/document/medicines-and-related-substances-act-1965-act-no-101-of-1965-as-amended/). SAHPRA.
+- South African Health Products Regulatory Authority. [Frequently asked questions: semaglutide, including what is and is not registered in South Africa](https://www.sahpra.org.za/faqs-semaglutide/). SAHPRA.
+- World Anti-Doping Agency. [The Prohibited List, which covers BPC-157 under S0 and thymosin beta-4 and its derivatives under S2](https://www.wada-ama.org/en/prohibited-list). WADA.
+
+
 *Disclaimer: The information in this article is for educational purposes only. Peptides sold by STRIATA are research compounds and are not intended to diagnose, treat, cure or prevent any disease. Always consult a qualified healthcare professional before beginning any new health protocol.*
 
 ---
@@ -275,6 +285,15 @@ Used needles should be placed in a sharps container. Many pharmacies accept used
 
 ---
 
+### Sources
+
+The research, regulatory documents and clinical guidelines behind the claims in this article:
+
+- US National Library of Medicine, DailyMed. [Bacteriostatic Water for Injection USP, prescribing information (0.9% benzyl alcohol as preservative)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=87d6e9dc-fe3b-4593-ac9a-d7493d1959c7). DailyMed.
+- Manning MC, Chou DK, et al. [Stability of protein pharmaceuticals: an update](https://pubmed.ncbi.nlm.nih.gov/20143256/). Pharmaceutical Research, 2010.
+- D'Hondt M, Bracke N, et al. [Related impurities in peptide medicines](https://pubmed.ncbi.nlm.nih.gov/25044089/). Journal of Pharmaceutical and Biomedical Analysis, 2014.
+
+
 *Disclaimer: The information in this article is for educational purposes only. Always follow safe handling and sterile technique practices. Consult a qualified healthcare professional before beginning any peptide protocol.*
 
 ---
@@ -408,6 +427,17 @@ We will cover how to read and interpret a Certificate of Analysis in our next ar
 
 ---
 
+### Sources
+
+The research, regulatory documents and clinical guidelines behind the claims in this article:
+
+- US Food and Drug Administration. [Step 3: clinical research, describing the phase 1 to phase 3 trial process](https://www.fda.gov/patients/drug-development-process/step-3-clinical-research). FDA.
+- DiMasi JA, Grabowski HG, Hansen RW. [Innovation in the pharmaceutical industry: new estimates of R&D costs](https://pubmed.ncbi.nlm.nih.gov/26928437/). Journal of Health Economics, 2016.
+- South African Health Products Regulatory Authority. [Medicines and Related Substances Act, 1965 (Act 101 of 1965), as amended](https://www.sahpra.org.za/document/medicines-and-related-substances-act-1965-act-no-101-of-1965-as-amended/). SAHPRA.
+- South African Health Products Regulatory Authority. [Frequently asked questions: semaglutide, including what is and is not registered in South Africa](https://www.sahpra.org.za/faqs-semaglutide/). SAHPRA.
+- D'Hondt M, Bracke N, et al. [Related impurities in peptide medicines](https://pubmed.ncbi.nlm.nih.gov/25044089/). Journal of Pharmaceutical and Biomedical Analysis, 2014.
+
+
 *Disclaimer: The information in this article is for educational purposes only. STRIATA peptides are sold as research compounds and are not intended for use as medicines. Always consult a qualified healthcare professional before beginning any new protocol.*
 
 ---
@@ -536,6 +566,15 @@ All STRIATA peptides are accompanied by third-party Certificates of Analysis fro
 We believe this is the minimum standard for operating responsibly in this space, not a differentiator. If your current supplier is not providing this level of documentation, it is worth asking why.
 
 ---
+
+### Sources
+
+The research, regulatory documents and clinical guidelines behind the claims in this article:
+
+- D'Hondt M, Bracke N, et al. [Related impurities in peptide medicines](https://pubmed.ncbi.nlm.nih.gov/25044089/). Journal of Pharmaceutical and Biomedical Analysis, 2014.
+- Manning MC, Chou DK, et al. [Stability of protein pharmaceuticals: an update](https://pubmed.ncbi.nlm.nih.gov/20143256/). Pharmaceutical Research, 2010.
+- South African Health Products Regulatory Authority. [Medicines and Related Substances Act, 1965 (Act 101 of 1965), as amended](https://www.sahpra.org.za/document/medicines-and-related-substances-act-1965-act-no-101-of-1965-as-amended/). SAHPRA.
+
 
 *Disclaimer: The information in this article is for educational purposes only. STRIATA peptides are sold as research compounds. Always source from verified, tested suppliers and consult a qualified healthcare professional before beginning any protocol.*
 
@@ -687,4 +726,14 @@ A naturally occurring peptide found in almost all human and animal cells. Widely
 
 ---
 
+### Sources
+
+The research, regulatory documents and clinical guidelines behind the claims in this article:
+
+- Fosgerau K, Hoffmann T. [Peptide therapeutics: current status and future directions](https://pubmed.ncbi.nlm.nih.gov/25450771/). Drug Discovery Today, 2015.
+- US National Library of Medicine, DailyMed. [Bacteriostatic Water for Injection USP, prescribing information (0.9% benzyl alcohol as preservative)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=87d6e9dc-fe3b-4593-ac9a-d7493d1959c7). DailyMed.
+- D'Hondt M, Bracke N, et al. [Related impurities in peptide medicines](https://pubmed.ncbi.nlm.nih.gov/25044089/). Journal of Pharmaceutical and Biomedical Analysis, 2014.
+
+
 *Disclaimer: All information in this glossary is provided for educational purposes. STRIATA peptides are research compounds and are not intended for use as medicines.*
+

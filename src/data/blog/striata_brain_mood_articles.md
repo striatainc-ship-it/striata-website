@@ -94,6 +94,17 @@ People exploring Semax typically fall into a few categories:
 
 ---
 
+### Sources
+
+The research, regulatory documents and clinical guidelines behind the claims in this article:
+
+- Dolotov OV, Karpenko EA, et al. [Semax, an analogue of ACTH(4-10), binds specifically and increases levels of brain-derived neurotrophic factor protein in rat basal forebrain](https://pubmed.ncbi.nlm.nih.gov/16635254/). Journal of Neurochemistry, 2006.
+- Eremin KO, Kudrin VS, et al. [Semax, an ACTH(4-10) analogue with nootropic properties, activates dopaminergic and serotoninergic brain systems in rodents](https://pubmed.ncbi.nlm.nih.gov/16362768/). Neurochemical Research, 2005.
+- Kost NV, Sokolov OIu, et al. [Semax and selank inhibit the enkephalin-degrading enzymes from human serum](https://pubmed.ncbi.nlm.nih.gov/11443939/). Russian Journal of Bioorganic Chemistry, 2001.
+- Gusev EI, Skvortsova VI, et al. [Effectiveness of semax in the acute period of hemispheric ischemic stroke (a clinical and electrophysiological study)](https://pubmed.ncbi.nlm.nih.gov/11517472/). Zhurnal Nevrologii i Psikhiatrii, 1997.
+- Gusev EI, Martynov MY, et al. [The efficacy of semax in the treatment of patients at different stages of ischemic stroke](https://pubmed.ncbi.nlm.nih.gov/29798983/). Zhurnal Nevrologii i Psikhiatrii, 2018.
+
+
 *Disclaimer: The information in this article is for educational purposes only. STRIATA peptides are research compounds and are not approved medicines. Always consult a qualified healthcare professional before beginning any protocol.*
 
 ---
@@ -233,6 +244,19 @@ There is no known contraindication to using both, but as with any multi-compound
 
 ---
 
+### Sources
+
+The research, regulatory documents and clinical guidelines behind the claims in this article:
+
+- Volkova A, Shadrina M, et al. [Selank administration affects the expression of some genes involved in GABAergic neurotransmission](https://pubmed.ncbi.nlm.nih.gov/26924987/). Frontiers in Pharmacology, 2016.
+- Inozemtseva LS, Karpenko EA, et al. [Intranasal administration of the peptide Selank regulates BDNF expression in the rat hippocampus in vivo](https://pubmed.ncbi.nlm.nih.gov/18841804/). Doklady Biological Sciences, 2008.
+- Zozulia AA, Neznamov GG, et al. [Efficacy and possible mechanisms of action of a new peptide anxiolytic selank in the therapy of generalized anxiety disorders and neurasthenia](https://pubmed.ncbi.nlm.nih.gov/18454096/). Zhurnal Nevrologii i Psikhiatrii, 2008.
+- Kolomin T, Morozova M, et al. [The temporary dynamics of inflammation-related genes expression under tuftsin analog Selank action](https://pubmed.ncbi.nlm.nih.gov/24291245/). Molecular Immunology, 2014.
+- Kost NV, Sokolov OIu, et al. [Semax and selank inhibit the enkephalin-degrading enzymes from human serum](https://pubmed.ncbi.nlm.nih.gov/11443939/). Russian Journal of Bioorganic Chemistry, 2001.
+- Dolotov OV, Karpenko EA, et al. [Semax, an analogue of ACTH(4-10), binds specifically and increases levels of brain-derived neurotrophic factor protein in rat basal forebrain](https://pubmed.ncbi.nlm.nih.gov/16635254/). Journal of Neurochemistry, 2006.
+- Eremin KO, Kudrin VS, et al. [Semax, an ACTH(4-10) analogue with nootropic properties, activates dopaminergic and serotoninergic brain systems in rodents](https://pubmed.ncbi.nlm.nih.gov/16362768/). Neurochemical Research, 2005.
+
+
 *Disclaimer: The information in this article is for educational purposes only. STRIATA peptides are research compounds and are not approved medicines. Always consult a qualified healthcare professional before beginning any protocol.*
 
 ---
@@ -330,6 +354,18 @@ Improvements in cognitive function from NAD+ support tend to be gradual rather t
 These are the kinds of changes that are easy to attribute to other factors and just as easy to underappreciate. Tracking cognitive performance and energy levels before and during supplementation is the most reliable way to assess individual response.
 
 ---
+
+### Sources
+
+The research, regulatory documents and clinical guidelines behind the claims in this article:
+
+- Raichle ME, Gusnard DA. [Appraising the brain's energy budget](https://pubmed.ncbi.nlm.nih.gov/12149485/). PNAS, 2002.
+- Lautrup S, Sinclair DA, Mattson MP, Fang EF. [NAD+ in brain aging and neurodegenerative disorders](https://pubmed.ncbi.nlm.nih.gov/31577933/). Cell Metabolism, 2019.
+- Gao J, Wang WY, et al. [A novel pathway regulates memory and plasticity via SIRT1 and miR-134](https://pubmed.ncbi.nlm.nih.gov/20622856/). Nature, 2010.
+- Hou Y, Lautrup S, et al. [NAD+ supplementation normalizes key Alzheimer's features and DNA damage responses in a new AD mouse model with introduced DNA repair deficiency](https://pubmed.ncbi.nlm.nih.gov/29432159/). PNAS, 2018.
+- Covarrubias AJ, Perrone R, et al. [NAD+ metabolism and its roles in cellular processes during ageing](https://pubmed.ncbi.nlm.nih.gov/33353981/). Nature Reviews Molecular Cell Biology, 2021.
+- Trammell SA, Schmidt MS, et al. [Nicotinamide riboside is uniquely and orally bioavailable in mice and humans](https://pubmed.ncbi.nlm.nih.gov/27721479/). Nature Communications, 2016.
+
 
 *Disclaimer: The information in this article is for educational purposes only. STRIATA products are research compounds and supplements. Always consult a qualified healthcare professional before beginning any new protocol.*
 
@@ -438,6 +474,16 @@ For people whose sleep difficulties are driven by anxiety, the combination of Se
 
 ---
 
+### Sources
+
+The research, regulatory documents and clinical guidelines behind the claims in this article:
+
+- Schoenenberger GA, Monnier M. [Characterization of a delta-electroencephalogram (sleep)-inducing peptide](https://pubmed.ncbi.nlm.nih.gov/265572/). PNAS, 1977.
+- Schneider-Helmert D. [Efficacy of DSIP to normalize sleep in middle-aged and elderly chronic insomniacs](https://pubmed.ncbi.nlm.nih.gov/3792404/). European Neurology, 1986.
+- Dick P, Costa C, et al. [DSIP in the treatment of withdrawal syndromes from alcohol and opiates](https://pubmed.ncbi.nlm.nih.gov/6548969/). European Neurology, 1984.
+- Kovalzon VM, Strekalova TV. [Delta sleep-inducing peptide (DSIP): a still unresolved riddle](https://pubmed.ncbi.nlm.nih.gov/16539679/). Journal of Neurochemistry, 2006.
+
+
 *Disclaimer: The information in this article is for educational purposes only. STRIATA peptides are research compounds and are not approved medicines. Always consult a qualified healthcare professional before beginning any protocol.*
 
 ---
@@ -537,4 +583,15 @@ Given the early state of human research, any use of PE-22-28 should be approache
 
 ---
 
+### Sources
+
+The research, regulatory documents and clinical guidelines behind the claims in this article:
+
+- Heurteaux C, Lucas G, et al. [Deletion of the background potassium channel TREK-1 results in a depression-resistant phenotype](https://pubmed.ncbi.nlm.nih.gov/16906152/). Nature Neuroscience, 2006.
+- Liou YJ, Chen TJ, et al. [Support for the involvement of the KCNK2 gene in major depressive disorder and response to antidepressant treatment](https://pubmed.ncbi.nlm.nih.gov/19741570/). Pharmacogenetics and Genomics, 2009.
+- Mazella J, Petrault O, et al. [Spadin, a sortilin-derived peptide, targeting rodent TREK-1 channels: a new concept in the antidepressant drug design](https://pubmed.ncbi.nlm.nih.gov/20405001/). PLoS Biology, 2010.
+- Djillani A, Pietri M, et al. [Shortened spadin analogs display better TREK-1 inhibition, in vivo stability and antidepressant activity](https://pubmed.ncbi.nlm.nih.gov/28955242/). Frontiers in Pharmacology, 2017.
+
+
 *Disclaimer: The information in this article is for educational purposes only. STRIATA peptides are research compounds and are not approved medicines. PE-22-28 in particular is an early-stage research compound with limited human data. Always consult a qualified healthcare professional, particularly if you are dealing with mood or mental health concerns.*
+

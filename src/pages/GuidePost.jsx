@@ -2,7 +2,7 @@ import { useParams, Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { getGuide, guides } from '../data/guidesData'
 import { whatsappLink } from '../data/products'
-import { AUTHOR_SCHEMA, DEFAULT_IMAGE } from '../data/site'
+import { AUTHOR_SCHEMA, DEFAULT_IMAGE, citationSchema } from '../data/site'
 import JsonLd from '../components/JsonLd'
 import { Byline, AuthorCard } from '../components/AuthorCard'
 
@@ -253,6 +253,7 @@ export default function GuidePost() {
         datePublished: guide.datePublished,
         dateModified: guide.dateModified,
         author: AUTHOR_SCHEMA,
+        citation: citationSchema(guide.content),
         publisher: {
           '@type': 'Organization',
           name: 'STRIATA',

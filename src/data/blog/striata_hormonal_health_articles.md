@@ -97,6 +97,16 @@ Since PT-141 has pharmaceutical approval (as Vyleesi), it exists in both the pre
 
 ---
 
+### Sources
+
+The research, regulatory documents and clinical guidelines behind the claims in this article:
+
+- Pfaus JG, Shadiack A, et al. [Selective facilitation of sexual solicitation in the female rat by a melanocortin receptor agonist](https://pubmed.ncbi.nlm.nih.gov/15226502/). PNAS, 2004.
+- Diamond LE, Earle DC, et al. [Double-blind, placebo-controlled evaluation of the safety, pharmacokinetic properties and pharmacodynamic effects of intranasal PT-141 in healthy males and patients with mild-to-moderate erectile dysfunction](https://pubmed.ncbi.nlm.nih.gov/14963471/). International Journal of Impotence Research, 2004.
+- Kingsberg SA, Clayton AH, et al. [Bremelanotide for the treatment of hypoactive sexual desire disorder: two randomized phase 3 trials (RECONNECT)](https://pubmed.ncbi.nlm.nih.gov/31599840/). Obstetrics and Gynecology, 2019.
+- US Food and Drug Administration. [VYLEESI (bremelanotide) prescribing information, approved 2019](https://www.accessdata.fda.gov/drugsatfda_docs/label/2019/210557s000lbl.pdf). FDA label, 2019.
+
+
 *Disclaimer: The information in this article is for educational purposes only. PT-141 (Bremelanotide) is an FDA-approved pharmaceutical for specific indications and is also available as a research compound. Always consult a qualified healthcare professional before use, particularly regarding cardiovascular considerations.*
 
 ---
@@ -185,6 +195,15 @@ Side effects can include elevated oestrogen (since HCG stimulates testicular tes
 
 ---
 
+### Sources
+
+The research, regulatory documents and clinical guidelines behind the claims in this article:
+
+- Coviello AD, Matsumoto AM, et al. [Low-dose human chorionic gonadotropin maintains intratesticular testosterone in normal men with testosterone-induced gonadotropin suppression](https://pubmed.ncbi.nlm.nih.gov/15713727/). Journal of Clinical Endocrinology and Metabolism, 2005.
+- Hsieh TC, Pastuszak AW, et al. [Concomitant intramuscular human chorionic gonadotropin preserves spermatogenesis in men undergoing testosterone replacement therapy](https://pubmed.ncbi.nlm.nih.gov/23260550/). Journal of Urology, 2013.
+- Bhasin S, Brito JP, et al. [Testosterone therapy in men with hypogonadism: an Endocrine Society clinical practice guideline](https://pubmed.ncbi.nlm.nih.gov/29562364/). Journal of Clinical Endocrinology and Metabolism, 2018.
+
+
 *Disclaimer: The information in this article is for educational purposes only. Hormonal health interventions have significant implications for the endocrine system and should be managed with professional medical oversight wherever possible. Always consult a qualified healthcare professional before beginning any hormonal protocol.*
 
 ---
@@ -268,6 +287,18 @@ Modified, longer-acting Kisspeptin analogues are in development, which may addre
 Current research doses in human studies have ranged from 0.3 to 1 nanomole per kilogram administered intravenously, with subcutaneous protocols in the research peptide community using different approaches. Given the relative novelty of Kisspeptin in research contexts outside of clinical endocrinology, dosing guidance is less standardised than for more established compounds.
 
 ---
+
+### Sources
+
+The research, regulatory documents and clinical guidelines behind the claims in this article:
+
+- Lee JH, Miele ME, et al. [KiSS-1, a novel human malignant melanoma metastasis-suppressor gene](https://pubmed.ncbi.nlm.nih.gov/8944003/). Journal of the National Cancer Institute, 1996.
+- Seminara SB, Messager S, et al. [The GPR54 gene as a regulator of puberty](https://pubmed.ncbi.nlm.nih.gov/14573733/). New England Journal of Medicine, 2003.
+- Dhillo WS, Chaudhri OB, et al. [Kisspeptin-54 stimulates the hypothalamic-pituitary gonadal axis in human males](https://pubmed.ncbi.nlm.nih.gov/16174713/). Journal of Clinical Endocrinology and Metabolism, 2005.
+- George JT, Veldhuis JD, et al. [Kisspeptin-10 is a potent stimulator of LH and increases pulse frequency in men](https://pubmed.ncbi.nlm.nih.gov/21632807/). Journal of Clinical Endocrinology and Metabolism, 2011.
+- Comninos AN, Wall MB, et al. [Kisspeptin modulates sexual and emotional brain processing in humans](https://pubmed.ncbi.nlm.nih.gov/28112678/). Journal of Clinical Investigation, 2017.
+- Jayasena CN, Abbara A, et al. [Kisspeptin-54 triggers egg maturation in women undergoing in vitro fertilization](https://pubmed.ncbi.nlm.nih.gov/25036713/). Journal of Clinical Investigation, 2014.
+
 
 *Disclaimer: The information in this article is for educational purposes only. STRIATA peptides are research compounds and are not approved medicines. Hormonal interventions carry significant implications and should be approached with professional guidance wherever possible.*
 
@@ -380,6 +411,17 @@ The field of hormonal health optimisation has become increasingly sophisticated,
 If you want to understand how Gonadorelin or HCG might fit your specific situation, our team is happy to talk through the options on WhatsApp.
 
 ---
+
+### Sources
+
+The research, regulatory documents and clinical guidelines behind the claims in this article:
+
+- Belchetz PE, Plant TM, et al. [Hypophysial responses to continuous and intermittent delivery of hypothalamic gonadotropin-releasing hormone](https://pubmed.ncbi.nlm.nih.gov/100883/). Science, 1978.
+- Coviello AD, Matsumoto AM, et al. [Low-dose human chorionic gonadotropin maintains intratesticular testosterone in normal men with testosterone-induced gonadotropin suppression](https://pubmed.ncbi.nlm.nih.gov/15713727/). Journal of Clinical Endocrinology and Metabolism, 2005.
+- Hsieh TC, Pastuszak AW, et al. [Concomitant intramuscular human chorionic gonadotropin preserves spermatogenesis in men undergoing testosterone replacement therapy](https://pubmed.ncbi.nlm.nih.gov/23260550/). Journal of Urology, 2013.
+- US Food and Drug Administration. [Notice to compounders: changes that affect compounding as of March 23, 2020, when chorionic gonadotropin became a licensed biologic](https://www.fda.gov/drugs/human-drug-compounding/notice-compounders-changes-affect-compounding-march-23-2020). FDA, 2020.
+- Bhasin S, Brito JP, et al. [Testosterone therapy in men with hypogonadism: an Endocrine Society clinical practice guideline](https://pubmed.ncbi.nlm.nih.gov/29562364/). Journal of Clinical Endocrinology and Metabolism, 2018.
+
 
 *Disclaimer: The information in this article is for educational purposes only. Hormonal interventions require professional medical oversight and should not be self-administered without appropriate knowledge and, ideally, regular hormonal monitoring. Always consult a qualified healthcare professional.*
 
@@ -517,4 +559,17 @@ For people already working on hormonal optimisation through compounds discussed 
 
 ---
 
+### Sources
+
+The research, regulatory documents and clinical guidelines behind the claims in this article:
+
+- Heinrichs M, Baumgartner T, et al. [Social support and oxytocin interact to suppress cortisol and subjective responses to psychosocial stress](https://pubmed.ncbi.nlm.nih.gov/14675803/). Biological Psychiatry, 2003.
+- De Dreu CK, Greer LL, et al. [Oxytocin promotes human ethnocentrism](https://pubmed.ncbi.nlm.nih.gov/21220339/). PNAS, 2011.
+- Rash JA, Aguirre-Camacho A, Campbell TS. [Oxytocin and pain: a systematic review and synthesis of findings](https://pubmed.ncbi.nlm.nih.gov/23887343/). Clinical Journal of Pain, 2014.
+- Takayanagi Y, Kasahara Y, et al. [Oxytocin receptor-deficient mice developed late-onset obesity](https://pubmed.ncbi.nlm.nih.gov/18520999/). NeuroReport, 2008.
+- Lawson EA, Marengi DA, et al. [Oxytocin reduces caloric intake in men](https://pubmed.ncbi.nlm.nih.gov/25865294/). Obesity, 2015.
+- Leng G, Ludwig M. [Intranasal oxytocin: myths and delusions](https://pubmed.ncbi.nlm.nih.gov/26049207/). Biological Psychiatry, 2016.
+
+
 *Disclaimer: The information in this article is for educational purposes only. STRIATA peptides are research compounds and are not approved medicines. Always consult a qualified healthcare professional before beginning any protocol.*
+

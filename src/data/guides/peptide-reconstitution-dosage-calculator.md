@@ -301,4 +301,14 @@ If you're unsure about a reconstitution volume, a dose calculation, or whether a
 
 ---
 
+## Sources
+
+The research, regulatory documents and clinical guidelines behind the claims in this article:
+
+- US National Library of Medicine, DailyMed. [Bacteriostatic Water for Injection USP, prescribing information (0.9% benzyl alcohol as preservative)](https://dailymed.nlm.nih.gov/dailymed/lookup.cfm?setid=87d6e9dc-fe3b-4593-ac9a-d7493d1959c7). DailyMed.
+- Manning MC, Chou DK, et al. [Stability of protein pharmaceuticals: an update](https://pubmed.ncbi.nlm.nih.gov/20143256/). Pharmaceutical Research, 2010.
+- D'Hondt M, Bracke N, et al. [Related impurities in peptide medicines](https://pubmed.ncbi.nlm.nih.gov/25044089/). Journal of Pharmaceutical and Biomedical Analysis, 2014.
+- Fosgerau K, Hoffmann T. [Peptide therapeutics: current status and future directions](https://pubmed.ncbi.nlm.nih.gov/25450771/). Drug Discovery Today, 2015.
+
+
 *This guide is produced by Striata Research Peptides for educational purposes. It does not constitute medical advice. All products supplied by Striata Labs are research-grade compounds intended for use under qualified practitioner supervision, in compliance with SAHPRA guidelines and applicable regulations. Striata Labs accepts no liability for misuse arising from inadequate practitioner supervision.*

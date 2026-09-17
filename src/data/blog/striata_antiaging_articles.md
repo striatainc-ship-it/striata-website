@@ -98,6 +98,17 @@ GHK-Cu has an excellent safety profile. As a naturally occurring compound presen
 
 ---
 
+### Sources
+
+The research, regulatory documents and clinical guidelines behind the claims in this article:
+
+- Pickart L, Thaler MM. [Tripeptide in human serum which prolongs survival of normal liver cells and stimulates growth in neoplastic liver](https://pubmed.ncbi.nlm.nih.gov/4349963/). Nature New Biology, 1973.
+- Maquart FX, Pickart L, et al. [Stimulation of collagen synthesis in fibroblast cultures by the tripeptide-copper complex glycyl-L-histidyl-L-lysine-Cu2+](https://pubmed.ncbi.nlm.nih.gov/3169264/). FEBS Letters, 1988.
+- Pickart L, Vasquez-Soltero JM, Margolina A. [The human tripeptide GHK-Cu in prevention of oxidative stress and degenerative conditions of aging](https://pubmed.ncbi.nlm.nih.gov/22666519/). Oxidative Medicine and Cellular Longevity, 2012.
+- Pickart L, Vasquez-Soltero JM, Margolina A. [GHK and DNA: resetting the human genome to health](https://pubmed.ncbi.nlm.nih.gov/25302294/). BioMed Research International, 2014.
+- Pickart L, Margolina A. [Regenerative and protective actions of the GHK-Cu peptide in the light of the new gene data](https://pubmed.ncbi.nlm.nih.gov/29986520/). International Journal of Molecular Sciences, 2018.
+
+
 *Disclaimer: The information in this article is for educational purposes only. STRIATA peptides are research compounds and are not approved medicines. Always consult a qualified healthcare professional before beginning any protocol.*
 
 ---
@@ -201,6 +212,17 @@ Epithalon is administered subcutaneously or intravenously. Common protocols invo
 The compound has a good safety profile in the research literature. Side effects are uncommon and typically mild. The relatively short course format reduces the concerns around chronic telomerase activation.
 
 ---
+
+### Sources
+
+The research, regulatory documents and clinical guidelines behind the claims in this article:
+
+- The Nobel Assembly at Karolinska Institutet. [The Nobel Prize in Physiology or Medicine 2009, for the discovery of how chromosomes are protected by telomeres and the enzyme telomerase](https://www.nobelprize.org/prizes/medicine/2009/summary/). NobelPrize.org, 2009.
+- Khavinson VKh, Bondarev IE, Butyugov AA. [Epithalon peptide induces telomerase activity and telomere elongation in human somatic cells](https://pubmed.ncbi.nlm.nih.gov/12937682/). Bulletin of Experimental Biology and Medicine, 2003.
+- Khavinson VK, Izmaylov DM, et al. [Effect of epitalon on the lifespan increase in Drosophila melanogaster](https://pubmed.ncbi.nlm.nih.gov/11087911/). Mechanisms of Ageing and Development, 2000.
+- Anisimov VN, Khavinson VKh, et al. [Effect of Epitalon on biomarkers of aging, life span and spontaneous tumor incidence in female Swiss-derived SHR mice](https://pubmed.ncbi.nlm.nih.gov/14501183/). Biogerontology, 2003.
+- Korkushko OV, Khavinson VKh, et al. [Geroprotective effect of epithalamine (pineal gland peptide preparation) in elderly subjects with accelerated aging](https://pubmed.ncbi.nlm.nih.gov/17426848/). Bulletin of Experimental Biology and Medicine, 2006.
+
 
 *Disclaimer: The information in this article is for educational purposes only. STRIATA peptides are research compounds and are not approved medicines. Always consult a qualified healthcare professional before beginning any protocol.*
 
@@ -309,6 +331,16 @@ In a comprehensive longevity protocol, FOX04-DRI might be used periodically rath
 If you are considering FOX04-DRI, we strongly recommend approaching it with full research of the available literature, a clear understanding of the mechanism and, ideally, guidance from a practitioner familiar with longevity medicine. Our team is happy to discuss the compound and point you toward the relevant research.
 
 ---
+
+### Sources
+
+The research, regulatory documents and clinical guidelines behind the claims in this article:
+
+- Coppe JP, Patil CK, et al. [Senescence-associated secretory phenotypes reveal cell-nonautonomous functions of oncogenic RAS and the p53 tumor suppressor](https://pubmed.ncbi.nlm.nih.gov/19053174/). PLoS Biology, 2008.
+- Baker DJ, Wijshake T, et al. [Clearance of p16Ink4a-positive senescent cells delays ageing-associated disorders](https://pubmed.ncbi.nlm.nih.gov/22048312/). Nature, 2011.
+- Baar MP, Brandt RMC, et al. [Targeted apoptosis of senescent cells restores tissue homeostasis in response to chemotoxicity and aging](https://pubmed.ncbi.nlm.nih.gov/28340339/). Cell, 2017.
+- Zhu Y, Tchkonia T, et al. [The Achilles heel of senescent cells: from transcriptome to senolytic drugs](https://pubmed.ncbi.nlm.nih.gov/25754370/). Aging Cell, 2015.
+
 
 *Disclaimer: The information in this article is for educational purposes only. STRIATA peptides are research compounds and are not approved medicines. FOX04-DRI in particular is an advanced research compound that warrants careful consideration and professional guidance. Always consult a qualified healthcare professional before beginning any protocol.*
 
@@ -419,6 +451,20 @@ NAD+ precursor supplementation is not a dramatic, immediately noticeable interve
 These are subjective reports and individual responses vary. The more compelling case for NAD+ support is biological: the processes it enables, DNA repair, sirtuin activity, mitochondrial function and circadian regulation, are central to how well your cells age. Supporting them is less about feeling a dramatic effect today and more about maintaining biological function that would otherwise quietly decline.
 
 ---
+
+### Sources
+
+The research, regulatory documents and clinical guidelines behind the claims in this article:
+
+- Covarrubias AJ, Perrone R, et al. [NAD+ metabolism and its roles in cellular processes during ageing](https://pubmed.ncbi.nlm.nih.gov/33353981/). Nature Reviews Molecular Cell Biology, 2021.
+- Massudi H, Grant R, et al. [Age-associated changes in oxidative stress and NAD+ metabolism in human tissue](https://pubmed.ncbi.nlm.nih.gov/22848760/). PLoS One, 2012.
+- Camacho-Pereira J, Tarrago MG, et al. [CD38 dictates age-related NAD decline and mitochondrial dysfunction through an SIRT3-dependent mechanism](https://pubmed.ncbi.nlm.nih.gov/27304511/). Cell Metabolism, 2016.
+- Imai S, Guarente L. [NAD+ and sirtuins in aging and disease](https://pubmed.ncbi.nlm.nih.gov/24786309/). Trends in Cell Biology, 2014.
+- Nakahata Y, Sahar S, et al. [Circadian control of the NAD+ salvage pathway by CLOCK-SIRT1](https://pubmed.ncbi.nlm.nih.gov/19286518/). Science, 2009.
+- Trammell SA, Schmidt MS, et al. [Nicotinamide riboside is uniquely and orally bioavailable in mice and humans](https://pubmed.ncbi.nlm.nih.gov/27721479/). Nature Communications, 2016.
+- Yoshino M, Yoshino J, et al. [Nicotinamide mononucleotide increases muscle insulin sensitivity in prediabetic women](https://pubmed.ncbi.nlm.nih.gov/33888596/). Science, 2021.
+- Escande C, Nin V, et al. [Flavonoid apigenin is an inhibitor of the NAD+ase CD38](https://pubmed.ncbi.nlm.nih.gov/23172919/). Diabetes, 2013.
+
 
 *Disclaimer: The information in this article is for educational purposes only. STRIATA products are research compounds and supplements. Always consult a qualified healthcare professional before beginning any new protocol.*
 
@@ -540,4 +586,18 @@ If you want to talk through which level of the stack is appropriate for your goa
 
 ---
 
+### Sources
+
+The research, regulatory documents and clinical guidelines behind the claims in this article:
+
+- Shuster S, Black MM, McVitie E. [The influence of age and sex on skin thickness, skin collagen and density](https://pubmed.ncbi.nlm.nih.gov/1220811/). British Journal of Dermatology, 1975.
+- Maquart FX, Pickart L, et al. [Stimulation of collagen synthesis in fibroblast cultures by the tripeptide-copper complex glycyl-L-histidyl-L-lysine-Cu2+](https://pubmed.ncbi.nlm.nih.gov/3169264/). FEBS Letters, 1988.
+- Pickart L, Vasquez-Soltero JM, Margolina A. [GHK and DNA: resetting the human genome to health](https://pubmed.ncbi.nlm.nih.gov/25302294/). BioMed Research International, 2014.
+- Pickart L, Margolina A. [Regenerative and protective actions of the GHK-Cu peptide in the light of the new gene data](https://pubmed.ncbi.nlm.nih.gov/29986520/). International Journal of Molecular Sciences, 2018.
+- Khavinson VKh, Bondarev IE, Butyugov AA. [Epithalon peptide induces telomerase activity and telomere elongation in human somatic cells](https://pubmed.ncbi.nlm.nih.gov/12937682/). Bulletin of Experimental Biology and Medicine, 2003.
+- Seiwerth S, Milavic M, et al. [Stable gastric pentadecapeptide BPC 157 and wound healing](https://pubmed.ncbi.nlm.nih.gov/34267654/). Frontiers in Pharmacology, 2021.
+- Covarrubias AJ, Perrone R, et al. [NAD+ metabolism and its roles in cellular processes during ageing](https://pubmed.ncbi.nlm.nih.gov/33353981/). Nature Reviews Molecular Cell Biology, 2021.
+
+
 *Disclaimer: The information in this article is for educational purposes only. STRIATA peptides are research compounds and are not approved medicines. Always consult a qualified healthcare professional before beginning any injectable protocol.*
+

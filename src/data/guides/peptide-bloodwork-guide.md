@@ -485,4 +485,18 @@ If you're running a Striata protocol and want help interpreting a set of results
 
 ---
 
+## Sources
+
+The research, regulatory documents and clinical guidelines behind the claims in this article:
+
+- American Diabetes Association. [Diagnosis and classification of diabetes: Standards of Care in Diabetes 2026](https://diabetesjournals.org/care/article/49/Supplement_1/S27/163926/2-Diagnosis-and-Classification-of-Diabetes). Diabetes Care, 2026.
+- Bhasin S, Brito JP, et al. [Testosterone therapy in men with hypogonadism: an Endocrine Society clinical practice guideline](https://pubmed.ncbi.nlm.nih.gov/29562364/). Journal of Clinical Endocrinology and Metabolism, 2018.
+- Katznelson L, Laws ER, et al. [Acromegaly: an Endocrine Society clinical practice guideline](https://pubmed.ncbi.nlm.nih.gov/25356808/). Journal of Clinical Endocrinology and Metabolism, 2014.
+- Holick MF, Binkley NC, et al. [Evaluation, treatment, and prevention of vitamin D deficiency: an Endocrine Society clinical practice guideline](https://pubmed.ncbi.nlm.nih.gov/21646368/). Journal of Clinical Endocrinology and Metabolism, 2011.
+- World Health Organization. [WHO guideline on use of ferritin concentrations to assess iron status in individuals and populations](https://www.who.int/publications/i/item/9789240000124). WHO, 2020.
+- National Institute for Health and Care Excellence. [Nutrition support for adults (CG32), including the criteria for refeeding risk](https://www.nice.org.uk/guidance/cg32/chapter/1-guidance). NICE.
+- Nass R, Pezzoli SS, et al. [Effects of an oral ghrelin mimetic on body composition and clinical outcomes in healthy older adults: a randomized trial](https://pubmed.ncbi.nlm.nih.gov/18981485/). Annals of Internal Medicine, 2008.
+- Wilding JPH, Batterham RL, et al. [Once-weekly semaglutide in adults with overweight or obesity (STEP 1)](https://pubmed.ncbi.nlm.nih.gov/33567185/). New England Journal of Medicine, 2021.
+
+
 *This document is produced by Striata Research Peptides for educational and client monitoring purposes only. It does not constitute medical advice. All protocols must be supervised by a licensed healthcare practitioner. Striata accepts no liability for actions taken based solely on the content of this guide.*

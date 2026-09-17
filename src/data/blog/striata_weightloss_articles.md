@@ -122,6 +122,18 @@ If you want to talk through your specific situation, our team is available on Wh
 
 ---
 
+### Sources
+
+The research, regulatory documents and clinical guidelines behind the claims in this article:
+
+- Wilding JPH, Batterham RL, et al. [Once-weekly semaglutide in adults with overweight or obesity (STEP 1)](https://pubmed.ncbi.nlm.nih.gov/33567185/). New England Journal of Medicine, 2021.
+- Jastreboff AM, Aronne LJ, et al. [Tirzepatide once weekly for the treatment of obesity (SURMOUNT-1)](https://pubmed.ncbi.nlm.nih.gov/35658024/). New England Journal of Medicine, 2022.
+- Jastreboff AM, Kaplan LM, et al. [Triple-hormone-receptor agonist retatrutide for obesity: a phase 2 trial](https://pubmed.ncbi.nlm.nih.gov/37366315/). New England Journal of Medicine, 2023.
+- Frias JP, Davies MJ, et al. [Tirzepatide versus semaglutide once weekly in patients with type 2 diabetes (SURPASS-2)](https://pubmed.ncbi.nlm.nih.gov/34170647/). New England Journal of Medicine, 2021.
+- Drucker DJ. [Mechanisms of action and therapeutic application of glucagon-like peptide-1](https://pubmed.ncbi.nlm.nih.gov/29617641/). Cell Metabolism, 2018.
+- US Food and Drug Administration. [WEGOVY (semaglutide) prescribing information, including the boxed warning on thyroid C-cell tumours](https://www.accessdata.fda.gov/drugsatfda_docs/label/2021/215256s000lbl.pdf). FDA label, 2021.
+
+
 *Disclaimer: The information in this article is for educational purposes only. STRIATA peptides are research compounds and are not approved medicines. Always consult a qualified healthcare professional before beginning any weight management protocol.*
 
 ---
@@ -226,6 +238,18 @@ Some protocols combine GLP-1 compounds with other peptides or compounds to addre
 These combinations are at the more advanced end of peptide protocols and should be approached with appropriate research and, where possible, professional guidance.
 
 ---
+
+### Sources
+
+The research, regulatory documents and clinical guidelines behind the claims in this article:
+
+- Holst JJ. [The physiology of glucagon-like peptide 1](https://pubmed.ncbi.nlm.nih.gov/17928588/). Physiological Reviews, 2007.
+- Drucker DJ. [Mechanisms of action and therapeutic application of glucagon-like peptide-1](https://pubmed.ncbi.nlm.nih.gov/29617641/). Cell Metabolism, 2018.
+- van Bloemendaal L, IJzerman RG, et al. [GLP-1 receptor activation modulates appetite- and reward-related brain areas in humans](https://pubmed.ncbi.nlm.nih.gov/25071023/). Diabetes, 2014.
+- Wilding JPH, Batterham RL, et al. [Once-weekly semaglutide in adults with overweight or obesity (STEP 1)](https://pubmed.ncbi.nlm.nih.gov/33567185/). New England Journal of Medicine, 2021.
+- Rubino D, Abrahamsson N, et al. [Effect of continued weekly subcutaneous semaglutide vs placebo on weight loss maintenance (STEP 4)](https://pubmed.ncbi.nlm.nih.gov/33755728/). JAMA, 2021.
+- Garvey WT, Batterham RL, et al. [Two-year effects of semaglutide in adults with overweight or obesity (STEP 5)](https://pubmed.ncbi.nlm.nih.gov/36216945/). Nature Medicine, 2022.
+
 
 *Disclaimer: The information in this article is for educational purposes only. STRIATA peptides are research compounds and are not approved medicines. Always consult a qualified healthcare professional before beginning any protocol.*
 
@@ -341,6 +365,16 @@ If you are considering either compound as part of a fat loss protocol, our team 
 
 ---
 
+### Sources
+
+The research, regulatory documents and clinical guidelines behind the claims in this article:
+
+- Ng FM, Sun J, et al. [Metabolic studies of a synthetic lipolytic domain (AOD9604) of human growth hormone](https://pubmed.ncbi.nlm.nih.gov/11146367/). Hormone Research, 2000.
+- Heffernan MA, Thorburn AW, et al. [Increase of fat oxidation and weight loss in obese mice caused by chronic treatment with human growth hormone or a modified C-terminal fragment](https://pubmed.ncbi.nlm.nih.gov/11673763/). International Journal of Obesity, 2001.
+- Wilding JPH, Batterham RL, et al. [Once-weekly semaglutide in adults with overweight or obesity (STEP 1)](https://pubmed.ncbi.nlm.nih.gov/33567185/). New England Journal of Medicine, 2021.
+- Jastreboff AM, Aronne LJ, et al. [Tirzepatide once weekly for the treatment of obesity (SURMOUNT-1)](https://pubmed.ncbi.nlm.nih.gov/35658024/). New England Journal of Medicine, 2022.
+
+
 *Disclaimer: The information in this article is for educational purposes only. STRIATA peptides are research compounds and are not approved medicines. Always consult a qualified healthcare professional before beginning any protocol.*
 
 ---
@@ -445,6 +479,19 @@ If you want to talk through how to structure a protocol for your specific goals 
 
 ---
 
+### Sources
+
+The research, regulatory documents and clinical guidelines behind the claims in this article:
+
+- Leibel RL, Rosenbaum M, Hirsch J. [Changes in energy expenditure resulting from altered body weight](https://pubmed.ncbi.nlm.nih.gov/7632212/). New England Journal of Medicine, 1995.
+- Fothergill E, Guo J, et al. [Persistent metabolic adaptation 6 years after The Biggest Loser competition](https://pubmed.ncbi.nlm.nih.gov/27136388/). Obesity, 2016.
+- Drucker DJ. [Mechanisms of action and therapeutic application of glucagon-like peptide-1](https://pubmed.ncbi.nlm.nih.gov/29617641/). Cell Metabolism, 2018.
+- van Bloemendaal L, IJzerman RG, et al. [GLP-1 receptor activation modulates appetite- and reward-related brain areas in humans](https://pubmed.ncbi.nlm.nih.gov/25071023/). Diabetes, 2014.
+- Rubino D, Abrahamsson N, et al. [Effect of continued weekly subcutaneous semaglutide vs placebo on weight loss maintenance (STEP 4)](https://pubmed.ncbi.nlm.nih.gov/33755728/). JAMA, 2021.
+- Falutz J, Mamputu JC, et al. [Effects of tesamorelin, a growth hormone-releasing factor analog, in HIV-infected patients with excess abdominal fat: a pooled analysis of two phase 3 trials](https://pubmed.ncbi.nlm.nih.gov/20554713/). Journal of Clinical Endocrinology and Metabolism, 2010.
+- Hotamisligil GS. [Inflammation and metabolic disorders](https://pubmed.ncbi.nlm.nih.gov/17167474/). Nature, 2006.
+
+
 *Disclaimer: The information in this article is for educational purposes only. STRIATA peptides are research compounds and are not approved medicines. Always consult a qualified healthcare professional before beginning any weight management protocol.*
 
 ---
@@ -547,4 +594,18 @@ If you want to understand how all of this fits together for your specific goals,
 
 ---
 
+### Sources
+
+The research, regulatory documents and clinical guidelines behind the claims in this article:
+
+- Staresinic M, Sebecic B, et al. [Gastric pentadecapeptide BPC 157 accelerates healing of transected rat Achilles tendon and in vitro stimulates tendocytes growth](https://pubmed.ncbi.nlm.nih.gov/14554208/). Journal of Orthopaedic Research, 2003.
+- Goldstein AL, Hannappel E, Kleinman HK. [Thymosin beta-4: actin-sequestering protein moonlights to repair injured tissues](https://pubmed.ncbi.nlm.nih.gov/16099219/). Trends in Molecular Medicine, 2005.
+- Sikiric P, Seiwerth S, et al. [Stable gastric pentadecapeptide BPC 157: novel therapy in gastrointestinal tract](https://pubmed.ncbi.nlm.nih.gov/21548867/). Current Pharmaceutical Design, 2011.
+- Sikiric P, Seiwerth S, et al. [Focus on ulcerative colitis: stable gastric pentadecapeptide BPC 157](https://pubmed.ncbi.nlm.nih.gov/22300085/). Current Medicinal Chemistry, 2012.
+- Sikiric P, Seiwerth S, et al. [Brain-gut axis and pentadecapeptide BPC 157: theoretical and practical implications](https://pubmed.ncbi.nlm.nih.gov/27138887/). Current Neuropharmacology, 2016.
+- Hotamisligil GS. [Inflammation and metabolic disorders](https://pubmed.ncbi.nlm.nih.gov/17167474/). Nature, 2006.
+- Wilding JPH, Batterham RL, et al. [Once-weekly semaglutide in adults with overweight or obesity (STEP 1)](https://pubmed.ncbi.nlm.nih.gov/33567185/). New England Journal of Medicine, 2021.
+
+
 *Disclaimer: The information in this article is for educational purposes only. STRIATA peptides are research compounds and are not approved medicines. Always consult a qualified healthcare professional before beginning any protocol.*
+

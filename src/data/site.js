@@ -24,6 +24,33 @@ export const AUTHOR_SCHEMA = {
   worksFor: { '@type': 'Organization', name: 'STRIATA', url: SITE_URL },
 }
 
+/**
+ * Pull the reference list out of an article's markdown "Sources" section.
+ *
+ * The sources live in the markdown so writers edit them in one place; this
+ * lifts them into `citation` on the Article schema as well, so the references
+ * are machine-readable to search engines and AI answer engines rather than
+ * only being visible to a human reader.
+ */
+export function parseSources(content) {
+  if (!content) return []
+  const block = content.split(/^#{2,3} Sources\s*$/m)[1]
+  if (!block) return []
+  return [...block.matchAll(/^- (.+?) \[([^\]]+)\]\((https?:\/\/[^)\s]+)\)\.\s*(.*?)\.?\s*$/gm)].map(
+    ([, authors, name, url, publication]) => ({ authors, name, url, publication }),
+  )
+}
+
+/** schema.org citation entries for an article's reference list. */
+export function citationSchema(content) {
+  return parseSources(content).map(s => ({
+    '@type': 'CreativeWork',
+    name: s.name,
+    url: s.url,
+    ...(s.publication ? { publication: s.publication } : {}),
+  }))
+}
+
 /** "2026-04-01" -> "1 April 2026". UTC so server and client agree. */
 export function formatDate(iso) {
   if (!iso) return ''
