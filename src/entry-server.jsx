@@ -8,6 +8,7 @@ import { loaders } from './routeLoaders'
 import { blogPosts } from './data/blogPosts'
 import { guides } from './data/guidesData'
 import { quizResultPaths } from './data/quizProtocols'
+import { categories, pagedProducts, productPath } from './data/products'
 
 /**
  * Import every route component up front.
@@ -49,8 +50,27 @@ export function getRoutes() {
     { path: '/legal', priority: '0.3', changefreq: 'yearly' },
   ]
 
+  // /catalogue/<category> is the planned next tier of the catalogue, so a
+  // product slug that collides with a category id would quietly take a URL
+  // that belongs to a listing page. Cheaper to fail the build than to find out
+  // from Search Console.
+  const categoryIds = new Set(categories.map(c => c.id))
+  const collisions = pagedProducts.filter(p => categoryIds.has(p.slug))
+  if (collisions.length) {
+    throw new Error(
+      `Product slug collides with a catalogue category: ${collisions.map(p => p.slug).join(', ')}`,
+    )
+  }
+
   return [
     ...staticRoutes,
+    // Per-product pages. Priority sits just under /catalogue itself: they are
+    // the pages that answer a named-product search, which is most of them.
+    ...pagedProducts.map(product => ({
+      path: productPath(product),
+      priority: '0.8',
+      changefreq: 'weekly',
+    })),
     // Prerendered so shared result links open instantly, but `sitemap: false`
     // keeps them out of sitemap.xml: they carry noindex (see QuizResult.jsx).
     ...quizResultPaths.map(path => ({ path, priority: '0.7', changefreq: 'monthly', sitemap: false })),

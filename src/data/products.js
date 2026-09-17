@@ -40,6 +40,8 @@ export const products = [
   {
     id: 3,
     name: 'BPC+TB Wolverine Stack',
+    slug: 'bpc-157-tb-500-wolverine-stack',
+    photos: ['bpctb500_vial_final'],
     category: 'recovery',
     description: 'The ultimate healing combo: BPC-157 and TB-500 working together for maximum tissue repair and accelerated recovery.',
     tags: ['Stack', 'Recovery', 'Tissue Repair'],
@@ -108,6 +110,8 @@ export const products = [
   {
     id: 9,
     name: 'GHRP-6',
+    slug: 'ghrp-6',
+    photos: ['ghrp6'],
     category: 'recovery',
     description: 'Growth hormone releasing peptide that stimulates GH secretion and increases appetite, ideal for lean mass protocols.',
     tags: ['GH Release', 'Lean Mass', 'Appetite'],
@@ -142,6 +146,8 @@ export const products = [
   {
     id: 12,
     name: 'CJC-1295 + Ipamorelin Stack',
+    slug: 'cjc-1295-ipamorelin',
+    photos: ['cjcipa'],
     category: 'recovery',
     description: 'A synergistic GHRH and ghrelin mimetic stack for optimised pulsatile growth hormone release.',
     tags: ['Stack', 'GHRH', 'GH Release'],
@@ -175,6 +181,8 @@ export const products = [
   {
     id: 15,
     name: 'GLOW Stack (GHK-Cu+BPC+TB)',
+    slug: 'glow-stack',
+    photos: ['glow_vial_final'],
     category: 'recovery',
     description: 'A triple-action beauty and healing stack: GHK-Cu 50mg for skin regeneration and anti-aging, with BPC-157 10mg and TB-500 10mg for tissue repair and recovery.',
     tags: ['Stack', 'Beauty', 'Anti-Aging'],
@@ -186,6 +194,8 @@ export const products = [
   {
     id: 89,
     name: 'KLOW Stack (KPV+GHK-Cu+BPC+TB)',
+    slug: 'klow-stack',
+    photos: ['klow_vial_final'],
     category: 'recovery',
     description: 'The GLOW Stack plus KPV 10mg: GHK-Cu 50mg, BPC-157 10mg and TB-500 10mg for skin and tissue regeneration, with KPV added for gut health and systemic anti-inflammatory support.',
     tags: ['Stack', 'Anti-Inflammatory', 'Gut Health'],
@@ -229,6 +239,8 @@ export const products = [
   {
     id: 19,
     name: 'KPV',
+    slug: 'kpv',
+    photos: ['kpv'],
     category: 'recovery',
     description: 'A potent anti-inflammatory tripeptide effective for gut health, skin conditions and systemic inflammation.',
     tags: ['Anti-Inflammatory', 'Gut Health', 'Skin'],
@@ -263,6 +275,8 @@ export const products = [
   {
     id: 22,
     name: 'GHK-Cu',
+    slug: 'ghk-cu',
+    photos: ['ghkcu_vial_final'],
     category: 'skin',
     description: 'The gold standard copper tripeptide, renowned for skin rejuvenation, collagen regeneration and powerful anti-aging effects.',
     tags: ['Skin Rejuvenation', 'Collagen', 'Anti-Aging'],
@@ -274,6 +288,9 @@ export const products = [
   {
     id: 91,
     name: 'GHK-Cu Serum (Topical)',
+    // Already has a full landing page, so the card links there rather than
+    // getting a second, thinner page of its own under /catalogue.
+    page: '/ghk-serum',
     category: 'skin',
     format: 'Bottle',
     description: 'Our copper peptide face serum: GHK-Cu with 1% hyaluronic acid in a 30 ml dropper, for all skin types. Restore, hydrate, renew. Available in 1% and 2% strengths.',
@@ -287,6 +304,8 @@ export const products = [
   {
     id: 23,
     name: 'Epithalon',
+    slug: 'epithalon',
+    photos: ['epithalon'],
     category: 'skin',
     description: 'A telomerase-activating tetrapeptide with anti-aging, sleep improvement and longevity benefits, and one of the most researched longevity compounds available.',
     tags: ['Telomerase', 'Longevity', 'Anti-Aging'],
@@ -341,6 +360,8 @@ export const products = [
   {
     id: 28,
     name: 'Glutathione',
+    slug: 'glutathione',
+    photos: ['glutathione'],
     category: 'skin',
     description: 'The master antioxidant that neutralises free radicals, supports liver detoxification and brightens skin tone.',
     tags: ['Antioxidant', 'Detox', 'Skin Brightening'],
@@ -395,6 +416,8 @@ export const products = [
   {
     id: 33,
     name: 'MOTS-C',
+    slug: 'mots-c',
+    photos: ['motsc_vial_final'],
     category: 'hormonal',
     description: 'A mitochondrial-derived peptide that enhances metabolic function, exercise capacity and cellular energy production.',
     tags: ['Mitochondrial', 'Metabolic', 'Energy'],
@@ -408,6 +431,8 @@ export const products = [
   {
     id: 34,
     name: 'PT-141 (Bremelanotide)',
+    slug: 'pt-141',
+    photos: ['pt141'],
     category: 'hormonal',
     description: 'Clinically proven to enhance sexual arousal and libido in both men and women, without acting on the vascular system.',
     tags: ['Libido', 'Sexual Health', 'Clinically Proven'],
@@ -419,6 +444,8 @@ export const products = [
   {
     id: 35,
     name: 'Melanotan II',
+    slug: 'melanotan-2',
+    photos: ['melanotan2'],
     category: 'hormonal',
     description: 'Stimulates melanin production for tanning, appetite suppression and libido enhancement.',
     tags: ['Tanning', 'Libido', 'Melanin'],
@@ -470,6 +497,8 @@ export const products = [
   {
     id: 40,
     name: 'Oxytocin Acetate',
+    slug: 'oxytocin',
+    photos: ['oxytocin'],
     category: 'hormonal',
     description: 'The bonding hormone that enhances social connection, reduces stress and supports recovery and wellbeing.',
     tags: ['Bonding', 'Stress Reduction', 'Wellbeing'],
@@ -482,6 +511,7 @@ export const products = [
   {
     id: 41,
     name: 'Kisspeptin',
+    slug: 'kisspeptin',
     category: 'hormonal',
     description: 'Activates the HPG axis to naturally boost LH, FSH and testosterone in individuals with hormonal deficiencies.',
     tags: ['HPG Axis', 'Testosterone', 'Hormonal Deficiency'],
@@ -495,6 +525,8 @@ export const products = [
   {
     id: 42,
     name: '5-Amino-1MQ',
+    slug: '5-amino-1mq',
+    photos: ['amino1mq'],
     category: 'weight',
     description: 'Inhibits NNMT enzyme activity to promote fat loss and improved cellular metabolism.',
     tags: ['NNMT Inhibitor', 'Fat Loss', 'Metabolism'],
@@ -505,6 +537,8 @@ export const products = [
   {
     id: 90,
     name: 'SLU-PP-332',
+    slug: 'slu-pp-332',
+    photos: ['slupp332'],
     category: 'weight',
     description: 'An exercise mimetic that activates ERR receptors to boost mitochondrial activity, fat oxidation and endurance, replicating the metabolic benefits of training.',
     tags: ['Exercise Mimetic', 'Fat Oxidation', 'Endurance'],
@@ -515,6 +549,8 @@ export const products = [
   {
     id: 43,
     name: 'AOD-9604',
+    slug: 'aod-9604',
+    photos: ['aod9604'],
     category: 'weight',
     description: 'An HGH fragment that stimulates lipolysis and inhibits fat storage without affecting blood sugar or growth.',
     tags: ['Lipolysis', 'Fat Loss', 'HGH Fragment'],
@@ -525,6 +561,8 @@ export const products = [
   {
     id: 44,
     name: 'Tesamorelin',
+    slug: 'tesamorelin',
+    photos: ['tesamorelin'],
     category: 'weight',
     description: 'Clinically proven to reduce visceral fat, improve body composition and boost cognitive function.',
     tags: ['Visceral Fat', 'Body Composition', 'Cognitive'],
@@ -548,6 +586,8 @@ export const products = [
   {
     id: 46,
     name: 'Retatrutide',
+    slug: 'retatrutide',
+    photos: ['retatrutide_vial_final'],
     category: 'weight',
     description: 'The most advanced weight loss peptide available: a triple agonist delivering superior fat reduction and metabolic control.',
     tags: ['Triple Agonist', 'Advanced', 'Fat Loss'],
@@ -561,6 +601,8 @@ export const products = [
   {
     id: 47,
     name: 'Tirzepatide',
+    slug: 'tirzepatide',
+    photos: ['tirzepatide_vial_final'],
     category: 'weight',
     description: 'Dual GIP/GLP-1 agonist delivering powerful weight loss and blood sugar optimisation (the Mounjaro generic).',
     tags: ['GLP-1', 'Weight Loss', 'Blood Sugar'],
@@ -589,6 +631,8 @@ export const products = [
   {
     id: 49,
     name: 'Cagrilintide',
+    slug: 'cagrilintide',
+    photos: ['cagrilintide'],
     category: 'weight',
     description: 'Long-acting amylin analogue that suppresses appetite and complements GLP-1 therapy for enhanced fat loss.',
     tags: ['Amylin', 'Appetite Suppression', 'GLP-1'],
@@ -712,6 +756,8 @@ export const products = [
   {
     id: 60,
     name: 'Selank',
+    slug: 'selank',
+    photos: ['selank'],
     category: 'brain',
     description: 'An anxiolytic nootropic peptide that reduces anxiety, stabilises mood and enhances cognitive performance.',
     tags: ['Anxiolytic', 'Nootropic', 'Mood'],
@@ -724,6 +770,8 @@ export const products = [
   {
     id: 61,
     name: 'Semax',
+    slug: 'semax',
+    photos: ['semax'],
     category: 'brain',
     description: 'An ACTH-derived nootropic that enhances focus, memory consolidation and neuroprotection, a favourite among biohackers.',
     tags: ['Nootropic', 'Focus', 'Memory'],
@@ -736,6 +784,8 @@ export const products = [
   {
     id: 62,
     name: 'DSIP',
+    slug: 'dsip',
+    photos: ['dsip'],
     category: 'brain',
     description: 'Delta Sleep-Inducing Peptide that promotes deep restorative sleep and regulates the sleep-wake cycle.',
     tags: ['Sleep', 'Delta Sleep', 'Circadian'],
@@ -759,6 +809,8 @@ export const products = [
   {
     id: 64,
     name: 'Pinealon',
+    slug: 'pinealon',
+    photos: ['pinealon'],
     category: 'brain',
     description: 'A geroprotective tripeptide from the pineal gland that improves cognitive function and circadian regulation.',
     tags: ['Geroprotective', 'Cognitive', 'Pineal Gland'],
@@ -800,6 +852,8 @@ export const products = [
   {
     id: 68,
     name: 'NAD+',
+    slug: 'nad-plus',
+    photos: ['nadplus'],
     category: 'brain',
     description: 'The essential coenzyme for cellular energy, metabolism, DNA repair and healthy ageing, a longevity cornerstone.',
     tags: ['NAD+', 'Longevity', 'Cellular Energy'],
@@ -811,6 +865,8 @@ export const products = [
   {
     id: 85,
     name: 'Adamax',
+    slug: 'adamax',
+    photos: ['adamax'],
     category: 'brain',
     description: 'A next-generation Semax analogue with a modified structure for enhanced potency, supporting focus, memory, neuroplasticity and stress resilience.',
     tags: ['Nootropic', 'Semax Analogue', 'Neuroplasticity'],
@@ -845,6 +901,8 @@ export const products = [
   {
     id: 71,
     name: 'Thymosin Alpha-1',
+    slug: 'thymosin-alpha-1',
+    photos: ['thymosinalpha'],
     category: 'immunity',
     description: 'A potent immune-modulating peptide that activates T-cells and dendritic cells for enhanced immune defence.',
     tags: ['Immune Modulation', 'T-Cell', 'Immune Defence'],
@@ -868,6 +926,8 @@ export const products = [
   {
     id: 73,
     name: 'VIP',
+    slug: 'vip',
+    photos: ['vip'],
     category: 'immunity',
     description: 'Vasoactive Intestinal Peptide, a neuropeptide with anti-inflammatory, bronchodilatory and immunomodulatory effects.',
     tags: ['Immunomodulatory', 'Anti-Inflammatory', 'Neuropeptide'],
@@ -1007,6 +1067,11 @@ export const products = [
   {
     id: 87,
     name: 'Bacteriostatic Water',
+    slug: 'bacteriostatic-water',
+    photos: ['bacwater3ml', 'bacwater10ml'],
+    // Which size each photo shows, for the gallery captions. Only needed
+    // where a product is shot more than once.
+    photoLabels: ['3 ml', '10 ml'],
     category: 'supplies',
     description: 'Sterile bacteriostatic water for reconstituting lyophilised peptides. Contains 0.9% benzyl alcohol for multi-dose stability.',
     tags: ['Reconstitution', 'Sterile', 'Multi-Dose'],
@@ -1033,6 +1098,54 @@ export const products = [
 // Unflagged concentrations are treated as out of stock (available on request).
 export const isInStock = (product) =>
   Array.isArray(product.prices) && product.prices.some((tier) => tier.inStock === true)
+
+/**
+ * Where a catalogue card should link, or null for a product that has no page
+ * of its own yet.
+ *
+ * Most products with a `slug` get /catalogue/<slug>. The topical serum is the
+ * exception: it is a catalogue line but it already has a full landing page at
+ * /ghk-serum, and two URLs describing one product is exactly the duplication
+ * the per-product build is meant to avoid.
+ */
+export const productPath = (product) =>
+  product.page ?? (product.slug ? `/catalogue/${product.slug}` : null)
+
+/** Every product with a page of its own under /catalogue, in catalogue order. */
+export const pagedProducts = products.filter((product) => product.slug && !product.page)
+
+export const productBySlug = (slug) => pagedProducts.find((product) => product.slug === slug) ?? null
+
+/**
+ * The vial photography for a product, or null where there is none yet.
+ *
+ * `photos` names source files in assets-source/vials; scripts/vials.mjs emits
+ * them under the product's slug, so nothing outside that script needs to know
+ * the original filenames. The second and later shots take a -2, -3 suffix.
+ */
+export const vialImage = (product) => {
+  if (!product.photos?.length) return null
+  return {
+    slug: product.slug,
+    files: product.photos,
+    names: product.photos.map((_, i) => (i === 0 ? product.slug : `${product.slug}-${i + 1}`)),
+    labels: product.photoLabels ?? null,
+  }
+}
+
+/**
+ * The human-readable category name, for structured data and breadcrumbs.
+ * `product.category` is an internal id ('weight'); emitting that into schema
+ * tells a crawler nothing.
+ */
+export const categoryLabel = (product) =>
+  categories.find((c) => c.id === product.category)?.label ?? product.category
+
+/** Public URL for one emitted variant, e.g. vialSrc('retatrutide', 640). */
+export const vialSrc = (name, variant) => `/assets/opt/vials/${name}-${variant}.webp`
+
+/** The white-background JPEG a crawler or social scraper should be handed. */
+export const vialStill = (name, kind = 'sq') => `/assets/opt/vials/${name}-${kind}.jpg`
 
 export const whatsappNumbers = [
   { number: '+27782137905', display: '+27 78 213 7905' },

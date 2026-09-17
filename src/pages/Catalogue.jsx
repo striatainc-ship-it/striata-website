@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useMemo } from 'react'
 import { useLocation, Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
-import { products, categories, whatsappLink, isInStock } from '../data/products'
+import { products, categories, whatsappLink, isInStock, categoryLabel, productPath, vialImage, vialStill } from '../data/products'
 import ProductCard from '../components/ProductCard'
 import JsonLd from '../components/JsonLd'
 import Reveal from '../components/Reveal'
@@ -147,6 +147,11 @@ export default function Catalogue() {
           .filter((p) => p.prices && p.prices.length > 0)
           .map((p, i) => {
             const amounts = p.prices.map((v) => v.price)
+            // A product with a page of its own points at it, so the list entry
+            // and the page Google crawls describe the same URL.
+            const path = productPath(p)
+            const url = `https://www.striatalabs.co.za${path ?? '/catalogue'}`
+            const shot = vialImage(p)
             return {
               '@type': 'ListItem',
               position: i + 1,
@@ -154,7 +159,11 @@ export default function Catalogue() {
                 '@type': 'Product',
                 name: p.name,
                 description: p.description,
-                category: p.category,
+                category: categoryLabel(p),
+                ...(shot
+                  ? { image: `https://www.striatalabs.co.za${vialStill(shot.names[0])}` }
+                  : {}),
+                ...(path ? { url } : {}),
                 brand: { '@type': 'Brand', name: 'STRIATA' },
                 offers: {
                   '@type': 'AggregateOffer',
@@ -163,7 +172,7 @@ export default function Catalogue() {
                   highPrice: Math.max(...amounts),
                   offerCount: p.prices.length,
                   availability: isInStock(p) ? 'https://schema.org/InStock' : 'https://schema.org/BackOrder',
-                  url: 'https://www.striatalabs.co.za/catalogue',
+                  url,
                 },
               },
             }

@@ -45,6 +45,12 @@ function extractHoistedTags(html) {
   return { tags, body }
 }
 
+/** `property="og:image"` / `name="description"` -> the key it sets, or null. */
+function metaKey(tag) {
+  const match = tag.match(/<meta\b[^>]*?\b(property|name)=["']([^"']+)["']/i)
+  return match ? `${match[1].toLowerCase()}:${match[2].toLowerCase()}` : null
+}
+
 /** Inject the rendered markup and this route's head tags into the template. */
 function buildPage(template, html) {
   const { tags, body } = extractHoistedTags(html)
@@ -54,6 +60,21 @@ function buildPage(template, html) {
   // a real one, otherwise the page ships two and Google reads the wrong one.
   if (tags.some(tag => tag.startsWith('<title'))) {
     page = page.replace(/\n?[ \t]*<title>[\s\S]*?<\/title>/, '')
+  }
+
+  // Same problem one level down: index.html carries site-wide og:image and
+  // og:type defaults, and a page that sets its own would ship both. Scrapers
+  // differ on which of two og:image tags they believe, and the one they most
+  // often pick is the first — which is the generic default, not the product
+  // photo. So for every key the route sets, drop the template's version.
+  for (const key of new Set(tags.map(metaKey).filter(Boolean))) {
+    const [kind, name] = key.split(/:(.*)/s)
+    const escaped = name.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+    const duplicate = new RegExp(
+      `\\n?[ \\t]*<meta\\b(?=[^>]*?\\b${kind}=["']${escaped}["'])[^>]*?\\/?>`,
+      'gi',
+    )
+    page = page.replace(duplicate, '')
   }
 
   // Marked so main.jsx can drop them at hydration: React re-creates its own

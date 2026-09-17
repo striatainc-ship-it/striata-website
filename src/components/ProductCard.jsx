@@ -1,6 +1,6 @@
 import { memo, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { whatsappLink, isInStock } from '../data/products'
+import { whatsappLink, isInStock, productPath, vialImage, vialSrc } from '../data/products'
 import { guideFor } from '../data/productGuides'
 import { spotlightProps } from '../lib/motion'
 
@@ -50,6 +50,8 @@ function ProductCard({ product, format: formatProp = 'Vial' }) {
   const useTwoCols = hasPrices && product.prices.length >= 4
   const inStock = isInStock(product)
   const guide = guideFor(product)
+  const href = productPath(product)
+  const shot = vialImage(product)
 
   const buildWaLink = () => {
     const tier = selectedTier || (isSingleTier ? product.prices[0] : null)
@@ -79,55 +81,93 @@ function ProductCard({ product, format: formatProp = 'Vial' }) {
       className="spot cv-auto group bg-[#0d1e35] border border-white/8 rounded-2xl p-3.5 md:p-5 flex flex-col hover:border-[#00B4B4]/40 transition-all duration-300 hover:shadow-xl hover:shadow-[#00B4B4]/10 md:hover:-translate-y-1"
     >
 
-      {/* Badges */}
-      <div className="flex flex-wrap items-center gap-1.5 mb-2.5">
-        {product.featured && (
-          <span
-            className="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-[#00B4B4] bg-[#00B4B4]/10 border border-[#00B4B4]/20 px-2 py-0.5 rounded-full"
-            style={{ fontFamily: 'var(--font-heading)' }}
-          >
-            Popular
-          </span>
+      {/* Photo, badges and name share a row so the vial anchors the card
+          without pushing the pricing below the fold on a phone. */}
+      <div className="flex gap-3 mb-2.5">
+        {shot && (
+          <Link to={href} tabIndex={-1} aria-hidden="true" className="shrink-0 self-start">
+            <img
+              src={vialSrc(shot.names[0], 160)}
+              alt=""
+              width={160}
+              height={320}
+              loading="lazy"
+              decoding="async"
+              className="w-8 h-16 md:w-10 md:h-20 object-contain transition-transform duration-300 group-hover:scale-105"
+            />
+          </Link>
         )}
-        {inStock ? (
-          <span
-            className="inline-flex items-center gap-1 text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-green-400 bg-green-400/10 border border-green-400/20 px-2 py-0.5 rounded-full"
-            style={{ fontFamily: 'var(--font-heading)' }}
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
-            In Stock
-          </span>
-        ) : (
-          <span
-            className="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-white/35 bg-white/5 border border-white/10 px-2 py-0.5 rounded-full"
-            style={{ fontFamily: 'var(--font-heading)' }}
-          >
-            Out of Stock
-          </span>
-        )}
-      </div>
 
-      {/* Name */}
-      <h3
-        className="text-white font-bold text-sm md:text-base mb-1.5 md:mb-2 group-hover:text-[#00B4B4] transition-colors leading-snug line-clamp-2"
-        style={{ fontFamily: 'var(--font-heading)' }}
-      >
-        {product.name}
-      </h3>
+        <div className="min-w-0 flex-1">
+          {/* Badges */}
+          <div className="flex flex-wrap items-center gap-1.5 mb-2.5">
+            {product.featured && (
+              <span
+                className="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-[#00B4B4] bg-[#00B4B4]/10 border border-[#00B4B4]/20 px-2 py-0.5 rounded-full"
+                style={{ fontFamily: 'var(--font-heading)' }}
+              >
+                Popular
+              </span>
+            )}
+            {inStock ? (
+              <span
+                className="inline-flex items-center gap-1 text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-green-400 bg-green-400/10 border border-green-400/20 px-2 py-0.5 rounded-full"
+                style={{ fontFamily: 'var(--font-heading)' }}
+              >
+                <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
+                In Stock
+              </span>
+            ) : (
+              <span
+                className="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-white/35 bg-white/5 border border-white/10 px-2 py-0.5 rounded-full"
+                style={{ fontFamily: 'var(--font-heading)' }}
+              >
+                Out of Stock
+              </span>
+            )}
+          </div>
+
+          {/* Name */}
+          <h3
+            className="text-white font-bold text-sm md:text-base group-hover:text-[#00B4B4] transition-colors leading-snug line-clamp-2"
+            style={{ fontFamily: 'var(--font-heading)' }}
+          >
+            {href ? (
+              <Link to={href} className="hover:underline decoration-[#00B4B4]/40 underline-offset-4">
+                {product.name}
+              </Link>
+            ) : (
+              product.name
+            )}
+          </h3>
+        </div>
+      </div>
 
       {/* Description */}
       <p className="text-white/50 text-xs md:text-sm leading-relaxed flex-1 mb-3 line-clamp-3 md:line-clamp-none">
         {product.description}
       </p>
 
-      {guide && (
-        <Link
-          to={`/learn/${guide}`}
-          className="self-start inline-flex items-center gap-1 text-[#00B4B4] text-[11px] md:text-xs font-semibold hover:text-white transition-colors mb-3"
-        >
-          Read our guide
-          <span aria-hidden="true">→</span>
-        </Link>
+      {(href || guide) && (
+        <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mb-3">
+          {href && (
+            <Link
+              to={href}
+              className="inline-flex items-center gap-1 text-[#00B4B4] text-[11px] md:text-xs font-semibold hover:text-white transition-colors"
+            >
+              Full details
+              <span aria-hidden="true">→</span>
+            </Link>
+          )}
+          {guide && (
+            <Link
+              to={`/learn/${guide}`}
+              className="inline-flex items-center gap-1 text-white/40 text-[11px] md:text-xs font-semibold hover:text-[#00B4B4] transition-colors"
+            >
+              Read our guide
+            </Link>
+          )}
+        </div>
       )}
 
       {/* Tags — desktop only */}

@@ -10,7 +10,8 @@
     "lint": "eslint .",
     "test": "node --test \"tests/**/*.test.mjs\"",
     "preview": "vite preview",
-    "images": "node scripts/optimize-images.mjs"
+    "images": "node scripts/optimize-images.mjs",
+    "vials": "node scripts/vials.mjs"
   },
   "dependencies": {
     "@emailjs/browser": "^4.4.1",

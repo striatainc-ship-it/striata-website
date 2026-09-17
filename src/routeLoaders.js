@@ -7,6 +7,7 @@
  */
 export const loaders = {
   '/catalogue': () => import('./pages/Catalogue'),
+  '/catalogue/:slug': () => import('./pages/Product'),
   '/about': () => import('./pages/About'),
   '/contact': () => import('./pages/Contact'),
   '/faq': () => import('./pages/FAQ'),
@@ -43,6 +44,8 @@ function matchLoader(pathname) {
   if (path.startsWith('/learn/')) return '/learn/:slug'
   if (path.startsWith('/guides/')) return '/guides/:slug'
   if (path.startsWith('/quiz/result/')) return '/quiz/result/:slug'
+  // Checked after the exact match above, so /catalogue itself is unaffected.
+  if (path.startsWith('/catalogue/')) return '/catalogue/:slug'
 
   return null
 }

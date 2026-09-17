@@ -50,6 +50,11 @@ export const pens = PENS.map(({ productId, prices }) => {
     ...base,
     id: `pen-${productId}`,
     format: 'Pen',
+    // The studio photography is of the vial, and a pen card showing a vial
+    // would be a picture of the wrong product. The card falls back to no image
+    // until pens are shot. `slug` is deliberately kept: the card still links to
+    // the compound's page, which is the right place to read about it.
+    photos: undefined,
     prices: prices.map((tier) => ({ ...tier, inStock: true })),
   }
 })
