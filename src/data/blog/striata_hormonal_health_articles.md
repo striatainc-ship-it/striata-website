@@ -2,9 +2,9 @@
 
 ---
 
-# Article 26: PT-141
+# Article 26: PT-141 (Bremelanotide) for Libido: Guide
 
-**Meta description:** PT-141 is the only peptide with clinical approval for treating low libido, proven effective in both men and women. This guide explains how it works, what the research shows and what to expect from a protocol.
+**Meta description:** How PT-141 works for low libido in men and women, what the clinical research shows, and what to expect from a bremelanotide protocol.
 
 **Slug:** /learn/pt-141-peptide-libido-men-women
 **Category:** Hormonal Health
@@ -13,7 +13,7 @@
 
 ---
 
-## PT-141: The Peptide Clinically Proven to Enhance Libido in Men and Women
+## PT-141 (Bremelanotide) for Libido: Guide
 
 Most compounds discussed in the peptide space exist in a research grey zone, with promising animal data, limited human trials and clinical approval yet to materialise. PT-141 is different. It has been through the full pharmaceutical approval process, received FDA approval in 2019 under the brand name Vyleesi, and has a clinical evidence base built from rigorous human trials.
 
@@ -102,9 +102,9 @@ Since PT-141 has pharmaceutical approval (as Vyleesi), it exists in both the pre
 ---
 ---
 
-# Article 27: HCG and Testosterone
+# Article 27: HCG and Testosterone: Hormonal Support
 
-**Meta description:** HCG plays a critical but often misunderstood role in male hormonal health. This guide explains what HCG is, how it supports testosterone production, and when it is used in hormonal health protocols.
+**Meta description:** What HCG is, how it supports natural testosterone production, and when it is used in male hormonal health and TRT protocols.
 
 **Slug:** /learn/hcg-testosterone-hormonal-support-peptide
 **Category:** Hormonal Health
@@ -113,7 +113,7 @@ Since PT-141 has pharmaceutical approval (as Vyleesi), it exists in both the pre
 
 ---
 
-## HCG and Testosterone: What You Need to Know About Hormonal Support Peptides
+## HCG and Testosterone: Hormonal Support
 
 HCG is one of the most misunderstood compounds in the hormonal health space. Most people associate it with pregnancy testing or, in fitness circles, with post-cycle therapy after steroid use. Both associations have merit, but they miss what is arguably the most clinically important use of HCG: supporting the body's own testosterone production system, both during and after testosterone replacement therapy.
 
@@ -190,9 +190,9 @@ Side effects can include elevated oestrogen (since HCG stimulates testicular tes
 ---
 ---
 
-# Article 28: Kisspeptin
+# Article 28: Kisspeptin: Natural Testosterone Support
 
-**Meta description:** Kisspeptin is a naturally occurring neuropeptide that sits at the top of the reproductive hormone cascade. Research suggests it may offer a way to naturally boost testosterone and support hormonal health without suppressing the HPG axis.
+**Meta description:** How Kisspeptin sits at the top of the reproductive hormone cascade and what research says about boosting testosterone without HPG suppression.
 
 **Slug:** /learn/kisspeptin-testosterone-hormonal-health
 **Category:** Hormonal Health
@@ -201,7 +201,7 @@ Side effects can include elevated oestrogen (since HCG stimulates testicular tes
 
 ---
 
-## Kisspeptin: The Neuropeptide That Could Naturally Boost Your Testosterone
+## Kisspeptin: Natural Testosterone Support
 
 In the hierarchy of hormonal control, GnRH (Gonadotropin-Releasing Hormone) is often treated as the starting point: the hypothalamic signal that sets the entire reproductive hormone cascade in motion. But GnRH itself has a regulator. And that regulator, a neuropeptide called Kisspeptin, is one of the most interesting compounds to emerge from reproductive endocrinology research in the past two decades.
 
@@ -274,9 +274,9 @@ Current research doses in human studies have ranged from 0.3 to 1 nanomole per k
 ---
 ---
 
-# Article 29: Gonadorelin vs HCG
+# Article 29: Gonadorelin vs HCG for Hormonal Health
 
-**Meta description:** Gonadorelin and HCG both support hormonal health, particularly for men on TRT, but they work through completely different mechanisms. This guide explains the difference and helps you understand which option fits your situation.
+**Meta description:** Gonadorelin and HCG both support hormonal health on TRT but work differently. How each one works and which fits your situation.
 
 **Slug:** /learn/gonadorelin-vs-hcg-hormonal-health
 **Category:** Hormonal Health
@@ -285,7 +285,7 @@ Current research doses in human studies have ranged from 0.3 to 1 nanomole per k
 
 ---
 
-## Gonadorelin vs HCG: Understanding Your Options for Hormonal Health
+## Gonadorelin vs HCG for Hormonal Health
 
 If you have spent time in the testosterone and hormonal health space, you will have encountered both Gonadorelin and HCG as compounds used to support testicular function during or after testosterone replacement therapy. Both are designed to address the same fundamental problem: the suppression of natural testosterone production that results from exogenous hormone use.
 
@@ -386,9 +386,9 @@ If you want to understand how Gonadorelin or HCG might fit your specific situati
 ---
 ---
 
-# Article 30: Oxytocin
+# Article 30: Oxytocin Research: More Than Bonding
 
-**Meta description:** Oxytocin is far more than the bonding hormone. Research is revealing its roles in stress resilience, social cognition, gut health and even pain management. This guide covers what the science is actually showing.
+**Meta description:** What research shows about oxytocin's roles in stress resilience, social cognition, gut health and pain management, beyond bonding.
 
 **Slug:** /learn/oxytocin-beyond-bonding-hormone-research
 **Category:** Hormonal Health
@@ -397,7 +397,7 @@ If you want to understand how Gonadorelin or HCG might fit your specific situati
 
 ---
 
-## Oxytocin: Beyond the Bonding Hormone, What Research Is Revealing
+## Oxytocin Research: More Than Bonding
 
 Oxytocin has a branding problem. Dubbed the "love hormone" and the "bonding hormone" by popular science writers, it has been reduced in public understanding to a simple feel-good chemical: the thing that surges when you hug someone or fall in love.
 

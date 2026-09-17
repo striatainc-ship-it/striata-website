@@ -3,6 +3,7 @@ import { Helmet } from 'react-helmet-async'
 import { getBlogPost, blogPosts } from '../data/blogPosts'
 import { whatsappLink } from '../data/products'
 import { AUTHOR_SCHEMA, DEFAULT_IMAGE } from '../data/site'
+import { SA_ESSENTIALS, MENOPAUSE_CATEGORIES } from '../data/learnLinks'
 import JsonLd from '../components/JsonLd'
 import { Byline, AuthorCard } from '../components/AuthorCard'
 
@@ -42,7 +43,7 @@ function renderInline(text) {
   })
 }
 
-function renderBlock(block, key) {
+function renderBlock(block, key, { promote = false } = {}) {
   const trimmed = block.trim()
   if (!trimmed) return null
 
@@ -58,12 +59,15 @@ function renderBlock(block, key) {
     )
   }
 
-  // h3
+  // h3 — or h2 when the article has no h2 sections of its own (the posts
+  // are written with ### throughout), so the outline runs h1 → h2 rather
+  // than skipping a level. Same look either way.
   if (first.startsWith('### ')) {
+    const Tag = promote ? 'h2' : 'h3'
     return (
-      <h3 key={key} className="text-base md:text-lg font-bold text-[#00B4B4] mt-8 mb-3" style={{ fontFamily: 'var(--font-heading)' }}>
+      <Tag key={key} className="text-base md:text-lg font-bold text-[#00B4B4] mt-8 mb-3" style={{ fontFamily: 'var(--font-heading)' }}>
         {renderInline(first.slice(4))}
-      </h3>
+      </Tag>
     )
   }
 
@@ -176,10 +180,54 @@ function renderBlock(block, key) {
 function MarkdownContent({ content }) {
   if (!content) return null
   const blocks = content.split(/\n\n+/)
+  const promote = !blocks.some(b => b.trim().startsWith('## '))
   return (
     <div>
-      {blocks.map((block, i) => renderBlock(block, i))}
+      {blocks.map((block, i) => renderBlock(block, i, { promote }))}
     </div>
+  )
+}
+
+/**
+ * Links every post carries: the South Africa essentials (the site's
+ * highest-intent pages) and, for hormonal and anti-aging readers, the
+ * Menopause Reset protocol.
+ */
+function EssentialLinks({ article }) {
+  const essentials = SA_ESSENTIALS.filter(e => e.slug !== article.slug)
+  const showMenopause = MENOPAUSE_CATEGORIES.has(article.category)
+  return (
+    <section className="px-6 pb-16">
+      <div className="max-w-3xl mx-auto grid gap-4 sm:grid-cols-[1fr_auto]">
+        <div className="bg-[#0d1e35] border border-white/8 rounded-2xl p-5">
+          <p className="text-[#00B4B4] text-xs font-bold uppercase tracking-widest mb-3" style={{ fontFamily: 'var(--font-heading)' }}>
+            Peptides in South Africa
+          </p>
+          <ul className="flex flex-wrap gap-x-5 gap-y-2">
+            {essentials.map(e => (
+              <li key={e.slug}>
+                <Link to={`/learn/${e.slug}`} className="text-white/70 text-sm hover:text-[#00B4B4] transition-colors">
+                  {e.label} →
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </div>
+        {showMenopause && (
+          <Link
+            to="/stacks/menopause-reset"
+            className="group bg-[#00B4B4]/[0.07] border border-[#00B4B4]/25 rounded-2xl p-5 hover:bg-[#00B4B4]/[0.12] hover:border-[#00B4B4]/50 transition-colors sm:max-w-xs"
+          >
+            <p className="text-[#00B4B4] text-xs font-bold uppercase tracking-widest mb-1.5" style={{ fontFamily: 'var(--font-heading)' }}>
+              Protocol
+            </p>
+            <p className="text-white font-semibold text-sm leading-snug group-hover:text-[#00B4B4] transition-colors" style={{ fontFamily: 'var(--font-heading)' }}>
+              The Menopause Reset: a 12-week, four-stack peptide protocol →
+            </p>
+          </Link>
+        )}
+      </div>
+    </section>
   )
 }
 
@@ -203,9 +251,12 @@ export default function BlogPost() {
     )
   }
 
-  const related = blogPosts
-    .filter(a => a.category === article.category && a.slug !== article.slug)
-    .slice(0, 3)
+  // The next three posts in the same category, wrapping around, so every
+  // post is linked from three others (taking the first three left the later
+  // posts in each category with no inbound links at all).
+  const sameCategory = blogPosts.filter(a => a.category === article.category)
+  const idx = sameCategory.findIndex(a => a.slug === article.slug)
+  const related = [...sameCategory.slice(idx + 1), ...sameCategory.slice(0, Math.max(idx, 0))].slice(0, 3)
 
   return (
     <div className="bg-[#0A1628] min-h-screen">
@@ -323,6 +374,8 @@ export default function BlogPost() {
           </div>
         </section>
       )}
+
+      <EssentialLinks article={article} />
 
       {/* ── CTA ── */}
       <section className="py-20 border-t border-white/5 relative overflow-hidden">

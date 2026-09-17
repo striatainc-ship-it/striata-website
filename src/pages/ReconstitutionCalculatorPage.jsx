@@ -66,7 +66,7 @@ export default function ReconstitutionCalculatorPage() {
     <div className="bg-[#0A1628] min-h-screen">
       <Helmet>
         <title>Peptide Reconstitution Calculator | STRIATA Tools</title>
-        <meta name="description" content="Free peptide reconstitution calculator: choose your vial, enter the bacteriostatic water, and get the concentration plus the exact mL and insulin syringe units to draw for any dose." />
+        <meta name="description" content="Free peptide reconstitution calculator: pick your vial, enter the bacteriostatic water and get the concentration and exact syringe units to draw." />
         <link rel="canonical" href={URL} />
         <meta property="og:title" content="Peptide Reconstitution Calculator | STRIATA Tools" />
         <meta property="og:description" content="Work out concentration, mL and syringe units for any peptide dose in seconds." />

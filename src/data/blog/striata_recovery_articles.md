@@ -2,9 +2,9 @@
 
 ---
 
-# Article 11: BPC-157
+# Article 11: BPC-157 Recovery Peptide: Complete Guide
 
-**Meta description:** BPC-157 is one of the most researched recovery peptides in the world. This guide covers how it works, what the science says about healing tendons, muscles and the gut, and what to expect from a protocol.
+**Meta description:** How BPC-157 works, what the science says about healing tendons, muscle and the gut, and what to expect from a recovery protocol.
 
 **Slug:** /learn/bpc-157-recovery-peptide-guide
 **Category:** Recovery
@@ -13,7 +13,7 @@
 
 ---
 
-## BPC-157: The Body Protection Compound That Athletes Are Quietly Using for Faster Recovery
+## BPC-157 Recovery Peptide: Complete Guide
 
 There is a peptide that has been studied for over two decades, has a remarkably consistent safety profile across hundreds of animal studies, and is being used by athletes, coaches and biohackers around the world, yet remains almost entirely absent from mainstream medical conversation.
 
@@ -115,9 +115,9 @@ This does not mean BPC-157 is without risk for any individual, and the usual cau
 ---
 ---
 
-# Article 12: TB-500 Explained
+# Article 12: TB-500 (Thymosin Beta-4) Healing Guide
 
-**Meta description:** TB-500 is one of the most effective healing peptides in current research use. This guide covers how Thymosin Beta-4 works, what it heals, how it differs from BPC-157 and how to use it effectively.
+**Meta description:** How Thymosin Beta-4 works, what TB-500 heals, how it differs from BPC-157 and how it is used in recovery protocols, from STRIATA South Africa.
 
 **Slug:** /learn/tb-500-thymosin-beta-4-guide
 **Category:** Recovery
@@ -126,7 +126,7 @@ This does not mean BPC-157 is without risk for any individual, and the usual cau
 
 ---
 
-## TB-500 Explained: How Thymosin Beta-4 Helps Your Body Heal Faster
+## TB-500 (Thymosin Beta-4) Healing Guide
 
 Every cell in your body contains it. Your blood platelets release it when tissue is damaged. Your body uses it to coordinate the complex process of wound healing, reduce inflammation and rebuild injured structures. Yet most people have never heard of Thymosin Beta-4.
 
@@ -227,9 +227,9 @@ One practical consideration is that TB-500 vials often contain larger amounts of
 ---
 ---
 
-# Article 13: The Wolverine Stack
+# Article 13: Wolverine Stack: BPC-157 + TB-500 Recovery
 
-**Meta description:** BPC-157 and TB-500 are powerful individually. Used together as the Wolverine Stack, they become one of the most comprehensive recovery protocols in the peptide world. Here is why they work better together.
+**Meta description:** Why BPC-157 and TB-500 work better together as the Wolverine Stack, one of the most complete peptide recovery protocols available.
 
 **Slug:** /learn/wolverine-stack-bpc-157-tb-500
 **Category:** Recovery
@@ -238,7 +238,7 @@ One practical consideration is that TB-500 vials often contain larger amounts of
 
 ---
 
-## The Wolverine Stack: Why BPC-157 and TB-500 Work Better Together
+## Wolverine Stack: BPC-157 + TB-500 Recovery
 
 If you have read our individual breakdowns of BPC-157 and TB-500, you already know that both are serious recovery compounds with compelling research behind them. But when people in the peptide space talk about the Wolverine Stack, they are describing something more than just taking two compounds at the same time.
 
@@ -363,9 +363,9 @@ If you are new to peptides and have a specific injury driving your interest, the
 ---
 ---
 
-# Article 14: IGF-1 LR3
+# Article 14: IGF-1 LR3 for Muscle Repair & Recovery
 
-**Meta description:** IGF-1 LR3 is a potent growth factor with a significant role in muscle repair, protein synthesis and recovery. This guide explains how it works, how it differs from regular IGF-1 and what the research shows.
+**Meta description:** How IGF-1 LR3 drives muscle repair and protein synthesis, how it differs from regular IGF-1, and what the research shows.
 
 **Slug:** /learn/igf-1-lr3-recovery-muscle-repair
 **Category:** Recovery
@@ -374,7 +374,7 @@ If you are new to peptides and have a specific injury driving your interest, the
 
 ---
 
-## IGF-1 LR3: The Growth Factor That Bridges the Gap Between Training and Recovery
+## IGF-1 LR3 for Muscle Repair & Recovery
 
 If you want to understand IGF-1 LR3, it helps to start with growth hormone, because the two are inseparable in the body's anabolic signalling chain.
 
@@ -478,9 +478,9 @@ Cycle lengths are typically kept shorter than other recovery peptides, often fou
 ---
 ---
 
-# Article 15: How to Build a Recovery Protocol with Peptides
+# Article 15: How to Build a Peptide Recovery Protocol
 
-**Meta description:** Not sure where to start with peptides for recovery? This beginner's guide walks you through how to assess your needs, choose the right compounds and structure a practical protocol from scratch.
+**Meta description:** A beginner's walkthrough for recovery peptides: assess your needs, choose the right compounds and structure a practical protocol.
 
 **Slug:** /learn/how-to-build-a-peptide-recovery-protocol
 **Category:** Recovery
@@ -489,7 +489,7 @@ Cycle lengths are typically kept shorter than other recovery peptides, often fou
 
 ---
 
-## How to Build a Recovery Protocol with Peptides: A Beginner's Starting Point
+## How to Build a Peptide Recovery Protocol
 
 You understand the theory. You have read about BPC-157, TB-500 and IGF-1 LR3. You know that these compounds have compelling research behind them and that athletes around the world are using them to recover faster and more completely from injury and training.
 

@@ -5,6 +5,7 @@ import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { whatsappLink } from '../data/products'
 import { prefersReducedMotion, spotlightProps } from '../lib/motion'
+import { SA_ESSENTIALS } from '../data/learnLinks'
 import Reveal from '../components/Reveal'
 
 gsap.registerPlugin(ScrollTrigger)
@@ -305,7 +306,7 @@ export default function Home() {
     <div className="bg-[#0A1628]">
       <Helmet>
         <title>STRIATA | Research-Grade Peptides South Africa</title>
-        <meta name="description" content="South Africa's premier source for research-grade peptides. 99%+ purity guaranteed. BPC-157, Semaglutide, Tirzepatide, GHK-Cu and 80+ compounds. Johannesburg. Order on WhatsApp." />
+        <meta name="description" content="Research-grade peptides in South Africa: BPC-157, Semaglutide, Tirzepatide, GHK-Cu and 90+ compounds at 99%+ purity. Johannesburg based. Order on WhatsApp." />
         <link rel="canonical" href="https://www.striatalabs.co.za/" />
         <meta property="og:title" content="STRIATA | Research-Grade Peptides South Africa" />
         <meta property="og:description" content="South Africa's premier source for research-grade peptides. 99%+ purity guaranteed. Think Strong. Train Smarter." />
@@ -337,16 +338,19 @@ export default function Home() {
               <span className="w-1.5 h-1.5 rounded-full bg-[#00B4B4]" />
               South Africa's Premier Research Peptide Source
             </div>
-            <h1
+            {/* The slogan stays the visual headline; the H1 is the sentence
+                that says what the site is, so the page heading carries the
+                keyword rather than the tagline. Same look as before. */}
+            <p
               className="font-black text-white leading-none tracking-tight mb-6"
               style={{ fontFamily: 'var(--font-heading)' }}
             >
               <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl">THINK STRONG.</span>
               <span className="block text-4xl sm:text-5xl md:text-6xl lg:text-7xl text-shimmer">TRAIN SMARTER.</span>
-            </h1>
-            <p className="text-base md:text-xl text-white/70 max-w-2xl mx-auto mb-10 leading-relaxed">
-              South Africa's premier source for research-grade peptides. Purity you can trust. Performance you can feel.
             </p>
+            <h1 className="text-base md:text-xl text-white/70 max-w-2xl mx-auto mb-10 leading-relaxed font-normal" style={{ fontFamily: 'var(--font-body)' }}>
+              South Africa's premier source for research-grade peptides. Purity you can trust. Performance you can feel.
+            </h1>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg">
                 {WA_ICON}
@@ -615,6 +619,43 @@ export default function Home() {
                 <TestimonialCard key={`${copy}-${i}`} t={t} aria-hidden={copy > 0 ? 'true' : undefined} />
               )),
             )}
+          </div>
+        </Reveal>
+      </section>
+
+      {/* ── START HERE (SA essentials) ────────────── */}
+      <section className="py-20 px-6 border-t border-white/5">
+        <Reveal stagger className="max-w-5xl mx-auto">
+          <div className="text-center mb-10">
+            <h2 className="text-3xl md:text-4xl font-black text-white mb-3 tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>
+              New to peptides in <span className="text-[#00B4B4]">South Africa?</span>
+            </h2>
+            <p className="text-white/60 max-w-2xl mx-auto">
+              Start with the questions we get asked most: what is legal, where to buy safely, and what the research says about the compounds people ask for first.
+            </p>
+          </div>
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">
+            {SA_ESSENTIALS.map(e => (
+              <Link
+                key={e.slug}
+                to={`/learn/${e.slug}`}
+                className="group flex items-center justify-between gap-3 bg-[#0d1e35] border border-white/8 rounded-2xl px-5 py-4 hover:border-[#00B4B4]/40 transition-all duration-300 hover:-translate-y-0.5"
+              >
+                <span className="text-white font-semibold text-sm group-hover:text-[#00B4B4] transition-colors" style={{ fontFamily: 'var(--font-heading)' }}>
+                  {e.label}
+                </span>
+                {ARROW}
+              </Link>
+            ))}
+            <Link
+              to="/learn"
+              className="group flex items-center justify-between gap-3 bg-[#00B4B4]/[0.07] border border-[#00B4B4]/25 rounded-2xl px-5 py-4 hover:bg-[#00B4B4]/[0.12] hover:border-[#00B4B4]/50 transition-all duration-300 hover:-translate-y-0.5"
+            >
+              <span className="text-[#00B4B4] font-semibold text-sm" style={{ fontFamily: 'var(--font-heading)' }}>
+                All 35 articles in the Learning Hub
+              </span>
+              {ARROW}
+            </Link>
           </div>
         </Reveal>
       </section>

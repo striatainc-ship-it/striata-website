@@ -2,9 +2,9 @@
 
 ---
 
-# Article 31: Research Peptides in South Africa: Legal Status, SAHPRA and Where to Source Safely
+# Article 31: Are Peptides Legal in South Africa? SAHPRA
 
-**Meta description:** Are peptides legal in South Africa? This guide explains the regulatory landscape, what SAHPRA says, and what to look for when sourcing research peptides in SA.
+**Meta description:** Are research peptides legal in South Africa? The regulatory landscape, what SAHPRA says, and how to source research peptides safely in SA.
 
 **Slug:** /learn/peptides-south-africa-legal-status
 **Category:** Peptide Guides
@@ -13,7 +13,7 @@
 
 ---
 
-## Research Peptides in South Africa: Legal Status, SAHPRA and Where to Source Safely
+## Are Peptides Legal in South Africa? SAHPRA
 
 If you have been looking into peptides and you are based in South Africa, you have probably run into conflicting information. Some sources say they are legal. Others say they are a grey area. A few suggest they are outright banned. The reality is more nuanced than any of those answers, and understanding it properly will help you make informed decisions about sourcing and use.
 
@@ -77,9 +77,9 @@ If you have questions about specific compounds or want to understand more before
 
 ---
 
-# Article 32: BPC-157 in South Africa — What You Need to Know Before You Buy
+# Article 32: BPC-157 in South Africa: Before You Buy
 
-**Meta description:** BPC-157 is one of the most talked-about recovery peptides in South Africa. Here's what the research says, who it's used by, and what to look for before you buy.
+**Meta description:** BPC-157 in South Africa: what the research says, who uses it, how it is typically used and what to check for purity before you buy.
 
 **Slug:** /learn/bpc-157-south-africa
 **Category:** Recovery
@@ -88,7 +88,7 @@ If you have questions about specific compounds or want to understand more before
 
 ---
 
-## BPC-157 in South Africa: What You Need to Know Before You Buy
+## BPC-157 in South Africa: Before You Buy
 
 BPC-157 has quietly become one of the most searched peptides in South Africa. Athletes recovering from injuries, gym-goers dealing with persistent tendon issues and people who have tried conventional treatments without success are increasingly looking at this compound. The search volume for "BPC-157 South Africa" has grown steadily over the past two years, and for good reason.
 
@@ -166,22 +166,23 @@ If you are dealing with a persistent injury that is not resolving on its own, it
 
 ---
 
-# Article 33: Semaglutide in South Africa — A 2025 Guide for South Africans
+# Article 33: Semaglutide in South Africa: 2026 Guide
 
-**Meta description:** Semaglutide (Ozempic/Wegovy) is now one of the most searched weight loss treatments in South Africa. Here's what it is, how it works, and how South Africans are accessing it.
+**Meta description:** Semaglutide (Ozempic, Wegovy) in South Africa in 2026: how it works, what the STEP trials showed, cost, access and research-grade options.
 
 **Slug:** /learn/semaglutide-south-africa
 **Category:** Weight Loss
 **Read time:** 9 min
+**Updated:** 2026-09-17
 **Keywords:** semaglutide South Africa, Ozempic South Africa, buy semaglutide SA, Wegovy South Africa, GLP-1 weight loss South Africa
 
 ---
 
-## Semaglutide in South Africa: A 2025 Guide for South Africans
+## Semaglutide in South Africa: 2026 Guide
 
 You have almost certainly heard about Ozempic. Possibly Wegovy. You may have seen people talking about dramatic weight loss results, or heard debate about whether it is safe, whether it works long-term, or whether it is "cheating." South African interest in semaglutide has exploded over the past two years, and the questions coming through on WhatsApp and search engines reflect a population that is genuinely trying to understand this compound — not just chase a trend.
 
-This guide cuts through the noise. What semaglutide actually is, what the evidence shows, what access looks like in South Africa in 2025, and what questions to ask before you consider it.
+This guide cuts through the noise. What semaglutide actually is, what the evidence shows, what access looks like in South Africa in 2026, and what questions to ask before you consider it.
 
 ---
 
@@ -261,9 +262,9 @@ Semaglutide is the most evidence-backed weight loss intervention available outsi
 
 ---
 
-# Article 34: Peptides for South African Athletes — Recovery, Performance and What the Research Says
+# Article 34: Peptides for South African Athletes: Guide
 
-**Meta description:** South African athletes are increasingly turning to research peptides for injury recovery and performance. Here's an honest look at what works, what doesn't, and what the science actually supports.
+**Meta description:** An honest look at peptides for South African athletes: recovery, performance, what the research supports and what it does not.
 
 **Slug:** /learn/peptides-for-south-african-athletes
 **Category:** Recovery
@@ -272,7 +273,7 @@ Semaglutide is the most evidence-backed weight loss intervention available outsi
 
 ---
 
-## Peptides for South African Athletes: Recovery, Performance and What the Research Says
+## Peptides for South African Athletes: Guide
 
 South African sport is physical. Whether you are playing club rugby, competing in CrossFit, running the Comrades Marathon, or training seriously at gym, you are putting significant stress on your body — and injury, incomplete recovery and performance plateaus are constant challenges.
 
@@ -357,9 +358,9 @@ If you are competing at a level where anti-doping applies, they are off the tabl
 
 ---
 
-# Article 35: Where to Buy Research Peptides in South Africa — And What to Look For
+# Article 35: Where to Buy Peptides in South Africa Safely
 
-**Meta description:** Looking to buy research peptides in South Africa? This guide explains what separates quality suppliers from risky ones, what to check before you buy, and red flags to avoid.
+**Meta description:** Where to buy research peptides in South Africa: what separates quality suppliers from risky ones, what to check and the red flags to avoid.
 
 **Slug:** /learn/where-to-buy-peptides-south-africa
 **Category:** Peptide Guides
@@ -368,7 +369,7 @@ If you are competing at a level where anti-doping applies, they are off the tabl
 
 ---
 
-## Where to Buy Research Peptides in South Africa — And What to Look For
+## Where to Buy Peptides in South Africa Safely
 
 Buying research peptides in South Africa is not the same as buying a supplement off a pharmacy shelf. There is no standardised regulation requiring quality verification. There is no unified standard that all suppliers must meet. There is a market, and within that market there is a wide range of quality — from genuinely rigorous, third-party-tested product to reconstituted powder of unknown origin that may not be what it claims to be.
 

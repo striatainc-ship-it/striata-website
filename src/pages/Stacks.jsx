@@ -343,10 +343,10 @@ export default function Stacks() {
   return (
     <div className="bg-[#0A1628] min-h-screen">
       <Helmet>
-        <title>Peptide Stacks | STRIATA South Africa</title>
-        <meta name="description" content="Browse STRIATA's 10 recommended peptide stacks for recovery, weight loss, anti-aging, and performance. Pharmaceutical grade, 99%+ purity. Enquire on WhatsApp." />
+        <title>Peptide Stacks & Protocols South Africa | STRIATA</title>
+        <meta name="description" content="STRIATA's 10 recommended peptide stacks for recovery, weight loss, anti-aging and performance, with tier pricing. 99%+ purity. Enquire on WhatsApp." />
         <link rel="canonical" href="https://www.striatalabs.co.za/stacks" />
-        <meta property="og:title" content="Peptide Stacks | STRIATA South Africa" />
+        <meta property="og:title" content="Peptide Stacks & Protocols South Africa | STRIATA" />
         <meta property="og:description" content="10 curated peptide stacks across gym, weight loss, anti-aging and wellness. Tier pricing from Entry to Premium." />
         <meta property="og:url" content="https://www.striatalabs.co.za/stacks" />
       </Helmet>
@@ -363,7 +363,7 @@ export default function Stacks() {
             Curated Protocols
           </span>
           <h1 className="text-3xl md:text-6xl font-black text-white mb-5 leading-tight tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>
-            Recommended <span className="text-[#00B4B4]">Peptide Stacks</span>
+            Peptide Stacks <span className="text-[#00B4B4]">&amp; Protocols</span>
           </h1>
           <p className="text-white/60 text-lg max-w-2xl mx-auto mb-3">
             Ten research-backed protocols built for specific goals. Each stack includes scientific rationale, tier pricing, and transparent safety information.

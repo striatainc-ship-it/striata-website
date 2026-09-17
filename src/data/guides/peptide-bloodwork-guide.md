@@ -1,7 +1,7 @@
 ---
-title: "Peptide Bloodwork Guide: Which Blood Tests to Get Before, During and After a Peptide Protocol"
+title: "Peptide Bloodwork: Which Blood Tests to Get"
 slug: "peptide-bloodwork-guide"
-meta_description: "A complete guide to peptide blood testing — which markers to request, reference ranges for South African labs, testing schedules, and the warning signs that mean retest now."
+meta_description: "Which blood tests to run before, during and after a peptide protocol, reference ranges for South African labs, schedules and warning signs."
 category: "Peptide Guides"
 read_time: "14 min read"
 ---

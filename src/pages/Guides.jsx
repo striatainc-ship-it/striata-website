@@ -61,10 +61,10 @@ export default function Guides() {
   return (
     <div className="bg-[#0A1628] min-h-screen">
       <Helmet>
-        <title>Peptide Guides | STRIATA</title>
+        <title>Peptide Guides: Reconstitution, Dosing & Bloodwork | STRIATA</title>
         <meta name="description" content="Practical, step-by-step peptide guides — reconstitution and dosage calculation, and the bloodwork to run before, during and after a protocol." />
         <link rel="canonical" href="https://www.striatalabs.co.za/guides" />
-        <meta property="og:title" content="Peptide Guides | STRIATA" />
+        <meta property="og:title" content="Peptide Guides: Reconstitution, Dosing & Bloodwork | STRIATA" />
         <meta property="og:description" content="Practical, step-by-step peptide guides — reconstitution, dosing and bloodwork monitoring." />
         <meta property="og:url" content="https://www.striatalabs.co.za/guides" />
       </Helmet>
@@ -84,7 +84,7 @@ export default function Guides() {
             className="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-5 leading-tight"
             style={{ fontFamily: 'var(--font-heading)' }}
           >
-            STRIATA <span className="text-[#00B4B4]">Guides</span>
+            Peptide <span className="text-[#00B4B4]">Guides</span>
           </h1>
           <p className="text-white/60 text-lg max-w-xl mx-auto">
             Step-by-step, reference-grade guides for handling peptides properly — from the vial to the bloodwork. Written to be printed, followed and trusted.

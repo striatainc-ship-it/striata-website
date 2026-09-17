@@ -30,14 +30,17 @@ const faqSections = [
       {
         q: 'Are your peptides tested for purity?',
         a: 'Yes. Every product in the STRIATA catalogue meets a minimum 99% purity standard and is independently verified through third-party laboratory testing. If you would like to see a Certificate of Analysis for any product, simply ask us on WhatsApp and we will send it to you promptly.',
+        links: [{ label: 'How to read a Certificate of Analysis', to: '/learn/how-to-read-a-certificate-of-analysis' }],
       },
       {
         q: 'Are these products for human use?',
         a: 'All STRIATA products are sold strictly for research purposes only and are not intended for human or veterinary use. They are not approved by SAHPRA or any other regulatory authority for human consumption. By purchasing from STRIATA you agree to use all products in accordance with applicable research regulations.',
+        links: [{ label: 'Peptide legal status in South Africa (SAHPRA)', to: '/learn/peptides-south-africa-legal-status' }],
       },
       {
         q: 'Can you help me choose the right peptide for my goals?',
         a: "We can offer general guidance on the compounds we stock and point you toward relevant research. However, we are not medical professionals and cannot provide personalised medical advice or prescribe protocols. We strongly recommend consulting a qualified healthcare provider for anything protocol-specific. That said, feel free to chat to us on WhatsApp and we are happy to assist where we can.",
+        links: [{ label: 'Take the 60-second protocol quiz', to: '/quiz' }, { label: 'Browse the recommended stacks', to: '/stacks' }],
       },
     ],
   },
@@ -47,6 +50,7 @@ const faqSections = [
       {
         q: 'How do I place an order?',
         a: 'Simply chat to us on WhatsApp with the products you are interested in. Our team will confirm availability, provide pricing and guide you through the process. It really is that simple.',
+        links: [{ label: 'Where to buy peptides in South Africa safely', to: '/learn/where-to-buy-peptides-south-africa' }],
       },
       {
         q: 'What payment methods do you accept?',
@@ -80,6 +84,7 @@ const faqSections = [
       {
         q: 'How long does delivery take?',
         a: 'Standard delivery via Courier Guy typically takes 2 to 3 business days. We also offer overnight shipping for faster delivery. Same-day delivery is available for orders placed before 11am, depending on your location. Chat to us on WhatsApp to confirm availability in your area.',
+        links: [{ label: 'Shipping policy', to: '/legal' }],
       },
       {
         q: 'Is packaging discreet?',
@@ -101,10 +106,12 @@ const faqSections = [
       {
         q: 'How should I store my peptides?',
         a: 'Lyophilised (freeze-dried) peptides should be stored in a cool, dry place away from direct sunlight. Once reconstituted, peptides should be refrigerated at 2°C to 8°C and used within the recommended timeframe. Do not freeze reconstituted peptides.',
+        links: [{ label: 'How to store and reconstitute peptides', to: '/learn/how-to-store-and-reconstitute-peptides' }],
       },
       {
         q: 'How do I reconstitute a peptide?',
         a: 'Lyophilised peptides are reconstituted by adding bacteriostatic water or acetic acid solution to the vial. The specific reconstitution solution depends on the peptide. We stock both bacteriostatic water and acetic acid 0.6%. Chat to us on WhatsApp and we will advise on the correct solution for your specific compound.',
+        links: [{ label: 'Reconstitution calculator', to: '/tools/reconstitution-calculator' }, { label: 'Reconstitution and dosage guide', to: '/guides/peptide-reconstitution-dosage-calculator' }],
       },
       {
         q: 'What is the shelf life of your peptides?',
@@ -135,7 +142,7 @@ const faqSections = [
   },
 ]
 
-function FAQItem({ q, a }) {
+function FAQItem({ q, a, links = [] }) {
   const [open, setOpen] = useState(false)
   return (
     <div className="border-b border-white/8 last:border-0">
@@ -155,8 +162,19 @@ function FAQItem({ q, a }) {
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
         </svg>
       </button>
-      <div className={`overflow-hidden transition-all duration-300 ${open ? 'max-h-96 pb-5' : 'max-h-0'}`}>
+      <div className={`overflow-hidden transition-all duration-300 ${open ? 'max-h-[32rem] pb-5' : 'max-h-0'}`}>
         <p className="text-white/60 text-sm leading-relaxed">{a}</p>
+        {links.length > 0 && (
+          <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-1.5">
+            {links.map(l => (
+              <li key={l.to}>
+                <Link to={l.to} className="text-[#00B4B4] text-sm font-semibold hover:text-white transition-colors">
+                  {l.label} →
+                </Link>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
     </div>
   )
@@ -180,10 +198,10 @@ export default function FAQ() {
   return (
     <div className="bg-[#0A1628] min-h-screen">
       <Helmet>
-        <title>FAQ | STRIATA Peptides South Africa</title>
+        <title>Peptide FAQ: Ordering, Delivery & Purity | STRIATA</title>
         <meta name="description" content="Answers to common questions about STRIATA's research peptides — ordering, shipping, purity testing, reconstitution, payments and more." />
         <link rel="canonical" href="https://www.striatalabs.co.za/faq" />
-        <meta property="og:title" content="FAQ | STRIATA Peptides South Africa" />
+        <meta property="og:title" content="Peptide FAQ: Ordering, Delivery & Purity | STRIATA" />
         <meta property="og:description" content="Common questions about ordering, shipping, purity and reconstitution of research peptides from STRIATA." />
         <meta property="og:url" content="https://www.striatalabs.co.za/faq" />
       </Helmet>

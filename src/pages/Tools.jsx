@@ -83,10 +83,10 @@ export default function Tools() {
   return (
     <div className="bg-[#0A1628] min-h-screen">
       <Helmet>
-        <title>Peptide Tools | STRIATA</title>
+        <title>Free Peptide Tools & Calculators | STRIATA</title>
         <meta name="description" content="Free calculators and tools for handling peptides properly: work out reconstitution concentration and the exact syringe units for any dose." />
         <link rel="canonical" href="https://www.striatalabs.co.za/tools" />
-        <meta property="og:title" content="Peptide Tools | STRIATA" />
+        <meta property="og:title" content="Free Peptide Tools & Calculators | STRIATA" />
         <meta property="og:description" content="Free calculators and tools for handling peptides properly." />
         <meta property="og:url" content="https://www.striatalabs.co.za/tools" />
       </Helmet>

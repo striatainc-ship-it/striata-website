@@ -1,7 +1,7 @@
 ---
-title: "How to Reconstitute Peptides: Dosage Calculator, Unit Conversion Chart and Step-by-Step Guide"
+title: "Peptide Reconstitution & Dosage Calculator"
 slug: "peptide-reconstitution-dosage-calculator"
-meta_description: "Complete peptide reconstitution guide — how much BAC water to add, how to convert mg to units on a U-100 syringe, worked dosage examples and a quick-draw conversion chart."
+meta_description: "How much BAC water to add, how to convert mg to units on a U-100 syringe, worked dosage examples and a quick-draw conversion chart."
 category: "Peptide Guides"
 read_time: "12 min read"
 ---

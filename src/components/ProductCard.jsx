@@ -1,5 +1,7 @@
 import { memo, useState } from 'react'
+import { Link } from 'react-router-dom'
 import { whatsappLink, isInStock } from '../data/products'
+import { guideFor } from '../data/productGuides'
 import { spotlightProps } from '../lib/motion'
 
 const WA_ICON = (
@@ -47,6 +49,7 @@ function ProductCard({ product, format: formatProp = 'Vial' }) {
   const lowestPrice = hasPrices ? Math.min(...product.prices.map((p) => p.price)) : null
   const useTwoCols = hasPrices && product.prices.length >= 4
   const inStock = isInStock(product)
+  const guide = guideFor(product)
 
   const buildWaLink = () => {
     const tier = selectedTier || (isSingleTier ? product.prices[0] : null)
@@ -116,6 +119,16 @@ function ProductCard({ product, format: formatProp = 'Vial' }) {
       <p className="text-white/50 text-xs md:text-sm leading-relaxed flex-1 mb-3 line-clamp-3 md:line-clamp-none">
         {product.description}
       </p>
+
+      {guide && (
+        <Link
+          to={`/learn/${guide}`}
+          className="self-start inline-flex items-center gap-1 text-[#00B4B4] text-[11px] md:text-xs font-semibold hover:text-white transition-colors mb-3"
+        >
+          Read our guide
+          <span aria-hidden="true">→</span>
+        </Link>
+      )}
 
       {/* Tags — desktop only */}
       {product.tags.length > 0 && (

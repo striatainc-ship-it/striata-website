@@ -128,10 +128,10 @@ export default function Catalogue() {
   return (
     <div className="bg-[#0A1628] min-h-screen">
       <Helmet>
-        <title>Peptide Catalogue | STRIATA South Africa</title>
-        <meta name="description" content="Browse 80+ research-grade peptides with transparent pricing. Recovery, weight loss, anti-aging, hormonal health, nootropics and more. Delivered nationwide across South Africa." />
+        <title>Buy Research Peptides in South Africa | STRIATA Catalogue</title>
+        <meta name="description" content="Browse 90+ research-grade peptides with transparent ZAR pricing: recovery, weight loss, anti-aging, hormonal health, nootropics. Delivered across South Africa." />
         <link rel="canonical" href="https://www.striatalabs.co.za/catalogue" />
-        <meta property="og:title" content="Peptide Catalogue | STRIATA South Africa" />
+        <meta property="og:title" content="Buy Research Peptides in South Africa | STRIATA Catalogue" />
         <meta property="og:description" content="Browse 80+ research-grade peptides with transparent pricing. Delivered nationwide." />
         <meta property="og:url" content="https://www.striatalabs.co.za/catalogue" />
         {/* The banner background is a CSS background-image, which the browser
@@ -182,10 +182,18 @@ export default function Catalogue() {
             Complete Catalogue
           </span>
           <h1 className="text-3xl md:text-6xl font-black text-white mb-5 tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>
-            Explore the <span className="text-[#00B4B4]">Catalogue</span>
+            Research Peptide <span className="text-[#00B4B4]">Catalogue</span>
           </h1>
           <p className="text-white/60 text-lg max-w-2xl mx-auto">
-            Research-grade peptides with transparent pricing across every category. Select your concentration and order directly on WhatsApp.
+            Research-grade peptides with transparent pricing across every category, delivered anywhere in South Africa. Select your concentration and order directly on WhatsApp.
+          </p>
+          <p className="text-white/40 text-sm max-w-2xl mx-auto mt-4">
+            First time buying?{' '}
+            <Link to="/learn/where-to-buy-peptides-south-africa" className="text-[#00B4B4] hover:text-white transition-colors">What to check before you buy</Link>
+            {' · '}
+            <Link to="/learn/peptides-south-africa-legal-status" className="text-[#00B4B4] hover:text-white transition-colors">Legal status in SA</Link>
+            {' · '}
+            <Link to="/learn/how-to-read-a-certificate-of-analysis" className="text-[#00B4B4] hover:text-white transition-colors">Reading a COA</Link>
           </p>
         </Reveal>
       </section>

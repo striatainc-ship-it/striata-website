@@ -54,12 +54,14 @@ export function getRoutes() {
     // Prerendered so shared result links open instantly, but `sitemap: false`
     // keeps them out of sitemap.xml: they carry noindex (see QuizResult.jsx).
     ...quizResultPaths.map(path => ({ path, priority: '0.7', changefreq: 'monthly', sitemap: false })),
+    // Content routes carry their real last-modified date; static routes take
+    // the build date in prerender.mjs (they change with stock and pricing).
     ...guides
       .filter(g => g.slug)
-      .map(g => ({ path: `/guides/${g.slug}`, priority: '0.7', changefreq: 'monthly' })),
+      .map(g => ({ path: `/guides/${g.slug}`, priority: '0.7', changefreq: 'monthly', lastmod: g.dateModified })),
     ...blogPosts
       .filter(p => p.slug)
-      .map(p => ({ path: `/learn/${p.slug}`, priority: '0.6', changefreq: 'monthly' })),
+      .map(p => ({ path: `/learn/${p.slug}`, priority: '0.6', changefreq: 'monthly', lastmod: p.dateModified })),
   ]
 }
 

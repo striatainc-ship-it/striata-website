@@ -2,9 +2,9 @@
 
 ---
 
-# Article 1: The Complete Beginner's Guide to Peptides
+# Article 1: Beginner's Guide to Peptides in South Africa
 
-**Meta description:** New to peptides? This beginner's guide explains what peptides are, how they work in the body, and why athletes, biohackers and everyday people are adding them to their health routines.
+**Meta description:** New to peptides? What they are, how they work in the body, and why athletes, biohackers and everyday South Africans are using them.
 
 **Slug:** /learn/beginners-guide-to-peptides
 **Category:** Peptide Guides
@@ -13,7 +13,7 @@
 
 ---
 
-## The Complete Beginner's Guide to Peptides: What They Are, How They Work and Why Everyone's Talking About Them
+## Beginner's Guide to Peptides in South Africa
 
 You have probably heard the word "peptide" thrown around in fitness circles, anti-aging conversations or across social media. But what actually are they? And why are so many people, from elite athletes to everyday professionals, adding them to their health protocols?
 
@@ -137,9 +137,9 @@ The peptide space can feel overwhelming at first, but it does not have to be. St
 ---
 ---
 
-# Article 2: Peptide Storage 101
+# Article 2: How to Store & Reconstitute Peptides
 
-**Meta description:** Learn how to correctly reconstitute, store and handle your peptides to preserve potency and get the most out of every vial. Step-by-step guidance for beginners.
+**Meta description:** Step-by-step guidance on reconstituting, storing and handling peptides so every vial keeps its potency. Written for beginners.
 
 **Slug:** /learn/how-to-store-and-reconstitute-peptides
 **Category:** Peptide Guides
@@ -148,7 +148,7 @@ The peptide space can feel overwhelming at first, but it does not have to be. St
 
 ---
 
-## Peptide Storage 101: How to Reconstitute, Store and Handle Your Peptides the Right Way
+## How to Store & Reconstitute Peptides
 
 You have sourced high-quality peptides. You have done your research on the protocol. But now you are staring at a small vial of white powder and wondering what to do next.
 
@@ -282,7 +282,7 @@ Used needles should be placed in a sharps container. Many pharmacies accept used
 
 # Article 3: Research Peptides vs Pharmaceutical Drugs
 
-**Meta description:** What is the difference between research peptides and pharmaceutical drugs? We break down the regulatory, clinical and practical differences so you can make an informed decision.
+**Meta description:** The regulatory, clinical and practical differences between research peptides and pharmaceutical drugs, so you can make an informed decision.
 
 **Slug:** /learn/research-peptides-vs-pharmaceutical-drugs
 **Category:** Peptide Guides
@@ -291,7 +291,7 @@ Used needles should be placed in a sharps container. Many pharmacies accept used
 
 ---
 
-## Research Peptides vs Pharmaceutical Drugs: What's the Difference and Why Does It Matter?
+## Research Peptides vs Pharmaceutical Drugs
 
 If you have spent any time researching peptides, you have likely come across the term "research compounds" or "research chemicals." You may have also noticed that some peptides, like Semaglutide, are available as prescription medications, while others, like BPC-157, are only available through research-focused suppliers.
 
@@ -413,9 +413,9 @@ We will cover how to read and interpret a Certificate of Analysis in our next ar
 ---
 ---
 
-# Article 4: How to Read a Certificate of Analysis
+# Article 4: How to Read a Certificate of Analysis (COA)
 
-**Meta description:** Learn how to read and verify a Certificate of Analysis (COA) for peptides. What to look for, what red flags to avoid and why you should always demand one before buying.
+**Meta description:** How to read and verify a peptide Certificate of Analysis: purity, HPLC, mass spec, red flags, and why to demand one before you buy.
 
 **Slug:** /learn/how-to-read-a-certificate-of-analysis
 **Category:** Peptide Guides
@@ -424,7 +424,7 @@ We will cover how to read and interpret a Certificate of Analysis in our next ar
 
 ---
 
-## How to Read a Certificate of Analysis: And Why You Should Always Ask for One
+## How to Read a Certificate of Analysis (COA)
 
 If you are buying peptides and you have not seen a Certificate of Analysis, you have no idea what is actually in the vial.
 
@@ -542,9 +542,9 @@ We believe this is the minimum standard for operating responsibly in this space,
 ---
 ---
 
-# Article 5: The Beginner's Glossary — 25 Peptide Terms You Need to Know
+# Article 5: Peptide Glossary: 25 Terms You Need to Know
 
-**Meta description:** New to peptides? This glossary defines 25 essential terms you will encounter when researching peptides, from amino acids and HPLC to GLP-1 and subcutaneous injection.
+**Meta description:** 25 essential peptide terms defined for beginners, from amino acids and HPLC to GLP-1, reconstitution and subcutaneous injection.
 
 **Slug:** /learn/peptide-glossary-beginners
 **Category:** Peptide Guides
@@ -553,7 +553,7 @@ We believe this is the minimum standard for operating responsibly in this space,
 
 ---
 
-## The Beginner's Glossary: 25 Peptide Terms You Need to Know
+## Peptide Glossary: 25 Terms You Need to Know
 
 The peptide world has its own language. If you are new to this space, acronyms like GH, GHS, GHRP, HPLC and COA can make even a simple product description feel like reading a foreign language.
 

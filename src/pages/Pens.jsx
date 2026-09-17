@@ -104,10 +104,10 @@ export default function Pens() {
   return (
     <div className="bg-[#0A1628] min-h-screen">
       <Helmet>
-        <title>Peptide Pens | STRIATA South Africa</title>
-        <meta name="description" content={`${penCount} research-grade peptides in pre-filled pen format. No reconstitution, dial-in dosing. BPC+TB, Retatrutide, Tirzepatide, GHK-Cu and more. Delivered nationwide across South Africa.`} />
+        <title>Pre-Filled Peptide Pens South Africa | STRIATA</title>
+        <meta name="description" content={`${penCount} research peptides in pre-filled pens: no reconstitution, dial-in dosing. BPC+TB, Retatrutide, Tirzepatide, GHK-Cu. Delivered across South Africa.`} />
         <link rel="canonical" href="https://www.striatalabs.co.za/pens" />
-        <meta property="og:title" content="Peptide Pens | STRIATA South Africa" />
+        <meta property="og:title" content="Pre-Filled Peptide Pens South Africa | STRIATA" />
         <meta property="og:description" content="Research-grade peptides in pre-filled pen format. No reconstitution, dial-in dosing. Delivered nationwide." />
         <meta property="og:url" content="https://www.striatalabs.co.za/pens" />
       </Helmet>
@@ -153,7 +153,7 @@ export default function Pens() {
             All Pens In Stock
           </span>
           <h1 className="text-3xl md:text-6xl font-black text-white mb-5 leading-tight tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>
-            Peptide <span className="text-[#00B4B4]">Pens</span>
+            Pre-Filled Peptide <span className="text-[#00B4B4]">Pens</span>
           </h1>
           <p className="text-white/60 text-lg max-w-2xl mx-auto mb-3">
             The same research-grade peptides from our catalogue, pre-filled in a pen. No reconstitution, no syringes, just dial your dose.

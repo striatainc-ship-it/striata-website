@@ -133,7 +133,7 @@ export default function About() {
     <div className="bg-[#0A1628]">
       <Helmet>
         <title>About STRIATA | Research-Grade Peptides Johannesburg</title>
-        <meta name="description" content="STRIATA is South Africa's trusted source for pharmaceutical-grade peptides. Based in Johannesburg, we supply clinics, athletes and biohackers with 99%+ purity compounds." />
+        <meta name="description" content="STRIATA is a Johannesburg-based source of research-grade peptides, supplying clinics, athletes and biohackers across South Africa with 99%+ purity compounds." />
         <link rel="canonical" href="https://www.striatalabs.co.za/about" />
         <meta property="og:title" content="About STRIATA | Research-Grade Peptides Johannesburg" />
         <meta property="og:description" content="South Africa's trusted source for pharmaceutical-grade peptides. Based in Johannesburg." />

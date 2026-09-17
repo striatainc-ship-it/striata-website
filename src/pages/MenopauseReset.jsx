@@ -155,10 +155,10 @@ export default function MenopauseReset() {
   return (
     <div className="bg-[#0A1628] min-h-screen">
       <Helmet>
-        <title>The Menopause Reset | STRIATA South Africa</title>
-        <meta name="description" content="A 12-week, four-stack peptide protocol for menopause — sleep, skin and collagen, libido, and cellular anti-aging. 21 vials, 84 days, supplied through registered practitioners." />
+        <title>Menopause Reset: 12-Week Peptide Protocol | STRIATA</title>
+        <meta name="description" content="A 12-week, four-stack peptide protocol for menopause: sleep, skin and collagen, libido and cellular anti-aging. 21 vials over 84 days, South Africa." />
         <link rel="canonical" href="https://www.striatalabs.co.za/stacks/menopause-reset" />
-        <meta property="og:title" content="The Menopause Reset | STRIATA South Africa" />
+        <meta property="og:title" content="Menopause Reset: 12-Week Peptide Protocol | STRIATA" />
         <meta property="og:description" content="A 12-week, four-stack protocol built around the four symptom clusters of menopause. Supplied through your practitioner." />
         <meta property="og:url" content="https://www.striatalabs.co.za/stacks/menopause-reset" />
       </Helmet>

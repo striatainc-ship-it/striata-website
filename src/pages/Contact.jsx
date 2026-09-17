@@ -55,10 +55,10 @@ export default function Contact() {
   return (
     <div className="bg-[#0A1628] min-h-screen">
       <Helmet>
-        <title>Contact STRIATA | WhatsApp +27 78 213 7905</title>
+        <title>Contact STRIATA Johannesburg | WhatsApp & Email</title>
         <meta name="description" content="Order or enquire via WhatsApp +27 78 213 7905 or email info@striatalabs.co.za. STRIATA delivers research-grade peptides nationwide from Johannesburg." />
         <link rel="canonical" href="https://www.striatalabs.co.za/contact" />
-        <meta property="og:title" content="Contact STRIATA | WhatsApp +27 78 213 7905" />
+        <meta property="og:title" content="Contact STRIATA Johannesburg | WhatsApp & Email" />
         <meta property="og:description" content="Reach STRIATA on WhatsApp or email. We deliver research-grade peptides nationwide from Johannesburg." />
         <meta property="og:url" content="https://www.striatalabs.co.za/contact" />
       </Helmet>
@@ -71,7 +71,7 @@ export default function Contact() {
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A1628]/60 to-[#0A1628]" />
         <Reveal stagger delay={0.1} className="relative z-10 max-w-3xl mx-auto text-center">
           <h1 className="text-3xl md:text-6xl font-black text-white mb-5 tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>
-            Get In <span className="text-[#00B4B4]">Touch</span>
+            Contact STRIATA in <span className="text-[#00B4B4]">Johannesburg</span>
           </h1>
           <p className="text-white/60 text-lg max-w-2xl mx-auto">
             Whether you have a question about our products, need help with an order or want to discuss bulk supply. We're here and we respond fast. Reach out on WhatsApp for the quickest response.

@@ -238,7 +238,7 @@ export default function GhkSerum() {
     <div className="bg-[#0A1628] min-h-screen">
       <Helmet>
         <title>GHK-Cu Copper Peptide Serum | STRIATA South Africa</title>
-        <meta name="description" content="STRIATA Labs GHK-Cu Serum: 1% or 2% copper peptide with 1% hyaluronic acid in a 30 ml dropper. Restore, hydrate, renew. For all skin types. From R 549, delivered across South Africa." />
+        <meta name="description" content="STRIATA Labs GHK-Cu Serum: 1% or 2% copper peptide with hyaluronic acid in a 30 ml dropper. Restore, hydrate, renew. From R549, delivered across South Africa." />
         <link rel="canonical" href="https://www.striatalabs.co.za/ghk-serum" />
         <meta property="og:title" content="GHK-Cu Copper Peptide Serum | STRIATA South Africa" />
         <meta property="og:description" content="Copper peptide + hyaluronic acid serum, 1% and 2% strengths. Restore. Hydrate. Renew." />

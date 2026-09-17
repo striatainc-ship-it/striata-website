@@ -2,9 +2,9 @@
 
 ---
 
-# Article 21: Semax
+# Article 21: Semax Nootropic Peptide: Focus & Cognition
 
-**Meta description:** Semax is a synthetic nootropic peptide with origins in Russian neuroscience research. This guide covers how it works, what the evidence shows and why it has become one of the most talked-about cognitive enhancement compounds in the biohacking world.
+**Meta description:** How Semax works, what the evidence shows for focus, memory and stress resilience, and how the Russian nootropic peptide is typically used.
 
 **Slug:** /learn/semax-nootropic-peptide-guide
 **Category:** Brain & Mood
@@ -13,7 +13,7 @@
 
 ---
 
-## Semax: The Russian Nootropic Peptide That Biohackers Can't Stop Talking About
+## Semax Nootropic Peptide: Focus & Cognition
 
 When the Soviet Union invested heavily in neuroscience research during the Cold War, one of the goals was developing compounds that could enhance cognitive performance under stress. Decades later, some of the most interesting peptides to emerge from that research tradition are quietly making their way into the biohacking and nootropic communities of the English-speaking world.
 
@@ -99,9 +99,9 @@ People exploring Semax typically fall into a few categories:
 ---
 ---
 
-# Article 22: Selank vs Semax
+# Article 22: Selank vs Semax: Which Nootropic Peptide?
 
-**Meta description:** Selank and Semax are both Russian nootropic peptides, but they work differently and suit different goals. This guide compares them directly so you can decide which one is right for you.
+**Meta description:** Selank and Semax compared head to head: mechanisms, effects on anxiety and focus, and which Russian nootropic peptide suits your goals.
 
 **Slug:** /learn/selank-vs-semax-nootropic-peptide-comparison
 **Category:** Brain & Mood
@@ -110,7 +110,7 @@ People exploring Semax typically fall into a few categories:
 
 ---
 
-## Selank vs Semax: Which Nootropic Peptide Is Right for You?
+## Selank vs Semax: Which Nootropic Peptide?
 
 If you have been researching peptide nootropics, you have almost certainly come across both Semax and Selank in the same breath. They come from the same research tradition, they are both administered as nasal sprays, they are both used for cognitive and mood support, and they are frequently discussed as a pair.
 
@@ -238,9 +238,9 @@ There is no known contraindication to using both, but as with any multi-compound
 ---
 ---
 
-# Article 23: NAD+ for Brain Health
+# Article 23: NAD+ for Brain Health, Focus & Clarity
 
-**Meta description:** NAD+ is not just a longevity molecule. It is critical for brain energy, cognitive function and mental clarity. Here is how declining NAD+ affects the brain and what you can do to support it.
+**Meta description:** How declining NAD+ affects brain energy, cognition and mental clarity, and what the research says about supporting it, including NAD+ injections.
 
 **Slug:** /learn/nad-plus-brain-health-focus-mental-clarity
 **Category:** Brain & Mood
@@ -249,7 +249,7 @@ There is no known contraindication to using both, but as with any multi-compound
 
 ---
 
-## NAD+ for Brain Health: How Cellular Energy Affects Your Focus and Mental Clarity
+## NAD+ for Brain Health, Focus & Clarity
 
 Most people who have heard of NAD+ think of it primarily in the context of longevity and cellular aging. And those associations are warranted. But the brain is the most metabolically demanding organ in the body, consuming roughly 20% of the body's total energy despite accounting for only about 2% of its mass. The brain's appetite for cellular energy makes it one of the tissues most sensitive to declining NAD+ levels.
 
@@ -336,9 +336,9 @@ These are the kinds of changes that are easy to attribute to other factors and j
 ---
 ---
 
-# Article 24: DSIP
+# Article 24: DSIP Peptide for Deep Sleep: A Guide
 
-**Meta description:** DSIP is a naturally occurring neuropeptide with documented effects on sleep. This guide explains how Delta Sleep-Inducing Peptide works, what the research shows and whether it could help you sleep better.
+**Meta description:** How Delta Sleep-Inducing Peptide works, what the research shows for sleep quality, and what to expect from a DSIP protocol.
 
 **Slug:** /learn/dsip-delta-sleep-inducing-peptide-guide
 **Category:** Brain & Mood
@@ -347,7 +347,7 @@ These are the kinds of changes that are easy to attribute to other factors and j
 
 ---
 
-## DSIP: Can a Peptide Actually Help You Sleep Better?
+## DSIP Peptide for Deep Sleep: A Guide
 
 Sleep is arguably the highest-leverage health intervention available to any human being. It governs hormone secretion, metabolic function, immune regulation, memory consolidation, emotional processing and cellular repair. Poor sleep accelerates almost every dimension of biological aging and degrades almost every dimension of daily performance.
 
@@ -443,9 +443,9 @@ For people whose sleep difficulties are driven by anxiety, the combination of Se
 ---
 ---
 
-# Article 25: PE-22-28
+# Article 25: PE-22-28: Mood Support Peptide Research
 
-**Meta description:** PE-22-28 is an emerging research peptide with a unique mechanism targeting TREK-1 potassium channels. This guide covers the science behind its potential for mood support and what we know from current research.
+**Meta description:** PE-22-28 targets TREK-1 potassium channels. The science behind its potential for mood support and what current research shows.
 
 **Slug:** /learn/pe-22-28-mood-support-peptide-research
 **Category:** Brain & Mood
@@ -454,7 +454,7 @@ For people whose sleep difficulties are driven by anxiety, the combination of Se
 
 ---
 
-## PE-22-28: A New Approach to Mood Support Through Peptide Research
+## PE-22-28: Mood Support Peptide Research
 
 Every decade or so, a new mechanism in mood neuroscience emerges that changes how researchers think about depression, anxiety and emotional regulation. The discovery of TREK-1, a potassium channel with a significant role in mood regulation, is one such development. And PE-22-28 is the peptide that has emerged from research into how to modulate it.
 

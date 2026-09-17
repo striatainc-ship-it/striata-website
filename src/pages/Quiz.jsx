@@ -53,7 +53,7 @@ export default function Quiz() {
     <div className="bg-[#0A1628] min-h-screen">
       <Helmet>
         <title>Which Peptide Protocol Is Right For You? Quiz | STRIATA</title>
-        <meta name="description" content="A sixty-second quiz that matches your goal, dosing preference and experience to the STRIATA stack or peptide people most commonly choose. Results shown immediately, no sign-up." />
+        <meta name="description" content="A sixty-second quiz matching your goal, dosing preference and experience to the STRIATA stack or peptide people most often choose. No sign-up." />
         <link rel="canonical" href={URL} />
         <meta property="og:title" content="Which Peptide Protocol Is Right For You? | STRIATA Quiz" />
         <meta property="og:description" content="Four quick questions, an immediate match, and a link straight to the product." />
