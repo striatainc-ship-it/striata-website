@@ -7,7 +7,7 @@ import AddToOrder from '../components/AddToOrder'
 
 // The two ways to buy the protocol, as order-slip lines. The payment plan goes
 // on the slip at its first instalment, since that is what is paid on order.
-const RESET = { id: 'menopause-reset', name: 'The Menopause Reset', freeShipping: true }
+const RESET = { id: 'menopause-reset', name: 'The Menopause Reset' }
 const FULL_KIT = { dose: 'Full 12-week kit', price: 8950, inStock: true }
 const PLAN = { dose: '3-month payment plan', price: 3000, inStock: true }
 
@@ -474,7 +474,7 @@ export default function MenopauseReset() {
       <section id="pricing" className="py-24 px-6 scroll-mt-24">
         <div className="max-w-7xl mx-auto">
           <SectionHeading eyebrow="Pricing" title={<>Two Ways to <span className="text-[#00B4B4]">Pay</span></>}>
-            Free shipping on all orders, including every instalment delivery. Lead time 3–5 business days.
+            Delivery at our standard (R150) or express (R200) rate. Lead time 3–5 business days.
           </SectionHeading>
 
           <Reveal stagger className="grid md:grid-cols-2 gap-5 max-w-4xl">
@@ -485,14 +485,14 @@ export default function MenopauseReset() {
               <p className="text-white/50 text-sm mb-6">once-off</p>
               <ul className="space-y-2 text-sm text-white/70 mb-8">
                 <li className="flex gap-2"><span className="text-[#00B4B4]">{CHECK}</span>The full kit arrives at the start</li>
-                <li className="flex gap-2"><span className="text-[#00B4B4]">{CHECK}</span>Free shipping</li>
+                <li className="flex gap-2"><span className="text-[#00B4B4]">{CHECK}</span>Standard or express delivery</li>
               </ul>
               <AddToOrder
                 product={RESET}
                 tier={FULL_KIT}
                 format="Protocol"
                 href="/stacks/menopause-reset"
-                detail="Once-off, full kit shipped at the start, free shipping"
+                detail="Once-off, full kit shipped at the start"
                 className="btn btn-primary btn-lg w-full"
               />
             </div>
@@ -504,7 +504,7 @@ export default function MenopauseReset() {
               <ul className="space-y-2 text-sm text-white/70 mb-8">
                 <li className="flex gap-2"><span className="text-[#00B4B4]">{CHECK}</span>Month 1 dispatched on order</li>
                 <li className="flex gap-2"><span className="text-[#00B4B4]">{CHECK}</span>Month 2 at Week 4, Month 3 at Week 8</li>
-                <li className="flex gap-2"><span className="text-[#00B4B4]">{CHECK}</span>Free shipping on every instalment</li>
+                <li className="flex gap-2"><span className="text-[#00B4B4]">{CHECK}</span>Standard or express delivery on each shipment</li>
               </ul>
               <AddToOrder
                 product={RESET}

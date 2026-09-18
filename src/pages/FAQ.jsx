@@ -79,7 +79,7 @@ const faqSections = [
     questions: [
       {
         q: 'Do you ship nationwide?',
-        a: 'Yes, we deliver to all provinces across South Africa at a flat rate: R150 for standard delivery or R200 for express. Orders that include a peptide pen ship cold-chain express at R220, with ice packs and insulation so the peptide doesn’t degrade in transit. The GHK-Cu Serum and the Menopause Reset ship free when ordered on their own.',
+        a: 'Yes, we deliver to all provinces across South Africa at a flat rate: R150 for standard delivery or R200 for express. Orders that include a peptide pen ship cold-chain express at R220, with ice packs and insulation so the peptide doesn’t degrade in transit.',
       },
       {
         q: 'How long does delivery take?',

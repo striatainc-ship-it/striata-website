@@ -345,7 +345,7 @@ export default function GhkSerum() {
             </div>
             <p className="mt-5 text-white/40 text-sm flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
-              In stock · 30 ml · Free delivery nationwide
+              In stock · 30 ml · Delivered nationwide
             </p>
           </Reveal>
 

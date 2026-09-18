@@ -184,8 +184,7 @@ function Line({ line }) {
 
 /**
  * How the parcel ships. A choice between standard and express, unless the
- * slip settles it: pens force cold-chain express, and an order made only of
- * free-delivery products ships free.
+ * slip settles it: pens force cold-chain express.
  */
 function Delivery({ slip }) {
   const delivery = deliveryFor(slip)

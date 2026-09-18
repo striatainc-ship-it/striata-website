@@ -121,9 +121,6 @@ export function lineFor(product, tier, { format, href = null, image = null, deta
     href,
     image,
     detail,
-    // Products whose own page promises free delivery (the serum, the
-    // Menopause Reset) carry the promise onto the slip.
-    freeShipping: product.freeShipping === true,
   }
 }
 
@@ -175,7 +172,8 @@ export const subtotal = (lines) => orderable(lines).reduce((sum, l) => sum + l.p
  * Delivery, as the business charges it (confirmed 2026-09-18):
  * standard R150 or express R200, the customer's choice; any order with a pen
  * goes cold-chain express at R220, because pens ship with ice packs and
- * insulation so the peptide doesn't degrade. One parcel, one fee.
+ * insulation so the peptide doesn't degrade. One parcel, one fee. Nothing
+ * ships free — the serum and the stacks follow the same rates.
  */
 export const DELIVERY_OPTIONS = {
   standard: { id: 'standard', label: 'Standard delivery', price: 150 },
@@ -192,17 +190,11 @@ export const COLD_CHAIN = {
  * The delivery that applies to this slip, or null when nothing on it is
  * priced yet (an availability question has nothing to deliver). `locked`
  * means the customer has no choice to make.
- *
- * Free delivery applies only when everything priced on the slip was sold with
- * it; add a vial to a serum order and the parcel is charged like any other.
  */
 export function deliveryFor({ lines, delivery }) {
   const ready = orderable(lines)
   if (!ready.length) return null
   if (ready.some((l) => l.format === 'Pen')) return { ...COLD_CHAIN, locked: true }
-  if (ready.every((l) => l.freeShipping)) {
-    return { id: 'free', label: 'Free delivery', price: 0, locked: true, note: 'Included with this order.' }
-  }
   return { ...(DELIVERY_OPTIONS[delivery] ?? DELIVERY_OPTIONS.standard), locked: false }
 }
 
