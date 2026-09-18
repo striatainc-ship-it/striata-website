@@ -19,6 +19,7 @@ export const loaders = {
   '/stacks': () => import('./pages/Stacks'),
   '/stacks/menopause-reset': () => import('./pages/MenopauseReset'),
   '/pens': () => import('./pages/Pens'),
+  '/nasal-sprays': () => import('./pages/NasalSprays'),
   '/ghk-serum': () => import('./pages/GhkSerum'),
   '/tools': () => import('./pages/Tools'),
   '/tools/reconstitution-calculator': () => import('./pages/ReconstitutionCalculatorPage'),

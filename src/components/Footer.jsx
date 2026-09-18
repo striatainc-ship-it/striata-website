@@ -30,6 +30,7 @@ export default function Footer() {
                 { to: '/', label: 'Home' },
                 { to: '/catalogue', label: 'Catalogue' },
                 { to: '/pens', label: 'Peptide Pens' },
+                { to: '/nasal-sprays', label: 'Nasal Sprays' },
                 { to: '/about', label: 'About Us' },
                 { to: '/guides', label: 'Guides' },
                 { to: '/tools', label: 'Tools' },

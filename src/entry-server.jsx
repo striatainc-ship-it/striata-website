@@ -38,6 +38,7 @@ export function getRoutes() {
     { path: '/stacks', priority: '0.8', changefreq: 'weekly' },
     { path: '/stacks/menopause-reset', priority: '0.8', changefreq: 'monthly' },
     { path: '/pens', priority: '0.8', changefreq: 'weekly' },
+    { path: '/nasal-sprays', priority: '0.8', changefreq: 'weekly' },
     { path: '/ghk-serum', priority: '0.8', changefreq: 'monthly' },
     { path: '/tools', priority: '0.8', changefreq: 'monthly' },
     { path: '/tools/reconstitution-calculator', priority: '0.8', changefreq: 'monthly' },

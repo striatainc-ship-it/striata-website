@@ -27,6 +27,12 @@ const PENS_ICON = (
   </svg>
 )
 
+const SPRAY_ICON = (
+  <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M9 10h6v10.5a1.5 1.5 0 01-1.5 1.5h-3A1.5 1.5 0 019 20.5V10zM10.5 10V7.5h3V10M11 7.5V3.5h2v4M16.5 4.5l2-1M16.5 6.5h2.25M16.5 8.5l2 1" />
+  </svg>
+)
+
 const SERUM_ICON = (
   <svg className="w-8 h-8" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true">
     <path d="M12 21a8.25 8.25 0 005.83-14.08L12 1.5 6.17 6.92A8.25 8.25 0 0012 21z" />
@@ -82,6 +88,7 @@ export default function Navbar() {
     location.pathname.startsWith('/catalogue') ||
     location.pathname.startsWith('/stacks') ||
     location.pathname.startsWith('/pens') ||
+    location.pathname.startsWith('/nasal-sprays') ||
     location.pathname.startsWith('/ghk-serum')
 
   return (
@@ -166,6 +173,18 @@ export default function Navbar() {
                     <div>
                       <p className="text-white text-sm font-semibold" style={{ fontFamily: 'var(--font-heading)' }}>Peptide Pens</p>
                       <p className="text-white/45 text-xs mt-0.5">Pre-filled pens, no reconstitution</p>
+                    </div>
+                  </Link>
+                  <Link
+                    to="/nasal-sprays"
+                    className="flex items-center gap-4 px-5 py-4 hover:bg-white/5 transition-colors duration-150 group border-b border-white/8"
+                  >
+                    <span className="w-10 h-10 rounded-xl bg-[#00B4B4]/10 flex items-center justify-center text-[#00B4B4] flex-shrink-0 group-hover:bg-[#00B4B4]/20 transition-colors duration-150">
+                      {SPRAY_ICON}
+                    </span>
+                    <div>
+                      <p className="text-white text-sm font-semibold" style={{ fontFamily: 'var(--font-heading)' }}>Nasal Sprays</p>
+                      <p className="text-white/45 text-xs mt-0.5">8 peptides, 10ml amber spray</p>
                     </div>
                   </Link>
                   <Link
@@ -285,6 +304,10 @@ export default function Navbar() {
             <Link to="/pens" className="flex items-center gap-3 pl-4 py-3 text-sm text-white/70 border-b border-white/5 hover:text-[#00B4B4] transition-colors">
               <svg className="w-4 h-4 text-[#00B4B4]/60" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" /></svg>
               Peptide Pens
+            </Link>
+            <Link to="/nasal-sprays" className="flex items-center gap-3 pl-4 py-3 text-sm text-white/70 border-b border-white/5 hover:text-[#00B4B4] transition-colors">
+              <svg className="w-4 h-4 text-[#00B4B4]/60" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 10h6v10.5a1.5 1.5 0 01-1.5 1.5h-3A1.5 1.5 0 019 20.5V10zM10.5 10V7.5h3V10M11 7.5V3.5h2v4M16.5 4.5l2-1M16.5 6.5h2.25M16.5 8.5l2 1" /></svg>
+              Nasal Sprays
             </Link>
             <Link to="/stacks" className="flex items-center gap-3 pl-4 py-3 text-sm text-white/70 border-b border-white/5 hover:text-[#00B4B4] transition-colors">
               <svg className="w-4 h-4 text-[#00B4B4]/60" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0l4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0l-5.571 3-5.571-3" /></svg>
