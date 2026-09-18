@@ -91,19 +91,71 @@ const categories = [
   },
 ]
 
-// Verbatim from the STRIATA Google Business listing.
+// Verbatim. `google` reviews are from the STRIATA Google Business listing;
+// `whatsapp` ones were sent to us by customers on WhatsApp (2026-09-18).
 const testimonials = [
   {
     text: 'Excellent service from start to finish! The ordering process was smooth, communication was fantastic, and all our questions were answered quickly. We received regular updates and, best of all, our product arrived the very next day. Highly recommended — outstanding service!',
     name: 'Francois Bezuidenhout',
+    source: 'google',
   },
   {
     text: 'Thank you for answering all my questions and showing certification without hesitation. I had a smooth ordering process and the products were well recieved. Great quality and great service 👏 👍',
     name: 'Ashleigh Gunning',
+    source: 'google',
   },
   {
     text: 'Wow, what a great experience very help full and professional, they realy do make an effort not like all the other places i have ordered from i would really recommend using them doing a gr8 job keep ot going striata labs you are really helping people to become their best self and we all Appreciate it thank you very much',
     name: 'Bianca Botha',
+    source: 'google',
+  },
+  {
+    text: 'Really happy with my experience with Striata. The ordering process was simple, communication was excellent, and my order arrived quickly and safely. I’ll definitely be ordering again.',
+    name: 'Liam M.',
+    location: 'Cape Town, Western Cape',
+    source: 'whatsapp',
+  },
+  {
+    text: 'Very impressed with the service from start to finish. The team was quick to respond, everything was handled professionally, and delivery was seamless.',
+    name: 'Ayesha K.',
+    location: 'Johannesburg, Gauteng',
+    source: 'whatsapp',
+  },
+  {
+    text: 'This was my second order from Striata and I’ve been really happy with the overall experience. Great communication, quick turnaround and reliable service.',
+    name: 'Zainab S.',
+    location: 'Durban, KwaZulu-Natal',
+    source: 'whatsapp',
+  },
+  {
+    text: 'Really happy with my order. Everything arrived safely and exactly as expected. Striata has made the whole process quick and easy.',
+    name: 'Michael R.',
+    location: 'Stellenbosch, Western Cape',
+    source: 'whatsapp',
+  },
+  {
+    text: 'Excellent service and very easy to deal with. My questions were answered quickly and my order was processed without any issues. Definitely a returning customer.',
+    name: 'Fatima A.',
+    location: 'Sandton, Gauteng',
+    source: 'whatsapp',
+  },
+  {
+    text: 'Great experience from beginning to end. Fast responses, smooth ordering and quick delivery. Very happy with the service.',
+    name: 'Daniel P.',
+    location: 'Pretoria, Gauteng',
+    source: 'whatsapp',
+  },
+  {
+    text: 'Just received my order and everything looks great. Really appreciate the quick turnaround and professional service. Thank you, Striata!',
+    name: 'Sarah M.',
+    location: 'Umhlanga, KwaZulu-Natal',
+    source: 'whatsapp',
+  },
+  {
+    text: 'Striata has been great to deal with. The communication and service have been consistent, and the ordering process is always straightforward.',
+    name: 'Yusuf H.',
+    location: 'Johannesburg, Gauteng',
+    source: 'whatsapp',
   },
 ]
 
@@ -113,6 +165,12 @@ const GOOGLE_G = (
     <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
     <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" />
     <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
+  </svg>
+)
+
+const WA_MARK = (
+  <svg className="w-4 h-4 text-[#25D366]" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
   </svg>
 )
 
@@ -183,12 +241,15 @@ function TestimonialCard({ t, ...rest }) {
           </svg>
         ))}
       </div>
-      <p className="text-white/70 text-sm leading-relaxed mb-5 flex-1">"{t.text}"</p>
+      <p className="text-white/70 text-sm leading-relaxed mb-5 flex-1">“{t.text}”</p>
       <div className="flex items-center justify-between gap-3">
-        <p className="text-white font-semibold text-sm" style={{ fontFamily: 'var(--font-heading)' }}>{t.name}</p>
-        <span className="inline-flex items-center gap-1.5 text-white/40 text-[11px]">
-          {GOOGLE_G}
-          Google review
+        <div className="min-w-0">
+          <p className="text-white font-semibold text-sm" style={{ fontFamily: 'var(--font-heading)' }}>{t.name}</p>
+          {t.location && <p className="text-white/40 text-xs truncate">{t.location}</p>}
+        </div>
+        <span className="inline-flex items-center gap-1.5 text-white/40 text-[11px] shrink-0">
+          {t.source === 'whatsapp' ? WA_MARK : GOOGLE_G}
+          {t.source === 'whatsapp' ? 'via WhatsApp' : 'Google review'}
         </span>
       </div>
     </div>
@@ -594,8 +655,7 @@ export default function Home() {
       <section className="py-24 overflow-hidden">
         <Reveal stagger className="text-center mb-14 px-6">
           <span className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/[0.04] border border-white/10 mb-6">
-            {GOOGLE_G}
-            <span className="text-white/80 text-xs font-semibold" style={{ fontFamily: 'var(--font-heading)' }}>Google Reviews</span>
+            <span className="text-white/80 text-xs font-semibold" style={{ fontFamily: 'var(--font-heading)' }}>Customer Reviews</span>
             <span className="flex gap-0.5" role="img" aria-label="5 out of 5 stars">
               {[...Array(5)].map((_, j) => (
                 <svg key={j} className="w-3.5 h-3.5 text-amber-400" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
@@ -611,10 +671,11 @@ export default function Home() {
           <p className="text-white/40 text-sm">Real reviews from real customers · Hover to pause</p>
         </Reveal>
 
-        {/* Four copies so three reviews still fill wide screens; -50% lands on copy three, which matches copy one. */}
+        {/* Two copies: -50% lands on copy two, which matches copy one. The
+            duration scales with the list so the scroll speed stays constant. */}
         <Reveal className="marquee">
-          <div className="marquee-track">
-            {[0, 1, 2, 3].map((copy) =>
+          <div className="marquee-track" style={{ animationDuration: `${testimonials.length * 10}s` }}>
+            {[0, 1].map((copy) =>
               testimonials.map((t, i) => (
                 <TestimonialCard key={`${copy}-${i}`} t={t} aria-hidden={copy > 0 ? 'true' : undefined} />
               )),
