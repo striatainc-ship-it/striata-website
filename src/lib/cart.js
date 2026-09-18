@@ -41,7 +41,7 @@ function newReference() {
   return `STR-${ref}`
 }
 
-const EMPTY = Object.freeze({ lines: [], reference: null, name: '', deliverTo: '', note: '', open: false, pulse: 0 })
+const EMPTY = Object.freeze({ lines: [], reference: null, name: '', deliverTo: '', note: '', delivery: 'standard', open: false, pulse: 0 })
 
 let state = EMPTY
 let loaded = false
@@ -60,6 +60,7 @@ function load() {
         name: saved.name ?? '',
         deliverTo: saved.deliverTo ?? '',
         note: saved.note ?? '',
+        delivery: saved.delivery === 'express' ? 'express' : 'standard',
       }
     }
   } catch {
@@ -69,8 +70,8 @@ function load() {
 
 function persist() {
   try {
-    const { lines, reference, name, deliverTo, note } = state
-    window.localStorage.setItem(STORAGE_KEY, JSON.stringify({ lines, reference, name, deliverTo, note }))
+    const { lines, reference, name, deliverTo, note, delivery } = state
+    window.localStorage.setItem(STORAGE_KEY, JSON.stringify({ lines, reference, name, deliverTo, note, delivery }))
   } catch {
     // Not remembered this time; the slip still works for this visit.
   }
@@ -120,6 +121,9 @@ export function lineFor(product, tier, { format, href = null, image = null, deta
     href,
     image,
     detail,
+    // Products whose own page promises free delivery (the serum, the
+    // Menopause Reset) carry the promise onto the slip.
+    freeShipping: product.freeShipping === true,
   }
 }
 
@@ -167,6 +171,47 @@ export const orderable = (lines) => lines.filter((l) => l.inStock)
 export const toCheck = (lines) => lines.filter((l) => !l.inStock)
 export const subtotal = (lines) => orderable(lines).reduce((sum, l) => sum + l.price * l.qty, 0)
 
+/**
+ * Delivery, as the business charges it (confirmed 2026-09-18):
+ * standard R150 or express R200, the customer's choice; any order with a pen
+ * goes cold-chain express at R220, because pens ship with ice packs and
+ * insulation so the peptide doesn't degrade. One parcel, one fee.
+ */
+export const DELIVERY_OPTIONS = {
+  standard: { id: 'standard', label: 'Standard delivery', price: 150 },
+  express: { id: 'express', label: 'Express delivery', price: 200 },
+}
+export const COLD_CHAIN = {
+  id: 'cold',
+  label: 'Cold-chain express',
+  price: 220,
+  note: 'Pens ship express with ice packs and insulation so the peptide doesn’t degrade.',
+}
+
+/**
+ * The delivery that applies to this slip, or null when nothing on it is
+ * priced yet (an availability question has nothing to deliver). `locked`
+ * means the customer has no choice to make.
+ *
+ * Free delivery applies only when everything priced on the slip was sold with
+ * it; add a vial to a serum order and the parcel is charged like any other.
+ */
+export function deliveryFor({ lines, delivery }) {
+  const ready = orderable(lines)
+  if (!ready.length) return null
+  if (ready.some((l) => l.format === 'Pen')) return { ...COLD_CHAIN, locked: true }
+  if (ready.every((l) => l.freeShipping)) {
+    return { id: 'free', label: 'Free delivery', price: 0, locked: true, note: 'Included with this order.' }
+  }
+  return { ...(DELIVERY_OPTIONS[delivery] ?? DELIVERY_OPTIONS.standard), locked: false }
+}
+
+export const orderTotal = (slip) => subtotal(slip.lines) + (deliveryFor(slip)?.price ?? 0)
+
+export function setDelivery(id) {
+  if (DELIVERY_OPTIONS[id]) set({ delivery: id })
+}
+
 const rand = (n) => `R ${n.toLocaleString('en-ZA')}`
 
 /**
@@ -177,7 +222,8 @@ const rand = (n) => `R ${n.toLocaleString('en-ZA')}`
  * are not holding are listed separately as an availability question, because
  * they need a different reply and must not be in a total someone pays.
  */
-export function orderMessage({ lines, reference, name, deliverTo, note }) {
+export function orderMessage(slip) {
+  const { lines, reference, name, deliverTo, note } = slip
   const ready = orderable(lines)
   const check = toCheck(lines)
   const out = [`Hi STRIATA, I'd like to place an order.`, '', `*Order ${reference ?? ''}*`.trim()]
@@ -188,7 +234,13 @@ export function orderMessage({ lines, reference, name, deliverTo, note }) {
       out.push(`${l.qty} × ${l.name} (${l.format}, ${l.dose}) — ${rand(l.price * l.qty)}`)
       if (l.detail) out.push(`    ${l.detail}`)
     }
-    out.push('', `*Subtotal: ${rand(subtotal(lines))}* (before delivery)`)
+    const delivery = deliveryFor(slip)
+    out.push(
+      '',
+      `Subtotal: ${rand(subtotal(lines))}`,
+      `${delivery.label}: ${delivery.price ? rand(delivery.price) : 'free'}`,
+      `*Total: ${rand(orderTotal(slip))}*`,
+    )
   }
   if (check.length) {
     out.push('', ready.length ? '*Please also check availability of:*' : '*Please check availability of:*')
@@ -201,7 +253,7 @@ export function orderMessage({ lines, reference, name, deliverTo, note }) {
   const details = [name.trim() && `Name: ${name.trim()}`, deliverTo.trim() && `Deliver to: ${deliverTo.trim()}`, note.trim() && `Note: ${note.trim()}`].filter(Boolean)
   if (details.length) out.push('', ...details)
 
-  out.push('', ready.length ? 'Please send me payment and delivery details.' : 'Thank you.')
+  out.push('', ready.length ? 'Please send me payment details.' : 'Thank you.')
   return out.join('\n')
 }
 
@@ -212,7 +264,8 @@ export function orderLink(slip) {
 export function trackOrderSent(slip) {
   trackEvent('begin_checkout', {
     currency: 'ZAR',
-    value: subtotal(slip.lines),
+    value: orderTotal(slip),
+    shipping: deliveryFor(slip)?.price ?? 0,
     transaction_id: slip.reference,
     items: slip.lines.map((l) => ({ item_name: l.name, item_variant: `${l.format} ${l.dose}`, price: l.price, quantity: l.qty })),
   })

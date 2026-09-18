@@ -12,6 +12,10 @@ import {
   orderable,
   toCheck,
   subtotal,
+  deliveryFor,
+  orderTotal,
+  setDelivery,
+  DELIVERY_OPTIONS,
   orderMessage,
   orderLink,
   trackOrderSent,
@@ -175,6 +179,53 @@ function Line({ line }) {
         </div>
       </div>
     </li>
+  )
+}
+
+/**
+ * How the parcel ships. A choice between standard and express, unless the
+ * slip settles it: pens force cold-chain express, and an order made only of
+ * free-delivery products ships free.
+ */
+function Delivery({ slip }) {
+  const delivery = deliveryFor(slip)
+  if (!delivery) return null
+
+  if (delivery.locked) {
+    return (
+      <div className="mt-5 rounded-xl border border-[#0A1628]/12 px-4 py-3">
+        <div className="flex items-baseline justify-between gap-3">
+          <p className="text-sm font-bold" style={H}>{delivery.label}</p>
+          <p className="text-sm font-bold tabular-nums">{delivery.price ? rand(delivery.price) : 'Free'}</p>
+        </div>
+        <p className="text-xs text-[#0A1628]/55 mt-0.5">{delivery.note}</p>
+      </div>
+    )
+  }
+
+  return (
+    <fieldset className="mt-5">
+      <legend className="text-xs text-[#0A1628]/55 mb-2">Delivery</legend>
+      <div className="grid grid-cols-2 gap-2">
+        {Object.values(DELIVERY_OPTIONS).map((option) => {
+          const active = delivery.id === option.id
+          return (
+            <button
+              key={option.id}
+              type="button"
+              onClick={() => setDelivery(option.id)}
+              aria-pressed={active}
+              className={`text-left rounded-xl px-3.5 py-2.5 border transition-colors cursor-pointer ${
+                active ? 'border-[#0A1628] bg-[#0A1628] text-white' : 'border-[#0A1628]/15 hover:border-[#0A1628]/40'
+              }`}
+            >
+              <span className="block text-sm font-bold" style={H}>{option.id === 'standard' ? 'Standard' : 'Express'}</span>
+              <span className={`block text-xs tabular-nums ${active ? 'text-white/70' : 'text-[#0A1628]/55'}`}>{rand(option.price)}</span>
+            </button>
+          )
+        })}
+      </div>
+    </fieldset>
   )
 }
 
@@ -356,6 +407,8 @@ export default function OrderSlip() {
                 </div>
               )}
 
+              <Delivery slip={slip} />
+
               <div className="mt-6 flex flex-col gap-4">
                 <Field label="Your name (optional)" value={name} onChange={(v) => setDetails({ name: v })} placeholder="So we know who we're talking to" />
                 <Field label="Deliver to (optional)" value={deliverTo} onChange={(v) => setDetails({ deliverTo: v })} placeholder="Town or suburb" />
@@ -384,15 +437,23 @@ export default function OrderSlip() {
             {/* Totals and send, pinned to the foot of the slip */}
             <div className="px-6 pt-4 pb-6 border-t border-dashed border-[#0A1628]/20">
               {ready.length > 0 && (
-                <div className="flex items-baseline justify-between mb-1">
-                  <span className="text-sm text-[#0A1628]/65">Subtotal</span>
-                  <span className="text-2xl font-black tabular-nums" style={H}>
-                    {rand(total)}
-                  </span>
-                </div>
+                <dl className="mb-3">
+                  <div className="flex justify-between text-sm text-[#0A1628]/65">
+                    <dt>Subtotal</dt>
+                    <dd className="tabular-nums">{rand(total)}</dd>
+                  </div>
+                  <div className="flex justify-between text-sm text-[#0A1628]/65 mt-0.5">
+                    <dt>{deliveryFor(slip).label}</dt>
+                    <dd className="tabular-nums">{deliveryFor(slip).price ? rand(deliveryFor(slip).price) : 'Free'}</dd>
+                  </div>
+                  <div className="flex items-baseline justify-between mt-2">
+                    <dt className="text-sm font-bold" style={H}>Total</dt>
+                    <dd className="text-2xl font-black tabular-nums" style={H}>{rand(orderTotal(slip))}</dd>
+                  </div>
+                </dl>
               )}
               <p className="text-xs text-[#0A1628]/50 mb-4">
-                {ready.length ? 'Delivery is quoted on WhatsApp. Nothing is charged until you pay.' : 'We’ll confirm availability and pricing on WhatsApp.'}
+                {ready.length ? 'Nothing is charged until you pay. We confirm the order on WhatsApp first.' : 'We’ll confirm availability and pricing on WhatsApp.'}
               </p>
               <a
                 href={orderLink(slip)}

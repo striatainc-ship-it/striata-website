@@ -7,7 +7,7 @@ import AddToOrder from '../components/AddToOrder'
 
 // The two ways to buy the protocol, as order-slip lines. The payment plan goes
 // on the slip at its first instalment, since that is what is paid on order.
-const RESET = { id: 'menopause-reset', name: 'The Menopause Reset' }
+const RESET = { id: 'menopause-reset', name: 'The Menopause Reset', freeShipping: true }
 const FULL_KIT = { dose: 'Full 12-week kit', price: 8950, inStock: true }
 const PLAN = { dose: '3-month payment plan', price: 3000, inStock: true }
 

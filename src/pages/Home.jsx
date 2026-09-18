@@ -325,17 +325,14 @@ export default function Home() {
   }, [])
 
   // The hero clip is decorative, so it is attached from here rather than in
-  // the markup: desktop only, and only once the main thread is idle. Served
-  // eagerly it was 2.1 MB — three quarters of the homepage's bytes on a phone
-  // that never shows it well anyway. The poster carries the look until then.
+  // the markup, once the main thread is idle, and the poster carries the look
+  // until then. It was desktop-only while the clip was 2.1 MB; re-encoded to
+  // ~150 KB it costs a phone less than one product photo, so it now plays
+  // everywhere — except for visitors who asked for reduced motion or less data.
   useEffect(() => {
     const video = videoRef.current
     if (!video) return
-    if (
-      !window.matchMedia('(min-width: 768px)').matches ||
-      prefersReducedMotion() ||
-      navigator.connection?.saveData
-    ) return
+    if (prefersReducedMotion() || navigator.connection?.saveData) return
 
     let cancelled = false
     const start = () => {
@@ -347,8 +344,17 @@ export default function Home() {
         source.type = type
         video.appendChild(source)
       }
-      video.playbackRate = 0.5
+      // iOS only autoplays a video it knows is muted, and React sets `muted`
+      // as a property that the prerendered markup does not carry. Set it every
+      // way Safari checks before asking it to play.
+      video.muted = true
+      video.defaultMuted = true
+      video.setAttribute('muted', '')
+      video.setAttribute('playsinline', '')
+      // load() resets playbackRate to defaultPlaybackRate, so set both.
+      video.defaultPlaybackRate = 0.5
       video.load()
+      video.playbackRate = 0.5
       video.play().catch(() => {})
     }
 

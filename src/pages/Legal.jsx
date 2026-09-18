@@ -163,7 +163,7 @@ export default function Legal() {
 
         <Section id="shipping" title="Shipping Policy">
           <Sub title="4.1 Delivery Coverage">
-            STRIATA delivers nationwide across all provinces in South Africa via Courier Guy. Delivery fees are calculated based on your location and order size and will be confirmed with you via WhatsApp before dispatch.
+            STRIATA delivers nationwide across all provinces in South Africa via Courier Guy, at a flat fee per order: R150 for standard delivery and R200 for express delivery. Orders containing a peptide pen are shipped cold-chain express at R220, with ice packs and insulation to protect the product in transit. Products advertised with free delivery ship free when they are the only items on the order. The applicable fee is shown on the order and confirmed with you via WhatsApp before payment.
           </Sub>
           <Sub title="4.2 Delivery Timeframes">
             Standard delivery typically takes 2 to 3 business days from the date of dispatch. Overnight delivery is available on request. Same-day delivery is available for orders placed and confirmed before 11am, subject to location availability. Please confirm same-day eligibility with our team via WhatsApp before placing your order.

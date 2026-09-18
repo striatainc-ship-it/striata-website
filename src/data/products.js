@@ -288,6 +288,8 @@ export const products = [
   {
     id: 91,
     name: 'GHK-Cu Serum (Topical)',
+    // The serum page promises free delivery nationwide; the order slip honours it.
+    freeShipping: true,
     // Already has a full landing page, so the card links there rather than
     // getting a second, thinner page of its own under /catalogue.
     page: '/ghk-serum',

@@ -183,6 +183,10 @@ export default function Pens() {
             </div>
           ))}
         </Reveal>
+        <p className="mt-4 text-white/50 text-xs md:text-sm text-center">
+          Pens ship cold-chain express, with ice packs and insulation so the peptide doesn&rsquo;t degrade in transit:
+          a flat <span className="text-white font-semibold">R 220</span> per order, anywhere in South Africa.
+        </p>
       </section>
 
       {/* Filter Bar */}
