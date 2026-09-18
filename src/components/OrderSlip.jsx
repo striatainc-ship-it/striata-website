@@ -161,6 +161,7 @@ function Line({ line }) {
             <p className="text-[#0A1628]/55 text-xs mt-0.5">
               {line.format}, {line.dose}
             </p>
+            {line.detail && <p className="text-[#0A1628]/45 text-[11px] leading-snug mt-1">{line.detail}</p>}
           </div>
           <p className="text-sm font-bold tabular-nums shrink-0">
             {line.inStock ? rand(line.price * line.qty) : <span className="text-[#0A1628]/45 font-semibold">To confirm</span>}

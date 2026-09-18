@@ -3,6 +3,13 @@ import { Helmet } from 'react-helmet-async'
 import { whatsappLink } from '../data/products'
 import { spotlightProps } from '../lib/motion'
 import Reveal from '../components/Reveal'
+import AddToOrder from '../components/AddToOrder'
+
+// The two ways to buy the protocol, as order-slip lines. The payment plan goes
+// on the slip at its first instalment, since that is what is paid on order.
+const RESET = { id: 'menopause-reset', name: 'The Menopause Reset' }
+const FULL_KIT = { dose: 'Full 12-week kit', price: 8950, inStock: true }
+const PLAN = { dose: '3-month payment plan', price: 3000, inStock: true }
 
 const ENQUIRY_EMAIL = 'info@striatalabs.co.za'
 const WA_MSG = "Hi STRIATA, I'd like to enquire about *The Menopause Reset* 12-week protocol and how to find a practitioner."
@@ -480,10 +487,14 @@ export default function MenopauseReset() {
                 <li className="flex gap-2"><span className="text-[#00B4B4]">{CHECK}</span>The full kit arrives at the start</li>
                 <li className="flex gap-2"><span className="text-[#00B4B4]">{CHECK}</span>Free shipping</li>
               </ul>
-              <a href={WA_HREF} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg w-full">
-                {WA_ICON}
-                Enquire Now
-              </a>
+              <AddToOrder
+                product={RESET}
+                tier={FULL_KIT}
+                format="Protocol"
+                href="/stacks/menopause-reset"
+                detail="Once-off, full kit shipped at the start, free shipping"
+                className="btn btn-primary btn-lg w-full"
+              />
             </div>
 
             <div {...spotlightProps()} className="spot rounded-3xl border border-white/10 bg-[#0d1e35] p-8">
@@ -495,12 +506,24 @@ export default function MenopauseReset() {
                 <li className="flex gap-2"><span className="text-[#00B4B4]">{CHECK}</span>Month 2 at Week 4, Month 3 at Week 8</li>
                 <li className="flex gap-2"><span className="text-[#00B4B4]">{CHECK}</span>Free shipping on every instalment</li>
               </ul>
-              <a href={WA_HREF} target="_blank" rel="noopener noreferrer" className="btn btn-outline btn-lg w-full">
-                {WA_ICON}
-                Ask About the Plan
-              </a>
+              <AddToOrder
+                product={RESET}
+                tier={PLAN}
+                format="Protocol"
+                href="/stacks/menopause-reset"
+                detail="First of 3 instalments (R 3,000 × 3, R 9,000 total)"
+                className="btn btn-outline btn-lg w-full"
+              />
             </div>
           </Reveal>
+
+          <p className="mt-5 max-w-4xl text-sm text-white/55">
+            Questions first?{' '}
+            <a href={WA_HREF} target="_blank" rel="noopener noreferrer" className="text-[#00B4B4] font-semibold hover:underline underline-offset-2">
+              Ask us on WhatsApp
+            </a>
+            .
+          </p>
 
           <Reveal className="mt-5 text-white/40 text-sm max-w-4xl">
             On the payment plan, each month's supply is dispatched when that month's payment clears.

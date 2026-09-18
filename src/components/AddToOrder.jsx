@@ -74,7 +74,9 @@ export default function AddToOrder({
   format,
   href = null,
   imageName = null,
+  detail = null,
   onNeedTier,
+  chooseLabel = 'Choose a size',
   className = 'btn btn-primary btn-lg',
   compact = false,
 }) {
@@ -92,13 +94,13 @@ export default function AddToOrder({
       onNeedTier?.()
       return
     }
-    addLine(lineFor(product, tier, { format, href, image: imageName }))
+    addLine(lineFor(product, tier, { format, href, image: imageName, detail }))
     flyToSlip(ref.current, imageName)
     setAdded(true)
   }
 
   const label = !tier
-    ? 'Choose a size'
+    ? chooseLabel
     : added
       ? 'Added to your slip'
       : tier.inStock

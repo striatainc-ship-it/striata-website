@@ -26,8 +26,11 @@ const STORAGE_KEY = 'striata-order-slip-v1'
  * @typedef {{
  *   key: string, name: string, format: string, dose: string,
  *   price: number, inStock: boolean, qty: number, href: string | null,
- *   image: string | null,
+ *   image: string | null, detail?: string | null,
  * }} Line
+ *
+ * `detail` is what a bundle contains (a stack tier's compounds), printed under
+ * the line on the slip and in the message so we can see what was chosen.
  */
 
 /** STR- plus four characters, skipping the ones that misread (0/O, 1/I/L). */
@@ -104,7 +107,7 @@ export function useCart() {
 }
 
 /** Build a line from a catalogue-shaped product and one of its price tiers. */
-export function lineFor(product, tier, { format, href = null, image = null } = {}) {
+export function lineFor(product, tier, { format, href = null, image = null, detail = null } = {}) {
   const fmt = format ?? product.format ?? 'Vial'
   return {
     key: `${product.id}|${fmt}|${tier.dose}`,
@@ -116,6 +119,7 @@ export function lineFor(product, tier, { format, href = null, image = null } = {
     qty: 1,
     href,
     image,
+    detail,
   }
 }
 
@@ -180,12 +184,18 @@ export function orderMessage({ lines, reference, name, deliverTo, note }) {
 
   if (ready.length) {
     out.push('')
-    for (const l of ready) out.push(`${l.qty} × ${l.name} (${l.format}, ${l.dose}) — ${rand(l.price * l.qty)}`)
+    for (const l of ready) {
+      out.push(`${l.qty} × ${l.name} (${l.format}, ${l.dose}) — ${rand(l.price * l.qty)}`)
+      if (l.detail) out.push(`    ${l.detail}`)
+    }
     out.push('', `*Subtotal: ${rand(subtotal(lines))}* (before delivery)`)
   }
   if (check.length) {
     out.push('', ready.length ? '*Please also check availability of:*' : '*Please check availability of:*')
-    for (const l of check) out.push(`${l.qty} × ${l.name} (${l.format}, ${l.dose})`)
+    for (const l of check) {
+      out.push(`${l.qty} × ${l.name} (${l.format}, ${l.dose})`)
+      if (l.detail) out.push(`    ${l.detail}`)
+    }
   }
 
   const details = [name.trim() && `Name: ${name.trim()}`, deliverTo.trim() && `Deliver to: ${deliverTo.trim()}`, note.trim() && `Note: ${note.trim()}`].filter(Boolean)

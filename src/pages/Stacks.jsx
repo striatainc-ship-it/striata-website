@@ -4,6 +4,12 @@ import { Helmet } from 'react-helmet-async'
 import { spotlightProps } from '../lib/motion'
 import { STACKS, UNIVERSAL_CONTRAINDICATIONS, CATEGORY_META, waLink } from '../data/stacksData'
 import Reveal from '../components/Reveal'
+import AddToOrder from '../components/AddToOrder'
+
+/** 'R 1 150' -> 1150 */
+const randValue = (price) => Number(price.replace(/[^\d]/g, ''))
+
+const stackAnchor = (stack) => stack.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
 
 // ─── Tier colour system ──────────────────────────────────────────────────────
 // Entry = blue (accessible, introductory)
@@ -137,6 +143,9 @@ function TierLegend() {
 // ─── StackCard ────────────────────────────────────────────────────────────────
 function StackCard({ stack }) {
   const meta = CATEGORY_META[stack.category]
+  // Which tier goes on the order slip. Nothing is picked until the customer
+  // chooses: the tiers differ by up to R 2 000, so a default would be a guess.
+  const [selected, setSelected] = useState(null)
   const PHASE_SVG = (
     <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true">
       <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />
@@ -145,7 +154,7 @@ function StackCard({ stack }) {
 
   return (
     <article
-      id={stack.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')}
+      id={stackAnchor(stack)}
       className="rounded-2xl overflow-hidden border border-white/8 bg-[#0d1e35] flex flex-col hover:border-white/15 transition-colors duration-200 scroll-mt-28"
       style={{ borderLeft: `4px solid ${meta.color}` }}
     >
@@ -201,13 +210,27 @@ function StackCard({ stack }) {
 
         {stack.tiers.map((tier) => {
           const ts = TIER_STYLES[tier.label]
+          const isSelected = selected?.label === tier.label
           return (
-            <div
+            <button
               key={tier.label}
-              className="grid grid-cols-[1fr_2.5fr_1fr] px-4 py-3 border-t border-white/5"
-              style={{ backgroundColor: ts.bg }}
+              type="button"
+              onClick={() => setSelected(isSelected ? null : tier)}
+              aria-pressed={isSelected}
+              className="w-full text-left grid grid-cols-[1fr_2.5fr_1fr] px-4 py-3 border-t border-white/5 cursor-pointer transition-shadow"
+              style={{
+                backgroundColor: ts.bg,
+                boxShadow: isSelected ? `inset 0 0 0 2px ${ts.label}` : undefined,
+              }}
             >
-              <span className="text-xs font-bold uppercase tracking-wide" style={{ color: ts.label }}>
+              <span className="text-xs font-bold uppercase tracking-wide inline-flex items-center gap-1.5" style={{ color: ts.label }}>
+                <span
+                  className="w-3 h-3 rounded-full border shrink-0 grid place-items-center"
+                  style={{ borderColor: ts.label }}
+                  aria-hidden="true"
+                >
+                  {isSelected && <span className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: ts.label }} />}
+                </span>
                 {tier.label}
               </span>
               <span className="text-xs leading-snug pr-2" style={{ color: ts.text }}>
@@ -216,9 +239,12 @@ function StackCard({ stack }) {
               <span className="text-xs font-mono font-bold text-right" style={{ color: ts.price }}>
                 {tier.price}
               </span>
-            </div>
+            </button>
           )
         })}
+        <p className="px-4 py-2 text-[11px] text-white/35 border-t border-white/5">
+          {selected ? `${selected.label} tier selected` : 'Tap a tier to choose it'}
+        </p>
       </div>
 
       {/* ── Safety note ── */}
@@ -261,20 +287,28 @@ function StackCard({ stack }) {
         ))}
       </div>
 
-      {/* ── WhatsApp CTA ── */}
-      <div className="p-4 mt-auto">
+      {/* ── Add to order, or ask about the stack ── */}
+      <div className="p-4 mt-auto flex gap-2">
+        <AddToOrder
+          product={{ id: `stack-${stack.num}`, name: stack.name }}
+          tier={selected && { dose: `${selected.label} tier`, price: randValue(selected.price), inStock: true }}
+          format="Stack"
+          href={`/stacks#${stackAnchor(stack)}`}
+          detail={selected?.products ?? null}
+          chooseLabel="Choose a tier above"
+          className={`flex-1 flex items-center justify-center py-3.5 rounded-xl font-bold text-sm transition-colors cursor-pointer ${
+            selected ? 'bg-[#00B4B4] hover:bg-[#009999] text-white' : 'bg-[#00B4B4]/12 text-[#00B4B4] hover:bg-[#00B4B4]/20'
+          }`}
+        />
         <a
           href={waLink(stack.name)}
           target="_blank"
           rel="noopener noreferrer"
-          aria-label={`Enquire about ${stack.name} on WhatsApp`}
-          className="flex items-center justify-center gap-2.5 w-full py-3.5 rounded-xl font-bold text-sm text-white transition-all duration-200 cursor-pointer"
-          style={{ backgroundColor: '#00B4B4' }}
-          onMouseEnter={(e) => { e.currentTarget.style.backgroundColor = '#009999' }}
-          onMouseLeave={(e) => { e.currentTarget.style.backgroundColor = '#00B4B4' }}
+          aria-label={`Ask about ${stack.name} on WhatsApp`}
+          title="Ask about this stack on WhatsApp"
+          className="w-12 shrink-0 grid place-items-center rounded-xl border border-white/12 text-white/60 hover:text-white hover:border-[#25D366]/60 hover:bg-[#25D366]/10 transition-colors"
         >
           {WA_SVG}
-          Enquire on WhatsApp — {stack.name}
         </a>
       </div>
     </article>
