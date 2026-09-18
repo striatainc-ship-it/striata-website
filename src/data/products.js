@@ -1125,10 +1125,14 @@ export const productBySlug = (slug) => pagedProducts.find((product) => product.s
  */
 export const vialImage = (product) => {
   if (!product.photos?.length) return null
+  // `imageName` lets a non-vial format (the nasal sprays) keep its compound's
+  // slug for linking while emitting its own files.
+  const base = product.imageName ?? product.slug
   return {
-    slug: product.slug,
+    slug: base,
     files: product.photos,
-    names: product.photos.map((_, i) => (i === 0 ? product.slug : `${product.slug}-${i + 1}`)),
+    sourceDir: product.photoDir ?? 'vials',
+    names: product.photos.map((_, i) => (i === 0 ? base : `${base}-${i + 1}`)),
     labels: product.photoLabels ?? null,
   }
 }

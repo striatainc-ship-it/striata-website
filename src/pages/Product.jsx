@@ -13,12 +13,15 @@ import {
   whatsappLink,
 } from '../data/products'
 import { contentFor } from '../data/productContent'
+import { nasalSprays } from '../data/nasalSpraysData'
 import { guideFor } from '../data/productGuides'
 import { blogPosts } from '../data/blogPosts'
 import { SITE_URL, DEFAULT_IMAGE } from '../data/site'
 import { spotlightProps } from '../lib/motion'
 import Reveal from '../components/Reveal'
 import JsonLd from '../components/JsonLd'
+import VialShot from '../components/VialShot'
+import FaqItem from '../components/FaqItem'
 
 const H = { fontFamily: 'var(--font-heading)' }
 
@@ -45,118 +48,6 @@ function waLink(product, tier) {
       ? `Hi STRIATA, I'd like to order *${label}* — ${tier.dose} @ ${rand(tier.price)}. Please send me payment details.`
       : `Hi STRIATA, I'm interested in *${label}* — ${tier.dose} @ ${rand(tier.price)}. Is it currently available or when will it be back in stock?`
   return `${whatsappLink}?text=${encodeURIComponent(message)}`
-}
-
-/**
- * The vial, cut out of its studio background, on a soft teal stage.
- *
- * A product with more than one shot (bacteriostatic water is photographed in
- * both its sizes) gets thumbnails under the stage. The first shot is the one
- * structured data and the social card use, so the switcher is presentation
- * only and nothing downstream depends on which is showing.
- */
-function VialShot({ image, alt, labels, priority }) {
-  const [active, setActive] = useState(0)
-
-  if (!image) {
-    return (
-      <div className="aspect-[4/5] rounded-3xl border border-white/8 bg-[#0d1e35] grid place-items-center">
-        <span className="text-white/25 text-sm">Photography coming soon</span>
-      </div>
-    )
-  }
-
-  const { names } = image
-  const name = names[active] ?? names[0]
-  const caption = labels?.[active]
-
-  return (
-    <div>
-      <div className="relative aspect-[4/5]">
-        {/* A radial wash behind the glass so the vial reads as lit rather than
-            pasted onto the navy. */}
-        <div
-          className="absolute inset-[8%] rounded-full blur-3xl opacity-60"
-          style={{ background: 'radial-gradient(circle, rgba(0,180,180,0.22), transparent 68%)' }}
-        />
-        <img
-          key={name}
-          src={vialSrc(name, 960)}
-          srcSet={`${vialSrc(name, 320)} 320w, ${vialSrc(name, 640)} 640w, ${vialSrc(name, 960)} 960w`}
-          sizes="(min-width: 1024px) 360px, 55vw"
-          alt={caption ? `${alt} — ${caption}` : alt}
-          width={960}
-          height={1920}
-          loading={priority ? 'eager' : 'lazy'}
-          fetchPriority={priority ? 'high' : undefined}
-          decoding="async"
-          className="relative w-full h-full object-contain drop-shadow-2xl"
-        />
-      </div>
-
-      {names.length > 1 && (
-        <div className="flex justify-center gap-2 mt-4">
-          {names.map((shot, i) => (
-            <button
-              key={shot}
-              type="button"
-              onClick={() => setActive(i)}
-              aria-pressed={i === active}
-              className={`flex flex-col items-center gap-1 px-3 py-2 rounded-xl border transition-colors ${
-                i === active
-                  ? 'border-[#00B4B4]/60 bg-[#00B4B4]/10'
-                  : 'border-white/8 bg-white/[0.03] hover:border-white/20'
-              }`}
-            >
-              <img
-                src={vialSrc(shot, 160)}
-                alt=""
-                width={160}
-                height={320}
-                loading="lazy"
-                decoding="async"
-                className="w-5 h-10 object-contain"
-              />
-              {labels?.[i] && (
-                <span className={`text-[10px] font-mono ${i === active ? 'text-[#00B4B4]' : 'text-white/40'}`}>
-                  {labels[i]}
-                </span>
-              )}
-            </button>
-          ))}
-        </div>
-      )}
-    </div>
-  )
-}
-
-function FaqItem({ q, a }) {
-  const [open, setOpen] = useState(false)
-  return (
-    <div className="border-b border-white/8 last:border-0">
-      <button
-        type="button"
-        onClick={() => setOpen((o) => !o)}
-        aria-expanded={open}
-        className="w-full flex items-center justify-between gap-4 py-5 text-left cursor-pointer group"
-      >
-        <span className="text-white font-semibold group-hover:text-[#00B4B4] transition-colors" style={H}>
-          {q}
-        </span>
-        <svg
-          className={`w-4 h-4 shrink-0 text-[#00B4B4] transition-transform duration-200 ${open ? 'rotate-45' : ''}`}
-          fill="none"
-          stroke="currentColor"
-          strokeWidth={2.5}
-          viewBox="0 0 24 24"
-          aria-hidden="true"
-        >
-          <path strokeLinecap="round" d="M12 4.5v15m7.5-7.5h-15" />
-        </svg>
-      </button>
-      {open && <p className="text-white/55 text-sm leading-relaxed pb-5 -mt-1 max-w-2xl">{a}</p>}
-    </div>
-  )
 }
 
 export default function Product() {
@@ -193,6 +84,7 @@ function ProductPage({ product }) {
   const image = vialImage(product)
   const inStock = isInStock(product)
   const guide = guideFor(product)
+  const spray = nasalSprays.find((s) => s.productId === product.id) ?? null
   const url = `${SITE_URL}${productPath(product)}`
 
   const prices = product.prices ?? []
@@ -418,6 +310,17 @@ function ProductPage({ product }) {
                   Reconstitution calculator
                 </Link>
               </div>
+
+              {spray && (
+                <Link
+                  to={spray.page}
+                  className="mt-4 inline-flex items-center gap-2 text-sm text-white/55 hover:text-[#00B4B4] transition-colors"
+                >
+                  <span className="text-[#00B4B4] font-semibold">Also as a nasal spray</span>
+                  <span className="text-white/35">· {spray.prices[0].dose}, ready to use, {rand(spray.prices[0].price)}</span>
+                  <span aria-hidden="true">→</span>
+                </Link>
+              )}
             </div>
           </div>
         </div>

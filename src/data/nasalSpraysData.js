@@ -1,4 +1,4 @@
-import { products } from './products'
+import { products } from './products.js'
 
 /**
  * Nasal sprays — catalogue compounds in a 10 ml amber nasal spray bottle.
@@ -8,11 +8,13 @@ import { products } from './products'
  * here is spray-specific: the positioning, the amount per bottle, the price and
  * the write-up. Copy and prices come from the brief in
  * `Website Content/Nasal Sprays/`. Every spray listed is a current stock line.
+ * `photo` names the master in assets-source/sprays (see scripts/vials.mjs).
  */
 const SPRAYS = [
   {
     productId: 61,
     anchor: 'semax',
+    photo: 'Semax',
     name: 'Semax',
     positioning: 'Focus & Cognition',
     amount: '5mg',
@@ -26,6 +28,7 @@ const SPRAYS = [
   {
     productId: 60,
     anchor: 'selank',
+    photo: 'Selank',
     name: 'Selank',
     positioning: 'Calm & Resilience',
     amount: '5mg',
@@ -39,6 +42,7 @@ const SPRAYS = [
   {
     productId: 40,
     anchor: 'oxytocin',
+    photo: 'Oxytocin',
     name: 'Oxytocin',
     positioning: 'Connection & Mood',
     amount: '5mg',
@@ -52,6 +56,7 @@ const SPRAYS = [
   {
     productId: 62,
     anchor: 'dsip',
+    photo: 'DSIP',
     name: 'DSIP',
     positioning: 'Deep Sleep',
     amount: '5mg',
@@ -65,6 +70,7 @@ const SPRAYS = [
   {
     productId: 85,
     anchor: 'adamax',
+    photo: 'Adamax',
     name: 'Adamax',
     positioning: 'Libido & Drive',
     amount: '10mg',
@@ -78,6 +84,7 @@ const SPRAYS = [
   {
     productId: 34,
     anchor: 'pt-141',
+    photo: 'PT141',
     name: 'PT-141',
     positioning: 'Sexual Wellness',
     amount: '10mg',
@@ -91,6 +98,7 @@ const SPRAYS = [
   {
     productId: 68,
     anchor: 'nad-plus',
+    photo: 'NAD',
     name: 'NAD+',
     positioning: 'Energy & Longevity',
     amount: '500mg',
@@ -104,6 +112,7 @@ const SPRAYS = [
   {
     productId: 73,
     anchor: 'vip',
+    photo: 'VIP',
     name: 'VIP',
     positioning: 'Recovery & Healing',
     amount: '5mg',
@@ -118,27 +127,59 @@ const SPRAYS = [
 
 const byId = new Map(products.map((p) => [p.id, p]))
 
-// Resolved sprays, shaped like catalogue products so ProductCard can render
-// them. `page` sends the card's "Full details" link to the write-up on the
-// sprays page; `compoundPath` is the vial compound's own page.
-export const nasalSprays = SPRAYS.map(({ productId, anchor, name, positioning, amount, price, description, writeup }) => {
+/**
+ * Volume of one actuation of the pump, in mL. 0.1 mL is the standard metered
+ * nasal pump; every "per spray" figure on the site is derived from it, so if
+ * the bottles turn out to use a different pump, this is the one line to change.
+ */
+export const SPRAY_ML = 0.1
+const BOTTLE_ML = 10
+
+/** '500mg' -> 500 */
+const mgOf = (amount) => Number.parseFloat(amount)
+
+/** 0.05 -> '50mcg', 5 -> '5mg' */
+export const formatMass = (mg) =>
+  mg < 1 ? `${Math.round(mg * 1000)}mcg` : `${Number.isInteger(mg) ? mg : mg.toFixed(1)}mg`
+
+// Resolved sprays, shaped like catalogue products so ProductCard and the
+// product-page pieces can render them. Each spray has its own page at
+// /nasal-sprays/<slug>; `compoundPath` is the vial compound's page.
+export const nasalSprays = SPRAYS.map(({ productId, anchor, photo, name, positioning, amount, price, description, writeup }) => {
   const base = byId.get(productId)
   if (!base) throw new Error(`nasalSpraysData: no catalogue product with id ${productId}`)
+  const mg = mgOf(amount)
   return {
     ...base,
     id: `spray-${productId}`,
+    productId,
     name,
     format: 'Nasal Spray',
-    // A vial photo on a spray card would be a picture of the wrong product.
-    photos: undefined,
+    slug: anchor,
+    // The bottle shot, not the vial's: emitted by scripts/vials.mjs from
+    // assets-source/sprays under its own name so it never collides with the
+    // vial's files.
+    photos: [photo],
+    photoLabels: undefined,
+    photoDir: 'sprays',
+    imageName: `${anchor}-nasal-spray`,
     featured: false,
     description,
     tags: [positioning],
     positioning,
     anchor,
     writeup,
-    page: `/nasal-sprays#${anchor}`,
+    amount,
+    page: `/nasal-sprays/${anchor}`,
     compoundPath: base.slug ? `/catalogue/${base.slug}` : null,
     prices: [{ dose: `10ml · ${amount}`, price, inStock: true }],
+    dosing: {
+      bottleMl: BOTTLE_ML,
+      perMl: mg / BOTTLE_ML,
+      perSpray: (mg / BOTTLE_ML) * SPRAY_ML,
+      spraysPerBottle: Math.round(BOTTLE_ML / SPRAY_ML),
+    },
   }
 })
+
+export const nasalSprayBySlug = (slug) => nasalSprays.find((s) => s.slug === slug) ?? null

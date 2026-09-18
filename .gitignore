@@ -30,3 +30,6 @@ docs/
 # Vial product masters: the originals live in ../assets/Vial Images/ (OneDrive).
 # 100 MB of 2048px PNGs; only the optimised output in public/assets/opt/vials is committed.
 assets-source/vials/
+
+# Nasal spray masters: originals in ../assets/Nasal Spray Images/ (OneDrive).
+assets-source/sprays/

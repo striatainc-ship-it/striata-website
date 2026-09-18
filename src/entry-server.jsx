@@ -9,6 +9,7 @@ import { blogPosts } from './data/blogPosts'
 import { guides } from './data/guidesData'
 import { quizResultPaths } from './data/quizProtocols'
 import { categories, pagedProducts, productPath } from './data/products'
+import { nasalSprays } from './data/nasalSpraysData'
 
 /**
  * Import every route component up front.
@@ -72,6 +73,8 @@ export function getRoutes() {
       priority: '0.8',
       changefreq: 'weekly',
     })),
+    // One page per nasal spray, beside the vial page for the same compound.
+    ...nasalSprays.map(spray => ({ path: spray.page, priority: '0.8', changefreq: 'weekly' })),
     // Prerendered so shared result links open instantly, but `sitemap: false`
     // keeps them out of sitemap.xml: they carry noindex (see QuizResult.jsx).
     ...quizResultPaths.map(path => ({ path, priority: '0.7', changefreq: 'monthly', sitemap: false })),

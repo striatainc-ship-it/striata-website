@@ -20,6 +20,7 @@ export const loaders = {
   '/stacks/menopause-reset': () => import('./pages/MenopauseReset'),
   '/pens': () => import('./pages/Pens'),
   '/nasal-sprays': () => import('./pages/NasalSprays'),
+  '/nasal-sprays/:slug': () => import('./pages/NasalSpray'),
   '/ghk-serum': () => import('./pages/GhkSerum'),
   '/tools': () => import('./pages/Tools'),
   '/tools/reconstitution-calculator': () => import('./pages/ReconstitutionCalculatorPage'),
@@ -45,6 +46,7 @@ function matchLoader(pathname) {
   if (path.startsWith('/learn/')) return '/learn/:slug'
   if (path.startsWith('/guides/')) return '/guides/:slug'
   if (path.startsWith('/quiz/result/')) return '/quiz/result/:slug'
+  if (path.startsWith('/nasal-sprays/')) return '/nasal-sprays/:slug'
   // Checked after the exact match above, so /catalogue itself is unaffected.
   if (path.startsWith('/catalogue/')) return '/catalogue/:slug'
 

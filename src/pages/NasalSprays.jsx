@@ -1,11 +1,13 @@
 import { useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
-import { whatsappLink } from '../data/products'
-import { nasalSprays } from '../data/nasalSpraysData'
+import { whatsappLink, vialImage, vialSrc, vialStill } from '../data/products'
+import { nasalSprays, formatMass, SPRAY_ML } from '../data/nasalSpraysData'
+import { SITE_URL } from '../data/site'
 import ProductCard from '../components/ProductCard'
 import JsonLd from '../components/JsonLd'
 import Reveal from '../components/Reveal'
+import FaqItem from '../components/FaqItem'
 import { useStaggerGrid, spotlightProps } from '../lib/motion'
 
 const WA_ICON = (
@@ -44,6 +46,33 @@ const BENEFITS = [
   },
 ]
 
+/**
+ * Questions about the format itself. The per-compound questions live on each
+ * spray's page; these are the ones people ask before they have picked one.
+ */
+const FAQS = [
+  {
+    q: 'Why take a peptide through the nose?',
+    a: 'The upper nasal cavity sits directly under the brain, and the olfactory and trigeminal nerves that run through it give peptides a route toward the central nervous system that skips the gut, which would digest them. That is why several of these compounds, Semax, Selank and oxytocin especially, were researched intranasally in the first place.',
+  },
+  {
+    q: 'Do I need to mix anything?',
+    a: 'No. Every spray arrives in solution and ready to use. There is no bacteriostatic water, no syringe and no concentration arithmetic, which is the main reason people choose a spray over a vial.',
+  },
+  {
+    q: 'How much is in each spray?',
+    a: `A standard metered pump delivers about ${SPRAY_ML} mL a spray, so a 10ml bottle gives roughly ${Math.round(10 / SPRAY_ML)} sprays after priming. Each spray page works out the amount per spray for that compound.`,
+  },
+  {
+    q: 'How should I store a spray?',
+    a: 'Upright, capped, and in the fridge once opened. The amber glass keeps light out but not heat, so keep it out of parked cars and sunny windows. Do not freeze it.',
+  },
+  {
+    q: 'Is a spray better than a vial or a pen?',
+    a: 'Not better, just different. A spray is the most convenient and needle-free. A vial is usually the cheapest per milligram but needs reconstituting. A pen gives the most precise dose. Every compound in this range is available in all three.',
+  },
+]
+
 const fmt = (price) => `R ${price.toLocaleString('en-ZA')}`
 
 export default function NasalSprays() {
@@ -72,16 +101,24 @@ export default function NasalSprays() {
             name: `${s.name} Nasal Spray`,
             description: s.description,
             category: s.positioning,
+            url: `${SITE_URL}${s.page}`,
+            ...(vialImage(s) ? { image: `${SITE_URL}${vialStill(vialImage(s).names[0])}` } : {}),
             brand: { '@type': 'Brand', name: 'STRIATA' },
             offers: {
               '@type': 'Offer',
               priceCurrency: 'ZAR',
               price: s.prices[0].price,
               availability: 'https://schema.org/InStock',
-              url: `https://www.striatalabs.co.za/nasal-sprays#${s.anchor}`,
+              url: `${SITE_URL}${s.page}`,
             },
           },
         })),
+      }} />
+
+      <JsonLd data={{
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: FAQS.map((f) => ({ '@type': 'Question', name: f.q, acceptedAnswer: { '@type': 'Answer', text: f.a } })),
       }} />
 
       {/* Hero */}
@@ -138,59 +175,79 @@ export default function NasalSprays() {
         </div>
       </section>
 
-      {/* Write-ups */}
-      <section className="max-w-4xl mx-auto px-4 md:px-6 pb-16">
+      {/* The range, one row per spray, each leading to its own page */}
+      <section className="max-w-5xl mx-auto px-4 md:px-6 pb-16">
         <Reveal className="mb-8">
           <h2 className="text-2xl md:text-4xl font-black text-white mb-3 tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>
-            The <span className="text-[#00B4B4]">Research</span> Behind the Range
+            Choose by <span className="text-[#00B4B4]">Goal</span>
           </h2>
           <p className="text-white/50 text-sm md:text-base">
-            What each compound is and what it has been studied for. Every write-up describes published research, not a promised outcome.
+            Each spray has its own page covering the intranasal research, what is in each spray and how it compares with the vial and pen.
           </p>
         </Reveal>
 
-        <div className="flex flex-col gap-4">
-          {nasalSprays.map((spray) => (
-            <article
-              key={spray.id}
-              id={spray.anchor}
-              className="scroll-mt-28 rounded-2xl border border-white/8 bg-[#0d1e35] p-5 md:p-7"
-            >
-              <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 mb-1">
-                <h3 className="text-white font-bold text-lg md:text-xl" style={{ fontFamily: 'var(--font-heading)' }}>
-                  {spray.name} Nasal Spray
-                </h3>
-                <span className="text-white font-bold tabular-nums">{fmt(spray.prices[0].price)}</span>
-              </div>
-              <p className="text-xs md:text-sm mb-4">
-                <span className="text-[#00B4B4] font-semibold">{spray.positioning}</span>
-                <span className="text-white/35"> · {spray.prices[0].dose} per bottle</span>
-              </p>
-              <div className="flex flex-col gap-3 text-white/60 text-sm leading-relaxed">
-                {spray.writeup.map((para) => <p key={para.slice(0, 32)}>{para}</p>)}
-              </div>
-              <div className="flex flex-wrap items-center gap-x-4 gap-y-2 mt-5">
-                <a
-                  href={`${whatsappLink}?text=${encodeURIComponent(`Hi STRIATA, I'd like to order *${spray.name} (Nasal Spray)* — ${spray.prices[0].dose} @ ${fmt(spray.prices[0].price)}. Please send me payment details.`)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="btn btn-primary btn-sm"
-                >
-                  Order on WhatsApp
-                </a>
-                {spray.compoundPath && (
-                  <Link to={spray.compoundPath} className="text-white/45 hover:text-[#00B4B4] text-xs font-semibold transition-colors">
-                    More on {spray.name} →
-                  </Link>
+        <div className="flex flex-col gap-3">
+          {nasalSprays.map((spray) => {
+            const shot = vialImage(spray)
+            return (
+              <Link
+                key={spray.id}
+                id={spray.anchor}
+                to={spray.page}
+                {...spotlightProps()}
+                className="spot scroll-mt-28 group flex items-center gap-4 md:gap-6 rounded-2xl border border-white/8 bg-[#0d1e35] p-4 md:p-5 hover:border-[#00B4B4]/40 transition-colors"
+              >
+                {shot && (
+                  <img
+                    src={vialSrc(shot.names[0], 160)}
+                    srcSet={`${vialSrc(shot.names[0], 160)} 160w, ${vialSrc(shot.names[0], 320)} 320w`}
+                    sizes="48px"
+                    alt=""
+                    width={160}
+                    height={320}
+                    loading="lazy"
+                    decoding="async"
+                    className="w-10 h-20 md:w-12 md:h-24 object-contain shrink-0 transition-transform duration-300 group-hover:scale-105"
+                  />
                 )}
-              </div>
-            </article>
-          ))}
+                <div className="min-w-0 flex-1">
+                  <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+                    <h3 className="text-white font-bold text-base md:text-lg group-hover:text-[#00B4B4] transition-colors" style={{ fontFamily: 'var(--font-heading)' }}>
+                      {spray.name} Nasal Spray
+                    </h3>
+                    <span className="text-white font-bold tabular-nums">{fmt(spray.prices[0].price)}</span>
+                  </div>
+                  <p className="text-xs md:text-sm mt-0.5 mb-1.5">
+                    <span className="text-[#00B4B4] font-semibold">{spray.positioning}</span>
+                    <span className="text-white/35"> · {spray.amount} per bottle · {formatMass(spray.dosing.perSpray)} per spray</span>
+                  </p>
+                  <p className="text-white/50 text-xs md:text-sm leading-relaxed line-clamp-2">{spray.description}</p>
+                </div>
+                <svg className="hidden sm:block w-4 h-4 text-[#00B4B4] shrink-0 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+                  <polyline points="9 18 15 12 9 6" />
+                </svg>
+              </Link>
+            )
+          })}
         </div>
 
         <p className="mt-8 text-white/35 text-xs text-center">
           Prices in ZAR, VAT inclusive. For Research Use Only — not for human consumption.
         </p>
+      </section>
+
+      {/* Format FAQ */}
+      <section className="max-w-3xl mx-auto px-4 md:px-6 pb-16">
+        <Reveal>
+          <h2 className="text-2xl md:text-3xl font-black text-white mb-6 tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>
+            Nasal Spray <span className="text-[#00B4B4]">Questions</span>
+          </h2>
+          <div>
+            {FAQS.map((faq) => (
+              <FaqItem key={faq.q} {...faq} />
+            ))}
+          </div>
+        </Reveal>
       </section>
 
       {/* Other formats cross-link */}
