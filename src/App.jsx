@@ -4,7 +4,7 @@ import gsap from 'gsap'
 import { prefersReducedMotion, markNavigated } from './lib/motion'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
-import WhatsAppFAB from './components/WhatsAppFAB'
+import OrderSlip, { SlipFab } from './components/OrderSlip'
 import { initGA, trackPageview } from './lib/analytics'
 import { loaders, resolved } from './routeLoaders'
 import AppRoutes from './AppRoutes'
@@ -119,7 +119,8 @@ export function Layout({ routes = <AppRoutes components={routeComponents()} /> }
       <Navbar />
       <PageTransition>{routes}</PageTransition>
       <Footer />
-      <WhatsAppFAB />
+      <SlipFab />
+      <OrderSlip />
     </>
   )
 }

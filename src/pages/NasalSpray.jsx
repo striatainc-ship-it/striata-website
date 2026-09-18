@@ -1,6 +1,6 @@
 import { Link, useParams } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
-import { products, vialImage, vialSrc, vialStill, whatsappLink } from '../data/products'
+import { products, vialImage, vialSrc, vialStill } from '../data/products'
 import { nasalSprays, nasalSprayBySlug, formatMass, SPRAY_ML } from '../data/nasalSpraysData'
 import { nasalSprayContentFor } from '../data/nasalSprayContent'
 import { pens } from '../data/pensData'
@@ -12,6 +12,8 @@ import Reveal from '../components/Reveal'
 import JsonLd from '../components/JsonLd'
 import VialShot from '../components/VialShot'
 import FaqItem from '../components/FaqItem'
+import AddToOrder from '../components/AddToOrder'
+import { enquiryLink } from '../lib/cart'
 
 const H = { fontFamily: 'var(--font-heading)' }
 
@@ -90,10 +92,6 @@ function SprayPage({ spray }) {
   // Guides are keyed by the vial's catalogue id; the spray keeps it as productId.
   const guideSlug = guideFor({ id: spray.productId })
   const guidePost = guideSlug ? blogPosts.find((p) => p.slug === guideSlug) : null
-
-  const orderLink = `${whatsappLink}?text=${encodeURIComponent(
-    `Hi STRIATA, I'd like to order *${spray.name} (Nasal Spray)* — ${tier.dose} @ ${rand(tier.price)}. Please send me payment details.`,
-  )}`
 
   const socialImage = image ? `${SITE_URL}${vialStill(image.names[0], 'og')}` : DEFAULT_IMAGE
   const title = content?.meta.title ?? `${fullName} South Africa | STRIATA`
@@ -253,14 +251,15 @@ function SprayPage({ spray }) {
               </div>
 
               <div className="flex flex-col sm:flex-row gap-3">
-                <a href={orderLink} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg gap-2">
+                <AddToOrder product={spray} tier={tier} format="Nasal Spray" href={spray.page} imageName={image?.names[0] ?? null} />
+                <a href={enquiryLink(spray, tier, 'Nasal Spray')} target="_blank" rel="noopener noreferrer" className="btn btn-ghost btn-lg gap-2">
                   {WA_ICON}
-                  Order on WhatsApp
-                </a>
-                <a href="#formats" className="btn btn-ghost btn-lg">
-                  Compare spray, vial and pen
+                  Ask on WhatsApp
                 </a>
               </div>
+              <a href="#formats" className="inline-block mt-4 text-sm text-white/55 hover:text-[#00B4B4] transition-colors">
+                Compare spray, vial and pen
+              </a>
               <p className="mt-3 text-white/30 text-xs">VAT inclusive · Shipped nationwide from Johannesburg · Research use only</p>
             </div>
           </div>
@@ -583,13 +582,11 @@ function SprayPage({ spray }) {
             Order {fullName} in South Africa
           </h2>
           <p className="text-white/50 mb-8 max-w-xl mx-auto">
-            Message us on WhatsApp and we&rsquo;ll confirm stock, pricing and delivery before you pay a cent.
+            Add it to your order slip and send it when you&rsquo;re ready. We&rsquo;ll confirm stock, pricing and
+            delivery on WhatsApp before you pay a cent.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a href={orderLink} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg gap-2">
-              {WA_ICON}
-              Order on WhatsApp
-            </a>
+            <AddToOrder product={spray} tier={tier} format="Nasal Spray" href={spray.page} imageName={image?.names[0] ?? null} />
             <Link to="/nasal-sprays" className="btn btn-ghost btn-lg">
               All nasal sprays
             </Link>

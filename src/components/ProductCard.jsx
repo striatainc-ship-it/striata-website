@@ -1,8 +1,10 @@
 import { memo, useState } from 'react'
 import { Link } from 'react-router-dom'
-import { whatsappLink, isInStock, productPath, vialImage, vialSrc } from '../data/products'
+import { isInStock, productPath, vialImage, vialSrc } from '../data/products'
 import { guideFor } from '../data/productGuides'
 import { spotlightProps } from '../lib/motion'
+import { enquiryLink } from '../lib/cart'
+import AddToOrder from './AddToOrder'
 
 const WA_ICON = (
   <svg className="w-4 h-4 shrink-0" fill="currentColor" viewBox="0 0 24 24">
@@ -53,21 +55,18 @@ function ProductCard({ product, format: formatProp = 'Vial' }) {
   const href = productPath(product)
   const shot = vialImage(product)
 
-  const buildWaLink = () => {
-    const tier = selectedTier || (isSingleTier ? product.prices[0] : null)
-    const label = format === 'Vial' ? product.name : `${product.name} (${format})`
-    let msg
-    if (tier && tier.inStock) {
-      msg = `Hi STRIATA, I'd like to order *${label}* — ${tier.dose} @ ${fmtFull(tier.price)}. Please send me payment details.`
-    } else if (tier) {
-      msg = `Hi STRIATA, I'm interested in *${label}* — ${tier.dose} @ ${fmtFull(tier.price)}. Is it currently available or when will it be back in stock?`
-    } else {
-      msg = `Hi STRIATA, I'd like to enquire about *${label}*. Please send me pricing and availability.`
-    }
-    return `${whatsappLink}?text=${encodeURIComponent(msg)}`
+  const activeTier = selectedTier || (isSingleTier ? product.prices[0] : null)
+  // Several sizes and none picked: "Add" asks for one. On a phone the sizes
+  // sit in a collapsed accordion, so open it; on desktop they are already
+  // showing and the hint under them says what to do.
+  const [needTier, setNeedTier] = useState(false)
+  const askForTier = () => {
+    setIsPricingOpen(true)
+    setNeedTier(true)
   }
 
   const toggleTier = (tier) => {
+    setNeedTier(false)
     setSelectedTier((prev) => (prev?.dose === tier.dose ? null : tier))
   }
 
@@ -283,7 +282,9 @@ function ProductCard({ product, format: formatProp = 'Vial' }) {
                 <p className="mt-1.5 text-white/25 text-[10px]">
                   {selectedTier
                     ? `✓ ${selectedTier.dose} selected${selectedTier.inStock ? '' : ' · available on request'}`
-                    : inStock
+                    : needTier
+                      ? 'Pick a size to add it to your order'
+                      : inStock
                       ? 'Green dot = in stock · others on request'
                       : 'Tap a concentration to select'}
                 </p>
@@ -293,25 +294,42 @@ function ProductCard({ product, format: formatProp = 'Vial' }) {
         </div>
       )}
 
-      {/* Enquire button */}
-      <a
-        href={buildWaLink()}
-        target="_blank"
-        rel="noopener noreferrer"
-        className={`flex items-center justify-center gap-1.5 border text-xs md:text-sm font-semibold py-2.5 rounded-xl transition-all duration-200 mt-auto ${
-          selectedTier
-            ? 'bg-[#00B4B4] border-[#00B4B4] text-white hover:bg-[#009999] hover:border-[#009999] shadow-md shadow-[#00B4B4]/20'
-            : 'bg-[#00B4B4]/10 hover:bg-[#00B4B4] border-[#00B4B4]/30 hover:border-[#00B4B4] text-[#00B4B4] hover:text-white'
-        }`}
-        style={{ fontFamily: 'var(--font-body)' }}
-      >
-        {WA_ICON}
-        <span className="truncate">
-          {selectedTier
-            ? selectedTier.inStock ? `Order ${selectedTier.dose}` : `Check ${selectedTier.dose} availability`
-            : inStock ? 'Enquire on WhatsApp' : 'Check availability'}
-        </span>
-      </a>
+      {needTier && !selectedTier && (
+        <p className="md:hidden -mt-1 mb-2 text-[11px] text-[#00B4B4]">Pick a size to add it to your order</p>
+      )}
+
+      {/* Add to the order slip, or ask about this one product on its own */}
+      <div className="flex gap-2 mt-auto">
+        {hasPrices ? (
+          <AddToOrder
+            product={product}
+            tier={activeTier}
+            format={format}
+            href={href}
+            imageName={shot?.names[0] ?? null}
+            onNeedTier={askForTier}
+            compact
+            className={`flex-1 min-w-0 flex items-center justify-center border text-xs md:text-sm font-semibold py-2.5 px-2 rounded-xl transition-all duration-200 cursor-pointer ${
+              activeTier
+                ? 'bg-[#00B4B4] border-[#00B4B4] text-white hover:bg-[#009999] hover:border-[#009999] shadow-md shadow-[#00B4B4]/20'
+                : 'bg-[#00B4B4]/10 hover:bg-[#00B4B4]/20 border-[#00B4B4]/30 text-[#00B4B4]'
+            }`}
+          />
+        ) : null}
+        <a
+          href={enquiryLink(product, activeTier, format)}
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label={`Ask about ${product.name} on WhatsApp`}
+          title="Ask about this on WhatsApp"
+          className={`flex items-center justify-center gap-1.5 border border-white/12 text-white/60 hover:text-white hover:border-[#25D366]/60 hover:bg-[#25D366]/10 rounded-xl transition-colors text-xs md:text-sm font-semibold ${
+            hasPrices ? 'w-11 shrink-0' : 'flex-1 py-2.5'
+          }`}
+        >
+          {WA_ICON}
+          {!hasPrices && <span>Enquire on WhatsApp</span>}
+        </a>
+      </div>
     </div>
   )
 }

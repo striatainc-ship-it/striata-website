@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import Logo from './Logo'
 import { whatsappLink } from '../data/products'
+import { SlipNavButton } from './OrderSlip'
 
 const WA_SVG = (
   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -238,7 +239,8 @@ export default function Navbar() {
             ))}
           </div>
 
-          <div className="hidden md:flex items-center gap-4">
+          <div className="hidden md:flex items-center gap-2">
+            <SlipNavButton />
             <a
               href={whatsappLink}
               target="_blank"
@@ -250,7 +252,9 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* Mobile menu button */}
+          {/* Mobile: order slip, then the menu button */}
+          <div className="md:hidden flex items-center">
+          <SlipNavButton />
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="md:hidden text-white p-3.5 -mr-1 min-h-[44px] min-w-[44px] flex flex-col justify-center cursor-pointer"
@@ -261,6 +265,7 @@ export default function Navbar() {
             <div className={`w-6 h-0.5 bg-white my-1.5 transition-all duration-200 ${menuOpen ? 'opacity-0' : ''}`} />
             <div className={`w-6 h-0.5 bg-white transition-all duration-200 ${menuOpen ? '-rotate-45 -translate-y-2' : ''}`} />
           </button>
+          </div>
         </div>
       </div>
 

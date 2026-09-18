@@ -2,7 +2,14 @@ import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import gsap from 'gsap'
-import { whatsappLink } from '../data/products'
+import { whatsappLink, products } from '../data/products'
+import AddToOrder from '../components/AddToOrder'
+import { enquiryLink } from '../lib/cart'
+
+// The serum is catalogue product 91; its tiers are named '1% · 30ml' and
+// '2% · 30ml', so an order line reads the same wherever it was added.
+const SERUM = products.find((p) => p.id === 91)
+const serumTier = (s) => SERUM.prices.find((t) => t.dose.startsWith(s.id))
 import { prefersReducedMotion, spotlightProps } from '../lib/motion'
 import Reveal from '../components/Reveal'
 import JsonLd from '../components/JsonLd'
@@ -406,15 +413,25 @@ export default function GhkSerum() {
                     <li key={p} className="flex items-start gap-2.5 text-sm text-white/75">{CHECK}{p}</li>
                   ))}
                 </ul>
-                <a
-                  href={`${whatsappLink}?text=${encodeURIComponent(`Hi STRIATA, I'd like to order the *GHK-Cu Serum ${s.id}* (30 ml) @ R ${s.price}. Please send me payment details.`)}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`btn btn-lg w-full ${i === 0 ? 'btn-primary' : 'btn-outline'}`}
-                >
-                  {WA_ICON}
-                  Order the {s.id}
-                </a>
+                <div className="flex gap-2">
+                  <AddToOrder
+                    product={SERUM}
+                    tier={serumTier(s)}
+                    format={SERUM.format}
+                    href="/ghk-serum"
+                    className={`btn btn-lg flex-1 ${i === 0 ? 'btn-primary' : 'btn-outline'}`}
+                  />
+                  <a
+                    href={enquiryLink(SERUM, serumTier(s), SERUM.format)}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    aria-label={`Ask about the ${s.id} serum on WhatsApp`}
+                    title="Ask about this on WhatsApp"
+                    className="btn btn-lg btn-ghost px-4"
+                  >
+                    {WA_ICON}
+                  </a>
+                </div>
               </div>
             ))}
           </Reveal>

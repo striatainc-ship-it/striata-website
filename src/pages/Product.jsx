@@ -22,6 +22,7 @@ import Reveal from '../components/Reveal'
 import JsonLd from '../components/JsonLd'
 import VialShot from '../components/VialShot'
 import FaqItem from '../components/FaqItem'
+import AddToOrder from '../components/AddToOrder'
 
 const H = { fontFamily: 'var(--font-heading)' }
 
@@ -293,23 +294,31 @@ function ProductPage({ product }) {
               )}
 
               <div className="flex flex-col sm:flex-row gap-3">
+                {prices.length > 0 && (
+                  <AddToOrder
+                    product={product}
+                    tier={selected}
+                    format={product.format ?? 'Vial'}
+                    href={productPath(product)}
+                    imageName={image?.names[0] ?? null}
+                  />
+                )}
                 <a
                   href={waLink(product, selected)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="btn btn-primary btn-lg gap-2"
+                  className={`btn btn-lg gap-2 ${prices.length ? 'btn-ghost' : 'btn-primary'}`}
                 >
                   {WA_ICON}
-                  {selected
-                    ? selected.inStock
-                      ? `Order ${selected.dose} on WhatsApp`
-                      : `Check ${selected.dose} availability`
-                    : 'Enquire on WhatsApp'}
+                  {prices.length ? 'Ask on WhatsApp' : 'Enquire on WhatsApp'}
                 </a>
-                <Link to="/tools/reconstitution-calculator" className="btn btn-ghost btn-lg">
-                  Reconstitution calculator
-                </Link>
               </div>
+              <Link
+                to="/tools/reconstitution-calculator"
+                className="inline-block mt-4 mr-6 text-sm text-white/55 hover:text-[#00B4B4] transition-colors"
+              >
+                Reconstitution calculator
+              </Link>
 
               {spray && (
                 <Link
@@ -489,19 +498,25 @@ function ProductPage({ product }) {
             Order {product.name} in South Africa
           </h2>
           <p className="text-white/50 mb-8 max-w-xl mx-auto">
-            Everything ships from Johannesburg, nationwide. Message us on WhatsApp and we&rsquo;ll confirm stock,
-            pricing and delivery before you pay a cent.
+            Everything ships from Johannesburg, nationwide. Add it to your order slip, send the slip on WhatsApp, and
+            we&rsquo;ll confirm stock, pricing and delivery before you pay a cent.
           </p>
           <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <a
-              href={waLink(product, selected)}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-primary btn-lg gap-2"
-            >
-              {WA_ICON}
-              Enquire on WhatsApp
-            </a>
+            {prices.length > 0 ? (
+              <AddToOrder
+                product={product}
+                tier={selected}
+                format={product.format ?? 'Vial'}
+                href={productPath(product)}
+                imageName={image?.names[0] ?? null}
+                onNeedTier={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              />
+            ) : (
+              <a href={waLink(product, selected)} target="_blank" rel="noopener noreferrer" className="btn btn-primary btn-lg gap-2">
+                {WA_ICON}
+                Enquire on WhatsApp
+              </a>
+            )}
             <Link to="/catalogue" className="btn btn-ghost btn-lg">
               Back to the catalogue
             </Link>
