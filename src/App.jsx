@@ -1,6 +1,7 @@
 import { BrowserRouter, useLocation } from 'react-router-dom'
 import { useEffect, useRef, lazy } from 'react'
 import gsap from 'gsap'
+import { Analytics as VercelAnalytics } from '@vercel/analytics/react'
 import { prefersReducedMotion, markNavigated } from './lib/motion'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
@@ -116,6 +117,7 @@ export function Layout({ routes = <AppRoutes components={routeComponents()} /> }
       <ScrollToTop />
       <PrerenderedHeadCleanup />
       <Analytics />
+      <VercelAnalytics />
       <Navbar />
       <PageTransition>{routes}</PageTransition>
       <Footer />
