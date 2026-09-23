@@ -1,4 +1,4 @@
-import { products } from './products'
+import { products } from './products.js'
 
 /**
  * Peptide pens — the same compounds as the catalogue, in a pre-filled pen.
@@ -39,6 +39,42 @@ const PENS = [
   { productId: 41, prices: [{ dose: '10mg', price: 1100 }] },       // Kisspeptin
 ]
 
+/**
+ * Pen photography, by catalogue id: box and pen together, one shot per
+ * compound. Masters are in ../assets/Peptide Pens/, copied to
+ * assets-source/pens/; `npm run vials` emits them as <slug>-pen-*. Where a pen
+ * comes in two sizes the shot is of one of them (MOTS-C 20mg, Tesamorelin
+ * 10mg). A pen missing here shows PEN_PLACEHOLDER rather than the vial's.
+ */
+const PEN_PHOTOS = {
+  3: 'Wolverine Stack 20mg Complete',
+  22: 'GHK Cu 100mg Complete',
+  33: 'MOTS C 20mg Complete',
+  12: 'CJC Ipa 10mg Complete',
+  44: 'Tesamorelin 10mg Complete',
+  46: 'Retatrutide 30mg Complete',
+  47: 'Tirzepatide 30mg Complete',
+  34: 'PT141 10mg Complete',
+  61: 'Semax 5mg Complete',
+  60: 'Selank 5mg Complete',
+  23: 'Epithalon 10mg Complete',
+  62: 'DSIP 5mg Complete',
+  15: 'GLOW Stack 70mg Complete',
+  89: 'KLOW Stack 80mg Complete',
+  19: 'KPV 10mg Complete',
+  85: 'Adamax 10mg Complete',
+  68: 'NAD+ 500mg Complete',
+}
+
+/**
+ * Stand-in for the pens not yet photographed: an AI-generated (Higgsfield)
+ * box and pen in the house style with no compound name on it, so it can
+ * never be read as the wrong product. The card captions it as illustrative
+ * and it is kept out of structured data. Remove a pen from this fallback by
+ * adding its real shot to PEN_PHOTOS.
+ */
+const PEN_PLACEHOLDER = 'Pen Placeholder'
+
 const byId = new Map(products.map((p) => [p.id, p]))
 
 // Resolved pen products, shaped exactly like catalogue products so ProductCard
@@ -50,11 +86,16 @@ export const pens = PENS.map(({ productId, prices }) => {
     ...base,
     id: `pen-${productId}`,
     format: 'Pen',
-    // The studio photography is of the vial, and a pen card showing a vial
-    // would be a picture of the wrong product. The card falls back to no image
-    // until pens are shot. `slug` is deliberately kept: the card still links to
-    // the compound's page, which is the right place to read about it.
-    photos: undefined,
+    // Never inherit the vial's photos: a pen card showing a vial is a picture
+    // of the wrong product. `slug` is deliberately kept, so the card still
+    // links to the compound's page; `imageName` gives the pen its own files.
+    // Every placeholder pen shares the one set of files.
+    photos: [PEN_PHOTOS[productId] ?? PEN_PLACEHOLDER],
+    photoLabels: undefined,
+    photoDir: 'pens',
+    photoShape: 'wide',
+    photoPlaceholder: !PEN_PHOTOS[productId],
+    imageName: PEN_PHOTOS[productId] ? `${base.slug}-pen` : 'pen-placeholder',
     prices: prices.map((tier) => ({ ...tier, inStock: true })),
   }
 })

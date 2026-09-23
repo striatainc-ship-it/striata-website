@@ -80,10 +80,35 @@ function ProductCard({ product, format: formatProp = 'Vial' }) {
       className="spot cv-auto group bg-[#0d1e35] border border-white/8 rounded-2xl p-3.5 md:p-5 flex flex-col hover:border-[#00B4B4]/40 transition-all duration-300 hover:shadow-xl hover:shadow-[#00B4B4]/10 md:hover:-translate-y-1"
     >
 
+      {/* The pens are landscape shots of box and pen on white, too wide for
+          the vial's side slot, so they head the card in a white panel. */}
+      {shot?.wide && (
+        <Link to={href} tabIndex={-1} aria-hidden="true" className="relative block mb-3 rounded-xl overflow-hidden bg-white">
+          <img
+            src={vialSrc(shot.names[0], 320)}
+            srcSet={`${vialSrc(shot.names[0], 320)} 320w, ${vialSrc(shot.names[0], 640)} 640w`}
+            sizes="(min-width: 1280px) 290px, (min-width: 1024px) 300px, 45vw"
+            alt=""
+            width={320}
+            height={192}
+            loading="lazy"
+            decoding="async"
+            className="w-full h-auto transition-transform duration-300 group-hover:scale-[1.03]"
+          />
+          {/* The placeholder has no compound on it; say so rather than let it
+              pass for a photo of this pen. */}
+          {shot.placeholder && (
+            <span className="absolute bottom-1.5 right-2 text-[9px] md:text-[10px] font-semibold uppercase tracking-widest text-[#0A1628]/45">
+              Illustrative image
+            </span>
+          )}
+        </Link>
+      )}
+
       {/* Photo, badges and name share a row so the vial anchors the card
           without pushing the pricing below the fold on a phone. */}
       <div className="flex gap-3 mb-2.5">
-        {shot && (
+        {shot && !shot.wide && (
           <Link to={href} tabIndex={-1} aria-hidden="true" className="shrink-0 self-start">
             <img
               src={vialSrc(shot.names[0], 160)}

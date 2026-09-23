@@ -26,6 +26,7 @@ import { dirname, join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { products, vialImage } from '../src/data/products.js'
 import { nasalSprays } from '../src/data/nasalSpraysData.js'
+import { pens } from '../src/data/pensData.js'
 import { knockOutBackground } from './lib/cutout.mjs'
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..')
@@ -47,6 +48,16 @@ const outDir = join(root, 'public', 'assets', 'opt', 'vials')
 const WIDTHS = [160, 320, 640, 960]
 const ASPECT = 2
 
+/**
+ * The pens are shot differently: a black box with the pen lying in front of
+ * it, landscape. The pen is white plastic on the white sweep, and its lower
+ * edge is as pale as the sweep, so the flood fill would take half the pen with
+ * it. They are trimmed to the subject and kept on white instead, and the card
+ * shows them in a white panel. 5:3 holds every trimmed shot (about 1.7:1).
+ */
+const WIDE_ASPECT = 3 / 5
+const WHITE = { r: 255, g: 255, b: 255, alpha: 1 }
+
 /** White-background JPEGs for structured data (1:1) and social cards (1.91:1). */
 const SQUARE = 1000
 const OG = { width: 1200, height: 630 }
@@ -58,11 +69,13 @@ const kb = bytes => `${Math.round(bytes / 1024)} KB`
 // (white sweep, product centred) and share the output folder under their own
 // names; their masters sit in assets-source/sprays because Windows would
 // otherwise collide Semax.png with the vial's semax.png.
-const wanted = [...products, ...nasalSprays].flatMap(product => {
+// Several pens share the placeholder's files, so each output name is emitted once.
+const seen = new Set()
+const wanted = [...products, ...nasalSprays, ...pens].flatMap(product => {
   const image = vialImage(product)
-  return image
-    ? [{ slug: image.slug, files: image.files, sourceDir: image.sourceDir, bottle: image.sourceDir === 'sprays' }]
-    : []
+  if (!image || seen.has(image.slug)) return []
+  seen.add(image.slug)
+  return [{ slug: image.slug, files: image.files, sourceDir: image.sourceDir, bottle: image.sourceDir === 'sprays', wide: image.wide }]
 })
 
 const missing = []
@@ -87,7 +100,7 @@ await mkdir(outDir, { recursive: true })
 let sourceBytes = 0
 let outputBytes = 0
 
-for (const { slug, files, sourceDir, bottle } of wanted) {
+for (const { slug, files, sourceDir, bottle, wide } of wanted) {
   // A product can have more than one photo (bacteriostatic water is shot in
   // both its sizes); the first is the primary, the rest get a -2, -3 suffix.
   for (const [index, file] of files.entries()) {
@@ -95,28 +108,39 @@ for (const { slug, files, sourceDir, bottle } of wanted) {
     const input = await readFile(join(sourceRoot, sourceDir, `${file}.png`))
     sourceBytes += input.length
 
-    const { data, info } = await sharp(input)
-      .ensureAlpha()
-      .raw()
-      .toBuffer({ resolveWithObject: true })
+    let cleared = 0
+    let cutout
+    if (wide) {
+      // Trim to the box and pen (the sweep is 251-255), then leave a margin
+      // so the subject does not touch the panel's rounded edge.
+      const trimmed = await sharp(input).flatten({ background: WHITE }).trim({ background: '#ffffff', threshold: 14 }).png().toBuffer()
+      const { width: tw } = await sharp(trimmed).metadata()
+      const pad = Math.round(tw * 0.04)
+      cutout = await sharp(trimmed).extend({ top: pad, bottom: pad, left: pad, right: pad, background: WHITE }).png().toBuffer()
+    } else {
+      const { data, info } = await sharp(input)
+        .ensureAlpha()
+        .raw()
+        .toBuffer({ resolveWithObject: true })
 
-    // Spray bottles have a white pump cap on the white sweep; see rowConvex.
-    const cleared = knockOutBackground(data, info.width, info.height, { rowConvex: bottle })
-    const cutout = await sharp(data, { raw: { width: info.width, height: info.height, channels: 4 } })
-      .trim({ threshold: 1 })
-      .png()
-      .toBuffer()
+      // Spray bottles have a white pump cap on the white sweep; see rowConvex.
+      cleared = knockOutBackground(data, info.width, info.height, { rowConvex: bottle })
+      cutout = await sharp(data, { raw: { width: info.width, height: info.height, channels: 4 } })
+        .trim({ threshold: 1 })
+        .png()
+        .toBuffer()
+    }
 
     let bytes = 0
     for (const width of WIDTHS) {
       const buffer = await sharp(cutout)
         .resize({
           width,
-          height: width * ASPECT,
+          height: Math.round(width * (wide ? WIDE_ASPECT : ASPECT)),
           fit: 'contain',
-          background: { r: 0, g: 0, b: 0, alpha: 0 },
+          background: wide ? WHITE : { r: 0, g: 0, b: 0, alpha: 0 },
         })
-        .webp({ quality: 82, effort: 6, alphaQuality: 90 })
+        .webp(wide ? { quality: 82, effort: 6 } : { quality: 82, effort: 6, alphaQuality: 90 })
         .toBuffer()
       await writeFile(join(outDir, `${name}-${width}.webp`), buffer)
       bytes += buffer.length
@@ -142,7 +166,7 @@ for (const { slug, files, sourceDir, bottle } of wanted) {
     outputBytes += bytes
     console.log(
       `  ${name.padEnd(28)} ${kb(input.length).padStart(9)} -> ${kb(bytes).padStart(8)}` +
-        ` across ${WIDTHS.length + 2} files (${Math.round(cleared * 100)}% background cleared)`,
+        ` across ${WIDTHS.length + 2} files` + (wide ? ' (kept on white)' : ` (${Math.round(cleared * 100)}% background cleared)`),
     )
   }
 }

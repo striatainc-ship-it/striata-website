@@ -1134,6 +1134,11 @@ export const vialImage = (product) => {
     sourceDir: product.photoDir ?? 'vials',
     names: product.photos.map((_, i) => (i === 0 ? base : `${base}-${i + 1}`)),
     labels: product.photoLabels ?? null,
+    // The pens are landscape shots kept on white; see scripts/vials.mjs.
+    wide: product.photoShape === 'wide',
+    // A stand-in, not a photo of this product: captioned on the card and never
+    // offered to search engines as the product's image.
+    placeholder: product.photoPlaceholder === true,
   }
 }
 

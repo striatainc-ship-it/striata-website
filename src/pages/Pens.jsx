@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef, useMemo } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
-import { categories, whatsappLink } from '../data/products'
+import { categories, whatsappLink, vialImage, vialStill } from '../data/products'
 import { pens, penCount } from '../data/pensData'
 import ProductCard from '../components/ProductCard'
 import JsonLd from '../components/JsonLd'
@@ -117,6 +117,7 @@ export default function Pens() {
         '@type': 'ItemList',
         itemListElement: pens.map((p, i) => {
           const amounts = p.prices.map((v) => v.price)
+          const shot = vialImage(p)
           return {
             '@type': 'ListItem',
             position: i + 1,
@@ -124,6 +125,7 @@ export default function Pens() {
               '@type': 'Product',
               name: `${p.name} Pen`,
               description: p.description,
+              ...(shot && !shot.placeholder ? { image: `https://www.striatalabs.co.za${vialStill(shot.names[0])}` } : {}),
               category: p.category,
               brand: { '@type': 'Brand', name: 'STRIATA' },
               offers: {
