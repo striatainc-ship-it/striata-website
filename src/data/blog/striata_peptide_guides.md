@@ -281,7 +281,7 @@ Some suppliers sell pre-mixed peptides in liquid form. While this is more conven
 It is best to avoid this. Freezing and thawing can affect peptide integrity. If this happens, inspect the solution carefully before use and be aware that potency may have been reduced.
 
 **How do I dispose of used syringes safely?**
-Used needles should be placed in a sharps container. Many pharmacies accept used sharps for safe disposal.
+Used needles should be placed in a sharps container. Many pharmacies accept used sharps for safe disposal; our guide to [injection supplies and sharps disposal in South Africa](/learn/peptide-injection-supplies-sharps-disposal-south-africa) covers the details.
 
 ---
 

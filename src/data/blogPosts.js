@@ -6,6 +6,7 @@ import brainMoodMd from './blog/striata_brain_mood_articles.md?raw'
 import hormonalMd from './blog/striata_hormonal_health_articles.md?raw'
 import saTargetedMd from './blog/striata_sa_targeted_articles.md?raw'
 import saTargeted2Md from './blog/striata_sa_targeted_articles_2.md?raw'
+import saTargeted3Md from './blog/striata_sa_targeted_articles_3.md?raw'
 
 // The Learn library went live on 1 April 2026, which is the default date for
 // the articles published with it. A post written later declares its own
@@ -66,6 +67,7 @@ const allArticles = [
   ...parseArticles(hormonalMd),
   ...parseArticles(saTargetedMd),
   ...parseArticles(saTargeted2Md),
+  ...parseArticles(saTargeted3Md),
 ]
 
 if (allArticles.length > 0) allArticles[0].featured = true

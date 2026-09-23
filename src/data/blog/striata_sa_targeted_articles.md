@@ -9,6 +9,7 @@
 **Slug:** /learn/peptides-south-africa-legal-status
 **Category:** Peptide Guides
 **Read time:** 7 min
+**Updated:** 2026-09-23
 **Keywords:** peptides South Africa legal, SAHPRA peptides, research peptides SA, are peptides legal in South Africa
 
 ---
@@ -47,7 +48,7 @@ This is where it gets more specific. Semaglutide — the active compound in Ozem
 
 This means sourcing pharmaceutical-grade semaglutide outside of a prescription channel is not straightforward. Research-grade semaglutide from a peptide supplier occupies a different category — it is not being sold as a medicine, and it has not gone through the pharmaceutical manufacturing and quality standards that a registered medicine would require.
 
-If you are considering GLP-1 compounds specifically, speaking with a healthcare provider about your options is worth doing. In South Africa, there are legitimate compounding pharmacies and private medical channels through which prescribed GLP-1 therapy can be accessed.
+If you are considering GLP-1 compounds specifically, speaking with a healthcare provider about your options is worth doing. Registered GLP-1 medicines, including Ozempic, Wegovy and Mounjaro, are available in South Africa on prescription. Compounded GLP-1 products are not a safe shortcut: SAHPRA has warned against them, and in May 2026 it acted against a pharmacy compounding semaglutide and tirzepatide on a commercial scale.
 
 ---
 
@@ -195,7 +196,7 @@ The research, regulatory documents and clinical guidelines behind the claims in 
 **Slug:** /learn/semaglutide-south-africa
 **Category:** Weight Loss
 **Read time:** 9 min
-**Updated:** 2026-09-17
+**Updated:** 2026-09-23
 **Keywords:** semaglutide South Africa, Ozempic South Africa, buy semaglutide SA, Wegovy South Africa, GLP-1 weight loss South Africa
 
 ---
@@ -235,7 +236,7 @@ Secondary outcomes across the STEP trials included improvements in blood pressur
 The questions we hear most often:
 
 **Is Ozempic available in South Africa?**
-Yes. Ozempic (the diabetes-approved formulation at 0.5mg and 1mg) is registered in South Africa and available through prescription via a doctor. Wegovy (the higher-dose 2.4mg formulation specifically approved for obesity) has been approved internationally but its availability through the South African pharmacy network is more limited. Consult your GP or an endocrinologist about the current position.
+Yes. Ozempic (the diabetes-approved formulation at 0.5mg and 1mg) is registered in South Africa and available through prescription via a doctor. Wegovy (the higher-dose formulation registered specifically for weight management) launched in South Africa in August 2025 and is also available on prescription. Since semaglutide's South African patent expired in March 2026, SAHPRA has approved a generic (Sun Pharma, for type 2 diabetes) and Novo Nordisk has launched a lower-priced version of Ozempic, Extensior.
 
 **Can I get semaglutide without a prescription in South Africa?**
 Pharmaceutical semaglutide — Ozempic or Wegovy — requires a prescription. It is a registered medicine. Research-grade semaglutide from peptide suppliers occupies a different category and is sold without a prescription as a research compound. This is an important distinction. If you are managing a medical condition, the pharmaceutical route through a healthcare provider is the appropriate path.
@@ -250,11 +251,11 @@ Weight regain is expected. This is one of the most important things to understan
 
 ### The Cost Reality in South Africa
 
-Cost is a genuine barrier for many South Africans. Branded Ozempic through a pharmacy can run to several thousand rand per month depending on dose. Medical aid coverage varies significantly — some schemes cover it for diabetes management, very few cover it for obesity specifically.
+Cost is a genuine barrier for many South Africans, although prices have fallen. In March 2026 Novo Nordisk cut the price of Wegovy for the second time, taking the lowest dose to about R1 873 and the highest to about R3 746. In mid-2026 an Ozempic pen was priced at about R1 438 (1.5 ml) or R2 876 (3 ml), with Extensior about 15% cheaper. Medical aid coverage varies significantly — some schemes cover it for diabetes management, very few cover it for obesity specifically.
 
 This cost gap is part of why research-grade semaglutide has found an audience in South Africa. For those who understand the distinction between pharmaceutical and research-grade product and are making an informed, adult decision, it represents a more accessible option.
 
-If cost is a concern and you are exploring options, speaking to a pharmacist or GP about what your medical aid covers — and whether compounding pharmacy options exist — is worth doing.
+If cost is a concern and you are exploring options, speaking to a pharmacist or GP about what your medical aid covers, and about the lower-priced registered options now on the market, is worth doing. Compounded semaglutide is not one of them: SAHPRA has warned that compounding GLP-1 medicines poses a public health risk, and in May 2026 it seized a large compounder's semaglutide and tirzepatide products and ordered a full recall.
 
 ---
 
@@ -294,6 +295,11 @@ The research, regulatory documents and clinical guidelines behind the claims in 
 - Drucker DJ. [Mechanisms of action and therapeutic application of glucagon-like peptide-1](https://pubmed.ncbi.nlm.nih.gov/29617641/). Cell Metabolism, 2018.
 - US Food and Drug Administration. [WEGOVY (semaglutide) prescribing information, including the boxed warning on thyroid C-cell tumours](https://www.accessdata.fda.gov/drugsatfda_docs/label/2021/215256s000lbl.pdf). FDA label, 2021.
 - South African Health Products Regulatory Authority. [Frequently asked questions: semaglutide, including what is and is not registered in South Africa](https://www.sahpra.org.za/faqs-semaglutide/). SAHPRA.
+- South African Health Products Regulatory Authority. [SAHPRA's position on GLP-1 and GIP-GLP-1 products that are compounded, substandard and falsified](https://www.sahpra.org.za/news-and-updates/sahpras-position-on-glp1-and-gip-glp1-products-that-are-compounded-substandard-and-falsifiedas/). SAHPRA, 2024.
+- Reuters, via WKZO. [Novo Nordisk cuts Wegovy price in South Africa for a second time](https://wkzo.com/2026/03/25/novo-nordisk-cuts-wegovy-price-in-south-africa-for-a-second-time/). Reuters, 2026.
+- CNBC Africa. [India's Sun Pharma wins South Africa approval to launch generic Ozempic](https://www.cnbcafrica.com/2026/indias-sun-pharma-wins-south-africa-approval-to-launch-generic-ozempic). CNBC Africa, 2026.
+- BusinessDay. [Novo's Ozempic copy 15% cheaper, but Discovery still won't change its position](https://www.businessday.co.za/news/health/2026-07-24-novo-cuts-semaglutide-price-15-with-ozempic-rival-launch/). BusinessDay, 2026.
+- The Post. [SAHPRA's enforcement action against weight-loss drugs like Ozempic and Mounjaro: what you need to know](https://thepost.co.za/news/2026-05-29-sahpras-enforcement-action-against-weight-loss-drugs-like-ozempic-and-mounjaro-what-you-need-to-know/). The Post, 2026.
 
 # Article 34: Peptides for South African Athletes: Guide
 
@@ -302,6 +308,7 @@ The research, regulatory documents and clinical guidelines behind the claims in 
 **Slug:** /learn/peptides-for-south-african-athletes
 **Category:** Recovery
 **Read time:** 8 min
+**Updated:** 2026-09-23
 **Keywords:** peptides for athletes South Africa, sports recovery peptides SA, BPC-157 athletes South Africa, peptides rugby South Africa, performance peptides SA
 
 ---
@@ -365,9 +372,9 @@ This is worth addressing directly, particularly for competitive athletes.
 
 Several peptides used in recovery protocols are on the World Anti-Doping Agency (WADA) prohibited list. GHRP compounds, CJC-1295, IGF-1 LR3 and Ipamorelin appear on the Prohibited List under Section S2 (Peptide Hormones, Growth Factors and Related Substances).
 
-BPC-157 and TB-500 (Thymosin Beta-4) are also prohibited in competition. WADA added them under Section S2 as well.
+BPC-157 and TB-500 are prohibited too, and at all times, not only in competition. BPC-157 is named under Section S0 (Non-Approved Substances), and TB-500 falls under S2 as a derivative of thymosin beta-4. MOTS-c is named under S4.4 (Metabolic Modulators).
 
-If you are a competitive athlete subject to anti-doping testing — including at provincial or national level in any WADA-signatory sport — this matters. The research peptides discussed here are not appropriate for use in competition and could result in a ban if detected.
+If you are a competitive athlete subject to anti-doping testing — including at provincial or national level in any WADA-signatory sport, and at schools events such as Craven Week — this matters. The research peptides discussed here are not appropriate for a tested athlete at any time, in or out of competition, and can result in a ban. Our [guide to peptides and anti-doping in South Africa](/learn/peptides-anti-doping-south-africa) covers the 2026 list, strict liability and ban lengths in detail.
 
 For recreational athletes, gym-goers and people who train seriously but are not subject to anti-doping oversight, this consideration does not apply in the same way.
 
@@ -400,6 +407,7 @@ The research, regulatory documents and clinical guidelines behind the claims in 
 - Goldstein AL, Hannappel E, Kleinman HK. [Thymosin beta-4: actin-sequestering protein moonlights to repair injured tissues](https://pubmed.ncbi.nlm.nih.gov/16099219/). Trends in Molecular Medicine, 2005.
 - Philp D, Huff T, et al. [The actin binding site on thymosin beta-4 promotes angiogenesis](https://pubmed.ncbi.nlm.nih.gov/14500546/). FASEB Journal, 2003.
 - World Anti-Doping Agency. [The Prohibited List, which covers BPC-157 under S0 and thymosin beta-4 and its derivatives under S2](https://www.wada-ama.org/en/prohibited-list). WADA.
+- World Anti-Doping Agency. [International Standard Prohibited List 2026, including MOTS-c under S4.4](https://www.wada-ama.org/sites/default/files/2025-09/2026list_en_final_clean_september_2025.pdf). WADA, 2025.
 - D'Hondt M, Bracke N, et al. [Related impurities in peptide medicines](https://pubmed.ncbi.nlm.nih.gov/25044089/). Journal of Pharmaceutical and Biomedical Analysis, 2014.
 
 # Article 35: Where to Buy Peptides in South Africa Safely
