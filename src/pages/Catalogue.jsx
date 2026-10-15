@@ -67,11 +67,20 @@ const WA_ICON = (
   </svg>
 )
 
+// Out-of-stock compounds are archived: off the catalogue and out of its
+// ItemList until they are back, so Google is not shown 60 products that lead
+// nowhere. A product page that already exists stays live (see Product.jsx).
+const listed = products.filter(isInStock)
+
+// A category with nothing in stock would be a chip that empties the grid.
+const listedCategories = categories.filter(
+  (c) => c.id === 'all' || listed.some((p) => (c.id === 'popular' ? p.featured : p.category === c.id)),
+)
+
 export default function Catalogue() {
   const location = useLocation()
   const [activeCategory, setActiveCategory] = useState('all')
   const [search, setSearch] = useState('')
-  const [inStockOnly, setInStockOnly] = useState(false)
   const [filterVisible, setFilterVisible] = useState(true)
   const lastScrollY = useRef(0)
   const gridRef = useRef(null)
@@ -101,7 +110,7 @@ export default function Catalogue() {
   }, [])
 
   const filtered = useMemo(() => {
-    const list = products.filter((p) => {
+    return listed.filter((p) => {
       const matchesCat =
         activeCategory === 'all' ||
         (activeCategory === 'popular' ? p.featured === true : p.category === activeCategory)
@@ -110,18 +119,20 @@ export default function Catalogue() {
         p.name.toLowerCase().includes(search.toLowerCase()) ||
         p.description.toLowerCase().includes(search.toLowerCase()) ||
         p.tags.some((t) => t.toLowerCase().includes(search.toLowerCase()))
-      const matchesStock = !inStockOnly || isInStock(p)
-      return matchesCat && matchesSearch && matchesStock
+      return matchesCat && matchesSearch
     })
-    // In-stock products lead; sort is stable so catalogue order is kept within each group
-    return list.sort((a, b) => Number(isInStock(b)) - Number(isInStock(a)))
-  }, [activeCategory, search, inStockOnly])
+  }, [activeCategory, search])
 
   useStaggerGrid(gridRef, [filtered])
 
-  const inStockCount = useMemo(() => filtered.filter(isInStock).length, [filtered])
-  const hasActiveFilters = activeCategory !== 'all' || search || inStockOnly
-  const clearFilters = () => { setActiveCategory('all'); setSearch(''); setInStockOnly(false) }
+  const hasActiveFilters = activeCategory !== 'all' || search
+  const clearFilters = () => { setActiveCategory('all'); setSearch('') }
+  // A search for an archived compound should say so, not just come up empty.
+  const archivedMatch = useMemo(() => {
+    if (!search || filtered.length) return null
+    const q = search.toLowerCase()
+    return products.find((p) => !isInStock(p) && p.name.toLowerCase().includes(q)) ?? null
+  }, [search, filtered.length])
 
   const currentCategory = categories.find((c) => c.id === activeCategory)
 
@@ -129,10 +140,10 @@ export default function Catalogue() {
     <div className="bg-[#0A1628] min-h-screen">
       <Helmet>
         <title>Buy Research Peptides in South Africa | STRIATA Catalogue</title>
-        <meta name="description" content="Browse 90+ research-grade peptides with transparent ZAR pricing: recovery, weight loss, anti-aging, hormonal health, nootropics. Delivered across South Africa." />
+        <meta name="description" content={`Browse ${listed.length} in-stock research-grade peptides with transparent ZAR pricing: recovery, weight loss, skin, hormonal and nootropics. Delivered across SA.`} />
         <link rel="canonical" href="https://www.striatalabs.co.za/catalogue" />
         <meta property="og:title" content="Buy Research Peptides in South Africa | STRIATA Catalogue" />
-        <meta property="og:description" content="Browse 80+ research-grade peptides with transparent pricing. Delivered nationwide." />
+        <meta property="og:description" content={`Browse ${listed.length} in-stock research-grade peptides with transparent pricing. Delivered nationwide.`} />
         <meta property="og:url" content="https://www.striatalabs.co.za/catalogue" />
         {/* The banner background is a CSS background-image, which the browser
             only discovers after parsing the stylesheet; it is the page's LCP
@@ -143,8 +154,7 @@ export default function Catalogue() {
       <JsonLd data={{
         '@context': 'https://schema.org',
         '@type': 'ItemList',
-        itemListElement: products
-          .filter((p) => p.prices && p.prices.length > 0)
+        itemListElement: listed
           .map((p, i) => {
             const amounts = p.prices.map((v) => v.price)
             // A product with a page of its own points at it, so the list entry
@@ -171,7 +181,7 @@ export default function Catalogue() {
                   lowPrice: Math.min(...amounts),
                   highPrice: Math.max(...amounts),
                   offerCount: p.prices.length,
-                  availability: isInStock(p) ? 'https://schema.org/InStock' : 'https://schema.org/BackOrder',
+                  availability: 'https://schema.org/InStock',
                   url,
                 },
               },
@@ -254,26 +264,12 @@ export default function Catalogue() {
                 </button>
               )}
             </div>
-            <button
-              type="button"
-              onClick={() => setInStockOnly((v) => !v)}
-              aria-pressed={inStockOnly}
-              className={`flex-none inline-flex items-center gap-1.5 px-3.5 py-2.5 rounded-xl text-xs md:text-sm font-semibold whitespace-nowrap transition-all duration-200 ${
-                inStockOnly
-                  ? 'bg-green-400/15 border border-green-400/50 text-green-300'
-                  : 'bg-[#0d1e35] border border-white/10 text-white/60 hover:text-white hover:border-green-400/30'
-              }`}
-              style={{ fontFamily: 'var(--font-body)' }}
-            >
-              <span className={`w-1.5 h-1.5 rounded-full ${inStockOnly ? 'bg-green-400' : 'bg-white/30'}`} />
-              In stock
-            </button>
           </div>
 
           {/* Category filters — horizontal scroll on mobile */}
           <FilterChips
             className="overflow-x-auto scrollbar-hide pb-0.5"
-            options={categories}
+            options={listedCategories}
             value={activeCategory}
             onChange={setActiveCategory}
             renderIcon={({ id }, active) =>
@@ -296,9 +292,7 @@ export default function Catalogue() {
               <> in <span className="text-[#00B4B4]">{currentCategory.label}</span></>
             )}
             {search && <> matching "<span className="text-white/60">{search}</span>"</>}
-            {!inStockOnly && inStockCount > 0 && (
-              <> · <span className="text-green-400">{inStockCount} in stock</span></>
-            )}
+            {' · '}<span className="text-green-400">all in stock</span>
           </p>
           {hasActiveFilters && (
             <button
@@ -319,8 +313,21 @@ export default function Catalogue() {
         ) : (
           <div className="text-center py-24">
             <p className="text-white/30 text-lg">
-              {inStockOnly ? 'Nothing in stock matches your search. Untick "In stock" to see everything we can source.' : 'No compounds match your search.'}
+              {archivedMatch
+                ? `${archivedMatch.name} is not in stock right now.`
+                : 'No compounds match your search.'}
             </p>
+            {archivedMatch && (
+              <a
+                href={`${whatsappLink}?text=${encodeURIComponent(`Hi, when will ${archivedMatch.name} be back in stock?`)}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 mt-4 text-[#25D366] hover:text-white text-sm font-semibold transition-colors"
+              >
+                {WA_ICON} Ask on WhatsApp when it is back
+              </a>
+            )}
+            <br />
             <button
               onClick={clearFilters}
               className="mt-4 text-[#00B4B4] hover:text-white text-sm transition-colors"

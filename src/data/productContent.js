@@ -868,7 +868,7 @@ export const PRODUCT_CONTENT = {
     lede: 'The dual agonist behind Mounjaro, at research-grade pricing — the compound that reset expectations in this category.',
     about: [
       'Tirzepatide acts on two incretin receptors, GLP-1 and GIP. The GLP-1 half is the familiar mechanism: slowed gastric emptying, increased satiety, improved glycaemic control. The GIP half is what tirzepatide added, and adding it produced results in trials that were clearly larger than semaglutide\'s — enough to make it the reference compound in the category almost immediately.',
-      'It is the generic equivalent of Mounjaro, and in South Africa the price gap between the branded product and a research-grade vial is the main reason people arrive at this page. The Learn article on tirzepatide in South Africa covers local availability and what the medical aid position actually is, which is usually the other half of the question.',
+      'Mounjaro is the registered brand of tirzepatide in South Africa; this vial is unbranded tirzepatide, not a registered medicine. The Learn article on tirzepatide in South Africa covers local availability and what the medical aid position actually is, which is usually the other half of the question.',
     ],
     researchedFor: [
       {
@@ -885,12 +885,12 @@ export const PRODUCT_CONTENT = {
       },
     ],
     handling:
-      'The 30mg vial reconstituted with 3 mL of bacteriostatic water gives 10mg/mL, so a 2.5mg dose is a 25-unit draw. Protocols titrate upward over weeks; gastrointestinal effects in this class track dose closely, and the clinical schedules exist for that reason. ' +
+      'The 30mg vial reconstituted with 3 mL of bacteriostatic water gives a concentration of 10mg/mL. In the clinical trials, doses were titrated upward over weeks because gastrointestinal effects in this class track dose closely. ' +
       STORAGE_SA,
     faqs: [
       {
         q: 'Is this the same as Mounjaro?',
-        a: 'Same compound, supplied as research-grade lyophilised powder rather than as a branded pre-filled pen. The price difference in South Africa is what brings most people here.',
+        a: 'Mounjaro is a registered medicine, and tirzepatide is the compound in it. This is unbranded tirzepatide supplied as lyophilised powder. It is not Mounjaro and is not a substitute for a prescribed medicine.',
       },
       {
         q: 'Tirzepatide or retatrutide?',
@@ -905,7 +905,7 @@ export const PRODUCT_CONTENT = {
     meta: {
       title: 'Tirzepatide South Africa | 30mg Vial | STRIATA',
       description:
-        'Tirzepatide, the dual GIP/GLP-1 agonist and Mounjaro generic, for weight loss and blood sugar control. 30mg in stock at R1,500, shipped nationwide.',
+        'Tirzepatide, the dual GIP/GLP-1 receptor agonist studied for weight loss and blood sugar control. 30mg vial in stock at R1,500, shipped nationwide.',
     },
   },
 

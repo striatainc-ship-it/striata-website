@@ -188,7 +188,7 @@ export const quizProtocols = [
     deliveryTags: ['injectable', 'pen'],
     experienceTags: ['new', 'experienced'],
     summary:
-      'Dual GIP/GLP-1 agonist delivering powerful weight loss and blood sugar optimisation (the Mounjaro generic). The dual-agonist alternative to Retatrutide, available as a 30mg vial or a pre-filled pen for dial-in dosing without reconstitution.',
+      'Dual GIP/GLP-1 receptor agonist studied for weight loss and blood sugar control. The dual-agonist alternative to Retatrutide, available as a 30mg vial or a pre-filled pen for dial-in dosing without reconstitution.',
     usedFor: ['GLP-1', 'Weight loss', 'Blood sugar'],
     fromPrice: 1500,
     primary: { label: 'View Tirzepatide in the catalogue', to: catalogue('Tirzepatide') },
@@ -244,7 +244,7 @@ export const quizProtocols = [
     deliveryTags: ['injectable', 'pen'],
     experienceTags: ['new', 'experienced'],
     summary:
-      'Clinically proven to reduce visceral fat, improve body composition and boost cognitive function. A growth-hormone-releasing hormone analogue rather than a GLP-1, so it is the usual choice when the goal is a leaner midsection and better composition rather than appetite control. Vial or pre-filled pen.',
+      'Studied in clinical trials for reducing visceral fat. A growth-hormone-releasing hormone analogue rather than a GLP-1, so it is the usual choice when the goal is a leaner midsection and better composition rather than appetite control. Vial or pre-filled pen.',
     usedFor: ['Visceral fat', 'Body composition', 'Cognitive'],
     fromPrice: 700,
     primary: { label: 'View Tesamorelin in the catalogue', to: catalogue('Tesamorelin') },

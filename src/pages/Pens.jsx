@@ -45,6 +45,53 @@ const BENEFITS = [
   },
 ]
 
+const GUIDE_LINK = 'text-[#00B4B4] hover:text-white transition-colors'
+
+// Describes the format only. Nothing here says STRIATA sells reusable pens:
+// every pen listed is pre-filled, and that is all the copy claims.
+const PEN_GUIDE = [
+  {
+    heading: 'What a pre-filled peptide pen is',
+    body: (
+      <>
+        A pre-filled pen holds the peptide already in solution, in a sealed cartridge inside the pen body. With a vial
+        you start from lyophilised powder, add bacteriostatic water and draw each amount with an insulin syringe; a pen
+        skips both steps. Every pen on this page is pre-filled and ships ready to use.
+      </>
+    ),
+  },
+  {
+    heading: 'Pre-filled vs reusable pens',
+    body: (
+      <>
+        A reusable pen is a durable pen body that you load with replaceable cartridges, so one body outlasts many
+        cartridges. A pre-filled pen is a single unit: when its cartridge is empty, the whole pen is finished.
+        Pre-filled is the simpler of the two, with nothing to load or assemble, and it is the format we list here. If
+        you already work with vials, the same compounds are in the{' '}
+        <Link to="/catalogue" className={GUIDE_LINK}>catalogue</Link>, usually at a lower price.
+      </>
+    ),
+  },
+  {
+    heading: 'How a peptide pen works',
+    body: (
+      <>
+        Turning the dial at the end of the pen sets a measured volume, shown in the window on the pen body. A
+        single-use pen needle screws onto the tip, and pressing the button releases exactly the volume dialled. A new
+        needle goes on each time, and used needles belong in a sharps container: our guide to{' '}
+        <Link to="/learn/peptide-injection-supplies-sharps-disposal-south-africa" className={GUIDE_LINK}>
+          injection supplies and sharps disposal in South Africa
+        </Link>{' '}
+        covers both. Pens travel by cold-chain express and belong in the fridge once they arrive; our guide to{' '}
+        <Link to="/learn/storing-peptides-south-african-climate" className={GUIDE_LINK}>
+          storing peptides in the South African climate
+        </Link>{' '}
+        explains why.
+      </>
+    ),
+  },
+]
+
 export default function Pens() {
   const location = useLocation()
   const [activeCategory, setActiveCategory] = useState('all')
@@ -254,6 +301,21 @@ export default function Pens() {
             </button>
           </div>
         )}
+      </section>
+
+      {/* About pens — below the grid so the products stay above the fold, but
+          in the page for the "peptide pens south africa" searches it ranks on. */}
+      <section className="max-w-3xl mx-auto px-6 pb-14">
+        <Reveal stagger className="space-y-10">
+          {PEN_GUIDE.map(({ heading, body }) => (
+            <div key={heading}>
+              <h2 className="text-2xl md:text-3xl font-black text-white mb-3 tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>
+                {heading}
+              </h2>
+              <p className="text-white/60 leading-relaxed">{body}</p>
+            </div>
+          ))}
+        </Reveal>
       </section>
 
       {/* Vials cross-link */}

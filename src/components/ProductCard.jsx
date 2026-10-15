@@ -54,6 +54,12 @@ function ProductCard({ product, format: formatProp = 'Vial' }) {
   const guide = guideFor(product)
   const href = productPath(product)
   const shot = vialImage(product)
+  // The link around the photo is aria-hidden (the name beside it is the real
+  // link text), so this alt is for image search, not screen readers. The
+  // placeholder shows no compound, so it must not claim to be this one.
+  const shotAlt = shot?.placeholder
+    ? `Illustrative ${format.toLowerCase()} image`
+    : `${product.name} ${format.toLowerCase()} from STRIATA`
 
   const activeTier = selectedTier || (isSingleTier ? product.prices[0] : null)
   // Several sizes and none picked: "Add" asks for one. On a phone the sizes
@@ -88,7 +94,7 @@ function ProductCard({ product, format: formatProp = 'Vial' }) {
             src={vialSrc(shot.names[0], 320)}
             srcSet={`${vialSrc(shot.names[0], 320)} 320w, ${vialSrc(shot.names[0], 640)} 640w`}
             sizes="(min-width: 1280px) 290px, (min-width: 1024px) 300px, 45vw"
-            alt=""
+            alt={shotAlt}
             width={320}
             height={192}
             loading="lazy"
@@ -112,7 +118,7 @@ function ProductCard({ product, format: formatProp = 'Vial' }) {
           <Link to={href} tabIndex={-1} aria-hidden="true" className="shrink-0 self-start">
             <img
               src={vialSrc(shot.names[0], 160)}
-              alt=""
+              alt={shotAlt}
               width={160}
               height={320}
               loading="lazy"

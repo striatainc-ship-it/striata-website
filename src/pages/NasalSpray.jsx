@@ -552,7 +552,7 @@ function SprayPage({ spray }) {
                   {shot && (
                     <img
                       src={vialSrc(shot.names[0], 320)}
-                      alt=""
+                      alt={`${item.name} ${(item.format ?? 'Vial').toLowerCase()} from STRIATA`}
                       width={320}
                       height={640}
                       loading="lazy"

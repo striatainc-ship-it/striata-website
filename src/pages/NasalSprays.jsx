@@ -202,7 +202,7 @@ export default function NasalSprays() {
                     src={vialSrc(shot.names[0], 160)}
                     srcSet={`${vialSrc(shot.names[0], 160)} 160w, ${vialSrc(shot.names[0], 320)} 320w`}
                     sizes="48px"
-                    alt=""
+                    alt={`${spray.name} nasal spray, 10ml amber bottle from STRIATA`}
                     width={160}
                     height={320}
                     loading="lazy"

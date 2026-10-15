@@ -1,7 +1,9 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import Logo from './Logo'
-import { whatsappLink } from '../data/products'
+import { whatsappLink, products, isInStock } from '../data/products'
+
+const IN_STOCK_COUNT = products.filter(isInStock).length
 import { SlipNavButton } from './OrderSlip'
 
 const WA_SVG = (
@@ -161,7 +163,7 @@ export default function Navbar() {
                     </span>
                     <div>
                       <p className="text-white text-sm font-semibold" style={{ fontFamily: 'var(--font-heading)' }}>Complete Catalogue</p>
-                      <p className="text-white/45 text-xs mt-0.5">80+ research-grade peptides</p>
+                      <p className="text-white/45 text-xs mt-0.5">{IN_STOCK_COUNT} peptides in stock</p>
                     </div>
                   </Link>
                   <Link

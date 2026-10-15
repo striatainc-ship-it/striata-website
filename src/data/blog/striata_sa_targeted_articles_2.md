@@ -130,7 +130,7 @@ The research, regulatory documents and clinical guidelines behind the claims in 
 
 ---
 
-# Article 37: Medical Aid & Weight-Loss Injections in SA
+# Article 37: Does Medical Aid Cover Mounjaro or Ozempic?
 
 **Meta description:** Why most South African medical schemes do not cover Ozempic or Mounjaro for weight loss, what the PMB rules actually say, and the questions to ask your scheme.
 

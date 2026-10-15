@@ -434,8 +434,8 @@ export const products = [
     slug: 'pt-141',
     photos: ['pt141'],
     category: 'hormonal',
-    description: 'Clinically proven to enhance sexual arousal and libido in both men and women, without acting on the vascular system.',
-    tags: ['Libido', 'Sexual Health', 'Clinically Proven'],
+    description: 'Bremelanotide, a melanocortin receptor agonist studied in phase 3 clinical trials for low sexual desire in women. Acts in the brain rather than on the vascular system.',
+    tags: ['Libido', 'Sexual Health', 'Clinical Trials'],
     featured: true,
     prices: [
       { dose: '10mg', price: 450, inStock: true },
@@ -513,8 +513,8 @@ export const products = [
     name: 'Kisspeptin',
     slug: 'kisspeptin',
     category: 'hormonal',
-    description: 'Activates the HPG axis to naturally boost LH, FSH and testosterone in individuals with hormonal deficiencies.',
-    tags: ['HPG Axis', 'Testosterone', 'Hormonal Deficiency'],
+    description: 'Activates the HPG axis, stimulating the body’s own release of LH and FSH, the hormones that drive testosterone production.',
+    tags: ['HPG Axis', 'Testosterone', 'Hormonal'],
     prices: [
       { dose: '5mg', price: 350 },
       { dose: '10mg', price: 600, inStock: true },
@@ -564,7 +564,7 @@ export const products = [
     slug: 'tesamorelin',
     photos: ['tesamorelin'],
     category: 'weight',
-    description: 'Clinically proven to reduce visceral fat, improve body composition and boost cognitive function.',
+    description: 'A GHRH analogue studied in clinical trials for reducing visceral fat, by raising the body’s own growth hormone release.',
     tags: ['Visceral Fat', 'Body Composition', 'Cognitive'],
     featured: true,
     prices: [
@@ -580,7 +580,7 @@ export const products = [
     description: 'Pre-combined Tesamorelin and Ipamorelin for optimised GH release with targeted visceral fat reduction.',
     tags: ['Stack', 'GH Release', 'Fat Reduction'],
     prices: [
-      { dose: '10mg+5mg', price: 1250 },
+      { dose: '10mg+5mg', price: 1250, inStock: true },
     ],
   },
   {
@@ -604,7 +604,7 @@ export const products = [
     slug: 'tirzepatide',
     photos: ['tirzepatide_vial_final'],
     category: 'weight',
-    description: 'Dual GIP/GLP-1 agonist delivering powerful weight loss and blood sugar optimisation (the Mounjaro generic).',
+    description: 'Dual GIP/GLP-1 receptor agonist studied for weight loss and blood sugar control.',
     tags: ['GLP-1', 'Weight Loss', 'Blood Sugar'],
     featured: true,
     prices: [
@@ -617,7 +617,7 @@ export const products = [
     id: 48,
     name: 'Semaglutide',
     category: 'weight',
-    description: 'GLP-1 receptor agonist clinically proven for significant weight loss and blood sugar control (the Ozempic generic).',
+    description: 'GLP-1 receptor agonist studied in large clinical trials for weight loss and blood sugar control.',
     tags: ['GLP-1', 'Weight Loss', 'Ozempic'],
     prices: [
       { dose: '2mg', price: 300 },
@@ -658,7 +658,7 @@ export const products = [
     id: 51,
     name: 'Liraglutide',
     category: 'weight',
-    description: 'GLP-1 receptor agonist for weight management and type 2 diabetes support (the Victoza/Saxenda generic).',
+    description: 'GLP-1 receptor agonist studied for weight management and type 2 diabetes.',
     tags: ['GLP-1', 'Weight Management', 'Diabetes'],
     prices: [
       { dose: '5mg', price: 520 },
@@ -670,7 +670,7 @@ export const products = [
     id: 52,
     name: 'Dulaglutide',
     category: 'weight',
-    description: 'Once-weekly GLP-1 agonist for glucose control and moderate weight reduction (the Trulicity generic).',
+    description: 'Once-weekly GLP-1 receptor agonist studied for glucose control and moderate weight reduction.',
     tags: ['GLP-1', 'Once Weekly', 'Glucose Control'],
     prices: [
       { dose: '5mg', price: 950 },

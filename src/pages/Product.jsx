@@ -464,7 +464,7 @@ function ProductPage({ product }) {
                     {shot && (
                       <img
                         src={vialSrc(shot.names[0], 160)}
-                        alt=""
+                        alt={`${item.name} ${(item.format ?? 'Vial').toLowerCase()} from STRIATA`}
                         width={160}
                         height={320}
                         loading="lazy"
