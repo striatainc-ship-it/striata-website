@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { whatsappLink, vialImage, vialSrc, vialStill } from '../data/products'
 import { nasalSprays, formatMass, SPRAY_ML } from '../data/nasalSpraysData'
-import { SITE_URL } from '../data/site'
+import { SITE_URL, offerTerms } from '../data/site'
 import ProductCard from '../components/ProductCard'
 import JsonLd from '../components/JsonLd'
 import Reveal from '../components/Reveal'
@@ -110,6 +110,7 @@ export default function NasalSprays() {
               price: s.prices[0].price,
               availability: 'https://schema.org/InStock',
               url: `${SITE_URL}${s.page}`,
+              ...offerTerms(),
             },
           },
         })),

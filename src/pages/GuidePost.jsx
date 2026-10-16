@@ -2,7 +2,8 @@ import { useParams, Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { getGuide, guides } from '../data/guidesData'
 import { whatsappLink } from '../data/products'
-import { AUTHOR_SCHEMA, DEFAULT_IMAGE, citationSchema } from '../data/site'
+import { AUTHOR_SCHEMA, citationSchema } from '../data/site'
+import { ogImageFor } from '../lib/ogImage'
 import JsonLd from '../components/JsonLd'
 import { Byline, AuthorCard } from '../components/AuthorCard'
 
@@ -237,6 +238,7 @@ export default function GuidePost() {
         <meta property="og:title" content={`${guide.title} | STRIATA Guides`} />
         <meta property="og:description" content={guide.preview} />
         <meta property="og:url" content={`https://www.striatalabs.co.za/guides/${guide.slug}`} />
+        <meta property="og:image" content={ogImageFor(`/guides/${guide.slug}`)} />
         <meta property="og:type" content="article" />
         <meta property="article:published_time" content={guide.datePublished} />
         <meta property="article:modified_time" content={guide.dateModified} />
@@ -249,7 +251,7 @@ export default function GuidePost() {
         headline: guide.title,
         description: guide.preview,
         articleSection: guide.category,
-        image: DEFAULT_IMAGE,
+        image: ogImageFor(`/guides/${guide.slug}`),
         datePublished: guide.datePublished,
         dateModified: guide.dateModified,
         author: AUTHOR_SCHEMA,

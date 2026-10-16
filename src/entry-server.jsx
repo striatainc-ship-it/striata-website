@@ -10,6 +10,9 @@ import { guides } from './data/guidesData'
 import { quizResultPaths } from './data/quizProtocols'
 import { categories, pagedProducts, productPath } from './data/products'
 import { nasalSprays } from './data/nasalSpraysData'
+import { CATEGORY_PAGES, categoryPagePath } from './data/categoryPages'
+import { STACKS, stackPath } from './data/stacksData'
+import { PEN_PAGES, penPagePath } from './data/penPages'
 
 /**
  * Import every route component up front.
@@ -56,7 +59,7 @@ export function getRoutes() {
   // product slug that collides with a category id would quietly take a URL
   // that belongs to a listing page. Cheaper to fail the build than to find out
   // from Search Console.
-  const categoryIds = new Set(categories.map(c => c.id))
+  const categoryIds = new Set([...categories.map(c => c.id), ...CATEGORY_PAGES.map(p => p.slug)])
   const collisions = pagedProducts.filter(p => categoryIds.has(p.slug))
   if (collisions.length) {
     throw new Error(
@@ -66,6 +69,12 @@ export function getRoutes() {
 
   return [
     ...staticRoutes,
+    // Category landing pages: the indexable form of the ?cat= filters.
+    ...CATEGORY_PAGES.map(page => ({ path: categoryPagePath(page), priority: '0.9', changefreq: 'weekly' })),
+    // One page per stack, beside the /stacks overview.
+    ...STACKS.map(stack => ({ path: stackPath(stack), priority: '0.7', changefreq: 'monthly' })),
+    // Pens with a page of their own (the rest are listed on /pens only).
+    ...PEN_PAGES.map(page => ({ path: penPagePath(page), priority: '0.8', changefreq: 'weekly' })),
     // Per-product pages. Priority sits just under /catalogue itself: they are
     // the pages that answer a named-product search, which is most of them.
     ...pagedProducts.map(product => ({

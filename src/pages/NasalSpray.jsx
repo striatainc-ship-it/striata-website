@@ -6,7 +6,7 @@ import { nasalSprayContentFor } from '../data/nasalSprayContent'
 import { pens } from '../data/pensData'
 import { guideFor } from '../data/productGuides'
 import { blogPosts } from '../data/blogPosts'
-import { SITE_URL, DEFAULT_IMAGE } from '../data/site'
+import { SITE_URL, DEFAULT_IMAGE, offerTerms } from '../data/site'
 import { spotlightProps } from '../lib/motion'
 import Reveal from '../components/Reveal'
 import JsonLd from '../components/JsonLd'
@@ -166,6 +166,7 @@ function SprayPage({ spray }) {
             availability: 'https://schema.org/InStock',
             url,
             seller: { '@type': 'Organization', name: 'STRIATA' },
+            ...offerTerms(),
           },
         }}
       />

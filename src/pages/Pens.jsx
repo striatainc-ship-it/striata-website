@@ -5,6 +5,7 @@ import { categories, whatsappLink, vialImage, vialStill } from '../data/products
 import { pens, penCount } from '../data/pensData'
 import ProductCard from '../components/ProductCard'
 import JsonLd from '../components/JsonLd'
+import { offerTerms } from '../data/site'
 import Reveal from '../components/Reveal'
 import FilterChips from '../components/FilterChips'
 import { useStaggerGrid, spotlightProps } from '../lib/motion'
@@ -182,7 +183,8 @@ export default function Pens() {
                 highPrice: Math.max(...amounts),
                 offerCount: p.prices.length,
                 availability: 'https://schema.org/InStock',
-                url: 'https://www.striatalabs.co.za/pens',
+                url: `https://www.striatalabs.co.za${p.page ?? '/pens'}`,
+                ...offerTerms({ pen: true }),
               },
             },
           }

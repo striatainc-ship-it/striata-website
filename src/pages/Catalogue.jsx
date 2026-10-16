@@ -2,8 +2,10 @@ import { useState, useEffect, useRef, useMemo } from 'react'
 import { useLocation, Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { products, categories, whatsappLink, isInStock, categoryLabel, productPath, vialImage, vialStill } from '../data/products'
+import { categoryPageFor, categoryPagePath } from '../data/categoryPages'
 import ProductCard from '../components/ProductCard'
 import JsonLd from '../components/JsonLd'
+import { offerTerms } from '../data/site'
 import Reveal from '../components/Reveal'
 import FilterChips from '../components/FilterChips'
 import { useStaggerGrid } from '../lib/motion'
@@ -135,6 +137,7 @@ export default function Catalogue() {
   }, [search, filtered.length])
 
   const currentCategory = categories.find((c) => c.id === activeCategory)
+  const currentCategoryPage = categoryPageFor(activeCategory)
 
   return (
     <div className="bg-[#0A1628] min-h-screen">
@@ -183,6 +186,7 @@ export default function Catalogue() {
                   offerCount: p.prices.length,
                   availability: 'https://schema.org/InStock',
                   url,
+                  ...offerTerms(),
                 },
               },
             }
@@ -290,6 +294,14 @@ export default function Catalogue() {
             {filtered.length} compound{filtered.length !== 1 ? 's' : ''} found
             {activeCategory !== 'all' && currentCategory && (
               <> in <span className="text-[#00B4B4]">{currentCategory.label}</span></>
+            )}
+            {currentCategoryPage && (
+              <>
+                {' · '}
+                <Link to={categoryPagePath(currentCategoryPage)} className="text-[#00B4B4] hover:text-white transition-colors">
+                  About this range →
+                </Link>
+              </>
             )}
             {search && <> matching "<span className="text-white/60">{search}</span>"</>}
             {' · '}<span className="text-green-400">all in stock</span>

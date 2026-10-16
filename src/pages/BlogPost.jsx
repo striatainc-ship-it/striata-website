@@ -2,8 +2,10 @@ import { useParams, Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { getBlogPost, blogPosts } from '../data/blogPosts'
 import { whatsappLink } from '../data/products'
-import { AUTHOR_SCHEMA, DEFAULT_IMAGE, citationSchema } from '../data/site'
+import { AUTHOR_SCHEMA, citationSchema } from '../data/site'
+import { ogImageFor } from '../lib/ogImage'
 import { SA_ESSENTIALS, MENOPAUSE_CATEGORIES } from '../data/learnLinks'
+import { productLinksFor } from '../data/productGuides'
 import JsonLd from '../components/JsonLd'
 import { Byline, AuthorCard } from '../components/AuthorCard'
 
@@ -231,6 +233,28 @@ function EssentialLinks({ article }) {
   )
 }
 
+/** The product pages this post explains, so the article links back to them. */
+function ProductLinks({ slug }) {
+  const links = productLinksFor(slug)
+  if (!links.length) return null
+  return (
+    <div className="mt-6 bg-[#0d1e35] border border-[#00B4B4]/20 rounded-2xl p-5">
+      <p className="text-[#00B4B4] text-xs font-bold uppercase tracking-widest mb-3" style={{ fontFamily: 'var(--font-heading)' }}>
+        In the STRIATA range
+      </p>
+      <ul className="flex flex-wrap gap-x-6 gap-y-2">
+        {links.map((l) => (
+          <li key={l.to}>
+            <Link to={l.to} className="text-white/80 text-sm font-semibold hover:text-[#00B4B4] transition-colors">
+              {l.label} <span className="text-white/40 font-normal">· {l.format}</span> →
+            </Link>
+          </li>
+        ))}
+      </ul>
+    </div>
+  )
+}
+
 // ── Main component ────────────────────────────────────────
 export default function BlogPost() {
   const { slug } = useParams()
@@ -268,6 +292,7 @@ export default function BlogPost() {
         <meta property="og:title" content={`${article.title} | STRIATA Learn`} />
         <meta property="og:description" content={article.preview} />
         <meta property="og:url" content={`https://www.striatalabs.co.za/learn/${article.slug}`} />
+        <meta property="og:image" content={ogImageFor(`/learn/${article.slug}`)} />
         <meta property="article:published_time" content={article.datePublished} />
         <meta property="article:modified_time" content={article.dateModified} />
         <meta property="article:author" content="James Kriel" />
@@ -279,7 +304,7 @@ export default function BlogPost() {
         headline: article.title,
         description: article.preview,
         articleSection: article.category,
-        image: DEFAULT_IMAGE,
+        image: ogImageFor(`/learn/${article.slug}`),
         datePublished: article.datePublished,
         dateModified: article.dateModified,
         author: AUTHOR_SCHEMA,
@@ -341,6 +366,7 @@ export default function BlogPost() {
           <div className="bg-[#0d1e35] border border-white/8 rounded-2xl p-7 md:p-10">
             <MarkdownContent content={article.content} />
           </div>
+          <ProductLinks slug={article.slug} />
           <AuthorCard />
         </div>
       </section>

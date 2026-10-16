@@ -37,7 +37,7 @@ const categories = [
         </svg>
       </IC>
     ),
-    label: 'Recovery & Performance', desc: 'Push harder. Lift heavier. Break limits.', to: '/catalogue?cat=recovery',
+    label: 'Recovery & Performance', desc: 'Push harder. Lift heavier. Break limits.', to: '/catalogue/recovery-peptides',
   },
   {
     icon: (
@@ -47,7 +47,7 @@ const categories = [
         </svg>
       </IC>
     ),
-    label: 'Skin, Hair & Anti-Aging', desc: 'Regenerate. Rejuvenate. Renew.', to: '/catalogue?cat=skin',
+    label: 'Skin, Hair & Anti-Aging', desc: 'Regenerate. Rejuvenate. Renew.', to: '/catalogue/skin-anti-aging-peptides',
   },
   {
     icon: (
@@ -57,7 +57,7 @@ const categories = [
         </svg>
       </IC>
     ),
-    label: 'Hormonal & Sexual Health', desc: 'Optimise. Balance. Perform.', to: '/catalogue?cat=hormonal',
+    label: 'Hormonal & Sexual Health', desc: 'Optimise. Balance. Perform.', to: '/catalogue/hormonal-health-peptides',
   },
   {
     icon: (
@@ -67,7 +67,7 @@ const categories = [
         </svg>
       </IC>
     ),
-    label: 'Weight Loss & Metabolism', desc: 'Optimise your metabolism. Reclaim your body.', to: '/catalogue?cat=weight',
+    label: 'Weight Loss & Metabolism', desc: 'Optimise your metabolism. Reclaim your body.', to: '/catalogue/weight-loss-peptides',
   },
   {
     icon: (
@@ -77,7 +77,7 @@ const categories = [
         </svg>
       </IC>
     ),
-    label: 'Brain, Mood & Sleep', desc: 'Sharpen your mind. Sustain your drive.', to: '/catalogue?cat=brain',
+    label: 'Brain, Mood & Sleep', desc: 'Sharpen your mind. Sustain your drive.', to: '/catalogue/nootropic-peptides',
   },
   {
     icon: (
@@ -87,7 +87,7 @@ const categories = [
         </svg>
       </IC>
     ),
-    label: 'Immunity & Longevity', desc: 'Age on your terms. Stay ahead of time.', to: '/catalogue?cat=immunity',
+    label: 'Immunity & Longevity', desc: 'Age on your terms. Stay ahead of time.', to: '/catalogue/immunity-longevity-peptides',
   },
 ]
 

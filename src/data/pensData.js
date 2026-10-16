@@ -1,4 +1,5 @@
 import { products } from './products.js'
+import { penPageFor, penPagePath } from './penPages.js'
 
 /**
  * Peptide pens — the same compounds as the catalogue, in a pre-filled pen.
@@ -97,6 +98,9 @@ export const pens = PENS.map(({ productId, prices }) => {
     photoPlaceholder: !PEN_PHOTOS[productId],
     imageName: PEN_PHOTOS[productId] ? `${base.slug}-pen` : 'pen-placeholder',
     prices: prices.map((tier) => ({ ...tier, inStock: true })),
+    // A pen with its own page links there (productPath prefers `page`);
+    // the rest link to the compound's vial page.
+    ...(penPageFor(productId) ? { page: penPagePath(penPageFor(productId)) } : {}),
   }
 })
 

@@ -25,7 +25,7 @@
 
 const catalogue = (q) => `/catalogue?q=${encodeURIComponent(q)}`
 const pens = (q) => `/pens?q=${encodeURIComponent(q)}`
-const stack = (anchor) => `/stacks#${anchor}`
+const stack = (slug) => `/stacks/${slug}`
 
 export const quizProtocols = [
   // ── Recovery ─────────────────────────────────────────────────────────

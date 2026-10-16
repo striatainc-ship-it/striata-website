@@ -5,6 +5,35 @@ export const CATEGORY_META = {
   wellness:   { label: 'General Wellness', color: '#3B82F6', lightColor: 'rgba(59,130,246,0.08)', border: 'rgba(59,130,246,0.3)' },
 }
 
+/** 'R 1 150' -> 1150 */
+export const randValue = (price) => Number(price.replace(/[^\d]/g, ''))
+
+
+// ─── Tier colour system ──────────────────────────────────────────────────────
+// Entry = blue (accessible, introductory)
+// Mid   = amber (enhanced, intermediate)
+// Premium = emerald (elite, best-in-class)
+export const TIER_STYLES = {
+  Entry: {
+    bg:       'rgba(59,130,246,0.10)',
+    label:    '#93C5FD',
+    price:    '#93C5FD',
+    text:     'rgba(255,255,255,0.65)',
+  },
+  Mid: {
+    bg:       'rgba(245,158,11,0.10)',
+    label:    '#FCD34D',
+    price:    '#FCD34D',
+    text:     'rgba(255,255,255,0.65)',
+  },
+  Premium: {
+    bg:       '#0B3D2B',
+    label:    '#34D399',
+    price:    '#34D399',
+    text:     'rgba(255,255,255,0.80)',
+  },
+}
+
 export const STACKS = [
   {
     num: 1,
@@ -250,6 +279,13 @@ export const UNIVERSAL_CONTRAINDICATIONS = [
   'Athletes subject to WADA anti-doping testing. TB-500, GH secretagogues, and HGH Somatropin are all prohibited substances.',
   'All peptides on this page are for research purposes only and are not intended for human or veterinary use.',
 ]
+
+/** URL slug for a stack, e.g. 'the-wolverine-protocol'. Also its old /stacks anchor. */
+export const stackSlug = (stack) => stack.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '')
+
+export const stackPath = (stack) => `/stacks/${stackSlug(stack)}`
+
+export const stackBySlug = (slug) => STACKS.find((stack) => stackSlug(stack) === slug) ?? null
 
 export const waLink = (stackName) =>
   `https://wa.me/27782137905?text=${encodeURIComponent(`Hi, I'm interested in the ${stackName} stack. Can you help me?`)}`

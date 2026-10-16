@@ -12,8 +12,10 @@
  *   node scripts/prerender.mjs
  */
 import { mkdir, readFile, writeFile } from 'node:fs/promises'
-import { dirname, join } from 'node:path'
+import { basename, dirname, join } from 'node:path'
 import { fileURLToPath, pathToFileURL } from 'node:url'
+import { renderOgImage } from './lib/og-image.mjs'
+import { OG_ORIGIN, ogImageFor } from '../src/lib/ogImage.js'
 
 const root = join(dirname(fileURLToPath(import.meta.url)), '..')
 const distDir = join(root, 'dist')
@@ -51,9 +53,60 @@ function metaKey(tag) {
   return match ? `${match[1].toLowerCase()}:${match[2].toLowerCase()}` : null
 }
 
+const decode = (s) =>
+  s.replace(/&#x([0-9a-f]+);/gi, (_, h) => String.fromCodePoint(parseInt(h, 16)))
+    .replace(/&#(\d+);/g, (_, d) => String.fromCodePoint(Number(d)))
+    .replace(/&quot;/g, '"').replace(/&apos;/g, "'").replace(/&lt;/g, '<').replace(/&gt;/g, '>').replace(/&amp;/g, '&')
+
+/** The section label printed above the title on a generated preview image. */
+function eyebrowFor(path, html) {
+  if (path.startsWith('/learn/')) {
+    const section = html.match(/"articleSection":"([^"]+)"/)
+    return section ? `STRIATA Learn · ${decode(section[1])}` : 'STRIATA Learn'
+  }
+  if (path.startsWith('/guides/')) return 'STRIATA Guide'
+  if (path.startsWith('/stacks/')) return 'Peptide stack'
+  if (/^\/catalogue\/[a-z-]+-peptides$/.test(path)) return 'Peptide range'
+  if (path.startsWith('/tools')) return 'Free tool'
+  if (path.startsWith('/quiz')) return 'Protocol quiz'
+  return 'STRIATA'
+}
+
+/**
+ * A social preview image for an indexable page that has no photo of its own:
+ * one whose og:image is missing (it would fall back to the generic site
+ * image) or points at /og/ (the page asked for a generated one by name).
+ * Product, spray, pen and serum pages set their photography and are left
+ * alone. Returns the head tags to add.
+ */
+async function previewImage(route, html, tags) {
+  if (route.sitemap === false) return []
+  const ogTag = tags.find((tag) => metaKey(tag) === 'property:og:image')
+  const current = ogTag?.match(/content=["']([^"']+)["']/)?.[1] ?? null
+  if (current && !current.startsWith(`${OG_ORIGIN}/og/`)) return []
+
+  const url = current ?? ogImageFor(route.path)
+  const rawTitle = decode(tags.find((tag) => tag.startsWith('<title'))?.replace(/<[^>]+>/g, '') ?? 'STRIATA')
+  const parts = rawTitle.split(' | ')
+  const title = parts[0] === 'STRIATA' && parts[1] ? parts[1] : parts[0]
+
+  await mkdir(join(distDir, 'og'), { recursive: true })
+  await renderOgImage({ title, eyebrow: eyebrowFor(route.path, html), file: join(distDir, 'og', basename(url)) })
+
+  const hasTwitterImage = tags.some((tag) => metaKey(tag) === 'name:twitter:image')
+  return [
+    ...(current ? [] : [`<meta property="og:image" content="${url}"/>`]),
+    ...(hasTwitterImage ? [] : [`<meta name="twitter:image" content="${url}"/>`]),
+    '<meta property="og:image:width" content="1200"/>',
+    '<meta property="og:image:height" content="630"/>',
+  ]
+}
+
 /** Inject the rendered markup and this route's head tags into the template. */
-function buildPage(template, html) {
-  const { tags, body } = extractHoistedTags(html)
+function buildPage(template, html, extraTags = []) {
+  const extracted = extractHoistedTags(html)
+  const { body } = extracted
+  const tags = [...extracted.tags, ...extraTags]
   let page = template
 
   // The template's <title> is only a fallback. Drop it when the route supplies
@@ -101,8 +154,9 @@ for (const route of routes) {
   try {
     const { html } = await render(route.path)
     const file = outputPath(route.path)
+    const extraTags = await previewImage(route, html, extractHoistedTags(html).tags)
     await mkdir(dirname(file), { recursive: true })
-    await writeFile(file, buildPage(template, html), 'utf8')
+    await writeFile(file, buildPage(template, html, extraTags), 'utf8')
     console.log(`  prerendered ${route.path}`)
   } catch (error) {
     failures.push({ path: route.path, error })

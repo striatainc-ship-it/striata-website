@@ -1,5 +1,7 @@
 // Site-wide facts shared by page metadata, structured data and bylines.
 
+import { DELIVERY_OPTIONS, COLD_CHAIN } from '../lib/cart'
+
 export const SITE_URL = 'https://www.striatalabs.co.za'
 
 /** Fallback image for Article/OG when a page has no image of its own. */
@@ -60,4 +62,32 @@ export function formatDate(iso) {
     year: 'numeric',
     timeZone: 'UTC',
   })
+}
+
+const shippingTo = (price) => ({
+  '@type': 'OfferShippingDetails',
+  shippingRate: { '@type': 'MonetaryAmount', value: price, currency: 'ZAR' },
+  shippingDestination: { '@type': 'DefinedRegion', addressCountry: 'ZA' },
+})
+
+/**
+ * Delivery and returns on every Offer, as the Legal page states them: flat
+ * standard or express delivery nationwide (cold-chain for pens), and no
+ * returns once an order is dispatched (sections 4.1 and 5.1). Rates come from
+ * the order slip's table so the two cannot drift apart. No deliveryTime:
+ * the site states transit (2-3 days) but not handling time, and Google wants
+ * both or neither.
+ */
+export function offerTerms({ pen = false } = {}) {
+  return {
+    shippingDetails: pen
+      ? [shippingTo(COLD_CHAIN.price)]
+      : [shippingTo(DELIVERY_OPTIONS.standard.price), shippingTo(DELIVERY_OPTIONS.express.price)],
+    hasMerchantReturnPolicy: {
+      '@type': 'MerchantReturnPolicy',
+      applicableCountry: 'ZA',
+      returnPolicyCategory: 'https://schema.org/MerchantReturnNotPermitted',
+      merchantReturnLink: `${SITE_URL}/legal#refunds`,
+    },
+  }
 }

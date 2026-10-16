@@ -13,6 +13,7 @@ const serumTier = (s) => SERUM.prices.find((t) => t.dose.startsWith(s.id))
 import { prefersReducedMotion, spotlightProps } from '../lib/motion'
 import Reveal from '../components/Reveal'
 import JsonLd from '../components/JsonLd'
+import { offerTerms } from '../data/site'
 
 const H = { fontFamily: 'var(--font-heading)' }
 // Cut-out (transparent) for the hero stage; the original on white stays for og:image.
@@ -250,7 +251,8 @@ export default function GhkSerum() {
         <meta property="og:title" content="GHK-Cu Copper Peptide Serum | STRIATA South Africa" />
         <meta property="og:description" content="Copper peptide + hyaluronic acid serum, 1% and 2% strengths. Restore. Hydrate. Renew." />
         <meta property="og:url" content="https://www.striatalabs.co.za/ghk-serum" />
-        <meta property="og:image" content="https://www.striatalabs.co.za/assets/opt/ghk-serum-960.webp" />
+        <meta property="og:image" content="https://www.striatalabs.co.za/assets/opt/ghk-serum-og.jpg" />
+        <meta name="twitter:image" content="https://www.striatalabs.co.za/assets/opt/ghk-serum-og.jpg" />
       </Helmet>
 
       <JsonLd data={{
@@ -268,6 +270,7 @@ export default function GhkSerum() {
           offerCount: 2,
           availability: 'https://schema.org/InStock',
           url: 'https://www.striatalabs.co.za/ghk-serum',
+          ...offerTerms(),
         },
       }} />
 
@@ -281,7 +284,7 @@ export default function GhkSerum() {
 
         <div className="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <Reveal stagger delay={0.1} className="order-2 lg:order-1">
-            <Link to="/catalogue?cat=skin" className="inline-flex items-center gap-1.5 text-white/40 hover:text-white text-xs font-semibold mb-6 transition-colors">
+            <Link to="/catalogue/skin-anti-aging-peptides" className="inline-flex items-center gap-1.5 text-white/40 hover:text-white text-xs font-semibold mb-6 transition-colors">
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 18 9 12 15 6" /></svg>
               Skin, Hair & Anti-Aging
             </Link>
@@ -485,6 +488,13 @@ export default function GhkSerum() {
           <Reveal className="rounded-3xl border border-white/8 bg-[#0d1e35] px-7">
             {FAQ.map((f) => <FaqItem key={f.q} {...f} />)}
           </Reveal>
+          <p className="mt-6 text-white/50 text-sm leading-relaxed">
+            The same copper peptide is supplied as a lyophilised{' '}
+            <Link to="/catalogue/ghk-cu" className="text-[#00B4B4] hover:text-white transition-colors">GHK-Cu vial</Link>
+            {' '}for research, and our{' '}
+            <Link to="/learn/ghk-cu-copper-peptide-anti-aging" className="text-[#00B4B4] hover:text-white transition-colors">GHK-Cu guide</Link>
+            {' '}covers the research behind both.
+          </p>
         </div>
       </section>
 

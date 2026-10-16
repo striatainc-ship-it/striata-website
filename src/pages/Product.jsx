@@ -15,8 +15,10 @@ import {
 import { contentFor } from '../data/productContent'
 import { nasalSprays } from '../data/nasalSpraysData'
 import { guideFor } from '../data/productGuides'
+import { specsFor } from '../data/productSpecs'
 import { blogPosts } from '../data/blogPosts'
-import { SITE_URL, DEFAULT_IMAGE } from '../data/site'
+import { SITE_URL, offerTerms } from '../data/site'
+import { ogImageFor } from '../lib/ogImage'
 import { spotlightProps } from '../lib/motion'
 import Reveal from '../components/Reveal'
 import JsonLd from '../components/JsonLd'
@@ -85,7 +87,9 @@ function ProductPage({ product }) {
   const image = vialImage(product)
   const inStock = isInStock(product)
   const guide = guideFor(product)
+  const specs = specsFor(product)
   const spray = nasalSprays.find((s) => s.productId === product.id) ?? null
+  const serum = products.find((p) => p.compoundId === product.id) ?? null
   const url = `${SITE_URL}${productPath(product)}`
 
   const prices = product.prices ?? []
@@ -108,7 +112,8 @@ function ProductPage({ product }) {
       .slice(0, 3)
   }, [content])
 
-  const socialImage = image ? `${SITE_URL}${vialStill(image.names[0], 'og')}` : DEFAULT_IMAGE
+  // No photo yet: a generated title card (scripts/prerender.mjs renders it).
+  const socialImage = image ? `${SITE_URL}${vialStill(image.names[0], 'og')}` : ogImageFor(productPath(product))
 
   return (
     <div className="bg-[#0A1628] min-h-screen">
@@ -149,6 +154,7 @@ function ProductPage({ product }) {
               : 'https://schema.org/BackOrder',
             url,
             seller: { '@type': 'Organization', name: 'STRIATA' },
+            ...offerTerms(),
           })),
         }}
       />
@@ -330,6 +336,17 @@ function ProductPage({ product }) {
                   <span aria-hidden="true">→</span>
                 </Link>
               )}
+
+              {serum && (
+                <Link
+                  to={serum.page}
+                  className="mt-4 inline-flex items-center gap-2 text-sm text-white/55 hover:text-[#00B4B4] transition-colors"
+                >
+                  <span className="text-[#00B4B4] font-semibold">Also as a topical serum</span>
+                  <span className="text-white/35">· 30 ml, from {rand(Math.min(...serum.prices.map((t) => t.price)))}</span>
+                  <span aria-hidden="true">→</span>
+                </Link>
+              )}
             </div>
           </div>
         </div>
@@ -350,6 +367,41 @@ function ProductPage({ product }) {
               ))}
             </Reveal>
           </section>
+
+          {/* ── SPECIFICATIONS ── */}
+          {specs && (
+            <section className="px-6 py-16 border-t border-white/5">
+              <Reveal className="max-w-3xl mx-auto">
+                <h2 className="text-2xl md:text-3xl font-black text-white mb-3" style={H}>
+                  Specifications
+                </h2>
+                <p className="text-white/40 text-sm mb-8">
+                  Evidence level: <span className="text-white/70">{specs.evidence}</span>
+                </p>
+                <dl className="rounded-2xl border border-white/8 overflow-hidden">
+                  {specs.rows.map((row, i) => (
+                    <div
+                      key={row.label}
+                      className={`grid sm:grid-cols-[11rem_1fr] gap-1 sm:gap-4 px-5 py-3.5 ${i % 2 ? 'bg-white/[0.02]' : 'bg-[#0d1e35]'}`}
+                    >
+                      <dt className="text-white/45 text-xs font-semibold uppercase tracking-widest sm:pt-0.5">{row.label}</dt>
+                      <dd className="text-white/75 text-sm leading-relaxed break-words">
+                        {row.value}
+                        {row.href && (
+                          <>
+                            {' '}
+                            <a href={row.href} target="_blank" rel="noopener noreferrer" className="text-[#00B4B4] hover:text-white transition-colors whitespace-nowrap">
+                              PubChem ↗
+                            </a>
+                          </>
+                        )}
+                      </dd>
+                    </div>
+                  ))}
+                </dl>
+              </Reveal>
+            </section>
+          )}
 
           {/* ── RESEARCHED FOR ── */}
           <section className="px-6 py-16 border-t border-white/5">
@@ -409,6 +461,28 @@ function ProductPage({ product }) {
                     <FaqItem key={faq.q} {...faq} />
                   ))}
                 </div>
+              </Reveal>
+            </section>
+          )}
+
+          {/* ── SOURCES ── */}
+          {specs?.sources.length > 0 && (
+            <section className="px-6 py-16 border-t border-white/5">
+              <Reveal className="max-w-3xl mx-auto">
+                <h2 className="text-2xl md:text-3xl font-black text-white mb-6" style={H}>
+                  Sources
+                </h2>
+                <ol className="space-y-3 list-decimal pl-5 marker:text-white/30">
+                  {specs.sources.map((src) => (
+                    <li key={src.url} className="text-white/55 text-sm leading-relaxed pl-1">
+                      {src.authors}{' '}
+                      <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-[#00B4B4] hover:text-white transition-colors">
+                        {src.title}
+                      </a>
+                      . <span className="italic">{src.journal}</span>, {src.year}.
+                    </li>
+                  ))}
+                </ol>
               </Reveal>
             </section>
           )}

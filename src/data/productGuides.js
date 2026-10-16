@@ -1,3 +1,6 @@
+import { products, productPath } from './products.js'
+import { nasalSprays } from './nasalSpraysData.js'
+
 /**
  * Catalogue product id -> the Learn post that explains it. Rendered as a
  * "Read our guide" link on the product card, so the deep articles pick up
@@ -40,3 +43,33 @@ export const PRODUCT_GUIDES = {
 }
 
 export const guideFor = (product) => PRODUCT_GUIDES[product.id] || null
+
+/**
+ * Posts that are about a product without being its guide. The Wolverine
+ * product page is the main target for "Wolverine stack", so the weight-loss
+ * article on the same stack links to it as well.
+ */
+const EXTRA_POST_PRODUCTS = {
+  'wolverine-stack-for-weight-loss': [3],
+}
+
+/**
+ * The other direction: every product page a Learn post explains, so the
+ * article links back to the vial, spray or serum page that links to it.
+ * Products without a page of their own (archived compounds) are skipped.
+ */
+export function productLinksFor(postSlug) {
+  const ids = new Set(EXTRA_POST_PRODUCTS[postSlug] ?? [])
+  for (const [id, slug] of Object.entries(PRODUCT_GUIDES)) {
+    if (slug === postSlug) ids.add(Number(id))
+  }
+  const links = []
+  for (const product of products.filter((p) => ids.has(p.id))) {
+    const to = productPath(product)
+    if (to) links.push({ to, label: product.name, format: product.page ? 'Serum' : (product.format ?? 'Vial') })
+    for (const spray of nasalSprays.filter((s) => s.productId === product.id)) {
+      links.push({ to: spray.page, label: spray.name, format: 'Nasal spray' })
+    }
+  }
+  return links
+}

@@ -291,6 +291,8 @@ export const products = [
     // Already has a full landing page, so the card links there rather than
     // getting a second, thinner page of its own under /catalogue.
     page: '/ghk-serum',
+    // The injectable GHK-Cu vial (id 22): the two pages link to each other.
+    compoundId: 22,
     category: 'skin',
     format: 'Bottle',
     description: 'Our copper peptide face serum: GHK-Cu with 1% hyaluronic acid in a 30 ml dropper, for all skin types. Restore, hydrate, renew. Available in 1% and 2% strengths.',
