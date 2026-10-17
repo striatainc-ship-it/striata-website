@@ -36,3 +36,6 @@ assets-source/sprays/
 
 # Pen product masters: originals in ../assets/Peptide Pens/ (OneDrive).
 assets-source/pens/
+
+# Certificate of analysis scans: originals in ../CoAs/ (OneDrive).
+assets-source/coas/

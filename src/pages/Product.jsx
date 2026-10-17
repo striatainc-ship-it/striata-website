@@ -16,6 +16,7 @@ import { contentFor } from '../data/productContent'
 import { nasalSprays } from '../data/nasalSpraysData'
 import { guideFor } from '../data/productGuides'
 import { specsFor } from '../data/productSpecs'
+import { coaFor } from '../data/productCoas'
 import { blogPosts } from '../data/blogPosts'
 import { SITE_URL, offerTerms } from '../data/site'
 import { ogImageFor } from '../lib/ogImage'
@@ -25,6 +26,7 @@ import JsonLd from '../components/JsonLd'
 import VialShot from '../components/VialShot'
 import FaqItem from '../components/FaqItem'
 import AddToOrder from '../components/AddToOrder'
+import CoaSection from '../components/CoaSection'
 
 const H = { fontFamily: 'var(--font-heading)' }
 
@@ -88,6 +90,7 @@ function ProductPage({ product }) {
   const inStock = isInStock(product)
   const guide = guideFor(product)
   const specs = specsFor(product)
+  const coa = coaFor(product)
   const spray = nasalSprays.find((s) => s.productId === product.id) ?? null
   const serum = products.find((p) => p.compoundId === product.id) ?? null
   const url = `${SITE_URL}${productPath(product)}`
@@ -402,6 +405,9 @@ function ProductPage({ product }) {
               </Reveal>
             </section>
           )}
+
+          {/* ── CERTIFICATE OF ANALYSIS ── */}
+          {coa && <CoaSection product={product} coa={coa} />}
 
           {/* ── RESEARCHED FOR ── */}
           <section className="px-6 py-16 border-t border-white/5">
