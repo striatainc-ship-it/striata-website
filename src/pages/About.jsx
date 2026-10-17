@@ -220,12 +220,12 @@ export default function About() {
           </div>
           <div className="relative">
             <img
-              src={`${import.meta.env.BASE_URL}assets/opt/image-1-1280.webp`}
-              srcSet={`${import.meta.env.BASE_URL}assets/opt/image-1-640.webp 640w, ${import.meta.env.BASE_URL}assets/opt/image-1-1280.webp 1280w`}
+              src={`${import.meta.env.BASE_URL}assets/opt/dispatch-1280.webp`}
+              srcSet={`${import.meta.env.BASE_URL}assets/opt/dispatch-640.webp 640w, ${import.meta.env.BASE_URL}assets/opt/dispatch-1280.webp 1280w`}
               sizes="(min-width: 768px) 576px, 100vw"
-              alt="STRIATA lab"
-              width={2752}
-              height={1536}
+              alt="Packing a STRIATA order for delivery"
+              width={2688}
+              height={1520}
               loading="lazy"
               decoding="async"
               className="rounded-3xl w-full object-cover aspect-[4/5]"
@@ -344,12 +344,12 @@ export default function About() {
       <section ref={addRef} className="py-24 max-w-7xl mx-auto px-6 lg:px-8">
         <div className="relative rounded-3xl overflow-hidden">
           <img
-            src={`${import.meta.env.BASE_URL}assets/opt/hero-background-2-1920.webp`}
-            srcSet={`${import.meta.env.BASE_URL}assets/opt/hero-background-2-768.webp 768w, ${import.meta.env.BASE_URL}assets/opt/hero-background-2-1280.webp 1280w, ${import.meta.env.BASE_URL}assets/opt/hero-background-2-1920.webp 1920w`}
+            src={`${import.meta.env.BASE_URL}assets/opt/johannesburg-1920.webp`}
+            srcSet={`${import.meta.env.BASE_URL}assets/opt/johannesburg-768.webp 768w, ${import.meta.env.BASE_URL}assets/opt/johannesburg-1280.webp 1280w, ${import.meta.env.BASE_URL}assets/opt/johannesburg-1920.webp 1920w`}
             sizes="(min-width: 1280px) 1216px, 100vw"
-            alt="South Africa"
-            width={2752}
-            height={1536}
+            alt="Johannesburg skyline at dusk"
+            width={2688}
+            height={1520}
             loading="lazy"
             decoding="async"
             className="w-full h-96 object-cover"

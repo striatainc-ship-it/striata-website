@@ -95,6 +95,7 @@ The research, regulatory documents and clinical guidelines behind the claims in 
 **Category:** Recovery
 **Read time:** 8 min
 **Keywords:** BPC-157 South Africa, buy BPC-157 SA, BPC-157 recovery peptide South Africa, BPC-157 price South Africa
+**Updated:** 2026-10-17
 
 ---
 
@@ -148,7 +149,7 @@ BPC-157 is available in two main forms: injectable (subcutaneous or intramuscula
 
 For localised musculoskeletal injuries, the injectable form is generally considered more effective when injected close to the site of injury. For systemic use or gut-related applications, the oral route is more practical and appears to retain meaningful bioavailability.
 
-Typical research protocols use doses in the range of 200–500 mcg per day, either as a single injection or split across two administrations. Cycle lengths of four to twelve weeks are commonly reported. These are research parameters — individual protocols should be considered in the context of each person's situation.
+Almost all of this comes from animal studies; there are no controlled human trials of BPC-157, and it is prohibited in sport under S0 of the WADA list.
 
 ---
 

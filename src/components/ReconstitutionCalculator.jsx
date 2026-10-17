@@ -572,7 +572,7 @@ export default function ReconstitutionCalculator() {
         )}
 
         <p className="text-white/35 text-xs leading-relaxed">
-          Informational research tool only, not medical advice. Always verify against the documentation supplied with your product and confirm doses with a qualified practitioner. Read the{' '}
+          Informational research tool only, not medical advice. Always verify against the documentation supplied with your product and with the certificate of analysis for your batch. Read the{' '}
           <Link to="/guides/peptide-reconstitution-dosage-calculator" className="text-[#00B4B4]/80 hover:text-[#00B4B4] underline underline-offset-2">
             full reconstitution guide
           </Link>{' '}

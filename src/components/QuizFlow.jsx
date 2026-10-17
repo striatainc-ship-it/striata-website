@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { QUESTIONS, LANDING, RESULT_BASE, visibleQuestions, tagsFromAnswers } from '../data/quizConfig'
+import { LANDING, RESULT_BASE, visibleQuestions, visibleOptions, tagsFromAnswers, answerLabel } from '../data/quizConfig'
 import { quizProtocols } from '../data/quizProtocols'
 import { matchProtocols, answersToQuery } from '../lib/quizScoring'
 import { trackEvent } from '../lib/analytics'
@@ -10,12 +10,11 @@ import { prefersReducedMotion } from '../lib/motion'
  * The interactive stepper. Lazy-loaded by the /quiz page after the visitor
  * presses Start, so the landing page's prerendered copy never waits on it.
  *
- * One question per screen. Single-select answers advance automatically
- * after a short beat so a phone user never hunts for a Next button; the
- * optional free-text step ends with an explicit "See my match".
+ * One question per screen. Answers advance automatically after a short beat
+ * so a phone user never hunts for a Next button, and the last answer goes
+ * straight to the result. Earlier answers sit above the question as chips;
+ * tapping one jumps back to change it.
  */
-
-export const NOTES_STORAGE_KEY = 'striata-quiz-notes'
 
 const H = { fontFamily: 'var(--font-heading)' }
 
@@ -31,12 +30,20 @@ const CHECK = (
   </svg>
 )
 
+// Short names for the answer chips; the full question is too long for a chip.
+const CHIP_NAME = {
+  goal: 'Goal',
+  recoveryType: 'Focus',
+  menopauseFocus: 'Focus',
+  delivery: 'Format',
+  experience: 'Experience',
+}
+
 export default function QuizFlow({ onRestart }) {
   const navigate = useNavigate()
   const [answers, setAnswers] = useState({})
   const [step, setStep] = useState(0)
   const [pending, setPending] = useState(null) // option id mid-advance
-  const [notes, setNotes] = useState('')
   const timer = useRef(null)
   const headingRef = useRef(null)
 
@@ -60,10 +67,6 @@ export default function QuizFlow({ onRestart }) {
     const tags = tagsFromAnswers(finalAnswers)
     const { top } = matchProtocols(quizProtocols, tags)
     if (!top) return
-    try {
-      if (notes.trim()) sessionStorage.setItem(NOTES_STORAGE_KEY, notes.trim())
-      else sessionStorage.removeItem(NOTES_STORAGE_KEY)
-    } catch { /* storage unavailable: notes are simply not carried over */ }
     trackEvent('quiz_complete', { result: top.protocol.slug, goal: finalAnswers.goal })
     navigate(`${RESULT_BASE}/${top.protocol.slug}${answersToQuery(finalAnswers)}`)
   }
@@ -71,10 +74,13 @@ export default function QuizFlow({ onRestart }) {
   const choose = (optionId) => {
     if (pending) return
     const next = { ...answers, [question.id]: optionId }
-    // Changing Q1 invalidates any conditional answer given for another goal.
+    // Changing the goal invalidates any follow-up given for another goal, and a
+    // format that the new goal does not offer (the serum is skin-only).
     if (question.id === 'goal') {
       delete next.recoveryType
       delete next.menopauseFocus
+      const delivery = visibleQuestions(next).find((q) => q.id === 'delivery')
+      if (!delivery || !visibleOptions(delivery, next).some((o) => o.id === next.delivery)) delete next.delivery
     }
     setAnswers(next)
     setPending(optionId)
@@ -94,6 +100,9 @@ export default function QuizFlow({ onRestart }) {
 
   if (!question) return null
 
+  const answered = questions.slice(0, step).filter((q) => answers[q.id])
+  const options = visibleOptions(question, answers)
+
   return (
     <div className="max-w-2xl mx-auto">
       {/* Progress */}
@@ -101,8 +110,24 @@ export default function QuizFlow({ onRestart }) {
         <span>Question {step + 1} of {total}</span>
         <span>{progress}%</span>
       </div>
-      <div className="h-1.5 rounded-full bg-white/10 overflow-hidden mb-10" role="progressbar" aria-valuenow={progress} aria-valuemin={0} aria-valuemax={100} aria-label="Quiz progress">
+      <div className="h-1.5 rounded-full bg-white/10 overflow-hidden mb-6" role="progressbar" aria-valuenow={progress} aria-valuemin={0} aria-valuemax={100} aria-label="Quiz progress">
         <div className="h-full bg-[#00B4B4] rounded-full transition-[width] duration-500 ease-out" style={{ width: `${progress}%` }} />
+      </div>
+
+      {/* What has been chosen so far; each chip jumps back to its question. */}
+      <div className="min-h-[2rem] mb-6 flex flex-wrap gap-2" aria-label="Your answers so far">
+        {answered.map((q) => (
+          <button
+            key={q.id}
+            type="button"
+            onClick={() => setStep(questions.indexOf(q))}
+            className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs text-white/60 hover:border-[#00B4B4]/50 hover:text-white transition-colors cursor-pointer"
+            aria-label={`Change ${CHIP_NAME[q.id] ?? q.id}: ${answerLabel(q.id, answers[q.id])}`}
+          >
+            <span className="text-white/35">{CHIP_NAME[q.id] ?? q.id}</span>
+            <span>{answerLabel(q.id, answers[q.id])}</span>
+          </button>
+        ))}
       </div>
 
       <div key={question.id} className="quiz-step">
@@ -116,61 +141,40 @@ export default function QuizFlow({ onRestart }) {
         </h2>
         <p className="text-white/50 text-base mb-8">{question.hint}</p>
 
-        {question.type === 'single' ? (
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3" role="group" aria-label={question.title}>
-            {question.options.map(opt => {
-              const selected = answers[question.id] === opt.id
-              const isPending = pending === opt.id
-              return (
-                <button
-                  key={opt.id}
-                  type="button"
-                  onClick={() => choose(opt.id)}
-                  aria-pressed={selected}
-                  className={`group text-left rounded-2xl border px-5 py-4 transition-all duration-200 cursor-pointer min-h-[72px] flex items-center justify-between gap-3 ${
-                    selected || isPending
-                      ? 'border-[#00B4B4] bg-[#00B4B4]/12 shadow-lg shadow-[#00B4B4]/10'
-                      : 'border-white/10 bg-[#0d1e35] hover:border-[#00B4B4]/50 hover:bg-[#0f2340]'
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3" role="group" aria-label={question.title}>
+          {options.map(opt => {
+            const selected = answers[question.id] === opt.id
+            const isPending = pending === opt.id
+            return (
+              <button
+                key={opt.id}
+                type="button"
+                onClick={() => choose(opt.id)}
+                aria-pressed={selected}
+                className={`group text-left rounded-2xl border px-5 py-4 transition-all duration-200 cursor-pointer min-h-[72px] flex items-center justify-between gap-3 ${
+                  selected || isPending
+                    ? 'border-[#00B4B4] bg-[#00B4B4]/12 shadow-lg shadow-[#00B4B4]/10'
+                    : 'border-white/10 bg-[#0d1e35] hover:border-[#00B4B4]/50 hover:bg-[#0f2340]'
+                }`}
+              >
+                <span>
+                  <span className="block text-white font-bold text-base leading-snug" style={H}>{opt.label}</span>
+                  {opt.hint && <span className="block text-white/45 text-sm mt-1">{opt.hint}</span>}
+                </span>
+                <span
+                  className={`w-7 h-7 rounded-full border flex items-center justify-center shrink-0 transition-colors ${
+                    selected || isPending ? 'bg-[#00B4B4] border-[#00B4B4] text-white' : 'border-white/15 text-transparent group-hover:border-[#00B4B4]/50'
                   }`}
+                  aria-hidden="true"
                 >
-                  <span>
-                    <span className="block text-white font-bold text-base leading-snug" style={H}>{opt.label}</span>
-                    {opt.hint && <span className="block text-white/45 text-sm mt-1">{opt.hint}</span>}
-                  </span>
-                  <span
-                    className={`w-7 h-7 rounded-full border flex items-center justify-center shrink-0 transition-colors ${
-                      selected || isPending ? 'bg-[#00B4B4] border-[#00B4B4] text-white' : 'border-white/15 text-transparent group-hover:border-[#00B4B4]/50'
-                    }`}
-                    aria-hidden="true"
-                  >
-                    {CHECK}
-                  </span>
-                </button>
-              )
-            })}
-          </div>
-        ) : (
-          <div>
-            <label htmlFor="quiz-notes" className="sr-only">{question.title}</label>
-            <textarea
-              id="quiz-notes"
-              rows={4}
-              value={notes}
-              onChange={e => setNotes(e.target.value)}
-              placeholder={question.placeholder}
-              className="w-full bg-[#0d1e35] border border-white/10 rounded-2xl px-5 py-4 text-white placeholder-white/25 text-base focus:outline-none focus:border-[#00B4B4]/60 transition-colors resize-none"
-            />
-            <div className="flex flex-col sm:flex-row gap-3 mt-5">
-              <button type="button" onClick={() => finish(answers)} className="btn btn-primary btn-lg">
-                See my match
+                  {CHECK}
+                </span>
               </button>
-              {!notes.trim() && (
-                <button type="button" onClick={() => finish(answers)} className="btn btn-ghost btn-lg">
-                  Skip this step
-                </button>
-              )}
-            </div>
-          </div>
+            )
+          })}
+        </div>
+        {step === total - 1 && (
+          <p className="mt-4 text-white/35 text-sm">Last question: your match appears as soon as you choose.</p>
         )}
       </div>
 

@@ -10,6 +10,7 @@
 **Category:** Hormonal Health
 **Read time:** 8 min
 **Keywords:** PT-141 peptide libido, PT-141 guide, bremelanotide sexual health, PT-141 men women research
+**Updated:** 2026-10-17
 
 ---
 
@@ -69,11 +70,9 @@ The straightforward framework:
 
 ### Administration and Timing
 
-PT-141 is administered subcutaneously, typically in the abdomen. It is an as-needed compound rather than a daily one, taken 45 to 90 minutes before anticipated sexual activity.
+The approved medicine, Vyleesi, is a 1.75mg auto-injector licensed in the US for low sexual desire in premenopausal women, used as needed rather than daily. Its approval does not extend to men, and a research-grade vial is not the same product as the registered medicine.
 
-The pharmaceutical version (Vyleesi) is provided as a 1.75mg auto-injector and is used once within a 24-hour period. Research peptide protocols typically use doses in the range of 1 to 2mg, with individual titration based on response and tolerance.
-
-PT-141's effects are experienced as increased desire, heightened arousal sensitivity and in some cases spontaneous arousal beginning 30 to 60 minutes after administration. The effects typically last 6 to 12 hours.
+In the two Phase 3 RECONNECT trials, women given bremelanotide reported more desire and less distress about low desire than those given placebo. Nausea was the most common side effect.
 
 ---
 
@@ -120,6 +119,7 @@ The research, regulatory documents and clinical guidelines behind the claims in 
 **Category:** Hormonal Health
 **Read time:** 8 min
 **Keywords:** HCG testosterone, HCG peptide hormonal health, HCG TRT, human chorionic gonadotropin guide
+**Updated:** 2026-10-17
 
 ---
 
@@ -185,13 +185,13 @@ For men who are hypogonadal but wish to remain fertile, HCG-based therapy is som
 
 ---
 
-### Dosing Considerations
+### Practical and Safety Considerations
 
-HCG is administered subcutaneously. In TRT support protocols, common dosing is 500 to 1,000 IU two to three times per week, administered alongside testosterone. In PCT protocols, higher doses (1,000 to 2,500 IU) are used for a shorter duration.
+HCG is a prescription medicine in South Africa, and its use alongside testosterone therapy is a decision for the prescribing doctor, who sets the regimen and monitors it.
 
-HCG is measured in International Units (IU) rather than micrograms or milligrams, which differentiates it from most other peptides discussed in this series. Reconstitution and dosing calculations follow the same principles, but the unit of measurement is important to keep straight.
+HCG is measured in International Units (IU) rather than micrograms or milligrams, which sets it apart from most other peptides discussed in this series.
 
-Side effects can include elevated oestrogen (since HCG stimulates testicular testosterone, which can aromatise to oestrogen), which may require aromatase inhibitor management in some men, and polycythaemia risk when combined with TRT. These considerations reinforce the importance of appropriate monitoring when using HCG as part of a hormonal health protocol.
+Reported side effects include raised oestrogen (HCG stimulates testicular testosterone, which can aromatise to oestrogen) and a risk of polycythaemia when combined with TRT. Both are reasons it is used under medical supervision with bloodwork.
 
 ---
 
@@ -313,6 +313,7 @@ The research, regulatory documents and clinical guidelines behind the claims in 
 **Category:** Hormonal Health
 **Read time:** 7 min
 **Keywords:** Gonadorelin vs HCG, Gonadorelin peptide TRT, HCG hormonal health comparison, GnRH analogue testosterone
+**Updated:** 2026-10-17
 
 ---
 
@@ -368,9 +369,9 @@ One of the most physiologically meaningful differences between Gonadorelin and H
 
 Endogenous GnRH is released in pulses, typically every 60 to 120 minutes. This pulsatile pattern is essential. When GnRH receptors in the pituitary are exposed to GnRH continuously rather than pulsatilely, they desensitise and the pituitary actually reduces its LH and FSH output. This is the mechanism behind long-acting GnRH agonists like leuprolide, which are used to suppress testosterone in prostate cancer treatment.
 
-For Gonadorelin to work as a supportive agent rather than a suppressant, it must be administered in a pulsatile fashion, typically as subcutaneous injections two to three times per week, or more frequently in some protocols. When dosed appropriately, it mimics the natural GnRH pulse pattern and maintains pituitary responsiveness and LH release.
+That is why the pattern of exposure matters so much for Gonadorelin: delivered in pulses it can mimic natural GnRH and keep the pituitary responsive, while continuous exposure has the opposite, suppressive effect.
 
-HCG does not carry the same pulsatility concern at the level of the testes, since LH receptors on Leydig cells do not desensitise in the same way with sustained stimulation at typical HCG doses. However, some research suggests that very high or very sustained HCG stimulation can reduce LH receptor sensitivity over time, which is one reason HCG doses in TRT protocols are generally kept modest.
+HCG does not carry the same pulsatility concern at the level of the testes, since LH receptors on Leydig cells do not desensitise in the same way under sustained stimulation. Some research does suggest that very high or very sustained HCG exposure can reduce LH receptor sensitivity over time.
 
 ---
 
@@ -436,6 +437,7 @@ The research, regulatory documents and clinical guidelines behind the claims in 
 **Category:** Hormonal Health
 **Read time:** 8 min
 **Keywords:** Oxytocin peptide research, Oxytocin benefits beyond bonding, Oxytocin nasal spray guide, Oxytocin social anxiety
+**Updated:** 2026-10-17
 
 ---
 
@@ -541,11 +543,11 @@ This does not mean the research findings are invalid. But it does mean that the 
 
 ---
 
-### Dosing and Practical Considerations
+### How It Is Studied
 
-Oxytocin is administered either intranasally (typically 24 to 40 IU per dose, sprayed into each nostril) or subcutaneously. Research studies have used a wide range of doses, making precise dosing guidance for research contexts less standardised than for many other peptides.
+Most behavioural research on oxytocin uses an intranasal spray, and the studies vary widely in the amounts they used. Meta-analyses of that research find small or inconsistent effects, and a 2021 review called for more rigorous methods.
 
-Oxytocin has a short half-life of three to five minutes in the bloodstream, which is why the nasal route is used for central effects. Effects of intranasal administration typically begin within minutes and last one to two hours.
+Oxytocin has a short half-life of three to five minutes in the bloodstream, which is why research into its effects on the brain uses the nasal route.
 
 The safety profile of oxytocin in the doses used for intranasal research is generally considered favourable. The compound is naturally occurring, well-characterised pharmacologically and has a long history of medical use at higher doses for obstetric indications.
 

@@ -10,6 +10,7 @@
 **Category:** Brain & Mood
 **Read time:** 8 min
 **Keywords:** Semax peptide, Semax nootropic, Semax cognitive enhancement, Semax BDNF guide
+**Updated:** 2026-10-17
 
 ---
 
@@ -74,7 +75,7 @@ The clinical research on Semax is primarily from Russian-language publications, 
 
 Semax is typically administered as a nasal spray rather than an injection, which makes it one of the more accessible peptides for first-time users. The nasal route allows the peptide to cross the blood-brain barrier directly via the olfactory pathways, which is significantly more efficient for brain delivery than subcutaneous injection.
 
-Doses typically range from 300 to 900mcg per day, administered as drops into the nasal cavity. Timing is often in the morning or early afternoon, as Semax can have activating effects that may interfere with sleep if taken too late in the day.
+The Russian clinical studies used intranasal drops. Semax is described as having activating effects, which is why it is generally discussed as a daytime compound rather than one associated with sleep.
 
 Semax is also available in a modified form called N-Acetyl Semax, which includes an acetyl group at the N-terminus that increases stability and lipophilicity, potentially improving penetration and duration of effect.
 
@@ -380,6 +381,7 @@ The research, regulatory documents and clinical guidelines behind the claims in 
 **Category:** Brain & Mood
 **Read time:** 7 min
 **Keywords:** DSIP peptide sleep, Delta Sleep-Inducing Peptide, DSIP guide, peptide for sleep improvement
+**Updated:** 2026-10-17
 
 ---
 
@@ -454,9 +456,9 @@ DSIP has also been studied for sleep disruption in specific contexts: opiate wit
 
 ---
 
-### DSIP in Practice
+### What the Studies Looked At
 
-DSIP is administered subcutaneously, typically 100 to 500mcg per dose, taken 30 to 60 minutes before sleep. Some protocols use it for a defined period of days or weeks to reset sleep patterns rather than as a nightly ongoing intervention.
+The human research on DSIP is small and dates mostly from the 1980s, when it was studied in people with insomnia, with mixed results. A 2006 review described its role in sleep as "a still unresolved riddle".
 
 One of the features that distinguishes DSIP from pharmaceutical sleep aids is its apparent lack of sedative properties in the conventional sense. It does not produce the grogginess, cognitive impairment or next-day hangover effect associated with benzodiazepines or Z-drugs. Its action appears to be sleep-permissive rather than sleep-forcing: it reduces the physiological and neurochemical barriers to natural sleep rather than overriding them.
 
@@ -497,6 +499,7 @@ The research, regulatory documents and clinical guidelines behind the claims in 
 **Category:** Brain & Mood
 **Read time:** 7 min
 **Keywords:** PE-22-28 peptide, PE-22-28 mood support, TREK-1 peptide antidepressant, PE-22-28 research guide
+**Updated:** 2026-10-17
 
 ---
 
@@ -575,11 +578,9 @@ PE-22-28 works through a fundamentally different mechanism (TREK-1 inhibition) t
 
 ---
 
-### Dosing
+### The State of the Evidence
 
-PE-22-28 is administered subcutaneously. Research protocols have used doses in the range of 1 to 3mg per kilogram of body weight in animal studies, but human dosing is less standardised given the limited human data. Those exploring PE-22-28 in research contexts typically start conservatively and treat it with the additional care appropriate to a less-established compound.
-
-Given the early state of human research, any use of PE-22-28 should be approached with thorough research of the available literature and, where possible, professional guidance.
+PE-22-28 has been studied in animal models, and there is essentially no controlled human data. That makes it one of the least established compounds discussed on this site, and anything said about its effects in people is extrapolation from those animal studies.
 
 ---
 

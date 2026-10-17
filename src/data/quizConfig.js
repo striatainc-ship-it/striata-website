@@ -21,10 +21,10 @@ export const LANDING = {
   eyebrow: 'Sixty-second quiz',
   title: 'Which Protocol Is Right For You?',
   intro:
-    'Four quick questions about your goals and how you prefer to dose, and we will point you to the STRIATA stack or peptide people most commonly choose for that. Results show immediately. No sign-up needed.',
+    'Three or four quick questions about your goal and the format you prefer, and we will point you to the STRIATA stack or peptide people most commonly choose for it. Results show immediately. No sign-up needed.',
   bullets: [
     'Matches you to one of 30 protocols and peptides from the live catalogue',
-    'Takes into account vial, pre-filled pen or topical preference',
+    'Takes into account whether you want a vial, a pre-filled pen or the topical serum',
     'Every result links straight to the product and the reading behind it',
   ],
   start: 'Start the quiz',
@@ -76,38 +76,46 @@ export const QUESTIONS = [
   {
     id: 'delivery',
     type: 'single',
-    title: 'How would you prefer to dose?',
-    hint: 'Pens skip the mixing. Vials are the most economical. Serums are for skin only.',
+    // The Menopause Reset stacks only come as vials, so the question would
+    // have one real answer; skip it.
+    skipIf: { goal: ['menopause'] },
+    title: 'Which format would you like?',
+    hint: 'Pens come ready to use. Vials are the most economical.',
     options: [
-      { id: 'injectable', label: 'Injectable vial', hint: 'Reconstitute with bacteriostatic water', tags: ['injectable'] },
-      { id: 'pen', label: 'Pre-filled pen', hint: 'No mixing, dial-in dosing', tags: ['pen'] },
-      { id: 'topical', label: 'Topical serum', hint: 'Applied to the skin', tags: ['topical'] },
-      { id: 'none', label: 'No preference', hint: 'Show me the best fit either way', tags: [] },
+      { id: 'injectable', label: 'Vial', hint: 'Powder you mix with bacteriostatic water', tags: ['injectable'] },
+      { id: 'pen', label: 'Pre-filled pen', hint: 'Ready to use, no mixing', tags: ['pen'] },
+      // Only the skin goal has a topical product.
+      { id: 'topical', label: 'Topical serum', hint: 'A GHK-Cu serum for the skin', tags: ['topical'], goals: ['skin'] },
+      { id: 'none', label: 'No preference', hint: 'Show me the best match in any format', tags: [] },
     ],
   },
   {
     id: 'experience',
     type: 'single',
-    title: 'Have you used peptides before?',
-    hint: 'First-timers get simpler, single-compound matches where possible.',
+    title: 'Are peptides new to you?',
+    hint: 'If they are, we lean towards simpler single-compound matches.',
     options: [
-      { id: 'new', label: 'First time', hint: 'Keep it simple', tags: ['new'] },
-      { id: 'experienced', label: 'I have used them before', hint: 'Comfortable with stacks and cycles', tags: ['experienced'] },
+      { id: 'new', label: 'Yes, keep it simple', hint: 'Single compounds where possible', tags: ['new'] },
+      { id: 'experienced', label: 'No, show me stacks too', hint: 'Multi-compound blends included', tags: ['experienced'] },
     ],
-  },
-  {
-    id: 'notes',
-    type: 'text',
-    optional: true,
-    title: 'Anything else we should know?',
-    hint: 'Optional. Only sent to us if you choose to email yourself the result.',
-    placeholder: 'e.g. training for a marathon, previous shoulder surgery, on other medication…',
   },
 ]
 
-/** Questions with `showIf` are only asked when that earlier answer matches. */
+/**
+ * Questions with `showIf` are only asked when that earlier answer matches;
+ * `skipIf` drops a question when an earlier answer is one of the listed ids.
+ */
 export function visibleQuestions(answers) {
-  return QUESTIONS.filter(q => !q.showIf || Object.entries(q.showIf).every(([k, v]) => answers[k] === v))
+  return QUESTIONS.filter(
+    q =>
+      (!q.showIf || Object.entries(q.showIf).every(([k, v]) => answers[k] === v)) &&
+      (!q.skipIf || !Object.entries(q.skipIf).some(([k, ids]) => ids.includes(answers[k]))),
+  )
+}
+
+/** Options with `goals` are only offered for those goals (the serum is skin-only). */
+export function visibleOptions(question, answers) {
+  return question.options.filter(o => !o.goals || o.goals.includes(answers.goal))
 }
 
 /** Flatten chosen options into the tag list scoring consumes. */

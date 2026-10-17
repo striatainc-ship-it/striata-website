@@ -10,7 +10,7 @@ import {
   answersFromQuery,
 } from '../src/lib/quizScoring.js'
 import { quizProtocols, getQuizProtocol } from '../src/data/quizProtocols.js'
-import { QUESTIONS, visibleQuestions, tagsFromAnswers } from '../src/data/quizConfig.js'
+import { QUESTIONS, visibleQuestions, visibleOptions, tagsFromAnswers } from '../src/data/quizConfig.js'
 
 const bySlug = (slug) => getQuizProtocol(slug)
 
@@ -118,9 +118,17 @@ test('answers round-trip through the query string, dropping notes', () => {
 
 test('conditional questions only appear for their goal', () => {
   const ids = (answers) => visibleQuestions(answers).map(q => q.id)
-  assert.deepEqual(ids({ goal: 'skin' }), ['goal', 'delivery', 'experience', 'notes'])
-  assert.deepEqual(ids({ goal: 'recovery' }), ['goal', 'recoveryType', 'delivery', 'experience', 'notes'])
-  assert.deepEqual(ids({ goal: 'menopause' }), ['goal', 'menopauseFocus', 'delivery', 'experience', 'notes'])
+  assert.deepEqual(ids({ goal: 'skin' }), ['goal', 'delivery', 'experience'])
+  assert.deepEqual(ids({ goal: 'recovery' }), ['goal', 'recoveryType', 'delivery', 'experience'])
+  // Menopause stacks only come as vials, so the format question is skipped.
+  assert.deepEqual(ids({ goal: 'menopause' }), ['goal', 'menopauseFocus', 'experience'])
+})
+
+test('the topical serum is only offered for the skin goal', () => {
+  const delivery = QUESTIONS.find(q => q.id === 'delivery')
+  const offered = (goal) => visibleOptions(delivery, { goal }).map(o => o.id)
+  assert.ok(offered('skin').includes('topical'))
+  for (const goal of ['weight', 'recovery', 'brain']) assert.ok(!offered(goal).includes('topical'))
 })
 
 test('tagsFromAnswers flattens option tags and ignores "no preference"', () => {

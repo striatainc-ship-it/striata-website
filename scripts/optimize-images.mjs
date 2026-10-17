@@ -48,6 +48,15 @@ const images = [
   // bottle, which is only 336px wide in the 1080px source. Emitted at native
   // size; the hero renders it at ~210-260px so that is still ~1.5x.
   { file: 'ghk-serum-cut.png', slug: 'ghk-serum-cut', widths: [336] },
+  // October 2026 refresh (Higgsfield, GPT Image 2.5, using the real vial
+  // photography as references so every label reads as it does on the shelf).
+  { file: 'home vials.png', slug: 'home-vials', widths: FULL_BLEED },
+  // First frame of public/assets/hero-video.*, so the poster matches the clip.
+  { file: 'hero video poster.png', slug: 'hero-video-poster', widths: [1280] },
+  // Catalogue banner is a CSS background-image, so one width.
+  { file: 'catalogue vials.png', slug: 'catalogue-vials', widths: [1920] },
+  { file: 'dispatch.png', slug: 'dispatch', widths: COLUMN },
+  { file: 'johannesburg.png', slug: 'johannesburg', widths: FULL_BLEED },
 ]
 
 const kb = bytes => `${Math.round(bytes / 1024)} KB`
@@ -115,16 +124,21 @@ console.log(`  logo-640.png`.padEnd(24) + ` ${kb(logoBuffer.length).padStart(9)}
 
 // og:image must stay JPEG — some social scrapers still don't decode WebP —
 // and 1200x630 is the size Facebook, LinkedIn and X all crop to.
-const ogSource = await readFile(join(sourceDir, 'helix.png'))
-const ogBuffer = await sharp(ogSource)
-  .resize({ width: 1200, height: 630, fit: 'cover' })
-  .flatten({ background: '#0A1628' })
-  .jpeg({ quality: 82, mozjpeg: true })
-  .toBuffer()
-await writeFile(join(outDir, 'og-image.jpg'), ogBuffer)
-outputBytes += ogBuffer.length
-sourceBytes += ogSource.length
-console.log(`  og-image.jpg`.padEnd(24) + ` ${kb(ogBuffer.length).padStart(9)}`)
+// og-image.jpg is the site-wide default share image (the vial line-up);
+// og-artwork.jpg is the DNA artwork scripts/lib/og-image.mjs puts behind the
+// generated per-page title cards.
+for (const [source, name] of [['og vials.png', 'og-image.jpg'], ['helix.png', 'og-artwork.jpg']]) {
+  const ogSource = await readFile(join(sourceDir, source))
+  const ogBuffer = await sharp(ogSource)
+    .resize({ width: 1200, height: 630, fit: 'cover' })
+    .flatten({ background: '#0A1628' })
+    .jpeg({ quality: 82, mozjpeg: true })
+    .toBuffer()
+  await writeFile(join(outDir, name), ogBuffer)
+  outputBytes += ogBuffer.length
+  sourceBytes += ogSource.length
+  console.log(`  ${name}`.padEnd(24) + ` ${kb(ogBuffer.length).padStart(9)}`)
+}
 
 
 const sourceTotal = (await readdir(sourceDir, { withFileTypes: true }))

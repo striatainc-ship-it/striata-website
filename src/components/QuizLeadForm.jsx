@@ -3,7 +3,6 @@ import emailjs from '@emailjs/browser'
 import { LEAD_CAPTURE, answerLabel } from '../data/quizConfig'
 import { whatsappLink } from '../data/products'
 import { trackEvent } from '../lib/analytics'
-import { NOTES_STORAGE_KEY } from './QuizFlow'
 
 /*
  * Optional "email me this result" capture on the result page. Never a gate.
@@ -20,10 +19,6 @@ const EMAILJS_TEMPLATE_ID = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
 const EMAILJS_PUBLIC_KEY = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
 
 const H = { fontFamily: 'var(--font-heading)' }
-
-const readNotes = () => {
-  try { return sessionStorage.getItem(NOTES_STORAGE_KEY) || '' } catch { return '' }
-}
 
 async function deliver(payload) {
   if (WEBHOOK_URL) {
@@ -44,7 +39,6 @@ async function deliver(payload) {
     '',
     'Answers:',
     ...Object.entries(payload.answers).map(([k, v]) => `  ${k}: ${v}`),
-    payload.notes ? `\nNotes: ${payload.notes}` : '',
     `\nSubmitted: ${payload.timestamp}`,
   ]
   await emailjs.send(
@@ -77,7 +71,6 @@ export default function QuizLeadForm({ protocol, answers, resultUrl }) {
       source: 'protocol-quiz',
       email: email.trim(),
       answers: labelled,
-      notes: readNotes(),
       matched_protocol: { slug: protocol.slug, name: protocol.name, url: resultUrl },
       timestamp: new Date().toISOString(),
       page: typeof window !== 'undefined' ? window.location.href : resultUrl,
@@ -86,7 +79,6 @@ export default function QuizLeadForm({ protocol, answers, resultUrl }) {
       await deliver(payload)
       trackEvent('quiz_lead', { result: protocol.slug })
       setStatus('success')
-      try { sessionStorage.removeItem(NOTES_STORAGE_KEY) } catch { /* ignore */ }
     } catch {
       setStatus('error')
     }

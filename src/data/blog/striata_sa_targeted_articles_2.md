@@ -480,6 +480,7 @@ The research, regulatory documents and clinical guidelines behind the claims in 
 **Read time:** 8 min
 **Published:** 2026-09-17
 **Keywords:** peptide prices South Africa, how much do peptides cost SA, cheap peptides South Africa, peptide cost comparison, BPC-157 price South Africa
+**Updated:** 2026-10-17
 
 ---
 
@@ -528,7 +529,7 @@ To put real numbers to it, here is roughly where our own catalogue sits at the t
 
 Two things are worth drawing out of that table.
 
-**Cost per vial is not cost per protocol.** A 5mg BPC-157 vial at 250mcg per day is 20 days of use. What matters for budgeting is the monthly run rate, which depends on dose and frequency. Our [reconstitution calculator](/tools/reconstitution-calculator) will give you the doses per vial for any combination.
+**Compare price per milligram, not price per vial.** Vial sizes differ, so two prices only compare fairly once each is divided by the milligrams in the vial. Our [reconstitution calculator](/tools/reconstitution-calculator) shows the concentration for any vial and water volume.
 
 **Bigger vials are usually cheaper per milligram.** Where a compound is offered in several sizes, the larger one almost always costs less per mg. That is only an advantage if you will use it inside the stability window after reconstitution, which is why buying the biggest vial available is not automatically the smart move.
 

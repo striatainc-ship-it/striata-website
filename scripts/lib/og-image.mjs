@@ -19,7 +19,8 @@ const LOGO = join(root, 'public/assets/opt/logo-white-640.webp')
 // The site's DNA artwork as a backdrop. It is scaled up 10% and cropped from
 // the top-left so the generator's watermark in its bottom-right corner falls
 // outside the frame, then darkened under a navy wash so the title reads.
-const ARTWORK = join(root, 'public/assets/opt/og-image.jpg')
+// (Kept as its own file since og-image.jpg became the vial photograph.)
+const ARTWORK = join(root, 'public/assets/opt/og-artwork.jpg')
 
 const W = 1200
 const H = 630

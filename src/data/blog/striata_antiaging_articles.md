@@ -10,6 +10,7 @@
 **Category:** Anti-Aging
 **Read time:** 8 min
 **Keywords:** GHK-Cu copper peptide, GHK-Cu anti-aging, copper peptide skin regeneration, GHK-Cu research guide
+**Updated:** 2026-10-17
 
 ---
 
@@ -90,9 +91,9 @@ For skin-focused protocols specifically, GHK-Cu is frequently paired with collag
 
 ---
 
-### Dosing Considerations
+### Formats and Safety
 
-For subcutaneous use, typical research dosing ranges from 1 to 3mg per day, often administered in cycles of four to eight weeks. Topical products are applied according to product-specific guidance, with most serums and creams formulated at concentrations between 1% and 5%.
+GHK-Cu is studied in two forms: as a lyophilised peptide for laboratory and injectable research, and as a topical ingredient, where most serums and creams are formulated at concentrations between 1% and 5%.
 
 GHK-Cu has an excellent safety profile. As a naturally occurring compound present in all humans, adverse effects are uncommon and typically mild. Mild skin reactions at injection sites and temporary flushing have been reported in some cases.
 
@@ -122,6 +123,7 @@ The research, regulatory documents and clinical guidelines behind the claims in 
 **Category:** Anti-Aging
 **Read time:** 8 min
 **Keywords:** Epithalon peptide longevity, Epithalon telomerase, Epithalon anti-aging research, Epithalamin peptide
+**Updated:** 2026-10-17
 
 ---
 
@@ -205,11 +207,11 @@ What we cannot say is that Epithalon will definitively extend human lifespan. Wh
 
 ---
 
-### Dosing and Protocol
+### How It Has Been Studied
 
-Epithalon is administered subcutaneously or intravenously. Common protocols involve courses of 5 to 10mg per day for 10 to 20 days, repeated one to two times per year. Some practitioners use lower ongoing doses.
+Most of the Epithalon literature comes from one Russian research group, working with cell cultures, animal models and small human reports in which the peptide was given in short, repeated courses rather than continuously. There are no large controlled human trials.
 
-The compound has a good safety profile in the research literature. Side effects are uncommon and typically mild. The relatively short course format reduces the concerns around chronic telomerase activation.
+The compound has a good safety profile in the research literature, with side effects uncommon and typically mild. The short-course design of those studies is also why the long-term effects of sustained telomerase activation remain an open question.
 
 ---
 
@@ -479,6 +481,7 @@ The research, regulatory documents and clinical guidelines behind the claims in 
 **Category:** Anti-Aging
 **Read time:** 7 min
 **Keywords:** peptides for skin regeneration, GLOW stack peptides, anti-aging peptide stack, GHK-Cu skin peptides beginner
+**Updated:** 2026-10-17
 
 ---
 
@@ -544,16 +547,16 @@ Supporting NAD+ levels is not a skin-specific intervention, but the skin-relevan
 
 ### How to Structure the GLOW Stack
 
-The stack can be approached in layers, from accessible to more advanced.
+The compounds in this stack sit at very different levels of evidence, and it helps to see them that way.
 
-**Starting point (topical focus, minimal injections):**
-Begin with a high-quality topical GHK-Cu serum applied daily. Add an NMN or NR supplement orally. This combination addresses collagen stimulation, antioxidant protection and NAD+-dependent cellular repair without any injections. It is the most accessible entry point and appropriate for someone new to the space.
+**Best supported (topical and oral):**
+Topical GHK-Cu has small human cosmetic studies behind it, and oral NAD+ precursors such as NMN and nicotinamide riboside have randomised trials showing they raise NAD+ levels. Neither involves an injection, which is why they are the most widely used parts of this picture.
 
-**Intermediate (adding subcutaneous peptides):**
-Add subcutaneous GHK-Cu injections (1 to 2mg per day) to elevate systemic GHK-Cu levels beyond what topical application delivers. Incorporate a course of Epithalon (5 to 10mg daily for 10 to 20 days, one to two times per year). Continue the topical GHK-Cu and NAD+ supplementation.
+**Earlier-stage research:**
+Injectable GHK-Cu and Epithalon are studied mainly in cell and animal models, with little controlled human data. The research interest is in systemic effects beyond what topical application reaches, but that is a hypothesis, not an established finding.
 
-**Advanced (full protocol):**
-The complete stack adds BPC-157 (250 to 500mcg per day subcutaneously) for its angiogenic and tissue repair contributions, particularly if scarring, specific skin damage or poor microcirculation is a concern. This level of the stack involves multiple compounds and requires careful protocol design and quality sourcing.
+**Least established:**
+BPC-157 is studied for its angiogenic and tissue repair effects, almost entirely in animals. Adding it to a skin-focused stack rests on that animal work alone. Combining several compounds also means none of the combinations has been studied as a whole, which is reason enough to insist on verified, tested sourcing.
 
 ---
 

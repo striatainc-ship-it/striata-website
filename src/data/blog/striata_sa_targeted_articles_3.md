@@ -11,6 +11,7 @@
 **Read time:** 8 min
 **Published:** 2026-09-23
 **Keywords:** insulin syringes South Africa, sharps disposal South Africa, where to dispose of needles SA, peptide injection supplies, U-100 syringe units, sharps container South Africa
+**Updated:** 2026-10-17
 
 ---
 
@@ -47,11 +48,11 @@ Syringes come in three common barrel sizes:
 
 | Barrel | Holds | Marked in | Best for |
 |---|---|---|---|
-| 0.3 ml | 30 units | Half or 1 unit steps | Small doses, where precision matters most |
-| 0.5 ml | 50 units | 1 unit steps | Most peptide doses |
+| 0.3 ml | 30 units | Half or 1 unit steps | The smallest volumes, where precision matters most |
+| 0.5 ml | 50 units | 1 unit steps | Most small volumes |
 | 1 ml | 100 units | 2 unit steps | Larger volumes, and drawing water for reconstitution |
 
-The smaller the barrel, the further apart the markings, and the easier it is to measure a small dose accurately. If your dose works out to 8 units, a 0.3 ml or 0.5 ml syringe will give you a far more reliable measurement than a 1 ml syringe marked in 2 unit steps.
+The smaller the barrel, the further apart the markings, and the easier it is to measure a small volume accurately. If you need to measure 8 units, a 0.3 ml or 0.5 ml syringe will give you a far more reliable measurement than a 1 ml syringe marked in 2 unit steps.
 
 ---
 

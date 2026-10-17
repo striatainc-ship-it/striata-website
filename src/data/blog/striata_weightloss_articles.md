@@ -147,6 +147,7 @@ The research, regulatory documents and clinical guidelines behind the claims in 
 **Category:** Weight Loss
 **Read time:** 7 min
 **Keywords:** GLP-1 peptides explained, how GLP-1 works, GLP-1 appetite suppression, GLP-1 metabolism weight loss
+**Updated:** 2026-10-17
 
 ---
 
@@ -213,17 +214,15 @@ This is also why the weight tends to return when GLP-1 therapy is stopped, parti
 
 ---
 
-### What to Expect When Starting GLP-1 Therapy
+### What the Clinical Trials Showed Over Time
 
-The experience of starting a GLP-1 compound varies between individuals, but some patterns are consistent.
+The STEP and SURMOUNT trials followed people for more than a year, and their results share a few consistent patterns.
 
-**The first few weeks:** Nausea is the most common early experience, particularly as the dose is titrated up. Starting low and increasing gradually is important. Most protocols begin at a fraction of the target dose and increase every four weeks.
+**Side effects:** Nausea and other gastrointestinal effects were the most common, and they clustered in the early weeks. In every trial the dose was raised gradually under medical supervision, which is how those effects were managed.
 
-**Weeks four to eight:** Appetite changes become more pronounced. Many people notice they feel full much sooner during meals and that food is generally less mentally preoccupying. Weight loss typically begins to accelerate during this phase.
+**The shape of the curve:** Most of the weight loss happened in roughly the first six months, after which it slowed and levelled off. Individual results varied widely around the average.
 
-**Months three to six:** The majority of total weight loss tends to occur in the first six months. Rate of loss varies significantly by individual, but clinical data consistently shows the most rapid phase of weight reduction in this window.
-
-**Beyond six months:** Weight loss often slows or plateaus. This is normal and does not indicate the compound has stopped working. Maintenance requires continued use and attention to lifestyle factors.
+**After stopping:** In extension studies, much of the weight lost was regained once treatment stopped, which is why the approved medicines are prescribed as long-term treatments rather than courses.
 
 ---
 
@@ -264,6 +263,7 @@ The research, regulatory documents and clinical guidelines behind the claims in 
 **Category:** Weight Loss
 **Read time:** 7 min
 **Keywords:** AOD-9604 vs HGH fragment 176-191, fat burning peptides, AOD-9604 weight loss, HGH fragment peptide
+**Updated:** 2026-10-17
 
 ---
 
@@ -349,11 +349,9 @@ They are also not equivalent to GLP-1 compounds in terms of the magnitude of wei
 
 ---
 
-### Dosing Considerations
+### The State of the Evidence
 
-Both compounds are typically administered subcutaneously once or twice daily. Common research protocols use doses in the range of 200 to 300mcg per injection. Given the short half-life of both compounds, dosing before exercise or first thing in the morning on an empty stomach is common in practice.
-
-As always, protocol design should account for individual response, and it is worth starting conservatively and assessing tolerance before increasing dose or frequency.
+Both compounds have short half-lives. AOD-9604 reached human obesity trials but was never approved as a medicine, and both are prohibited in sport under section S2 of the WADA list as growth hormone fragments.
 
 ---
 
@@ -505,6 +503,7 @@ The research, regulatory documents and clinical guidelines behind the claims in 
 **Category:** Weight Loss
 **Read time:** 7 min
 **Keywords:** Wolverine Stack weight loss, BPC-157 fat loss, TB-500 weight management, recovery peptides body composition
+**Updated:** 2026-10-17
 
 ---
 
@@ -571,16 +570,11 @@ Chronic low-grade inflammation is increasingly recognised as both a consequence 
 
 ---
 
-### How to Use the Wolverine Stack Alongside a Weight Loss Protocol
+### What the Research Does Not Cover
 
-If you are primarily using GLP-1 compounds or other metabolic peptides for weight loss and want to incorporate the Wolverine Stack, the approach typically looks like this:
+The rationale for pairing the Wolverine Stack with weight loss is mechanistic: BPC-157 is studied for gut lining and inflammation, TB-500 for tissue repair, neither acts on appetite, and so they do not overlap with GLP-1 compounds.
 
-The Wolverine Stack is used on a cyclical basis, such as six to eight weeks on, followed by a break. Dosing is typically:
-
-- BPC-157: 250 to 500mcg per day, subcutaneously or orally depending on the goal
-- TB-500: 5 to 10mg per week during a loading phase, reducing to a maintenance dose
-
-The stack is not competing with your primary weight loss compounds in terms of mechanism, so the two approaches can run concurrently. The goal is to support training quality, manage inflammation and improve gut tolerance if GLP-1 therapy is part of the protocol.
+What does not exist is research on the combination. No study has tested BPC-157 or TB-500 alongside a GLP-1 medicine, and BPC-157's gut findings come from animal models. Anyone on a prescribed GLP-1 medicine should raise any additional compound with the prescribing doctor.
 
 ---
 

@@ -111,7 +111,7 @@ const faqSections = [
       {
         q: 'How do I reconstitute a peptide?',
         a: 'Lyophilised peptides are reconstituted by adding bacteriostatic water or acetic acid solution to the vial. The specific reconstitution solution depends on the peptide. We stock both bacteriostatic water and acetic acid 0.6%. Chat to us on WhatsApp and we will advise on the correct solution for your specific compound.',
-        links: [{ label: 'Reconstitution calculator', to: '/tools/reconstitution-calculator' }, { label: 'Reconstitution and dosage guide', to: '/guides/peptide-reconstitution-dosage-calculator' }],
+        links: [{ label: 'Reconstitution calculator', to: '/tools/reconstitution-calculator' }, { label: 'Reconstitution guide', to: '/guides/peptide-reconstitution-dosage-calculator' }],
       },
       {
         q: 'What is the shelf life of your peptides?',

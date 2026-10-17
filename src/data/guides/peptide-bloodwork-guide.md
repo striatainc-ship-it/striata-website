@@ -176,7 +176,7 @@ These stimulate the pituitary to produce and release growth hormone. Benefits in
 - ALT + AST — quarterly
 - Full lipid panel — every 6 months
 
-> If IGF-1 is sustained above 300 ng/mL, reduce dose or frequency immediately. MK-677 in particular raises blood sugar, so HbA1c monitoring matters more with that compound than the others.
+> If IGF-1 is sustained above 300 ng/mL, stop and discuss the result with a doctor. MK-677 in particular raises blood sugar, so HbA1c monitoring matters more with that compound than the others.
 
 ---
 
@@ -374,7 +374,7 @@ Relevant only for users of ipamorelin, CJC-1295, GHRP-2, GHRP-6, MK-677 and hexa
 |---|---|---|
 | **IGF-1** *(priority)* | Age-adjusted, approximately 115–300 ng/mL — your lab provides the age-specific range | The primary marker for verifying and monitoring GH peptide effect. Test before starting, at 6–8 weeks, then quarterly. |
 
-> **IGF-1 above 300 ng/mL sustained:** reduce secretagogue dose or frequency immediately. Do not continue escalating without IGF-1 confirmation. Chronically elevated IGF-1 is associated with adverse long-term outcomes.
+> **IGF-1 above 300 ng/mL sustained:** stop and discuss the result with a doctor before going any further. Chronically elevated IGF-1 is associated with adverse long-term outcomes.
 
 ---
 
@@ -431,7 +431,7 @@ Do not wait for your scheduled panel if any of the following occur.
 
 **Symptoms:** Shakiness, sweating, confusion or palpitations — particularly on GLP-1 protocols.
 
-**Action:** Retest fasting glucose and insulin. Review your dosing protocol with a practitioner before continuing.
+**Action:** Retest fasting glucose and insulin. Discuss the result with a doctor before continuing.
 
 ### Signs of GH excess
 

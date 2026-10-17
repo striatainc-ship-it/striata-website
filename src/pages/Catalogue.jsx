@@ -151,7 +151,7 @@ export default function Catalogue() {
         {/* The banner background is a CSS background-image, which the browser
             only discovers after parsing the stylesheet; it is the page's LCP
             element, so ask for it up front. */}
-        <link rel="preload" as="image" href={`${import.meta.env.BASE_URL}assets/opt/vial-layouts-1920.webp`} />
+        <link rel="preload" as="image" href={`${import.meta.env.BASE_URL}assets/opt/catalogue-vials-1920.webp`} />
       </Helmet>
 
       <JsonLd data={{
@@ -196,7 +196,7 @@ export default function Catalogue() {
       <section className="relative pt-36 pb-20 px-6 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-8"
-          style={{ backgroundImage: `url(${import.meta.env.BASE_URL}assets/opt/vial-layouts-1920.webp)` }}
+          style={{ backgroundImage: `url(${import.meta.env.BASE_URL}assets/opt/catalogue-vials-1920.webp)` }}
         />
         <div className="absolute inset-0 bg-gradient-to-b from-[#0A1628]/80 to-[#0A1628]" />
         <Reveal stagger delay={0.1} className="relative z-10 max-w-4xl mx-auto text-center">

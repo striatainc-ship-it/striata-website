@@ -10,6 +10,7 @@
 **Category:** Recovery
 **Read time:** 8 min
 **Keywords:** BPC-157 recovery, BPC-157 tendon healing, body protection compound 157, BPC-157 guide
+**Updated:** 2026-10-17
 
 ---
 
@@ -90,13 +91,11 @@ Some practitioners and researchers have explored BPC-157's potential to accelera
 
 ---
 
-### Administration and Dosing
+### How It Has Been Studied
 
-BPC-157 is most commonly administered via subcutaneous injection, typically near the site of injury or in the abdominal area. For gut-related applications, oral administration (swallowing the reconstituted peptide) is common, as the peptide's gastric stability makes this route viable for localised gut effects.
+In the animal studies, BPC-157 was given both by injection and orally. Its stability in gastric juice is what made the oral route workable in gut research, and it is one of the few peptides where that is the case.
 
-Common research dosing ranges from 250 to 500mcg per day. Some protocols use split doses, morning and evening. Typical cycle lengths are four to six weeks, often followed by a break before resuming.
-
-As always, starting at the lower end of the dose range and assessing response before increasing is the sensible approach.
+Almost all of this work is in rats. There are no controlled human trials, only a small uncontrolled case series, and a 2025 review weighed the regeneration findings against the risks that remain unknown.
 
 ---
 
@@ -137,6 +136,7 @@ The research, regulatory documents and clinical guidelines behind the claims in 
 **Category:** Recovery
 **Read time:** 7 min
 **Keywords:** TB-500 explained, Thymosin Beta-4 peptide, TB-500 healing, TB-500 vs BPC-157
+**Updated:** 2026-10-17
 
 ---
 
@@ -215,16 +215,9 @@ For a widespread injury or systemic inflammation, TB-500 may be the more relevan
 
 ---
 
-### Dosing and Protocol
+### Which Molecule Is It?
 
-TB-500 is typically administered subcutaneously. Common protocols involve a loading phase followed by a maintenance phase:
-
-**Loading phase (weeks 1 to 6):** 5 to 10mg per week, often split across two injections
-**Maintenance phase:** 2 to 5mg every two to four weeks
-
-Given its longer half-life compared to BPC-157, TB-500 does not need to be dosed daily. The weekly or biweekly injection schedule makes it practical to incorporate into a busy routine.
-
-Cycle lengths vary, but a typical course runs six to twelve weeks followed by a break.
+"TB-500" is sold as two different things: the short synthetic fragment of thymosin beta-4 (seven amino acids, about 889 Da) and the full 43-amino-acid protein (about 4,963 Da). The human eye- and skin-healing trials used the full protein; the fragment has only cell and animal data. The mass result on a certificate of analysis is what tells you which one a vial contains.
 
 ---
 
@@ -232,7 +225,7 @@ Cycle lengths vary, but a typical course runs six to twelve weeks followed by a 
 
 TB-500 has a well-regarded safety profile in the research literature. Animal studies have not identified significant adverse effects at research doses. The compound is naturally occurring in the body, which contributes to its general tolerability.
 
-One practical consideration is that TB-500 vials often contain larger amounts of lyophilised powder than other peptides (commonly 5mg per vial rather than 2 or 5mg). Reconstitution calculations should account for this, and accurate measurement is important given the higher absolute doses involved.
+One practical consideration is that TB-500 vials often hold more lyophilised powder than other peptides, so the concentration after reconstitution is higher; the reconstitution calculator takes the vial size into account.
 
 ---
 
@@ -265,6 +258,7 @@ The research, regulatory documents and clinical guidelines behind the claims in 
 **Category:** Recovery
 **Read time:** 7 min
 **Keywords:** Wolverine Stack peptides, BPC-157 and TB-500 together, Wolverine Stack protocol, best peptide stack recovery
+**Updated:** 2026-10-17
 
 ---
 
@@ -336,23 +330,19 @@ Following orthopaedic procedures such as ACL reconstruction, rotator cuff repair
 
 ---
 
-### Protocol Design
+### What Has and Has Not Been Studied
 
-The Wolverine Stack is typically structured as follows:
+No published study has tested BPC-157 and TB-500 together. The case for combining them rests on their mechanisms looking complementary: BPC-157 is studied for localised repair and blood-vessel growth, thymosin beta-4 for cell migration and actin regulation across tissues.
 
 **BPC-157**
-- Dose: 250 to 500mcg per day
-- Route: Subcutaneous injection, ideally near the injury site where applicable; abdominal injection for systemic or gut use
-- Frequency: Once or twice daily
-- Duration: Four to eight weeks
+- Evidence: animal and cell studies, plus one small uncontrolled human case series
+- Anti-doping: prohibited at all times under S0 of the WADA list
 
 **TB-500**
-- Dose: 5mg per week during a loading phase, reducing to 2 to 2.5mg per week or biweekly during maintenance
-- Route: Subcutaneous injection, abdomen or thigh
-- Frequency: One to two times per week
-- Duration: Six to twelve weeks
+- Evidence: animal and cell studies for the fragment; early human trials only for full thymosin beta-4
+- Anti-doping: prohibited at all times under S2 of the WADA list
 
-The two compounds can be injected in separate syringes at different sites. Some people mix them in the same syringe for convenience, and there is no known chemical incompatibility that prevents this, though separate injections are generally recommended to allow for individualised dosing of each compound.
+Buying them as a single stack vial keeps the ratio fixed and means one certificate of analysis to check instead of two.
 
 ---
 
@@ -415,6 +405,7 @@ The research, regulatory documents and clinical guidelines behind the claims in 
 **Category:** Recovery
 **Read time:** 8 min
 **Keywords:** IGF-1 LR3 explained, IGF-1 LR3 muscle recovery, insulin-like growth factor peptide, IGF-1 LR3 guide
+**Updated:** 2026-10-17
 
 ---
 
@@ -501,13 +492,9 @@ Since natural IGF-1 levels decline with age, and this decline contributes to slo
 
 ---
 
-### Dosing and Important Considerations
+### Important Considerations
 
-IGF-1 LR3 is typically administered subcutaneously or intramuscularly, with dosing in the range of 20 to 100mcg per day. Because of its extended half-life, once-daily dosing is practical.
-
-**Important considerations:**
-
-IGF-1 LR3 is a more potent compound than BPC-157 or TB-500, and it warrants more careful protocol design.
+IGF-1 LR3 is a modified form of IGF-1 engineered for a much longer half-life than the natural hormone. It is a more potent compound than BPC-157 or TB-500, it has no approved medical use, and it is prohibited in sport.
 
 Hypoglycaemia is a potential side effect, since IGF-1 has insulin-like activity and can lower blood glucose. Dosing after a meal and monitoring for symptoms of low blood sugar, including dizziness, shakiness or sweating, is important, particularly when starting.
 
@@ -539,6 +526,7 @@ The research, regulatory documents and clinical guidelines behind the claims in 
 **Category:** Recovery
 **Read time:** 7 min
 **Keywords:** peptide recovery protocol, how to use peptides for recovery, beginner peptide protocol, best peptides for healing
+**Updated:** 2026-10-17
 
 ---
 
@@ -593,22 +581,16 @@ BPC-157 alone is often a reasonable starting point. It addresses the ongoing mic
 
 ---
 
-### Step 3: Decide on Dosing and Structure
+### Step 3: Know the Limits of the Evidence
 
-A practical recovery protocol for a beginner might look like this:
+Before choosing anything, be clear about what the research can and cannot tell you:
 
-**Basic Wolverine Stack for a specific injury (6 to 8 weeks):**
+- **BPC-157:** almost entirely animal studies; no controlled human trials.
+- **TB-500:** animal and cell studies for the fragment; the human trials used full thymosin beta-4, a different molecule.
+- **IGF-1 LR3:** potent, unapproved for any medical use, and affects blood glucose.
+- **Combinations:** none of these stacks has been studied as a combination.
 
-- BPC-157: 250mcg per day, subcutaneous injection near the injury site or abdomen. Split into morning and evening at 125mcg each if preferred.
-- TB-500: 5mg per week for the first four weeks (loading phase), then 2.5mg per week for weeks five to eight (maintenance).
-
-**For someone adding IGF-1 LR3 to the above:**
-
-- Add IGF-1 LR3 at 20 to 40mcg per day, subcutaneous, for four weeks concurrently with the BPC-157 and TB-500 loading phase. Take after a meal to manage blood glucose effects.
-
-**Important principles:**
-
-Start at the lower end of every dose range for the first week. Assess tolerance before increasing. If you are using multiple compounds, introduce them one at a time if possible so you can clearly attribute any response (positive or negative) to a specific compound.
+Any injury that is severe, not improving or affecting daily function belongs with a doctor or physiotherapist first. They can rule out what a peptide cannot fix, such as a full tear that needs surgical repair.
 
 ---
 
@@ -634,7 +616,7 @@ Chronic dietary inflammation, driven by highly processed foods, excess refined c
 
 Recovery is not always linear and it is easy to either overestimate or underestimate how things are going. Keeping a simple log helps.
 
-Track the following throughout your protocol:
+Track the following throughout a recovery phase:
 
 - Pain level at the injury site on a 1 to 10 scale, at the same time each day
 - Range of motion or functional markers specific to your injury (how far you can bend a knee, whether you can perform a specific movement pain-free)
@@ -642,7 +624,7 @@ Track the following throughout your protocol:
 - Training load and how the injury responds to activity
 - Any side effects or unusual symptoms
 
-Review this log weekly. Patterns over weeks are more meaningful than day-to-day fluctuations. If you are four weeks in and seeing no measurable change across any of these markers, that is worth reflecting on, whether the dose is appropriate, whether the compounds are being stored and handled correctly and whether the lifestyle inputs are in place.
+Review this log weekly. Patterns over weeks are more meaningful than day-to-day fluctuations. If you are four weeks in and seeing no measurable change across any of these markers, that is the point to get the injury properly assessed.
 
 ---
 

@@ -393,7 +393,7 @@ export default function Home() {
             loop
             playsInline
             preload="none"
-            poster={`${import.meta.env.BASE_URL}assets/opt/vial-layouts-2-1920.webp`}
+            poster={`${import.meta.env.BASE_URL}assets/opt/hero-video-poster-1280.webp`}
             className="kenburns absolute inset-0 w-full h-full object-cover opacity-30"
           />
         </div>
@@ -443,12 +443,12 @@ export default function Home() {
       <section className="relative">
         <div ref={beatInnerRef} className="h-[100svh] flex items-center justify-center overflow-hidden">
           <img
-            src={`${import.meta.env.BASE_URL}assets/opt/vial-layouts-2-1920.webp`}
-            srcSet={`${import.meta.env.BASE_URL}assets/opt/vial-layouts-2-768.webp 768w, ${import.meta.env.BASE_URL}assets/opt/vial-layouts-2-1280.webp 1280w, ${import.meta.env.BASE_URL}assets/opt/vial-layouts-2-1920.webp 1920w`}
+            src={`${import.meta.env.BASE_URL}assets/opt/home-vials-1920.webp`}
+            srcSet={`${import.meta.env.BASE_URL}assets/opt/home-vials-768.webp 768w, ${import.meta.env.BASE_URL}assets/opt/home-vials-1280.webp 1280w, ${import.meta.env.BASE_URL}assets/opt/home-vials-1920.webp 1920w`}
             sizes="100vw"
-            alt="STRIATA peptide vials"
-            width={3104}
-            height={1376}
+            alt="STRIATA Retatrutide, Tirzepatide, BPC-157 + TB-500 and GHK-Cu vials"
+            width={2688}
+            height={1152}
             loading="lazy"
             decoding="async"
             className="absolute inset-0 w-full h-full object-cover opacity-20"

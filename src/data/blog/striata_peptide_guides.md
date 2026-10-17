@@ -155,6 +155,7 @@ The research, regulatory documents and clinical guidelines behind the claims in 
 **Category:** Peptide Guides
 **Read time:** 6 min
 **Keywords:** how to reconstitute peptides, peptide storage, bacteriostatic water, peptide handling guide
+**Updated:** 2026-10-17
 
 ---
 
@@ -225,9 +226,9 @@ You have a 5mg vial of BPC-157. You add 2ml of BAC water.
 
 Your concentration is: 5mg / 2ml = 2.5mg per ml, or 2500mcg per ml.
 
-If your target dose is 250mcg per injection, you would draw up 0.1ml (10 units on an insulin syringe).
+At that concentration, every 0.1ml (10 units on a U-100 syringe) contains 250mcg of peptide.
 
-Write this calculation down and keep it with your vial. It is easy to forget, especially when you are managing multiple compounds.
+Write the concentration on the vial label. It is easy to forget, especially when you have several vials open.
 
 ---
 
@@ -589,6 +590,7 @@ The research, regulatory documents and clinical guidelines behind the claims in 
 **Category:** Peptide Guides
 **Read time:** 5 min
 **Keywords:** peptide glossary, peptide terms explained, peptide dictionary beginners, common peptide terminology
+**Updated:** 2026-10-17
 
 ---
 
@@ -664,7 +666,7 @@ A hormone produced in the gut that regulates blood sugar, slows gastric emptying
 ### H
 
 **Half-Life**
-The time it takes for half of a peptide to be broken down or cleared from the body. Half-life determines how frequently a compound needs to be dosed to maintain stable levels. For example, Ipamorelin has a short half-life and is typically dosed multiple times daily, while CJC-1295 with DAC has a much longer half-life.
+The time it takes for half of a peptide to be broken down or cleared from the body. For example, ipamorelin's half-life in human volunteers is about two hours, while CJC-1295 with DAC, built to bind albumin in the blood, lasts for days.
 
 **HPLC (High-Performance Liquid Chromatography)**
 The gold standard analytical method for testing peptide purity. HPLC separates components of a mixture and quantifies them, allowing a laboratory to determine exactly what percentage of a sample is the target compound.

@@ -37,7 +37,7 @@ export const quizProtocols = [
     deliveryTags: ['injectable', 'pen'],
     experienceTags: ['new', 'experienced'],
     summary:
-      'The ultimate healing combo: BPC-157 and TB-500 working together for maximum tissue repair and accelerated recovery. BPC-157 drives localised vascular repair and connective tissue regeneration, while TB-500 mobilises stem cells systemically to accelerate recovery. Available as a single reconstitution vial or a pre-filled pen, and as the base of The Wolverine Protocol on the stacks page.',
+      'BPC-157 and TB-500 in one vial: the two best-known tissue-repair research peptides, each studied separately for tendon, muscle and wound healing. BPC-157 drives localised vascular repair and connective tissue regeneration, while TB-500 mobilises stem cells systemically to accelerate recovery. Available as a single reconstitution vial or a pre-filled pen, and as the base of The Wolverine Protocol on the stacks page.',
     usedFor: ['Tissue repair', 'Soft-tissue injury', 'Recovery'],
     fromPrice: 650,
     primary: { label: 'View the Wolverine Stack in the catalogue', to: catalogue('Wolverine') },
@@ -61,7 +61,7 @@ export const quizProtocols = [
     usedFor: ['Tissue repair', 'Anti-inflammatory', 'Gut health'],
     fromPrice: 275,
     primary: { label: 'View BPC-157 in the catalogue', to: catalogue('BPC-157') },
-    secondary: [{ label: 'How to reconstitute and dose it', to: '/guides/peptide-reconstitution-dosage-calculator' }],
+    secondary: [{ label: 'How to reconstitute it', to: '/guides/peptide-reconstitution-dosage-calculator' }],
     posts: ['bpc-157-recovery-peptide-guide', 'bpc-157-south-africa', 'how-to-build-a-peptide-recovery-protocol'],
     metaTitle: 'BPC-157 for Recovery & Gut Health | STRIATA Quiz Result',
     metaDescription: 'Matched to recovery: BPC-157, the body protection compound for tissue repair, inflammation and gut health. Research-grade from STRIATA, South Africa.',
@@ -110,7 +110,7 @@ export const quizProtocols = [
     deliveryTags: ['injectable', 'pen'],
     experienceTags: ['new', 'experienced'],
     summary:
-      'The gold standard copper tripeptide, renowned for skin rejuvenation, collagen regeneration and powerful anti-aging effects. The injectable form works systemically rather than only where it is applied, and is available as a 100mg vial or a pre-filled pen.',
+      'The copper tripeptide studied for collagen production, wound repair and skin remodelling, mostly in laboratory and animal research. The injectable form works systemically rather than only where it is applied, and is available as a 100mg vial or a pre-filled pen.',
     usedFor: ['Skin rejuvenation', 'Collagen', 'Anti-aging'],
     fromPrice: 700,
     primary: { label: 'View GHK-Cu in the catalogue', to: catalogue('GHK-Cu') },
@@ -264,7 +264,7 @@ export const quizProtocols = [
     deliveryTags: ['injectable', 'pen'],
     experienceTags: ['new'],
     summary:
-      'A synergistic GHRH and ghrelin mimetic stack for optimised pulsatile growth hormone release. The classic first GH-axis protocol: two well-tolerated compounds in one vial or pen, chosen for lean muscle, recovery and sleep quality without the intensity of the advanced stacks.',
+      'A GHRH analogue and a ghrelin-receptor agonist in one vial: two routes to growth hormone release, each studied separately. The classic first GH-axis protocol: two well-tolerated compounds in one vial or pen, chosen for lean muscle, recovery and sleep quality without the intensity of the advanced stacks.',
     usedFor: ['GH release', 'Lean muscle', 'Recovery'],
     fromPrice: 800,
     primary: { label: 'View the CJC-1295 + Ipamorelin Stack', to: catalogue('CJC-1295 + Ipamorelin') },
@@ -320,7 +320,7 @@ export const quizProtocols = [
     deliveryTags: ['injectable', 'pen'],
     experienceTags: ['new', 'experienced'],
     summary:
-      'A mitochondrial-derived peptide that enhances metabolic function, exercise capacity and cellular energy production. The most direct match when the goal is energy and endurance rather than weight or muscle, available as a vial or a pre-filled pen in two sizes.',
+      'A mitochondrial-derived peptide studied in mice for insulin sensitivity, metabolic function and physical capacity. The most direct match when the goal is energy and endurance rather than weight or muscle, available as a vial or a pre-filled pen in two sizes.',
     usedFor: ['Mitochondrial', 'Metabolic', 'Exercise capacity'],
     fromPrice: 1200,
     primary: { label: 'View MOTS-c in the catalogue', to: catalogue('MOTS-C') },
@@ -362,7 +362,7 @@ export const quizProtocols = [
     deliveryTags: ['injectable', 'pen'],
     experienceTags: ['new', 'experienced'],
     summary:
-      'The master antioxidant that neutralises free radicals, supports liver detoxification and brightens skin tone. Available in 400mg, 600mg and 1500mg vials (reconstituted with up to 10 mL of water) and as a 600mg pre-filled pen.',
+      'The body’s main antioxidant tripeptide, studied for oxidative stress, liver function and skin tone. Available in 400mg, 600mg and 1500mg vials (reconstituted with up to 10 mL of water) and as a 600mg pre-filled pen.',
     usedFor: ['Antioxidant', 'Detox', 'Skin brightening'],
     fromPrice: 650,
     primary: { label: 'View Glutathione in the catalogue', to: catalogue('Glutathione') },
@@ -398,7 +398,7 @@ export const quizProtocols = [
     deliveryTags: ['injectable', 'pen'],
     experienceTags: ['new', 'experienced'],
     summary:
-      'An ACTH-derived nootropic that enhances focus, memory consolidation and neuroprotection, a favourite among biohackers. The usual first pick for focus and mental clarity, available as a vial or a pre-filled pen.',
+      'An ACTH(4-10) analogue studied for cognition, BDNF and recovery after stroke, mostly in Russian research. The usual first pick for focus and mental clarity, available as a vial or a pre-filled pen.',
     usedFor: ['Focus', 'Memory', 'Neuroprotection'],
     fromPrice: 750,
     primary: { label: 'View Semax in the catalogue', to: catalogue('Semax') },
@@ -418,7 +418,7 @@ export const quizProtocols = [
     deliveryTags: ['injectable', 'pen'],
     experienceTags: ['new', 'experienced'],
     summary:
-      'An anxiolytic nootropic peptide that reduces anxiety, stabilises mood and enhances cognitive performance. Chosen when the priority is calm and mood stability rather than raw focus, and often paired with Semax. Vial or pre-filled pen.',
+      'A tuftsin analogue studied in Russian trials for anxiety and mood, and registered as a medicine in Russia. Chosen when the priority is calm and mood stability rather than raw focus, and often paired with Semax. Vial or pre-filled pen.',
     usedFor: ['Anxiolytic', 'Mood', 'Cognition'],
     fromPrice: 750,
     primary: { label: 'View Selank in the catalogue', to: catalogue('Selank') },
@@ -438,7 +438,7 @@ export const quizProtocols = [
     deliveryTags: ['injectable', 'pen'],
     experienceTags: ['new', 'experienced'],
     summary:
-      'Delta Sleep-Inducing Peptide that promotes deep restorative sleep and regulates the sleep-wake cycle. The single-compound option when sleep is the whole goal. Vial or pre-filled pen.',
+      'Delta sleep-inducing peptide, studied since 1977 for deep sleep and the sleep-wake cycle, with mixed results in people. The single-compound option when sleep is the whole goal. Vial or pre-filled pen.',
     usedFor: ['Deep sleep', 'Circadian rhythm'],
     fromPrice: 700,
     primary: { label: 'View DSIP in the catalogue', to: catalogue('DSIP') },
@@ -494,7 +494,7 @@ export const quizProtocols = [
     deliveryTags: ['injectable', 'pen'],
     experienceTags: ['new', 'experienced'],
     summary:
-      'A potent immune-modulating peptide that activates T-cells and dendritic cells for enhanced immune defence. The direct choice when immunity specifically is the goal, available as a vial or a 10mg pre-filled pen.',
+      'An immune-modulating thymic peptide that supports T-cell maturation, approved outside the US for hepatitis B. The direct choice when immunity specifically is the goal, available as a vial or a 10mg pre-filled pen.',
     usedFor: ['Immune modulation', 'T-cells', 'Immune defence'],
     fromPrice: 700,
     primary: { label: 'View Thymosin Alpha-1 in the catalogue', to: catalogue('Thymosin Alpha-1') },

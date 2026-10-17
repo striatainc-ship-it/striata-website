@@ -43,7 +43,7 @@ export const products = [
     slug: 'bpc-157-tb-500-wolverine-stack',
     photos: ['bpctb500_vial_final'],
     category: 'recovery',
-    description: 'The ultimate healing combo: BPC-157 and TB-500 working together for maximum tissue repair and accelerated recovery.',
+    description: 'BPC-157 and TB-500 in one vial: the two best-known tissue-repair research peptides, each studied separately for tendon, muscle and wound healing.',
     tags: ['Stack', 'Recovery', 'Tissue Repair'],
     featured: true,
     prices: [
@@ -113,7 +113,7 @@ export const products = [
     slug: 'ghrp-6',
     photos: ['ghrp6'],
     category: 'recovery',
-    description: 'Growth hormone releasing peptide that stimulates GH secretion and increases appetite, ideal for lean mass protocols.',
+    description: 'A growth hormone-releasing peptide that triggers GH release and raises appetite, studied in short human tests of GH reserve.',
     tags: ['GH Release', 'Lean Mass', 'Appetite'],
     prices: [
       { dose: '5mg', price: 250 },
@@ -149,7 +149,7 @@ export const products = [
     slug: 'cjc-1295-ipamorelin',
     photos: ['cjcipa'],
     category: 'recovery',
-    description: 'A synergistic GHRH and ghrelin mimetic stack for optimised pulsatile growth hormone release.',
+    description: 'A GHRH analogue and a ghrelin-receptor agonist in one vial: two routes to growth hormone release, each studied separately.',
     tags: ['Stack', 'GHRH', 'GH Release'],
     prices: [
       { dose: '5mg+5mg', price: 425, inStock: true },
@@ -278,7 +278,7 @@ export const products = [
     slug: 'ghk-cu',
     photos: ['ghkcu_vial_final'],
     category: 'skin',
-    description: 'The gold standard copper tripeptide, renowned for skin rejuvenation, collagen regeneration and powerful anti-aging effects.',
+    description: 'The copper tripeptide studied for collagen production, wound repair and skin remodelling, mostly in laboratory and animal research.',
     tags: ['Skin Rejuvenation', 'Collagen', 'Anti-Aging'],
     featured: true,
     prices: [
@@ -365,7 +365,7 @@ export const products = [
     slug: 'glutathione',
     photos: ['glutathione'],
     category: 'skin',
-    description: 'The master antioxidant that neutralises free radicals, supports liver detoxification and brightens skin tone.',
+    description: 'The body’s main antioxidant tripeptide, studied for oxidative stress, liver function and skin tone.',
     tags: ['Antioxidant', 'Detox', 'Skin Brightening'],
     prices: [
       { dose: '400mg', price: 250 },
@@ -421,7 +421,7 @@ export const products = [
     slug: 'mots-c',
     photos: ['motsc_vial_final'],
     category: 'hormonal',
-    description: 'A mitochondrial-derived peptide that enhances metabolic function, exercise capacity and cellular energy production.',
+    description: 'A mitochondrial-derived peptide studied in mice for insulin sensitivity, metabolic function and physical capacity.',
     tags: ['Mitochondrial', 'Metabolic', 'Energy'],
     featured: true,
     prices: [
@@ -449,7 +449,7 @@ export const products = [
     slug: 'melanotan-2',
     photos: ['melanotan2'],
     category: 'hormonal',
-    description: 'Stimulates melanin production for tanning, appetite suppression and libido enhancement.',
+    description: 'A melanocortin agonist studied in small 1990s trials for skin darkening and erections; PT-141 was later developed from it.',
     tags: ['Tanning', 'Libido', 'Melanin'],
     prices: [
       { dose: '10mg', price: 400, inStock: true },
@@ -502,7 +502,7 @@ export const products = [
     slug: 'oxytocin',
     photos: ['oxytocin'],
     category: 'hormonal',
-    description: 'The bonding hormone that enhances social connection, reduces stress and supports recovery and wellbeing.',
+    description: 'The nine-amino-acid hormone approved for use in labour, studied intranasally for social behaviour and stress.',
     tags: ['Bonding', 'Stress Reduction', 'Wellbeing'],
     prices: [
       { dose: '2mg', price: 225 },
@@ -542,7 +542,7 @@ export const products = [
     slug: 'slu-pp-332',
     photos: ['slupp332'],
     category: 'weight',
-    description: 'An exercise mimetic that activates ERR receptors to boost mitochondrial activity, fat oxidation and endurance, replicating the metabolic benefits of training.',
+    description: 'An ERR agonist studied in mice as an “exercise mimetic” for endurance and fat oxidation. There is no human data yet.',
     tags: ['Exercise Mimetic', 'Fat Oxidation', 'Endurance'],
     prices: [
       { dose: '5mg', price: 400, inStock: true },
@@ -554,7 +554,7 @@ export const products = [
     slug: 'aod-9604',
     photos: ['aod9604'],
     category: 'weight',
-    description: 'An HGH fragment that stimulates lipolysis and inhibits fat storage without affecting blood sugar or growth.',
+    description: 'A modified hGH fragment designed to keep growth hormone’s fat-burning signal without its effects on growth or blood sugar.',
     tags: ['Lipolysis', 'Fat Loss', 'HGH Fragment'],
     prices: [
       { dose: '5mg', price: 500, inStock: true },
@@ -636,7 +636,7 @@ export const products = [
     slug: 'cagrilintide',
     photos: ['cagrilintide'],
     category: 'weight',
-    description: 'Long-acting amylin analogue that suppresses appetite and complements GLP-1 therapy for enhanced fat loss.',
+    description: 'A long-acting amylin analogue studied for appetite and weight, mostly with semaglutide as CagriSema.',
     tags: ['Amylin', 'Appetite Suppression', 'GLP-1'],
     prices: [
       { dose: '2mg', price: 300 },
@@ -761,7 +761,7 @@ export const products = [
     slug: 'selank',
     photos: ['selank'],
     category: 'brain',
-    description: 'An anxiolytic nootropic peptide that reduces anxiety, stabilises mood and enhances cognitive performance.',
+    description: 'A tuftsin analogue studied in Russian trials for anxiety and mood, and registered as a medicine in Russia.',
     tags: ['Anxiolytic', 'Nootropic', 'Mood'],
     featured: true,
     prices: [
@@ -775,7 +775,7 @@ export const products = [
     slug: 'semax',
     photos: ['semax'],
     category: 'brain',
-    description: 'An ACTH-derived nootropic that enhances focus, memory consolidation and neuroprotection, a favourite among biohackers.',
+    description: 'An ACTH(4-10) analogue studied for cognition, BDNF and recovery after stroke, mostly in Russian research.',
     tags: ['Nootropic', 'Focus', 'Memory'],
     featured: true,
     prices: [
@@ -789,7 +789,7 @@ export const products = [
     slug: 'dsip',
     photos: ['dsip'],
     category: 'brain',
-    description: 'Delta Sleep-Inducing Peptide that promotes deep restorative sleep and regulates the sleep-wake cycle.',
+    description: 'Delta sleep-inducing peptide, studied since 1977 for deep sleep and the sleep-wake cycle, with mixed results in people.',
     tags: ['Sleep', 'Delta Sleep', 'Circadian'],
     prices: [
       { dose: '2mg', price: 290 },
@@ -814,7 +814,7 @@ export const products = [
     slug: 'pinealon',
     photos: ['pinealon'],
     category: 'brain',
-    description: 'A geroprotective tripeptide from the pineal gland that improves cognitive function and circadian regulation.',
+    description: 'A short bioregulator tripeptide studied in cell and animal models for protecting nerve cells from oxidative stress.',
     tags: ['Geroprotective', 'Cognitive', 'Pineal Gland'],
     prices: [
       { dose: '5mg', price: 250 },
@@ -870,7 +870,7 @@ export const products = [
     slug: 'adamax',
     photos: ['adamax'],
     category: 'brain',
-    description: 'A next-generation Semax analogue with a modified structure for enhanced potency, supporting focus, memory, neuroplasticity and stress resilience.',
+    description: 'Described by its manufacturer as a modified Semax analogue for focus and memory. There is no published research under this name.',
     tags: ['Nootropic', 'Semax Analogue', 'Neuroplasticity'],
     prices: [
       { dose: '5mg', price: 450 },
@@ -906,7 +906,7 @@ export const products = [
     slug: 'thymosin-alpha-1',
     photos: ['thymosinalpha'],
     category: 'immunity',
-    description: 'A potent immune-modulating peptide that activates T-cells and dendritic cells for enhanced immune defence.',
+    description: 'An immune-modulating thymic peptide that supports T-cell maturation, approved outside the US for hepatitis B.',
     tags: ['Immune Modulation', 'T-Cell', 'Immune Defence'],
     featured: true,
     prices: [
@@ -1100,6 +1100,38 @@ export const products = [
 // Unflagged concentrations are treated as out of stock (available on request).
 export const isInStock = (product) =>
   Array.isArray(product.prices) && product.prices.some((tier) => tier.inStock === true)
+
+/** URL slug derived from a product name: 'Tesa10 + Ipamorelin Stack' → 'tesa10-ipamorelin-stack'. */
+export const slugFromName = (name) =>
+  name
+    .toLowerCase()
+    .replace(/\+/g, ' ')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '')
+
+/**
+ * Restocking publishes a page. A product that is in stock but has no hand-set
+ * `slug` gets one from its name here, so flagging any concentration
+ * `inStock: true` is all it takes: the route, the sitemap entry and the
+ * catalogue card's link all follow from `slug` (see pagedProducts). The page
+ * starts thin (description, prices, enquiry) until productContent.js and
+ * productSpecs.js get an entry for it.
+ *
+ * Products that already have a slug keep their page when they go out of stock;
+ * it shows "On request" and BackOrder rather than becoming a 404 that would
+ * have to be crawled and indexed again.
+ */
+{
+  const taken = new Set(products.map((p) => p.slug).filter(Boolean))
+  for (const product of products) {
+    if (product.slug || product.page || !isInStock(product)) continue
+    const slug = slugFromName(product.name)
+    if (taken.has(slug)) throw new Error(`Auto slug "${slug}" for ${product.name} is already in use; give it a slug by hand`)
+    product.slug = slug
+    product.autoPage = true
+    taken.add(slug)
+  }
+}
 
 /**
  * Where a catalogue card should link, or null for a product that has no page

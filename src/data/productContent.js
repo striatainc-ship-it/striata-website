@@ -31,7 +31,7 @@ export const PRODUCT_CONTENT = {
   // ── Recovery & Performance ───────────────────────────────────────────
 
   3: {
-    lede: 'The two best-known repair peptides in one vial, at the ratio most recovery protocols end up running anyway.',
+    lede: 'The two best-known repair peptides in one vial, in equal amounts.',
     about: [
       'BPC-157 and TB-500 are the pair most people arrive at after reading about peptide recovery, and they are usually bought together because they work on different parts of the same problem. BPC-157 is a synthetic fragment of a protein found in gastric juice, and research interest centres on localised repair — blood vessel formation at an injury site, tendon and ligament fibroblasts, and the gut lining. TB-500 is a synthetic form of Thymosin Beta-4, and its interest is systemic: cell migration, actin regulation and getting repair cells to where the damage is.',
       'Running them together is what the "Wolverine" name refers to. The stack vial saves you reconstituting two products on the same schedule and keeps the ratio fixed, which is why it is the format most people move to once they have used both separately. It is also the base of The Wolverine Protocol on the stacks page, where it is paired with GHK-Cu and KPV for longer or more stubborn recovery work.',
@@ -55,7 +55,7 @@ export const PRODUCT_CONTENT = {
       },
     ],
     handling:
-      'The 10mg+10mg vial holds 20mg of peptide in total. Most protocols reconstitute it with 2 mL of bacteriostatic water, which puts 10mg of combined peptide in each mL and makes a 500mcg/500mcg dose a 5-unit draw on a standard insulin syringe. Add the water down the side of the glass rather than straight onto the powder, and swirl rather than shake. ' +
+      'The 10mg+10mg vial holds 20mg of peptide in total. Reconstituted with 2 mL of bacteriostatic water, it holds 10mg of combined peptide in each mL. Add the water down the side of the glass rather than straight onto the powder, and swirl rather than shake. ' +
       STORAGE_SA +
       ' Once reconstituted, refrigerate and use within about four weeks.',
     faqs: [
@@ -68,8 +68,8 @@ export const PRODUCT_CONTENT = {
         a: 'Yes. The Wolverine stack is one of the pre-filled pens on the /pens page, which suits people who would rather not reconstitute at all.',
       },
       {
-        q: 'Which tier should I start with?',
-        a: 'The 10mg+10mg is the one most people take and the tier we hold in stock. 5mg+5mg suits a short trial; 15mg+15mg is for longer protocols where you already know you will finish it.',
+        q: 'Which sizes are in stock?',
+        a: 'The 10mg+10mg is the tier we hold in stock. 5mg+5mg and 15mg+15mg are available on request.',
       },
     ],
     pairsWith: [22, 19, 87],
@@ -101,7 +101,7 @@ export const PRODUCT_CONTENT = {
       },
     ],
     handling:
-      'The 10mg vial reconstituted with 2 mL of bacteriostatic water gives 5mg/mL, so a 100mcg dose is a 2-unit draw. Because GH release is pulsatile and follows a daily rhythm, most protocols time doses away from meals. ' +
+      'The 10mg vial reconstituted with 2 mL of bacteriostatic water gives 5mg/mL. ' +
       STORAGE_SA,
     faqs: [
       {
@@ -134,7 +134,7 @@ export const PRODUCT_CONTENT = {
       },
       {
         title: 'Recovery and sleep',
-        body: 'The most common reason people run it. GH release concentrates in deep sleep, which is why protocols usually place a dose before bed.',
+        body: 'Growth hormone release is largest in deep sleep, which is why secretagogues are studied alongside sleep quality and recovery.',
       },
       {
         title: 'Body composition',
@@ -142,20 +142,16 @@ export const PRODUCT_CONTENT = {
       },
     ],
     handling:
-      'The 5mg+5mg vial reconstituted with 2 mL of bacteriostatic water gives 2.5mg of each peptide per mL, so a 100mcg/100mcg dose is a 4-unit draw. Protocols almost always place a dose before bed, since the natural GH pulse is largest in deep sleep and the two compound. ' +
+      'The 5mg+5mg vial reconstituted with 2 mL of bacteriostatic water gives 2.5mg of each peptide per mL. ' +
       STORAGE_SA,
     faqs: [
       {
         q: 'Is this CJC-1295 with or without DAC?',
-        a: 'Without. The DAC version has a much longer half-life and is a separate catalogue line; the no-DAC form used here is the one that suits a short, sleep-timed pulse.',
+        a: 'Without. The DAC version has a much longer half-life and is a separate catalogue line.',
       },
       {
         q: 'Why not just use HGH?',
         a: 'Different mechanism and a different price. Secretagogues prompt your own pituitary to release GH in its usual pattern and stop when the pituitary would stop. HGH Somatropin is also in the catalogue if that is what you are after.',
-      },
-      {
-        q: 'When should I dose it?',
-        a: 'Before bed is standard, away from food. Some protocols add a second morning dose; the sleep-timed one is the one nobody skips.',
       },
     ],
     pairsWith: [9, 44, 87],
@@ -170,7 +166,7 @@ export const PRODUCT_CONTENT = {
     lede: 'GHK-Cu, BPC-157 and TB-500 in one 70mg vial — repair from the inside and the skin at the same time.',
     about: [
       'The GLOW stack is built on the observation that skin regeneration and tissue repair are the same biology looked at from different angles. GHK-Cu is the copper tripeptide studied for collagen synthesis and skin remodelling; BPC-157 and TB-500 are the repair pair covered on the Wolverine stack page. Together they are the most-requested cosmetic protocol we sell, and the one people most often run continuously rather than in blocks.',
-      'The 70mg vial holds GHK-Cu 50mg with BPC-157 10mg and TB-500 10mg. The GHK-Cu share is deliberately the largest — it is the compound doing the skin work, and the two repair peptides are there at the doses they are normally run at anyway. If you want the same thing with gut and systemic anti-inflammatory support added, the KLOW stack is this plus KPV 10mg.',
+      'The 70mg vial holds GHK-Cu 50mg with BPC-157 10mg and TB-500 10mg. The GHK-Cu share is deliberately the largest — it is the compound doing the skin work, and the two repair peptides make up the other 20mg. If you want the same thing with gut and systemic anti-inflammatory support added, the KLOW stack is this plus KPV 10mg.',
     ],
     researchedFor: [
       {
@@ -191,7 +187,7 @@ export const PRODUCT_CONTENT = {
       },
     ],
     handling:
-      'A 70mg vial is a lot of peptide for its size, so reconstitution volume matters more than usual. Most protocols use 2 to 3 mL of bacteriostatic water; at 3 mL the vial holds roughly 23mg of combined peptide per mL. Add the water slowly down the glass — a large powder cake takes a minute or two to dissolve fully, and it should be left to do that rather than shaken. ' +
+      'A 70mg vial is a lot of peptide for its size, so reconstitution volume matters more than usual. It takes 2 to 3 mL of bacteriostatic water; at 3 mL the vial holds roughly 23mg of combined peptide per mL. Add the water slowly down the glass — a large powder cake takes a minute or two to dissolve fully, and it should be left to do that rather than shaken. ' +
       STORAGE_SA,
     faqs: [
       {
@@ -201,10 +197,6 @@ export const PRODUCT_CONTENT = {
       {
         q: 'Is this the same as the GHK-Cu serum?',
         a: 'No. The serum is a topical 30 ml dropper bottle for the face. This is a reconstitution vial. Some people use both; they are different products with different pages.',
-      },
-      {
-        q: 'How long does one vial last?',
-        a: 'That depends entirely on your protocol, but at the doses GLOW is usually run at, a 70mg vial is a multi-week supply rather than a few days.',
       },
     ],
     pairsWith: [89, 22, 87],
@@ -246,10 +238,6 @@ export const PRODUCT_CONTENT = {
       {
         q: 'Is KLOW worth R150 more than GLOW?',
         a: 'If gut health or an inflammatory skin condition is part of why you are running it, yes — KPV 10mg on its own is R600. If you want skin, hair and repair only, GLOW does that.',
-      },
-      {
-        q: 'Can I run it continuously?',
-        a: 'KLOW is one of the stacks people most often run as an ongoing protocol rather than in blocks. How you structure that is between you and whoever is guiding your protocol.',
       },
     ],
     pairsWith: [15, 19, 87],
@@ -368,21 +356,17 @@ export const PRODUCT_CONTENT = {
         body: 'A pineal peptide with a documented interest in melatonin regulation, which is why sleep is the effect people most often report noticing.',
       },
       {
-        title: 'Longevity protocols',
-        body: 'Typically run as a course of consecutive days, repeated a few times a year, rather than continuously — the pattern the original research used.',
+        title: 'Lifespan in animal studies',
+        body: 'In mice, Epithalon was linked to longer lifespan and fewer spontaneous tumours. There are no large controlled trials of it in people.',
       },
     ],
     handling:
-      'The 10mg vial reconstituted with 2 mL of bacteriostatic water gives 5mg/mL, so a 10mg course spread over ten days is a 1 mg (20-unit) draw each day. Because Epithalon is usually run in short courses, one vial often covers a full course with nothing left over. ' +
+      'The 10mg vial reconstituted with 2 mL of bacteriostatic water gives 5mg/mL. ' +
       STORAGE_SA,
     faqs: [
       {
-        q: 'How is it usually run?',
-        a: 'In courses rather than continuously — the original research used consecutive-day courses repeated periodically. The Learn article linked below goes through what those studies actually did.',
-      },
-      {
         q: 'Epithalon or Pinealon?',
-        a: 'Both are pineal-derived bioregulators but the research interest differs: Epithalon for telomerase and circadian rhythm, Pinealon for cognitive function. Some longevity protocols run both.',
+        a: 'Both are pineal-derived bioregulators but the research interest differs: Epithalon for telomerase and circadian rhythm, Pinealon for cognitive function.',
       },
     ],
     pairsWith: [64, 68, 22],
@@ -397,7 +381,7 @@ export const PRODUCT_CONTENT = {
     lede: 'The body\'s own master antioxidant, in an injectable vial that sidesteps the absorption problem oral glutathione has.',
     about: [
       'Glutathione is a tripeptide your liver makes continuously and depletes under oxidative stress, alcohol, illness and age. It is central to phase II liver detoxification and to recycling other antioxidants, which is why it is described as the master antioxidant rather than one of several.',
-      'The reason it is sold as an injectable at all is absorption. Oral glutathione is largely broken down in the gut before it reaches circulation, which has made oral supplementation a contested subject for decades. An injectable vial avoids that route entirely, which is why it is the form used in skin-brightening and liver-support protocols, and why it is priced by the hundreds of milligrams rather than the tens.',
+      'Oral glutathione has been a contested subject for decades. Much of it is broken down in the gut, although a 2015 randomised trial found that daily oral doses did raise the body’s glutathione stores over six months. A reconstitution vial bypasses the gut entirely, which is why it is priced by the hundreds of milligrams rather than the tens.',
     ],
     researchedFor: [
       {
@@ -414,16 +398,16 @@ export const PRODUCT_CONTENT = {
       },
     ],
     handling:
-      'Glutathione is one of two catalogue items with a 10 mL reconstitution limit rather than the usual 3 mL — the doses are large enough that a standard volume would make the solution impractically concentrated. The 600mg vial with 6 mL of bacteriostatic water gives 100mg/mL. The reconstitution calculator has the limit built in. ' +
+      'Glutathione is one of two catalogue items with a 10 mL reconstitution limit rather than the usual 3 mL — the vials hold so much material that a standard volume would make the solution impractically concentrated. The 600mg vial with 6 mL of bacteriostatic water gives 100mg/mL. The reconstitution calculator has the limit built in. ' +
       STORAGE_SA,
     faqs: [
       {
         q: 'Why not just take it orally?',
-        a: 'Oral glutathione is largely degraded in the gut before it reaches the bloodstream, which is the reason the injectable form exists.',
+        a: 'Much of an oral dose is broken down in the gut, which is why the vial form exists. The picture is less one-sided than it used to be, though: a 2015 randomised trial found daily oral glutathione raised the body’s stores over six months.',
       },
       {
         q: 'Which size should I get?',
-        a: '600mg at R350 and 1500mg at R580 are both in stock; the 1500mg is materially better value per milligram if your protocol will get through it within the solution\'s useful life.',
+        a: '600mg at R350 and 1500mg at R580 are both in stock; the 1500mg costs noticeably less per milligram.',
       },
       {
         q: 'Does it need more water than other peptides?',
@@ -461,7 +445,7 @@ export const PRODUCT_CONTENT = {
       },
     ],
     handling:
-      'The 10mg vial with 2 mL of bacteriostatic water gives 5mg/mL, so a 500mcg dose is a 10-unit draw. The 20mg vial is the better value of the two in-stock sizes and the one most protocols run through. ' +
+      'The 10mg vial with 2 mL of bacteriostatic water gives 5mg/mL. The 20mg vial is the better value per milligram of the two in-stock sizes. ' +
       STORAGE_SA,
     faqs: [
       {
@@ -470,7 +454,7 @@ export const PRODUCT_CONTENT = {
       },
       {
         q: 'Is this a weight loss peptide?',
-        a: 'Not in the way the GLP-1s are. MOTS-c is researched for metabolic function and energy rather than appetite, so it is usually run alongside a diet rather than to make one easier.',
+        a: 'Not in the way the GLP-1s are. MOTS-c is researched for metabolic function and energy rather than appetite, and it does not act as an appetite suppressant.',
       },
     ],
     pairsWith: [90, 68, 42],
@@ -502,7 +486,7 @@ export const PRODUCT_CONTENT = {
       },
     ],
     handling:
-      'The 10mg vial with 2 mL of bacteriostatic water gives 5mg/mL. PT-141 is dosed before use rather than daily, so one vial lasts a long time; nausea at higher doses is the most commonly reported reason people titrate up slowly from a low starting dose. ' +
+      'The 10mg vial with 2 mL of bacteriostatic water gives 5mg/mL. ' +
       STORAGE_SA,
     faqs: [
       {
@@ -512,10 +496,6 @@ export const PRODUCT_CONTENT = {
       {
         q: 'How is it different from the ED drugs?',
         a: 'Mechanism. PDE5 inhibitors act on blood flow; PT-141 acts on melanocortin receptors in the brain and addresses arousal rather than the vascular response.',
-      },
-      {
-        q: 'Why do people start at a low dose?',
-        a: 'Nausea is the most commonly reported effect and it is dose-dependent, so most protocols titrate up rather than starting at the top.',
       },
     ],
     pairsWith: [40, 35, 87],
@@ -547,7 +527,7 @@ export const PRODUCT_CONTENT = {
       },
     ],
     handling:
-      'The 10mg vial with 2 mL of bacteriostatic water gives 5mg/mL. Protocols typically start low and build, both because the melanocortin effects are dose-dependent and because nausea and flushing are commonly reported at higher starting doses. ' +
+      'The 10mg vial with 2 mL of bacteriostatic water gives 5mg/mL. ' +
       STORAGE_SA,
     faqs: [
       {
@@ -588,7 +568,7 @@ export const PRODUCT_CONTENT = {
       },
     ],
     handling:
-      'The 5mg vial with 2 mL of bacteriostatic water gives 2.5mg/mL. Oxytocin has a short half-life, which is why research protocols dose it close to when the effect is wanted rather than on a fixed daily schedule. ' +
+      'The 5mg vial with 2 mL of bacteriostatic water gives 2.5mg/mL. Oxytocin has a half-life of only a few minutes in the blood. ' +
       STORAGE_SA,
     faqs: [
       {
@@ -596,8 +576,8 @@ export const PRODUCT_CONTENT = {
         a: 'The same molecule, supplied as a research-grade lyophilised peptide. The Learn article linked below covers the research beyond the obstetric use it is known for.',
       },
       {
-        q: 'What is it usually run with?',
-        a: 'Most often alongside the brain and mood peptides — Selank, DSIP — rather than with anything in the recovery or weight categories.',
+        q: 'What is it often bought with?',
+        a: 'Most often the brain and mood peptides, Selank and DSIP, rather than anything in the recovery or weight categories.',
       },
     ],
     pairsWith: [60, 62, 87],
@@ -629,7 +609,7 @@ export const PRODUCT_CONTENT = {
       },
     ],
     handling:
-      'The 10mg vial with 2 mL of bacteriostatic water gives 5mg/mL. Kisspeptin has a short half-life, and research protocols reflect that in how they schedule doses. ' +
+      'The 10mg vial with 2 mL of bacteriostatic water gives 5mg/mL. Kisspeptin-10 has a half-life of minutes. ' +
       STORAGE_SA,
     faqs: [
       {
@@ -713,7 +693,7 @@ export const PRODUCT_CONTENT = {
       },
     ],
     handling:
-      'The 5mg vial with 2 mL of bacteriostatic water gives 2.5mg/mL. SLU-PP-332 has a short half-life, and research protocols reflect that in dose frequency. ' +
+      'The 5mg vial with 2 mL of bacteriostatic water gives 2.5mg/mL. ' +
       STORAGE_SA,
     faqs: [
       {
@@ -754,7 +734,7 @@ export const PRODUCT_CONTENT = {
       },
     ],
     handling:
-      'The 5mg vial with 2 mL of bacteriostatic water gives 2.5mg/mL, so a 300mcg dose is a 12-unit draw. Protocols typically dose it fasted, on the reasoning that lipolysis is easiest to influence when insulin is low. ' +
+      'The 5mg vial with 2 mL of bacteriostatic water gives 2.5mg/mL. ' +
       STORAGE_SA,
     faqs: [
       {
@@ -795,7 +775,7 @@ export const PRODUCT_CONTENT = {
       },
     ],
     handling:
-      'The 10mg vial with 2 mL of bacteriostatic water gives 5mg/mL, so a 1mg dose is a 20-unit draw. Like the other GH-axis compounds it is usually dosed away from food, and protocols commonly place it at night. ' +
+      'The 10mg vial with 2 mL of bacteriostatic water gives 5mg/mL. ' +
       STORAGE_SA,
     faqs: [
       {
@@ -804,7 +784,7 @@ export const PRODUCT_CONTENT = {
       },
       {
         q: 'Which vial size?',
-        a: '5mg at R500 and 10mg at R1,050 are both in stock. The 10mg is the standard size for a full protocol; the 5mg suits a shorter run.',
+        a: '5mg at R500 and 10mg at R1,050 are both in stock; 20mg is available on request.',
       },
       {
         q: 'Is there a stack version?',
@@ -840,7 +820,7 @@ export const PRODUCT_CONTENT = {
       },
     ],
     handling:
-      'The 30mg vial reconstituted with 3 mL of bacteriostatic water gives 10mg/mL, so a 2mg dose is a 20-unit draw. Retatrutide protocols are titrated upward over weeks rather than started at target dose — gastrointestinal effects are dose-dependent and titration is how the trials managed them. The reconstitution calculator will do the arithmetic for whatever volume you choose. ' +
+      'The 30mg vial reconstituted with 3 mL of bacteriostatic water gives 10mg/mL. The reconstitution calculator works out the concentration for whatever volume you choose. ' +
       STORAGE_SA,
     faqs: [
       {
@@ -849,11 +829,7 @@ export const PRODUCT_CONTENT = {
       },
       {
         q: 'Why is it the most expensive?',
-        a: 'It is the newest compound in the class and the hardest to source at research grade. The 30mg vial at R1,750 is the size most protocols start on.',
-      },
-      {
-        q: 'Do I need to titrate?',
-        a: 'The trials titrated upward over weeks, and gastrointestinal effects in this class are dose-dependent. Starting at a target dose is not how the data was generated.',
+        a: 'It is the newest compound in the class and the hardest to source at research grade. The 30mg vial is R1,750 and the 50mg R2,750.',
       },
     ],
     pairsWith: [47, 49, 87],
@@ -885,7 +861,7 @@ export const PRODUCT_CONTENT = {
       },
     ],
     handling:
-      'The 30mg vial reconstituted with 3 mL of bacteriostatic water gives a concentration of 10mg/mL. In the clinical trials, doses were titrated upward over weeks because gastrointestinal effects in this class track dose closely. ' +
+      'The 30mg vial reconstituted with 3 mL of bacteriostatic water gives a concentration of 10mg/mL. ' +
       STORAGE_SA,
     faqs: [
       {
@@ -930,7 +906,7 @@ export const PRODUCT_CONTENT = {
       },
     ],
     handling:
-      'The 5mg vial with 2 mL of bacteriostatic water gives 2.5mg/mL. Cagrilintide is long-acting, which is what makes weekly dosing schedules practical, and protocols titrate it the same way they titrate a GLP-1. ' +
+      'The 5mg vial with 2 mL of bacteriostatic water gives 2.5mg/mL. Cagrilintide is long-acting, with a half-life of about a week. ' +
       STORAGE_SA,
     faqs: [
       {
@@ -973,7 +949,7 @@ export const PRODUCT_CONTENT = {
       },
     ],
     handling:
-      'The 5mg vial with 2 mL of bacteriostatic water gives 2.5mg/mL. Selank is also widely used intranasally in research contexts, which is worth knowing because it changes the dosing arithmetic completely; what we supply is the lyophilised vial. ' +
+      'The 5mg vial with 2 mL of bacteriostatic water gives 2.5mg/mL. Selank is also studied intranasally, and we carry it as a ready-made nasal spray as well as this vial. ' +
       STORAGE_SA,
     faqs: [
       {
@@ -1055,7 +1031,7 @@ export const PRODUCT_CONTENT = {
       },
     ],
     handling:
-      'The 5mg vial with 2 mL of bacteriostatic water gives 2.5mg/mL. DSIP is dosed in the evening for obvious reasons, and protocols typically place it well before bed rather than at it. ' +
+      'The 5mg vial with 2 mL of bacteriostatic water gives 2.5mg/mL. ' +
       STORAGE_SA,
     faqs: [
       {
@@ -1096,12 +1072,12 @@ export const PRODUCT_CONTENT = {
       },
     ],
     handling:
-      'The 10mg vial with 2 mL of bacteriostatic water gives 5mg/mL. Like the other bioregulators, Pinealon is typically run as a course of consecutive days repeated periodically rather than continuously. ' +
+      'The 10mg vial with 2 mL of bacteriostatic water gives 5mg/mL. ' +
       STORAGE_SA,
     faqs: [
       {
         q: 'Pinealon or Epithalon?',
-        a: 'Both are pineal bioregulators, but the research interests differ — Pinealon for cognition and neuroprotection, Epithalon for telomerase and circadian rhythm. Longevity protocols often run both.',
+        a: 'Both are pineal bioregulators, but the research interests differ — Pinealon for cognition and neuroprotection, Epithalon for telomerase and circadian rhythm.',
       },
       {
         q: 'What is a bioregulator?',
@@ -1186,7 +1162,7 @@ export const PRODUCT_CONTENT = {
       },
     ],
     handling:
-      'The 10mg vial with 2 mL of bacteriostatic water gives 5mg/mL. Because Adamax is positioned as more potent than Semax, protocols generally start lower than a Semax-equivalent dose rather than matching it. ' +
+      'The 10mg vial with 2 mL of bacteriostatic water gives 5mg/mL. ' +
       STORAGE_SA,
     faqs: [
       {
@@ -1202,7 +1178,7 @@ export const PRODUCT_CONTENT = {
     meta: {
       title: 'Adamax 10mg | Semax Analogue | STRIATA South Africa',
       description:
-        'Adamax, the next-generation Semax analogue researched for focus, memory and neuroplasticity. 10mg in stock at R680, delivered across South Africa.',
+        'Adamax, described by its manufacturer as a modified Semax analogue for focus and memory. 10mg in stock at R680, delivered across South Africa.',
     },
   },
 
@@ -1229,7 +1205,7 @@ export const PRODUCT_CONTENT = {
       },
     ],
     handling:
-      'The 10mg vial with 2 mL of bacteriostatic water gives 5mg/mL. Thymosin Alpha-1 protocols are usually measured in weeks rather than days, so the 10mg vial is the practical size for a full course. ' +
+      'The 10mg vial with 2 mL of bacteriostatic water gives 5mg/mL. ' +
       STORAGE_SA,
     faqs: [
       {
@@ -1238,7 +1214,7 @@ export const PRODUCT_CONTENT = {
       },
       {
         q: 'Which size should I get?',
-        a: '10mg at R1,040 is in stock and is the size a full course runs through. 5mg is available on request.',
+        a: '10mg at R1,040 is in stock. 5mg is available on request.',
       },
     ],
     pairsWith: [73, 68, 87],

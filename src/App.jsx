@@ -5,6 +5,7 @@ import { prefersReducedMotion, markNavigated } from './lib/motion'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import OrderSlip, { SlipFab } from './components/OrderSlip'
+import AgeGate from './components/AgeGate'
 import { initGA, trackPageview } from './lib/analytics'
 import { loaders, resolved } from './routeLoaders'
 import AppRoutes from './AppRoutes'
@@ -121,6 +122,7 @@ export function Layout({ routes = <AppRoutes components={routeComponents()} /> }
       <Footer />
       <SlipFab />
       <OrderSlip />
+      <AgeGate />
     </>
   )
 }

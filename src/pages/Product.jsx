@@ -15,7 +15,7 @@ import {
 import { contentFor } from '../data/productContent'
 import { nasalSprays } from '../data/nasalSpraysData'
 import { guideFor } from '../data/productGuides'
-import { specsFor } from '../data/productSpecs'
+import { EVIDENCE_LEVELS, specsFor } from '../data/productSpecs'
 import { coaFor } from '../data/productCoas'
 import { blogPosts } from '../data/blogPosts'
 import { SITE_URL, offerTerms } from '../data/site'
@@ -249,6 +249,28 @@ function ProductPage({ product }) {
               )}
               <p className="text-white/50 leading-relaxed mb-8 max-w-2xl">{product.description}</p>
 
+              {/* At a glance */}
+              {specs?.glance && (
+                <dl className="mb-8 max-w-2xl rounded-2xl border border-white/8 bg-white/[0.02] px-5 py-4 grid gap-2.5 text-sm">
+                  {[
+                    ['Also known as', specs.glance.aka],
+                    ['Class', specs.glance.class],
+                    ['Evidence', EVIDENCE_LEVELS[specs.level].label],
+                    ['FDA', specs.glance.fda],
+                    ['WADA 2026', specs.glance.wada],
+                  ]
+                    .filter(([, value]) => value)
+                    .map(([label, value]) => (
+                      <div key={label} className="grid grid-cols-[6.5rem_1fr] gap-3">
+                        <dt className="text-white/35 text-[11px] font-bold uppercase tracking-widest pt-0.5" style={H}>
+                          {label}
+                        </dt>
+                        <dd className={label === 'Evidence' ? 'text-[#00B4B4] font-semibold' : 'text-white/70'}>{value}</dd>
+                      </div>
+                    ))}
+                </dl>
+              )}
+
               {/* Concentrations */}
               {prices.length > 0 && (
                 <div className="mb-6">
@@ -379,7 +401,8 @@ function ProductPage({ product }) {
                   Specifications
                 </h2>
                 <p className="text-white/40 text-sm mb-8">
-                  Evidence level: <span className="text-white/70">{specs.evidence}</span>
+                  Evidence level: <span className="text-white/70">{EVIDENCE_LEVELS[specs.level].label}</span>
+                  {specs.levelNote && <> · {specs.levelNote}</>}
                 </p>
                 <dl className="rounded-2xl border border-white/8 overflow-hidden">
                   {specs.rows.map((row, i) => (
@@ -437,6 +460,26 @@ function ProductPage({ product }) {
             </div>
           </section>
 
+          {/* ── WHAT THE RESEARCH DOES NOT SHOW ── */}
+          {specs?.notShown?.length > 0 && (
+            <section className="px-6 py-16 border-t border-white/5">
+              <Reveal className="max-w-3xl mx-auto">
+                <h2 className="text-2xl md:text-3xl font-black text-white mb-3" style={H}>
+                  What the research does not show
+                </h2>
+                <p className="text-white/40 text-sm mb-8">The limits of the evidence, stated as plainly as the findings.</p>
+                <ul className="space-y-3">
+                  {specs.notShown.map((point) => (
+                    <li key={point} className="flex gap-3 text-white/65 leading-relaxed">
+                      <span className="mt-2.5 w-1.5 h-1.5 rounded-full bg-white/30 shrink-0" aria-hidden="true" />
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+              </Reveal>
+            </section>
+          )}
+
           {/* ── HANDLING ── */}
           <section className="px-6 py-16 border-t border-white/5">
             <Reveal className="max-w-3xl mx-auto">
@@ -446,7 +489,7 @@ function ProductPage({ product }) {
               <p className="text-white/60 leading-relaxed mb-6">{content.handling}</p>
               <div className="flex flex-wrap gap-3">
                 <Link to="/tools/reconstitution-calculator" className="btn btn-outline btn-sm">
-                  Work out your dose
+                  Reconstitution calculator
                 </Link>
                 <Link to="/learn/how-to-store-and-reconstitute-peptides" className="btn btn-ghost btn-sm">
                   Storage and reconstitution guide
