@@ -2,14 +2,14 @@
 
 ---
 
-# Article 16: GHK-Cu Copper Peptide: Anti-Aging Guide
+# Article 16: Copper Peptides (GHK-Cu) for Skin and Aging
 
-**Meta description:** How GHK-Cu copper peptide works for skin repair, collagen and anti-aging, what the research shows, and how it is typically used.
+**Meta description:** What copper peptides (GHK-Cu) do for skin: collagen, repair and anti-aging, what the research actually shows, and how serums and vials differ.
 
 **Slug:** /learn/ghk-cu-copper-peptide-anti-aging
 **Category:** Anti-Aging
 **Read time:** 8 min
-**Keywords:** GHK-Cu copper peptide, GHK-Cu anti-aging, copper peptide skin regeneration, GHK-Cu research guide
+**Keywords:** copper peptides, copper peptides for skin, GHK-Cu copper peptide, GHK-Cu anti-aging, copper peptide skin regeneration, GHK-Cu research guide
 **Updated:** 2026-10-17
 
 ---

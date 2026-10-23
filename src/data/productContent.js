@@ -31,6 +31,7 @@ export const PRODUCT_CONTENT = {
   // ── Recovery & Performance ───────────────────────────────────────────
 
   3: {
+    h1: 'BPC-157 + TB-500 Wolverine Stack',
     lede: 'The two best-known repair peptides in one vial, in equal amounts.',
     about: [
       'BPC-157 and TB-500 are the pair most people arrive at after reading about peptide recovery, and they are usually bought together because they work on different parts of the same problem. BPC-157 is a synthetic fragment of a protein found in gastric juice, and research interest centres on localised repair — blood vessel formation at an injury site, tendon and ligament fibroblasts, and the gut lining. TB-500 is a synthetic form of Thymosin Beta-4, and its interest is systemic: cell migration, actin regulation and getting repair cells to where the damage is.',
@@ -60,6 +61,10 @@ export const PRODUCT_CONTENT = {
       ' Once reconstituted, refrigerate and use within about four weeks.',
     faqs: [
       {
+        q: 'What is the Wolverine stack?',
+        a: 'It is BPC-157 and TB-500 in one vial, in equal amounts. BPC-157 is a synthetic fragment of a protein found in gastric juice, researched for localised repair: blood vessel formation at an injury site, tendons, ligaments and the gut lining. TB-500 is a synthetic form of Thymosin Beta-4, researched for cell migration and for getting repair cells to where the damage is. Wolverine is simply the name the pairing goes by.',
+      },
+      {
         q: 'Why buy the stack instead of two vials?',
         a: 'Cost and convenience. The 10mg+10mg stack is R825; the same quantities bought as separate BPC-157 and TB-500 vials come to R850, and you reconstitute and track one vial instead of two on the same schedule.',
       },
@@ -74,9 +79,9 @@ export const PRODUCT_CONTENT = {
     ],
     pairsWith: [22, 19, 87],
     meta: {
-      title: 'BPC-157 + TB-500 Wolverine Stack | STRIATA',
+      title: 'BPC-157 + TB-500 Wolverine Stack South Africa | STRIATA',
       description:
-        'BPC-157 and TB-500 in one vial for tissue repair and recovery. 10mg+10mg in stock at R825, shipped across South Africa. Research-grade, 99% purity.',
+        'BPC-157 and TB-500 in one vial for tissue repair and recovery. 10mg+10mg in stock at {from}, shipped across South Africa. Research-grade, 99% purity.',
     },
   },
 
@@ -249,6 +254,7 @@ export const PRODUCT_CONTENT = {
   },
 
   19: {
+    h1: 'KPV Peptide',
     lede: 'A three-amino-acid fragment of alpha-MSH, and one of the few peptides researched as much for the gut as for the skin.',
     about: [
       'KPV is lysine-proline-valine — the C-terminal tripeptide of alpha-melanocyte-stimulating hormone, and about as small as a peptide gets. What makes it interesting is that it appears to keep the anti-inflammatory action of the parent hormone without the pigmentation effects, which is why it turns up in research on inflammatory bowel conditions and inflammatory skin conditions rather than in tanning protocols.',
@@ -273,6 +279,10 @@ export const PRODUCT_CONTENT = {
       STORAGE_SA,
     faqs: [
       {
+        q: 'What is KPV peptide?',
+        a: 'KPV is lysine-proline-valine, the last three amino acids of alpha-melanocyte-stimulating hormone (alpha-MSH). It appears to keep the parent hormone’s anti-inflammatory action without its pigmentation effects, which is why it is researched for inflammatory bowel and inflammatory skin conditions rather than for tanning.',
+      },
+      {
         q: 'KPV on its own or the KLOW stack?',
         a: 'KPV 10mg is R600. The KLOW stack is R1,300 and holds the same KPV 10mg plus GHK-Cu 50mg, BPC-157 10mg and TB-500 10mg. If you would have bought those anyway, the stack is the cheaper route.',
       },
@@ -283,7 +293,7 @@ export const PRODUCT_CONTENT = {
     ],
     pairsWith: [89, 3, 87],
     meta: {
-      title: 'KPV Peptide South Africa | 10mg Vial | STRIATA',
+      title: 'KPV Peptide South Africa | 10mg Vial, {from} | STRIATA',
       description:
         'KPV, the alpha-MSH tripeptide researched for gut and inflammatory skin conditions. 10mg in stock at R600, delivered across South Africa.',
     },
@@ -449,6 +459,14 @@ export const PRODUCT_CONTENT = {
       STORAGE_SA,
     faqs: [
       {
+        q: 'What is MOTS-c?',
+        a: 'MOTS-c is a mitochondrial-derived peptide: it is encoded in the mitochondrial genome rather than in nuclear DNA, and it appears to act as a signal about the cell’s energy status. Its research covers metabolic flexibility, glucose handling and exercise capacity. Natural levels rise with exercise and fall with age.',
+      },
+      {
+        q: 'Is there a MOTS-c pen?',
+        a: 'Yes. MOTS-c is one of the pre-filled pens on the /pens page if you would rather not reconstitute.',
+      },
+      {
         q: 'MOTS-c or SLU-PP-332?',
         a: 'Both are described as exercise mimetics but by different routes — MOTS-c as a mitochondrial signalling peptide, SLU-PP-332 through the ERR receptors. MOTS-c has the longer research history; SLU-PP-332 is the newer compound.',
       },
@@ -459,7 +477,7 @@ export const PRODUCT_CONTENT = {
     ],
     pairsWith: [90, 68, 42],
     meta: {
-      title: 'MOTS-C South Africa | Mitochondrial Peptide | STRIATA',
+      title: 'MOTS-C Peptide South Africa | 10mg from {from} | STRIATA',
       description:
         'MOTS-c, the mitochondrial-derived peptide researched for metabolic function and exercise capacity. 10mg R400, 20mg R650, in stock in South Africa.',
     },
@@ -824,6 +842,14 @@ export const PRODUCT_CONTENT = {
       STORAGE_SA,
     faqs: [
       {
+        q: 'What is retatrutide?',
+        a: 'Retatrutide is a triple agonist: it acts on the GLP-1, GIP and glucagon receptors at once, where semaglutide acts on one and tirzepatide on two. Its phase 2 weight results were the largest seen in this class. The glucagon receptor raises energy expenditure, so it acts on both sides of the energy balance. It is also the newest of the three, with less long-term data behind it.',
+      },
+      {
+        q: 'Is there a retatrutide pen?',
+        a: 'Yes. Retatrutide is one of the pre-filled pens on the /pens page if you would rather not reconstitute.',
+      },
+      {
         q: 'Retatrutide, tirzepatide or semaglutide?',
         a: 'Broadly, effect size and evidence base run in opposite directions: semaglutide has the longest track record, retatrutide the largest trial results and the least long-term data. The Learn article linked below compares all three.',
       },
@@ -834,9 +860,9 @@ export const PRODUCT_CONTENT = {
     ],
     pairsWith: [47, 49, 87],
     meta: {
-      title: 'Retatrutide South Africa | 30mg Vial | STRIATA',
+      title: 'Retatrutide South Africa | Price from {from} | STRIATA',
       description:
-        'Retatrutide, the triple GLP-1/GIP/glucagon agonist with the largest trial results in its class. 30mg in stock at R1,750, shipped across South Africa.',
+        'Retatrutide, the triple GLP-1/GIP/glucagon agonist with the largest trial results in its class. 30mg in stock at {from}, shipped across South Africa.',
     },
   },
 
@@ -879,9 +905,9 @@ export const PRODUCT_CONTENT = {
     ],
     pairsWith: [46, 49, 87],
     meta: {
-      title: 'Tirzepatide South Africa | 30mg Vial | STRIATA',
+      title: 'Tirzepatide South Africa | 30mg Vial, {from} | STRIATA',
       description:
-        'Tirzepatide, the dual GIP/GLP-1 receptor agonist studied for weight loss and blood sugar control. 30mg vial in stock at R1,500, shipped nationwide.',
+        'Tirzepatide, the dual GIP/GLP-1 receptor agonist studied for weight loss and blood sugar control. 30mg vial in stock at {from}, shipped nationwide.',
     },
   },
 

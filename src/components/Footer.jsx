@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#060e1a] border-t border-white/10">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10">
           {/* Brand */}
           <div className="lg:col-span-1">
             <Logo className="mb-4" />
@@ -34,9 +34,33 @@ export default function Footer() {
                 { to: '/about', label: 'About Us' },
                 { to: '/guides', label: 'Guides' },
                 { to: '/tools', label: 'Tools' },
+                { to: '/tools/reconstitution-calculator', label: 'Peptide Calculator' },
                 { to: '/quiz', label: 'Protocol Quiz' },
                 { to: '/faq', label: 'FAQ' },
                 { to: '/contact', label: 'Contact' },
+              ].map(({ to, label }) => (
+                <li key={to}>
+                  <Link to={to} className="text-white/50 hover:text-[#00B4B4] text-sm transition-colors">
+                    {label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Popular products: a crawl path from every page to the pages we most want ranked */}
+          <div>
+            <h4 className="text-white font-semibold text-sm uppercase tracking-widest mb-4" style={{ fontFamily: 'var(--font-heading)' }}>
+              Popular
+            </h4>
+            <ul className="space-y-2.5">
+              {[
+                { to: '/catalogue/retatrutide', label: 'Retatrutide' },
+                { to: '/catalogue/tirzepatide', label: 'Tirzepatide' },
+                { to: '/catalogue/bpc-157-tb-500-wolverine-stack', label: 'BPC-157 + TB-500 Stack' },
+                { to: '/catalogue/mots-c', label: 'MOTS-C' },
+                { to: '/catalogue/kpv', label: 'KPV' },
+                { to: '/ghk-serum', label: 'Copper Peptide Serum' },
               ].map(({ to, label }) => (
                 <li key={to}>
                   <Link to={to} className="text-white/50 hover:text-[#00B4B4] text-sm transition-colors">

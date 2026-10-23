@@ -152,10 +152,10 @@ export default function Pens() {
   return (
     <div className="bg-[#0A1628] min-h-screen">
       <Helmet>
-        <title>Pre-Filled Peptide Pens South Africa | STRIATA</title>
+        <title>Peptide Pens South Africa | Pre-Filled Pens | STRIATA</title>
         <meta name="description" content={`${penCount} research peptides in pre-filled pens: no reconstitution, dial-in dosing. BPC+TB, Retatrutide, Tirzepatide, GHK-Cu. Delivered across South Africa.`} />
         <link rel="canonical" href="https://www.striatalabs.co.za/pens" />
-        <meta property="og:title" content="Pre-Filled Peptide Pens South Africa | STRIATA" />
+        <meta property="og:title" content="Peptide Pens South Africa | Pre-Filled Pens | STRIATA" />
         <meta property="og:description" content="Research-grade peptides in pre-filled pen format. No reconstitution, dial-in dosing. Delivered nationwide." />
         <meta property="og:url" content="https://www.striatalabs.co.za/pens" />
       </Helmet>

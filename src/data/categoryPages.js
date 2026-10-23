@@ -44,8 +44,8 @@ export const CATEGORY_PAGES = [
   {
     id: 'skin',
     slug: 'skin-anti-aging-peptides',
-    h1: 'Skin and Anti-Aging Peptides in South Africa',
-    title: 'Skin & Anti-Aging Peptides South Africa | STRIATA',
+    h1: 'Peptides for Skin and Anti-Aging in South Africa',
+    title: 'Peptides for Skin & Anti-Aging in South Africa | STRIATA',
     description:
       'Skin and anti-aging peptides in South Africa: GHK-Cu vials and topical serum, epithalon and glutathione, with the research behind each. Delivered nationwide.',
     intro: [

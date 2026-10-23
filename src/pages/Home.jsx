@@ -372,10 +372,10 @@ export default function Home() {
   return (
     <div className="bg-[#0A1628]">
       <Helmet>
-        <title>STRIATA | Research-Grade Peptides South Africa</title>
+        <title>Peptides South Africa | STRIATA Labs, Johannesburg</title>
         <meta name="description" content="Research-grade peptides in South Africa: BPC-157, Retatrutide, Tirzepatide, GHK-Cu and 30+ compounds at 99%+ purity. Johannesburg based. Order on WhatsApp." />
         <link rel="canonical" href="https://www.striatalabs.co.za/" />
-        <meta property="og:title" content="STRIATA | Research-Grade Peptides South Africa" />
+        <meta property="og:title" content="Peptides South Africa | STRIATA Labs, Johannesburg" />
         <meta property="og:description" content="South Africa's premier source for research-grade peptides. 99%+ purity guaranteed. Think Strong. Train Smarter." />
         <meta property="og:url" content="https://www.striatalabs.co.za/" />
       </Helmet>

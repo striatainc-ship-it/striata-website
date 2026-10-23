@@ -54,6 +54,14 @@ const FAQ = [
     a: 'That is more than one full 1 mL syringe. Either draw it across two syringes, or reconstitute the vial with less water so the solution is stronger and the same dose is a smaller draw.',
   },
   {
+    q: 'How do I convert mg to mcg?',
+    a: 'Multiply by 1,000. 1 mg is 1,000 mcg, so a 5 mg vial holds 5,000 mcg and 0.25 mg is 250 mcg. Vials are labelled in mg while doses are often written in mcg, which is the most common source of a draw that is ten or a thousand times off. The calculator accepts either unit.',
+  },
+  {
+    q: 'How many doses are in one vial?',
+    a: 'Divide what is in the vial by the amount per dose, in the same unit. A 5 mg vial holds 5,000 mcg, so at 250 mcg a dose it holds 20. The water you add does not change this number; it only changes how many units each dose is on the syringe.',
+  },
+  {
     q: 'Does the calculator store anything?',
     a: 'No. All of the maths runs in your browser. Nothing you enter is sent anywhere or saved.',
   },
@@ -65,10 +73,10 @@ export default function ReconstitutionCalculatorPage() {
   return (
     <div className="bg-[#0A1628] min-h-screen">
       <Helmet>
-        <title>Peptide Reconstitution Calculator | STRIATA Tools</title>
-        <meta name="description" content="Free peptide reconstitution calculator: pick your vial, enter the bacteriostatic water and get the concentration and exact syringe units to draw." />
+        <title>Peptide Calculator: Reconstitution & Syringe Units | STRIATA</title>
+        <meta name="description" content="Free peptide calculator: pick your vial, enter the bacteriostatic water and get the concentration, mL and U-100 or U-40 syringe units to draw. No sign-up." />
         <link rel="canonical" href={URL} />
-        <meta property="og:title" content="Peptide Reconstitution Calculator | STRIATA Tools" />
+        <meta property="og:title" content="Peptide Calculator: Reconstitution & Syringe Units | STRIATA" />
         <meta property="og:description" content="Work out concentration, mL and syringe units for any peptide dose in seconds." />
         <meta property="og:url" content={URL} />
       </Helmet>
@@ -129,10 +137,10 @@ export default function ReconstitutionCalculatorPage() {
             className="text-3xl sm:text-4xl md:text-5xl font-black text-white leading-tight mb-4 max-w-3xl"
             style={{ fontFamily: 'var(--font-heading)' }}
           >
-            Peptide Reconstitution <span className="text-[#00B4B4]">Calculator</span>
+            Peptide <span className="text-[#00B4B4]">Calculator</span>
           </h1>
           <p className="text-white/60 text-lg leading-relaxed max-w-2xl">
-            Choose the vial, enter the bacteriostatic water you are adding, and read off the units to draw for your dose.
+            A reconstitution calculator for any vial: choose it, enter the bacteriostatic water you are adding, and read off the concentration and the syringe units to draw for your dose.
           </p>
         </div>
       </section>

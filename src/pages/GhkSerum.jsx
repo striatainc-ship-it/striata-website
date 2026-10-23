@@ -95,6 +95,10 @@ const STEPS = [
 
 const FAQ = [
   {
+    q: 'What does a copper peptide serum do?',
+    a: 'GHK-Cu is a signalling peptide. It is studied for its role in collagen and elastin production, wound healing and tissue remodelling, and for antioxidant and soothing effects. Here it is paired with 1% hyaluronic acid, which holds water in the skin. Most of the research is laboratory and animal work, so treat it as steady support for firmness, texture and recovery rather than an overnight fix.',
+  },
+  {
     q: 'Which strength should I start with?',
     a: 'The 1%. It is the daily-driver formula and suits every skin type. Move to the 2% once your skin is settled on it and you want a more concentrated dose for targeted work.',
   },
@@ -234,6 +238,16 @@ export default function GhkSerum() {
           url: 'https://www.striatalabs.co.za/ghk-serum',
           ...offerTerms(),
         },
+      }} />
+
+      <JsonLd data={{
+        '@context': 'https://schema.org',
+        '@type': 'FAQPage',
+        mainEntity: FAQ.map((f) => ({
+          '@type': 'Question',
+          name: f.q,
+          acceptedAnswer: { '@type': 'Answer', text: f.a },
+        })),
       }} />
 
       {/* ── HERO ─────────────────────────────────────────────────────── */}

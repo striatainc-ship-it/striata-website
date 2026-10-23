@@ -115,18 +115,26 @@ function ProductPage({ product }) {
       .slice(0, 3)
   }, [content])
 
+  // Meta copy may say {from}: the cheapest in-stock price, so titles that show
+  // a price never drift from the price list.
+  const inStockPrices = prices.filter((t) => t.inStock).map((t) => t.price)
+  const fromPrice = inStockPrices.length ? `R${Math.min(...inStockPrices).toLocaleString('en-US')}` : null
+  const fill = (text) => (text && fromPrice ? text.replaceAll('{from}', fromPrice) : text)
+  const metaTitle = fill(content?.meta.title)
+  const metaDescription = fill(content?.meta.description)
+
   // No photo yet: a generated title card (scripts/prerender.mjs renders it).
   const socialImage = image ? `${SITE_URL}${vialStill(image.names[0], 'og')}` : ogImageFor(productPath(product))
 
   return (
     <div className="bg-[#0A1628] min-h-screen">
       <Helmet>
-        <title>{content?.meta.title ?? `${product.name} | STRIATA South Africa`}</title>
-        <meta name="description" content={content?.meta.description ?? product.description} />
+        <title>{metaTitle ?? `${product.name} | STRIATA South Africa`}</title>
+        <meta name="description" content={metaDescription ?? product.description} />
         <link rel="canonical" href={url} />
         <meta property="og:type" content="product" />
-        <meta property="og:title" content={content?.meta.title ?? product.name} />
-        <meta property="og:description" content={content?.meta.description ?? product.description} />
+        <meta property="og:title" content={metaTitle ?? product.name} />
+        <meta property="og:description" content={metaDescription ?? product.description} />
         <meta property="og:url" content={url} />
         <meta property="og:image" content={socialImage} />
         <meta name="twitter:card" content="summary_large_image" />
@@ -138,7 +146,7 @@ function ProductPage({ product }) {
           '@context': 'https://schema.org',
           '@type': 'Product',
           name: product.name,
-          description: content?.meta.description ?? product.description,
+          description: metaDescription ?? product.description,
           category: categoryLabel(product),
           ...(image ? { image: [`${SITE_URL}${vialStill(image.names[0])}`, socialImage] } : {}),
           brand: { '@type': 'Brand', name: 'STRIATA' },
@@ -241,7 +249,7 @@ function ProductPage({ product }) {
               </div>
 
               <h1 className="text-3xl md:text-5xl font-black text-white tracking-tight mb-4" style={H}>
-                {product.name}
+                {content?.h1 ?? product.name}
               </h1>
 
               {content?.lede && (
