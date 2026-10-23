@@ -1,7 +1,6 @@
-import { useEffect, useRef, useState } from 'react'
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
-import gsap from 'gsap'
 import { whatsappLink, products } from '../data/products'
 import AddToOrder from '../components/AddToOrder'
 import { enquiryLink } from '../lib/cart'
@@ -10,14 +9,12 @@ import { enquiryLink } from '../lib/cart'
 // '2% · 30ml', so an order line reads the same wherever it was added.
 const SERUM = products.find((p) => p.id === 91)
 const serumTier = (s) => SERUM.prices.find((t) => t.dose.startsWith(s.id))
-import { prefersReducedMotion, spotlightProps } from '../lib/motion'
+import { spotlightProps } from '../lib/motion'
 import Reveal from '../components/Reveal'
 import JsonLd from '../components/JsonLd'
 import { offerTerms } from '../data/site'
 
 const H = { fontFamily: 'var(--font-heading)' }
-// Cut-out (transparent) for the hero stage; the original on white stays for og:image.
-const IMG = (w) => `${import.meta.env.BASE_URL}assets/opt/ghk-serum-cut-${w}.webp`
 
 const WA_ICON = (
   <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -139,99 +136,64 @@ function FaqItem({ q, a }) {
   )
 }
 
+const SERUM_IMG = (strengthId, w) =>
+  `${import.meta.env.BASE_URL}assets/opt/ghk-serum-dark-${strengthId.replace('%', '')}-${w}.webp`
+
 /**
- * The product shot, staged on the site's navy: a warm glow that breathes
- * behind the bottle, the bottle floating on a CSS loop, a mirrored
- * reflection beneath, ingredient badges bobbing on their own rhythm, and the
- * whole card tilting toward the cursor on pointer devices.
+ * The real bottle, shot on the site's navy. There is one photo per strength
+ * (identical apart from the GHK-Cu figure on the label) and the picker
+ * cross-fades between them; the spec row underneath follows along.
  */
-function SerumStage() {
-  const cardRef = useRef(null)
-
-  useEffect(() => {
-    const card = cardRef.current
-    if (!card || prefersReducedMotion() || !window.matchMedia('(hover: hover)').matches) return
-
-    const rx = gsap.quickTo(card, 'rotationX', { duration: 0.9, ease: 'power3.out' })
-    const ry = gsap.quickTo(card, 'rotationY', { duration: 0.9, ease: 'power3.out' })
-    const onMove = (e) => {
-      const r = card.getBoundingClientRect()
-      const dx = (e.clientX - r.left) / r.width - 0.5
-      const dy = (e.clientY - r.top) / r.height - 0.5
-      ry(dx * 10)
-      rx(dy * -8)
-    }
-    const onLeave = () => { rx(0); ry(0) }
-    card.addEventListener('mousemove', onMove)
-    card.addEventListener('mouseleave', onLeave)
-    return () => {
-      card.removeEventListener('mousemove', onMove)
-      card.removeEventListener('mouseleave', onLeave)
-    }
-  }, [])
-
+function SerumStage({ strength }) {
   return (
-    <div className="serum-perspective mx-auto w-full max-w-md lg:max-w-none">
+    <figure className="group relative mx-auto w-full max-w-md lg:max-w-[30rem]">
+      {/* Faint light spill onto the page around the card */}
       <div
-        ref={cardRef}
-        className="serum-card relative rounded-[2.5rem] overflow-hidden aspect-[4/5] bg-gradient-to-b from-[#12213d] via-[#0d1e35] to-[#0A1628] border border-white/10 shadow-2xl shadow-black/50"
-      >
-        {/* Breathing glow */}
-        <div className="serum-glow absolute left-1/2 top-[56%] -translate-x-1/2 -translate-y-1/2 w-[80%] aspect-square rounded-full bg-[radial-gradient(circle,rgba(212,160,60,0.55)_0%,rgba(0,180,180,0.35)_40%,transparent_68%)] blur-3xl" aria-hidden="true" />
+        className="absolute -inset-10 rounded-[3rem] opacity-50 blur-3xl bg-[radial-gradient(55%_50%_at_50%_42%,rgba(212,160,60,0.22),rgba(0,180,180,0.12)_55%,transparent_75%)]"
+        aria-hidden="true"
+      />
 
-        {/* Fine label-style rings */}
-        <div className="absolute inset-6 rounded-[2rem] border border-white/[0.07]" aria-hidden="true" />
-        <div className="absolute inset-9 rounded-[1.6rem] border border-white/[0.04]" aria-hidden="true" />
+      <div className="relative overflow-hidden rounded-[2rem] bg-[#04132d] ring-1 ring-white/10 shadow-2xl shadow-black/50">
+        <div className="relative aspect-[4/5] overflow-hidden">
+          {STRENGTHS.map((s) => {
+            const active = s.id === strength.id
+            return (
+              <img
+                key={s.id}
+                src={SERUM_IMG(s.id, 1280)}
+                srcSet={`${SERUM_IMG(s.id, 640)} 640w, ${SERUM_IMG(s.id, 1280)} 1280w`}
+                sizes="(min-width: 1024px) 480px, (min-width: 448px) 448px, 92vw"
+                alt={active ? `STRIATA Labs GHK-Cu Serum ${s.id}, 30 ml blue glass dropper bottle with a gold collar` : ''}
+                aria-hidden={active ? undefined : 'true'}
+                width={1280}
+                height={1600}
+                decoding="async"
+                fetchPriority={s.id === STRENGTHS[0].id ? 'high' : undefined}
+                className={`absolute inset-0 h-full w-full object-cover transition-[opacity,transform] duration-500 ease-out motion-safe:group-hover:scale-[1.02] ${active ? 'opacity-100' : 'opacity-0'}`}
+              />
+            )
+          })}
 
-        {/* Bottle + reflection */}
-        <div className="absolute inset-0 flex items-end justify-center pb-[13%]">
-          <div className="serum-float relative w-[46%]">
-            {/* Contact glow under the base */}
-            <span className="absolute left-1/2 top-[98%] -translate-x-1/2 w-[110%] h-[7%] rounded-[50%] bg-[#00B4B4]/40 blur-xl" aria-hidden="true" />
-            <img
-              src={IMG(336)}
-              alt="STRIATA Labs GHK-Cu Serum, 30 ml blue glass dropper bottle"
-              width={336}
-              height={1002}
-              decoding="async"
-              fetchPriority="high"
-              className="relative z-[1] w-full h-auto drop-shadow-[0_24px_36px_rgba(0,0,0,0.55)]"
-            />
-            <img
-              src={IMG(336)}
-              alt=""
-              aria-hidden="true"
-              width={336}
-              height={1002}
-              decoding="async"
-              className="serum-reflection absolute left-0 top-full w-full h-auto opacity-40"
-            />
+          <div className="absolute inset-x-6 top-5 flex items-center justify-between text-[11px] font-bold uppercase tracking-[0.25em] text-white/50" style={H}>
+            <span>STRIATA Labs</span>
+            <span>Topical</span>
           </div>
         </div>
 
-        {/* Floating ingredient badges */}
-        {[
-          { text: 'GHK-Cu 1% · 2%', cls: 'top-[13%] left-[7%]', delay: '0s' },
-          { text: 'Hyaluronic Acid 1%', cls: 'top-[26%] right-[6%]', delay: '-1.6s' },
-          { text: '30 ml · 1 fl oz', cls: 'bottom-[22%] left-[6%]', delay: '-3.1s' },
-          { text: 'All skin types', cls: 'bottom-[10%] right-[8%]', delay: '-2.3s' },
-        ].map(({ text, cls, delay }) => (
-          <span
-            key={text}
-            className={`serum-badge absolute ${cls} z-[2] inline-flex items-center gap-1.5 rounded-full bg-[#0A1628]/70 backdrop-blur border border-white/15 px-3 py-1.5 text-[11px] font-semibold text-white shadow-lg shadow-black/30`}
-            style={{ ...H, animationDelay: delay }}
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-[#00B4B4]" />
-            {text}
-          </span>
-        ))}
-
-        {/* Corner mark */}
-        <span className="absolute top-6 left-1/2 -translate-x-1/2 text-[10px] font-bold uppercase tracking-[0.3em] text-white/35" style={H}>
-          Restore · Hydrate · Renew
-        </span>
+        <dl className="grid grid-cols-3 divide-x divide-white/10 border-t border-white/10 bg-[#0d1e35] py-4">
+          {[
+            ['GHK-Cu', strength.id],
+            ['Hyaluronic', '1%'],
+            ['Volume', '30 ml'],
+          ].map(([k, v]) => (
+            <div key={k} className="px-2 text-center sm:px-3">
+              <dt className="text-[10px] font-bold uppercase tracking-[0.1em] text-[#00B4B4] sm:tracking-[0.18em]" style={H}>{k}</dt>
+              <dd className="mt-1 text-lg font-black tabular-nums text-white sm:text-xl" style={H}>{v}</dd>
+            </div>
+          ))}
+        </dl>
       </div>
-    </div>
+    </figure>
   )
 }
 
@@ -284,7 +246,7 @@ export default function GhkSerum() {
 
         <div className="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <Reveal stagger delay={0.1} className="order-2 lg:order-1">
-            <Link to="/catalogue/skin-anti-aging-peptides" className="inline-flex items-center gap-1.5 text-white/40 hover:text-white text-xs font-semibold mb-6 transition-colors">
+            <Link to="/catalogue/skin-anti-aging-peptides" className="inline-flex items-center gap-1.5 text-white/55 hover:text-white text-xs font-semibold mb-6 transition-colors">
               <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 18 9 12 15 6" /></svg>
               Skin, Hair & Anti-Aging
             </Link>
@@ -346,14 +308,14 @@ export default function GhkSerum() {
                 <svg className="w-4 h-4 btn-arrow" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" /></svg>
               </a>
             </div>
-            <p className="mt-5 text-white/40 text-sm flex items-center gap-1.5">
+            <p className="mt-5 text-white/55 text-sm flex items-center gap-1.5">
               <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
               In stock · 30 ml · Delivered nationwide
             </p>
           </Reveal>
 
           <Reveal delay={0.3} y={40} className="order-1 lg:order-2">
-            <SerumStage />
+            <SerumStage strength={strength} />
           </Reveal>
         </div>
       </section>

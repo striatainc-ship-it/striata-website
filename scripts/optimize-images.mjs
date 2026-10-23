@@ -57,6 +57,11 @@ const images = [
   { file: 'catalogue vials.png', slug: 'catalogue-vials', widths: [1920] },
   { file: 'dispatch.png', slug: 'dispatch', widths: COLUMN },
   { file: 'johannesburg.png', slug: 'johannesburg', widths: FULL_BLEED },
+  // /ghk-serum hero: the real bottle reshot on navy (Higgsfield, from
+  // ghk-serum.jpg). The 2% file is the 1% image with only the GHK-Cu digit
+  // patched in, so the two swap without anything else moving.
+  { file: 'ghk-serum-dark-1.png', slug: 'ghk-serum-dark-1', widths: COLUMN },
+  { file: 'ghk-serum-dark-2.png', slug: 'ghk-serum-dark-2', widths: COLUMN },
 ]
 
 const kb = bytes => `${Math.round(bytes / 1024)} KB`

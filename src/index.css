@@ -169,41 +169,6 @@ h3 { font-variation-settings: 'opsz' 48; letter-spacing: -0.01em; }
   to   { transform: scale(1.08) translate(-1.2%, 0.8%); }
 }
 
-/* ── GHK-Cu Serum product stage ────────────────────────────────────────── */
-.serum-perspective {
-  perspective: 1200px;
-}
-.serum-card {
-  transform-style: preserve-3d;
-  will-change: transform;
-}
-.serum-float {
-  animation: serum-float 6s ease-in-out infinite;
-}
-@keyframes serum-float {
-  0%, 100% { transform: translateY(0) rotate(-1deg); }
-  50%      { transform: translateY(-16px) rotate(1deg); }
-}
-.serum-reflection {
-  transform: scaleY(-1);
-  mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.45) 0%, transparent 55%);
-  -webkit-mask-image: linear-gradient(to top, rgba(0, 0, 0, 0.45) 0%, transparent 55%);
-}
-.serum-badge {
-  animation: serum-bob 5s ease-in-out infinite;
-}
-@keyframes serum-bob {
-  0%, 100% { transform: translateY(0); }
-  50%      { transform: translateY(-9px); }
-}
-.serum-glow {
-  animation: serum-glow 5.5s ease-in-out infinite;
-}
-@keyframes serum-glow {
-  0%, 100% { opacity: 0.55; transform: translate(-50%, -50%) scale(1); }
-  50%      { opacity: 0.9;  transform: translate(-50%, -50%) scale(1.1); }
-}
-
 /* ── Protocol quiz steps ─────────────────────────────────────────────── */
 .quiz-step {
   animation: quiz-in 0.35s ease-out both;
@@ -309,9 +274,6 @@ h3 { font-variation-settings: 'opsz' 48; letter-spacing: -0.01em; }
   .kenburns,
   .marquee-track,
   .quiz-step,
-  .serum-float,
-  .serum-badge,
-  .serum-glow,
   .slip-pop {
     animation: none;
   }
