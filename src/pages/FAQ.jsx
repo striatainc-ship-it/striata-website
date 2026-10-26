@@ -83,7 +83,7 @@ const faqSections = [
       },
       {
         q: 'How long does delivery take?',
-        a: 'Orders ship on the next shipping day once payment reflects in our account: Monday to Friday for vials and serums, Monday to Thursday for pens and nasal sprays. From dispatch, standard delivery via Courier Guy typically takes 2 to 3 business days, and express or cold-chain delivery 1 to 3 business days. We also offer overnight shipping for faster delivery. Same-day delivery is available for orders placed before 11am, depending on your location. Chat to us on WhatsApp to confirm availability in your area.',
+        a: 'Orders ship on the next shipping day once payment reflects in our account: Monday to Friday for vials and serums, Monday to Thursday for pens and nasal sprays. From dispatch, standard delivery via Courier Guy typically takes 2 to 3 business days, and express or cold-chain delivery 1 to 3 business days.',
         links: [{ label: 'Shipping policy', to: '/legal' }],
       },
       {

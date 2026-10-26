@@ -482,7 +482,7 @@ export default function GhkSerum() {
             Restore. Hydrate. <span className="text-[#00B4B4]">Renew.</span>
           </h2>
           <p className="text-white/60 text-lg leading-relaxed mb-10">
-            Pick your strength and order on WhatsApp. We'll confirm, take payment and dispatch — usually the same day.
+            Pick your strength and order on WhatsApp. We'll confirm, take payment and dispatch on the next shipping day.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-3">
             {STRENGTHS.map((s) => (

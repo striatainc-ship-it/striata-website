@@ -145,6 +145,26 @@ for (const [source, name] of [['og vials.png', 'og-image.jpg'], ['helix.png', 'o
   console.log(`  ${name}`.padEnd(24) + ` ${kb(ogBuffer.length).padStart(9)}`)
 }
 
+// Learn-article infographics: assets-source/blog/<article slug>.png. Each gets
+// WebP for the page (the article column is ~690px, so 768 and 2x 1536) and a
+// 1200px JPEG for og:image and Article.image (Discover wants 1200px+ wide).
+// Alt text and captions live in src/data/blogImages.js.
+const blogDir = join(sourceDir, 'blog')
+for (const file of (await readdir(blogDir)).filter(f => f.endsWith('.png'))) {
+  const slug = file.replace(/\.png$/, '')
+  const input = await readFile(join(blogDir, file))
+  sourceBytes += input.length
+  const outputs = [
+    ...[768, 1536].map(width => [`blog-${slug}-${width}.webp`, sharp(input).resize({ width }).webp({ quality: 82, effort: 6 })]),
+    [`blog-${slug}-1200.jpg`, sharp(input).resize({ width: 1200 }).flatten({ background: '#0A1628' }).jpeg({ quality: 84, mozjpeg: true })],
+  ]
+  for (const [name, pipeline] of outputs) {
+    const buffer = await pipeline.toBuffer()
+    await writeFile(join(outDir, name), buffer)
+    outputBytes += buffer.length
+  }
+  console.log(`  blog/${slug}`)
+}
 
 const sourceTotal = (await readdir(sourceDir, { withFileTypes: true }))
   .filter(e => e.isFile())

@@ -6,6 +6,7 @@ import { AUTHOR_SCHEMA, citationSchema } from '../data/site'
 import { ogImageFor } from '../lib/ogImage'
 import { SA_ESSENTIALS, MENOPAUSE_CATEGORIES } from '../data/learnLinks'
 import { productLinksFor } from '../data/productGuides'
+import { blogImageFor } from '../data/blogImages'
 import JsonLd from '../components/JsonLd'
 import { Byline, AuthorCard } from '../components/AuthorCard'
 
@@ -282,6 +283,11 @@ export default function BlogPost() {
   const idx = sameCategory.findIndex(a => a.slug === article.slug)
   const related = [...sameCategory.slice(idx + 1), ...sameCategory.slice(0, Math.max(idx, 0))].slice(0, 3)
 
+  // The article's infographic, when it has one, doubles as its share and
+  // schema image; otherwise the generated title card stands in.
+  const figure = blogImageFor(article.slug)
+  const shareImage = figure ? figure.shareUrl : ogImageFor(`/learn/${article.slug}`)
+
   return (
     <div className="bg-[#0A1628] min-h-screen">
       <Helmet>
@@ -292,7 +298,10 @@ export default function BlogPost() {
         <meta property="og:title" content={`${article.title} | STRIATA Learn`} />
         <meta property="og:description" content={article.preview} />
         <meta property="og:url" content={`https://www.striatalabs.co.za/learn/${article.slug}`} />
-        <meta property="og:image" content={ogImageFor(`/learn/${article.slug}`)} />
+        <meta property="og:image" content={shareImage} />
+        <meta name="twitter:image" content={shareImage} />
+        {figure && <meta property="og:image:width" content="1200" />}
+        {figure && <meta property="og:image:height" content="679" />}
         <meta property="article:published_time" content={article.datePublished} />
         <meta property="article:modified_time" content={article.dateModified} />
         <meta property="article:author" content="James Kriel" />
@@ -304,7 +313,7 @@ export default function BlogPost() {
         headline: article.title,
         description: article.preview,
         articleSection: article.category,
-        image: ogImageFor(`/learn/${article.slug}`),
+        image: shareImage,
         datePublished: article.datePublished,
         dateModified: article.dateModified,
         author: AUTHOR_SCHEMA,
@@ -363,6 +372,26 @@ export default function BlogPost() {
       {/* ── ARTICLE CONTENT ── */}
       <section className="px-6 pb-16">
         <div className="max-w-3xl mx-auto">
+          {figure && (
+            <figure className="mb-6">
+              {/* Linked to the large version so the small print can be read on a phone. */}
+              <a href={figure.full} target="_blank" rel="noopener" className="block rounded-2xl overflow-hidden border border-white/8 hover:border-[#00B4B4]/40 transition-colors">
+                <img
+                  src={figure.src}
+                  srcSet={figure.srcSet}
+                  sizes="(min-width: 768px) 768px, 100vw"
+                  width={figure.width}
+                  height={figure.height}
+                  alt={figure.alt}
+                  fetchPriority="high"
+                  className="w-full h-auto block"
+                />
+              </a>
+              <figcaption className="mt-3 text-white/45 text-sm leading-relaxed">
+                {figure.caption} <a href={figure.full} target="_blank" rel="noopener" className="text-[#00B4B4]/80 hover:text-[#00B4B4] whitespace-nowrap">View full size</a>
+              </figcaption>
+            </figure>
+          )}
           <div className="bg-[#0d1e35] border border-white/8 rounded-2xl p-7 md:p-10">
             <MarkdownContent content={article.content} />
           </div>
