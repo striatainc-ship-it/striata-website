@@ -5,6 +5,7 @@ import { SITE_URL, offerTerms } from '../data/site'
 import { spotlightProps } from '../lib/motion'
 import Reveal from '../components/Reveal'
 import JsonLd from '../components/JsonLd'
+import { ogImageFor } from '../lib/ogImage'
 import { StackCard, UniversalContraindications } from '../components/StackCard'
 
 const H = { fontFamily: 'var(--font-heading)' }
@@ -44,6 +45,9 @@ export default function StackPage() {
 
   const meta = CATEGORY_META[stack.category]
   const url = `${SITE_URL}${stackPath(stack)}`
+  // Stacks have no product photo; the generated title card stands in, since
+  // Google's merchant listings reject a Product with no image.
+  const image = ogImageFor(stackPath(stack))
   const lowest = Math.min(...stack.tiers.map((t) => randValue(t.price)))
   const title = `${stack.name} Peptide Stack | STRIATA`
   const description = `${stack.tagline}: a ${GOAL[stack.category]} peptide stack in three tiers from ${rand(lowest)}, with the rationale and safety notes.`
@@ -65,6 +69,7 @@ export default function StackPage() {
         <meta property="og:title" content={title} />
         <meta property="og:description" content={description} />
         <meta property="og:url" content={url} />
+        <meta property="og:image" content={image} />
       </Helmet>
 
       <JsonLd
@@ -75,6 +80,7 @@ export default function StackPage() {
           description: `${stack.tagline}. ${stack.rationale}`,
           category: `Peptide stack · ${meta.label}`,
           brand: { '@type': 'Brand', name: 'STRIATA' },
+          image,
           url,
           offers: stack.tiers.map((tier) => ({
             '@type': 'Offer',

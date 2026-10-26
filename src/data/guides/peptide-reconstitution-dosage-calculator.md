@@ -1,5 +1,5 @@
 ---
-title: "Peptide Reconstitution Calculator & Concentration Chart"
+title: "Peptide Reconstitution & Concentration Chart"
 slug: "peptide-reconstitution-dosage-calculator"
 meta_description: "How much bacteriostatic water to add to a peptide vial, how to work out the concentration, a U-100 unit conversion chart and step-by-step reconstitution."
 category: "Peptide Guides"
