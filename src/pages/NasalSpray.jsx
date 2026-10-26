@@ -166,7 +166,7 @@ function SprayPage({ spray }) {
             availability: 'https://schema.org/InStock',
             url,
             seller: { '@type': 'Organization', name: 'STRIATA' },
-            ...offerTerms(),
+            ...offerTerms({ spray: true }),
           },
         }}
       />

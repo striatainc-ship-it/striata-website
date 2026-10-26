@@ -79,11 +79,11 @@ const faqSections = [
     questions: [
       {
         q: 'Do you ship nationwide?',
-        a: 'Yes, we deliver to all provinces across South Africa at a flat rate: R150 for standard delivery or R200 for express. Orders that include a peptide pen ship cold-chain express at R220, with ice packs and insulation so the peptide doesn’t degrade in transit.',
+        a: 'Yes, we deliver to all provinces across South Africa at a flat rate: R150 for standard delivery or R220 for express. Orders that include a peptide pen ship cold-chain express, also R220, with ice packs and insulation so the peptide doesn’t degrade in transit.',
       },
       {
         q: 'How long does delivery take?',
-        a: 'Standard delivery via Courier Guy typically takes 2 to 3 business days. We also offer overnight shipping for faster delivery. Same-day delivery is available for orders placed before 11am, depending on your location. Chat to us on WhatsApp to confirm availability in your area.',
+        a: 'Orders ship on the next shipping day once payment reflects in our account: Monday to Friday for vials and serums, Monday to Thursday for pens and nasal sprays. From dispatch, standard delivery via Courier Guy typically takes 2 to 3 business days, and express or cold-chain delivery 1 to 3 business days. We also offer overnight shipping for faster delivery. Same-day delivery is available for orders placed before 11am, depending on your location. Chat to us on WhatsApp to confirm availability in your area.',
         links: [{ label: 'Shipping policy', to: '/legal' }],
       },
       {

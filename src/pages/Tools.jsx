@@ -97,12 +97,9 @@ export default function Tools() {
         name: 'Peptide Tools',
         url: 'https://www.striatalabs.co.za/tools',
         hasPart: tools.map(t => ({
-          '@type': 'SoftwareApplication',
+          '@type': 'WebPage',
           name: t.title,
           url: `https://www.striatalabs.co.za/tools/${t.slug}`,
-          applicationCategory: 'UtilitiesApplication',
-          operatingSystem: 'Web',
-          offers: { '@type': 'Offer', price: '0', priceCurrency: 'ZAR' },
         })),
       }} />
 

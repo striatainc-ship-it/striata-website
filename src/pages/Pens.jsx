@@ -289,6 +289,8 @@ export default function Pens() {
           )}
         </div>
 
+        {/* Section heading for the grid, so card titles (h3) sit under an h2. */}
+        <h2 className="sr-only">All peptide pens</h2>
         {filtered.length > 0 ? (
           <div ref={gridRef} className="grid grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-4">
             {filtered.map((pen) => (

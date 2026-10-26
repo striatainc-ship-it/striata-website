@@ -474,7 +474,7 @@ export default function MenopauseReset() {
       <section id="pricing" className="py-24 px-6 scroll-mt-24">
         <div className="max-w-7xl mx-auto">
           <SectionHeading eyebrow="Pricing" title={<>Two Ways to <span className="text-[#00B4B4]">Pay</span></>}>
-            Delivery at our standard (R150) or express (R200) rate. Lead time 3–5 business days.
+            Delivery at our standard (R150) or express (R220) rate. Lead time 3–5 business days.
           </SectionHeading>
 
           <Reveal stagger className="grid md:grid-cols-2 gap-5 max-w-4xl">

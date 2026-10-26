@@ -64,25 +64,50 @@ export function formatDate(iso) {
   })
 }
 
-const shippingTo = (price) => ({
+// Dispatch days from the order-processing SOP (2026-10-26): vials and serums
+// ship Monday to Friday, pens and nasal sprays Monday to Thursday.
+const WEEKDAYS = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday']
+const MON_FRI = WEEKDAYS
+const MON_THU = WEEKDAYS.slice(0, 4)
+
+// Transit in business days after dispatch, as the Legal page states it:
+// standard 2-3, express and cold-chain 1-3.
+const TRANSIT = { standard: [2, 3], express: [1, 3] }
+
+const days = ([min, max]) => ({ '@type': 'QuantitativeValue', minValue: min, maxValue: max, unitCode: 'DAY' })
+
+const shippingTo = (price, transit, shipDays) => ({
   '@type': 'OfferShippingDetails',
   shippingRate: { '@type': 'MonetaryAmount', value: price, currency: 'ZAR' },
   shippingDestination: { '@type': 'DefinedRegion', addressCountry: 'ZA' },
+  deliveryTime: {
+    '@type': 'ShippingDeliveryTime',
+    businessDays: {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: shipDays.map((d) => `https://schema.org/${d}`),
+    },
+    // Paid orders go out on the next shipping day.
+    handlingTime: days([1, 1]),
+    transitTime: days(transit),
+  },
 })
 
 /**
  * Delivery and returns on every Offer, as the Legal page states them: flat
  * standard or express delivery nationwide (cold-chain for pens), and no
- * returns once an order is dispatched (sections 4.1 and 5.1). Rates come from
- * the order slip's table so the two cannot drift apart. No deliveryTime:
- * the site states transit (2-3 days) but not handling time, and Google wants
- * both or neither.
+ * returns once an order is dispatched (sections 4.1–4.3 and 5.1). Rates come
+ * from the order slip's table so the two cannot drift apart. `spray` uses the
+ * pens' Monday-to-Thursday dispatch days but the normal delivery options.
  */
-export function offerTerms({ pen = false } = {}) {
+export function offerTerms({ pen = false, spray = false } = {}) {
+  const shipDays = pen || spray ? MON_THU : MON_FRI
   return {
     shippingDetails: pen
-      ? [shippingTo(COLD_CHAIN.price)]
-      : [shippingTo(DELIVERY_OPTIONS.standard.price), shippingTo(DELIVERY_OPTIONS.express.price)],
+      ? [shippingTo(COLD_CHAIN.price, TRANSIT.express, shipDays)]
+      : [
+          shippingTo(DELIVERY_OPTIONS.standard.price, TRANSIT.standard, shipDays),
+          shippingTo(DELIVERY_OPTIONS.express.price, TRANSIT.express, shipDays),
+        ],
     hasMerchantReturnPolicy: {
       '@type': 'MerchantReturnPolicy',
       applicableCountry: 'ZA',

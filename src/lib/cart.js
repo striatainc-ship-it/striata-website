@@ -169,15 +169,16 @@ export const toCheck = (lines) => lines.filter((l) => !l.inStock)
 export const subtotal = (lines) => orderable(lines).reduce((sum, l) => sum + l.price * l.qty, 0)
 
 /**
- * Delivery, as the business charges it (confirmed 2026-09-18):
- * standard R150 or express R200, the customer's choice; any order with a pen
+ * Delivery, as the business charges it (confirmed 2026-09-18; express raised
+ * to R220 on 2026-10-26): standard R150 or express R220, the customer's
+ * choice; any order with a pen
  * goes cold-chain express at R220, because pens ship with ice packs and
  * insulation so the peptide doesn't degrade. One parcel, one fee. Nothing
  * ships free — the serum and the stacks follow the same rates.
  */
 export const DELIVERY_OPTIONS = {
   standard: { id: 'standard', label: 'Standard delivery', price: 150 },
-  express: { id: 'express', label: 'Express delivery', price: 200 },
+  express: { id: 'express', label: 'Express delivery', price: 220 },
 }
 export const COLD_CHAIN = {
   id: 'cold',

@@ -110,7 +110,7 @@ export default function NasalSprays() {
               price: s.prices[0].price,
               availability: 'https://schema.org/InStock',
               url: `${SITE_URL}${s.page}`,
-              ...offerTerms(),
+              ...offerTerms({ spray: true }),
             },
           },
         })),

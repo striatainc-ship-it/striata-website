@@ -83,14 +83,12 @@ export default function ReconstitutionCalculatorPage() {
 
       <JsonLd data={{
         '@context': 'https://schema.org',
-        '@type': 'SoftwareApplication',
+        // WebPage, not SoftwareApplication: Google only accepts app markup that
+        // carries real ratings or reviews, and the calculator has none.
+        '@type': 'WebPage',
         name: TOOL.title,
         description: TOOL.preview,
         url: URL,
-        applicationCategory: 'UtilitiesApplication',
-        operatingSystem: 'Web',
-        browserRequirements: 'Requires JavaScript',
-        offers: { '@type': 'Offer', price: '0', priceCurrency: 'ZAR' },
         publisher: { '@type': 'Organization', name: 'STRIATA', url: 'https://www.striatalabs.co.za' },
       }} />
       <JsonLd data={{
