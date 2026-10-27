@@ -155,17 +155,46 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Review prompt: Trustpilot and Google */}
-        <div className="mt-12 rounded-2xl border border-white/10 bg-white/[0.02] px-6 py-6 flex flex-col lg:flex-row items-center justify-between gap-5">
-          <div className="text-center lg:text-left">
-            <p className="text-white font-semibold" style={{ fontFamily: 'var(--font-heading)' }}>
-              Ordered from us?
-            </p>
-            <p className="text-white/50 text-sm mt-1">
-              A short review helps other South Africans find a supplier they can trust.
-            </p>
+        {/* Trust row: review prompt (Google, Trustpilot) and the PeptideSupermarket listing, as two matching cards */}
+        <div className="mt-12 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_auto] gap-4">
+          <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-5 text-center md:text-left">
+            <div>
+              <p className="text-white font-semibold" style={{ fontFamily: 'var(--font-heading)' }}>
+                Ordered from us?
+              </p>
+              <p className="text-white/50 text-sm mt-1 max-w-xs mx-auto md:mx-0">
+                A short review helps other South Africans find a supplier they can trust.
+              </p>
+            </div>
+            <ReviewBadges className="justify-center md:justify-end shrink-0" />
           </div>
-          <ReviewBadges className="justify-center" />
+
+          <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-6 flex flex-col md:flex-row lg:flex-col md:items-center lg:items-start md:justify-between gap-4 text-center md:text-left">
+            <p className="text-white/50 text-sm">
+              <span className="block text-white font-semibold text-base" style={{ fontFamily: 'var(--font-heading)' }}>
+                Comparing suppliers?
+              </span>
+              See our prices side by side with others.
+            </p>
+            {/* Badge as supplied by PeptideSupermarket (keep the link and UTM tags unchanged). The image is
+                their dark "listed" badge saved locally, because their site goes down and a hotlinked
+                image then shows as broken alt text. Source: peptidesupermarket.co.za/badge/striata-labs.png?style=listed&theme=dark&size=md */}
+            <a
+              href="https://peptidesupermarket.co.za/suppliers/striata-labs?utm_source=supplier_badge&utm_medium=referral&utm_campaign=listed"
+              target="_blank"
+              rel="noopener"
+              className="self-center md:self-auto shrink-0 rounded-[10px] transition-opacity hover:opacity-85"
+            >
+              <img
+                src="/assets/badges/peptidesupermarket-listed-dark.png"
+                loading="lazy"
+                alt="Striata Labs on PeptideSupermarket®"
+                width="236"
+                height="40"
+                className="block h-10 w-auto max-w-full rounded-[9px]"
+              />
+            </a>
+          </div>
         </div>
 
         <div className="mt-10 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
