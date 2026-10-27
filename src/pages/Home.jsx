@@ -7,6 +7,7 @@ import { whatsappLink } from '../data/products'
 import { prefersReducedMotion, spotlightProps } from '../lib/motion'
 import { SA_ESSENTIALS } from '../data/learnLinks'
 import Reveal from '../components/Reveal'
+import ReviewBadges from '../components/ReviewBadges'
 
 gsap.registerPlugin(ScrollTrigger)
 
@@ -624,7 +625,7 @@ export default function Home() {
 
       {/* ── TESTIMONIALS ──────────────────────────── */}
       <section className="py-24 overflow-hidden">
-        <Reveal stagger className="text-center mb-14 px-6">
+        <Reveal stagger className="text-center mb-8 px-6">
           <span className="inline-flex items-center gap-2.5 px-4 py-2 rounded-full bg-white/[0.04] border border-white/10 mb-6">
             <span className="text-white/80 text-xs font-semibold" style={{ fontFamily: 'var(--font-heading)' }}>Google Reviews</span>
             <span className="flex gap-0.5" role="img" aria-label="5 out of 5 stars">
@@ -646,6 +647,11 @@ export default function Home() {
             </a>
           </p>
         </Reveal>
+
+        <div className="px-6 mb-14 flex flex-col items-center gap-3">
+          <p className="text-white/60 text-sm">Bought from us? We&rsquo;d value your review.</p>
+          <ReviewBadges className="justify-center" />
+        </div>
 
         {/* Two copies: -50% lands on copy two, which matches copy one. The
             duration scales with the list so the scroll speed stays constant. */}

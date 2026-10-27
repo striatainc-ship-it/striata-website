@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import Logo from './Logo'
-import { whatsappNumbers, whatsappLink } from '../data/products'
+import ReviewBadges from './ReviewBadges'
+import { whatsappNumbers } from '../data/products'
 
 export default function Footer() {
   const year = new Date().getFullYear()
@@ -154,7 +155,20 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
+        {/* Review prompt: Trustpilot and Google */}
+        <div className="mt-12 rounded-2xl border border-white/10 bg-white/[0.02] px-6 py-6 flex flex-col lg:flex-row items-center justify-between gap-5">
+          <div className="text-center lg:text-left">
+            <p className="text-white font-semibold" style={{ fontFamily: 'var(--font-heading)' }}>
+              Ordered from us?
+            </p>
+            <p className="text-white/50 text-sm mt-1">
+              A short review helps other South Africans find a supplier they can trust.
+            </p>
+          </div>
+          <ReviewBadges className="justify-center" />
+        </div>
+
+        <div className="mt-10 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-white/30 text-xs">
             © {year} STRIATA. All rights reserved. Proudly South African.
           </p>
