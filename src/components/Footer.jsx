@@ -130,7 +130,7 @@ export default function Footer() {
             </div>
             <div className="flex gap-3 mt-5">
               <a
-                href="https://instagram.com/striata.za"
+                href="https://www.instagram.com/striata_labs/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-white/40 hover:text-[#00B4B4] hover:border-[#00B4B4] transition-all"
@@ -141,7 +141,7 @@ export default function Footer() {
                 </svg>
               </a>
               <a
-                href="https://tiktok.com/@striata.za"
+                href="https://www.tiktok.com/@striatalabs"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center text-white/40 hover:text-[#00B4B4] hover:border-[#00B4B4] transition-all"
