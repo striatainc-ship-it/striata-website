@@ -155,7 +155,7 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* Trust row: review prompt (Google, Trustpilot) and the PeptideSupermarket listing, as two matching cards */}
+        {/* Trust row: Google review prompt and the PeptideSupermarket listing, as two matching cards */}
         <div className="mt-12 grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_auto] gap-4">
           <div className="rounded-2xl border border-white/10 bg-white/[0.02] p-6 flex flex-col md:flex-row md:items-center md:justify-between gap-5 text-center md:text-left">
             <div>
