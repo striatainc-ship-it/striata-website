@@ -239,7 +239,7 @@ If you have a medical condition that genuinely needs a prohibited substance, the
 
 In practice a TUE is granted for an indicated treatment of a diagnosed condition. BPC-157 is not an approved medicine anywhere, so it has no indication to be granted for. Recovery peptides are not a TUE pathway.
 
-What is permitted, and what the evidence behind injury recovery mostly rests on, is proper rehabilitation, load management, sleep and nutrition. Our [recovery protocol guide](/learn/how-to-build-a-peptide-recovery-protocol) covers the foundations, and those apply to tested and untested athletes alike.
+What is permitted, and what the evidence behind injury recovery mostly rests on, is proper rehabilitation, load management, sleep and nutrition. The recovery checklist in our [guide for South African athletes](/learn/peptides-for-south-african-athletes) covers the foundations, and those apply to tested and untested athletes alike.
 
 ---
 

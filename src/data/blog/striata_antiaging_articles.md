@@ -8,9 +8,9 @@
 
 **Slug:** /learn/ghk-cu-copper-peptide-anti-aging
 **Category:** Anti-Aging
-**Read time:** 8 min
-**Keywords:** copper peptides, copper peptides for skin, GHK-Cu copper peptide, GHK-Cu anti-aging, copper peptide skin regeneration, GHK-Cu research guide
-**Updated:** 2026-10-17
+**Read time:** 11 min
+**Keywords:** copper peptides, copper peptides for skin, GHK-Cu copper peptide, GHK-Cu anti-aging, copper peptide skin regeneration, GHK-Cu research guide, peptides for skin regeneration, GLOW stack
+**Updated:** 2026-11-01
 
 ---
 
@@ -31,6 +31,32 @@ GHK-Cu stands for Glycine-Histidine-Lysine Copper. It is a naturally occurring t
 GHK-Cu was first identified in human plasma in 1973 by Dr Loren Pickart, who noticed that young human plasma caused older liver tissue to function more like younger liver tissue. The active component driving this effect turned out to be GHK-Cu.
 
 Naturally occurring GHK-Cu concentrations in the body are highest in young adults and decline significantly with age. At age 20, circulating plasma levels are typically around 200 nanograms per millilitre. By age 60, this has fallen to around 80 nanograms per millilitre. This age-related decline tracks closely with the deterioration in tissue repair capacity, wound healing and skin quality that characterises biological aging, which is not a coincidence.
+
+---
+
+### What Actually Makes Skin Age?
+
+It helps to know what GHK-Cu is being asked to fix. Skin aging is several processes running at once, and they reinforce each other.
+
+**Collagen loss and disorganisation**
+Collagen gives skin its firmness and structure. Skin collagen falls by roughly 1% a year through adult life, and the collagen that remains becomes more cross-linked and disorganised, so it is stiffer and less functional. Over decades that shows up as lost firmness, lines and folds.
+
+**Elastin breakdown**
+Elastin lets skin spring back after it is stretched. Production slows with age and UV exposure breaks down existing fibres, which is behind the sagging, crepey quality of older skin.
+
+**Less hyaluronic acid**
+Hyaluronic acid holds water in the dermis and keeps skin plump. Levels fall with age, leaving skin thinner and drier.
+
+**Slower cell turnover**
+Young skin renews its outer layer roughly every 28 days. That slows with age, so dead cells linger longer and skin looks duller and more uneven.
+
+**Oxidative stress and inflammation**
+UV, pollution and normal metabolism produce free radicals that damage collagen, elastin and the DNA of skin cells. Chronic low-grade inflammation adds to the damage over time.
+
+**Poorer microcirculation**
+The small blood vessels that feed the dermis thin out with age, limiting the oxygen and nutrients available for repair.
+
+Most anti-aging ingredients target one of these. Part of GHK-Cu's appeal is that the research links it to several.
 
 ---
 
@@ -91,6 +117,32 @@ For skin-focused protocols specifically, GHK-Cu is frequently paired with collag
 
 ---
 
+### GHK-Cu in Skin Stacks: How Strong Is the Evidence?
+
+GHK-Cu is often combined with other peptides for skin. Our [GLOW Stack](/catalogue/glow-stack), for example, pairs it with BPC-157 and TB-500. Those combinations sit at very different levels of evidence:
+
+**Best supported:** topical GHK-Cu, which has small controlled human cosmetic studies behind it, as described above.
+
+**Earlier-stage:** injectable GHK-Cu. The interest is in effects beyond what topical application reaches, but the evidence is mainly cell and animal work, so that is a hypothesis rather than an established finding.
+
+**Least established:** adding BPC-157 or TB-500 for skin. Their wound-healing and blood vessel effects come almost entirely from animal studies, and no skin stack has been studied as a combination. That is reason enough to insist on verified, tested sourcing for every component.
+
+---
+
+### Supporting Your Skin from the Outside
+
+No peptide makes up for skipping the basics:
+
+**Daily sun protection:** UV is the largest external driver of skin aging. A broad-spectrum SPF every day matters more than any active ingredient.
+
+**Sleep:** much of the skin's repair happens during sleep, when growth hormone is higher and cortisol lower. Poor sleep shows in skin quality and healing.
+
+**Nutrition:** collagen synthesis needs vitamin C as a cofactor, and protein supplies the amino acids that collagen and elastin are made from.
+
+**Realistic timelines:** skin aging builds over decades. Any improvement in firmness or texture, from GHK-Cu or anything else, is measured in months, not weeks.
+
+---
+
 ### Formats and Safety
 
 GHK-Cu is studied in two forms: as a lyophilised peptide for laboratory and injectable research, and as a topical ingredient, where most serums and creams are formulated at concentrations between 1% and 5%.
@@ -104,6 +156,8 @@ GHK-Cu has an excellent safety profile. As a naturally occurring compound presen
 The research, regulatory documents and clinical guidelines behind the claims in this article:
 
 - Pickart L, Thaler MM. [Tripeptide in human serum which prolongs survival of normal liver cells and stimulates growth in neoplastic liver](https://pubmed.ncbi.nlm.nih.gov/4349963/). Nature New Biology, 1973.
+- Shuster S, Black MM, McVitie E. [The influence of age and sex on skin thickness, skin collagen and density](https://pubmed.ncbi.nlm.nih.gov/1220811/). British Journal of Dermatology, 1975.
+- Seiwerth S, Milavic M, et al. [Stable gastric pentadecapeptide BPC 157 and wound healing](https://pubmed.ncbi.nlm.nih.gov/34267654/). Frontiers in Pharmacology, 2021.
 - Maquart FX, Pickart L, et al. [Stimulation of collagen synthesis in fibroblast cultures by the tripeptide-copper complex glycyl-L-histidyl-L-lysine-Cu2+](https://pubmed.ncbi.nlm.nih.gov/3169264/). FEBS Letters, 1988.
 - Pickart L, Vasquez-Soltero JM, Margolina A. [The human tripeptide GHK-Cu in prevention of oxidative stress and degenerative conditions of aging](https://pubmed.ncbi.nlm.nih.gov/22666519/). Oxidative Medicine and Cellular Longevity, 2012.
 - Pickart L, Vasquez-Soltero JM, Margolina A. [GHK and DNA: resetting the human genome to health](https://pubmed.ncbi.nlm.nih.gov/25302294/). BioMed Research International, 2014.
@@ -351,12 +405,13 @@ The research, regulatory documents and clinical guidelines behind the claims in 
 
 # Article 19: NAD+ Decline With Age: What to Do About It
 
-**Meta description:** Why NAD+ falls as you age, what that does to your cells and energy, and the options for restoring it, including NAD+ injections.
+**Meta description:** Why NAD+ falls as you age, what that does to your cells, energy and brain, and the options for restoring it, including NAD+ injections.
 
 **Slug:** /learn/nad-plus-aging-decline-what-to-do
 **Category:** Anti-Aging
-**Read time:** 8 min
-**Keywords:** NAD+ aging, why NAD+ declines with age, NAD+ benefits, NAD+ precursors NMN NR
+**Read time:** 11 min
+**Keywords:** NAD+ aging, why NAD+ declines with age, NAD+ benefits, NAD+ precursors NMN NR, NAD+ brain health, NAD+ focus and mental clarity
+**Updated:** 2026-11-01
 
 ---
 
@@ -436,6 +491,27 @@ Since CD38's destruction of NAD+ is a significant driver of age-related decline,
 
 ---
 
+### NAD+ and the Brain
+
+The brain is about 2% of body weight but uses roughly 20% of the body's energy. That appetite for energy makes it one of the tissues most exposed to falling NAD+.
+
+**Energy supply to neurons**
+Neurons run constant electrical activity and repair work, and they cannot easily be replaced when they die. All of that depends on ATP made in the mitochondria, which depends on NAD+. Busy neurons also produce a lot of free radicals, and the NAD+-dependent sirtuins SIRT1 and SIRT3 help manage that oxidative stress. Low NAD+ squeezes both energy production and damage control at once.
+
+**Memory and learning**
+SIRT1 helps regulate synaptic plasticity, the strengthening and weakening of connections between neurons that underlies learning and memory. In mice, losing SIRT1 activity impaired memory and plasticity. SIRT1 also influences BDNF, a growth factor that supports neuron survival and new connections.
+
+**DNA repair in neurons**
+Neurons accumulate oxidative DNA damage over a lifetime. The PARP enzymes that repair it consume NAD+, so as NAD+ falls, repair slows and damage builds up. This is one of the mechanisms studied in age-related neurodegeneration.
+
+**Neurodegenerative disease research**
+NAD+ levels are lower in the brains of people with Alzheimer's disease than in people of the same age without it. In mouse models of Alzheimer's, raising NAD+ improved memory and reduced markers of the disease. Human trials of NAD+ precursors in Alzheimer's and Parkinson's are under way. None of this makes NAD+ a treatment for these diseases; it shows why researchers are looking at it.
+
+**What people report**
+Effects on focus and mental clarity are subjective and build over weeks to months, if they appear at all. If you want to judge your own response, note your energy and focus before you start and track them as you go.
+
+---
+
 ### NAD+ in the Context of Peptide Protocols
 
 NAD+ repletion and peptide-based anti-aging protocols are complementary rather than competing approaches. They operate at different levels of cellular biology.
@@ -466,141 +542,14 @@ The research, regulatory documents and clinical guidelines behind the claims in 
 - Trammell SA, Schmidt MS, et al. [Nicotinamide riboside is uniquely and orally bioavailable in mice and humans](https://pubmed.ncbi.nlm.nih.gov/27721479/). Nature Communications, 2016.
 - Yoshino M, Yoshino J, et al. [Nicotinamide mononucleotide increases muscle insulin sensitivity in prediabetic women](https://pubmed.ncbi.nlm.nih.gov/33888596/). Science, 2021.
 - Escande C, Nin V, et al. [Flavonoid apigenin is an inhibitor of the NAD+ase CD38](https://pubmed.ncbi.nlm.nih.gov/23172919/). Diabetes, 2013.
+- Raichle ME, Gusnard DA. [Appraising the brain's energy budget](https://pubmed.ncbi.nlm.nih.gov/12149485/). PNAS, 2002.
+- Gao J, Wang WY, et al. [A novel pathway regulates memory and plasticity via SIRT1 and miR-134](https://pubmed.ncbi.nlm.nih.gov/20622856/). Nature, 2010.
+- Hou Y, Lautrup S, et al. [NAD+ supplementation normalizes key Alzheimer's features and DNA damage responses in a new AD mouse model with introduced DNA repair deficiency](https://pubmed.ncbi.nlm.nih.gov/29432159/). PNAS, 2018.
+- Lautrup S, Sinclair DA, Mattson MP, Fang EF. [NAD+ in brain aging and neurodegenerative disorders](https://pubmed.ncbi.nlm.nih.gov/31577933/). Cell Metabolism, 2019.
 
 
 *Disclaimer: The information in this article is for educational purposes only. STRIATA products are research compounds and supplements. Always consult a qualified healthcare professional before beginning any new protocol.*
 
 ---
 ---
-
-# Article 20: GLOW Stack: Peptides for Skin Regeneration
-
-**Meta description:** A beginner-friendly look at the GLOW Stack: GHK-Cu, BPC-157 and TB-500 for skin regeneration and anti-aging, and how to start safely.
-
-**Slug:** /learn/glow-stack-peptides-skin-regeneration
-**Category:** Anti-Aging
-**Read time:** 7 min
-**Keywords:** peptides for skin regeneration, GLOW stack peptides, anti-aging peptide stack, GHK-Cu skin peptides beginner
-**Updated:** 2026-10-17
-
----
-
-## GLOW Stack: Peptides for Skin Regeneration
-
-The anti-aging skincare industry generates billions every year on the promise of younger-looking skin. Most of it delivers modest results at best. The active ingredients in the vast majority of mainstream anti-aging products, peptide fragments, retinoids, antioxidants, are genuinely useful in principle but often delivered in concentrations too low, in vehicles with poor penetration, or without the complementary compounds needed to produce meaningful change.
-
-The GLOW Stack is a more targeted approach. It draws on the compounds with the strongest research profiles for skin regeneration and combines them in a way that addresses the multiple biological mechanisms behind skin aging simultaneously.
-
-This article explains what skin aging actually involves at a cellular level, which peptides are most relevant, how they work together and how to get started.
-
----
-
-### What Actually Causes Skin to Age?
-
-Before choosing compounds, it helps to understand the mechanisms you are trying to address. Skin aging is not a single process. Several distinct biological changes happen simultaneously and reinforce each other.
-
-**Collagen loss and disorganisation**
-Collagen is the primary structural protein in skin. It provides firmness, tensile strength and the scaffold on which skin sits. From the mid-twenties, collagen production slows by approximately 1% per year. Beyond just declining quantity, existing collagen becomes progressively more cross-linked and disorganised, making it stiffer and less functional. The result is the loss of firmness and the development of lines and folds that deepens over decades.
-
-**Elastin degradation**
-Elastin is the protein that gives skin its ability to spring back after being stretched or compressed. Like collagen, elastin production slows significantly with age, and exposure to UV radiation accelerates the breakdown of existing elastin fibres. Loss of elastin is one of the primary causes of the sagging, crepey quality that characterises aging skin.
-
-**Reduced hyaluronic acid**
-Hyaluronic acid is a naturally occurring molecule that holds water in the dermis, keeping skin plump and hydrated from within. Its production declines significantly with age, which is a major contributor to the thinner, drier quality of older skin.
-
-**Declining cellular turnover**
-Young skin replaces its outermost layer (the epidermis) approximately every 28 days. As we age, this turnover slows, and dead skin cells accumulate longer on the surface, contributing to dullness and uneven texture.
-
-**Oxidative stress and inflammation**
-Chronic exposure to UV radiation, pollution, stress and metabolic byproducts generates reactive oxygen species (free radicals) in skin tissue. These damage collagen, elastin and DNA in skin cells. Chronic low-grade inflammation, driven partly by senescent cells in the dermis, compounds this damage over time.
-
-**Reduced angiogenesis and microcirculation**
-The capillary networks that supply the dermis with nutrients and oxygen become less dense with age. This reduced perfusion limits the supply of everything the skin needs for repair and renewal.
-
----
-
-### The Core Compounds of the GLOW Stack
-
-The GLOW Stack is built around compounds that each address specific mechanisms of skin aging.
-
-**GHK-Cu (Copper Peptide)**
-The anchor compound of the stack. As covered in detail in our GHK-Cu article, this tripeptide stimulates collagen and elastin synthesis, supports hyaluronic acid production, promotes angiogenesis in the dermis, activates enzymes that clear old disorganised collagen and exerts significant antioxidant and anti-inflammatory effects.
-
-GHK-Cu addresses more mechanisms of skin aging simultaneously than almost any other compound, and its clinical evidence base for skin applications is among the strongest available for any cosmetic peptide. It can be applied topically for localised skin effects or administered subcutaneously for systemic effects alongside skin benefits.
-
-**Epithalon**
-While Epithalon's primary longevity mechanism relates to telomere maintenance and telomerase activation, its relevance to skin is significant. Telomere shortening in skin cells, particularly fibroblasts (which produce collagen and elastin), is one of the reasons skin cell function deteriorates with age. Epithalon's support for cellular longevity in fibroblasts contributes to maintaining their ability to produce structural proteins over time.
-
-Epithalon also supports melatonin production (through its pineal gland associations), and melatonin is one of the most potent antioxidants active in skin tissue. Its anti-inflammatory effects add another mechanism relevant to the inflammatory component of skin aging.
-
-**BPC-157**
-BPC-157 is primarily known as a recovery peptide, but its wound healing research is directly relevant to skin regeneration. Its promotion of angiogenesis improves the microcirculation that aging skin loses. Its anti-inflammatory properties address a key driver of dermal aging. Some research also suggests BPC-157 influences the production of growth factors relevant to skin repair.
-
-For people with specific skin concerns like scarring, stretch marks or localised areas of significant damage, BPC-157 is a useful addition to the stack.
-
-**NAD+ Precursors (NMN or NR)**
-As discussed in our NAD+ article, declining NAD+ reduces sirtuin activity, which in turn impairs DNA repair and cellular stress responses in skin cells. Sirtuin activity, particularly SIRT1, has been specifically studied in skin tissue and found to play a role in UV damage repair and the regulation of senescence in skin cells.
-
-Supporting NAD+ levels is not a skin-specific intervention, but the skin-relevant effects of maintaining sirtuin activity and reducing cellular senescence in dermal tissue make NAD+ support a logical addition to a skin regeneration protocol.
-
----
-
-### How to Structure the GLOW Stack
-
-The compounds in this stack sit at very different levels of evidence, and it helps to see them that way.
-
-**Best supported (topical and oral):**
-Topical GHK-Cu has small human cosmetic studies behind it, and oral NAD+ precursors such as NMN and nicotinamide riboside have randomised trials showing they raise NAD+ levels. Neither involves an injection, which is why they are the most widely used parts of this picture.
-
-**Earlier-stage research:**
-Injectable GHK-Cu and Epithalon are studied mainly in cell and animal models, with little controlled human data. The research interest is in systemic effects beyond what topical application reaches, but that is a hypothesis, not an established finding.
-
-**Least established:**
-BPC-157 is studied for its angiogenic and tissue repair effects, almost entirely in animals. Adding it to a skin-focused stack rests on that animal work alone. Combining several compounds also means none of the combinations has been studied as a whole, which is reason enough to insist on verified, tested sourcing.
-
----
-
-### Supporting the Stack from the Outside
-
-The most sophisticated peptide protocol will be significantly undermined if basic skin protection and lifestyle factors are ignored. The GLOW Stack works best when combined with:
-
-**Consistent sun protection:** UV radiation is the single largest extrinsic driver of skin aging. Mineral SPF applied daily is non-negotiable.
-
-**Adequate sleep:** Skin repair happens primarily during sleep, driven by growth hormone release and reduced cortisol. Poor sleep quality has measurable effects on skin appearance and healing.
-
-**Nutrition:** Collagen synthesis requires vitamin C as a cofactor. Antioxidants from food support the same pathways that GHK-Cu protects chemically. Adequate protein provides the amino acid building blocks for structural skin proteins.
-
-**Hydration:** Hyaluronic acid binds water in the dermis, but there needs to be adequate water available to bind. Chronic mild dehydration contributes to the thinning and reduced plumpness of aging skin.
-
----
-
-### Realistic Expectations
-
-Skin aging takes decades to develop and cannot be reversed in weeks. The GLOW Stack, used consistently, is likely to produce:
-
-- Gradual improvement in skin firmness and texture over months of use
-- Reduced inflammation and more even skin tone
-- Improved skin resilience and healing speed for minor damage
-- Over the longer term, a slower rate of structural deterioration compared to doing nothing
-
-If you are looking for dramatic overnight results, this is not that. If you are looking for a science-grounded approach to maintaining and improving skin quality over years rather than weeks, the GLOW Stack is one of the most well-supported approaches available.
-
-If you want to talk through which level of the stack is appropriate for your goals and current routine, our team is available on WhatsApp.
-
----
-
-### Sources
-
-The research, regulatory documents and clinical guidelines behind the claims in this article:
-
-- Shuster S, Black MM, McVitie E. [The influence of age and sex on skin thickness, skin collagen and density](https://pubmed.ncbi.nlm.nih.gov/1220811/). British Journal of Dermatology, 1975.
-- Maquart FX, Pickart L, et al. [Stimulation of collagen synthesis in fibroblast cultures by the tripeptide-copper complex glycyl-L-histidyl-L-lysine-Cu2+](https://pubmed.ncbi.nlm.nih.gov/3169264/). FEBS Letters, 1988.
-- Pickart L, Vasquez-Soltero JM, Margolina A. [GHK and DNA: resetting the human genome to health](https://pubmed.ncbi.nlm.nih.gov/25302294/). BioMed Research International, 2014.
-- Pickart L, Margolina A. [Regenerative and protective actions of the GHK-Cu peptide in the light of the new gene data](https://pubmed.ncbi.nlm.nih.gov/29986520/). International Journal of Molecular Sciences, 2018.
-- Khavinson VKh, Bondarev IE, Butyugov AA. [Epithalon peptide induces telomerase activity and telomere elongation in human somatic cells](https://pubmed.ncbi.nlm.nih.gov/12937682/). Bulletin of Experimental Biology and Medicine, 2003.
-- Seiwerth S, Milavic M, et al. [Stable gastric pentadecapeptide BPC 157 and wound healing](https://pubmed.ncbi.nlm.nih.gov/34267654/). Frontiers in Pharmacology, 2021.
-- Covarrubias AJ, Perrone R, et al. [NAD+ metabolism and its roles in cellular processes during ageing](https://pubmed.ncbi.nlm.nih.gov/33353981/). Nature Reviews Molecular Cell Biology, 2021.
-
-
-*Disclaimer: The information in this article is for educational purposes only. STRIATA peptides are research compounds and are not approved medicines. Always consult a qualified healthcare professional before beginning any injectable protocol.*
 

@@ -7,7 +7,12 @@
       "has": [{ "type": "host", "value": "striatalabs.co.za" }],
       "destination": "https://www.striatalabs.co.za/:path*",
       "permanent": true
-    }
+    },
+    { "source": "/learn/bpc-157-recovery-peptide-guide", "destination": "/learn/bpc-157-south-africa", "permanent": true },
+    { "source": "/learn/how-to-build-a-peptide-recovery-protocol", "destination": "/learn/peptides-for-south-african-athletes", "permanent": true },
+    { "source": "/learn/glow-stack-peptides-skin-regeneration", "destination": "/learn/ghk-cu-copper-peptide-anti-aging", "permanent": true },
+    { "source": "/learn/nad-plus-brain-health-focus-mental-clarity", "destination": "/learn/nad-plus-aging-decline-what-to-do", "permanent": true },
+    { "source": "/learn/glp-1-peptides-explained", "destination": "/learn/semaglutide-vs-tirzepatide-vs-retatrutide", "permanent": true }
   ],
   "headers": [
     {

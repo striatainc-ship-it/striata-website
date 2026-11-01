@@ -23,7 +23,7 @@ export const CATEGORY_PAGES = [
       'The range also covers the growth-hormone axis, with GHRP-6 and the CJC-1295 + Ipamorelin stack studied for their effect on the body’s own GH release, and KPV, a three-amino-acid fragment of alpha-MSH studied mainly in models of gut inflammation. The GLOW and KLOW stacks add GHK-Cu, the copper peptide studied for collagen and skin remodelling, to the BPC-157 and TB-500 base.',
       'If you compete in a tested sport, check the WADA Prohibited List before anything else: TB-500 and the growth-hormone secretagogues are prohibited at all times. Our article on peptides and anti-doping in South Africa sets out which compounds are on it.',
     ],
-    reading: ['wolverine-stack-bpc-157-tb-500', 'bpc-157-recovery-peptide-guide', 'tb-500-thymosin-beta-4-guide', 'how-to-build-a-peptide-recovery-protocol', 'peptides-anti-doping-south-africa'],
+    reading: ['wolverine-stack-bpc-157-tb-500', 'bpc-157-south-africa', 'tb-500-thymosin-beta-4-guide', 'peptides-for-south-african-athletes', 'peptides-anti-doping-south-africa'],
     links: [{ label: 'The Wolverine Protocol stack', to: '/stacks/the-wolverine-protocol' }],
   },
   {
@@ -38,7 +38,7 @@ export const CATEGORY_PAGES = [
       'Alongside them sit compounds studied for fat metabolism by other routes. AOD-9604 is a fragment of growth hormone studied for fat breakdown. Tesamorelin is a GHRH analogue studied in clinical trials for visceral fat. 5-Amino-1MQ and SLU-PP-332 are earlier-stage compounds, studied in animal models for their effects on how cells use energy.',
       'Two things are worth knowing in South Africa. Mounjaro, the registered tirzepatide medicine, is available on prescription, and most medical schemes do not fund GLP-1 drugs for weight loss; our articles on tirzepatide in South Africa and on medical aid cover explain both. And gastrointestinal effects in this class rise with dose, which is why the clinical trials increased doses slowly over weeks.',
     ],
-    reading: ['semaglutide-vs-tirzepatide-vs-retatrutide', 'tirzepatide-south-africa', 'medical-aid-weight-loss-injections-south-africa', 'glp-1-peptides-explained', 'aod-9604-vs-hgh-fragment-176-191'],
+    reading: ['semaglutide-vs-tirzepatide-vs-retatrutide', 'tirzepatide-south-africa', 'medical-aid-weight-loss-injections-south-africa', 'aod-9604-vs-hgh-fragment-176-191'],
     links: [{ label: 'The Shred Protocol stack', to: '/stacks/the-shred-protocol' }],
   },
   {
@@ -53,7 +53,7 @@ export const CATEGORY_PAGES = [
       'The rest of the range looks at ageing from the inside. Epithalon is a short synthetic peptide studied, largely in Russian laboratory and animal research, for its effect on telomerase, the enzyme that maintains the ends of chromosomes. Glutathione is the body’s main antioxidant inside cells. The GLOW stack, which pairs GHK-Cu with BPC-157 and TB-500, sits in the recovery range but is often chosen for skin.',
       'Most of the evidence here comes from cell culture and animal work rather than human trials. Each product page sets out what has and has not been studied, with the sources.',
     ],
-    reading: ['ghk-cu-copper-peptide-anti-aging', 'glow-stack-peptides-skin-regeneration', 'epithalon-longevity-telomerase-research', 'nad-plus-aging-decline-what-to-do'],
+    reading: ['ghk-cu-copper-peptide-anti-aging', 'epithalon-longevity-telomerase-research', 'nad-plus-aging-decline-what-to-do'],
     links: [
       { label: 'GHK-Cu topical serum', to: '/ghk-serum' },
       { label: 'The Glow Up stack', to: '/stacks/the-glow-up' },
@@ -86,7 +86,7 @@ export const CATEGORY_PAGES = [
       'DSIP (delta sleep-inducing peptide) was first isolated in the 1970s from rabbits in induced sleep, and has been studied for sleep regulation with mixed results. Pinealon is a short bioregulator peptide from the same school of Russian research as epithalon. NAD+ is the coenzyme at the centre of cellular energy production, and its levels decline with age. Adamax is a newer derivative of Semax with little published research so far.',
       'Most of this research is small, and much of it comes from a few Russian groups. Each product page lists what has been studied and links the sources.',
     ],
-    reading: ['selank-vs-semax-nootropic-peptide-comparison', 'semax-nootropic-peptide-guide', 'dsip-delta-sleep-inducing-peptide-guide', 'nad-plus-brain-health-focus-mental-clarity'],
+    reading: ['selank-vs-semax-nootropic-peptide-comparison', 'semax-nootropic-peptide-guide', 'dsip-delta-sleep-inducing-peptide-guide', 'nad-plus-aging-decline-what-to-do'],
     links: [
       { label: 'Nasal sprays', to: '/nasal-sprays' },
       { label: 'The Biohacker Stack', to: '/stacks/the-biohacker-stack' },

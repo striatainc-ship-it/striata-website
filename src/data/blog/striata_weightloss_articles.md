@@ -8,8 +8,9 @@
 
 **Slug:** /learn/semaglutide-vs-tirzepatide-vs-retatrutide
 **Category:** Weight Loss
-**Read time:** 9 min
-**Keywords:** semaglutide vs tirzepatide, retatrutide weight loss, GLP-1 peptides compared, best weight loss peptide
+**Read time:** 12 min
+**Keywords:** semaglutide vs tirzepatide, retatrutide weight loss, GLP-1 peptides compared, best weight loss peptide, GLP-1 peptides explained, how GLP-1 works
+**Updated:** 2026-11-01
 
 ---
 
@@ -23,20 +24,28 @@ This article breaks down each compound, compares the mechanisms, and helps you t
 
 ---
 
-### A Quick Primer: What Are GLP-1 Receptor Agonists?
+### How GLP-1 Works
 
 Before comparing the three compounds, it helps to understand the shared mechanism that underpins all of them.
 
-GLP-1 stands for Glucagon-Like Peptide-1. It is a hormone your body naturally produces in the gut in response to eating. Its main jobs are to:
+GLP-1 stands for Glucagon-Like Peptide-1. It is an incretin hormone: L-cells in the small intestine and colon release it when food arrives, and it shapes how the body responds to that meal.
 
-- Signal the pancreas to release insulin in response to blood glucose
-- Suppress glucagon (a hormone that raises blood sugar)
-- Slow the rate at which the stomach empties food into the intestine
-- Send satiety signals to the brain, reducing hunger
+Natural GLP-1 barely lasts. An enzyme called DPP-4 breaks it down within one to two minutes, so it acts as a short signal rather than a sustained one. GLP-1 receptor agonists are engineered to resist DPP-4, which is how semaglutide lasts about a week instead of minutes.
 
-In people without metabolic dysfunction, this system works well. But for many people, particularly those dealing with obesity or insulin resistance, the GLP-1 signal is blunted or the body does not respond to it effectively.
+**Effects on appetite**
 
-GLP-1 receptor agonists are compounds that mimic or amplify this signal, essentially turning the volume up on a mechanism the body already uses to regulate appetite and metabolism.
+- **Slower stomach emptying:** food stays in the stomach longer, so fullness lasts longer after a meal. This is often the first thing people notice.
+- **Signals to the brain:** GLP-1 receptors in the hypothalamus reduce the drive to eat. People often describe the constant background "food noise" going quiet.
+- **Reward pathways:** brain imaging in humans shows GLP-1 activation dampens the response in reward-related areas to appetising food, which may explain fewer cravings for high-fat, high-sugar foods specifically.
+
+**Effects on blood sugar**
+
+- **Glucose-dependent insulin release:** GLP-1 increases insulin only when blood glucose is raised. That is why, on its own, it carries a low risk of hypoglycaemia compared with some older diabetes drugs.
+- **Less glucagon:** suppressing glucagon reduces the liver's release of stored glucose, which steadies blood sugar between meals.
+- **Beta cells:** research suggests GLP-1 receptor activation may help protect the pancreatic cells that make insulin. That, along with glucose control, is why GLP-1 agonists are now a mainstay of type 2 diabetes treatment.
+
+**Why this differs from dieting alone**
+When you cut calories, the body pushes back: hunger hormones such as ghrelin rise and satiety signals such as leptin fall, which is why most diets get harder over time. GLP-1 agonists act on those signals directly, which is how trial participants sustained a calorie deficit for well over a year. It is also why weight tends to return when treatment stops (see the trial patterns below).
 
 Semaglutide, Tirzepatide and Retatrutide all work through GLP-1 pathways, but they differ in important ways.
 
@@ -106,6 +115,18 @@ As Phase 3 trials continue, the picture will become clearer. For now, it is a co
 
 ---
 
+### What the Trials Showed Over Time
+
+The STEP and SURMOUNT programmes followed people for more than a year, and their results share a few consistent patterns:
+
+**Side effects came early.** Nausea and other gastrointestinal effects were the most common, and they clustered in the first weeks. In every trial the dose was raised gradually under medical supervision, which is how those effects were managed.
+
+**Weight loss levelled off.** Most of the loss happened in roughly the first six months, then slowed and plateaued. Individual results varied widely around the averages in the table above.
+
+**Weight returned after stopping.** In STEP 4, people who switched from semaglutide to placebo after 20 weeks regained much of what they had lost, while those who continued kept losing. STEP 5 showed the loss was maintained over two years on continued treatment. This is why the approved medicines are prescribed as long-term treatments rather than short courses.
+
+---
+
 ### Which One Should You Consider?
 
 There is no single answer that applies to everyone. Some factors worth thinking through:
@@ -130,127 +151,15 @@ The research, regulatory documents and clinical guidelines behind the claims in 
 - Jastreboff AM, Aronne LJ, et al. [Tirzepatide once weekly for the treatment of obesity (SURMOUNT-1)](https://pubmed.ncbi.nlm.nih.gov/35658024/). New England Journal of Medicine, 2022.
 - Jastreboff AM, Kaplan LM, et al. [Triple-hormone-receptor agonist retatrutide for obesity: a phase 2 trial](https://pubmed.ncbi.nlm.nih.gov/37366315/). New England Journal of Medicine, 2023.
 - Frias JP, Davies MJ, et al. [Tirzepatide versus semaglutide once weekly in patients with type 2 diabetes (SURPASS-2)](https://pubmed.ncbi.nlm.nih.gov/34170647/). New England Journal of Medicine, 2021.
+- Rubino D, Abrahamsson N, et al. [Effect of continued weekly subcutaneous semaglutide vs placebo on weight loss maintenance (STEP 4)](https://pubmed.ncbi.nlm.nih.gov/33755728/). JAMA, 2021.
+- Garvey WT, Batterham RL, et al. [Two-year effects of semaglutide in adults with overweight or obesity (STEP 5)](https://pubmed.ncbi.nlm.nih.gov/36216945/). Nature Medicine, 2022.
+- Holst JJ. [The physiology of glucagon-like peptide 1](https://pubmed.ncbi.nlm.nih.gov/17928588/). Physiological Reviews, 2007.
 - Drucker DJ. [Mechanisms of action and therapeutic application of glucagon-like peptide-1](https://pubmed.ncbi.nlm.nih.gov/29617641/). Cell Metabolism, 2018.
+- van Bloemendaal L, IJzerman RG, et al. [GLP-1 receptor activation modulates appetite- and reward-related brain areas in humans](https://pubmed.ncbi.nlm.nih.gov/25071023/). Diabetes, 2014.
 - US Food and Drug Administration. [WEGOVY (semaglutide) prescribing information, including the boxed warning on thyroid C-cell tumours](https://www.accessdata.fda.gov/drugsatfda_docs/label/2021/215256s000lbl.pdf). FDA label, 2021.
 
 
 *Disclaimer: The information in this article is for educational purposes only. STRIATA peptides are research compounds and are not approved medicines. Always consult a qualified healthcare professional before beginning any weight management protocol.*
-
----
----
-
-# Article 7: GLP-1 Peptides Explained: How They Work
-
-**Meta description:** How GLP-1 peptides control appetite and metabolism, why they are so effective for weight loss, and what research says about long-term use.
-
-**Slug:** /learn/glp-1-peptides-explained
-**Category:** Weight Loss
-**Read time:** 7 min
-**Keywords:** GLP-1 peptides explained, how GLP-1 works, GLP-1 appetite suppression, GLP-1 metabolism weight loss
-**Updated:** 2026-10-17
-
----
-
-## GLP-1 Peptides Explained: How They Work
-
-The most significant shift in weight management science in a generation has come from a class of compounds built around a single hormone: GLP-1.
-
-Glucagon-Like Peptide-1 is not new. Scientists have known about it since the 1980s. But recent advances in how we can mimic and extend its effects have produced compounds with weight loss outcomes that were previously only achievable through surgery.
-
-Understanding how GLP-1 actually works, not just the marketing version but the genuine biology, will help you make more informed decisions about whether these compounds belong in your health protocol.
-
----
-
-### What Is GLP-1?
-
-GLP-1 is an incretin hormone, meaning it is produced in the gut in response to eating and works to regulate the metabolic response to food. Specifically, it is secreted by L-cells in the small intestine and colon when nutrients arrive from the stomach.
-
-In its natural form, GLP-1 is broken down extremely quickly by an enzyme called DPP-4 (Dipeptidyl Peptidase-4). Its half-life in the bloodstream is just 1 to 2 minutes. This rapid breakdown means natural GLP-1 acts as a short, sharp signal rather than a sustained influence.
-
-GLP-1 receptor agonists are engineered peptides designed to replicate GLP-1's effects while being resistant to DPP-4 breakdown, giving them a dramatically longer duration of action.
-
----
-
-### How GLP-1 Controls Appetite
-
-The appetite-suppressing effects of GLP-1 operate through several distinct mechanisms, and understanding them explains why the results can be so striking.
-
-**Slowing gastric emptying**
-GLP-1 reduces the rate at which the stomach empties its contents into the small intestine. When food stays in the stomach longer, the physical sensation of fullness persists longer after a meal. This is one of the most immediate and tangible effects people notice when starting GLP-1 therapy. Meals that previously left them hungry an hour later now keep them satisfied for significantly longer.
-
-**Hypothalamic signalling**
-GLP-1 receptors exist in the hypothalamus, the part of the brain responsible for regulating hunger, satiety, body temperature and energy homeostasis. When GLP-1 activates these receptors, it directly reduces the drive to eat. Many people describe this effect as the background "food noise" quieting down: the near-constant thoughts about food, cravings and urges to snack that many people experience become significantly less intrusive.
-
-**Reward pathway modulation**
-Emerging research suggests GLP-1 also influences the brain's reward pathways, particularly the dopamine-driven responses associated with highly palatable foods. This may explain why many people on GLP-1 therapy report reduced cravings specifically for high-fat, high-sugar foods, not just a general reduction in appetite.
-
-**Reducing glucagon secretion**
-GLP-1 suppresses the release of glucagon from the pancreas. Since glucagon signals the liver to release stored glucose, reducing glucagon levels helps stabilise blood sugar and reduces the sharp spikes and crashes that drive hunger between meals.
-
----
-
-### How GLP-1 Affects Metabolism
-
-Beyond appetite, GLP-1 has meaningful effects on how the body processes and stores energy.
-
-**Insulin sensitivity**
-GLP-1 enhances insulin secretion in a glucose-dependent manner. Critically, this only happens when blood glucose is elevated, which means it does not drive hypoglycaemia (low blood sugar) the way some older diabetes medications do. Over time, improved insulin dynamics contribute to better metabolic flexibility: the body becomes more efficient at switching between burning glucose and fat for fuel.
-
-**Pancreatic beta cell function**
-Research suggests GLP-1 may have a protective effect on the pancreatic beta cells responsible for insulin production. In type 2 diabetes, these cells are often under significant chronic stress. GLP-1 receptor activation appears to reduce this stress and support cell survival, which is one reason GLP-1 agonists are now frontline treatments for type 2 diabetes.
-
-**Adipose tissue effects**
-At the cellular level, GLP-1 influences how fat cells store and release fat. Reduced glucagon, improved insulin sensitivity and the downstream effects of weight loss itself all contribute to a shift in how the body manages its fat stores over time.
-
----
-
-### Why the Results Are So Different from Conventional Approaches
-
-Conventional calorie restriction produces weight loss, but it also triggers hormonal counterresponses that work against sustained results. As body weight falls, levels of hunger hormones like ghrelin rise, while satiety hormones like leptin fall. The body effectively fights back against the calorie deficit, making it increasingly difficult to maintain.
-
-GLP-1 receptor agonists do not simply suppress appetite through willpower-dependent mechanisms. They intervene at the hormonal level, modulating the very signals that drive hunger. This is why clinical trial participants are able to maintain significant caloric deficits for extended periods without the same levels of compensatory hunger that typically undermine conventional dieting.
-
-This is also why the weight tends to return when GLP-1 therapy is stopped, particularly without accompanying lifestyle changes. The underlying hormonal environment shifts back, and the drives that led to weight gain reassert themselves. This is not a failure of the compound; it reflects the chronic, biological nature of obesity.
-
----
-
-### What the Clinical Trials Showed Over Time
-
-The STEP and SURMOUNT trials followed people for more than a year, and their results share a few consistent patterns.
-
-**Side effects:** Nausea and other gastrointestinal effects were the most common, and they clustered in the early weeks. In every trial the dose was raised gradually under medical supervision, which is how those effects were managed.
-
-**The shape of the curve:** Most of the weight loss happened in roughly the first six months, after which it slowed and levelled off. Individual results varied widely around the average.
-
-**After stopping:** In extension studies, much of the weight lost was regained once treatment stopped, which is why the approved medicines are prescribed as long-term treatments rather than courses.
-
----
-
-### Combining GLP-1 Peptides with Other Compounds
-
-Some protocols combine GLP-1 compounds with other peptides or compounds to address specific goals alongside weight loss. For example:
-
-- BPC-157 or TB-500 may be used to manage any gut discomfort associated with GLP-1 therapy, given their tissue-protective properties
-- Growth hormone secretagogues may be used alongside GLP-1 compounds to support lean mass preservation during weight loss
-- AOD-9604 or HGH Fragment 176-191 are sometimes considered for their targeted fat mobilisation properties
-
-These combinations are at the more advanced end of peptide protocols and should be approached with appropriate research and, where possible, professional guidance.
-
----
-
-### Sources
-
-The research, regulatory documents and clinical guidelines behind the claims in this article:
-
-- Holst JJ. [The physiology of glucagon-like peptide 1](https://pubmed.ncbi.nlm.nih.gov/17928588/). Physiological Reviews, 2007.
-- Drucker DJ. [Mechanisms of action and therapeutic application of glucagon-like peptide-1](https://pubmed.ncbi.nlm.nih.gov/29617641/). Cell Metabolism, 2018.
-- van Bloemendaal L, IJzerman RG, et al. [GLP-1 receptor activation modulates appetite- and reward-related brain areas in humans](https://pubmed.ncbi.nlm.nih.gov/25071023/). Diabetes, 2014.
-- Wilding JPH, Batterham RL, et al. [Once-weekly semaglutide in adults with overweight or obesity (STEP 1)](https://pubmed.ncbi.nlm.nih.gov/33567185/). New England Journal of Medicine, 2021.
-- Rubino D, Abrahamsson N, et al. [Effect of continued weekly subcutaneous semaglutide vs placebo on weight loss maintenance (STEP 4)](https://pubmed.ncbi.nlm.nih.gov/33755728/). JAMA, 2021.
-- Garvey WT, Batterham RL, et al. [Two-year effects of semaglutide in adults with overweight or obesity (STEP 5)](https://pubmed.ncbi.nlm.nih.gov/36216945/). Nature Medicine, 2022.
-
-
-*Disclaimer: The information in this article is for educational purposes only. STRIATA peptides are research compounds and are not approved medicines. Always consult a qualified healthcare professional before beginning any protocol.*
 
 ---
 ---

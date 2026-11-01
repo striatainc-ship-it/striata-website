@@ -425,7 +425,7 @@ With that framing in place, here is where peptides come into the picture for wom
 
 **Drive and libido.** [PT-141](/learn/pt-141-peptide-libido-men-women) works through melanocortin receptors in the brain rather than on blood flow, which is why it is relevant to desire specifically. Its pharmaceutical form, bremelanotide, went through phase 3 trials and was approved in the United States for hypoactive sexual desire disorder in premenopausal women. That approval is specifically for premenopausal women, which is an important limitation to state plainly rather than gloss over.
 
-**Body composition.** Where central weight gain is the dominant concern, the [GLP-1 class](/learn/glp-1-peptides-explained) is the evidence-backed option, and it is a conversation to have with a doctor.
+**Body composition.** Where central weight gain is the dominant concern, the [GLP-1 class](/learn/semaglutide-vs-tirzepatide-vs-retatrutide) is the evidence-backed option, and it is a conversation to have with a doctor.
 
 STRIATA's [Menopause Reset protocol](/stacks/menopause-reset) groups several of these into four stacks aimed at the symptom clusters above — sleep, renewal, skin and vitality — for people who prefer a structured approach to assembling compounds individually.
 
