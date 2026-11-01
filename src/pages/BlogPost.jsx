@@ -180,9 +180,19 @@ function renderBlock(block, key, { promote = false } = {}) {
   )
 }
 
+// "Intro line:\n- a\n- b" written without a blank line before the list would
+// otherwise render as one paragraph with literal dashes. Split it into the
+// lead-in and the list.
+function splitLeadIn(block) {
+  const lines = block.trim().split('\n')
+  const start = lines.findIndex(l => l.startsWith('- '))
+  if (start <= 0 || !lines.slice(start).every(l => l.startsWith('- '))) return [block]
+  return [lines.slice(0, start).join('\n'), lines.slice(start).join('\n')]
+}
+
 function MarkdownContent({ content }) {
   if (!content) return null
-  const blocks = content.split(/\n\n+/)
+  const blocks = content.split(/\n\n+/).flatMap(splitLeadIn)
   const promote = !blocks.some(b => b.trim().startsWith('## '))
   return (
     <div>

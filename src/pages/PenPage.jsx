@@ -7,7 +7,8 @@ import { PEN_PAGES, penPageBySlug, penPagePath } from '../data/penPages'
 import { guideFor } from '../data/productGuides'
 import { blogPosts } from '../data/blogPosts'
 import { COLD_CHAIN } from '../lib/cart'
-import { SITE_URL, DEFAULT_IMAGE, offerTerms } from '../data/site'
+import { SITE_URL, offerTerms } from '../data/site'
+import { ogImageFor } from '../lib/ogImage'
 import { spotlightProps } from '../lib/motion'
 import Reveal from '../components/Reveal'
 import JsonLd from '../components/JsonLd'
@@ -46,7 +47,7 @@ export default function PenPage() {
   const name = `${vial.name} Pen`
   const url = `${SITE_URL}${penPagePath(page)}`
   const shot = vialImage(pen)
-  const socialImage = shot ? `${SITE_URL}${vialStill(shot.names[0], 'og')}` : DEFAULT_IMAGE
+  const socialImage = shot ? `${SITE_URL}${vialStill(shot.names[0], 'og')}` : ogImageFor(penPagePath(page))
   const tier = picked ?? (pen.prices.length === 1 ? pen.prices[0] : null)
   const vialPath = productPath(vial)
   const guide = blogPosts.find((p) => p.slug === guideFor(vial)) ?? null
@@ -71,7 +72,7 @@ export default function PenPage() {
           '@type': 'Product',
           name,
           description: `${vial.description} Supplied pre-filled in a pen.`,
-          ...(shot ? { image: [`${SITE_URL}${vialStill(shot.names[0])}`, socialImage] } : {}),
+          image: shot ? [`${SITE_URL}${vialStill(shot.names[0])}`, socialImage] : [socialImage],
           brand: { '@type': 'Brand', name: 'STRIATA' },
           url,
           offers: pen.prices.map((t) => ({

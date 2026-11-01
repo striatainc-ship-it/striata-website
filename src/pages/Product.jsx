@@ -148,7 +148,9 @@ function ProductPage({ product }) {
           name: product.name,
           description: metaDescription ?? product.description,
           category: categoryLabel(product),
-          ...(image ? { image: [`${SITE_URL}${vialStill(image.names[0])}`, socialImage] } : {}),
+          // No photo: the generated card stands in, as on the stack pages. Google
+          // flags a Product without an image as a merchant-listing error.
+          image: image ? [`${SITE_URL}${vialStill(image.names[0])}`, socialImage] : [socialImage],
           brand: { '@type': 'Brand', name: 'STRIATA' },
           url,
           // One Offer per concentration rather than an AggregateOffer: the

@@ -6,7 +6,8 @@ import { nasalSprayContentFor } from '../data/nasalSprayContent'
 import { pens } from '../data/pensData'
 import { guideFor } from '../data/productGuides'
 import { blogPosts } from '../data/blogPosts'
-import { SITE_URL, DEFAULT_IMAGE, offerTerms } from '../data/site'
+import { SITE_URL, offerTerms } from '../data/site'
+import { ogImageFor } from '../lib/ogImage'
 import { spotlightProps } from '../lib/motion'
 import Reveal from '../components/Reveal'
 import JsonLd from '../components/JsonLd'
@@ -93,7 +94,7 @@ function SprayPage({ spray }) {
   const guideSlug = guideFor({ id: spray.productId })
   const guidePost = guideSlug ? blogPosts.find((p) => p.slug === guideSlug) : null
 
-  const socialImage = image ? `${SITE_URL}${vialStill(image.names[0], 'og')}` : DEFAULT_IMAGE
+  const socialImage = image ? `${SITE_URL}${vialStill(image.names[0], 'og')}` : ogImageFor(spray.page)
   const title = content?.meta.title ?? `${fullName} South Africa | STRIATA`
   const description = content?.meta.description ?? spray.description
 
@@ -154,7 +155,7 @@ function SprayPage({ spray }) {
           name: fullName,
           description,
           category: `Nasal Spray · ${spray.positioning}`,
-          ...(image ? { image: [`${SITE_URL}${vialStill(image.names[0])}`, socialImage] } : {}),
+          image: image ? [`${SITE_URL}${vialStill(image.names[0])}`, socialImage] : [socialImage],
           brand: { '@type': 'Brand', name: 'STRIATA' },
           url,
           offers: {
