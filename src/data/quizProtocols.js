@@ -250,7 +250,6 @@ export const quizProtocols = [
     primary: { label: 'View Tesamorelin in the catalogue', to: catalogue('Tesamorelin') },
     secondary: [
       { label: 'Tesamorelin pre-filled pen', to: pens('Tesamorelin') },
-      { label: 'Tesa10 + Ipamorelin Stack', to: catalogue('Tesa10') },
     ],
     posts: ['why-your-diet-isnt-working-metabolic-peptides', 'semaglutide-vs-tirzepatide-vs-retatrutide'],
     metaTitle: 'Tesamorelin for Visceral Fat & Body Composition | STRIATA Quiz Result',

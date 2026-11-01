@@ -804,10 +804,6 @@ export const PRODUCT_CONTENT = {
         q: 'Which vial size?',
         a: '5mg at R500 and 10mg at R1,050 are both in stock; 20mg is available on request.',
       },
-      {
-        q: 'Is there a stack version?',
-        a: 'Yes — Tesa10 + Ipamorelin is in the catalogue, pairing it with a secretagogue the way CJC-1295 is paired with one.',
-      },
     ],
     pairsWith: [12, 43, 87],
     meta: {

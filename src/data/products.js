@@ -582,7 +582,7 @@ export const products = [
     description: 'Pre-combined Tesamorelin and Ipamorelin for optimised GH release with targeted visceral fat reduction.',
     tags: ['Stack', 'GH Release', 'Fat Reduction'],
     prices: [
-      { dose: '10mg+5mg', price: 1250, inStock: true },
+      { dose: '10mg+5mg', price: 1250 },
     ],
   },
   {
