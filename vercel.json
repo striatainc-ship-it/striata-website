@@ -12,7 +12,9 @@
     { "source": "/learn/how-to-build-a-peptide-recovery-protocol", "destination": "/learn/peptides-for-south-african-athletes", "permanent": true },
     { "source": "/learn/glow-stack-peptides-skin-regeneration", "destination": "/learn/ghk-cu-copper-peptide-anti-aging", "permanent": true },
     { "source": "/learn/nad-plus-brain-health-focus-mental-clarity", "destination": "/learn/nad-plus-aging-decline-what-to-do", "permanent": true },
-    { "source": "/learn/glp-1-peptides-explained", "destination": "/learn/semaglutide-vs-tirzepatide-vs-retatrutide", "permanent": true }
+    { "source": "/learn/glp-1-peptides-explained", "destination": "/learn/semaglutide-vs-tirzepatide-vs-retatrutide", "permanent": true },
+    { "source": "/learn/wolverine-stack-bpc-157-tb-500", "destination": "/catalogue/bpc-157-tb-500-wolverine-stack", "permanent": true },
+    { "source": "/learn/why-your-diet-isnt-working-metabolic-peptides", "destination": "/catalogue/weight-loss-peptides", "permanent": true }
   ],
   "headers": [
     {

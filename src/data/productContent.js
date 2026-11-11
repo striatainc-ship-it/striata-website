@@ -302,6 +302,7 @@ export const PRODUCT_CONTENT = {
   // ── Skin, Hair & Anti-Aging ──────────────────────────────────────────
 
   22: {
+    h1: 'GHK-Cu Copper Peptide',
     lede: 'The copper peptide the entire category is named after, in a 100mg vial — the most researched skin compound we stock.',
     about: [
       'GHK-Cu is a naturally occurring copper tripeptide found in human plasma, and its concentration falls sharply with age — roughly a two-thirds decline between your twenties and your sixties. That decline is what made it interesting to researchers in the first place, and it has since accumulated one of the deepest research literatures of any peptide in cosmetics, covering collagen and elastin synthesis, skin remodelling, hair follicles and wound healing.',
@@ -344,9 +345,9 @@ export const PRODUCT_CONTENT = {
     ],
     pairsWith: [15, 91, 23],
     meta: {
-      title: 'GHK-Cu Copper Peptide 100mg | STRIATA South Africa',
+      title: 'GHK-Cu South Africa | 100mg Vial from {from} | STRIATA',
       description:
-        'GHK-Cu, the copper tripeptide researched for collagen, skin remodelling and hair. 100mg vial in stock at R450, shipped across South Africa.',
+        'GHK-Cu, the copper tripeptide researched for collagen, skin remodelling and hair. 100mg vial in stock at {from}, shipped across South Africa.',
     },
   },
 

@@ -10,7 +10,7 @@ import { nasalSprays } from './nasalSpraysData.js'
 export const PRODUCT_GUIDES = {
   1: 'bpc-157-south-africa',
   2: 'tb-500-thymosin-beta-4-guide',
-  3: 'wolverine-stack-bpc-157-tb-500',
+  3: 'tb-500-thymosin-beta-4-guide',
   4: 'igf-1-lr3-recovery-muscle-repair',
   5: 'aod-9604-vs-hgh-fragment-176-191',
   15: 'ghk-cu-copper-peptide-anti-aging',

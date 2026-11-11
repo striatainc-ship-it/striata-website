@@ -23,7 +23,7 @@ export const CATEGORY_PAGES = [
       'The range also covers the growth-hormone axis, with GHRP-6 and the CJC-1295 + Ipamorelin stack studied for their effect on the body’s own GH release, and KPV, a three-amino-acid fragment of alpha-MSH studied mainly in models of gut inflammation. The GLOW and KLOW stacks add GHK-Cu, the copper peptide studied for collagen and skin remodelling, to the BPC-157 and TB-500 base.',
       'If you compete in a tested sport, check the WADA Prohibited List before anything else: TB-500 and the growth-hormone secretagogues are prohibited at all times. Our article on peptides and anti-doping in South Africa sets out which compounds are on it.',
     ],
-    reading: ['wolverine-stack-bpc-157-tb-500', 'bpc-157-south-africa', 'tb-500-thymosin-beta-4-guide', 'peptides-for-south-african-athletes', 'peptides-anti-doping-south-africa'],
+    reading: ['bpc-157-south-africa', 'tb-500-thymosin-beta-4-guide', 'peptides-for-south-african-athletes', 'peptides-anti-doping-south-africa'],
     links: [{ label: 'The Wolverine Protocol stack', to: '/stacks/the-wolverine-protocol' }],
   },
   {

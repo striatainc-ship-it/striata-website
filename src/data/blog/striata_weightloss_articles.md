@@ -10,7 +10,7 @@
 **Category:** Weight Loss
 **Read time:** 12 min
 **Keywords:** semaglutide vs tirzepatide, retatrutide weight loss, GLP-1 peptides compared, best weight loss peptide, GLP-1 peptides explained, how GLP-1 works
-**Updated:** 2026-11-01
+**Updated:** 2026-11-11
 
 ---
 
@@ -45,7 +45,7 @@ Natural GLP-1 barely lasts. An enzyme called DPP-4 breaks it down within one to 
 - **Beta cells:** research suggests GLP-1 receptor activation may help protect the pancreatic cells that make insulin. That, along with glucose control, is why GLP-1 agonists are now a mainstay of type 2 diabetes treatment.
 
 **Why this differs from dieting alone**
-When you cut calories, the body pushes back: hunger hormones such as ghrelin rise and satiety signals such as leptin fall, which is why most diets get harder over time. GLP-1 agonists act on those signals directly, which is how trial participants sustained a calorie deficit for well over a year. It is also why weight tends to return when treatment stops (see the trial patterns below).
+When you cut calories, the body pushes back. Resting energy use falls by more than the weight lost would explain, and in a follow-up of contestants from The Biggest Loser it was still lower six years later. At the same time hunger hormones such as ghrelin rise and satiety signals such as leptin fall, which is why most diets get harder over time. GLP-1 agonists act on those signals directly, which is how trial participants sustained a calorie deficit for well over a year. It is also why weight tends to return when treatment stops (see the trial patterns below).
 
 Semaglutide, Tirzepatide and Retatrutide all work through GLP-1 pathways, but they differ in important ways.
 
@@ -153,6 +153,8 @@ The research, regulatory documents and clinical guidelines behind the claims in 
 - Frias JP, Davies MJ, et al. [Tirzepatide versus semaglutide once weekly in patients with type 2 diabetes (SURPASS-2)](https://pubmed.ncbi.nlm.nih.gov/34170647/). New England Journal of Medicine, 2021.
 - Rubino D, Abrahamsson N, et al. [Effect of continued weekly subcutaneous semaglutide vs placebo on weight loss maintenance (STEP 4)](https://pubmed.ncbi.nlm.nih.gov/33755728/). JAMA, 2021.
 - Garvey WT, Batterham RL, et al. [Two-year effects of semaglutide in adults with overweight or obesity (STEP 5)](https://pubmed.ncbi.nlm.nih.gov/36216945/). Nature Medicine, 2022.
+- Leibel RL, Rosenbaum M, Hirsch J. [Changes in energy expenditure resulting from altered body weight](https://pubmed.ncbi.nlm.nih.gov/7632212/). New England Journal of Medicine, 1995.
+- Fothergill E, Guo J, et al. [Persistent metabolic adaptation 6 years after The Biggest Loser competition](https://pubmed.ncbi.nlm.nih.gov/27136388/). Obesity, 2016.
 - Holst JJ. [The physiology of glucagon-like peptide 1](https://pubmed.ncbi.nlm.nih.gov/17928588/). Physiological Reviews, 2007.
 - Drucker DJ. [Mechanisms of action and therapeutic application of glucagon-like peptide-1](https://pubmed.ncbi.nlm.nih.gov/29617641/). Cell Metabolism, 2018.
 - van Bloemendaal L, IJzerman RG, et al. [GLP-1 receptor activation modulates appetite- and reward-related brain areas in humans](https://pubmed.ncbi.nlm.nih.gov/25071023/). Diabetes, 2014.
@@ -283,123 +285,6 @@ The research, regulatory documents and clinical guidelines behind the claims in 
 
 
 *Disclaimer: The information in this article is for educational purposes only. STRIATA peptides are research compounds and are not approved medicines. Always consult a qualified healthcare professional before beginning any protocol.*
-
----
----
-
-# Article 9: Why Diets Fail: Metabolic Peptides Explained
-
-**Meta description:** The biology of why diets fail, and how metabolic peptides such as GLP-1 agonists address the root causes rather than relying on willpower.
-
-**Slug:** /learn/why-your-diet-isnt-working-metabolic-peptides
-**Category:** Weight Loss
-**Read time:** 8 min
-**Keywords:** why diets fail, metabolic peptides weight loss, hormonal reasons for weight gain, peptides for fat loss
-
----
-
-## Why Diets Fail: Metabolic Peptides Explained
-
-You have counted the calories. You have cut out the carbs. You have done the intermittent fasting, tracked the macros and spent months being disciplined about your eating. And yet the scale barely moves, or moves and then creeps back up the moment you relax.
-
-If this sounds familiar, you are not failing at dieting. You are likely running into the biology of why dieting is hard.
-
-Understanding what actually happens in your body when you try to lose weight, and why it fights back, is the foundation for understanding why metabolic peptides have attracted so much serious scientific attention.
-
----
-
-### The Problem: Your Body Does Not Want to Lose Weight
-
-This is not a metaphor. The human body has evolved over hundreds of thousands of years to survive food scarcity. It has sophisticated, multi-layered systems designed to protect against weight loss, and these systems activate the moment you start eating less.
-
-**Adaptive thermogenesis**
-When calorie intake drops, your body lowers its metabolic rate to compensate. Studies have shown that this reduction is often greater than what can be explained by the change in body mass alone. Your body becomes more efficient, burning fewer calories at rest and during activity to preserve energy stores. This effect can persist for years after weight loss, which is a major reason why people who have previously lost significant weight find it harder to lose weight again.
-
-**Hormonal counterregulation**
-As body fat decreases, levels of leptin fall. Leptin is the hormone produced by fat cells that signals to the brain that energy stores are adequate. With less leptin, the brain interprets the situation as a state of energy deficit and ramps up hunger signals. Simultaneously, ghrelin, the primary hunger hormone, rises. You are biologically hungrier at a lower body weight than you were at a higher one, which runs directly against what most diet plans assume.
-
-**Muscle loss**
-Caloric restriction without adequate protein and resistance training often leads to a loss of muscle mass alongside fat. Since muscle is metabolically active, losing it further reduces your resting metabolic rate, making maintenance of weight loss even harder over time.
-
-**Psychological and behavioural fatigue**
-Sustained restriction requires ongoing cognitive effort. The research on ego depletion and decision fatigue shows that willpower is a finite resource. The longer a person maintains restrictive eating, the harder it becomes to sustain that restriction.
-
----
-
-### Why "Eat Less, Move More" Is Incomplete Advice
-
-The principle behind conventional dieting is thermodynamically accurate. You do need a caloric deficit to lose fat. But framing weight management as a simple matter of willpower ignores the biological machinery working against that deficit.
-
-The emerging consensus in obesity medicine is that for many people, particularly those dealing with significant overweight, chronic obesity or metabolic dysfunction, behavioural intervention alone is insufficient. Not because they lack discipline, but because the hormonal and metabolic environment is actively working against them.
-
-This is the scientific context in which metabolic peptides have become so relevant.
-
----
-
-### How Metabolic Peptides Address the Root Causes
-
-Rather than simply suppressing hunger through willpower-adjacent mechanisms, metabolic peptides intervene at the hormonal level. Here is how different categories of peptides address the specific problems that make weight loss difficult.
-
-**GLP-1 Receptor Agonists (Semaglutide, Tirzepatide, Retatrutide)**
-These compounds directly address the hormonal environment around appetite and satiety. By activating GLP-1 receptors in the hypothalamus, they reduce the biological drive to eat. They also slow gastric emptying, extending the physical sensation of fullness.
-
-Critically, they appear to attenuate the compensatory hunger response that normally follows caloric restriction. Clinical trial participants maintain significant caloric deficits for much longer than would typically be possible through dietary restriction alone. This is not willpower: it is the peptide modulating the hormonal signals that drive hunger.
-
-**Growth Hormone Secretagogues (CJC-1295, Ipamorelin)**
-One of the significant challenges of caloric restriction is the tendency to lose muscle alongside fat. Growth hormone plays a central role in preserving lean mass during periods of energy deficit. By stimulating natural GH release, secretagogues like CJC-1295 and Ipamorelin can support the maintenance of muscle mass during a fat loss phase, helping to preserve metabolic rate.
-
-These compounds also support the quality of sleep, and given that poor sleep significantly impairs metabolic function and hormonal balance, this is a more meaningful contribution to weight management than it might initially appear.
-
-**Fragment Peptides (AOD-9604, HGH Fragment 176-191)**
-These compounds specifically target lipolysis, the breakdown and mobilisation of stored fat. They address one specific piece of the fat loss puzzle: making fat cells more willing to release their contents. Used as part of a broader protocol with appropriate caloric deficit and activity, they can accelerate fat mobilisation.
-
-**Tesamorelin**
-Originally developed for HIV-associated lipodystrophy, Tesamorelin is a GHRH analogue with a specific research profile around visceral adipose tissue (the deep abdominal fat associated with metabolic disease). For people with significant central obesity, this is a compound worth understanding.
-
----
-
-### What Metabolic Peptides Cannot Do
-
-Being honest about this is important, because the peptide space has its share of overclaiming.
-
-Metabolic peptides are not a replacement for a sensible nutritional approach. GLP-1 compounds produce their results alongside caloric restriction, not instead of it. The compounds make the deficit more achievable and sustainable by addressing the hormonal drivers of hunger, but there still needs to be a deficit.
-
-They are also not a permanent solution if the lifestyle factors that contributed to weight gain are not addressed. Clinical data shows that weight tends to return after stopping GLP-1 therapy if no lasting changes have been made to eating patterns and activity levels. This is not a reason to avoid these compounds, but it is a reason to view them as part of a broader strategy rather than a standalone fix.
-
----
-
-### Building a Realistic Protocol
-
-The most effective weight loss approaches using peptides tend to share some common features:
-
-**Clarity on the primary lever:** Usually a GLP-1 compound, which addresses appetite and metabolic function most directly.
-
-**Protein prioritisation:** Getting adequate protein (typically at least 1.6 to 2g per kilogram of lean body mass) helps preserve muscle during a fat loss phase and supports satiety beyond what the peptide provides.
-
-**Resistance training:** Maintains and builds muscle, which protects metabolic rate and improves body composition outcomes, not just the number on the scale.
-
-**Sleep and stress management:** Both cortisol and sleep deprivation have significant effects on fat storage, hunger hormones and metabolic function. These are not optional extras.
-
-**Realistic timeline:** The most significant weight loss outcomes in clinical trials occurred over 52 to 72 weeks. Expecting dramatic results in four weeks sets up unnecessary disappointment and often leads to protocol abandonment.
-
-If you want to talk through how to structure a protocol for your specific goals and circumstances, our team is available on WhatsApp.
-
----
-
-### Sources
-
-The research, regulatory documents and clinical guidelines behind the claims in this article:
-
-- Leibel RL, Rosenbaum M, Hirsch J. [Changes in energy expenditure resulting from altered body weight](https://pubmed.ncbi.nlm.nih.gov/7632212/). New England Journal of Medicine, 1995.
-- Fothergill E, Guo J, et al. [Persistent metabolic adaptation 6 years after The Biggest Loser competition](https://pubmed.ncbi.nlm.nih.gov/27136388/). Obesity, 2016.
-- Drucker DJ. [Mechanisms of action and therapeutic application of glucagon-like peptide-1](https://pubmed.ncbi.nlm.nih.gov/29617641/). Cell Metabolism, 2018.
-- van Bloemendaal L, IJzerman RG, et al. [GLP-1 receptor activation modulates appetite- and reward-related brain areas in humans](https://pubmed.ncbi.nlm.nih.gov/25071023/). Diabetes, 2014.
-- Rubino D, Abrahamsson N, et al. [Effect of continued weekly subcutaneous semaglutide vs placebo on weight loss maintenance (STEP 4)](https://pubmed.ncbi.nlm.nih.gov/33755728/). JAMA, 2021.
-- Falutz J, Mamputu JC, et al. [Effects of tesamorelin, a growth hormone-releasing factor analog, in HIV-infected patients with excess abdominal fat: a pooled analysis of two phase 3 trials](https://pubmed.ncbi.nlm.nih.gov/20554713/). Journal of Clinical Endocrinology and Metabolism, 2010.
-- Hotamisligil GS. [Inflammation and metabolic disorders](https://pubmed.ncbi.nlm.nih.gov/17167474/). Nature, 2006.
-
-
-*Disclaimer: The information in this article is for educational purposes only. STRIATA peptides are research compounds and are not approved medicines. Always consult a qualified healthcare professional before beginning any weight management protocol.*
 
 ---
 ---
