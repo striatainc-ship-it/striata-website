@@ -31,7 +31,7 @@ function renderInline(text) {
         <a
           key={i++}
           href={m[2]}
-          className="text-[#00B4B4] underline underline-offset-2 hover:text-white transition-colors"
+          className="text-[#2FBCAB] underline underline-offset-2 hover:text-white transition-colors"
           target={external ? '_blank' : undefined}
           rel={external ? 'noopener noreferrer' : undefined}
         >
@@ -41,7 +41,7 @@ function renderInline(text) {
     } else if (m[3] !== undefined) {
       nodes.push(<strong key={i++} className="text-white font-semibold">{m[3]}</strong>)
     } else {
-      nodes.push(<em key={i++} className="text-[#00B4B4]/80 not-italic font-medium">{m[4]}</em>)
+      nodes.push(<em key={i++} className="text-[#2FBCAB]/80 not-italic font-medium">{m[4]}</em>)
     }
     last = regex.lastIndex
   }
@@ -72,7 +72,7 @@ function renderBlock(block, key) {
     return (
       <div
         key={key}
-        className="my-6 rounded-xl border border-[#00B4B4]/25 bg-[#00B4B4]/[0.06] px-5 py-4 border-l-4 border-l-[#00B4B4]"
+        className="my-6 rounded-xl border border-[#2FBCAB]/25 bg-[#2FBCAB]/[0.06] px-5 py-4 border-l-4 border-l-[#2FBCAB]"
       >
         {inner.map((p, j) => (
           <p key={j} className={`text-white/75 text-[15px] leading-relaxed ${j > 0 ? 'mt-3' : ''}`}>
@@ -100,7 +100,7 @@ function renderBlock(block, key) {
   // h3
   if (first.startsWith('### ')) {
     return (
-      <h3 key={key} className="text-base md:text-lg font-bold text-[#00B4B4] mt-9 mb-3 uppercase tracking-wide" style={{ fontFamily: 'var(--font-heading)' }}>
+      <h3 key={key} className="text-base md:text-lg font-bold text-[#2FBCAB] mt-9 mb-3 uppercase tracking-wide" style={{ fontFamily: 'var(--font-heading)' }}>
         {renderInline(first.slice(4))}
       </h3>
     )
@@ -124,10 +124,10 @@ function renderBlock(block, key) {
       return (
         <div key={key} className="my-6 overflow-x-auto">
           <table className="w-full text-sm border border-white/8 rounded-xl overflow-hidden">
-            <thead className="bg-[#0d1e35]">
+            <thead className="bg-[#1B2654]">
               <tr>
                 {headers.map((h, j) => (
-                  <th key={j} className="text-[#00B4B4] text-left py-3 px-4 font-semibold border-b border-white/8 whitespace-nowrap" style={{ fontFamily: 'var(--font-heading)' }}>
+                  <th key={j} className="text-[#2FBCAB] text-left py-3 px-4 font-semibold border-b border-white/8 whitespace-nowrap" style={{ fontFamily: 'var(--font-heading)' }}>
                     {renderInline(h)}
                   </th>
                 ))}
@@ -157,7 +157,7 @@ function renderBlock(block, key) {
       <ul key={key} className="my-4 space-y-2">
         {bulletLines.map((l, j) => (
           <li key={j} className="flex items-start gap-3 text-white/70 text-base leading-relaxed">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#00B4B4] mt-2.5 shrink-0" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#2FBCAB] mt-2.5 shrink-0" />
             <span>{renderInline(l.trim().slice(2))}</span>
           </li>
         ))}
@@ -172,7 +172,7 @@ function renderBlock(block, key) {
       <ol key={key} className="my-4 space-y-2">
         {numLines.map((l, j) => (
           <li key={j} className="flex items-start gap-3 text-white/70 text-base leading-relaxed">
-            <span className="text-[#00B4B4] font-bold shrink-0 min-w-[1.5rem]">{j + 1}.</span>
+            <span className="text-[#2FBCAB] font-bold shrink-0 min-w-[1.5rem]">{j + 1}.</span>
             <span>{renderInline(l.replace(/^\d+\. /, ''))}</span>
           </li>
         ))}
@@ -214,12 +214,12 @@ export default function GuidePost() {
 
   if (!guide) {
     return (
-      <div className="bg-[#0A1628] min-h-screen flex items-center justify-center px-6">
+      <div className="bg-[#141C3A] min-h-screen flex items-center justify-center px-6">
         <div className="text-center">
           <h1 className="text-3xl font-black text-white mb-4" style={{ fontFamily: 'var(--font-heading)' }}>
             Guide not found
           </h1>
-          <Link to="/guides" className="text-[#00B4B4] hover:text-white transition-colors">
+          <Link to="/guides" className="text-[#2FBCAB] hover:text-white transition-colors">
             ← Back to Guides
           </Link>
         </div>
@@ -230,7 +230,7 @@ export default function GuidePost() {
   const related = guides.filter(g => g.slug !== guide.slug).slice(0, 3)
 
   return (
-    <div className="bg-[#0A1628] min-h-screen">
+    <div className="bg-[#141C3A] min-h-screen">
       <Helmet>
         <title>{`${guide.title} | STRIATA Guides`}</title>
         <meta name="description" content={guide.preview} />
@@ -275,11 +275,11 @@ export default function GuidePost() {
 
       {/* ── HEADER ── */}
       <section className="relative pt-36 pb-12 px-6 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#00B4B4]/5 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#2FBCAB]/5 to-transparent" />
         <div className="relative z-10 max-w-3xl mx-auto">
           <Link
             to="/guides"
-            className="inline-flex items-center gap-1.5 text-white/40 hover:text-[#00B4B4] text-sm transition-colors mb-8"
+            className="inline-flex items-center gap-1.5 text-white/40 hover:text-[#2FBCAB] text-sm transition-colors mb-8"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -288,7 +288,7 @@ export default function GuidePost() {
           </Link>
           <div className="flex flex-wrap items-center gap-3 mb-6">
             <span
-              className="text-[#00B4B4] text-xs font-bold uppercase tracking-widest bg-[#00B4B4]/10 border border-[#00B4B4]/20 px-3 py-1.5 rounded-full"
+              className="text-[#2FBCAB] text-[13px] font-semibold"
               style={{ fontFamily: 'var(--font-heading)' }}
             >
               {guide.category}
@@ -301,7 +301,7 @@ export default function GuidePost() {
             {guide.title}
           </h1>
           <Byline datePublished={guide.datePublished} dateModified={guide.dateModified} readTime={guide.readTime} />
-          <p className="text-white/60 text-lg leading-relaxed border-l-2 border-[#00B4B4]/40 pl-4">
+          <p className="text-white/60 text-lg leading-relaxed border-l-2 border-[#2FBCAB]/40 pl-4">
             {guide.preview}
           </p>
         </div>
@@ -313,7 +313,7 @@ export default function GuidePost() {
           {guide.slug === 'peptide-reconstitution-dosage-calculator' && (
             <Link
               to="/tools/reconstitution-calculator"
-              className="group mb-6 flex items-center justify-between gap-4 rounded-2xl border border-[#00B4B4]/30 bg-[#00B4B4]/[0.07] px-6 py-5 hover:bg-[#00B4B4]/[0.12] hover:border-[#00B4B4]/50 transition-colors"
+              className="group mb-6 flex items-center justify-between gap-4 rounded-2xl border border-[#2FBCAB]/30 bg-[#2FBCAB]/[0.07] px-6 py-5 hover:bg-[#2FBCAB]/[0.12] hover:border-[#2FBCAB]/50 transition-colors"
             >
               <div>
                 <p className="text-white font-bold text-base" style={{ fontFamily: 'var(--font-heading)' }}>
@@ -331,7 +331,7 @@ export default function GuidePost() {
               </span>
             </Link>
           )}
-          <div className="bg-[#0d1e35] border border-white/8 rounded-2xl p-7 md:p-10">
+          <div className="bg-[#1B2654] border border-white/8 rounded-2xl p-7 md:p-10">
             <MarkdownContent content={guide.content} />
           </div>
           <AuthorCard />
@@ -343,7 +343,7 @@ export default function GuidePost() {
         <section className="px-6 pb-16">
           <div className="max-w-3xl mx-auto">
             <h2
-              className="text-[#00B4B4] text-xs font-bold uppercase tracking-widest mb-5"
+              className="text-[#2FBCAB] text-xs font-bold uppercase tracking-widest mb-5"
               style={{ fontFamily: 'var(--font-heading)' }}
             >
               More Guides
@@ -353,10 +353,10 @@ export default function GuidePost() {
                 <Link
                   key={g.slug}
                   to={`/guides/${g.slug}`}
-                  className="group bg-[#0d1e35] border border-white/8 rounded-2xl p-5 hover:border-[#00B4B4]/40 transition-all duration-200 hover:-translate-y-0.5"
+                  className="group bg-[#1B2654] border border-white/8 rounded-2xl p-5 hover:border-[#2FBCAB]/40 transition-all duration-200"
                 >
                   <p
-                    className="text-white font-semibold text-sm leading-snug mb-2 group-hover:text-[#00B4B4] transition-colors"
+                    className="text-white font-semibold text-sm leading-snug mb-2 group-hover:text-[#2FBCAB] transition-colors"
                     style={{ fontFamily: 'var(--font-heading)' }}
                   >
                     {g.title}
@@ -371,13 +371,13 @@ export default function GuidePost() {
 
       {/* ── CTA ── */}
       <section className="py-20 border-t border-white/5 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#00B4B4]/8 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#2FBCAB]/8 to-transparent" />
         <div className="relative z-10 max-w-2xl mx-auto text-center px-6">
           <h2
             className="text-2xl md:text-4xl font-black text-white mb-4"
             style={{ fontFamily: 'var(--font-heading)' }}
           >
-            Still Have <span className="text-[#00B4B4]">Questions?</span>
+            Still Have <span className="text-[#2FBCAB]">Questions?</span>
           </h2>
           <p className="text-white/60 mb-8">
             Not sure about a dose, a reconstitution volume, or which markers to test? Message us — we'd rather answer a question than have you guess.

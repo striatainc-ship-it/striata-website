@@ -80,7 +80,7 @@ export default function NasalSprays() {
   useStaggerGrid(gridRef, [])
 
   return (
-    <div className="bg-[#0A1628] min-h-screen">
+    <div className="bg-[#141C3A] min-h-screen">
       <Helmet>
         <title>Peptide Nasal Sprays South Africa | STRIATA</title>
         <meta name="description" content={`${nasalSprays.length} research peptides in 10ml nasal sprays: Semax, Selank, Oxytocin, DSIP, PT-141, NAD+, VIP and Adamax. No reconstitution. Delivered across South Africa.`} />
@@ -124,18 +124,18 @@ export default function NasalSprays() {
 
       {/* Hero */}
       <section className="relative pt-36 pb-16 px-6 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0A1628]/60 to-[#0A1628]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#141C3A]/60 to-[#141C3A]" />
         <div
           className="absolute inset-0 opacity-5"
-          style={{ backgroundImage: 'radial-gradient(circle at 80% 40%, #00B4B4 0%, transparent 50%), radial-gradient(circle at 15% 30%, #00B4B4 0%, transparent 35%)' }}
+          style={{ backgroundImage: 'radial-gradient(circle at 80% 40%, #2FBCAB 0%, transparent 50%), radial-gradient(circle at 15% 30%, #2FBCAB 0%, transparent 35%)' }}
         />
         <Reveal stagger delay={0.1} className="relative z-10 max-w-4xl mx-auto text-center">
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-green-400/10 border border-green-400/20 text-green-300 text-xs font-semibold uppercase tracking-widest mb-6" style={{ fontFamily: 'var(--font-heading)' }}>
+          <span className="inline-flex items-center gap-2 text-white/70 text-[13px] font-semibold mb-6" style={{ fontFamily: 'var(--font-heading)' }}>
             <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
-            All Nasal Sprays In Stock
+            All nasal sprays in stock
           </span>
           <h1 className="text-3xl md:text-6xl font-black text-white mb-5 leading-tight tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>
-            Peptide <span className="text-[#00B4B4]">Nasal Sprays</span>
+            Peptide <span className="text-[#2FBCAB]">Nasal Sprays</span>
           </h1>
           <p className="text-white/60 text-lg max-w-2xl mx-auto mb-3">
             Eight research peptides in a ready-to-use 10ml amber nasal spray. No reconstitution, no syringes.
@@ -153,9 +153,9 @@ export default function NasalSprays() {
             <div
               key={title}
               {...spotlightProps()}
-              className="spot flex gap-3.5 px-5 py-4 rounded-2xl border border-white/8 bg-[#0d1e35] hover:border-[#00B4B4]/30 transition-colors duration-300"
+              className="spot flex gap-3.5 px-5 py-4 rounded-2xl border border-white/8 bg-[#1B2654] hover:border-[#2FBCAB]/30 transition-colors duration-300"
             >
-              <span className="w-9 h-9 rounded-xl bg-[#00B4B4]/10 text-[#00B4B4] flex items-center justify-center flex-shrink-0">
+              <span className="w-9 h-9 rounded-xl bg-[#2FBCAB]/10 text-[#2FBCAB] flex items-center justify-center flex-shrink-0">
                 {icon}
               </span>
               <div>
@@ -180,7 +180,7 @@ export default function NasalSprays() {
       <section className="max-w-5xl mx-auto px-4 md:px-6 pb-16">
         <Reveal className="mb-8">
           <h2 className="text-2xl md:text-4xl font-black text-white mb-3 tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>
-            Choose by <span className="text-[#00B4B4]">Goal</span>
+            Choose by <span className="text-[#2FBCAB]">Goal</span>
           </h2>
           <p className="text-white/50 text-sm md:text-base">
             Each spray has its own page covering the intranasal research, what is in each spray and how it compares with the vial and pen.
@@ -196,7 +196,7 @@ export default function NasalSprays() {
                 id={spray.anchor}
                 to={spray.page}
                 {...spotlightProps()}
-                className="spot scroll-mt-28 group flex items-center gap-4 md:gap-6 rounded-2xl border border-white/8 bg-[#0d1e35] p-4 md:p-5 hover:border-[#00B4B4]/40 transition-colors"
+                className="spot scroll-mt-28 group flex items-center gap-4 md:gap-6 rounded-2xl border border-white/8 bg-[#1B2654] p-4 md:p-5 hover:border-[#2FBCAB]/40 transition-colors"
               >
                 {shot && (
                   <img
@@ -213,18 +213,18 @@ export default function NasalSprays() {
                 )}
                 <div className="min-w-0 flex-1">
                   <div className="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-                    <h3 className="text-white font-bold text-base md:text-lg group-hover:text-[#00B4B4] transition-colors" style={{ fontFamily: 'var(--font-heading)' }}>
+                    <h3 className="text-white font-bold text-base md:text-lg group-hover:text-[#2FBCAB] transition-colors" style={{ fontFamily: 'var(--font-heading)' }}>
                       {spray.name} Nasal Spray
                     </h3>
                     <span className="text-white font-bold tabular-nums">{fmt(spray.prices[0].price)}</span>
                   </div>
                   <p className="text-xs md:text-sm mt-0.5 mb-1.5">
-                    <span className="text-[#00B4B4] font-semibold">{spray.positioning}</span>
+                    <span className="text-[#2FBCAB] font-semibold">{spray.positioning}</span>
                     <span className="text-white/35"> · {spray.amount} per bottle · {formatMass(spray.dosing.perSpray)} per spray</span>
                   </p>
                   <p className="text-white/50 text-xs md:text-sm leading-relaxed line-clamp-2">{spray.description}</p>
                 </div>
-                <svg className="hidden sm:block w-4 h-4 text-[#00B4B4] shrink-0 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+                <svg className="hidden sm:block w-4 h-4 text-[#2FBCAB] shrink-0 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true">
                   <polyline points="9 18 15 12 9 6" />
                 </svg>
               </Link>
@@ -241,7 +241,7 @@ export default function NasalSprays() {
       <section className="max-w-3xl mx-auto px-4 md:px-6 pb-16">
         <Reveal>
           <h2 className="text-2xl md:text-3xl font-black text-white mb-6 tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>
-            Nasal Spray <span className="text-[#00B4B4]">Questions</span>
+            Nasal Spray <span className="text-[#2FBCAB]">Questions</span>
           </h2>
           <div>
             {FAQS.map((faq) => (
@@ -260,13 +260,13 @@ export default function NasalSprays() {
           <Link
             key={to}
             to={to}
-            className="flex items-center justify-between gap-4 px-5 py-4 rounded-2xl border border-white/8 bg-[#0d1e35] hover:border-[#00B4B4]/35 hover:bg-[#0f2340] transition-all duration-200 group"
+            className="flex items-center justify-between gap-4 px-5 py-4 rounded-2xl border border-white/8 bg-[#1B2654] hover:border-[#2FBCAB]/35 hover:bg-[#1F2C58] transition-all duration-200 group"
           >
             <div>
               <p className="text-white font-semibold text-sm" style={{ fontFamily: 'var(--font-heading)' }}>{title}</p>
               <p className="text-white/50 text-xs">{desc}</p>
             </div>
-            <svg className="w-4 h-4 text-[#00B4B4] flex-shrink-0 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+            <svg className="w-4 h-4 text-[#2FBCAB] flex-shrink-0 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true">
               <polyline points="9 18 15 12 9 6" />
             </svg>
           </Link>
@@ -277,7 +277,7 @@ export default function NasalSprays() {
       <section className="py-20 border-t border-white/8">
         <Reveal stagger className="max-w-2xl mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-black text-white mb-4 tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>
-            Questions About <span className="text-[#00B4B4]">the Sprays?</span>
+            Questions About <span className="text-[#2FBCAB]">the Sprays?</span>
           </h2>
           <p className="text-white/60 mb-8">
             Message us to order, or to ask which spray fits the research you're doing.

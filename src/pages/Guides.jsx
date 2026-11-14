@@ -26,21 +26,21 @@ function GuideCard({ guide }) {
   return (
     <Link
       to={`/guides/${guide.slug}`}
-      className="group relative bg-[#0d1e35] border border-white/8 rounded-2xl p-8 hover:border-[#00B4B4]/40 hover:bg-[#0f2340] transition-all duration-300 hover:shadow-xl hover:shadow-[#00B4B4]/10 hover:-translate-y-1 flex flex-col overflow-hidden"
+      className="group relative bg-[#1B2654] border border-white/8 rounded-2xl p-8 hover:border-[#2FBCAB]/40 hover:bg-[#1F2C58] transition-all duration-300 flex flex-col overflow-hidden"
     >
-      <div className="absolute top-0 right-0 w-64 h-64 bg-[#00B4B4]/5 rounded-full translate-x-24 -translate-y-24 pointer-events-none" />
+      <div className="absolute top-0 right-0 w-64 h-64 bg-[#2FBCAB]/5 rounded-full translate-x-24 -translate-y-24 pointer-events-none" />
       <div className="relative z-10 flex flex-col flex-1">
         <div className="flex items-center justify-between mb-5">
-          <span className="w-11 h-11 rounded-xl bg-[#00B4B4]/10 flex items-center justify-center text-[#00B4B4] group-hover:bg-[#00B4B4]/20 transition-colors">
+          <span className="w-11 h-11 rounded-xl bg-[#2FBCAB]/10 flex items-center justify-center text-[#2FBCAB] group-hover:bg-[#2FBCAB]/20 transition-colors">
             {GUIDE_ICON}
           </span>
           <span className="text-white/30 text-xs">{guide.readTime}</span>
         </div>
-        <span className="text-[#00B4B4] text-xs font-bold uppercase tracking-widest mb-3" style={{ fontFamily: 'var(--font-heading)' }}>
+        <span className="text-[#2FBCAB] text-xs font-bold uppercase tracking-widest mb-3" style={{ fontFamily: 'var(--font-heading)' }}>
           {guide.category}
         </span>
         <h3
-          className="text-white font-bold text-lg leading-snug mb-3 group-hover:text-[#00B4B4] transition-colors"
+          className="text-white font-bold text-lg leading-snug mb-3 group-hover:text-[#2FBCAB] transition-colors"
           style={{ fontFamily: 'var(--font-heading)' }}
         >
           {guide.title}
@@ -48,7 +48,7 @@ function GuideCard({ guide }) {
         <p className="text-white/50 text-sm leading-relaxed mb-6 flex-1">
           {guide.preview}
         </p>
-        <div className="flex items-center gap-1 text-[#00B4B4] text-sm font-semibold mt-auto">
+        <div className="flex items-center gap-1 text-[#2FBCAB] text-sm font-semibold mt-auto">
           Read Guide
           {ARROW}
         </div>
@@ -59,7 +59,7 @@ function GuideCard({ guide }) {
 
 export default function Guides() {
   return (
-    <div className="bg-[#0A1628] min-h-screen">
+    <div className="bg-[#141C3A] min-h-screen">
       <Helmet>
         <title>Peptide Guides: Reconstitution, Dosing & Bloodwork | STRIATA</title>
         <meta name="description" content="Practical, step-by-step peptide guides — reconstitution and dosage calculation, and the bloodwork to run before, during and after a protocol." />
@@ -71,20 +71,20 @@ export default function Guides() {
 
       {/* ── HERO ── */}
       <section className="relative pt-40 pb-16 px-6 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#00B4B4]/5 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#2FBCAB]/5 to-transparent" />
         <Reveal stagger delay={0.1} className="relative z-10 max-w-3xl mx-auto text-center">
           <div
-            className="inline-flex items-center gap-2 text-[#00B4B4] text-xs font-bold uppercase tracking-widest mb-6 bg-[#00B4B4]/10 border border-[#00B4B4]/20 px-4 py-2 rounded-full"
+            className="eyebrow mb-6"
             style={{ fontFamily: 'var(--font-heading)' }}
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-[#00B4B4]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#2FBCAB]" />
             Practical Guides
           </div>
           <h1
             className="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-5 leading-tight"
             style={{ fontFamily: 'var(--font-heading)' }}
           >
-            Peptide <span className="text-[#00B4B4]">Guides</span>
+            Peptide <span className="text-[#2FBCAB]">Guides</span>
           </h1>
           <p className="text-white/60 text-lg max-w-xl mx-auto">
             Step-by-step, reference-grade guides for handling peptides properly — from the vial to the bloodwork. Written to be printed, followed and trusted.
@@ -105,13 +105,13 @@ export default function Guides() {
 
       {/* ── BOTTOM CTA ── */}
       <section className="py-20 px-6 relative overflow-hidden border-t border-white/5">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#00B4B4]/10 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#2FBCAB]/10 to-transparent" />
         <div className="relative z-10 max-w-2xl mx-auto text-center">
           <h2
             className="text-2xl md:text-4xl font-black text-white mb-4"
             style={{ fontFamily: 'var(--font-heading)' }}
           >
-            Need a Hand <span className="text-[#00B4B4]">Getting Started?</span>
+            Need a Hand <span className="text-[#2FBCAB]">Getting Started?</span>
           </h2>
           <p className="text-white/60 mb-8">
             Chat to us on WhatsApp — we'll help you reconstitute, dose and monitor correctly for your goals.

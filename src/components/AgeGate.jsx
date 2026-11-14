@@ -67,27 +67,25 @@ export default function AgeGate() {
 
   return (
     <div
-      className="gate-backdrop fixed inset-0 z-[100] bg-[#060e1a]/90 backdrop-blur-md flex items-center justify-center px-4 py-6 overflow-y-auto"
+      className="gate-backdrop fixed inset-0 z-[100] bg-[#0F152E]/90 backdrop-blur-md flex items-center justify-center px-4 py-6 overflow-y-auto"
       role="dialog"
       aria-modal="true"
       aria-labelledby="age-gate-title"
       aria-describedby="age-gate-body"
     >
-      <div className="gate-card relative w-full max-w-md bg-[#0d1e35] border border-white/10 rounded-3xl p-7 sm:p-9 shadow-2xl shadow-black/40 text-center overflow-hidden">
+      <div className="gate-card relative w-full max-w-md bg-[#1B2654] border border-white/10 rounded-3xl p-7 sm:p-9 shadow-2xl shadow-black/40 text-center overflow-hidden">
         <div
-          className="gate-glow absolute left-1/2 top-10 -translate-x-1/2 w-72 h-40 rounded-full bg-[#00B4B4]/25 blur-3xl opacity-35 pointer-events-none"
+          className="gate-glow absolute left-1/2 top-10 -translate-x-1/2 w-72 h-40 rounded-full bg-[#2FBCAB]/25 blur-3xl opacity-35 pointer-events-none"
           aria-hidden="true"
         />
         <div className="relative flex justify-center mb-6">
           <span className="gate-logo">
             <img
-              src={`${import.meta.env.BASE_URL}assets/opt/logo-white-640.webp`}
-              srcSet={`${import.meta.env.BASE_URL}assets/opt/logo-white-320.webp 320w, ${import.meta.env.BASE_URL}assets/opt/logo-white-640.webp 640w`}
-              sizes="185px"
+              src={`${import.meta.env.BASE_URL}assets/logo-reversed.svg`}
               alt="STRIATA"
-              width={640}
-              height={222}
-              className="h-16 w-auto block"
+              width={1533}
+              height={479}
+              className="h-14 w-auto block"
             />
           </span>
         </div>

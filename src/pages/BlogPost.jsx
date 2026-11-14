@@ -34,7 +34,7 @@ function renderInline(text) {
         <a
           key={i}
           href={link[2]}
-          className="text-[#00B4B4] underline underline-offset-2 hover:text-white transition-colors"
+          className="text-[#2FBCAB] underline underline-offset-2 hover:text-white transition-colors"
           target={external ? '_blank' : undefined}
           rel={external ? 'noopener noreferrer' : undefined}
         >
@@ -68,7 +68,7 @@ function renderBlock(block, key, { promote = false } = {}) {
   if (first.startsWith('### ')) {
     const Tag = promote ? 'h2' : 'h3'
     return (
-      <Tag key={key} className="text-base md:text-lg font-bold text-[#00B4B4] mt-8 mb-3" style={{ fontFamily: 'var(--font-heading)' }}>
+      <Tag key={key} className="text-base md:text-lg font-bold text-[#2FBCAB] mt-8 mb-3" style={{ fontFamily: 'var(--font-heading)' }}>
         {renderInline(first.slice(4))}
       </Tag>
     )
@@ -88,10 +88,10 @@ function renderBlock(block, key, { promote = false } = {}) {
       return (
         <div key={key} className="my-6 overflow-x-auto">
           <table className="w-full text-sm border border-white/8 rounded-xl overflow-hidden">
-            <thead className="bg-[#0d1e35]">
+            <thead className="bg-[#1B2654]">
               <tr>
                 {headers.map((h, j) => (
-                  <th key={j} className="text-[#00B4B4] text-left py-3 px-4 font-semibold border-b border-white/8" style={{ fontFamily: 'var(--font-heading)' }}>
+                  <th key={j} className="text-[#2FBCAB] text-left py-3 px-4 font-semibold border-b border-white/8" style={{ fontFamily: 'var(--font-heading)' }}>
                     {renderInline(h)}
                   </th>
                 ))}
@@ -121,7 +121,7 @@ function renderBlock(block, key, { promote = false } = {}) {
       <ul key={key} className="my-4 space-y-2">
         {bulletLines.map((l, j) => (
           <li key={j} className="flex items-start gap-3 text-white/70 text-base leading-relaxed">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#00B4B4] mt-2.5 shrink-0" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#2FBCAB] mt-2.5 shrink-0" />
             <span>{renderInline(l.slice(2))}</span>
           </li>
         ))}
@@ -135,7 +135,7 @@ function renderBlock(block, key, { promote = false } = {}) {
       <ul key={key} className="my-4 space-y-2">
         {lines.filter(l => l.startsWith('- ')).map((l, j) => (
           <li key={j} className="flex items-start gap-3 text-white/70 text-base leading-relaxed">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#00B4B4] mt-2.5 shrink-0" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#2FBCAB] mt-2.5 shrink-0" />
             <span>{renderInline(l.slice(2))}</span>
           </li>
         ))}
@@ -150,7 +150,7 @@ function renderBlock(block, key, { promote = false } = {}) {
       <ol key={key} className="my-4 space-y-2">
         {numLines.map((l, j) => (
           <li key={j} className="flex items-start gap-3 text-white/70 text-base leading-relaxed">
-            <span className="text-[#00B4B4] font-bold shrink-0 min-w-[1.5rem]">{j + 1}.</span>
+            <span className="text-[#2FBCAB] font-bold shrink-0 min-w-[1.5rem]">{j + 1}.</span>
             <span>{renderInline(l.replace(/^\d+\. /, ''))}</span>
           </li>
         ))}
@@ -212,14 +212,14 @@ function EssentialLinks({ article }) {
   return (
     <section className="px-6 pb-16">
       <div className="max-w-3xl mx-auto grid gap-4 sm:grid-cols-[1fr_auto]">
-        <div className="bg-[#0d1e35] border border-white/8 rounded-2xl p-5">
-          <p className="text-[#00B4B4] text-xs font-bold uppercase tracking-widest mb-3" style={{ fontFamily: 'var(--font-heading)' }}>
+        <div className="bg-[#1B2654] border border-white/8 rounded-2xl p-5">
+          <p className="text-[#2FBCAB] text-xs font-bold uppercase tracking-widest mb-3" style={{ fontFamily: 'var(--font-heading)' }}>
             Peptides in South Africa
           </p>
           <ul className="flex flex-wrap gap-x-5 gap-y-2">
             {essentials.map(e => (
               <li key={e.slug}>
-                <Link to={`/learn/${e.slug}`} className="text-white/70 text-sm hover:text-[#00B4B4] transition-colors">
+                <Link to={`/learn/${e.slug}`} className="text-white/70 text-sm hover:text-[#2FBCAB] transition-colors">
                   {e.label} →
                 </Link>
               </li>
@@ -229,12 +229,12 @@ function EssentialLinks({ article }) {
         {showMenopause && (
           <Link
             to="/stacks/menopause-reset"
-            className="group bg-[#00B4B4]/[0.07] border border-[#00B4B4]/25 rounded-2xl p-5 hover:bg-[#00B4B4]/[0.12] hover:border-[#00B4B4]/50 transition-colors sm:max-w-xs"
+            className="group bg-[#2FBCAB]/[0.07] border border-[#2FBCAB]/25 rounded-2xl p-5 hover:bg-[#2FBCAB]/[0.12] hover:border-[#2FBCAB]/50 transition-colors sm:max-w-xs"
           >
-            <p className="text-[#00B4B4] text-xs font-bold uppercase tracking-widest mb-1.5" style={{ fontFamily: 'var(--font-heading)' }}>
+            <p className="text-[#2FBCAB] text-xs font-bold uppercase tracking-widest mb-1.5" style={{ fontFamily: 'var(--font-heading)' }}>
               Protocol
             </p>
-            <p className="text-white font-semibold text-sm leading-snug group-hover:text-[#00B4B4] transition-colors" style={{ fontFamily: 'var(--font-heading)' }}>
+            <p className="text-white font-semibold text-sm leading-snug group-hover:text-[#2FBCAB] transition-colors" style={{ fontFamily: 'var(--font-heading)' }}>
               The Menopause Reset: a 12-week, four-stack peptide protocol →
             </p>
           </Link>
@@ -249,14 +249,14 @@ function ProductLinks({ slug }) {
   const links = productLinksFor(slug)
   if (!links.length) return null
   return (
-    <div className="mt-6 bg-[#0d1e35] border border-[#00B4B4]/20 rounded-2xl p-5">
-      <p className="text-[#00B4B4] text-xs font-bold uppercase tracking-widest mb-3" style={{ fontFamily: 'var(--font-heading)' }}>
+    <div className="mt-6 bg-[#1B2654] border border-[#2FBCAB]/20 rounded-2xl p-5">
+      <p className="text-[#2FBCAB] text-xs font-bold uppercase tracking-widest mb-3" style={{ fontFamily: 'var(--font-heading)' }}>
         In the STRIATA range
       </p>
       <ul className="flex flex-wrap gap-x-6 gap-y-2">
         {links.map((l) => (
           <li key={l.to}>
-            <Link to={l.to} className="text-white/80 text-sm font-semibold hover:text-[#00B4B4] transition-colors">
+            <Link to={l.to} className="text-white/80 text-sm font-semibold hover:text-[#2FBCAB] transition-colors">
               {l.label} <span className="text-white/40 font-normal">· {l.format}</span> →
             </Link>
           </li>
@@ -273,12 +273,12 @@ export default function BlogPost() {
 
   if (!article) {
     return (
-      <div className="bg-[#0A1628] min-h-screen flex items-center justify-center px-6">
+      <div className="bg-[#141C3A] min-h-screen flex items-center justify-center px-6">
         <div className="text-center">
           <h1 className="text-3xl font-black text-white mb-4" style={{ fontFamily: 'var(--font-heading)' }}>
             Article not found
           </h1>
-          <Link to="/learn" className="text-[#00B4B4] hover:text-white transition-colors">
+          <Link to="/learn" className="text-[#2FBCAB] hover:text-white transition-colors">
             ← Back to Learning Hub
           </Link>
         </div>
@@ -299,7 +299,7 @@ export default function BlogPost() {
   const shareImage = figure ? figure.shareUrl : ogImageFor(`/learn/${article.slug}`)
 
   return (
-    <div className="bg-[#0A1628] min-h-screen">
+    <div className="bg-[#141C3A] min-h-screen">
       <Helmet>
         <title>{`${article.title} | STRIATA Learn`}</title>
         <meta name="description" content={article.preview} />
@@ -347,11 +347,11 @@ export default function BlogPost() {
 
       {/* ── HEADER ── */}
       <section className="relative pt-36 pb-12 px-6 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#00B4B4]/5 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#2FBCAB]/5 to-transparent" />
         <div className="relative z-10 max-w-3xl mx-auto">
           <Link
             to="/learn"
-            className="inline-flex items-center gap-1.5 text-white/40 hover:text-[#00B4B4] text-sm transition-colors mb-8"
+            className="inline-flex items-center gap-1.5 text-white/40 hover:text-[#2FBCAB] text-sm transition-colors mb-8"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -360,7 +360,7 @@ export default function BlogPost() {
           </Link>
           <div className="flex flex-wrap items-center gap-3 mb-6">
             <span
-              className="text-[#00B4B4] text-xs font-bold uppercase tracking-widest bg-[#00B4B4]/10 border border-[#00B4B4]/20 px-3 py-1.5 rounded-full"
+              className="text-[#2FBCAB] text-[13px] font-semibold"
               style={{ fontFamily: 'var(--font-heading)' }}
             >
               {article.category}
@@ -373,7 +373,7 @@ export default function BlogPost() {
             {article.title}
           </h1>
           <Byline datePublished={article.datePublished} dateModified={article.dateModified} readTime={article.readTime} />
-          <p className="text-white/60 text-lg leading-relaxed border-l-2 border-[#00B4B4]/40 pl-4">
+          <p className="text-white/60 text-lg leading-relaxed border-l-2 border-[#2FBCAB]/40 pl-4">
             {article.preview}
           </p>
         </div>
@@ -385,7 +385,7 @@ export default function BlogPost() {
           {figure && (
             <figure className="mb-6">
               {/* Linked to the large version so the small print can be read on a phone. */}
-              <a href={figure.full} target="_blank" rel="noopener" className="block rounded-2xl overflow-hidden border border-white/8 hover:border-[#00B4B4]/40 transition-colors">
+              <a href={figure.full} target="_blank" rel="noopener" className="block rounded-2xl overflow-hidden border border-white/8 hover:border-[#2FBCAB]/40 transition-colors">
                 <img
                   src={figure.src}
                   srcSet={figure.srcSet}
@@ -398,11 +398,11 @@ export default function BlogPost() {
                 />
               </a>
               <figcaption className="mt-3 text-white/45 text-sm leading-relaxed">
-                {figure.caption} <a href={figure.full} target="_blank" rel="noopener" className="text-[#00B4B4]/80 hover:text-[#00B4B4] whitespace-nowrap">View full size</a>
+                {figure.caption} <a href={figure.full} target="_blank" rel="noopener" className="text-[#2FBCAB]/80 hover:text-[#2FBCAB] whitespace-nowrap">View full size</a>
               </figcaption>
             </figure>
           )}
-          <div className="bg-[#0d1e35] border border-white/8 rounded-2xl p-7 md:p-10">
+          <div className="bg-[#1B2654] border border-white/8 rounded-2xl p-7 md:p-10">
             <MarkdownContent content={article.content} />
           </div>
           <ProductLinks slug={article.slug} />
@@ -415,7 +415,7 @@ export default function BlogPost() {
         <section className="px-6 pb-16">
           <div className="max-w-3xl mx-auto">
             <h2
-              className="text-[#00B4B4] text-xs font-bold uppercase tracking-widest mb-5"
+              className="text-[#2FBCAB] text-xs font-bold uppercase tracking-widest mb-5"
               style={{ fontFamily: 'var(--font-heading)' }}
             >
               More in {article.category}
@@ -425,10 +425,10 @@ export default function BlogPost() {
                 <Link
                   key={a.slug}
                   to={`/learn/${a.slug}`}
-                  className="group bg-[#0d1e35] border border-white/8 rounded-2xl p-5 hover:border-[#00B4B4]/40 transition-all duration-200 hover:-translate-y-0.5"
+                  className="group bg-[#1B2654] border border-white/8 rounded-2xl p-5 hover:border-[#2FBCAB]/40 transition-all duration-200"
                 >
                   <p
-                    className="text-white font-semibold text-sm leading-snug mb-2 group-hover:text-[#00B4B4] transition-colors"
+                    className="text-white font-semibold text-sm leading-snug mb-2 group-hover:text-[#2FBCAB] transition-colors"
                     style={{ fontFamily: 'var(--font-heading)' }}
                   >
                     {a.title}
@@ -445,13 +445,13 @@ export default function BlogPost() {
 
       {/* ── CTA ── */}
       <section className="py-20 border-t border-white/5 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#00B4B4]/8 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#2FBCAB]/8 to-transparent" />
         <div className="relative z-10 max-w-2xl mx-auto text-center px-6">
           <h2
             className="text-2xl md:text-4xl font-black text-white mb-4"
             style={{ fontFamily: 'var(--font-heading)' }}
           >
-            Found Something That <span className="text-[#00B4B4]">Interests You?</span>
+            Found Something That <span className="text-[#2FBCAB]">Interests You?</span>
           </h2>
           <p className="text-white/60 mb-8">
             Chat to us on WhatsApp — we'll help you understand your options and find the right compound for your goals.

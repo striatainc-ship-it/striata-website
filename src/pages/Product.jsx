@@ -63,7 +63,7 @@ export default function Product() {
   // by hand or left over from a renamed slug.
   if (!product) {
     return (
-      <div className="bg-[#0A1628] min-h-screen grid place-items-center px-6">
+      <div className="bg-[#141C3A] min-h-screen grid place-items-center px-6">
         <Helmet>
           <title>Product not found | STRIATA</title>
           <meta name="robots" content="noindex" />
@@ -127,7 +127,7 @@ function ProductPage({ product }) {
   const socialImage = image ? `${SITE_URL}${vialStill(image.names[0], 'og')}` : ogImageFor(productPath(product))
 
   return (
-    <div className="bg-[#0A1628] min-h-screen">
+    <div className="bg-[#141C3A] min-h-screen">
       <Helmet>
         <title>{metaTitle ?? `${product.name} | STRIATA South Africa`}</title>
         <meta name="description" content={metaDescription ?? product.description} />
@@ -197,13 +197,13 @@ function ProductPage({ product }) {
 
       {/* ── HERO: photo, price table, enquiry ── */}
       <section className="relative pt-32 pb-16 px-6 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#00B4B4]/5 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#2FBCAB]/5 to-transparent" />
 
         <div className="relative z-10 max-w-6xl mx-auto">
           <nav aria-label="Breadcrumb" className="mb-8">
             <ol className="flex items-center gap-2 text-sm text-white/40">
               <li>
-                <Link to="/catalogue" className="hover:text-[#00B4B4] transition-colors">
+                <Link to="/catalogue" className="hover:text-[#2FBCAB] transition-colors">
                   Catalogue
                 </Link>
               </li>
@@ -226,7 +226,7 @@ function ProductPage({ product }) {
               <div className="flex flex-wrap items-center gap-2 mb-5">
                 {inStock ? (
                   <span
-                    className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-widest text-green-400 bg-green-400/10 border border-green-400/20 px-3 py-1 rounded-full"
+                    className="inline-flex items-center gap-1.5 text-[13px] font-medium text-white/70"
                     style={H}
                   >
                     <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
@@ -234,7 +234,7 @@ function ProductPage({ product }) {
                   </span>
                 ) : (
                   <span
-                    className="text-[11px] font-bold uppercase tracking-widest text-white/35 bg-white/5 border border-white/10 px-3 py-1 rounded-full"
+                    className="text-[13px] font-medium text-white/40"
                     style={H}
                   >
                     On request
@@ -275,7 +275,7 @@ function ProductPage({ product }) {
                         <dt className="text-white/35 text-[11px] font-bold uppercase tracking-widest pt-0.5" style={H}>
                           {label}
                         </dt>
-                        <dd className={label === 'Evidence' ? 'text-[#00B4B4] font-semibold' : 'text-white/70'}>{value}</dd>
+                        <dd className={label === 'Evidence' ? 'text-[#2FBCAB] font-semibold' : 'text-white/70'}>{value}</dd>
                       </div>
                     ))}
                 </dl>
@@ -288,7 +288,7 @@ function ProductPage({ product }) {
                     <h2 className="text-white/35 text-[11px] font-bold uppercase tracking-widest" style={H}>
                       Concentrations · 1 {product.format ?? 'vial'}
                     </h2>
-                    <span className="text-[#00B4B4] text-sm font-bold">
+                    <span className="text-[#2FBCAB] text-sm font-bold">
                       {lowest === highest ? rand(lowest) : `from ${rand(lowest)}`}
                     </span>
                   </div>
@@ -304,19 +304,19 @@ function ProductPage({ product }) {
                           aria-pressed={isSelected}
                           className={`flex items-center justify-between px-4 py-3 rounded-xl text-sm transition-all duration-150 ${
                             isSelected
-                              ? 'bg-[#00B4B4]/15 border border-[#00B4B4]/60 text-white shadow-sm shadow-[#00B4B4]/10'
+                              ? 'bg-[#2FBCAB]/15 border border-[#2FBCAB]/60 text-white'
                               : tier.inStock
                                 ? 'bg-white/[0.04] border border-white/8 text-white/65 hover:border-white/20 hover:text-white/85'
                                 : 'bg-white/[0.02] border border-white/5 text-white/35 hover:border-white/15 hover:text-white/60'
                           }`}
                         >
-                          <span className="inline-flex items-center gap-2 font-mono tracking-wide">
+                          <span className="inline-flex items-center gap-2 tabular-nums">
                             {tier.inStock && (
                               <span className="w-1.5 h-1.5 rounded-full bg-green-400" aria-label="In stock" />
                             )}
                             {tier.dose}
                           </span>
-                          <span className={`font-bold tabular-nums ${isSelected ? 'text-[#00B4B4]' : ''}`}>
+                          <span className={`font-bold tabular-nums ${isSelected ? 'text-[#2FBCAB]' : ''}`}>
                             {rand(tier.price)}
                           </span>
                         </button>
@@ -356,7 +356,7 @@ function ProductPage({ product }) {
               </div>
               <Link
                 to="/tools/reconstitution-calculator"
-                className="inline-block mt-4 mr-6 text-sm text-white/55 hover:text-[#00B4B4] transition-colors"
+                className="inline-block mt-4 mr-6 text-sm text-white/55 hover:text-[#2FBCAB] transition-colors"
               >
                 Reconstitution calculator
               </Link>
@@ -364,9 +364,9 @@ function ProductPage({ product }) {
               {spray && (
                 <Link
                   to={spray.page}
-                  className="mt-4 inline-flex items-center gap-2 text-sm text-white/55 hover:text-[#00B4B4] transition-colors"
+                  className="mt-4 inline-flex items-center gap-2 text-sm text-white/55 hover:text-[#2FBCAB] transition-colors"
                 >
-                  <span className="text-[#00B4B4] font-semibold">Also as a nasal spray</span>
+                  <span className="text-[#2FBCAB] font-semibold">Also as a nasal spray</span>
                   <span className="text-white/35">· {spray.prices[0].dose}, ready to use, {rand(spray.prices[0].price)}</span>
                   <span aria-hidden="true">→</span>
                 </Link>
@@ -375,9 +375,9 @@ function ProductPage({ product }) {
               {serum && (
                 <Link
                   to={serum.page}
-                  className="mt-4 inline-flex items-center gap-2 text-sm text-white/55 hover:text-[#00B4B4] transition-colors"
+                  className="mt-4 inline-flex items-center gap-2 text-sm text-white/55 hover:text-[#2FBCAB] transition-colors"
                 >
-                  <span className="text-[#00B4B4] font-semibold">Also as a topical serum</span>
+                  <span className="text-[#2FBCAB] font-semibold">Also as a topical serum</span>
                   <span className="text-white/35">· 30 ml, from {rand(Math.min(...serum.prices.map((t) => t.price)))}</span>
                   <span aria-hidden="true">→</span>
                 </Link>
@@ -418,7 +418,7 @@ function ProductPage({ product }) {
                   {specs.rows.map((row, i) => (
                     <div
                       key={row.label}
-                      className={`grid sm:grid-cols-[11rem_1fr] gap-1 sm:gap-4 px-5 py-3.5 ${i % 2 ? 'bg-white/[0.02]' : 'bg-[#0d1e35]'}`}
+                      className={`grid sm:grid-cols-[11rem_1fr] gap-1 sm:gap-4 px-5 py-3.5 ${i % 2 ? 'bg-white/[0.02]' : 'bg-[#1B2654]'}`}
                     >
                       <dt className="text-white/45 text-xs font-semibold uppercase tracking-widest sm:pt-0.5">{row.label}</dt>
                       <dd className="text-white/75 text-sm leading-relaxed break-words">
@@ -426,7 +426,7 @@ function ProductPage({ product }) {
                         {row.href && (
                           <>
                             {' '}
-                            <a href={row.href} target="_blank" rel="noopener noreferrer" className="text-[#00B4B4] hover:text-white transition-colors whitespace-nowrap">
+                            <a href={row.href} target="_blank" rel="noopener noreferrer" className="text-[#2FBCAB] hover:text-white transition-colors whitespace-nowrap">
                               PubChem ↗
                             </a>
                           </>
@@ -458,7 +458,7 @@ function ProductPage({ product }) {
                   <div
                     key={item.title}
                     {...spotlightProps()}
-                    className="spot bg-[#0d1e35] border border-white/8 rounded-2xl p-6 hover:border-[#00B4B4]/30 transition-colors"
+                    className="spot bg-[#1B2654] border border-white/8 rounded-2xl p-6 hover:border-[#2FBCAB]/30 transition-colors"
                   >
                     <h3 className="text-white font-bold mb-2" style={H}>
                       {item.title}
@@ -535,7 +535,7 @@ function ProductPage({ product }) {
                   {specs.sources.map((src) => (
                     <li key={src.url} className="text-white/55 text-sm leading-relaxed pl-1">
                       {src.authors}{' '}
-                      <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-[#00B4B4] hover:text-white transition-colors">
+                      <a href={src.url} target="_blank" rel="noopener noreferrer" className="text-[#2FBCAB] hover:text-white transition-colors">
                         {src.title}
                       </a>
                       . <span className="italic">{src.journal}</span>, {src.year}.
@@ -558,13 +558,13 @@ function ProductPage({ product }) {
             <Link
               to={`/learn/${guidePost.slug}`}
               {...spotlightProps()}
-              className="spot block bg-[#0d1e35] border border-white/8 rounded-2xl p-6 hover:border-[#00B4B4]/40 transition-colors group"
+              className="spot block bg-[#1B2654] border border-white/8 rounded-2xl p-6 hover:border-[#2FBCAB]/40 transition-colors group"
             >
-              <span className="text-[#00B4B4] text-[11px] font-bold uppercase tracking-widest" style={H}>
+              <span className="text-[#2FBCAB] text-[11px] font-bold uppercase tracking-widest" style={H}>
                 {guidePost.category}
               </span>
               <h3
-                className="text-white font-bold text-lg mt-2 mb-2 group-hover:text-[#00B4B4] transition-colors"
+                className="text-white font-bold text-lg mt-2 mb-2 group-hover:text-[#2FBCAB] transition-colors"
                 style={H}
               >
                 {guidePost.title}
@@ -592,7 +592,7 @@ function ProductPage({ product }) {
                     key={item.id}
                     to={productPath(item)}
                     {...spotlightProps()}
-                    className="spot bg-[#0d1e35] border border-white/8 rounded-2xl p-5 hover:border-[#00B4B4]/40 transition-colors group flex gap-4 items-center"
+                    className="spot bg-[#1B2654] border border-white/8 rounded-2xl p-5 hover:border-[#2FBCAB]/40 transition-colors group flex gap-4 items-center"
                   >
                     {shot && (
                       <img
@@ -607,7 +607,7 @@ function ProductPage({ product }) {
                     )}
                     <div className="min-w-0">
                       <h3
-                        className="text-white font-bold text-sm group-hover:text-[#00B4B4] transition-colors leading-snug"
+                        className="text-white font-bold text-sm group-hover:text-[#2FBCAB] transition-colors leading-snug"
                         style={H}
                       >
                         {item.name}

@@ -14,7 +14,7 @@ export default function VialShot({ image, alt, labels, priority }) {
 
   if (!image) {
     return (
-      <div className="aspect-[4/5] rounded-3xl border border-white/8 bg-[#0d1e35] grid place-items-center">
+      <div className="aspect-[4/5] rounded-3xl border border-white/8 bg-[#1B2654] grid place-items-center">
         <span className="text-white/25 text-sm">Photography coming soon</span>
       </div>
     )
@@ -31,7 +31,7 @@ export default function VialShot({ image, alt, labels, priority }) {
             pasted onto the navy. */}
         <div
           className="absolute inset-[8%] rounded-full blur-3xl opacity-60"
-          style={{ background: 'radial-gradient(circle, rgba(0,180,180,0.22), transparent 68%)' }}
+          style={{ background: 'radial-gradient(circle, rgba(47, 188, 171,0.22), transparent 68%)' }}
         />
         <img
           key={name}
@@ -58,7 +58,7 @@ export default function VialShot({ image, alt, labels, priority }) {
               aria-pressed={i === active}
               className={`flex flex-col items-center gap-1 px-3 py-2 rounded-xl border transition-colors ${
                 i === active
-                  ? 'border-[#00B4B4]/60 bg-[#00B4B4]/10'
+                  ? 'border-[#2FBCAB]/60 bg-[#2FBCAB]/10'
                   : 'border-white/8 bg-white/[0.03] hover:border-white/20'
               }`}
             >
@@ -72,7 +72,7 @@ export default function VialShot({ image, alt, labels, priority }) {
                 className="w-5 h-10 object-contain"
               />
               {labels?.[i] && (
-                <span className={`text-[10px] font-mono ${i === active ? 'text-[#00B4B4]' : 'text-white/40'}`}>
+                <span className={`text-[10px] tabular-nums ${i === active ? 'text-[#2FBCAB]' : 'text-white/40'}`}>
                   {labels[i]}
                 </span>
               )}

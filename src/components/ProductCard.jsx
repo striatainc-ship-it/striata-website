@@ -2,7 +2,6 @@ import { memo, useState } from 'react'
 import { Link } from 'react-router-dom'
 import { isInStock, productPath, vialImage, vialSrc } from '../data/products'
 import { guideFor } from '../data/productGuides'
-import { spotlightProps } from '../lib/motion'
 import { enquiryLink } from '../lib/cart'
 import AddToOrder from './AddToOrder'
 
@@ -82,8 +81,7 @@ function ProductCard({ product, format: formatProp = 'Vial' }) {
 
   return (
     <div
-      {...spotlightProps()}
-      className="spot cv-auto group bg-[#0d1e35] border border-white/8 rounded-2xl p-3.5 md:p-5 flex flex-col hover:border-[#00B4B4]/40 transition-all duration-300 hover:shadow-xl hover:shadow-[#00B4B4]/10 md:hover:-translate-y-1"
+      className="cv-auto group bg-[#1B2654] border border-white/8 rounded-2xl p-3.5 md:p-5 flex flex-col hover:border-white/20 transition-colors duration-300"
     >
 
       {/* The pens are landscape shots of box and pen on white, too wide for
@@ -104,7 +102,7 @@ function ProductCard({ product, format: formatProp = 'Vial' }) {
           {/* The placeholder has no compound on it; say so rather than let it
               pass for a photo of this pen. */}
           {shot.placeholder && (
-            <span className="absolute bottom-1.5 right-2 text-[9px] md:text-[10px] font-semibold uppercase tracking-widest text-[#0A1628]/45">
+            <span className="absolute bottom-1.5 right-2 text-[9px] md:text-[10px] font-semibold uppercase tracking-widest text-[#141C3A]/45">
               Illustrative image
             </span>
           )}
@@ -130,40 +128,37 @@ function ProductCard({ product, format: formatProp = 'Vial' }) {
 
         <div className="min-w-0 flex-1">
           {/* Badges */}
-          <div className="flex flex-wrap items-center gap-1.5 mb-2.5">
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-1 mb-1.5">
             {product.featured && (
               <span
-                className="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-[#00B4B4] bg-[#00B4B4]/10 border border-[#00B4B4]/20 px-2 py-0.5 rounded-full"
-                style={{ fontFamily: 'var(--font-heading)' }}
+                className="text-[11px] font-semibold text-[#2FBCAB]"
               >
                 Popular
               </span>
             )}
             {inStock ? (
               <span
-                className="inline-flex items-center gap-1 text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-green-400 bg-green-400/10 border border-green-400/20 px-2 py-0.5 rounded-full"
-                style={{ fontFamily: 'var(--font-heading)' }}
+                className="inline-flex items-center gap-1.5 text-[11px] font-medium text-white/60"
               >
                 <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
-                In Stock
+                In stock
               </span>
             ) : (
               <span
-                className="text-[9px] md:text-[10px] font-bold uppercase tracking-widest text-white/35 bg-white/5 border border-white/10 px-2 py-0.5 rounded-full"
-                style={{ fontFamily: 'var(--font-heading)' }}
+                className="text-[11px] font-medium text-white/35"
               >
-                Out of Stock
+                Out of stock
               </span>
             )}
           </div>
 
           {/* Name */}
           <h3
-            className="text-white font-bold text-sm md:text-base group-hover:text-[#00B4B4] transition-colors leading-snug line-clamp-2"
+            className="text-white font-bold text-sm md:text-base group-hover:text-[#2FBCAB] transition-colors leading-snug line-clamp-2"
             style={{ fontFamily: 'var(--font-heading)' }}
           >
             {href ? (
-              <Link to={href} className="hover:underline decoration-[#00B4B4]/40 underline-offset-4">
+              <Link to={href} className="hover:underline decoration-[#2FBCAB]/40 underline-offset-4">
                 {product.name}
               </Link>
             ) : (
@@ -183,7 +178,7 @@ function ProductCard({ product, format: formatProp = 'Vial' }) {
           {href && (
             <Link
               to={href}
-              className="inline-flex items-center gap-1 text-[#00B4B4] text-[11px] md:text-xs font-semibold hover:text-white transition-colors"
+              className="inline-flex items-center gap-1 text-[#2FBCAB] text-[11px] md:text-xs font-semibold hover:text-white transition-colors"
             >
               Full details
               <span aria-hidden="true">→</span>
@@ -192,7 +187,7 @@ function ProductCard({ product, format: formatProp = 'Vial' }) {
           {guide && (
             <Link
               to={`/learn/${guide}`}
-              className="inline-flex items-center gap-1 text-white/40 text-[11px] md:text-xs font-semibold hover:text-[#00B4B4] transition-colors"
+              className="inline-flex items-center gap-1 text-white/40 text-[11px] md:text-xs font-semibold hover:text-[#2FBCAB] transition-colors"
             >
               Read our guide
             </Link>
@@ -220,8 +215,8 @@ function ProductCard({ product, format: formatProp = 'Vial' }) {
 
           {/* Single tier — same on all screen sizes */}
           {isSingleTier ? (
-            <div className="flex items-center justify-between bg-[#00B4B4]/8 border border-[#00B4B4]/20 rounded-xl px-3 py-2.5">
-              <span className="inline-flex items-center gap-1.5 text-white/70 text-xs font-mono tracking-wide">
+            <div className="flex items-center justify-between bg-[#2FBCAB]/8 border border-[#2FBCAB]/20 rounded-xl px-3 py-2.5">
+              <span className="inline-flex items-center gap-1.5 text-white/70 text-xs tabular-nums">
                 <StockDot tier={product.prices[0]} />
                 {product.prices[0].dose}
               </span>
@@ -234,13 +229,13 @@ function ProductCard({ product, format: formatProp = 'Vial' }) {
               {/* ── MOBILE: accordion toggle ── */}
               <button
                 onClick={() => setIsPricingOpen((o) => !o)}
-                className={`md:hidden w-full flex items-center justify-between px-3 py-2.5 rounded-xl text-xs font-semibold transition-all duration-150 ${
+                className={`md:hidden w-full flex items-center justify-between gap-1 px-2.5 py-2.5 rounded-xl text-[11px] font-semibold whitespace-nowrap transition-all duration-150 ${
                   isPricingOpen
-                    ? 'bg-[#00B4B4]/10 border border-[#00B4B4]/40 text-[#00B4B4]'
+                    ? 'bg-[#2FBCAB]/10 border border-[#2FBCAB]/40 text-[#2FBCAB]'
                     : 'bg-white/[0.05] border border-white/10 text-white/70'
                 }`}
               >
-                <span className={selectedTier ? 'text-[#00B4B4]' : ''}>{mobileSummaryLabel}</span>
+                <span className={selectedTier ? 'text-[#2FBCAB]' : ''}>{mobileSummaryLabel}</span>
                 <ChevronDown open={isPricingOpen} />
               </button>
 
@@ -255,17 +250,17 @@ function ProductCard({ product, format: formatProp = 'Vial' }) {
                         onClick={() => toggleTier(tier)}
                         className={`flex items-center justify-between px-3 py-2 rounded-xl text-xs transition-all duration-150 ${
                           isSelected
-                            ? 'bg-[#00B4B4]/15 border border-[#00B4B4]/60 text-white'
+                            ? 'bg-[#2FBCAB]/15 border border-[#2FBCAB]/60 text-white'
                             : tier.inStock
                               ? 'bg-white/[0.04] border border-white/8 text-white/60'
                               : 'bg-white/[0.02] border border-white/5 text-white/35'
                         }`}
                       >
-                        <span className="inline-flex items-center gap-1.5 font-mono tracking-wide">
+                        <span className="inline-flex items-center gap-1.5 tabular-nums">
                           <StockDot tier={tier} />
                           {tier.dose}
                         </span>
-                        <span className={`font-bold tabular-nums ${isSelected ? 'text-[#00B4B4]' : ''}`}>
+                        <span className={`font-bold tabular-nums ${isSelected ? 'text-[#2FBCAB]' : ''}`}>
                           {fmtFull(tier.price)}
                         </span>
                       </button>
@@ -277,10 +272,10 @@ function ProductCard({ product, format: formatProp = 'Vial' }) {
               {/* ── DESKTOP: always-visible tile grid ── */}
               <div className="hidden md:block">
                 <div className="flex items-center justify-between mb-2">
-                  <span className="text-white/30 text-[10px] font-bold uppercase tracking-widest">
-                    Pricing · 1 {format}
+                  <span className="text-white/40 text-[11px] font-medium">
+                    Price per {format.toLowerCase()}
                   </span>
-                  <span className="text-[#00B4B4] text-xs font-bold">
+                  <span className="text-[#2FBCAB] text-xs font-bold">
                     from {fmtShort(lowestPrice)}
                   </span>
                 </div>
@@ -293,17 +288,17 @@ function ProductCard({ product, format: formatProp = 'Vial' }) {
                         onClick={() => toggleTier(tier)}
                         className={`flex items-center justify-between px-3 py-2 rounded-xl text-xs transition-all duration-150 ${
                           isSelected
-                            ? 'bg-[#00B4B4]/15 border border-[#00B4B4]/60 text-white shadow-sm shadow-[#00B4B4]/10'
+                            ? 'bg-[#2FBCAB]/15 border border-[#2FBCAB]/60 text-white'
                             : tier.inStock
                               ? 'bg-white/[0.04] border border-white/8 text-white/60 hover:border-white/20 hover:text-white/80 hover:bg-white/[0.07]'
                               : 'bg-white/[0.02] border border-white/5 text-white/35 hover:border-white/15 hover:text-white/60'
                         }`}
                       >
-                        <span className="inline-flex items-center gap-1.5 font-mono tracking-wide">
+                        <span className="inline-flex items-center gap-1.5 tabular-nums">
                           <StockDot tier={tier} />
                           {tier.dose}
                         </span>
-                        <span className={`font-bold tabular-nums ${isSelected ? 'text-[#00B4B4]' : ''}`}>
+                        <span className={`font-bold tabular-nums ${isSelected ? 'text-[#2FBCAB]' : ''}`}>
                           {fmtFull(tier.price)}
                         </span>
                       </button>
@@ -326,7 +321,7 @@ function ProductCard({ product, format: formatProp = 'Vial' }) {
       )}
 
       {needTier && !selectedTier && (
-        <p className="md:hidden -mt-1 mb-2 text-[11px] text-[#00B4B4]">Pick a size to add it to your order</p>
+        <p className="md:hidden -mt-1 mb-2 text-[11px] text-[#2FBCAB]">Pick a size to add it to your order</p>
       )}
 
       {/* Add to the order slip, or ask about this one product on its own */}
@@ -342,8 +337,8 @@ function ProductCard({ product, format: formatProp = 'Vial' }) {
             compact
             className={`flex-1 min-w-0 flex items-center justify-center border text-xs md:text-sm font-semibold py-2.5 px-2 rounded-xl transition-all duration-200 cursor-pointer ${
               activeTier
-                ? 'bg-[#00B4B4] border-[#00B4B4] text-white hover:bg-[#009999] hover:border-[#009999] shadow-md shadow-[#00B4B4]/20'
-                : 'bg-[#00B4B4]/10 hover:bg-[#00B4B4]/20 border-[#00B4B4]/30 text-[#00B4B4]'
+                ? 'bg-[#2FBCAB] border-[#2FBCAB] text-[#141C3A] hover:bg-[#25A192] hover:border-[#25A192]'
+                : 'bg-[#2FBCAB]/10 hover:bg-[#2FBCAB]/20 border-[#2FBCAB]/30 text-[#2FBCAB]'
             }`}
           />
         ) : null}

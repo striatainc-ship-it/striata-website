@@ -36,7 +36,7 @@ export default function FilterChips({ options, value, onChange, renderIcon, clas
       {pill && (
         <span
           aria-hidden="true"
-          className="absolute top-0 left-0 h-full rounded-full bg-[#00B4B4] shadow-lg shadow-[#00B4B4]/20 transition-[transform,width] duration-300 ease-out"
+          className="absolute top-0 left-0 h-full rounded-full bg-[#2FBCAB] transition-[transform,width] duration-300 ease-out"
           style={{ width: pill.width, transform: `translateX(${pill.left}px)` }}
         />
       )}
@@ -51,8 +51,8 @@ export default function FilterChips({ options, value, onChange, renderIcon, clas
             onClick={() => onChange(opt.id)}
             className={`relative z-[1] flex-none flex items-center gap-1.5 px-3.5 md:px-4 py-2 rounded-full border text-xs md:text-sm font-semibold whitespace-nowrap transition-colors duration-300 ${
               active
-                ? `border-transparent text-white ${pill ? '' : 'bg-[#00B4B4]'}`
-                : 'bg-[#0d1e35] border-white/10 text-white/60 hover:text-white hover:border-[#00B4B4]/30'
+                ? `border-transparent text-white ${pill ? '' : 'bg-[#2FBCAB]'}`
+                : 'bg-[#1B2654] border-white/10 text-white/60 hover:text-white hover:border-[#2FBCAB]/30'
             }`}
             style={{ fontFamily: 'var(--font-body)' }}
           >

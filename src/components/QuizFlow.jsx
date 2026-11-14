@@ -111,7 +111,7 @@ export default function QuizFlow({ onRestart }) {
         <span>{progress}%</span>
       </div>
       <div className="h-1.5 rounded-full bg-white/10 overflow-hidden mb-6" role="progressbar" aria-valuenow={progress} aria-valuemin={0} aria-valuemax={100} aria-label="Quiz progress">
-        <div className="h-full bg-[#00B4B4] rounded-full transition-[width] duration-500 ease-out" style={{ width: `${progress}%` }} />
+        <div className="h-full bg-[#2FBCAB] rounded-full transition-[width] duration-500 ease-out" style={{ width: `${progress}%` }} />
       </div>
 
       {/* What has been chosen so far; each chip jumps back to its question. */}
@@ -121,7 +121,7 @@ export default function QuizFlow({ onRestart }) {
             key={q.id}
             type="button"
             onClick={() => setStep(questions.indexOf(q))}
-            className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs text-white/60 hover:border-[#00B4B4]/50 hover:text-white transition-colors cursor-pointer"
+            className="inline-flex items-center gap-1.5 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-xs text-white/60 hover:border-[#2FBCAB]/50 hover:text-white transition-colors cursor-pointer"
             aria-label={`Change ${CHIP_NAME[q.id] ?? q.id}: ${answerLabel(q.id, answers[q.id])}`}
           >
             <span className="text-white/35">{CHIP_NAME[q.id] ?? q.id}</span>
@@ -153,8 +153,8 @@ export default function QuizFlow({ onRestart }) {
                 aria-pressed={selected}
                 className={`group text-left rounded-2xl border px-5 py-4 transition-all duration-200 cursor-pointer min-h-[72px] flex items-center justify-between gap-3 ${
                   selected || isPending
-                    ? 'border-[#00B4B4] bg-[#00B4B4]/12 shadow-lg shadow-[#00B4B4]/10'
-                    : 'border-white/10 bg-[#0d1e35] hover:border-[#00B4B4]/50 hover:bg-[#0f2340]'
+                    ? 'border-[#2FBCAB] bg-[#2FBCAB]/12'
+                    : 'border-white/10 bg-[#1B2654] hover:border-[#2FBCAB]/50 hover:bg-[#1F2C58]'
                 }`}
               >
                 <span>
@@ -163,7 +163,7 @@ export default function QuizFlow({ onRestart }) {
                 </span>
                 <span
                   className={`w-7 h-7 rounded-full border flex items-center justify-center shrink-0 transition-colors ${
-                    selected || isPending ? 'bg-[#00B4B4] border-[#00B4B4] text-white' : 'border-white/15 text-transparent group-hover:border-[#00B4B4]/50'
+                    selected || isPending ? 'bg-[#2FBCAB] border-[#2FBCAB] text-[#141C3A]' : 'border-white/15 text-transparent group-hover:border-[#2FBCAB]/50'
                   }`}
                   aria-hidden="true"
                 >
@@ -179,7 +179,7 @@ export default function QuizFlow({ onRestart }) {
       </div>
 
       <div className="mt-10 flex items-center justify-between">
-        <button type="button" onClick={back} className="inline-flex items-center gap-1.5 text-white/45 hover:text-[#00B4B4] text-sm transition-colors cursor-pointer">
+        <button type="button" onClick={back} className="inline-flex items-center gap-1.5 text-white/45 hover:text-[#2FBCAB] text-sm transition-colors cursor-pointer">
           {BACK}
           {step === 0 ? LANDING.restart : 'Back'}
         </button>

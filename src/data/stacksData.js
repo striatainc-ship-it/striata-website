@@ -1,5 +1,5 @@
 export const CATEGORY_META = {
-  gym:        { label: 'Gym / Fitness',    color: '#00B4B4', lightColor: 'rgba(0,180,180,0.08)',  border: 'rgba(0,180,180,0.3)'  },
+  gym:        { label: 'Gym / Fitness',    color: '#2FBCAB', lightColor: 'rgba(47, 188, 171,0.08)',  border: 'rgba(47, 188, 171,0.3)'  },
   weightloss: { label: 'Weight Loss',      color: '#D97706', lightColor: 'rgba(217,119,6,0.08)',  border: 'rgba(217,119,6,0.3)'  },
   antiaging:  { label: 'Anti-Aging',       color: '#8B5CF6', lightColor: 'rgba(139,92,246,0.08)', border: 'rgba(139,92,246,0.3)' },
   wellness:   { label: 'General Wellness', color: '#3B82F6', lightColor: 'rgba(59,130,246,0.08)', border: 'rgba(59,130,246,0.3)' },
@@ -10,26 +10,27 @@ export const randValue = (price) => Number(price.replace(/[^\d]/g, ''))
 
 
 // ─── Tier colour system ──────────────────────────────────────────────────────
-// Entry = blue (accessible, introductory)
-// Mid   = amber (enhanced, intermediate)
-// Premium = emerald (elite, best-in-class)
+// The tiers used to be blue, amber and green rows. On a card that already
+// carries a category colour and a safety colour, that made three competing
+// codes. The rows are now neutral and step up in brightness only, so colour
+// is left to mean one thing on the card: safety.
 export const TIER_STYLES = {
   Entry: {
-    bg:       'rgba(59,130,246,0.10)',
-    label:    '#93C5FD',
-    price:    '#93C5FD',
-    text:     'rgba(255,255,255,0.65)',
+    bg:       'transparent',
+    label:    'rgba(255,255,255,0.60)',
+    price:    'rgba(255,255,255,0.85)',
+    text:     'rgba(255,255,255,0.60)',
   },
   Mid: {
-    bg:       'rgba(245,158,11,0.10)',
-    label:    '#FCD34D',
-    price:    '#FCD34D',
-    text:     'rgba(255,255,255,0.65)',
+    bg:       'rgba(255,255,255,0.025)',
+    label:    'rgba(255,255,255,0.80)',
+    price:    '#FFFFFF',
+    text:     'rgba(255,255,255,0.68)',
   },
   Premium: {
-    bg:       '#0B3D2B',
-    label:    '#34D399',
-    price:    '#34D399',
+    bg:       'rgba(47, 188, 171,0.07)',
+    label:    '#6FD6C9',
+    price:    '#FFFFFF',
     text:     'rgba(255,255,255,0.80)',
   },
 }

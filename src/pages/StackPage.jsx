@@ -26,7 +26,7 @@ export default function StackPage() {
 
   if (!stack) {
     return (
-      <div className="bg-[#0A1628] min-h-screen grid place-items-center px-6">
+      <div className="bg-[#141C3A] min-h-screen grid place-items-center px-6">
         <Helmet>
           <title>Stack not found | STRIATA</title>
           <meta name="robots" content="noindex" />
@@ -61,7 +61,7 @@ export default function StackPage() {
   ].slice(0, 3)
 
   return (
-    <div className="bg-[#0A1628] min-h-screen">
+    <div className="bg-[#141C3A] min-h-screen">
       <Helmet>
         <title>{title}</title>
         <meta name="description" content={description} />
@@ -156,11 +156,11 @@ export default function StackPage() {
                   key={s.num}
                   to={stackPath(s)}
                   {...spotlightProps()}
-                  className="spot bg-[#0d1e35] border border-white/8 rounded-2xl p-5 hover:border-[#00B4B4]/40 transition-colors group"
+                  className="spot bg-[#1B2654] border border-white/8 rounded-2xl p-5 hover:border-[#2FBCAB]/40 transition-colors group"
                   style={{ borderLeft: `3px solid ${m.color}` }}
                 >
                   <p className="text-[11px] font-bold uppercase tracking-widest mb-2" style={{ color: m.color }}>{m.label}</p>
-                  <h3 className="text-white font-bold mb-1 group-hover:text-[#00B4B4] transition-colors" style={H}>{s.name}</h3>
+                  <h3 className="text-white font-bold mb-1 group-hover:text-[#2FBCAB] transition-colors" style={H}>{s.name}</h3>
                   <p className="text-white/45 text-sm">{s.tagline}</p>
                 </Link>
               )

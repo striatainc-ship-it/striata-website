@@ -96,7 +96,7 @@ const STACKS = [
     targets: ['Somatopause', 'Visceral adiposity', 'Fatigue and poor recovery', 'Accelerated cellular aging'],
     begins: 'Week 1',
     vials: 3,
-    color: '#00B4B4',
+    color: '#2FBCAB',
     icon: (
       <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true">
         <path d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0l3.181 3.183a8.25 8.25 0 0013.803-3.7M4.031 9.865a8.25 8.25 0 0113.803-3.7l3.181 3.182m0-4.991v4.99" />
@@ -150,7 +150,7 @@ function SectionHeading({ eyebrow, title, children }) {
   return (
     <Reveal stagger className="max-w-3xl mb-12">
       {eyebrow && (
-        <p className="text-[#00B4B4] text-xs font-bold uppercase tracking-widest mb-3" style={H}>{eyebrow}</p>
+        <p className="text-[#2FBCAB] text-xs font-bold uppercase tracking-widest mb-3" style={H}>{eyebrow}</p>
       )}
       <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight leading-tight mb-4" style={H}>{title}</h2>
       {children && <p className="text-white/60 text-lg leading-relaxed">{children}</p>}
@@ -160,7 +160,7 @@ function SectionHeading({ eyebrow, title, children }) {
 
 export default function MenopauseReset() {
   return (
-    <div className="bg-[#0A1628] min-h-screen">
+    <div className="bg-[#141C3A] min-h-screen">
       <Helmet>
         <title>Menopause Reset: 12-Week Peptide Protocol | STRIATA</title>
         <meta name="description" content="A 12-week, four-stack peptide protocol for menopause: sleep, skin and collagen, libido and cellular anti-aging. 21 vials over 84 days, South Africa." />
@@ -174,9 +174,9 @@ export default function MenopauseReset() {
       <section className="relative pt-36 pb-24 px-6 overflow-hidden">
         <div
           className="absolute inset-0 opacity-[0.07]"
-          style={{ backgroundImage: 'radial-gradient(circle at 15% 40%, #F2B8A0 0%, transparent 45%), radial-gradient(circle at 85% 20%, #00B4B4 0%, transparent 45%), radial-gradient(circle at 70% 90%, #8B9CF6 0%, transparent 40%)' }}
+          style={{ backgroundImage: 'radial-gradient(circle at 15% 40%, #F2B8A0 0%, transparent 45%), radial-gradient(circle at 85% 20%, #2FBCAB 0%, transparent 45%), radial-gradient(circle at 70% 90%, #8B9CF6 0%, transparent 40%)' }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#0A1628]/40 to-[#0A1628]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent via-[#141C3A]/40 to-[#141C3A]" />
 
         <div className="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-[1.2fr_1fr] gap-12 lg:gap-16 items-center">
           <Reveal stagger delay={0.1}>
@@ -185,8 +185,8 @@ export default function MenopauseReset() {
               Peptide Stacks
             </Link>
             <span className="block">
-              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#00B4B4]/10 border border-[#00B4B4]/20 text-[#00B4B4] text-xs font-semibold uppercase tracking-widest mb-6" style={H}>
-                <span className="w-1.5 h-1.5 rounded-full bg-[#00B4B4]" />
+              <span className="eyebrow mb-6" style={H}>
+                <span className="w-1.5 h-1.5 rounded-full bg-[#2FBCAB]" />
                 Practitioner-Supplied Protocol
               </span>
             </span>
@@ -213,7 +213,7 @@ export default function MenopauseReset() {
 
           {/* Kit at a glance */}
           <Reveal delay={0.35}>
-            <div {...spotlightProps()} className="spot rounded-3xl border border-white/10 bg-[#0d1e35]/80 backdrop-blur p-6 md:p-8">
+            <div {...spotlightProps()} className="spot rounded-3xl border border-white/10 bg-[#1B2654]/80 backdrop-blur p-6 md:p-8">
               <p className="text-white/40 text-[10px] font-bold uppercase tracking-widest mb-5" style={H}>The kit at a glance</p>
               <div className="grid grid-cols-3 gap-3 mb-7">
                 {[
@@ -246,9 +246,9 @@ export default function MenopauseReset() {
       </section>
 
       {/* ── WHY MULTI-SYSTEM ─────────────────────────────────────────── */}
-      <section className="py-24 px-6 bg-[#060e1a]">
+      <section className="py-24 px-6 bg-[#0F152E]">
         <div className="max-w-7xl mx-auto">
-          <SectionHeading eyebrow="The Approach" title={<>Why a <span className="text-[#00B4B4]">Multi-System</span> Approach</>}>
+          <SectionHeading eyebrow="The Approach" title={<>Why a <span className="text-[#2FBCAB]">Multi-System</span> Approach</>}>
             Oestrogen and progesterone don't only regulate reproduction. Their withdrawal cascades through three separate systems — the reproductive axis, the stress axis, and the growth hormone axis — at the same time. That's why the symptom list is so scattered, and why it rarely responds to one intervention.
           </SectionHeading>
 
@@ -257,7 +257,7 @@ export default function MenopauseReset() {
               <div
                 key={title}
                 {...spotlightProps()}
-                className="spot rounded-2xl border border-white/8 bg-[#0d1e35] p-6 hover:border-white/20 transition-colors duration-300"
+                className="spot rounded-2xl border border-white/8 bg-[#1B2654] p-6 hover:border-white/20 transition-colors duration-300"
               >
                 <p className="text-[10px] font-bold tracking-widest mb-4" style={{ ...H, color: STACKS[i].color }}>0{i + 1}</p>
                 <p className="text-white font-bold mb-2 leading-snug" style={H}>{title}</p>
@@ -275,7 +275,7 @@ export default function MenopauseReset() {
       {/* ── THE FOUR STACKS ──────────────────────────────────────────── */}
       <section className="py-24 px-6">
         <div className="max-w-7xl mx-auto">
-          <SectionHeading eyebrow="What's Inside" title={<>The <span className="text-[#00B4B4]">Four Stacks</span></>}>
+          <SectionHeading eyebrow="What's Inside" title={<>The <span className="text-[#2FBCAB]">Four Stacks</span></>}>
             Each stack targets one symptom cluster. Together they cover ground that diet, supplements and GLP-1 protocols generally don't reach.
           </SectionHeading>
 
@@ -284,7 +284,7 @@ export default function MenopauseReset() {
               <Reveal key={s.name} delay={i * 0.05}>
                 <article
                   {...spotlightProps()}
-                  className="spot h-full rounded-3xl border border-white/8 bg-[#0d1e35] p-7 md:p-9 flex flex-col hover:border-white/20 transition-all duration-300 hover:-translate-y-1"
+                  className="spot h-full rounded-3xl border border-white/8 bg-[#1B2654] p-7 md:p-9 flex flex-col hover:border-white/20 transition-all duration-300"
                   style={{ '--stack': s.color }}
                 >
                   <div className="flex items-start justify-between gap-4 mb-6">
@@ -339,15 +339,15 @@ export default function MenopauseReset() {
       </section>
 
       {/* ── KIT + TIMELINE ───────────────────────────────────────────── */}
-      <section className="py-24 px-6 bg-[#060e1a]">
+      <section className="py-24 px-6 bg-[#0F152E]">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-[1fr_1.4fr] gap-12 lg:gap-20">
           {/* Kit */}
           <div>
-            <SectionHeading eyebrow="The Kit" title={<>{TOTAL_VIALS} Vials, <span className="text-[#00B4B4]">84 Days</span></>}>
+            <SectionHeading eyebrow="The Kit" title={<>{TOTAL_VIALS} Vials, <span className="text-[#2FBCAB]">84 Days</span></>}>
               All supplied lyophilised, covering the full 12 weeks. All required bacteriostatic water is included.
             </SectionHeading>
 
-            <Reveal className="rounded-3xl border border-white/8 bg-[#0d1e35] p-6 md:p-7">
+            <Reveal className="rounded-3xl border border-white/8 bg-[#1B2654] p-6 md:p-7">
               <div className="flex h-3 rounded-full overflow-hidden mb-6 gap-0.5">
                 {STACKS.map((s) => (
                   <span key={s.name} style={{ width: `${(s.vials / TOTAL_VIALS) * 100}%`, backgroundColor: s.color }} />
@@ -364,7 +364,7 @@ export default function MenopauseReset() {
                 <li className="flex items-center gap-3 text-sm pt-3 border-t border-white/8">
                   <span className="w-2.5 h-2.5 shrink-0" />
                   <span className="text-white font-bold flex-1" style={H}>Total</span>
-                  <span className="text-[#00B4B4] font-bold tabular-nums">{TOTAL_VIALS} vials</span>
+                  <span className="text-[#2FBCAB] font-bold tabular-nums">{TOTAL_VIALS} vials</span>
                 </li>
               </ul>
               <p className="mt-6 text-white/40 text-xs leading-relaxed">
@@ -375,16 +375,16 @@ export default function MenopauseReset() {
 
           {/* Timeline */}
           <div>
-            <SectionHeading eyebrow="The Schedule" title={<>How the <span className="text-[#00B4B4]">12 Weeks</span> Run</>} />
+            <SectionHeading eyebrow="The Schedule" title={<>How the <span className="text-[#2FBCAB]">12 Weeks</span> Run</>} />
 
             <Reveal stagger className="relative">
-              <div className="absolute left-[19px] top-4 bottom-4 w-px bg-gradient-to-b from-[#00B4B4]/60 via-white/15 to-transparent hidden sm:block" aria-hidden="true" />
+              <div className="absolute left-[19px] top-4 bottom-4 w-px bg-gradient-to-b from-[#2FBCAB]/60 via-white/15 to-transparent hidden sm:block" aria-hidden="true" />
               {PHASES.map((p, i) => (
                 <div key={p.title} className="relative sm:pl-14 pb-10 last:pb-0">
-                  <span className="hidden sm:flex absolute left-0 top-0 w-10 h-10 rounded-full bg-[#0A1628] border border-[#00B4B4]/40 text-[#00B4B4] items-center justify-center text-xs font-black" style={H}>
+                  <span className="hidden sm:flex absolute left-0 top-0 w-10 h-10 rounded-full bg-[#141C3A] border border-[#2FBCAB]/40 text-[#2FBCAB] items-center justify-center text-xs font-black" style={H}>
                     {i + 1}
                   </span>
-                  <p className="text-[#00B4B4] text-xs font-bold uppercase tracking-widest mb-1" style={H}>{p.weeks}</p>
+                  <p className="text-[#2FBCAB] text-xs font-bold uppercase tracking-widest mb-1" style={H}>{p.weeks}</p>
                   <h3 className="text-white font-black text-xl md:text-2xl tracking-tight mb-2" style={H}>{p.title}</h3>
                   <p className="text-white/55 text-sm leading-relaxed mb-3 max-w-xl">{p.desc}</p>
                   {p.stacks.length > 0 && (
@@ -406,17 +406,17 @@ export default function MenopauseReset() {
       {/* ── BEFORE YOU START ─────────────────────────────────────────── */}
       <section className="py-24 px-6">
         <div className="max-w-7xl mx-auto">
-          <SectionHeading eyebrow="Screening" title={<>Before You <span className="text-[#00B4B4]">Start</span></>}>
+          <SectionHeading eyebrow="Screening" title={<>Before You <span className="text-[#2FBCAB]">Start</span></>}>
             The Reset begins with baseline bloodwork. This isn't a formality — it establishes your reference values, confirms the protocol is appropriate for you, and gives you and your practitioner something concrete to measure against at Week 12.
           </SectionHeading>
 
           <Reveal stagger className="grid md:grid-cols-2 gap-5">
-            <div className="rounded-3xl border border-white/8 bg-[#0d1e35] p-7">
+            <div className="rounded-3xl border border-white/8 bg-[#1B2654] p-7">
               <p className="text-white font-bold mb-4" style={H}>Your practitioner will typically request</p>
               <ul className="grid grid-cols-2 gap-x-4 gap-y-2.5">
                 {BLOODWORK.map((b) => (
                   <li key={b} className="flex items-start gap-2 text-sm text-white/65">
-                    <span className="text-[#00B4B4]">{CHECK}</span>
+                    <span className="text-[#2FBCAB]">{CHECK}</span>
                     {b}
                   </li>
                 ))}
@@ -439,7 +439,7 @@ export default function MenopauseReset() {
             </div>
           </Reveal>
 
-          <Reveal className="mt-5 rounded-2xl border border-white/8 bg-[#0d1e35] px-6 py-5 flex gap-4 items-start">
+          <Reveal className="mt-5 rounded-2xl border border-white/8 bg-[#1B2654] px-6 py-5 flex gap-4 items-start">
             <span className="w-9 h-9 rounded-xl bg-white/5 border border-white/8 text-white/60 flex items-center justify-center shrink-0">
               <svg className="w-4.5 h-4.5" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 12h6m-6 4h6M7.5 3.75H18A2.25 2.25 0 0120.25 6v12A2.25 2.25 0 0118 20.25H6A2.25 2.25 0 013.75 18V6A2.25 2.25 0 016 3.75h1.5" /></svg>
             </span>
@@ -451,9 +451,9 @@ export default function MenopauseReset() {
       </section>
 
       {/* ── WHAT YOU'LL SUPPLY ───────────────────────────────────────── */}
-      <section className="py-20 px-6 bg-[#060e1a]">
+      <section className="py-20 px-6 bg-[#0F152E]">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-[1fr_1.4fr] gap-10 items-start">
-          <SectionHeading eyebrow="Your Side" title={<>What You'll <span className="text-[#00B4B4]">Need to Supply</span></>}>
+          <SectionHeading eyebrow="Your Side" title={<>What You'll <span className="text-[#2FBCAB]">Need to Supply</span></>}>
             Everything peptide-related comes with the kit. Two items you'll source yourself, both available at any pharmacy without a prescription.
           </SectionHeading>
           <Reveal stagger className="grid sm:grid-cols-2 gap-4">
@@ -461,7 +461,7 @@ export default function MenopauseReset() {
               { title: 'Insulin syringes', desc: '1 ml (100u), 29–31 gauge, 8 mm needle. A box of 100 covers the protocol comfortably.' },
               { title: 'Sterile alcohol swabs', desc: 'For vial stoppers and skin prep.' },
             ].map(({ title, desc }) => (
-              <div key={title} className="rounded-2xl border border-white/8 bg-[#0d1e35] p-6">
+              <div key={title} className="rounded-2xl border border-white/8 bg-[#1B2654] p-6">
                 <p className="text-white font-bold mb-1.5" style={H}>{title}</p>
                 <p className="text-white/50 text-sm leading-relaxed">{desc}</p>
               </div>
@@ -473,19 +473,19 @@ export default function MenopauseReset() {
       {/* ── PRICING ──────────────────────────────────────────────────── */}
       <section id="pricing" className="py-24 px-6 scroll-mt-24">
         <div className="max-w-7xl mx-auto">
-          <SectionHeading eyebrow="Pricing" title={<>Two Ways to <span className="text-[#00B4B4]">Pay</span></>}>
+          <SectionHeading eyebrow="Pricing" title={<>Two Ways to <span className="text-[#2FBCAB]">Pay</span></>}>
             Delivery at our standard (R150) or express (R220) rate. Lead time 3–5 business days.
           </SectionHeading>
 
           <Reveal stagger className="grid md:grid-cols-2 gap-5 max-w-4xl">
-            <div {...spotlightProps()} className="spot relative rounded-3xl border border-[#00B4B4]/40 bg-gradient-to-br from-[#00B4B4]/12 to-[#0d1e35] p-8">
-              <span className="absolute top-5 right-5 text-[10px] font-bold uppercase tracking-widest text-[#0A1628] bg-[#00B4B4] rounded-full px-2.5 py-1" style={H}>Saves R 50</span>
+            <div {...spotlightProps()} className="spot relative rounded-3xl border border-[#2FBCAB]/40 bg-gradient-to-br from-[#2FBCAB]/12 to-[#1B2654] p-8">
+              <span className="absolute top-5 right-5 text-[10px] font-bold uppercase tracking-widest text-[#141C3A] bg-[#2FBCAB] rounded-full px-2.5 py-1" style={H}>Saves R 50</span>
               <p className="text-white/50 text-xs font-bold uppercase tracking-widest mb-3" style={H}>Full 12-week kit</p>
               <p className="text-white font-black text-4xl md:text-5xl tracking-tight mb-1" style={H}>R 8,950</p>
               <p className="text-white/50 text-sm mb-6">once-off</p>
               <ul className="space-y-2 text-sm text-white/70 mb-8">
-                <li className="flex gap-2"><span className="text-[#00B4B4]">{CHECK}</span>The full kit arrives at the start</li>
-                <li className="flex gap-2"><span className="text-[#00B4B4]">{CHECK}</span>Standard or express delivery</li>
+                <li className="flex gap-2"><span className="text-[#2FBCAB]">{CHECK}</span>The full kit arrives at the start</li>
+                <li className="flex gap-2"><span className="text-[#2FBCAB]">{CHECK}</span>Standard or express delivery</li>
               </ul>
               <AddToOrder
                 product={RESET}
@@ -497,14 +497,14 @@ export default function MenopauseReset() {
               />
             </div>
 
-            <div {...spotlightProps()} className="spot rounded-3xl border border-white/10 bg-[#0d1e35] p-8">
+            <div {...spotlightProps()} className="spot rounded-3xl border border-white/10 bg-[#1B2654] p-8">
               <p className="text-white/50 text-xs font-bold uppercase tracking-widest mb-3" style={H}>3-month payment plan</p>
               <p className="text-white font-black text-4xl md:text-5xl tracking-tight mb-1" style={H}>R 3,000 <span className="text-white/40 text-2xl">× 3</span></p>
               <p className="text-white/50 text-sm mb-6">R 9,000 total</p>
               <ul className="space-y-2 text-sm text-white/70 mb-8">
-                <li className="flex gap-2"><span className="text-[#00B4B4]">{CHECK}</span>Month 1 dispatched on order</li>
-                <li className="flex gap-2"><span className="text-[#00B4B4]">{CHECK}</span>Month 2 at Week 4, Month 3 at Week 8</li>
-                <li className="flex gap-2"><span className="text-[#00B4B4]">{CHECK}</span>Standard or express delivery on each shipment</li>
+                <li className="flex gap-2"><span className="text-[#2FBCAB]">{CHECK}</span>Month 1 dispatched on order</li>
+                <li className="flex gap-2"><span className="text-[#2FBCAB]">{CHECK}</span>Month 2 at Week 4, Month 3 at Week 8</li>
+                <li className="flex gap-2"><span className="text-[#2FBCAB]">{CHECK}</span>Standard or express delivery on each shipment</li>
               </ul>
               <AddToOrder
                 product={RESET}
@@ -519,7 +519,7 @@ export default function MenopauseReset() {
 
           <p className="mt-5 max-w-4xl text-sm text-white/55">
             Questions first?{' '}
-            <a href={WA_HREF} target="_blank" rel="noopener noreferrer" className="text-[#00B4B4] font-semibold hover:underline underline-offset-2">
+            <a href={WA_HREF} target="_blank" rel="noopener noreferrer" className="text-[#2FBCAB] font-semibold hover:underline underline-offset-2">
               Ask us on WhatsApp
             </a>
             .
@@ -533,11 +533,11 @@ export default function MenopauseReset() {
 
       {/* ── HOW TO ORDER ─────────────────────────────────────────────── */}
       <section className="py-24 px-6 relative overflow-hidden border-t border-white/8">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#00B4B4]/12 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#2FBCAB]/12 via-transparent to-transparent" />
         <Reveal stagger className="relative z-10 max-w-3xl mx-auto text-center">
-          <p className="text-[#00B4B4] text-xs font-bold uppercase tracking-widest mb-3" style={H}>How to Order</p>
+          <p className="text-[#2FBCAB] text-xs font-bold uppercase tracking-widest mb-3" style={H}>How to Order</p>
           <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight mb-5" style={H}>
-            Supplied Through <span className="text-[#00B4B4]">Registered Practitioners</span>
+            Supplied Through <span className="text-[#2FBCAB]">Registered Practitioners</span>
           </h2>
           <p className="text-white/60 text-lg leading-relaxed mb-10">
             Your practitioner handles your baseline screening, builds your individual protocol, and takes you through reconstitution, storage, and administration before you begin.
@@ -560,7 +560,7 @@ export default function MenopauseReset() {
 
       {/* ── DISCLAIMER ───────────────────────────────────────────────── */}
       <section className="px-6 pb-16">
-        <div className="max-w-4xl mx-auto rounded-2xl border border-white/8 bg-[#060e1a] px-6 py-5">
+        <div className="max-w-4xl mx-auto rounded-2xl border border-white/8 bg-[#0F152E] px-6 py-5">
           <p className="text-white/35 text-xs leading-relaxed">
             All STRIATA products are supplied for research purposes only and are not intended for human or veterinary use. This page is informational and does not constitute medical advice. It is not a diagnosis, a treatment recommendation, or a substitute for consultation with a qualified healthcare professional. Nothing here should be used to self-treat or to self-administer any compound. Speak to your doctor before beginning any protocol, particularly if you have an existing medical condition or take prescription medication. Pricing subject to change without notice.
           </p>

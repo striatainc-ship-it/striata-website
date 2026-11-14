@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 import { Helmet } from 'react-helmet-async'
 import { spotlightProps } from '../lib/motion'
-import { STACKS, CATEGORY_META, TIER_STYLES } from '../data/stacksData'
+import { STACKS, CATEGORY_META } from '../data/stacksData'
 import Reveal from '../components/Reveal'
 import { StackCard, UniversalContraindications } from '../components/StackCard'
 
@@ -55,20 +55,6 @@ const FILTERS = [
   },
 ]
 
-// ─── Tier legend strip ────────────────────────────────────────────────────────
-function TierLegend() {
-  return (
-    <div className="flex items-center gap-4 mt-4 justify-center flex-wrap">
-      {Object.entries(TIER_STYLES).map(([label, styles]) => (
-        <div key={label} className="flex items-center gap-1.5">
-          <span className="w-2 h-2 rounded-full" style={{ backgroundColor: styles.price }} />
-          <span className="text-white/40 text-xs">{label}</span>
-        </div>
-      ))}
-    </div>
-  )
-}
-
 // ─── Page ─────────────────────────────────────────────────────────────────────
 export default function Stacks() {
   const [activeFilter, setActiveFilter] = useState('all')
@@ -91,7 +77,7 @@ export default function Stacks() {
   const countFor = (id) => id === 'all' ? STACKS.length : STACKS.filter((s) => s.category === id).length
 
   return (
-    <div className="bg-[#0A1628] min-h-screen">
+    <div className="bg-[#141C3A] min-h-screen">
       <Helmet>
         <title>Peptide Stacks & Protocols South Africa | STRIATA</title>
         <meta name="description" content="STRIATA's 10 recommended peptide stacks for recovery, weight loss, anti-aging and performance, with tier pricing. 99%+ purity. Enquire on WhatsApp." />
@@ -103,17 +89,17 @@ export default function Stacks() {
 
       {/* ── Hero ── */}
       <section className="relative pt-36 pb-20 px-6 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0A1628]/60 to-[#0A1628]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#141C3A]/60 to-[#141C3A]" />
         <div
           className="absolute inset-0 opacity-5"
-          style={{ backgroundImage: 'radial-gradient(circle at 20% 50%, #00B4B4 0%, transparent 50%), radial-gradient(circle at 80% 20%, #8B5CF6 0%, transparent 40%)' }}
+          style={{ backgroundImage: 'radial-gradient(circle at 20% 50%, #2FBCAB 0%, transparent 50%), radial-gradient(circle at 80% 20%, #8B5CF6 0%, transparent 40%)' }}
         />
         <Reveal stagger delay={0.1} className="relative z-10 max-w-4xl mx-auto text-center">
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#00B4B4]/10 border border-[#00B4B4]/20 text-[#00B4B4] text-xs font-semibold uppercase tracking-widest mb-6" style={{ fontFamily: 'var(--font-heading)' }}>
+          <span className="eyebrow mb-6" style={{ fontFamily: 'var(--font-heading)' }}>
             Curated Protocols
           </span>
           <h1 className="text-3xl md:text-6xl font-black text-white mb-5 leading-tight tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>
-            Peptide Stacks <span className="text-[#00B4B4]">&amp; Protocols</span>
+            Peptide Stacks <span className="text-[#2FBCAB]">&amp; Protocols</span>
           </h1>
           <p className="text-white/60 text-lg max-w-2xl mx-auto mb-3">
             Ten research-backed protocols built for specific goals. Each stack includes scientific rationale, tier pricing, and transparent safety information.
@@ -123,7 +109,7 @@ export default function Stacks() {
           </p>
           <Link
             to="/quiz"
-            className="inline-flex items-center gap-1.5 mt-5 text-[#00B4B4] text-sm font-semibold hover:text-white transition-colors"
+            className="inline-flex items-center gap-1.5 mt-5 text-[#2FBCAB] text-sm font-semibold hover:text-white transition-colors"
           >
             Not sure which one? Take the 60-second quiz
             <svg className="w-4 h-4" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
@@ -141,7 +127,6 @@ export default function Stacks() {
 
           {/* Tier legend */}
           <div className="mt-3 pt-3 border-t border-white/8">
-            <TierLegend />
           </div>
         </Reveal>
       </section>
@@ -152,13 +137,13 @@ export default function Stacks() {
           <Link
             to="/stacks/menopause-reset"
             {...spotlightProps()}
-            className="spot group relative block rounded-3xl border border-[#F2B8A0]/25 hover:border-[#F2B8A0]/50 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-[#F2B8A0]/10"
+            className="spot group relative block rounded-3xl border border-[#F2B8A0]/25 hover:border-[#F2B8A0]/50 overflow-hidden transition-all duration-300 hover:shadow-2xl hover:shadow-[#F2B8A0]/10"
           >
             <div
               className="absolute inset-0 opacity-[0.12] transition-opacity duration-500 group-hover:opacity-[0.18]"
-              style={{ backgroundImage: 'radial-gradient(circle at 10% 50%, #F2B8A0 0%, transparent 45%), radial-gradient(circle at 90% 30%, #00B4B4 0%, transparent 45%), radial-gradient(circle at 60% 100%, #8B9CF6 0%, transparent 40%)' }}
+              style={{ backgroundImage: 'radial-gradient(circle at 10% 50%, #F2B8A0 0%, transparent 45%), radial-gradient(circle at 90% 30%, #2FBCAB 0%, transparent 45%), radial-gradient(circle at 60% 100%, #8B9CF6 0%, transparent 40%)' }}
             />
-            <div className="absolute inset-0 bg-[#0d1e35]/80" />
+            <div className="absolute inset-0 bg-[#1B2654]/80" />
 
             <div className="relative grid lg:grid-cols-[1.4fr_1fr] gap-8 lg:gap-12 items-center p-7 md:p-10">
               <div>
@@ -197,7 +182,7 @@ export default function Stacks() {
 
       {/* ── Filter Bar ── */}
       <section
-        className={`sticky top-20 z-30 bg-[#0A1628]/95 backdrop-blur-md border-b border-white/8 py-3 transition-transform duration-300 ${filterVisible ? 'translate-y-0' : '-translate-y-[200%]'}`}
+        className={`sticky top-20 z-30 bg-[#141C3A]/95 backdrop-blur-md border-b border-white/8 py-3 transition-transform duration-300 ${filterVisible ? 'translate-y-0' : '-translate-y-[200%]'}`}
       >
         <div className="max-w-7xl mx-auto px-4 md:px-6">
           <div className="flex overflow-x-auto scrollbar-hide gap-2 pb-0.5" role="group" aria-label="Filter stacks by category">
@@ -205,17 +190,17 @@ export default function Stacks() {
               const isActive = activeFilter === id
               const meta = id !== 'all' ? CATEGORY_META[id] : null
               const count = countFor(id)
-              const activeColor = meta ? meta.color : '#00B4B4'
+              const activeColor = meta ? meta.color : '#2FBCAB'
 
               return (
                 <button
                   key={id}
                   onClick={() => setActiveFilter(id)}
                   aria-pressed={isActive}
-                  className={`flex-none flex items-center gap-2 px-4 py-2 rounded-full text-xs md:text-sm font-semibold whitespace-nowrap transition-all duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00B4B4] ${
+                  className={`flex-none flex items-center gap-2 px-4 py-2 rounded-full text-xs md:text-sm font-semibold whitespace-nowrap transition-all duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2FBCAB] ${
                     isActive
-                      ? 'shadow-lg text-[#0A1628]'
-                      : 'bg-[#0d1e35] border border-white/10 text-white/60 hover:text-white hover:border-white/20'
+                      ? 'shadow-lg text-[#141C3A]'
+                      : 'bg-[#1B2654] border border-white/10 text-white/60 hover:text-white hover:border-white/20'
                   }`}
                   style={
                     isActive

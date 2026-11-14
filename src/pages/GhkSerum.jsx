@@ -23,7 +23,7 @@ const WA_ICON = (
 )
 
 const CHECK = (
-  <svg className="w-4 h-4 shrink-0 mt-0.5 text-[#00B4B4]" fill="none" stroke="currentColor" strokeWidth={2.2} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+  <svg className="w-4 h-4 shrink-0 mt-0.5 text-[#2FBCAB]" fill="none" stroke="currentColor" strokeWidth={2.2} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true">
     <path d="M4.5 12.75l6 6 9-13.5" />
   </svg>
 )
@@ -126,8 +126,8 @@ function FaqItem({ q, a }) {
         aria-expanded={open}
         className="w-full flex items-center justify-between gap-4 py-5 text-left cursor-pointer group"
       >
-        <span className="text-white font-semibold group-hover:text-[#00B4B4] transition-colors" style={H}>{q}</span>
-        <svg className={`w-4 h-4 text-[#00B4B4] shrink-0 transition-transform duration-300 ${open ? 'rotate-45' : ''}`} fill="none" stroke="currentColor" strokeWidth={2.2} strokeLinecap="round" viewBox="0 0 24 24" aria-hidden="true">
+        <span className="text-white font-semibold group-hover:text-[#2FBCAB] transition-colors" style={H}>{q}</span>
+        <svg className={`w-4 h-4 text-[#2FBCAB] shrink-0 transition-transform duration-300 ${open ? 'rotate-45' : ''}`} fill="none" stroke="currentColor" strokeWidth={2.2} strokeLinecap="round" viewBox="0 0 24 24" aria-hidden="true">
           <path d="M12 4.5v15m7.5-7.5h-15" />
         </svg>
       </button>
@@ -153,7 +153,7 @@ function SerumStage({ strength }) {
     <figure className="group relative mx-auto w-full max-w-md lg:max-w-[30rem]">
       {/* Faint light spill onto the page around the card */}
       <div
-        className="absolute -inset-10 rounded-[3rem] opacity-50 blur-3xl bg-[radial-gradient(55%_50%_at_50%_42%,rgba(212,160,60,0.22),rgba(0,180,180,0.12)_55%,transparent_75%)]"
+        className="absolute -inset-10 rounded-[3rem] opacity-50 blur-3xl bg-[radial-gradient(55%_50%_at_50%_42%,rgba(212,160,60,0.22),rgba(47, 188, 171,0.12)_55%,transparent_75%)]"
         aria-hidden="true"
       />
 
@@ -184,14 +184,14 @@ function SerumStage({ strength }) {
           </div>
         </div>
 
-        <dl className="grid grid-cols-3 divide-x divide-white/10 border-t border-white/10 bg-[#0d1e35] py-4">
+        <dl className="grid grid-cols-3 divide-x divide-white/10 border-t border-white/10 bg-[#1B2654] py-4">
           {[
             ['GHK-Cu', strength.id],
             ['Hyaluronic', '1%'],
             ['Volume', '30 ml'],
           ].map(([k, v]) => (
             <div key={k} className="px-2 text-center sm:px-3">
-              <dt className="text-[10px] font-bold uppercase tracking-[0.1em] text-[#00B4B4] sm:tracking-[0.18em]" style={H}>{k}</dt>
+              <dt className="text-[10px] font-bold uppercase tracking-[0.1em] text-[#2FBCAB] sm:tracking-[0.18em]" style={H}>{k}</dt>
               <dd className="mt-1 text-lg font-black tabular-nums text-white sm:text-xl" style={H}>{v}</dd>
             </div>
           ))}
@@ -209,7 +209,7 @@ export default function GhkSerum() {
   )}`
 
   return (
-    <div className="bg-[#0A1628] min-h-screen">
+    <div className="bg-[#141C3A] min-h-screen">
       <Helmet>
         <title>Copper Peptide Serum South Africa | GHK-Cu | STRIATA</title>
         <meta name="description" content="STRIATA Labs GHK-Cu Serum: 1% or 2% copper peptide with hyaluronic acid in a 30 ml dropper. Restore, hydrate, renew. From R549, delivered across South Africa." />
@@ -254,9 +254,9 @@ export default function GhkSerum() {
       <section className="relative pt-32 md:pt-36 pb-20 px-6 overflow-hidden">
         <div
           className="absolute inset-0 opacity-[0.08]"
-          style={{ backgroundImage: 'radial-gradient(circle at 75% 35%, #D4A03C 0%, transparent 40%), radial-gradient(circle at 15% 70%, #00B4B4 0%, transparent 45%)' }}
+          style={{ backgroundImage: 'radial-gradient(circle at 75% 35%, #D4A03C 0%, transparent 40%), radial-gradient(circle at 15% 70%, #2FBCAB 0%, transparent 45%)' }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#0A1628]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-[#141C3A]" />
 
         <div className="relative z-10 max-w-7xl mx-auto grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
           <Reveal stagger delay={0.1} className="order-2 lg:order-1">
@@ -265,8 +265,8 @@ export default function GhkSerum() {
               Skin, Hair & Anti-Aging
             </Link>
             <span className="block">
-              <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#00B4B4]/10 border border-[#00B4B4]/20 text-[#00B4B4] text-xs font-semibold uppercase tracking-widest mb-6" style={H}>
-                <span className="w-1.5 h-1.5 rounded-full bg-[#00B4B4]" />
+              <span className="eyebrow mb-6" style={H}>
+                <span className="w-1.5 h-1.5 rounded-full bg-[#2FBCAB]" />
                 Topical · Copper Peptide Skincare
               </span>
             </span>
@@ -293,18 +293,18 @@ export default function GhkSerum() {
                     onClick={() => setStrength(s)}
                     className={`text-left rounded-2xl border px-5 py-4 transition-all duration-300 cursor-pointer ${
                       active
-                        ? 'border-[#00B4B4]/60 bg-[#00B4B4]/10 shadow-lg shadow-[#00B4B4]/10'
+                        ? 'border-[#2FBCAB]/60 bg-[#2FBCAB]/10'
                         : 'border-white/10 bg-white/[0.03] hover:border-white/25'
                     }`}
                   >
                     <div className="flex items-center justify-between mb-1">
                       <span className="text-white font-bold" style={H}>{s.label}</span>
-                      <span className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${active ? 'border-[#00B4B4]' : 'border-white/25'}`}>
-                        {active && <span className="w-2 h-2 rounded-full bg-[#00B4B4]" />}
+                      <span className={`w-4 h-4 rounded-full border-2 flex items-center justify-center ${active ? 'border-[#2FBCAB]' : 'border-white/25'}`}>
+                        {active && <span className="w-2 h-2 rounded-full bg-[#2FBCAB]" />}
                       </span>
                     </div>
                     <div className="flex items-baseline justify-between">
-                      <span className="text-[#00B4B4] text-xs font-semibold">{s.tag}</span>
+                      <span className="text-[#2FBCAB] text-xs font-semibold">{s.tag}</span>
                       <span className="text-white font-black text-xl tabular-nums" style={H}>R {s.price}</span>
                     </div>
                   </button>
@@ -335,12 +335,12 @@ export default function GhkSerum() {
       </section>
 
       {/* ── WHY GHK-CU ───────────────────────────────────────────────── */}
-      <section className="py-24 px-6 bg-[#060e1a]">
+      <section className="py-24 px-6 bg-[#0F152E]">
         <div className="max-w-7xl mx-auto">
           <Reveal stagger className="max-w-3xl mb-12">
-            <p className="text-[#00B4B4] text-xs font-bold uppercase tracking-widest mb-3" style={H}>Why copper peptides</p>
+            <p className="text-[#2FBCAB] text-xs font-bold uppercase tracking-widest mb-3" style={H}>Why copper peptides</p>
             <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight leading-tight mb-4" style={H}>
-              One molecule, <span className="text-[#00B4B4]">four jobs</span>
+              One molecule, <span className="text-[#2FBCAB]">four jobs</span>
             </h2>
             <p className="text-white/60 text-lg leading-relaxed">
               Most actives do one thing well. GHK-Cu is unusual in that it is a signal, not a scrub — it changes what skin cells do rather than stripping anything away. That is why it plays nicely with sensitive skin and slots into almost any routine.
@@ -349,8 +349,8 @@ export default function GhkSerum() {
 
           <Reveal stagger className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
             {BENEFITS.map(({ title, desc, icon }) => (
-              <div key={title} {...spotlightProps()} className="spot rounded-2xl border border-white/8 bg-[#0d1e35] p-6 hover:border-[#00B4B4]/30 transition-all duration-300 hover:-translate-y-1">
-                <span className="w-11 h-11 rounded-xl bg-[#00B4B4]/10 border border-[#00B4B4]/25 text-[#00B4B4] flex items-center justify-center mb-4">{icon}</span>
+              <div key={title} {...spotlightProps()} className="spot rounded-2xl border border-white/8 bg-[#1B2654] p-6 hover:border-[#2FBCAB]/30 transition-all duration-300">
+                <span className="w-11 h-11 rounded-xl bg-[#2FBCAB]/10 border border-[#2FBCAB]/25 text-[#2FBCAB] flex items-center justify-center mb-4">{icon}</span>
                 <p className="text-white font-bold mb-2" style={H}>{title}</p>
                 <p className="text-white/50 text-sm leading-relaxed">{desc}</p>
               </div>
@@ -363,9 +363,9 @@ export default function GhkSerum() {
       <section id="strengths" className="py-24 px-6 scroll-mt-24">
         <div className="max-w-7xl mx-auto">
           <Reveal stagger className="max-w-3xl mb-12">
-            <p className="text-[#00B4B4] text-xs font-bold uppercase tracking-widest mb-3" style={H}>Two strengths</p>
+            <p className="text-[#2FBCAB] text-xs font-bold uppercase tracking-widest mb-3" style={H}>Two strengths</p>
             <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight leading-tight mb-4" style={H}>
-              Start at 1%. <span className="text-[#00B4B4]">Step up when ready.</span>
+              Start at 1%. <span className="text-[#2FBCAB]">Step up when ready.</span>
             </h2>
             <p className="text-white/60 text-lg leading-relaxed">
               Same base, same hyaluronic acid, same 30 ml dropper. The only difference is how much copper peptide is in the bottle.
@@ -377,11 +377,11 @@ export default function GhkSerum() {
               <div
                 key={s.id}
                 {...spotlightProps()}
-                className={`spot rounded-3xl p-8 border ${i === 0 ? 'border-[#00B4B4]/40 bg-gradient-to-br from-[#00B4B4]/12 to-[#0d1e35]' : 'border-white/10 bg-[#0d1e35]'}`}
+                className={`spot rounded-3xl p-8 border ${i === 0 ? 'border-[#2FBCAB]/40 bg-gradient-to-br from-[#2FBCAB]/12 to-[#1B2654]' : 'border-white/10 bg-[#1B2654]'}`}
               >
                 <div className="flex items-start justify-between gap-4 mb-5">
                   <div>
-                    <p className="text-[#00B4B4] text-xs font-bold uppercase tracking-widest mb-1" style={H}>{s.tag}</p>
+                    <p className="text-[#2FBCAB] text-xs font-bold uppercase tracking-widest mb-1" style={H}>{s.tag}</p>
                     <h3 className="text-white font-black text-2xl md:text-3xl tracking-tight" style={H}>{s.label}</h3>
                   </div>
                   <p className="text-white font-black text-3xl tabular-nums shrink-0" style={H}>R {s.price}</p>
@@ -418,17 +418,17 @@ export default function GhkSerum() {
       </section>
 
       {/* ── HOW TO USE ───────────────────────────────────────────────── */}
-      <section className="py-24 px-6 bg-[#060e1a]">
+      <section className="py-24 px-6 bg-[#0F152E]">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-[1fr_1.5fr] gap-12 lg:gap-20 items-start">
           <Reveal stagger>
-            <p className="text-[#00B4B4] text-xs font-bold uppercase tracking-widest mb-3" style={H}>How to use</p>
+            <p className="text-[#2FBCAB] text-xs font-bold uppercase tracking-widest mb-3" style={H}>How to use</p>
             <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight leading-tight mb-4" style={H}>
-              Sixty seconds, <span className="text-[#00B4B4]">twice a day</span>
+              Sixty seconds, <span className="text-[#2FBCAB]">twice a day</span>
             </h2>
             <p className="text-white/60 text-lg leading-relaxed mb-6">
               No layering rules to memorise. Clean skin, a few drops, press it in, moisturise. Patch-test on the inner arm first if your skin is reactive.
             </p>
-            <div className="rounded-2xl border border-white/8 bg-[#0d1e35] p-5">
+            <div className="rounded-2xl border border-white/8 bg-[#1B2654] p-5">
               <p className="text-white/35 text-[10px] font-bold uppercase tracking-widest mb-3" style={H}>On the label</p>
               <ul className="space-y-2 text-sm text-white/70">
                 <li className="flex justify-between gap-4"><span>GHK-Cu</span><span className="text-white font-semibold">1% or 2%</span></li>
@@ -442,8 +442,8 @@ export default function GhkSerum() {
 
           <Reveal stagger className="grid sm:grid-cols-2 gap-4">
             {STEPS.map(({ n, title, desc }) => (
-              <div key={n} className="rounded-2xl border border-white/8 bg-[#0d1e35] p-6">
-                <p className="text-[#00B4B4] text-[10px] font-bold tracking-[0.25em] mb-3" style={H}>{n}</p>
+              <div key={n} className="rounded-2xl border border-white/8 bg-[#1B2654] p-6">
+                <p className="text-[#2FBCAB] text-[10px] font-bold tracking-[0.25em] mb-3" style={H}>{n}</p>
                 <p className="text-white font-bold text-lg mb-2" style={H}>{title}</p>
                 <p className="text-white/50 text-sm leading-relaxed">{desc}</p>
               </div>
@@ -456,19 +456,19 @@ export default function GhkSerum() {
       <section className="py-24 px-6">
         <div className="max-w-3xl mx-auto">
           <Reveal stagger className="mb-8">
-            <p className="text-[#00B4B4] text-xs font-bold uppercase tracking-widest mb-3" style={H}>Good to know</p>
+            <p className="text-[#2FBCAB] text-xs font-bold uppercase tracking-widest mb-3" style={H}>Good to know</p>
             <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight leading-tight" style={H}>
-              Questions we <span className="text-[#00B4B4]">get asked</span>
+              Questions we <span className="text-[#2FBCAB]">get asked</span>
             </h2>
           </Reveal>
-          <Reveal className="rounded-3xl border border-white/8 bg-[#0d1e35] px-7">
+          <Reveal className="rounded-3xl border border-white/8 bg-[#1B2654] px-7">
             {FAQ.map((f) => <FaqItem key={f.q} {...f} />)}
           </Reveal>
           <p className="mt-6 text-white/50 text-sm leading-relaxed">
             The same copper peptide is supplied as a lyophilised{' '}
-            <Link to="/catalogue/ghk-cu" className="text-[#00B4B4] hover:text-white transition-colors">GHK-Cu vial</Link>
+            <Link to="/catalogue/ghk-cu" className="text-[#2FBCAB] hover:text-white transition-colors">GHK-Cu vial</Link>
             {' '}for research, and our{' '}
-            <Link to="/learn/ghk-cu-copper-peptide-anti-aging" className="text-[#00B4B4] hover:text-white transition-colors">GHK-Cu guide</Link>
+            <Link to="/learn/ghk-cu-copper-peptide-anti-aging" className="text-[#2FBCAB] hover:text-white transition-colors">GHK-Cu guide</Link>
             {' '}covers the research behind both.
           </p>
         </div>
@@ -476,10 +476,10 @@ export default function GhkSerum() {
 
       {/* ── CTA ──────────────────────────────────────────────────────── */}
       <section className="py-24 px-6 relative overflow-hidden border-t border-white/8">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#00B4B4]/12 via-transparent to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#2FBCAB]/12 via-transparent to-transparent" />
         <Reveal stagger className="relative z-10 max-w-3xl mx-auto text-center">
           <h2 className="text-3xl md:text-5xl font-black text-white tracking-tight mb-5" style={H}>
-            Restore. Hydrate. <span className="text-[#00B4B4]">Renew.</span>
+            Restore. Hydrate. <span className="text-[#2FBCAB]">Renew.</span>
           </h2>
           <p className="text-white/60 text-lg leading-relaxed mb-10">
             Pick your strength and order on WhatsApp. We'll confirm, take payment and dispatch on the next shipping day.

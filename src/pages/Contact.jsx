@@ -53,7 +53,7 @@ export default function Contact() {
   }
 
   return (
-    <div className="bg-[#0A1628] min-h-screen">
+    <div className="bg-[#141C3A] min-h-screen">
       <Helmet>
         <title>Contact STRIATA Johannesburg | WhatsApp & Email</title>
         <meta name="description" content="Order or enquire via WhatsApp +27 78 213 7905 or email info@striatalabs.co.za. STRIATA delivers research-grade peptides nationwide from Johannesburg." />
@@ -68,10 +68,10 @@ export default function Contact() {
           className="absolute inset-0 bg-cover bg-center opacity-8"
           style={{ backgroundImage: `url(${import.meta.env.BASE_URL}assets/opt/background-overlay-2-1920.webp)` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0A1628]/60 to-[#0A1628]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#141C3A]/60 to-[#141C3A]" />
         <Reveal stagger delay={0.1} className="relative z-10 max-w-3xl mx-auto text-center">
           <h1 className="text-3xl md:text-6xl font-black text-white mb-5 tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>
-            Contact STRIATA in <span className="text-[#00B4B4]">Johannesburg</span>
+            Contact STRIATA in <span className="text-[#2FBCAB]">Johannesburg</span>
           </h1>
           <p className="text-white/60 text-lg max-w-2xl mx-auto">
             Whether you have a question about our products, need help with an order or want to discuss bulk supply. We're here and we respond fast. Reach out on WhatsApp for the quickest response.
@@ -84,7 +84,7 @@ export default function Contact() {
           {/* Left — Contact Info & WhatsApp */}
           <div>
             {/* WhatsApp Buttons */}
-            <div className="bg-[#0d1e35] border border-white/8 rounded-2xl p-5 md:p-7 mb-6">
+            <div className="bg-[#1B2654] border border-white/8 rounded-2xl p-5 md:p-7 mb-6">
               <h2 className="text-white font-bold text-xl mb-2" style={{ fontFamily: 'var(--font-heading)' }}>
                 Chat to Us Directly
               </h2>
@@ -113,24 +113,24 @@ export default function Contact() {
             </div>
 
             {/* Contact Details */}
-            <div className="bg-[#0d1e35] border border-white/8 rounded-2xl p-5 md:p-7 mb-6">
+            <div className="bg-[#1B2654] border border-white/8 rounded-2xl p-5 md:p-7 mb-6">
               <h2 className="text-white font-bold text-xl mb-5" style={{ fontFamily: 'var(--font-heading)' }}>
                 Contact Us
               </h2>
               <ul className="space-y-4">
                 <li className="flex items-start gap-3">
-                  <svg className="w-5 h-5 text-[#00B4B4] mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-[#2FBCAB] mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                   </svg>
                   <div>
                     <p className="text-white/40 text-xs mb-0.5">Email</p>
-                    <a href="mailto:info@striatalabs.co.za" className="text-white hover:text-[#00B4B4] transition-colors text-sm">
+                    <a href="mailto:info@striatalabs.co.za" className="text-white hover:text-[#2FBCAB] transition-colors text-sm">
                       info@striatalabs.co.za
                     </a>
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
-                  <svg className="w-5 h-5 text-[#00B4B4] mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-[#2FBCAB] mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
@@ -140,7 +140,7 @@ export default function Contact() {
                   </div>
                 </li>
                 <li className="flex items-start gap-3">
-                  <svg className="w-5 h-5 text-[#00B4B4] mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <svg className="w-5 h-5 text-[#2FBCAB] mt-0.5 shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
                   <div>
@@ -153,41 +153,10 @@ export default function Contact() {
               </ul>
             </div>
 
-            {/* Social */}
-            <div className="bg-[#0d1e35] border border-white/8 rounded-2xl p-5 md:p-7">
-              <h2 className="text-white font-bold text-xl mb-2" style={{ fontFamily: 'var(--font-heading)' }}>
-                Follow Us
-              </h2>
-              <p className="text-white/50 text-sm mb-5">Stay up to date with new products, research insights and STRIATA news.</p>
-              <div className="flex flex-col gap-3">
-                <a
-                  href="https://www.instagram.com/striata_labs/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-white/60 hover:text-white transition-colors text-sm"
-                >
-                  <svg className="w-5 h-5 text-[#00B4B4]" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
-                  </svg>
-                  @striata_labs | Follow us on Instagram
-                </a>
-                <a
-                  href="https://www.tiktok.com/@striatalabs"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-3 text-white/60 hover:text-white transition-colors text-sm"
-                >
-                  <svg className="w-5 h-5 text-[#00B4B4]" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.88a8.28 8.28 0 004.84 1.55V7.01a4.85 4.85 0 01-1.07-.32z" />
-                  </svg>
-                  @striatalabs | Follow us on TikTok
-                </a>
-              </div>
-            </div>
           </div>
 
           {/* Right — Contact Form */}
-          <div className="bg-[#0d1e35] border border-white/8 rounded-2xl p-5 md:p-7">
+          <div className="bg-[#1B2654] border border-white/8 rounded-2xl p-5 md:p-7">
             <h2 className="text-white font-bold text-xl mb-2" style={{ fontFamily: 'var(--font-heading)' }}>
               Send Us a Message
             </h2>
@@ -197,8 +166,8 @@ export default function Contact() {
 
             {status === 'success' ? (
               <div className="text-center py-12">
-                <div className="w-16 h-16 rounded-full bg-[#00B4B4]/15 border border-[#00B4B4]/30 flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-8 h-8 text-[#00B4B4]" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
+                <div className="w-16 h-16 rounded-full bg-[#2FBCAB]/15 border border-[#2FBCAB]/30 flex items-center justify-center mx-auto mb-4">
+                  <svg className="w-8 h-8 text-[#2FBCAB]" fill="none" stroke="currentColor" strokeWidth={2.5} viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
                   </svg>
                 </div>
@@ -206,7 +175,7 @@ export default function Contact() {
                 <p className="text-white/60 text-sm">We'll get back to you within 1 business day.</p>
                 <button
                   onClick={() => setStatus('idle')}
-                  className="mt-6 text-[#00B4B4] hover:text-white text-sm transition-colors"
+                  className="mt-6 text-[#2FBCAB] hover:text-white text-sm transition-colors"
                 >
                   Send another message
                 </button>
@@ -222,7 +191,7 @@ export default function Contact() {
                       required
                       value={form.name}
                       onChange={handleChange}
-                      className="w-full bg-[#0A1628] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/20 text-sm focus:outline-none focus:border-[#00B4B4]/50 transition-colors"
+                      className="w-full bg-[#141C3A] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/20 text-sm focus:outline-none focus:border-[#2FBCAB]/50 transition-colors"
                       placeholder="Your name"
                     />
                   </div>
@@ -234,7 +203,7 @@ export default function Contact() {
                       required
                       value={form.email}
                       onChange={handleChange}
-                      className="w-full bg-[#0A1628] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/20 text-sm focus:outline-none focus:border-[#00B4B4]/50 transition-colors"
+                      className="w-full bg-[#141C3A] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/20 text-sm focus:outline-none focus:border-[#2FBCAB]/50 transition-colors"
                       placeholder="you@email.com"
                     />
                   </div>
@@ -246,7 +215,7 @@ export default function Contact() {
                     name="phone"
                     value={form.phone}
                     onChange={handleChange}
-                    className="w-full bg-[#0A1628] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/20 text-sm focus:outline-none focus:border-[#00B4B4]/50 transition-colors"
+                    className="w-full bg-[#141C3A] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/20 text-sm focus:outline-none focus:border-[#2FBCAB]/50 transition-colors"
                     placeholder="+27 ..."
                   />
                 </div>
@@ -257,7 +226,7 @@ export default function Contact() {
                     required
                     value={form.subject}
                     onChange={handleChange}
-                    className="w-full bg-[#0A1628] border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-[#00B4B4]/50 transition-colors"
+                    className="w-full bg-[#141C3A] border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-[#2FBCAB]/50 transition-colors"
                   >
                     <option value="" className="text-white/30">Select a subject</option>
                     <option value="General Enquiry">General Enquiry</option>
@@ -275,7 +244,7 @@ export default function Contact() {
                     value={form.message}
                     onChange={handleChange}
                     rows={5}
-                    className="w-full bg-[#0A1628] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/20 text-sm focus:outline-none focus:border-[#00B4B4]/50 transition-colors resize-none"
+                    className="w-full bg-[#141C3A] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/20 text-sm focus:outline-none focus:border-[#2FBCAB]/50 transition-colors resize-none"
                     placeholder="Tell us how we can help..."
                   />
                 </div>
@@ -289,7 +258,7 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={status === 'sending'}
-                  className="w-full bg-[#00B4B4] hover:bg-[#009999] disabled:opacity-60 text-white font-bold py-4 rounded-xl transition-all duration-200 hover:shadow-lg hover:shadow-teal-500/20 flex items-center justify-center gap-2"
+                  className="w-full bg-[#2FBCAB] hover:bg-[#25A192] disabled:opacity-60 text-[#141C3A] font-bold py-4 rounded-xl transition-all duration-200 flex items-center justify-center gap-2"
                   style={{ fontFamily: 'var(--font-heading)' }}
                 >
                   {status === 'sending' ? (

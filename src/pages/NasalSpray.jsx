@@ -61,7 +61,7 @@ export default function NasalSpray() {
   // by hand or left over from a renamed slug.
   if (!spray) {
     return (
-      <div className="bg-[#0A1628] min-h-screen grid place-items-center px-6">
+      <div className="bg-[#141C3A] min-h-screen grid place-items-center px-6">
         <Helmet>
           <title>Nasal spray not found | STRIATA</title>
           <meta name="robots" content="noindex" />
@@ -134,7 +134,7 @@ function SprayPage({ spray }) {
   ].filter(Boolean)
 
   return (
-    <div className="bg-[#0A1628] min-h-screen">
+    <div className="bg-[#141C3A] min-h-screen">
       <Helmet>
         <title>{title}</title>
         <meta name="description" content={description} />
@@ -197,13 +197,13 @@ function SprayPage({ spray }) {
 
       {/* ── HERO ── */}
       <section className="relative pt-32 pb-16 px-6 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#00B4B4]/5 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#2FBCAB]/5 to-transparent" />
 
         <div className="relative z-10 max-w-6xl mx-auto">
           <nav aria-label="Breadcrumb" className="mb-8">
             <ol className="flex items-center gap-2 text-sm text-white/40">
               <li>
-                <Link to="/nasal-sprays" className="hover:text-[#00B4B4] transition-colors">
+                <Link to="/nasal-sprays" className="hover:text-[#2FBCAB] transition-colors">
                   Nasal Sprays
                 </Link>
               </li>
@@ -220,19 +220,19 @@ function SprayPage({ spray }) {
             <div>
               <div className="flex flex-wrap items-center gap-2 mb-5">
                 <span
-                  className="inline-flex items-center gap-1.5 text-[11px] font-bold uppercase tracking-widest text-green-400 bg-green-400/10 border border-green-400/20 px-3 py-1 rounded-full"
+                  className="inline-flex items-center gap-1.5 text-[13px] font-medium text-white/70"
                   style={H}
                 >
                   <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
                   In stock
                 </span>
-                <span className="text-[11px] text-[#00B4B4] bg-[#00B4B4]/10 px-3 py-1 rounded-full border border-[#00B4B4]/20">
+                <span className="text-[11px] text-[#2FBCAB] bg-[#2FBCAB]/10 px-3 py-1 rounded-full border border-[#2FBCAB]/20">
                   {spray.positioning}
                 </span>
               </div>
 
               <h1 className="text-3xl md:text-5xl font-black text-white tracking-tight mb-4" style={H}>
-                {spray.name} <span className="text-[#00B4B4]">Nasal Spray</span>
+                {spray.name} <span className="text-[#2FBCAB]">Nasal Spray</span>
               </h1>
 
               {content?.lede && (
@@ -240,12 +240,12 @@ function SprayPage({ spray }) {
               )}
               <p className="text-white/50 leading-relaxed mb-8 max-w-2xl">{spray.description}</p>
 
-              <div className="flex items-center justify-between max-w-md bg-[#00B4B4]/8 border border-[#00B4B4]/25 rounded-2xl px-5 py-4 mb-6">
+              <div className="flex items-center justify-between max-w-md bg-[#2FBCAB]/8 border border-[#2FBCAB]/25 rounded-2xl px-5 py-4 mb-6">
                 <div>
                   <p className="text-white/35 text-[11px] font-bold uppercase tracking-widest mb-1" style={H}>
                     1 bottle
                   </p>
-                  <p className="text-white/80 font-mono text-sm">{tier.dose}</p>
+                  <p className="text-white/80 tabular-nums text-sm">{tier.dose}</p>
                 </div>
                 <p className="text-white text-2xl font-black tabular-nums" style={H}>
                   {rand(tier.price)}
@@ -259,7 +259,7 @@ function SprayPage({ spray }) {
                   Ask on WhatsApp
                 </a>
               </div>
-              <a href="#formats" className="inline-block mt-4 text-sm text-white/55 hover:text-[#00B4B4] transition-colors">
+              <a href="#formats" className="inline-block mt-4 text-sm text-white/55 hover:text-[#2FBCAB] transition-colors">
                 Compare spray, vial and pen
               </a>
               <p className="mt-3 text-white/30 text-xs">VAT inclusive · Shipped nationwide from Johannesburg · Research use only</p>
@@ -282,7 +282,7 @@ function SprayPage({ spray }) {
           </Reveal>
           <Reveal stagger className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
             {stats.map(({ label, value, note }) => (
-              <div key={label} className="bg-[#0d1e35] border border-white/8 rounded-2xl p-5">
+              <div key={label} className="bg-[#1B2654] border border-white/8 rounded-2xl p-5">
                 <p className="text-white/35 text-[11px] font-bold uppercase tracking-widest mb-2" style={H}>
                   {label}
                 </p>
@@ -325,7 +325,7 @@ function SprayPage({ spray }) {
           {spray.compoundPath && (
             <Link
               to={spray.compoundPath}
-              className="inline-flex items-center gap-1 mt-6 text-[#00B4B4] text-sm font-semibold hover:text-white transition-colors"
+              className="inline-flex items-center gap-1 mt-6 text-[#2FBCAB] text-sm font-semibold hover:text-white transition-colors"
             >
               Read the full {spray.name} compound profile <span aria-hidden="true">→</span>
             </Link>
@@ -351,7 +351,7 @@ function SprayPage({ spray }) {
                   <div
                     key={item.title}
                     {...spotlightProps()}
-                    className="spot bg-[#0d1e35] border border-white/8 rounded-2xl p-6 hover:border-[#00B4B4]/30 transition-colors"
+                    className="spot bg-[#1B2654] border border-white/8 rounded-2xl p-6 hover:border-[#2FBCAB]/30 transition-colors"
                   >
                     <h3 className="text-white font-bold mb-2" style={H}>
                       {item.title}
@@ -389,7 +389,7 @@ function SprayPage({ spray }) {
               <div
                 key={f.name}
                 className={`rounded-2xl p-6 border ${
-                  f.current ? 'bg-[#00B4B4]/8 border-[#00B4B4]/40' : 'bg-[#0d1e35] border-white/8'
+                  f.current ? 'bg-[#2FBCAB]/8 border-[#2FBCAB]/40' : 'bg-[#1B2654] border-white/8'
                 }`}
               >
                 <div className="flex items-baseline justify-between mb-4">
@@ -397,7 +397,7 @@ function SprayPage({ spray }) {
                     {f.name}
                   </h3>
                   {f.current && (
-                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#00B4B4]" style={H}>
+                    <span className="text-[10px] font-bold uppercase tracking-widest text-[#2FBCAB]" style={H}>
                       This page
                     </span>
                   )}
@@ -405,7 +405,7 @@ function SprayPage({ spray }) {
                 <p className="text-white text-2xl font-black tabular-nums mb-1" style={H}>
                   {rand(f.tier.price)}
                 </p>
-                <p className="text-white/40 font-mono text-xs mb-5">{f.tier.dose}</p>
+                <p className="text-white/40 tabular-nums text-xs mb-5">{f.tier.dose}</p>
                 <dl className="text-sm flex flex-col gap-2 mb-5">
                   <div>
                     <dt className="text-white/30 text-[11px] uppercase tracking-widest">Preparation</dt>
@@ -417,7 +417,7 @@ function SprayPage({ spray }) {
                   </div>
                 </dl>
                 {f.to && (
-                  <Link to={f.to} className="text-[#00B4B4] text-sm font-semibold hover:text-white transition-colors">
+                  <Link to={f.to} className="text-[#2FBCAB] text-sm font-semibold hover:text-white transition-colors">
                     See the {f.name.toLowerCase()} →
                   </Link>
                 )}
@@ -439,7 +439,7 @@ function SprayPage({ spray }) {
             {HOW_TO.map((step, i) => (
               <Reveal key={step.title} as="li" className="flex gap-4">
                 <span
-                  className="w-8 h-8 rounded-full bg-[#00B4B4]/10 text-[#00B4B4] text-sm font-bold grid place-items-center shrink-0"
+                  className="w-8 h-8 rounded-full bg-[#2FBCAB]/10 text-[#2FBCAB] text-sm font-bold grid place-items-center shrink-0"
                   style={H}
                 >
                   {i + 1}
@@ -498,7 +498,7 @@ function SprayPage({ spray }) {
                     href={source.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-[#00B4B4] underline decoration-white/15 underline-offset-2 transition-colors"
+                    className="hover:text-[#2FBCAB] underline decoration-white/15 underline-offset-2 transition-colors"
                   >
                     {source.label}
                   </a>
@@ -519,12 +519,12 @@ function SprayPage({ spray }) {
             <Link
               to={`/learn/${guidePost.slug}`}
               {...spotlightProps()}
-              className="spot block bg-[#0d1e35] border border-white/8 rounded-2xl p-6 hover:border-[#00B4B4]/40 transition-colors group"
+              className="spot block bg-[#1B2654] border border-white/8 rounded-2xl p-6 hover:border-[#2FBCAB]/40 transition-colors group"
             >
-              <span className="text-[#00B4B4] text-[11px] font-bold uppercase tracking-widest" style={H}>
+              <span className="text-[#2FBCAB] text-[11px] font-bold uppercase tracking-widest" style={H}>
                 {guidePost.category}
               </span>
-              <h3 className="text-white font-bold text-lg mt-2 mb-2 group-hover:text-[#00B4B4] transition-colors" style={H}>
+              <h3 className="text-white font-bold text-lg mt-2 mb-2 group-hover:text-[#2FBCAB] transition-colors" style={H}>
                 {guidePost.title}
               </h3>
               <p className="text-white/50 text-sm leading-relaxed">{guidePost.preview}</p>
@@ -549,7 +549,7 @@ function SprayPage({ spray }) {
                   key={item.id}
                   to={item.page}
                   {...spotlightProps()}
-                  className="spot bg-[#0d1e35] border border-white/8 rounded-2xl p-4 hover:border-[#00B4B4]/40 transition-colors group flex flex-col items-center text-center"
+                  className="spot bg-[#1B2654] border border-white/8 rounded-2xl p-4 hover:border-[#2FBCAB]/40 transition-colors group flex flex-col items-center text-center"
                 >
                   {shot && (
                     <img
@@ -563,12 +563,12 @@ function SprayPage({ spray }) {
                     />
                   )}
                   <h3
-                    className="text-white font-bold text-sm group-hover:text-[#00B4B4] transition-colors leading-snug"
+                    className="text-white font-bold text-sm group-hover:text-[#2FBCAB] transition-colors leading-snug"
                     style={H}
                   >
                     {item.name}
                   </h3>
-                  <p className="text-[#00B4B4]/80 text-[11px] mt-0.5">{item.positioning}</p>
+                  <p className="text-[#2FBCAB]/80 text-[11px] mt-0.5">{item.positioning}</p>
                   <p className="text-white/40 text-xs mt-1">{rand(item.prices[0].price)}</p>
                 </Link>
               )

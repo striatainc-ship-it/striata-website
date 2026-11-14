@@ -32,7 +32,7 @@ const DEFAULT_PEPTIDE_ID = '1' // BPC-157
 const DEFAULT_DOSE = { value: '250', unit: 'mcg' }
 
 const inputClass =
-  'w-full bg-[#0A1628] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/25 text-base focus:outline-none focus:border-[#00B4B4]/60 transition-colors tabular-nums'
+  'w-full bg-[#141C3A] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/25 text-base focus:outline-none focus:border-[#2FBCAB]/60 transition-colors tabular-nums'
 
 const labelClass = 'block text-white/55 text-xs font-bold uppercase tracking-widest mb-2'
 
@@ -83,7 +83,7 @@ const PEPTIDE_GROUPS = (() => {
 /** Two-way pill toggle used for mg/mcg and U-100/U-40. */
 function Segmented({ options, value, onChange, label }) {
   return (
-    <div role="group" aria-label={label} className="inline-flex bg-[#0A1628] border border-white/10 rounded-xl p-1 gap-1">
+    <div role="group" aria-label={label} className="inline-flex bg-[#141C3A] border border-white/10 rounded-xl p-1 gap-1">
       {options.map(opt => {
         const active = opt.id === value
         return (
@@ -93,7 +93,7 @@ function Segmented({ options, value, onChange, label }) {
             aria-pressed={active}
             onClick={() => onChange(opt.id)}
             className={`px-4 py-2 rounded-lg text-sm font-bold transition-colors cursor-pointer ${
-              active ? 'bg-[#00B4B4] text-white' : 'text-white/55 hover:text-white'
+              active ? 'bg-[#2FBCAB] text-[#141C3A]' : 'text-white/55 hover:text-white'
             }`}
             style={{ fontFamily: 'var(--font-heading)' }}
           >
@@ -115,10 +115,10 @@ function SyringeGauge({ units, unitsPerMl, over }) {
 
   return (
     <div aria-hidden="true" className="mt-5">
-      <div className="relative h-9 rounded-full bg-[#0A1628] border border-white/10 overflow-hidden">
+      <div className="relative h-9 rounded-full bg-[#141C3A] border border-white/10 overflow-hidden">
         <div
           className={`absolute inset-y-0 left-0 rounded-full transition-[width] duration-500 ease-out ${
-            over ? 'bg-red-500/70' : 'bg-gradient-to-r from-[#00B4B4]/70 to-[#00B4B4]'
+            over ? 'bg-red-500/70' : 'bg-gradient-to-r from-[#2FBCAB]/70 to-[#2FBCAB]'
           }`}
           style={{ width: `${pct}%` }}
         />
@@ -282,9 +282,9 @@ export default function ReconstitutionCalculator() {
   return (
     <div className="grid grid-cols-1 lg:grid-cols-[1.05fr_1fr] gap-6 items-start">
       {/* ── INPUTS ── */}
-      <div className="bg-[#0d1e35] border border-white/8 rounded-2xl p-6 md:p-8">
+      <div className="bg-[#1B2654] border border-white/8 rounded-2xl p-6 md:p-8">
         <h2 className="text-white font-bold text-lg mb-6" style={{ fontFamily: 'var(--font-heading)' }}>
-          <span className="text-[#00B4B4] mr-2">1.</span>Your vial
+          <span className="text-[#2FBCAB] mr-2">1.</span>Your vial
         </h2>
 
         {/* Peptide */}
@@ -349,8 +349,8 @@ export default function ReconstitutionCalculator() {
                       onClick={() => handleVialChange(i)}
                       className={`px-4 py-2.5 rounded-xl border text-sm font-bold transition-colors cursor-pointer tabular-nums ${
                         active
-                          ? 'bg-[#00B4B4] border-[#00B4B4] text-white'
-                          : 'bg-[#0A1628] border-white/10 text-white/65 hover:text-white hover:border-[#00B4B4]/40'
+                          ? 'bg-[#2FBCAB] border-[#2FBCAB] text-[#141C3A]'
+                          : 'bg-[#141C3A] border-white/10 text-white/65 hover:text-white hover:border-[#2FBCAB]/40'
                       }`}
                       style={{ fontFamily: 'var(--font-heading)' }}
                     >
@@ -385,7 +385,7 @@ export default function ReconstitutionCalculator() {
             <span className="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-white/40 text-sm font-semibold">mL</span>
           </div>
           <p id="rc-bac-note" className="mt-2 text-xs text-white/40 flex items-center gap-1.5">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#00B4B4]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#2FBCAB]" />
             {maxBac === DEFAULT_MAX_BAC_WATER_ML
               ? `Max ${maxBac} mL for this peptide.`
               : `Max ${maxBac} mL for this vial size.`}
@@ -394,7 +394,7 @@ export default function ReconstitutionCalculator() {
         </div>
 
         <h2 className="text-white font-bold text-lg mb-6 pt-6 border-t border-white/8" style={{ fontFamily: 'var(--font-heading)' }}>
-          <span className="text-[#00B4B4] mr-2">2.</span>Your dose
+          <span className="text-[#2FBCAB] mr-2">2.</span>Your dose
         </h2>
 
         {/* Dose */}
@@ -435,10 +435,10 @@ export default function ReconstitutionCalculator() {
 
       {/* ── RESULTS ── */}
       <div className="lg:sticky lg:top-28 space-y-6">
-        <div className="relative bg-[#0d1e35] border border-[#00B4B4]/25 rounded-2xl p-6 md:p-8 overflow-hidden">
-          <div className="absolute top-0 right-0 w-72 h-72 bg-[#00B4B4]/8 rounded-full translate-x-28 -translate-y-28 pointer-events-none" />
+        <div className="relative bg-[#1B2654] border border-[#2FBCAB]/25 rounded-2xl p-6 md:p-8 overflow-hidden">
+          <div className="absolute top-0 right-0 w-72 h-72 bg-[#2FBCAB]/8 rounded-full translate-x-28 -translate-y-28 pointer-events-none" />
           <div className="relative z-10">
-            <p className="text-[#00B4B4] text-xs font-bold uppercase tracking-widest mb-1" style={{ fontFamily: 'var(--font-heading)' }}>
+            <p className="text-[#2FBCAB] text-xs font-bold uppercase tracking-widest mb-1" style={{ fontFamily: 'var(--font-heading)' }}>
               Draw up
             </p>
             <p className="text-white/45 text-sm mb-5 truncate">{peptideLabel}</p>
@@ -493,7 +493,7 @@ export default function ReconstitutionCalculator() {
         </div>
 
         {/* Concentration */}
-        <div className="bg-[#0d1e35] border border-white/8 rounded-2xl p-6">
+        <div className="bg-[#1B2654] border border-white/8 rounded-2xl p-6">
           <p className="text-white/55 text-xs font-bold uppercase tracking-widest mb-4" style={{ fontFamily: 'var(--font-heading)' }}>
             Concentration
           </p>
@@ -521,7 +521,7 @@ export default function ReconstitutionCalculator() {
 
         {/* Quick reference */}
         {referenceRows.length > 0 && (
-          <div className="bg-[#0d1e35] border border-white/8 rounded-2xl p-6">
+          <div className="bg-[#1B2654] border border-white/8 rounded-2xl p-6">
             <div className="flex items-baseline justify-between gap-3 mb-4">
               <p className="text-white/55 text-xs font-bold uppercase tracking-widest" style={{ fontFamily: 'var(--font-heading)' }}>
                 Quick reference
@@ -544,7 +544,7 @@ export default function ReconstitutionCalculator() {
                       key={row.mcg}
                       onClick={() => applyReferenceDose(row.mcg)}
                       className={`border-t border-white/5 cursor-pointer transition-colors tabular-nums ${
-                        current ? 'text-[#00B4B4]' : 'text-white/75 hover:text-white hover:bg-white/[0.03]'
+                        current ? 'text-[#2FBCAB]' : 'text-white/75 hover:text-white hover:bg-white/[0.03]'
                       }`}
                     >
                       <td className="py-2.5 font-semibold">{doseLabelFromMcg(row.mcg)}</td>
@@ -573,7 +573,7 @@ export default function ReconstitutionCalculator() {
 
         <p className="text-white/35 text-xs leading-relaxed">
           Informational research tool only, not medical advice. Always verify against the documentation supplied with your product and with the certificate of analysis for your batch. Read the{' '}
-          <Link to="/guides/peptide-reconstitution-dosage-calculator" className="text-[#00B4B4]/80 hover:text-[#00B4B4] underline underline-offset-2">
+          <Link to="/guides/peptide-reconstitution-dosage-calculator" className="text-[#2FBCAB]/80 hover:text-[#2FBCAB] underline underline-offset-2">
             full reconstitution guide
           </Link>{' '}
           for the procedure.

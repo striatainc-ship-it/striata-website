@@ -140,7 +140,7 @@ export default function Catalogue() {
   const currentCategoryPage = categoryPageFor(activeCategory)
 
   return (
-    <div className="bg-[#0A1628] min-h-screen">
+    <div className="bg-[#141C3A] min-h-screen">
       <Helmet>
         <title>Buy Research Peptides in South Africa | STRIATA Catalogue</title>
         <meta name="description" content={`Browse ${listed.length} in-stock research-grade peptides with transparent ZAR pricing: recovery, weight loss, skin, hormonal and nootropics. Delivered across SA.`} />
@@ -198,25 +198,25 @@ export default function Catalogue() {
           className="absolute inset-0 bg-cover bg-center opacity-8"
           style={{ backgroundImage: `url(${import.meta.env.BASE_URL}assets/opt/catalogue-vials-1920.webp)` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0A1628]/80 to-[#0A1628]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#141C3A]/80 to-[#141C3A]" />
         <Reveal stagger delay={0.1} className="relative z-10 max-w-4xl mx-auto text-center">
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-[#00B4B4]/10 border border-[#00B4B4]/20 text-[#00B4B4] text-xs font-semibold uppercase tracking-widest mb-6" style={{ fontFamily: 'var(--font-heading)' }}>
-            <span className="w-1.5 h-1.5 rounded-full bg-[#00B4B4]" />
+          <span className="eyebrow mb-6" style={{ fontFamily: 'var(--font-heading)' }}>
+            <span className="w-1.5 h-1.5 rounded-full bg-[#2FBCAB]" />
             Complete Catalogue
           </span>
           <h1 className="text-3xl md:text-6xl font-black text-white mb-5 tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>
-            Research Peptide <span className="text-[#00B4B4]">Catalogue</span>
+            Research Peptide <span className="text-[#2FBCAB]">Catalogue</span>
           </h1>
           <p className="text-white/60 text-lg max-w-2xl mx-auto">
             Research-grade peptides with transparent pricing across every category, delivered anywhere in South Africa. Select your concentration and order directly on WhatsApp.
           </p>
           <p className="text-white/40 text-sm max-w-2xl mx-auto mt-4">
             First time buying?{' '}
-            <Link to="/learn/where-to-buy-peptides-south-africa" className="text-[#00B4B4] hover:text-white transition-colors">What to check before you buy</Link>
+            <Link to="/learn/where-to-buy-peptides-south-africa" className="text-[#2FBCAB] hover:text-white transition-colors">What to check before you buy</Link>
             {' · '}
-            <Link to="/learn/peptides-south-africa-legal-status" className="text-[#00B4B4] hover:text-white transition-colors">Legal status in SA</Link>
+            <Link to="/learn/peptides-south-africa-legal-status" className="text-[#2FBCAB] hover:text-white transition-colors">Legal status in SA</Link>
             {' · '}
-            <Link to="/learn/how-to-read-a-certificate-of-analysis" className="text-[#00B4B4] hover:text-white transition-colors">Reading a COA</Link>
+            <Link to="/learn/how-to-read-a-certificate-of-analysis" className="text-[#2FBCAB] hover:text-white transition-colors">Reading a COA</Link>
           </p>
         </Reveal>
       </section>
@@ -225,11 +225,11 @@ export default function Catalogue() {
       <section className="max-w-7xl mx-auto px-4 md:px-6 pb-6 -mt-6 relative z-10">
         <Link
           to="/stacks"
-          className="flex items-center justify-between gap-4 px-5 py-4 rounded-2xl border border-[#00B4B4]/20 bg-[#00B4B4]/5 hover:bg-[#00B4B4]/10 hover:border-[#00B4B4]/35 transition-all duration-200 group cursor-pointer"
+          className="flex items-center justify-between gap-4 px-5 py-4 rounded-2xl border border-[#2FBCAB]/20 bg-[#2FBCAB]/5 hover:bg-[#2FBCAB]/10 hover:border-[#2FBCAB]/35 transition-all duration-200 group cursor-pointer"
         >
           <div className="flex items-center gap-3">
-            <span className="w-8 h-8 rounded-full bg-[#00B4B4]/15 flex items-center justify-center flex-shrink-0">
-              <svg className="w-4 h-4 text-[#00B4B4]" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+            <span className="w-8 h-8 rounded-full bg-[#2FBCAB]/15 flex items-center justify-center flex-shrink-0">
+              <svg className="w-4 h-4 text-[#2FBCAB]" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true">
                 <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5" />
               </svg>
             </span>
@@ -238,14 +238,14 @@ export default function Catalogue() {
               <p className="text-white/50 text-xs">Browse our 10 curated peptide stacks — goal-specific protocols with tier pricing.</p>
             </div>
           </div>
-          <svg className="w-4 h-4 text-[#00B4B4] flex-shrink-0 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+          <svg className="w-4 h-4 text-[#2FBCAB] flex-shrink-0 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true">
             <polyline points="9 18 15 12 9 6" />
           </svg>
         </Link>
       </section>
 
       {/* Filter Bar */}
-      <section className={`sticky top-20 z-30 bg-[#0A1628]/95 backdrop-blur-md border-b border-white/8 py-3 md:py-4 transition-transform duration-300 ${filterVisible ? 'translate-y-0' : '-translate-y-[200%]'}`}>
+      <section className={`sticky top-20 z-30 bg-[#141C3A]/95 backdrop-blur-md border-b border-white/8 py-3 md:py-4 transition-transform duration-300 ${filterVisible ? 'translate-y-0' : '-translate-y-[200%]'}`}>
         <div className="max-w-7xl mx-auto px-4 md:px-6">
           {/* Search + stock toggle */}
           <div className="mb-3 flex items-center gap-2">
@@ -258,7 +258,7 @@ export default function Catalogue() {
                 placeholder="Search peptides..."
                 value={search}
                 onChange={(e) => setSearch(e.target.value)}
-                className="w-full bg-[#0d1e35] border border-white/10 rounded-xl pl-10 pr-9 py-2.5 text-white placeholder-white/30 text-sm focus:outline-none focus:border-[#00B4B4]/50 transition-colors"
+                className="w-full bg-[#1B2654] border border-white/10 rounded-xl pl-10 pr-9 py-2.5 text-white placeholder-white/30 text-sm focus:outline-none focus:border-[#2FBCAB]/50 transition-colors"
               />
               {search && (
                 <button onClick={() => setSearch('')} className="absolute right-3 top-1/2 -translate-y-1/2 text-white/40 hover:text-white">
@@ -278,7 +278,7 @@ export default function Catalogue() {
             onChange={setActiveCategory}
             renderIcon={({ id }, active) =>
               CAT_ICONS[id] && (
-                <span className={`hidden md:inline-flex transition-colors duration-300 ${active ? 'text-white' : 'text-[#00B4B4]'}`}>
+                <span className={`hidden md:inline-flex transition-colors duration-300 ${active ? 'text-white' : 'text-[#2FBCAB]'}`}>
                   {CAT_ICONS[id]}
                 </span>
               )
@@ -293,12 +293,12 @@ export default function Catalogue() {
           <p className="text-white/40 text-sm">
             {filtered.length} compound{filtered.length !== 1 ? 's' : ''} found
             {activeCategory !== 'all' && currentCategory && (
-              <> in <span className="text-[#00B4B4]">{currentCategory.label}</span></>
+              <> in <span className="text-[#2FBCAB]">{currentCategory.label}</span></>
             )}
             {currentCategoryPage && (
               <>
                 {' · '}
-                <Link to={categoryPagePath(currentCategoryPage)} className="text-[#00B4B4] hover:text-white transition-colors">
+                <Link to={categoryPagePath(currentCategoryPage)} className="text-[#2FBCAB] hover:text-white transition-colors">
                   About this range →
                 </Link>
               </>
@@ -344,7 +344,7 @@ export default function Catalogue() {
             <br />
             <button
               onClick={clearFilters}
-              className="mt-4 text-[#00B4B4] hover:text-white text-sm transition-colors"
+              className="mt-4 text-[#2FBCAB] hover:text-white text-sm transition-colors"
             >
               Clear filters
             </button>
@@ -356,7 +356,7 @@ export default function Catalogue() {
       <section className="py-20 border-t border-white/8">
         <Reveal stagger className="max-w-2xl mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-black text-white mb-4 tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>
-            Can't Find What You're <span className="text-[#00B4B4]">Looking For?</span>
+            Can't Find What You're <span className="text-[#2FBCAB]">Looking For?</span>
           </h2>
           <p className="text-white/60 mb-8">
             We stock over 100 research-grade peptides. If you don't see what you need, message us directly and we'll source it for you.

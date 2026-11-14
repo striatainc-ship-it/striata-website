@@ -59,16 +59,16 @@ function ArticleCard({ article }) {
   return (
     <Link
       to={`/learn/${article.slug}`}
-      className="group bg-[#0d1e35] border border-white/8 rounded-2xl p-6 hover:border-[#00B4B4]/40 hover:bg-[#0f2340] transition-all duration-300 hover:shadow-lg hover:shadow-[#00B4B4]/5 hover:-translate-y-1 flex flex-col"
+      className="group bg-[#1B2654] border border-white/8 rounded-2xl p-6 hover:border-[#2FBCAB]/40 hover:bg-[#1F2C58] transition-all duration-300 flex flex-col"
     >
       <div className="flex items-center justify-between mb-4">
-        <span className="text-[#00B4B4] text-xs font-bold uppercase tracking-widest" style={{ fontFamily: 'var(--font-heading)' }}>
+        <span className="text-[#2FBCAB] text-xs font-bold uppercase tracking-widest" style={{ fontFamily: 'var(--font-heading)' }}>
           {article.category}
         </span>
         <span className="text-white/30 text-xs">{article.readTime}</span>
       </div>
       <h3
-        className="text-white font-bold text-base leading-snug mb-3 group-hover:text-[#00B4B4] transition-colors flex-1"
+        className="text-white font-bold text-base leading-snug mb-3 group-hover:text-[#2FBCAB] transition-colors flex-1"
         style={{ fontFamily: 'var(--font-heading)' }}
       >
         {article.title}
@@ -76,7 +76,7 @@ function ArticleCard({ article }) {
       <p className="text-white/50 text-sm leading-relaxed line-clamp-3 mb-5">
         {article.preview}
       </p>
-      <div className="flex items-center gap-1 text-[#00B4B4] text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity mt-auto">
+      <div className="flex items-center gap-1 text-[#2FBCAB] text-sm font-semibold opacity-0 group-hover:opacity-100 transition-opacity mt-auto">
         Read Article
         {ARROW}
       </div>
@@ -105,7 +105,7 @@ export default function Blog() {
   }
 
   return (
-    <div className="bg-[#0A1628] min-h-screen">
+    <div className="bg-[#141C3A] min-h-screen">
       <Helmet>
         <title>Learn About Peptides: Guides & Research | STRIATA</title>
         <meta name="description" content="In-depth guides, research insights and protocols for peptides. Learn about BPC-157, Semaglutide, GHK-Cu, nootropics and anti-aging compounds from STRIATA." />
@@ -117,20 +117,20 @@ export default function Blog() {
 
       {/* ── HERO ── */}
       <section className="relative pt-40 pb-16 px-6 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#00B4B4]/5 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#2FBCAB]/5 to-transparent" />
         <Reveal stagger delay={0.1} className="relative z-10 max-w-3xl mx-auto text-center">
           <div
-            className="inline-flex items-center gap-2 text-[#00B4B4] text-xs font-bold uppercase tracking-widest mb-6 bg-[#00B4B4]/10 border border-[#00B4B4]/20 px-4 py-2 rounded-full"
+            className="eyebrow mb-6"
             style={{ fontFamily: 'var(--font-heading)' }}
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-[#00B4B4]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#2FBCAB]" />
             Learning Hub
           </div>
           <h1
             className="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-5 leading-tight"
             style={{ fontFamily: 'var(--font-heading)' }}
           >
-            The STRIATA <span className="text-[#00B4B4]">Learning Hub</span>
+            The STRIATA <span className="text-[#2FBCAB]">Learning Hub</span>
           </h1>
           <p className="text-white/60 text-lg max-w-xl mx-auto">
             No jargon. No gatekeeping. Just clear, honest information about peptides, performance and what the science actually says.
@@ -148,8 +148,8 @@ export default function Blog() {
                 onClick={() => setActiveCategory(key)}
                 className={`shrink-0 flex items-center gap-1.5 px-5 py-2.5 rounded-full text-sm font-semibold transition-all duration-200 ${
                   activeCategory === key
-                    ? 'bg-[#00B4B4] text-white shadow-lg shadow-teal-500/20'
-                    : 'bg-[#0d1e35] text-white/60 border border-white/8 hover:border-[#00B4B4]/40 hover:text-white'
+                    ? 'bg-[#2FBCAB] text-[#141C3A]'
+                    : 'bg-[#1B2654] text-white/60 border border-white/8 hover:border-[#2FBCAB]/40 hover:text-white'
                 }`}
                 style={{ fontFamily: 'var(--font-body)' }}
               >
@@ -167,25 +167,25 @@ export default function Blog() {
           <div className="max-w-7xl mx-auto">
             <Link
               to={`/learn/${featured.slug}`}
-              className="group block bg-[#0d1e35] border border-[#00B4B4]/25 rounded-2xl p-8 md:p-10 hover:border-[#00B4B4]/50 hover:bg-[#0f2340] transition-all duration-300 hover:shadow-xl hover:shadow-[#00B4B4]/10 relative overflow-hidden"
+              className="group block bg-[#1B2654] border border-[#2FBCAB]/25 rounded-2xl p-8 md:p-10 hover:border-[#2FBCAB]/50 hover:bg-[#1F2C58] transition-all duration-300 relative overflow-hidden"
             >
-              <div className="absolute top-0 right-0 w-96 h-96 bg-[#00B4B4]/5 rounded-full translate-x-32 -translate-y-32 pointer-events-none" />
+              <div className="absolute top-0 right-0 w-96 h-96 bg-[#2FBCAB]/5 rounded-full translate-x-32 -translate-y-32 pointer-events-none" />
               <div className="relative z-10 max-w-3xl">
                 <div className="flex flex-wrap items-center gap-3 mb-5">
                   <span
-                    className="inline-flex items-center gap-1.5 bg-[#00B4B4] text-white text-xs font-bold uppercase tracking-widest px-3 py-1.5 rounded-full"
+                    className="inline-flex items-center gap-1.5 bg-[#2FBCAB] text-[#141C3A] text-xs font-semibold px-3 py-1.5 rounded-full"
                     style={{ fontFamily: 'var(--font-heading)' }}
                   >
                     <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 20 20"><path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" /></svg>
                     Start Here
                   </span>
-                  <span className="text-[#00B4B4] text-xs font-bold uppercase tracking-widest" style={{ fontFamily: 'var(--font-heading)' }}>
+                  <span className="text-[#2FBCAB] text-xs font-bold uppercase tracking-widest" style={{ fontFamily: 'var(--font-heading)' }}>
                     🧬 {featured.category}
                   </span>
                   <span className="text-white/30 text-xs">{featured.readTime}</span>
                 </div>
                 <h2
-                  className="text-2xl md:text-3xl font-black text-white mb-4 leading-tight group-hover:text-[#00B4B4] transition-colors"
+                  className="text-2xl md:text-3xl font-black text-white mb-4 leading-tight group-hover:text-[#2FBCAB] transition-colors"
                   style={{ fontFamily: 'var(--font-heading)' }}
                 >
                   {featured.title}
@@ -193,7 +193,7 @@ export default function Blog() {
                 <p className="text-white/60 leading-relaxed mb-6 max-w-2xl">
                   {featured.preview}
                 </p>
-                <div className="inline-flex items-center gap-2 text-[#00B4B4] font-semibold text-sm">
+                <div className="inline-flex items-center gap-2 text-[#2FBCAB] font-semibold text-sm">
                   Read Article
                   {ARROW}
                 </div>
@@ -221,10 +221,10 @@ export default function Blog() {
       </section>
 
       {/* ── NEWSLETTER ── */}
-      <section className="py-20 bg-[#060e1a] border-t border-white/5">
+      <section className="py-20 bg-[#0F152E] border-t border-white/5">
         <div className="max-w-xl mx-auto px-6 text-center">
           <div
-            className="inline-flex items-center gap-2 text-[#00B4B4] text-xs font-bold uppercase tracking-widest mb-5 bg-[#00B4B4]/10 border border-[#00B4B4]/20 px-4 py-2 rounded-full"
+            className="eyebrow mb-5"
             style={{ fontFamily: 'var(--font-heading)' }}
           >
             Newsletter
@@ -233,14 +233,14 @@ export default function Blog() {
             className="text-2xl md:text-4xl font-black text-white mb-3"
             style={{ fontFamily: 'var(--font-heading)' }}
           >
-            Stay in the <span className="text-[#00B4B4]">Loop</span>
+            Stay in the <span className="text-[#2FBCAB]">Loop</span>
           </h2>
           <p className="text-white/60 mb-8">
             New articles dropped monthly — straight to your inbox. No spam, no nonsense. Just the science made simple.
           </p>
           {subscribed ? (
-            <div className="bg-[#00B4B4]/10 border border-[#00B4B4]/30 rounded-2xl px-6 py-5">
-              <p className="text-[#00B4B4] font-semibold">You're subscribed. Welcome to the hub.</p>
+            <div className="bg-[#2FBCAB]/10 border border-[#2FBCAB]/30 rounded-2xl px-6 py-5">
+              <p className="text-[#2FBCAB] font-semibold">You're subscribed. Welcome to the hub.</p>
             </div>
           ) : (
             <form onSubmit={handleSubscribe} className="flex gap-3 max-w-md mx-auto">
@@ -250,7 +250,7 @@ export default function Blog() {
                 value={email}
                 onChange={e => setEmail(e.target.value)}
                 required
-                className="flex-1 bg-[#0d1e35] border border-white/10 rounded-full px-5 py-3 text-white placeholder-white/30 text-sm focus:outline-none focus:border-[#00B4B4]/50 transition-colors"
+                className="flex-1 bg-[#1B2654] border border-white/10 rounded-full px-5 py-3 text-white placeholder-white/30 text-sm focus:outline-none focus:border-[#2FBCAB]/50 transition-colors"
               />
               <button
                 type="submit"
@@ -266,13 +266,13 @@ export default function Blog() {
 
       {/* ── BOTTOM CTA ── */}
       <section className="py-20 px-6 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#00B4B4]/10 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#2FBCAB]/10 to-transparent" />
         <div className="relative z-10 max-w-2xl mx-auto text-center">
           <h2
             className="text-2xl md:text-4xl font-black text-white mb-4"
             style={{ fontFamily: 'var(--font-heading)' }}
           >
-            Found Something That <span className="text-[#00B4B4]">Interests You?</span>
+            Found Something That <span className="text-[#2FBCAB]">Interests You?</span>
           </h2>
           <p className="text-white/60 mb-8">
             Chat to us on WhatsApp — we'll help you understand your options and find the right compound for your goals.

@@ -71,7 +71,7 @@ export default function ReconstitutionCalculatorPage() {
   const guide = getGuide(TOOL.relatedGuide)
 
   return (
-    <div className="bg-[#0A1628] min-h-screen">
+    <div className="bg-[#141C3A] min-h-screen">
       <Helmet>
         <title>Peptide Calculator: Reconstitution & Syringe Units | STRIATA</title>
         <meta name="description" content="Free peptide calculator: pick your vial, enter the bacteriostatic water and get the concentration, mL and U-100 or U-40 syringe units to draw. No sign-up." />
@@ -111,11 +111,11 @@ export default function ReconstitutionCalculatorPage() {
 
       {/* ── HEADER ── */}
       <section className="relative pt-36 pb-10 px-6 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#00B4B4]/5 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#2FBCAB]/5 to-transparent" />
         <div className="relative z-10 max-w-6xl mx-auto">
           <Link
             to="/tools"
-            className="inline-flex items-center gap-1.5 text-white/40 hover:text-[#00B4B4] text-sm transition-colors mb-8"
+            className="inline-flex items-center gap-1.5 text-white/40 hover:text-[#2FBCAB] text-sm transition-colors mb-8"
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
@@ -124,7 +124,7 @@ export default function ReconstitutionCalculatorPage() {
           </Link>
           <div className="flex flex-wrap items-center gap-3 mb-5">
             <span
-              className="text-[#00B4B4] text-xs font-bold uppercase tracking-widest bg-[#00B4B4]/10 border border-[#00B4B4]/20 px-3 py-1.5 rounded-full"
+              className="text-[#2FBCAB] text-[13px] font-semibold"
               style={{ fontFamily: 'var(--font-heading)' }}
             >
               Calculator
@@ -135,7 +135,7 @@ export default function ReconstitutionCalculatorPage() {
             className="text-3xl sm:text-4xl md:text-5xl font-black text-white leading-tight mb-4 max-w-3xl"
             style={{ fontFamily: 'var(--font-heading)' }}
           >
-            Peptide <span className="text-[#00B4B4]">Calculator</span>
+            Peptide <span className="text-[#2FBCAB]">Calculator</span>
           </h1>
           <p className="text-white/60 text-lg leading-relaxed max-w-2xl">
             A reconstitution calculator for any vial: choose it, enter the bacteriostatic water you are adding, and read off the concentration and the syringe units to draw for your dose.
@@ -154,7 +154,7 @@ export default function ReconstitutionCalculatorPage() {
       <section className="px-6 pb-20 border-t border-white/5 pt-20">
         <div className="max-w-6xl mx-auto">
           <h2
-            className="text-[#00B4B4] text-xs font-bold uppercase tracking-widest mb-3"
+            className="text-[#2FBCAB] text-xs font-bold uppercase tracking-widest mb-3"
             style={{ fontFamily: 'var(--font-heading)' }}
           >
             The maths behind it
@@ -164,10 +164,10 @@ export default function ReconstitutionCalculatorPage() {
           </p>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {STEPS.map(s => (
-              <div key={s.n} className="bg-[#0d1e35] border border-white/8 rounded-2xl p-7">
-                <span className="text-[#00B4B4]/50 text-sm font-black tabular-nums" style={{ fontFamily: 'var(--font-heading)' }}>{s.n}</span>
+              <div key={s.n} className="bg-[#1B2654] border border-white/8 rounded-2xl p-7">
+                <span className="text-[#2FBCAB]/50 text-sm font-black tabular-nums" style={{ fontFamily: 'var(--font-heading)' }}>{s.n}</span>
                 <h3 className="text-white font-bold text-lg mt-2 mb-3" style={{ fontFamily: 'var(--font-heading)' }}>{s.title}</h3>
-                <p className="text-[#00B4B4] font-semibold text-sm mb-1 tabular-nums">{s.formula}</p>
+                <p className="text-[#2FBCAB] font-semibold text-sm mb-1 tabular-nums">{s.formula}</p>
                 <p className="text-white/40 text-xs mb-4 tabular-nums">{s.example}</p>
                 <p className="text-white/60 text-sm leading-relaxed">{s.body}</p>
               </div>
@@ -182,15 +182,15 @@ export default function ReconstitutionCalculatorPage() {
           {guide && (
             <Link
               to={`/guides/${guide.slug}`}
-              className="group relative bg-[#0d1e35] border border-[#00B4B4]/25 rounded-2xl p-8 hover:border-[#00B4B4]/50 transition-all duration-300 hover:-translate-y-1 overflow-hidden block lg:sticky lg:top-28"
+              className="group relative bg-[#1B2654] border border-[#2FBCAB]/25 rounded-2xl p-8 hover:border-[#2FBCAB]/50 transition-all duration-300 overflow-hidden block lg:sticky lg:top-28"
             >
-              <div className="absolute top-0 right-0 w-56 h-56 bg-[#00B4B4]/8 rounded-full translate-x-20 -translate-y-20 pointer-events-none" />
+              <div className="absolute top-0 right-0 w-56 h-56 bg-[#2FBCAB]/8 rounded-full translate-x-20 -translate-y-20 pointer-events-none" />
               <div className="relative z-10">
-                <span className="text-[#00B4B4] text-xs font-bold uppercase tracking-widest" style={{ fontFamily: 'var(--font-heading)' }}>
+                <span className="text-[#2FBCAB] text-xs font-bold uppercase tracking-widest" style={{ fontFamily: 'var(--font-heading)' }}>
                   Full guide · {guide.readTime}
                 </span>
                 <h3
-                  className="text-white font-bold text-xl leading-snug mt-3 mb-3 group-hover:text-[#00B4B4] transition-colors"
+                  className="text-white font-bold text-xl leading-snug mt-3 mb-3 group-hover:text-[#2FBCAB] transition-colors"
                   style={{ fontFamily: 'var(--font-heading)' }}
                 >
                   {guide.title}
@@ -198,7 +198,7 @@ export default function ReconstitutionCalculatorPage() {
                 <p className="text-white/55 text-sm leading-relaxed mb-5">
                   The step-by-step procedure, equipment, storage and injection technique this calculator sits alongside.
                 </p>
-                <span className="inline-flex items-center gap-1 text-[#00B4B4] text-sm font-semibold">
+                <span className="inline-flex items-center gap-1 text-[#2FBCAB] text-sm font-semibold">
                   Read the guide
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
@@ -210,14 +210,14 @@ export default function ReconstitutionCalculatorPage() {
 
           <div>
             <h2
-              className="text-[#00B4B4] text-xs font-bold uppercase tracking-widest mb-5"
+              className="text-[#2FBCAB] text-xs font-bold uppercase tracking-widest mb-5"
               style={{ fontFamily: 'var(--font-heading)' }}
             >
               Common questions
             </h2>
             <div className="space-y-3">
               {FAQ.map(f => (
-                <details key={f.q} className="group bg-[#0d1e35] border border-white/8 rounded-2xl open:border-[#00B4B4]/30 transition-colors">
+                <details key={f.q} className="group bg-[#1B2654] border border-white/8 rounded-2xl open:border-[#2FBCAB]/30 transition-colors">
                   <summary className="flex items-center justify-between gap-4 cursor-pointer list-none px-6 py-5 text-white font-semibold text-base" style={{ fontFamily: 'var(--font-heading)' }}>
                     {f.q}
                     <svg className="w-4 h-4 text-white/40 shrink-0 transition-transform group-open:rotate-180" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true">
@@ -234,13 +234,13 @@ export default function ReconstitutionCalculatorPage() {
 
       {/* ── CTA ── */}
       <section className="py-20 border-t border-white/5 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#00B4B4]/8 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#2FBCAB]/8 to-transparent" />
         <div className="relative z-10 max-w-2xl mx-auto text-center px-6">
           <h2
             className="text-2xl md:text-4xl font-black text-white mb-4"
             style={{ fontFamily: 'var(--font-heading)' }}
           >
-            Not Sure About <span className="text-[#00B4B4]">a Number?</span>
+            Not Sure About <span className="text-[#2FBCAB]">a Number?</span>
           </h2>
           <p className="text-white/60 mb-8">
             Send us the vial, the water and the dose and we will confirm the draw. We would rather answer a question than have you guess.

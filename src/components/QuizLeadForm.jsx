@@ -85,13 +85,13 @@ export default function QuizLeadForm({ protocol, answers, resultUrl }) {
   }
 
   return (
-    <div className="bg-[#0d1e35] border border-white/8 rounded-2xl p-6">
+    <div className="bg-[#1B2654] border border-white/8 rounded-2xl p-6">
       <p className="text-white font-bold text-base mb-1" style={H}>{LEAD_CAPTURE.title}</p>
       <p className="text-white/50 text-sm leading-relaxed mb-4">{LEAD_CAPTURE.body}</p>
 
       {status === 'success' ? (
-        <p role="status" className="flex items-start gap-2.5 rounded-xl border border-[#00B4B4]/30 bg-[#00B4B4]/10 px-4 py-3 text-sm text-white/85">
-          <svg className="w-4 h-4 mt-0.5 text-[#00B4B4] shrink-0" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12" /></svg>
+        <p role="status" className="flex items-start gap-2.5 rounded-xl border border-[#2FBCAB]/30 bg-[#2FBCAB]/10 px-4 py-3 text-sm text-white/85">
+          <svg className="w-4 h-4 mt-0.5 text-[#2FBCAB] shrink-0" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true"><polyline points="20 6 9 17 4 12" /></svg>
           {LEAD_CAPTURE.success}
         </p>
       ) : (
@@ -107,7 +107,7 @@ export default function QuizLeadForm({ protocol, answers, resultUrl }) {
             placeholder={LEAD_CAPTURE.placeholder}
             value={email}
             onChange={e => setEmail(e.target.value)}
-            className="w-full bg-[#0A1628] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/25 text-base focus:outline-none focus:border-[#00B4B4]/60 transition-colors"
+            className="w-full bg-[#141C3A] border border-white/10 rounded-xl px-4 py-3 text-white placeholder-white/25 text-base focus:outline-none focus:border-[#2FBCAB]/60 transition-colors"
           />
           <button type="submit" disabled={status === 'sending'} className="btn btn-primary btn-md w-full disabled:opacity-60">
             {status === 'sending' ? LEAD_CAPTURE.sending : LEAD_CAPTURE.button}
@@ -115,7 +115,7 @@ export default function QuizLeadForm({ protocol, answers, resultUrl }) {
           {status === 'error' && (
             <p role="alert" className="text-amber-100 text-sm leading-relaxed">
               {LEAD_CAPTURE.error}{' '}
-              <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="text-[#00B4B4] underline underline-offset-2">Open WhatsApp</a>
+              <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className="text-[#2FBCAB] underline underline-offset-2">Open WhatsApp</a>
             </p>
           )}
           <p className="text-white/30 text-xs leading-relaxed">{LEAD_CAPTURE.consent}</p>

@@ -12,11 +12,11 @@ export default function FaqItem({ q, a }) {
         aria-expanded={open}
         className="w-full flex items-center justify-between gap-4 py-5 text-left cursor-pointer group"
       >
-        <span className="text-white font-semibold group-hover:text-[#00B4B4] transition-colors" style={H}>
+        <span className="text-white font-semibold group-hover:text-[#2FBCAB] transition-colors" style={H}>
           {q}
         </span>
         <svg
-          className={`w-4 h-4 shrink-0 text-[#00B4B4] transition-transform duration-200 ${open ? 'rotate-45' : ''}`}
+          className={`w-4 h-4 shrink-0 text-[#2FBCAB] transition-transform duration-200 ${open ? 'rotate-45' : ''}`}
           fill="none"
           stroke="currentColor"
           strokeWidth={2.5}

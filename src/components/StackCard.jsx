@@ -34,13 +34,13 @@ export function SafetyBadge({ safety }) {
   )
   if (safety === 'SAFE') {
     return (
-      <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold uppercase tracking-wide bg-emerald-500/15 text-emerald-400 border border-emerald-500/25 whitespace-nowrap">
+      <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold text-emerald-300 border border-emerald-400/30 whitespace-nowrap">
         {SHIELD} Safe
       </span>
     )
   }
   return (
-    <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold uppercase tracking-wide bg-amber-500/15 text-amber-400 border border-amber-500/25 whitespace-nowrap">
+    <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-semibold text-amber-300 border border-amber-400/30 whitespace-nowrap">
       {WARN_SVG} Caution
     </span>
   )
@@ -61,16 +61,15 @@ export function StackCard({ stack, standalone = false }) {
   return (
     <article
       id={stackSlug(stack)}
-      className="rounded-2xl overflow-hidden border border-white/8 bg-[#0d1e35] flex flex-col hover:border-white/15 transition-colors duration-200 scroll-mt-28"
-      style={{ borderLeft: `4px solid ${meta.color}` }}
+      className="rounded-2xl overflow-hidden border border-white/8 bg-[#1B2654] flex flex-col hover:border-white/15 transition-colors duration-200 scroll-mt-28"
     >
       {/* ── Header ── */}
       <div className="px-5 pt-5 pb-4 border-b border-white/8">
         <div className="flex items-start justify-between gap-3">
           <div className="flex items-center gap-3 min-w-0">
             <span
-              className="w-9 h-9 rounded-full flex items-center justify-center text-sm font-black flex-shrink-0"
-              style={{ backgroundColor: meta.color, color: '#0A1628' }}
+              className="w-9 h-9 rounded-full flex items-center justify-center text-sm font-semibold flex-shrink-0 border tabular-nums"
+              style={{ borderColor: meta.border, color: meta.color }}
             >
               {String(stack.num).padStart(2, '0')}
             </span>
@@ -81,12 +80,12 @@ export function StackCard({ stack, standalone = false }) {
                 </p>
               ) : (
                 <h2 className="text-base font-black text-white leading-tight" style={{ fontFamily: 'var(--font-heading)' }}>
-                  <Link to={stackPath(stack)} className="hover:text-[#00B4B4] transition-colors">
+                  <Link to={stackPath(stack)} className="hover:text-[#2FBCAB] transition-colors">
                     {stack.name}
                   </Link>
                 </h2>
               )}
-              <p className="text-white/50 text-xs mt-0.5 italic">{stack.tagline}</p>
+              <p className="text-white/50 text-xs mt-0.5">{stack.tagline}</p>
             </div>
           </div>
           <SafetyBadge safety={stack.safety} />
@@ -109,14 +108,13 @@ export function StackCard({ stack, standalone = false }) {
       {/* ── Rationale ── */}
       <div
         className="px-5 py-4 border-b border-white/8"
-        style={{ backgroundColor: meta.lightColor, borderLeft: `3px solid ${meta.color}` }}
       >
         <p className="text-white/70 text-sm leading-relaxed">{stack.rationale}</p>
       </div>
 
       {/* ── Pricing table ── */}
       <div className="border-b border-white/8">
-        <div className="grid grid-cols-[1fr_2.5fr_1fr] bg-[#0A1628] px-4 py-2.5">
+        <div className="grid grid-cols-[1fr_2.5fr_1fr] bg-[#141C3A] px-4 py-2.5">
           <span className="text-white/35 text-xs font-semibold uppercase tracking-widest">Tier</span>
           <span className="text-white/35 text-xs font-semibold uppercase tracking-widest">Includes</span>
           <span className="text-white/35 text-xs font-semibold uppercase tracking-widest text-right">Price</span>
@@ -150,7 +148,7 @@ export function StackCard({ stack, standalone = false }) {
               <span className="text-xs leading-snug pr-2" style={{ color: ts.text }}>
                 {tier.products}
               </span>
-              <span className="text-xs font-mono font-bold text-right" style={{ color: ts.price }}>
+              <span className="text-xs tabular-nums font-bold text-right" style={{ color: ts.price }}>
                 {tier.price}
               </span>
             </button>
@@ -166,8 +164,8 @@ export function StackCard({ stack, standalone = false }) {
         className="px-5 py-4 border-b border-white/8"
         style={
           stack.safety === 'SAFE'
-            ? { backgroundColor: 'rgba(16,185,129,0.06)', borderLeft: '3px solid rgba(16,185,129,0.4)' }
-            : { backgroundColor: 'rgba(245,158,11,0.06)', borderLeft: '3px solid rgba(245,158,11,0.4)' }
+            ? { backgroundColor: 'rgba(16,185,129,0.05)' }
+            : { backgroundColor: 'rgba(245,158,11,0.05)' }
         }
       >
         <p className="text-xs font-bold uppercase tracking-widest mb-1.5" style={{ color: stack.safety === 'SAFE' ? '#34D399' : '#FCD34D' }}>
@@ -178,7 +176,7 @@ export function StackCard({ stack, standalone = false }) {
 
       {/* ── Advisory (CAUTION only) ── */}
       {stack.advisory && (
-        <div className="px-5 py-4 border-b border-white/8" style={{ backgroundColor: 'rgba(239,68,68,0.05)', borderLeft: '3px solid rgba(239,68,68,0.35)' }}>
+        <div className="px-5 py-4 border-b border-white/8" style={{ backgroundColor: 'rgba(239,68,68,0.05)' }}>
           <p className="text-xs font-bold uppercase tracking-widest text-red-400 mb-1.5">Usage Advisory</p>
           <p className="text-white/60 text-sm leading-relaxed">{stack.advisory}</p>
         </div>
@@ -186,7 +184,7 @@ export function StackCard({ stack, standalone = false }) {
 
       {/* ── Contraindications ── */}
       <div className="border-b border-white/8">
-        <div className="px-5 py-2.5 bg-[#0A1628]">
+        <div className="px-5 py-2.5 bg-[#141C3A]">
           <p className="text-xs font-bold uppercase tracking-widest text-white/35">Contraindications — Do Not Use If:</p>
         </div>
         {stack.contraindications.map((item, i) => (
@@ -211,7 +209,7 @@ export function StackCard({ stack, standalone = false }) {
           detail={selected?.products ?? null}
           chooseLabel="Choose a tier above"
           className={`flex-1 flex items-center justify-center py-3.5 rounded-xl font-bold text-sm transition-colors cursor-pointer ${
-            selected ? 'bg-[#00B4B4] hover:bg-[#009999] text-white' : 'bg-[#00B4B4]/12 text-[#00B4B4] hover:bg-[#00B4B4]/20'
+            selected ? 'bg-[#2FBCAB] hover:bg-[#25A192] text-[#141C3A]' : 'bg-[#2FBCAB]/12 text-[#2FBCAB] hover:bg-[#2FBCAB]/20'
           }`}
         />
         <a
@@ -233,11 +231,11 @@ export function StackCard({ stack, standalone = false }) {
 export function UniversalContraindications() {
   const [open, setOpen] = useState(false)
   return (
-    <div className="rounded-2xl overflow-hidden border border-white/8 bg-[#0d1e35]">
+    <div className="rounded-2xl overflow-hidden border border-white/8 bg-[#1B2654]">
       <button
         onClick={() => setOpen(!open)}
         aria-expanded={open}
-        className="w-full flex items-center justify-between px-6 py-5 text-left cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00B4B4]"
+        className="w-full flex items-center justify-between px-6 py-5 text-left cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2FBCAB]"
       >
         <div>
           <p className="text-xs font-bold uppercase tracking-widest text-white/35 mb-0.5">Applies to All Stacks</p>

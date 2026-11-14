@@ -34,7 +34,7 @@ function flyToSlip(from, imageName) {
     objectFit: 'contain',
     zIndex: 70,
     pointerEvents: 'none',
-    ...(imageName ? {} : { height: '14px', width: '14px', borderRadius: '9999px', background: '#00B4B4' }),
+    ...(imageName ? {} : { height: '14px', width: '14px', borderRadius: '9999px', background: '#2FBCAB' }),
   })
   document.body.appendChild(token)
 
@@ -107,10 +107,20 @@ export default function AddToOrder({
         ? 'Add to order'
         : 'Add as an enquiry'
 
+  // Two cards share a phone's width, which leaves about 75px for this text.
+  const short = !tier ? 'Choose size' : added ? 'Added' : tier.inStock ? 'Add' : 'Enquire'
+
   return (
     <button ref={ref} type="button" onClick={onClick} className={`${className} gap-2`} aria-live="polite">
       {added ? TICK : tier ? PLUS : null}
-      <span className={compact ? 'truncate' : ''}>{label}</span>
+      {compact ? (
+        <>
+          <span className="sm:hidden">{short}</span>
+          <span className="hidden sm:inline truncate">{label}</span>
+        </>
+      ) : (
+        <span>{label}</span>
+      )}
     </button>
   )
 }

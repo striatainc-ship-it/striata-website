@@ -16,7 +16,7 @@ import Home from './pages/Home'
  */
 export default function AppRoutes({ components }) {
   return (
-    <Suspense fallback={<div className="min-h-screen bg-[#0A1628]" />}>
+    <Suspense fallback={<div className="min-h-screen bg-[#141C3A]" />}>
       <Routes>
         <Route path="/" element={<Home />} />
         {Object.keys(components).map(path => {

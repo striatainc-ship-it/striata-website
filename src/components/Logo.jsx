@@ -1,16 +1,15 @@
+// The reversed horizontal lockup from the brand logo kit (03_Horizontal):
+// snow wordmark with the teal "TA" and helix, for navy grounds. Vector, so
+// it stays sharp at any size; do not recolour it or add effects.
 export default function Logo({ className = '' }) {
-  const base = import.meta.env.BASE_URL
-
   return (
     <div className={`inline-flex ${className}`}>
       <img
-        src={`${base}assets/opt/logo-white-640.webp`}
-        srcSet={`${base}assets/opt/logo-white-320.webp 320w, ${base}assets/opt/logo-white-640.webp 640w`}
-        sizes="161px"
+        src={`${import.meta.env.BASE_URL}assets/logo-reversed.svg`}
         alt="STRIATA"
-        width={2418}
-        height={840}
-        className="h-14 w-auto"
+        width={1533}
+        height={479}
+        className="h-11 w-auto"
       />
     </div>
   )

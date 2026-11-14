@@ -23,15 +23,23 @@
 }
 
 @theme {
-  --color-teal: #00B4B4;
-  --color-teal-dark: #009999;
-  --color-teal-light: #00CCCC;
-  --color-navy: #0A1628;
-  --color-navy-light: #12213D;
-  --color-steel: #F4F6F8;
+  --color-teal: #2FBCAB;
+  --color-teal-dark: #25A192;
+  --color-teal-light: #4CCDBD;
+  --color-navy: #141C3A;
+  --color-navy-light: #1F2C58;
+  --color-steel: #F6F8FB;
   --color-steel-dark: #E2E8F0;
   --font-heading: 'Bricolage Grotesque', 'Segoe UI', sans-serif;
   --font-body: 'Manrope', 'Segoe UI', sans-serif;
+  /* Ink for text that sits on teal: white on #2FBCAB is only 2.5:1. */
+  --color-ink: #141C3A;
+  /* Tighter corners than Tailwind's defaults. The soft 16-24px radius on
+     every box was a large part of the "app template" look; these read as
+     cut glass rather than cushions. Pills (rounded-full) are unaffected. */
+  --radius-xl: 0.5rem;
+  --radius-2xl: 0.625rem;
+  --radius-3xl: 0.875rem;
 }
 
 * {
@@ -45,10 +53,12 @@ html {
 body {
   margin: 0;
   font-family: var(--font-body);
-  background-color: #0A1628;
-  color: #F4F6F8;
+  background-color: #141C3A;
+  color: #F6F8FB;
   -webkit-font-smoothing: antialiased;
   text-rendering: optimizeLegibility;
+  /* Manrope sets tight; a little air between words makes long copy calmer. */
+  word-spacing: 0.05em;
 }
 
 #root {
@@ -64,11 +74,51 @@ body {
    heavy headings read as set type rather than stacked words. */
 h1, h2, h3, .font-heading {
   font-variation-settings: 'opsz' 96;
-  letter-spacing: -0.02em;
+  letter-spacing: -0.012em;
+  word-spacing: 0;
 }
-h1 { font-variation-settings: 'opsz' 96; }
-h3 { font-variation-settings: 'opsz' 48; letter-spacing: -0.01em; }
-.font-black { font-weight: 800; }
+h1, h2 { text-wrap: balance; }
+h3 { font-variation-settings: 'opsz' 48; letter-spacing: -0.005em; }
+p { text-wrap: pretty; }
+
+/* Display weight. Headings were set at 800 with tight tracking, which
+   closed the counters up and made every title shout. 600 at the display
+   optical size keeps the presence and lets the letterforms show. The
+   utilities are remapped here so all 120-odd headings move together. */
+.font-black { font-weight: 600; }
+:is(h1, h2, h3, h4).font-bold { font-weight: 600; }
+
+/* One colour per heading. Half of each title used to switch to teal; with
+   that on every section the accent stopped meaning anything. Teal is now
+   kept for things you can act on and for live states. */
+:is(h1, h2) span[class~="text-[#2FBCAB]"],
+:is(h1, h2) span.text-teal {
+  color: inherit;
+}
+
+/* Section label: a short rule and a quiet line of text, in place of the
+   tinted capsule with tracked capitals. */
+.eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  color: var(--color-teal);
+  font-family: var(--font-body);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+.eyebrow::before {
+  content: '';
+  width: 1.75rem;
+  height: 1px;
+  background: currentColor;
+  opacity: 0.6;
+}
+.eyebrow > span:empty { display: none; }
+
+/* Hairline used between rows and sections instead of boxing everything. */
+.rule { border-color: rgba(255, 255, 255, 0.09); }
 
 /* Product cards: let the browser skip layout and paint for cards below the
    fold. The 91-card catalogue spent ~5 s in style & layout on a mid-range
@@ -87,7 +137,7 @@ h3 { font-variation-settings: 'opsz' 48; letter-spacing: -0.01em; }
 }
 
 :focus-visible {
-  outline: 2px solid #00B4B4;
+  outline: 2px solid #2FBCAB;
   outline-offset: 3px;
   border-radius: 4px;
 }
@@ -97,8 +147,8 @@ h3 { font-variation-settings: 'opsz' 48; letter-spacing: -0.01em; }
    .btn-arrow on a trailing icon makes it nudge right on hover. */
 @layer components {
   .btn {
-    @apply inline-flex items-center justify-center gap-2.5 rounded-full font-bold whitespace-nowrap
-           transition-all duration-300 ease-out cursor-pointer select-none;
+    @apply inline-flex items-center justify-center gap-2.5 rounded-full font-semibold whitespace-nowrap
+           transition-colors duration-200 ease-out cursor-pointer select-none;
     font-family: var(--font-heading);
     letter-spacing: -0.005em;
   }
@@ -107,15 +157,16 @@ h3 { font-variation-settings: 'opsz' 48; letter-spacing: -0.01em; }
   .btn-lg { @apply px-8 py-4 text-base; }
   .btn-xl { @apply px-10 py-5 text-lg; }
 
-  .btn-primary { @apply bg-teal text-white; }
-  .btn-primary:hover { @apply bg-teal-dark -translate-y-0.5 shadow-xl shadow-teal/30; }
-  .btn-primary:active { @apply translate-y-0 shadow-md shadow-teal/20; }
+  /* No lift and no coloured glow on hover: the fill change is the feedback. */
+  .btn-primary { @apply bg-teal text-ink; }
+  .btn-primary:hover { background-color: #4CCDBD; }
+  .btn-primary:active { @apply bg-teal-dark; }
 
-  .btn-ghost { @apply border border-white/20 text-white/75; }
-  .btn-ghost:hover { @apply border-white/45 text-white bg-white/5 -translate-y-0.5; }
+  .btn-ghost { @apply border border-white/25 text-white/85; }
+  .btn-ghost:hover { @apply border-white/60 text-white bg-white/5; }
 
-  .btn-outline { @apply border border-teal/35 text-teal; }
-  .btn-outline:hover { @apply bg-teal border-teal text-white -translate-y-0.5 shadow-xl shadow-teal/25; }
+  .btn-outline { @apply border border-teal/45 text-teal; }
+  .btn-outline:hover { @apply bg-teal border-teal text-ink; }
 
   .btn-arrow { @apply transition-transform duration-300 ease-out; }
   .btn:hover .btn-arrow { transform: translateX(3px); }
@@ -140,7 +191,7 @@ h3 { font-variation-settings: 'opsz' 48; letter-spacing: -0.01em; }
   pointer-events: none;
   opacity: 0;
   transition: opacity 0.4s ease;
-  background: radial-gradient(340px circle at var(--mx) var(--my), rgba(0, 180, 180, 0.16), transparent 45%);
+  background: radial-gradient(340px circle at var(--mx) var(--my), rgba(47, 188, 171, 0.07), transparent 45%);
 }
 .spot:hover::before {
   opacity: 1;
@@ -148,7 +199,7 @@ h3 { font-variation-settings: 'opsz' 48; letter-spacing: -0.01em; }
 
 /* ── Hero motion ──────────────────────────────────────────────────────── */
 .text-shimmer {
-  background: linear-gradient(100deg, #00B4B4 0%, #00B4B4 35%, #9FF3F3 50%, #00B4B4 65%, #00B4B4 100%);
+  background: linear-gradient(100deg, #2FBCAB 0%, #2FBCAB 35%, #A9EBE2 50%, #2FBCAB 65%, #2FBCAB 100%);
   background-size: 250% 100%;
   -webkit-background-clip: text;
   background-clip: text;
@@ -296,7 +347,7 @@ h3 { font-variation-settings: 'opsz' 48; letter-spacing: -0.01em; }
   mask: radial-gradient(circle 4px at 9px 0, #0000 97%, #000) top left / 18px 100% repeat-x;
 }
 .slip-paper :focus-visible {
-  outline: 2px solid #007C7C;
+  outline: 2px solid #127A6E;
   outline-offset: 2px;
 }
 

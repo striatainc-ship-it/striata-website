@@ -98,7 +98,7 @@ export default function Navbar() {
     <nav
       className={`fixed z-50 transition-all duration-500 ${
         scrolled
-          ? 'top-0 left-0 right-0 md:top-3 md:left-3 md:right-3 bg-[#0A1628]/96 backdrop-blur-md shadow-xl shadow-black/40 border-b md:border md:rounded-2xl border-white/10'
+          ? 'top-0 left-0 right-0 md:top-3 md:left-3 md:right-3 bg-[#141C3A]/96 backdrop-blur-md shadow-xl shadow-black/40 border-b md:border md:rounded-2xl border-white/10'
           : 'top-0 left-0 right-0 bg-transparent'
       }`}
     >
@@ -116,7 +116,7 @@ export default function Navbar() {
                 key={to}
                 to={to}
                 className={`text-sm font-medium transition-colors duration-200 ${
-                  isActive(to) ? 'text-[#00B4B4]' : 'text-white/80 hover:text-white'
+                  isActive(to) ? 'text-[#2FBCAB]' : 'text-white/80 hover:text-white'
                 }`}
                 style={{ fontFamily: 'var(--font-body)' }}
               >
@@ -130,8 +130,8 @@ export default function Navbar() {
                 onClick={() => setCatalogueOpen(!catalogueOpen)}
                 aria-expanded={catalogueOpen}
                 aria-haspopup="true"
-                className={`flex items-center gap-1.5 text-sm font-medium transition-colors duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#00B4B4] rounded-sm ${
-                  isCatalogueActive ? 'text-[#00B4B4]' : 'text-white/80 hover:text-white'
+                className={`flex items-center gap-1.5 text-sm font-medium transition-colors duration-200 cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#2FBCAB] rounded-sm ${
+                  isCatalogueActive ? 'text-[#2FBCAB]' : 'text-white/80 hover:text-white'
                 }`}
                 style={{ fontFamily: 'var(--font-body)' }}
               >
@@ -151,14 +151,14 @@ export default function Navbar() {
                 }`}
               >
                 {/* Arrow */}
-                <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-[#0d1e35] border-l border-t border-white/10 rotate-45" />
+                <div className="absolute -top-1.5 left-1/2 -translate-x-1/2 w-3 h-3 bg-[#1B2654] border-l border-t border-white/10 rotate-45" />
 
-                <div className="relative bg-[#0d1e35] rounded-2xl border border-white/10 shadow-2xl shadow-black/60 overflow-hidden mt-1.5">
+                <div className="relative bg-[#1B2654] rounded-2xl border border-white/10 shadow-2xl shadow-black/60 overflow-hidden mt-1.5">
                   <Link
                     to="/catalogue"
                     className="flex items-center gap-4 px-5 py-4 hover:bg-white/5 transition-colors duration-150 group border-b border-white/8"
                   >
-                    <span className="w-10 h-10 rounded-xl bg-[#00B4B4]/10 flex items-center justify-center text-[#00B4B4] flex-shrink-0 group-hover:bg-[#00B4B4]/20 transition-colors duration-150">
+                    <span className="w-10 h-10 rounded-xl bg-[#2FBCAB]/10 flex items-center justify-center text-[#2FBCAB] flex-shrink-0 group-hover:bg-[#2FBCAB]/20 transition-colors duration-150">
                       {CATALOGUE_ICON}
                     </span>
                     <div>
@@ -170,7 +170,7 @@ export default function Navbar() {
                     to="/pens"
                     className="flex items-center gap-4 px-5 py-4 hover:bg-white/5 transition-colors duration-150 group border-b border-white/8"
                   >
-                    <span className="w-10 h-10 rounded-xl bg-[#00B4B4]/10 flex items-center justify-center text-[#00B4B4] flex-shrink-0 group-hover:bg-[#00B4B4]/20 transition-colors duration-150">
+                    <span className="w-10 h-10 rounded-xl bg-[#2FBCAB]/10 flex items-center justify-center text-[#2FBCAB] flex-shrink-0 group-hover:bg-[#2FBCAB]/20 transition-colors duration-150">
                       {PENS_ICON}
                     </span>
                     <div>
@@ -182,7 +182,7 @@ export default function Navbar() {
                     to="/nasal-sprays"
                     className="flex items-center gap-4 px-5 py-4 hover:bg-white/5 transition-colors duration-150 group border-b border-white/8"
                   >
-                    <span className="w-10 h-10 rounded-xl bg-[#00B4B4]/10 flex items-center justify-center text-[#00B4B4] flex-shrink-0 group-hover:bg-[#00B4B4]/20 transition-colors duration-150">
+                    <span className="w-10 h-10 rounded-xl bg-[#2FBCAB]/10 flex items-center justify-center text-[#2FBCAB] flex-shrink-0 group-hover:bg-[#2FBCAB]/20 transition-colors duration-150">
                       {SPRAY_ICON}
                     </span>
                     <div>
@@ -194,7 +194,7 @@ export default function Navbar() {
                     to="/stacks"
                     className="flex items-center gap-4 px-5 py-4 hover:bg-white/5 transition-colors duration-150 group border-b border-white/8"
                   >
-                    <span className="w-10 h-10 rounded-xl bg-[#00B4B4]/10 flex items-center justify-center text-[#00B4B4] flex-shrink-0 group-hover:bg-[#00B4B4]/20 transition-colors duration-150">
+                    <span className="w-10 h-10 rounded-xl bg-[#2FBCAB]/10 flex items-center justify-center text-[#2FBCAB] flex-shrink-0 group-hover:bg-[#2FBCAB]/20 transition-colors duration-150">
                       {STACKS_ICON}
                     </span>
                     <div>
@@ -206,7 +206,7 @@ export default function Navbar() {
                     to="/ghk-serum"
                     className="flex items-center gap-4 px-5 py-4 hover:bg-white/5 transition-colors duration-150 group"
                   >
-                    <span className="w-10 h-10 rounded-xl bg-[#00B4B4]/10 flex items-center justify-center text-[#00B4B4] flex-shrink-0 group-hover:bg-[#00B4B4]/20 transition-colors duration-150">
+                    <span className="w-10 h-10 rounded-xl bg-[#2FBCAB]/10 flex items-center justify-center text-[#2FBCAB] flex-shrink-0 group-hover:bg-[#2FBCAB]/20 transition-colors duration-150">
                       {SERUM_ICON}
                     </span>
                     <div>
@@ -216,12 +216,12 @@ export default function Navbar() {
                   </Link>
                   <Link
                     to="/quiz"
-                    className="flex items-center justify-between gap-3 px-5 py-3.5 bg-[#00B4B4]/8 hover:bg-[#00B4B4]/15 transition-colors duration-150 border-t border-white/8"
+                    className="flex items-center justify-between gap-3 px-5 py-3.5 bg-[#2FBCAB]/8 hover:bg-[#2FBCAB]/15 transition-colors duration-150 border-t border-white/8"
                   >
-                    <span className="text-[#00B4B4] text-xs font-bold uppercase tracking-widest" style={{ fontFamily: 'var(--font-heading)' }}>
+                    <span className="text-[#2FBCAB] text-xs font-bold uppercase tracking-widest" style={{ fontFamily: 'var(--font-heading)' }}>
                       Not sure? Take the 60-second quiz
                     </span>
-                    <svg className="w-3.5 h-3.5 text-[#00B4B4]" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
+                    <svg className="w-3.5 h-3.5 text-[#2FBCAB]" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5l7 7-7 7" /></svg>
                   </Link>
                 </div>
               </div>
@@ -232,7 +232,7 @@ export default function Navbar() {
                 key={to}
                 to={to}
                 className={`text-sm font-medium transition-colors duration-200 ${
-                  isActive(to) ? 'text-[#00B4B4]' : 'text-white/80 hover:text-white'
+                  isActive(to) ? 'text-[#2FBCAB]' : 'text-white/80 hover:text-white'
                 }`}
                 style={{ fontFamily: 'var(--font-body)' }}
               >
@@ -277,12 +277,12 @@ export default function Navbar() {
           menuOpen ? 'max-h-screen opacity-100' : 'max-h-0 opacity-0'
         }`}
       >
-        <div className="bg-[#0A1628]/98 backdrop-blur-md px-6 pb-6 pt-2 border-t border-white/10">
+        <div className="bg-[#141C3A]/98 backdrop-blur-md px-6 pb-6 pt-2 border-t border-white/10">
 
           {/* Home */}
           <Link
             to="/"
-            className={`block py-3 text-base font-medium border-b border-white/5 transition-colors ${isActive('/') ? 'text-[#00B4B4]' : 'text-white/80'}`}
+            className={`block py-3 text-base font-medium border-b border-white/5 transition-colors ${isActive('/') ? 'text-[#2FBCAB]' : 'text-white/80'}`}
           >
             Home
           </Link>
@@ -291,7 +291,7 @@ export default function Navbar() {
           <button
             onClick={() => setMobileShopOpen(!mobileShopOpen)}
             className={`w-full flex items-center justify-between py-3 text-base font-medium border-b border-white/5 transition-colors cursor-pointer ${
-              isCatalogueActive ? 'text-[#00B4B4]' : 'text-white/80'
+              isCatalogueActive ? 'text-[#2FBCAB]' : 'text-white/80'
             }`}
           >
             Shop
@@ -304,28 +304,28 @@ export default function Navbar() {
           </button>
 
           <div className={`overflow-hidden transition-all duration-200 ${mobileShopOpen ? 'max-h-96' : 'max-h-0'}`}>
-            <Link to="/catalogue" className="flex items-center gap-3 pl-4 py-3 text-sm text-white/70 border-b border-white/5 hover:text-[#00B4B4] transition-colors">
-              <svg className="w-4 h-4 text-[#00B4B4]/60" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 010 3.75H5.625a1.875 1.875 0 010-3.75z" /></svg>
+            <Link to="/catalogue" className="flex items-center gap-3 pl-4 py-3 text-sm text-white/70 border-b border-white/5 hover:text-[#2FBCAB] transition-colors">
+              <svg className="w-4 h-4 text-[#2FBCAB]/60" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M3.75 12h16.5m-16.5 3.75h16.5M3.75 19.5h16.5M5.625 4.5h12.75a1.875 1.875 0 010 3.75H5.625a1.875 1.875 0 010-3.75z" /></svg>
               Complete Catalogue
             </Link>
-            <Link to="/pens" className="flex items-center gap-3 pl-4 py-3 text-sm text-white/70 border-b border-white/5 hover:text-[#00B4B4] transition-colors">
-              <svg className="w-4 h-4 text-[#00B4B4]/60" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" /></svg>
+            <Link to="/pens" className="flex items-center gap-3 pl-4 py-3 text-sm text-white/70 border-b border-white/5 hover:text-[#2FBCAB] transition-colors">
+              <svg className="w-4 h-4 text-[#2FBCAB]/60" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M16.862 4.487l1.687-1.688a1.875 1.875 0 112.652 2.652L6.832 19.82a4.5 4.5 0 01-1.897 1.13l-2.685.8.8-2.685a4.5 4.5 0 011.13-1.897L16.863 4.487zm0 0L19.5 7.125" /></svg>
               Peptide Pens
             </Link>
-            <Link to="/nasal-sprays" className="flex items-center gap-3 pl-4 py-3 text-sm text-white/70 border-b border-white/5 hover:text-[#00B4B4] transition-colors">
-              <svg className="w-4 h-4 text-[#00B4B4]/60" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 10h6v10.5a1.5 1.5 0 01-1.5 1.5h-3A1.5 1.5 0 019 20.5V10zM10.5 10V7.5h3V10M11 7.5V3.5h2v4M16.5 4.5l2-1M16.5 6.5h2.25M16.5 8.5l2 1" /></svg>
+            <Link to="/nasal-sprays" className="flex items-center gap-3 pl-4 py-3 text-sm text-white/70 border-b border-white/5 hover:text-[#2FBCAB] transition-colors">
+              <svg className="w-4 h-4 text-[#2FBCAB]/60" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true"><path d="M9 10h6v10.5a1.5 1.5 0 01-1.5 1.5h-3A1.5 1.5 0 019 20.5V10zM10.5 10V7.5h3V10M11 7.5V3.5h2v4M16.5 4.5l2-1M16.5 6.5h2.25M16.5 8.5l2 1" /></svg>
               Nasal Sprays
             </Link>
-            <Link to="/stacks" className="flex items-center gap-3 pl-4 py-3 text-sm text-white/70 border-b border-white/5 hover:text-[#00B4B4] transition-colors">
-              <svg className="w-4 h-4 text-[#00B4B4]/60" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0l4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0l-5.571 3-5.571-3" /></svg>
+            <Link to="/stacks" className="flex items-center gap-3 pl-4 py-3 text-sm text-white/70 border-b border-white/5 hover:text-[#2FBCAB] transition-colors">
+              <svg className="w-4 h-4 text-[#2FBCAB]/60" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M6.429 9.75L2.25 12l4.179 2.25m0-4.5l5.571 3 5.571-3m-11.142 0L2.25 7.5 12 2.25l9.75 5.25-4.179 2.25m0 0L21.75 12l-4.179 2.25m0 0l4.179 2.25L12 21.75 2.25 16.5l4.179-2.25m11.142 0l-5.571 3-5.571-3" /></svg>
               Peptide Stacks
             </Link>
-            <Link to="/ghk-serum" className="flex items-center gap-3 pl-4 py-3 text-sm text-white/70 border-b border-white/5 hover:text-[#00B4B4] transition-colors">
-              <svg className="w-4 h-4 text-[#00B4B4]/60" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M12 21a8.25 8.25 0 005.83-14.08L12 1.5 6.17 6.92A8.25 8.25 0 0012 21z" /></svg>
+            <Link to="/ghk-serum" className="flex items-center gap-3 pl-4 py-3 text-sm text-white/70 border-b border-white/5 hover:text-[#2FBCAB] transition-colors">
+              <svg className="w-4 h-4 text-[#2FBCAB]/60" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M12 21a8.25 8.25 0 005.83-14.08L12 1.5 6.17 6.92A8.25 8.25 0 0012 21z" /></svg>
               GHK-Cu Serum
             </Link>
-            <Link to="/quiz" className="flex items-center gap-3 pl-4 py-3 text-sm text-[#00B4B4] border-b border-white/5 font-semibold">
-              <svg className="w-4 h-4 text-[#00B4B4]/60" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z" /></svg>
+            <Link to="/quiz" className="flex items-center gap-3 pl-4 py-3 text-sm text-[#2FBCAB] border-b border-white/5 font-semibold">
+              <svg className="w-4 h-4 text-[#2FBCAB]/60" fill="none" stroke="currentColor" strokeWidth={1.5} viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z" /></svg>
               Not sure? Take the quiz
             </Link>
           </div>
@@ -335,7 +335,7 @@ export default function Navbar() {
               key={to}
               to={to}
               className={`block py-3 text-base font-medium border-b border-white/5 transition-colors ${
-                isActive(to) ? 'text-[#00B4B4]' : 'text-white/80'
+                isActive(to) ? 'text-[#2FBCAB]' : 'text-white/80'
               }`}
             >
               {label}
@@ -346,7 +346,7 @@ export default function Navbar() {
             href={whatsappLink}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-4 flex items-center justify-center gap-2 bg-[#00B4B4] text-white font-semibold py-3 rounded-full"
+            className="mt-4 flex items-center justify-center gap-2 bg-[#2FBCAB] text-[#141C3A] font-semibold py-3 rounded-full"
           >
             {WA_SVG}
             Chat on WhatsApp

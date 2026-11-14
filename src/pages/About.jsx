@@ -22,7 +22,7 @@ const stats = [
 ]
 
 const IC = ({ children }) => (
-  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#00B4B4]/20 to-[#004444]/5 border border-[#00B4B4]/25 flex items-center justify-center mb-4">
+  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-[#2FBCAB]/20 to-[#0E4A43]/5 border border-[#2FBCAB]/25 flex items-center justify-center mb-4">
     {children}
   </div>
 )
@@ -31,7 +31,7 @@ const values = [
   {
     icon: (
       <IC>
-        <svg className="w-7 h-7 text-[#00B4B4]" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+        <svg className="w-7 h-7 text-[#2FBCAB]" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
           <path d="M9.75 3.104v5.714a2.25 2.25 0 01-.659 1.591L5 14.5M9.75 3.104c-.251.023-.501.05-.75.082m.75-.082a24.301 24.301 0 014.5 0m0 0v5.714c0 .597.237 1.17.659 1.591L19.8 15.3M14.25 3.104c.251.023.501.05.75.082M19.8 15.3l-1.57.393A9.065 9.065 0 0112 15a9.065 9.065 0 00-6.23-.693L5 14.5m14.8.8l1.402 1.402c1.232 1.232.65 3.318-1.067 3.611A48.309 48.309 0 0112 21c-2.773 0-5.491-.235-8.135-.687-1.718-.293-2.3-2.379-1.067-3.61L5 14.5" />
         </svg>
       </IC>
@@ -42,7 +42,7 @@ const values = [
   {
     icon: (
       <IC>
-        <svg className="w-7 h-7 text-[#00B4B4]" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+        <svg className="w-7 h-7 text-[#2FBCAB]" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
           <path d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z" /><path d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
         </svg>
       </IC>
@@ -53,7 +53,7 @@ const values = [
   {
     icon: (
       <IC>
-        <svg className="w-7 h-7 text-[#00B4B4]" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+        <svg className="w-7 h-7 text-[#2FBCAB]" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
           <path d="M15.75 5.25a3 3 0 013 3m3 0a6 6 0 01-7.029 5.912c-.563-.097-1.159.026-1.563.43L10.5 17.25H8.25v2.25H6v2.25H2.25v-2.818c0-.597.237-1.17.659-1.591l6.499-6.499c.404-.404.527-1 .43-1.563A6 6 0 1121.75 8.25z" />
         </svg>
       </IC>
@@ -64,7 +64,7 @@ const values = [
   {
     icon: (
       <IC>
-        <svg className="w-7 h-7 text-[#00B4B4]" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+        <svg className="w-7 h-7 text-[#2FBCAB]" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
           <path d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z" />
         </svg>
       </IC>
@@ -130,7 +130,7 @@ export default function About() {
   const addStatRef = (el, i) => { statRefs.current[i] = el }
 
   return (
-    <div className="bg-[#0A1628]">
+    <div className="bg-[#141C3A]">
       <Helmet>
         <title>About STRIATA | Research-Grade Peptides Johannesburg</title>
         <meta name="description" content="STRIATA is a Johannesburg-based source of research-grade peptides, supplying clinics, athletes and biohackers across South Africa with 99%+ purity compounds." />
@@ -145,13 +145,13 @@ export default function About() {
           className="absolute inset-0 bg-cover bg-center opacity-8"
           style={{ backgroundImage: `url(${import.meta.env.BASE_URL}assets/opt/lab-equipment-1-1280.webp)` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0A1628]/70 to-[#0A1628]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#141C3A]/70 to-[#141C3A]" />
         <Reveal stagger delay={0.1} className="relative z-10 max-w-4xl mx-auto text-center">
-          <div className="inline-flex items-center gap-2 text-[#00B4B4] text-xs font-bold uppercase tracking-widest mb-6 bg-[#00B4B4]/10 border border-[#00B4B4]/20 px-4 py-2 rounded-full" style={{ fontFamily: 'var(--font-heading)' }}>
+          <div className="eyebrow mb-6" style={{ fontFamily: 'var(--font-heading)' }}>
             Our Story
           </div>
           <h1 className="text-3xl sm:text-5xl md:text-7xl font-black text-white mb-6 leading-none tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>
-            About <span className="text-[#00B4B4]">STRIATA</span>
+            About <span className="text-[#2FBCAB]">STRIATA</span>
           </h1>
           <p className="text-white/60 text-base md:text-xl max-w-2xl mx-auto">
             South Africa's benchmark for peptide purity and trust.
@@ -160,14 +160,14 @@ export default function About() {
       </section>
 
       {/* Stats Banner */}
-      <section className="py-12 bg-[#060e1a] border-y border-white/8">
+      <section className="py-12 bg-[#0F152E] border-y border-white/8">
         <div className="max-w-7xl mx-auto px-6">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8">
             {stats.map(({ num, suffix, label }, i) => (
               <div key={label} className="text-center">
                 <p
                   ref={(el) => addStatRef(el, i)}
-                  className="text-3xl md:text-5xl font-black text-[#00B4B4] mb-1"
+                  className="text-3xl md:text-5xl font-black text-[#2FBCAB] mb-1"
                   style={{ fontFamily: 'var(--font-heading)' }}
                 >
                   0{suffix}
@@ -183,11 +183,11 @@ export default function About() {
       <section ref={addRef} className="py-24 max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div>
-            <div className="inline-flex items-center gap-2 text-[#00B4B4] text-xs font-bold uppercase tracking-widest mb-5 bg-[#00B4B4]/10 border border-[#00B4B4]/20 px-4 py-2 rounded-full" style={{ fontFamily: 'var(--font-heading)' }}>
+            <div className="eyebrow mb-5" style={{ fontFamily: 'var(--font-heading)' }}>
               Where It Started
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-white mb-6 leading-tight" style={{ fontFamily: 'var(--font-heading)' }}>
-              Born from a <span className="text-[#00B4B4]">Crisis.</span> Built for <span className="text-[#00B4B4]">Performance.</span>
+              Born from a <span className="text-[#2FBCAB]">Crisis.</span> Built for <span className="text-[#2FBCAB]">Performance.</span>
             </h2>
             <div className="space-y-4 text-white/60 leading-relaxed">
               <p>
@@ -206,7 +206,7 @@ export default function About() {
             {/* Anchor target for article bylines (/about#founder) */}
             <div id="founder" className="mt-8 pt-6 border-t border-white/8 flex items-center gap-4 scroll-mt-28">
               <span
-                className="w-12 h-12 rounded-full bg-[#00B4B4]/15 border border-[#00B4B4]/30 text-[#00B4B4] text-sm font-bold flex items-center justify-center shrink-0"
+                className="w-12 h-12 rounded-full bg-[#2FBCAB]/15 border border-[#2FBCAB]/30 text-[#2FBCAB] text-sm font-bold flex items-center justify-center shrink-0"
                 style={{ fontFamily: 'var(--font-heading)' }}
                 aria-hidden="true"
               >
@@ -230,11 +230,11 @@ export default function About() {
               decoding="async"
               className="rounded-3xl w-full object-cover aspect-[4/5]"
             />
-            <div className="hidden sm:block absolute -top-4 -left-4 bg-[#0d1e35] border border-white/10 rounded-2xl p-5 shadow-xl">
-              <p className="text-[#00B4B4] font-black text-2xl" style={{ fontFamily: 'var(--font-heading)' }}>2021</p>
+            <div className="hidden sm:block absolute -top-4 -left-4 bg-[#1B2654] border border-white/10 rounded-2xl p-5 shadow-xl">
+              <p className="text-[#2FBCAB] font-black text-2xl" style={{ fontFamily: 'var(--font-heading)' }}>2021</p>
               <p className="text-white/60 text-xs mt-0.5">Founded in SA</p>
             </div>
-            <div className="hidden sm:block absolute -bottom-4 -right-4 bg-[#00B4B4] rounded-2xl p-5 shadow-xl">
+            <div className="hidden sm:block absolute -bottom-4 -right-4 bg-[#2FBCAB] rounded-2xl p-5 shadow-xl">
               <p className="text-white font-black text-2xl" style={{ fontFamily: 'var(--font-heading)' }}>99%</p>
               <p className="text-white/80 text-xs mt-0.5">Purity Standard</p>
             </div>
@@ -243,7 +243,7 @@ export default function About() {
       </section>
 
       {/* Why We Exist */}
-      <section ref={addRef} className="py-24 bg-gradient-to-br from-[#00B4B4]/8 via-[#060e1a] to-[#060e1a]">
+      <section ref={addRef} className="py-24 bg-gradient-to-br from-[#2FBCAB]/8 via-[#0F152E] to-[#0F152E]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 grid md:grid-cols-2 gap-16 items-center">
           <div className="relative">
             <img
@@ -259,13 +259,13 @@ export default function About() {
             />
           </div>
           <div>
-            <div className="inline-flex items-center gap-2 text-[#00B4B4] text-xs font-bold uppercase tracking-widest mb-5 bg-[#00B4B4]/10 border border-[#00B4B4]/20 px-4 py-2 rounded-full" style={{ fontFamily: 'var(--font-heading)' }}>
+            <div className="eyebrow mb-5" style={{ fontFamily: 'var(--font-heading)' }}>
               Our Mission
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-white mb-6" style={{ fontFamily: 'var(--font-heading)' }}>
-              Why We <span className="text-[#00B4B4]">Exist</span>
+              Why We <span className="text-[#2FBCAB]">Exist</span>
             </h2>
-            <blockquote className="border-l-4 border-[#00B4B4] pl-5 mb-6">
+            <blockquote className="border-l-4 border-[#2FBCAB] pl-5 mb-6">
               <p className="text-white/80 text-xl italic leading-relaxed">
                 "South Africa's benchmark for peptide purity and trust."
               </p>
@@ -286,11 +286,11 @@ export default function About() {
       <section ref={addRef} className="py-24 max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-16 items-center">
           <div>
-            <div className="inline-flex items-center gap-2 text-[#00B4B4] text-xs font-bold uppercase tracking-widest mb-5 bg-[#00B4B4]/10 border border-[#00B4B4]/20 px-4 py-2 rounded-full" style={{ fontFamily: 'var(--font-heading)' }}>
+            <div className="eyebrow mb-5" style={{ fontFamily: 'var(--font-heading)' }}>
               The Science
             </div>
             <h2 className="text-2xl sm:text-3xl md:text-5xl font-black text-white mb-6 leading-tight" style={{ fontFamily: 'var(--font-heading)' }}>
-              The Science Behind <span className="text-[#00B4B4]">the Compound</span>
+              The Science Behind <span className="text-[#2FBCAB]">the Compound</span>
             </h2>
             <div className="space-y-4 text-white/60 leading-relaxed">
               <p>
@@ -321,16 +321,16 @@ export default function About() {
       </section>
 
       {/* Values */}
-      <section ref={addRef} className="py-24 bg-[#060e1a]">
+      <section ref={addRef} className="py-24 bg-[#0F152E]">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-5xl font-black text-white mb-4" style={{ fontFamily: 'var(--font-heading)' }}>
-              What We <span className="text-[#00B4B4]">Stand For</span>
+              What We <span className="text-[#2FBCAB]">Stand For</span>
             </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
             {values.map(({ icon, title, desc }) => (
-              <div key={title} className="bg-[#0d1e35] border border-white/8 rounded-2xl p-5 md:p-7 hover:border-[#00B4B4]/30 transition-colors">
+              <div key={title} className="bg-[#1B2654] border border-white/8 rounded-2xl p-5 md:p-7 hover:border-[#2FBCAB]/30 transition-colors">
                 {icon}
                 <h3 className="text-white font-bold text-xl mb-3" style={{ fontFamily: 'var(--font-heading)' }}>{title}</h3>
                 <p className="text-white/50 text-sm leading-relaxed">{desc}</p>
@@ -354,15 +354,15 @@ export default function About() {
             decoding="async"
             className="w-full h-96 object-cover"
           />
-          <div className="absolute inset-0 bg-gradient-to-r from-[#0A1628]/95 via-[#0A1628]/70 to-transparent flex items-center">
+          <div className="absolute inset-0 bg-gradient-to-r from-[#141C3A]/95 via-[#141C3A]/70 to-transparent flex items-center">
             <div className="px-6 md:px-10 max-w-lg">
-              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#00B4B4]/20 to-[#004444]/5 border border-[#00B4B4]/25 flex items-center justify-center mb-3">
-                <svg className="w-6 h-6 text-[#00B4B4]" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+              <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-[#2FBCAB]/20 to-[#0E4A43]/5 border border-[#2FBCAB]/25 flex items-center justify-center mb-3">
+                <svg className="w-6 h-6 text-[#2FBCAB]" fill="none" stroke="currentColor" strokeWidth={1.75} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
                   <path d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z" /><path d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z" />
                 </svg>
               </div>
               <h2 className="text-3xl md:text-4xl font-black text-white mb-4" style={{ fontFamily: 'var(--font-heading)' }}>
-                Local Stock. Local Support. <span className="text-[#00B4B4]">Nationwide Delivery.</span>
+                Local Stock. Local Support. <span className="text-[#2FBCAB]">Nationwide Delivery.</span>
               </h2>
               <p className="text-white/60 text-sm leading-relaxed mb-6">
                 STRIATA is proudly South African, built here, run here and fully committed to serving this market. We maintain consistent local stock levels so you're never waiting weeks for an international shipment.
@@ -384,7 +384,7 @@ export default function About() {
       {/* CTA */}
       <section ref={addRef} className="py-24 text-center px-6">
         <h2 className="text-3xl md:text-5xl font-black text-white mb-4" style={{ fontFamily: 'var(--font-heading)' }}>
-          Ready to Experience <span className="text-[#00B4B4]">the Difference?</span>
+          Ready to Experience <span className="text-[#2FBCAB]">the Difference?</span>
         </h2>
         <p className="text-white/60 text-lg mb-10 max-w-xl mx-auto">
           Browse our full catalogue or chat to us directly on WhatsApp and we'll help you find exactly what you need.

@@ -27,7 +27,7 @@ export default function PenPage() {
 
   if (!page || !pen || !vial) {
     return (
-      <div className="bg-[#0A1628] min-h-screen grid place-items-center px-6">
+      <div className="bg-[#141C3A] min-h-screen grid place-items-center px-6">
         <Helmet>
           <title>Pen not found | STRIATA</title>
           <meta name="robots" content="noindex" />
@@ -54,7 +54,7 @@ export default function PenPage() {
   const otherPens = PEN_PAGES.filter((p) => p !== page)
 
   return (
-    <div className="bg-[#0A1628] min-h-screen">
+    <div className="bg-[#141C3A] min-h-screen">
       <Helmet>
         <title>{page.title}</title>
         <meta name="description" content={page.description} />
@@ -101,7 +101,7 @@ export default function PenPage() {
 
       {/* ── Hero ── */}
       <section className="relative pt-32 md:pt-36 pb-14 px-6 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#00B4B4]/5 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#2FBCAB]/5 to-transparent" />
         <div className="relative z-10 max-w-6xl mx-auto grid lg:grid-cols-2 gap-10 lg:gap-14 items-center">
           <Reveal stagger delay={0.1}>
             <Link to="/pens" className="inline-flex items-center gap-1.5 text-white/40 hover:text-white text-xs font-semibold mb-6 transition-colors">
@@ -123,7 +123,7 @@ export default function PenPage() {
                     onClick={() => setPicked(t)}
                     aria-pressed={active}
                     className={`px-4 py-2.5 rounded-xl border text-sm font-semibold transition-colors ${
-                      active ? 'border-[#00B4B4] bg-[#00B4B4]/15 text-white' : 'border-white/12 text-white/65 hover:border-white/30'
+                      active ? 'border-[#2FBCAB] bg-[#2FBCAB]/15 text-white' : 'border-white/12 text-white/65 hover:border-white/30'
                     }`}
                   >
                     {t.dose} · {rand(t.price)}
@@ -169,7 +169,7 @@ export default function PenPage() {
           </h2>
           <p className="text-white/60 leading-relaxed mb-8">{page.intro[1]}</p>
           <div className="rounded-2xl border border-white/8 overflow-hidden text-sm">
-            <div className="grid grid-cols-3 bg-[#0d1e35] px-5 py-3 text-white/40 text-xs font-semibold uppercase tracking-widest">
+            <div className="grid grid-cols-3 bg-[#1B2654] px-5 py-3 text-white/40 text-xs font-semibold uppercase tracking-widest">
               <span>Size</span>
               <span>Pen</span>
               <span>Vial</span>
@@ -189,11 +189,11 @@ export default function PenPage() {
           </div>
           <div className="flex flex-wrap gap-x-6 gap-y-2 mt-6">
             {vialPath && (
-              <Link to={vialPath} className="text-[#00B4B4] text-sm font-semibold hover:text-white transition-colors">
+              <Link to={vialPath} className="text-[#2FBCAB] text-sm font-semibold hover:text-white transition-colors">
                 {vial.name} vial: research summary, specifications and sources →
               </Link>
             )}
-            <Link to="/pens" className="text-[#00B4B4] text-sm font-semibold hover:text-white transition-colors">
+            <Link to="/pens" className="text-[#2FBCAB] text-sm font-semibold hover:text-white transition-colors">
               How a peptide pen works →
             </Link>
           </div>
@@ -210,9 +210,9 @@ export default function PenPage() {
             <Link
               to={`/learn/${guide.slug}`}
               {...spotlightProps()}
-              className="spot block bg-[#0d1e35] border border-white/8 rounded-2xl p-6 hover:border-[#00B4B4]/40 transition-colors group"
+              className="spot block bg-[#1B2654] border border-white/8 rounded-2xl p-6 hover:border-[#2FBCAB]/40 transition-colors group"
             >
-              <h3 className="text-white font-bold text-lg mb-2 group-hover:text-[#00B4B4] transition-colors" style={H}>
+              <h3 className="text-white font-bold text-lg mb-2 group-hover:text-[#2FBCAB] transition-colors" style={H}>
                 {guide.title}
               </h3>
               <p className="text-white/50 text-sm leading-relaxed">{guide.preview}</p>
@@ -230,12 +230,12 @@ export default function PenPage() {
               <Link
                 key={p.slug}
                 to={penPagePath(p)}
-                className="px-4 py-2 rounded-full bg-[#0d1e35] border border-white/10 text-white/65 text-sm hover:text-white hover:border-[#00B4B4]/40 transition-colors"
+                className="px-4 py-2 rounded-full bg-[#1B2654] border border-white/10 text-white/65 text-sm hover:text-white hover:border-[#2FBCAB]/40 transition-colors"
               >
                 {products.find((x) => x.id === p.productId)?.name} pen
               </Link>
             ))}
-            <Link to="/pens" className="px-4 py-2 rounded-full border border-[#00B4B4]/30 text-[#00B4B4] text-sm hover:text-white transition-colors">
+            <Link to="/pens" className="px-4 py-2 rounded-full border border-[#2FBCAB]/30 text-[#2FBCAB] text-sm hover:text-white transition-colors">
               All {pens.length} pens
             </Link>
           </div>

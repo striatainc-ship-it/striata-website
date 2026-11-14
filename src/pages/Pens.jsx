@@ -46,7 +46,7 @@ const BENEFITS = [
   },
 ]
 
-const GUIDE_LINK = 'text-[#00B4B4] hover:text-white transition-colors'
+const GUIDE_LINK = 'text-[#2FBCAB] hover:text-white transition-colors'
 
 // Describes the format only. Nothing here says STRIATA sells reusable pens:
 // every pen listed is pre-filled, and that is all the copy claims.
@@ -150,7 +150,7 @@ export default function Pens() {
   const clearFilters = () => { setActiveCategory('all'); setSearch('') }
 
   return (
-    <div className="bg-[#0A1628] min-h-screen">
+    <div className="bg-[#141C3A] min-h-screen">
       <Helmet>
         <title>Peptide Pens South Africa | Pre-Filled Pens | STRIATA</title>
         <meta name="description" content={`${penCount} research peptides in pre-filled pens: no reconstitution, dial-in dosing. BPC+TB, Retatrutide, Tirzepatide, GHK-Cu. Delivered across South Africa.`} />
@@ -193,18 +193,18 @@ export default function Pens() {
 
       {/* Hero */}
       <section className="relative pt-36 pb-16 px-6 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0A1628]/60 to-[#0A1628]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#141C3A]/60 to-[#141C3A]" />
         <div
           className="absolute inset-0 opacity-5"
-          style={{ backgroundImage: 'radial-gradient(circle at 80% 40%, #00B4B4 0%, transparent 50%), radial-gradient(circle at 15% 30%, #00B4B4 0%, transparent 35%)' }}
+          style={{ backgroundImage: 'radial-gradient(circle at 80% 40%, #2FBCAB 0%, transparent 50%), radial-gradient(circle at 15% 30%, #2FBCAB 0%, transparent 35%)' }}
         />
         <Reveal stagger delay={0.1} className="relative z-10 max-w-4xl mx-auto text-center">
-          <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-green-400/10 border border-green-400/20 text-green-300 text-xs font-semibold uppercase tracking-widest mb-6" style={{ fontFamily: 'var(--font-heading)' }}>
+          <span className="inline-flex items-center gap-2 text-white/70 text-[13px] font-semibold mb-6" style={{ fontFamily: 'var(--font-heading)' }}>
             <span className="w-1.5 h-1.5 rounded-full bg-green-400" />
-            All Pens In Stock
+            All pens in stock
           </span>
           <h1 className="text-3xl md:text-6xl font-black text-white mb-5 leading-tight tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>
-            Pre-Filled Peptide <span className="text-[#00B4B4]">Pens</span>
+            Pre-Filled Peptide <span className="text-[#2FBCAB]">Pens</span>
           </h1>
           <p className="text-white/60 text-lg max-w-2xl mx-auto mb-3">
             The same research-grade peptides from our catalogue, pre-filled in a pen. No reconstitution, no syringes, just dial your dose.
@@ -222,9 +222,9 @@ export default function Pens() {
             <div
               key={title}
               {...spotlightProps()}
-              className="spot flex gap-3.5 px-5 py-4 rounded-2xl border border-white/8 bg-[#0d1e35] hover:border-[#00B4B4]/30 transition-colors duration-300"
+              className="spot flex gap-3.5 px-5 py-4 rounded-2xl border border-white/8 bg-[#1B2654] hover:border-[#2FBCAB]/30 transition-colors duration-300"
             >
-              <span className="w-9 h-9 rounded-xl bg-[#00B4B4]/10 text-[#00B4B4] flex items-center justify-center flex-shrink-0">
+              <span className="w-9 h-9 rounded-xl bg-[#2FBCAB]/10 text-[#2FBCAB] flex items-center justify-center flex-shrink-0">
                 {icon}
               </span>
               <div>
@@ -241,7 +241,7 @@ export default function Pens() {
       </section>
 
       {/* Filter Bar */}
-      <section className={`sticky top-20 z-30 bg-[#0A1628]/95 backdrop-blur-md border-b border-white/8 py-3 md:py-4 transition-transform duration-300 ${filterVisible ? 'translate-y-0' : '-translate-y-[200%]'}`}>
+      <section className={`sticky top-20 z-30 bg-[#141C3A]/95 backdrop-blur-md border-b border-white/8 py-3 md:py-4 transition-transform duration-300 ${filterVisible ? 'translate-y-0' : '-translate-y-[200%]'}`}>
         <div className="max-w-7xl mx-auto px-4 md:px-6">
           <div className="mb-3 relative md:max-w-md">
             <svg className="absolute left-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-white/30" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -252,7 +252,7 @@ export default function Pens() {
               placeholder="Search pens..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full bg-[#0d1e35] border border-white/10 rounded-xl pl-10 pr-9 py-2.5 text-white placeholder-white/30 text-sm focus:outline-none focus:border-[#00B4B4]/50 transition-colors"
+              className="w-full bg-[#1B2654] border border-white/10 rounded-xl pl-10 pr-9 py-2.5 text-white placeholder-white/30 text-sm focus:outline-none focus:border-[#2FBCAB]/50 transition-colors"
             />
             {search && (
               <button onClick={() => setSearch('')} className="absolute right-3 top-1/2 -translate-y-1/2 text-white/40 hover:text-white">
@@ -278,7 +278,7 @@ export default function Pens() {
           <p className="text-white/40 text-sm">
             {filtered.length} pen{filtered.length !== 1 ? 's' : ''} found
             {activeCategory !== 'all' && currentCategory && (
-              <> in <span className="text-[#00B4B4]">{currentCategory.label}</span></>
+              <> in <span className="text-[#2FBCAB]">{currentCategory.label}</span></>
             )}
             {search && <> matching "<span className="text-white/60">{search}</span>"</>}
           </p>
@@ -300,7 +300,7 @@ export default function Pens() {
         ) : (
           <div className="text-center py-24">
             <p className="text-white/30 text-lg">No pens match your search.</p>
-            <button onClick={clearFilters} className="mt-4 text-[#00B4B4] hover:text-white text-sm transition-colors">
+            <button onClick={clearFilters} className="mt-4 text-[#2FBCAB] hover:text-white text-sm transition-colors">
               Clear filters
             </button>
           </div>
@@ -326,13 +326,13 @@ export default function Pens() {
       <section className="max-w-7xl mx-auto px-4 md:px-6 pb-12">
         <Link
           to="/catalogue"
-          className="flex items-center justify-between gap-4 px-5 py-4 rounded-2xl border border-white/8 bg-[#0d1e35] hover:border-[#00B4B4]/35 hover:bg-[#0f2340] transition-all duration-200 group"
+          className="flex items-center justify-between gap-4 px-5 py-4 rounded-2xl border border-white/8 bg-[#1B2654] hover:border-[#2FBCAB]/35 hover:bg-[#1F2C58] transition-all duration-200 group"
         >
           <div>
             <p className="text-white font-semibold text-sm" style={{ fontFamily: 'var(--font-heading)' }}>Prefer vials?</p>
             <p className="text-white/50 text-xs">Every pen compound is also available as a lyophilised vial in the full catalogue, usually at a lower price.</p>
           </div>
-          <svg className="w-4 h-4 text-[#00B4B4] flex-shrink-0 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+          <svg className="w-4 h-4 text-[#2FBCAB] flex-shrink-0 group-hover:translate-x-1 transition-transform duration-200" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true">
             <polyline points="9 18 15 12 9 6" />
           </svg>
         </Link>
@@ -342,7 +342,7 @@ export default function Pens() {
       <section className="py-20 border-t border-white/8">
         <Reveal stagger className="max-w-2xl mx-auto px-6 text-center">
           <h2 className="text-3xl md:text-4xl font-black text-white mb-4 tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>
-            Want a Compound <span className="text-[#00B4B4]">as a Pen?</span>
+            Want a Compound <span className="text-[#2FBCAB]">as a Pen?</span>
           </h2>
           <p className="text-white/60 mb-8">
             If the peptide you need isn't listed in pen format yet, message us and we'll let you know what's possible.

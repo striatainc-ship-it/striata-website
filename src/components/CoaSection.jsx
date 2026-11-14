@@ -10,10 +10,10 @@ function VerifyLine({ coa, lab }) {
     return (
       <>
         Check it at{' '}
-        <a href={lab.verify} target="_blank" rel="noopener noreferrer" className="text-[#00B4B4] hover:text-white transition-colors">
+        <a href={lab.verify} target="_blank" rel="noopener noreferrer" className="text-[#2FBCAB] hover:text-white transition-colors">
           janoshik.com/verify
         </a>{' '}
-        with key <span className="font-mono text-white/80">{coa.verifyKey}</span>.
+        with key <span className="tabular-nums text-white/80">{coa.verifyKey}</span>.
       </>
     )
   }
@@ -21,7 +21,7 @@ function VerifyLine({ coa, lab }) {
     return (
       <>
         Search {coa.reportNo.replace('Accession ', 'accession number ')} at{' '}
-        <a href={lab.verify} target="_blank" rel="noopener noreferrer" className="text-[#00B4B4] hover:text-white transition-colors">
+        <a href={lab.verify} target="_blank" rel="noopener noreferrer" className="text-[#2FBCAB] hover:text-white transition-colors">
           FreedomDiagnosticsTesting.com
         </a>
         .
@@ -70,7 +70,7 @@ export default function CoaSection({ product, coa }) {
                   href={coaFull(img.name)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="block bg-white rounded-xl overflow-hidden border border-white/10 hover:border-[#00B4B4]/60 transition-colors"
+                  className="block bg-white rounded-xl overflow-hidden border border-white/10 hover:border-[#2FBCAB]/60 transition-colors"
                 >
                   <img
                     src={coaThumb(img.name)}
@@ -94,7 +94,7 @@ export default function CoaSection({ product, coa }) {
               {rows.map((row, i) => (
                 <div
                   key={row.label}
-                  className={`grid sm:grid-cols-[10rem_1fr] gap-1 sm:gap-4 px-5 py-3.5 ${i % 2 ? 'bg-white/[0.02]' : 'bg-[#0d1e35]'}`}
+                  className={`grid sm:grid-cols-[10rem_1fr] gap-1 sm:gap-4 px-5 py-3.5 ${i % 2 ? 'bg-white/[0.02]' : 'bg-[#1B2654]'}`}
                 >
                   <dt className="text-white/45 text-xs font-semibold uppercase tracking-widest sm:pt-0.5">{row.label}</dt>
                   <dd className="text-white/75 text-sm leading-relaxed break-words">{row.value}</dd>
@@ -111,7 +111,7 @@ export default function CoaSection({ product, coa }) {
         </div>
 
         {/* ── How the testing is shared (the disclaimer) ── */}
-        <div className="mt-10 rounded-2xl border border-[#00B4B4]/20 bg-[#00B4B4]/[0.04] p-6 md:p-8">
+        <div className="mt-10 rounded-2xl border border-[#2FBCAB]/20 bg-[#2FBCAB]/[0.04] p-6 md:p-8">
           <h3 className="text-white font-bold text-lg mb-4" style={H}>
             How our batches are tested
           </h3>

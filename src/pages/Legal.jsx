@@ -47,7 +47,7 @@ export default function Legal() {
   }, [hash])
 
   return (
-    <div className="bg-[#0A1628] min-h-screen">
+    <div className="bg-[#141C3A] min-h-screen">
       <Helmet>
         <title>Legal & Privacy Policy | STRIATA</title>
         <meta name="description" content="STRIATA's terms and conditions, privacy policy, shipping policy and legal disclaimer for research peptide supply in South Africa." />
@@ -62,10 +62,10 @@ export default function Legal() {
           className="absolute inset-0 bg-cover bg-center opacity-8"
           style={{ backgroundImage: `url(${import.meta.env.BASE_URL}assets/opt/background-overlay-2-1920.webp)` }}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0A1628]/60 to-[#0A1628]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#141C3A]/60 to-[#141C3A]" />
         <div className="relative z-10 max-w-3xl mx-auto text-center">
           <h1 className="text-3xl md:text-5xl font-black text-white mb-4" style={{ fontFamily: 'var(--font-heading)' }}>
-            Legal & <span className="text-[#00B4B4]">Policies</span>
+            Legal & <span className="text-[#2FBCAB]">Policies</span>
           </h1>
           <p className="text-white/55 text-base max-w-2xl mx-auto mb-2">
             Please read the following carefully. By using the STRIATA website and purchasing our products you agree to the terms outlined below.
@@ -76,7 +76,7 @@ export default function Legal() {
 
       <div className="max-w-5xl mx-auto px-6 lg:px-8 pb-24">
         {/* Quick Nav */}
-        <div className="mb-12 bg-[#0d1e35] border border-white/8 rounded-2xl p-5">
+        <div className="mb-12 bg-[#1B2654] border border-white/8 rounded-2xl p-5">
           <p className="text-white/40 text-xs uppercase tracking-widest mb-4" style={{ fontFamily: 'var(--font-heading)' }}>
             Quick Navigation
           </p>
@@ -85,7 +85,7 @@ export default function Legal() {
               <a
                 key={anchor}
                 href={`#${anchor}`}
-                className="text-white/60 hover:text-[#00B4B4] text-xs border border-white/8 hover:border-[#00B4B4]/30 rounded-lg px-3 py-2 transition-all duration-200"
+                className="text-white/60 hover:text-[#2FBCAB] text-xs border border-white/8 hover:border-[#2FBCAB]/30 rounded-lg px-3 py-2 transition-all duration-200"
                 style={{ fontFamily: 'var(--font-body)' }}
               >
                 {label}
@@ -207,7 +207,7 @@ export default function Legal() {
         <div className="pt-4 border-t border-white/8">
           <Link
             to="/faq"
-            className="inline-flex items-center gap-2 text-white/40 hover:text-[#00B4B4] text-sm transition-colors"
+            className="inline-flex items-center gap-2 text-white/40 hover:text-[#2FBCAB] text-sm transition-colors"
             style={{ fontFamily: 'var(--font-body)' }}
           >
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -28,7 +28,7 @@ export default function CategoryPage() {
   const url = `${SITE_URL}${categoryPagePath(page)}`
 
   return (
-    <div className="bg-[#0A1628] min-h-screen">
+    <div className="bg-[#141C3A] min-h-screen">
       <Helmet>
         <title>{page.title}</title>
         <meta name="description" content={page.description} />
@@ -69,7 +69,7 @@ export default function CategoryPage() {
 
       {/* ── Hero and intro ── */}
       <section className="relative pt-36 pb-12 px-6 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#00B4B4]/5 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#2FBCAB]/5 to-transparent" />
         <Reveal stagger delay={0.1} className="relative z-10 max-w-3xl mx-auto">
           <Link to="/catalogue" className="inline-flex items-center gap-1.5 text-white/40 hover:text-white text-xs font-semibold mb-6 transition-colors">
             <svg className="w-3.5 h-3.5" fill="none" stroke="currentColor" strokeWidth={2} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 18 9 12 15 6" /></svg>
@@ -111,20 +111,20 @@ export default function CategoryPage() {
                 key={post.slug}
                 to={`/learn/${post.slug}`}
                 {...spotlightProps()}
-                className="spot block bg-[#0d1e35] border border-white/8 rounded-2xl p-5 hover:border-[#00B4B4]/40 transition-colors group"
+                className="spot block bg-[#1B2654] border border-white/8 rounded-2xl p-5 hover:border-[#2FBCAB]/40 transition-colors group"
               >
-                <h3 className="text-white font-bold mb-1.5 group-hover:text-[#00B4B4] transition-colors" style={H}>{post.title}</h3>
+                <h3 className="text-white font-bold mb-1.5 group-hover:text-[#2FBCAB] transition-colors" style={H}>{post.title}</h3>
                 <p className="text-white/45 text-sm leading-relaxed line-clamp-2">{post.preview}</p>
               </Link>
             ))}
           </div>
           <div className="flex flex-wrap gap-x-6 gap-y-2 mt-8">
             {page.links.map((l) => (
-              <Link key={l.to} to={l.to} className="text-[#00B4B4] text-sm font-semibold hover:text-white transition-colors">
+              <Link key={l.to} to={l.to} className="text-[#2FBCAB] text-sm font-semibold hover:text-white transition-colors">
                 {l.label} →
               </Link>
             ))}
-            <Link to="/learn/how-to-read-a-certificate-of-analysis" className="text-[#00B4B4] text-sm font-semibold hover:text-white transition-colors">
+            <Link to="/learn/how-to-read-a-certificate-of-analysis" className="text-[#2FBCAB] text-sm font-semibold hover:text-white transition-colors">
               How to read a certificate of analysis →
             </Link>
           </div>
@@ -140,7 +140,7 @@ export default function CategoryPage() {
               <Link
                 key={p.slug}
                 to={categoryPagePath(p)}
-                className="px-4 py-2 rounded-full bg-[#0d1e35] border border-white/10 text-white/65 text-sm hover:text-white hover:border-[#00B4B4]/40 transition-colors"
+                className="px-4 py-2 rounded-full bg-[#1B2654] border border-white/10 text-white/65 text-sm hover:text-white hover:border-[#2FBCAB]/40 transition-colors"
               >
                 {categories.find((c) => c.id === p.id)?.label}
               </Link>

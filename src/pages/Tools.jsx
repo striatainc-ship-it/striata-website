@@ -34,7 +34,7 @@ const QUIZ_ICON = (
 const ICONS = { calculator: CALC_ICON, quiz: QUIZ_ICON }
 
 const CHECK = (
-  <svg className="w-4 h-4 text-[#00B4B4] shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true">
+  <svg className="w-4 h-4 text-[#2FBCAB] shrink-0 mt-0.5" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24" aria-hidden="true">
     <polyline points="20 6 9 17 4 12" />
   </svg>
 )
@@ -43,19 +43,19 @@ function ToolCard({ tool }) {
   return (
     <Link
       to={tool.href}
-      className="group relative bg-[#0d1e35] border border-white/8 rounded-2xl p-8 md:p-10 hover:border-[#00B4B4]/40 hover:bg-[#0f2340] transition-all duration-300 hover:shadow-xl hover:shadow-[#00B4B4]/10 hover:-translate-y-1 overflow-hidden block"
+      className="group relative bg-[#1B2654] border border-white/8 rounded-2xl p-8 md:p-10 hover:border-[#2FBCAB]/40 hover:bg-[#1F2C58] transition-all duration-300 overflow-hidden block"
     >
-      <div className="absolute top-0 right-0 w-80 h-80 bg-[#00B4B4]/5 rounded-full translate-x-32 -translate-y-32 pointer-events-none" />
+      <div className="absolute top-0 right-0 w-80 h-80 bg-[#2FBCAB]/5 rounded-full translate-x-32 -translate-y-32 pointer-events-none" />
       <div className="relative z-10 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-8 items-start">
         <div>
-          <span className="w-12 h-12 rounded-xl bg-[#00B4B4]/10 flex items-center justify-center text-[#00B4B4] group-hover:bg-[#00B4B4]/20 transition-colors mb-6">
+          <span className="w-12 h-12 rounded-xl bg-[#2FBCAB]/10 flex items-center justify-center text-[#2FBCAB] group-hover:bg-[#2FBCAB]/20 transition-colors mb-6">
             {ICONS[tool.icon] ?? CALC_ICON}
           </span>
-          <span className="text-[#00B4B4] text-xs font-bold uppercase tracking-widest" style={{ fontFamily: 'var(--font-heading)' }}>
+          <span className="text-[#2FBCAB] text-xs font-bold uppercase tracking-widest" style={{ fontFamily: 'var(--font-heading)' }}>
             {tool.tagline}
           </span>
           <h2
-            className="text-white font-black text-2xl md:text-3xl leading-tight mt-2 mb-4 group-hover:text-[#00B4B4] transition-colors"
+            className="text-white font-black text-2xl md:text-3xl leading-tight mt-2 mb-4 group-hover:text-[#2FBCAB] transition-colors"
             style={{ fontFamily: 'var(--font-heading)' }}
           >
             {tool.title}
@@ -81,7 +81,7 @@ function ToolCard({ tool }) {
 
 export default function Tools() {
   return (
-    <div className="bg-[#0A1628] min-h-screen">
+    <div className="bg-[#141C3A] min-h-screen">
       <Helmet>
         <title>Free Peptide Tools & Calculators | STRIATA</title>
         <meta name="description" content="Free calculators and tools for handling peptides properly: work out reconstitution concentration and the exact syringe units for any dose." />
@@ -105,20 +105,20 @@ export default function Tools() {
 
       {/* ── HERO ── */}
       <section className="relative pt-40 pb-16 px-6 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#00B4B4]/5 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#2FBCAB]/5 to-transparent" />
         <Reveal stagger delay={0.1} className="relative z-10 max-w-3xl mx-auto text-center">
           <div
-            className="inline-flex items-center gap-2 text-[#00B4B4] text-xs font-bold uppercase tracking-widest mb-6 bg-[#00B4B4]/10 border border-[#00B4B4]/20 px-4 py-2 rounded-full"
+            className="eyebrow mb-6"
             style={{ fontFamily: 'var(--font-heading)' }}
           >
-            <span className="w-1.5 h-1.5 rounded-full bg-[#00B4B4]" />
+            <span className="w-1.5 h-1.5 rounded-full bg-[#2FBCAB]" />
             Free to use
           </div>
           <h1
             className="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-5 leading-tight"
             style={{ fontFamily: 'var(--font-heading)' }}
           >
-            STRIATA <span className="text-[#00B4B4]">Tools</span>
+            STRIATA <span className="text-[#2FBCAB]">Tools</span>
           </h1>
           <p className="text-white/60 text-lg max-w-xl mx-auto">
             Calculators built for the two minutes that matter most: water in the vial, needle in the syringe. Everything runs in your browser and nothing is stored.
@@ -139,7 +139,7 @@ export default function Tools() {
       <section className="px-6 pb-24">
         <div className="max-w-5xl mx-auto">
           <h2
-            className="text-[#00B4B4] text-xs font-bold uppercase tracking-widest mb-5"
+            className="text-[#2FBCAB] text-xs font-bold uppercase tracking-widest mb-5"
             style={{ fontFamily: 'var(--font-heading)' }}
           >
             Read alongside
@@ -149,10 +149,10 @@ export default function Tools() {
               <Link
                 key={g.slug}
                 to={`/guides/${g.slug}`}
-                className="group bg-[#0d1e35] border border-white/8 rounded-2xl p-5 hover:border-[#00B4B4]/40 transition-all duration-200 hover:-translate-y-0.5"
+                className="group bg-[#1B2654] border border-white/8 rounded-2xl p-5 hover:border-[#2FBCAB]/40 transition-all duration-200"
               >
                 <p
-                  className="text-white font-semibold text-sm leading-snug mb-2 group-hover:text-[#00B4B4] transition-colors"
+                  className="text-white font-semibold text-sm leading-snug mb-2 group-hover:text-[#2FBCAB] transition-colors"
                   style={{ fontFamily: 'var(--font-heading)' }}
                 >
                   {g.title}
@@ -166,13 +166,13 @@ export default function Tools() {
 
       {/* ── CTA ── */}
       <section className="py-20 px-6 relative overflow-hidden border-t border-white/5">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#00B4B4]/10 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-br from-[#2FBCAB]/10 to-transparent" />
         <div className="relative z-10 max-w-2xl mx-auto text-center">
           <h2
             className="text-2xl md:text-4xl font-black text-white mb-4"
             style={{ fontFamily: 'var(--font-heading)' }}
           >
-            Want a Tool <span className="text-[#00B4B4]">We Don’t Have Yet?</span>
+            Want a Tool <span className="text-[#2FBCAB]">We Don’t Have Yet?</span>
           </h2>
           <p className="text-white/60 mb-8">
             Tell us what would make your protocol easier to run and we will look at building it.

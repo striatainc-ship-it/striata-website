@@ -49,10 +49,10 @@ const CHEVRON = (
 
 function NotFound() {
   return (
-    <div className="bg-[#0A1628] min-h-screen flex items-center justify-center px-6">
+    <div className="bg-[#141C3A] min-h-screen flex items-center justify-center px-6">
       <div className="text-center">
         <h1 className="text-3xl font-black text-white mb-4" style={H}>Result not found</h1>
-        <Link to={QUIZ_URL} className="text-[#00B4B4] hover:text-white transition-colors">Take the quiz</Link>
+        <Link to={QUIZ_URL} className="text-[#2FBCAB] hover:text-white transition-colors">Take the quiz</Link>
       </div>
     </div>
   )
@@ -63,12 +63,12 @@ function RunnerUpCard({ entry, search }) {
   return (
     <Link
       to={`${RESULT_BASE}/${p.slug}${search}`}
-      className="group block bg-[#0d1e35] border border-white/8 rounded-2xl p-5 hover:border-[#00B4B4]/40 transition-all duration-200 hover:-translate-y-0.5"
+      className="group block bg-[#1B2654] border border-white/8 rounded-2xl p-5 hover:border-[#2FBCAB]/40 transition-all duration-200"
     >
       <span className="text-white/35 text-xs font-bold uppercase tracking-widest" style={H}>{KIND[p.kind].label}</span>
-      <p className="text-white font-semibold text-base leading-snug mt-1 mb-2 group-hover:text-[#00B4B4] transition-colors" style={H}>{p.name}</p>
+      <p className="text-white font-semibold text-base leading-snug mt-1 mb-2 group-hover:text-[#2FBCAB] transition-colors" style={H}>{p.name}</p>
       <p className="text-white/50 text-sm leading-relaxed line-clamp-2">{p.summary}</p>
-      <span className="inline-flex items-center gap-1 text-[#00B4B4] text-sm font-semibold mt-3">
+      <span className="inline-flex items-center gap-1 text-[#2FBCAB] text-sm font-semibold mt-3">
         See this match {CHEVRON}
       </span>
     </Link>
@@ -122,7 +122,7 @@ export default function QuizResult() {
   }
 
   return (
-    <div className="bg-[#0A1628] min-h-screen">
+    <div className="bg-[#141C3A] min-h-screen">
       <Helmet>
         <title>{protocol.metaTitle}</title>
         <meta name="description" content={protocol.metaDescription} />
@@ -164,14 +164,14 @@ export default function QuizResult() {
 
       {/* ── HEADER ── */}
       <section className="relative pt-36 pb-10 px-6 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#00B4B4]/5 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#2FBCAB]/5 to-transparent" />
         <div className="relative z-10 max-w-6xl mx-auto">
-          <Link to={QUIZ_URL} className="inline-flex items-center gap-1.5 text-white/40 hover:text-[#00B4B4] text-sm transition-colors mb-8">
+          <Link to={QUIZ_URL} className="inline-flex items-center gap-1.5 text-white/40 hover:text-[#2FBCAB] text-sm transition-colors mb-8">
             <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" /></svg>
             {hasAnswers ? 'Retake the quiz' : 'Take the quiz'}
           </Link>
           <div className="flex flex-wrap items-center gap-3 mb-5">
-            <span className="text-[#00B4B4] text-xs font-bold uppercase tracking-widest bg-[#00B4B4]/10 border border-[#00B4B4]/20 px-3 py-1.5 rounded-full" style={H}>
+            <span className="text-[#2FBCAB] text-[13px] font-semibold" style={H}>
               {hasAnswers ? RESULT_COPY.eyebrow : 'Quiz result'}
             </span>
             <span className="text-white/30 text-sm">{kind.label}</span>
@@ -180,7 +180,7 @@ export default function QuizResult() {
             )}
           </div>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-black text-white leading-tight mb-5 max-w-3xl" style={H}>
-            {hasAnswers ? <>Your match: <span className="text-[#00B4B4]">{protocol.name}</span></> : protocol.name}
+            {hasAnswers ? <>Your match: <span className="text-[#2FBCAB]">{protocol.name}</span></> : protocol.name}
           </h1>
           <ul className="flex flex-wrap gap-2">
             {protocol.usedFor.map(u => (
@@ -194,7 +194,7 @@ export default function QuizResult() {
       <section className="px-6 pb-20">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-[1.4fr_1fr] gap-6 items-start">
           <div className="space-y-6">
-            <div className="bg-[#0d1e35] border border-[#00B4B4]/25 rounded-2xl p-7 md:p-9">
+            <div className="bg-[#1B2654] border border-[#2FBCAB]/25 rounded-2xl p-7 md:p-9">
               <p className="text-white/80 text-base md:text-lg leading-relaxed">{protocol.summary}</p>
 
               {fallback && (
@@ -219,7 +219,7 @@ export default function QuizResult() {
                 <ul className="mt-6 space-y-2 border-t border-white/8 pt-5">
                   {protocol.secondary.map(l => (
                     <li key={l.to}>
-                      <Link to={l.to} className="inline-flex items-center gap-1.5 text-[#00B4B4]/90 hover:text-[#00B4B4] text-sm font-semibold transition-colors">
+                      <Link to={l.to} className="inline-flex items-center gap-1.5 text-[#2FBCAB]/90 hover:text-[#2FBCAB] text-sm font-semibold transition-colors">
                         {CHEVRON}
                         {l.label}
                       </Link>
@@ -230,7 +230,7 @@ export default function QuizResult() {
             </div>
 
             {whyRows.length > 0 && (
-              <div className="bg-[#0d1e35] border border-white/8 rounded-2xl p-6">
+              <div className="bg-[#1B2654] border border-white/8 rounded-2xl p-6">
                 <p className="text-white/55 text-xs font-bold uppercase tracking-widest mb-4" style={H}>{RESULT_COPY.whyTitle}</p>
                 <dl className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3">
                   {whyRows.map(r => (
@@ -245,11 +245,11 @@ export default function QuizResult() {
 
             {posts.length > 0 && (
               <div>
-                <h2 className="text-[#00B4B4] text-xs font-bold uppercase tracking-widest mb-4" style={H}>Further reading</h2>
+                <h2 className="text-[#2FBCAB] text-xs font-bold uppercase tracking-widest mb-4" style={H}>Further reading</h2>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {posts.map(p => (
-                    <Link key={p.slug} to={`/learn/${p.slug}`} className="group bg-[#0d1e35] border border-white/8 rounded-2xl p-5 hover:border-[#00B4B4]/40 transition-all duration-200 hover:-translate-y-0.5">
-                      <p className="text-white font-semibold text-sm leading-snug mb-2 group-hover:text-[#00B4B4] transition-colors" style={H}>{p.title}</p>
+                    <Link key={p.slug} to={`/learn/${p.slug}`} className="group bg-[#1B2654] border border-white/8 rounded-2xl p-5 hover:border-[#2FBCAB]/40 transition-all duration-200">
+                      <p className="text-white font-semibold text-sm leading-snug mb-2 group-hover:text-[#2FBCAB] transition-colors" style={H}>{p.title}</p>
                       <span className="text-white/30 text-xs">{p.readTime}</span>
                     </Link>
                   ))}
@@ -261,7 +261,7 @@ export default function QuizResult() {
           <aside className="space-y-6 lg:sticky lg:top-28">
             {runnersUp.length > 0 && (
               <div>
-                <h2 className="text-[#00B4B4] text-xs font-bold uppercase tracking-widest mb-4" style={H}>{RESULT_COPY.runnersUp}</h2>
+                <h2 className="text-[#2FBCAB] text-xs font-bold uppercase tracking-widest mb-4" style={H}>{RESULT_COPY.runnersUp}</h2>
                 <div className="space-y-3">
                   {runnersUp.map(r => <RunnerUpCard key={r.protocol.slug} entry={r} search={search} />)}
                 </div>

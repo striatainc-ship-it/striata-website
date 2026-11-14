@@ -154,7 +154,7 @@ function FAQItem({ q, a, links = [] }) {
           {q}
         </span>
         <svg
-          className={`w-5 h-5 text-[#00B4B4] shrink-0 mt-0.5 transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
+          className={`w-5 h-5 text-[#2FBCAB] shrink-0 mt-0.5 transition-transform duration-200 ${open ? 'rotate-180' : ''}`}
           fill="none"
           stroke="currentColor"
           viewBox="0 0 24 24"
@@ -168,7 +168,7 @@ function FAQItem({ q, a, links = [] }) {
           <ul className="mt-3 flex flex-wrap gap-x-5 gap-y-1.5">
             {links.map(l => (
               <li key={l.to}>
-                <Link to={l.to} className="text-[#00B4B4] text-sm font-semibold hover:text-white transition-colors">
+                <Link to={l.to} className="text-[#2FBCAB] text-sm font-semibold hover:text-white transition-colors">
                   {l.label} →
                 </Link>
               </li>
@@ -196,7 +196,7 @@ export default function FAQ() {
     .filter((s) => s.questions.length > 0)
 
   return (
-    <div className="bg-[#0A1628] min-h-screen">
+    <div className="bg-[#141C3A] min-h-screen">
       <Helmet>
         <title>Peptide FAQ: Ordering, Delivery & Purity | STRIATA</title>
         <meta name="description" content="Answers to common questions about STRIATA's research peptides — ordering, shipping, purity testing, reconstitution, payments and more." />
@@ -217,10 +217,10 @@ export default function FAQ() {
       }} />
       {/* Hero */}
       <section className="relative pt-40 pb-20 px-6 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#00B4B4]/5 to-transparent" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#2FBCAB]/5 to-transparent" />
         <Reveal stagger delay={0.1} className="relative z-10 max-w-3xl mx-auto text-center">
           <h1 className="text-3xl sm:text-4xl md:text-6xl font-black text-white mb-5 tracking-tight" style={{ fontFamily: 'var(--font-heading)' }}>
-            Frequently Asked <span className="text-[#00B4B4]">Questions</span>
+            Frequently Asked <span className="text-[#2FBCAB]">Questions</span>
           </h1>
           <p className="text-white/60 text-lg mb-8">
             Everything you need to know about our products, ordering, shipping and more. Can't find your answer? Chat to us directly on WhatsApp.
@@ -234,7 +234,7 @@ export default function FAQ() {
               placeholder="Search questions..."
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              className="w-full bg-[#0d1e35] border border-white/10 rounded-full pl-11 pr-5 py-3.5 text-white placeholder-white/30 text-sm focus:outline-none focus:border-[#00B4B4]/50 transition-colors"
+              className="w-full bg-[#1B2654] border border-white/10 rounded-full pl-11 pr-5 py-3.5 text-white placeholder-white/30 text-sm focus:outline-none focus:border-[#2FBCAB]/50 transition-colors"
             />
           </div>
         </Reveal>
@@ -246,12 +246,12 @@ export default function FAQ() {
           filteredSections.map(({ title, questions }) => (
             <div key={title} className="mb-10">
               <h2
-                className="text-[#00B4B4] text-xs font-bold uppercase tracking-widest mb-4"
+                className="text-[#2FBCAB] text-xs font-bold uppercase tracking-widest mb-4"
                 style={{ fontFamily: 'var(--font-heading)' }}
               >
                 {title}
               </h2>
-              <div className="bg-[#0d1e35] border border-white/8 rounded-2xl px-6">
+              <div className="bg-[#1B2654] border border-white/8 rounded-2xl px-6">
                 {questions.map((item) => (
                   <FAQItem key={item.q} {...item} />
                 ))}
@@ -261,7 +261,7 @@ export default function FAQ() {
         ) : (
           <div className="text-center py-16">
             <p className="text-white/30">No questions match your search.</p>
-            <button onClick={() => setSearch('')} className="mt-3 text-[#00B4B4] text-sm hover:text-white transition-colors">
+            <button onClick={() => setSearch('')} className="mt-3 text-[#2FBCAB] text-sm hover:text-white transition-colors">
               Clear search
             </button>
           </div>
@@ -270,10 +270,10 @@ export default function FAQ() {
 
       {/* Legal Section */}
       <section className="max-w-3xl mx-auto px-6 pb-10">
-        <div className="bg-[#0d1e35] border border-white/8 rounded-2xl p-7">
+        <div className="bg-[#1B2654] border border-white/8 rounded-2xl p-7">
           <div className="flex items-start gap-4 mb-5">
-            <div className="w-10 h-10 rounded-xl bg-[#00B4B4]/10 border border-[#00B4B4]/20 flex items-center justify-center shrink-0">
-              <svg className="w-5 h-5 text-[#00B4B4]" fill="none" stroke="currentColor" strokeWidth={1.75} viewBox="0 0 24 24">
+            <div className="w-10 h-10 rounded-xl bg-[#2FBCAB]/10 border border-[#2FBCAB]/20 flex items-center justify-center shrink-0">
+              <svg className="w-5 h-5 text-[#2FBCAB]" fill="none" stroke="currentColor" strokeWidth={1.75} viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z" />
               </svg>
             </div>
@@ -294,7 +294,7 @@ export default function FAQ() {
               <Link
                 key={anchor}
                 to={`/legal#${anchor}`}
-                className="text-white/60 hover:text-[#00B4B4] text-xs border border-white/8 hover:border-[#00B4B4]/30 rounded-xl px-3 py-2.5 transition-all duration-200 text-center"
+                className="text-white/60 hover:text-[#2FBCAB] text-xs border border-white/8 hover:border-[#2FBCAB]/30 rounded-xl px-3 py-2.5 transition-all duration-200 text-center"
                 style={{ fontFamily: 'var(--font-body)' }}
               >
                 {label}
@@ -303,7 +303,7 @@ export default function FAQ() {
           </div>
           <Link
             to="/legal"
-            className="inline-flex items-center gap-2 text-[#00B4B4] hover:text-white text-sm font-semibold transition-colors"
+            className="inline-flex items-center gap-2 text-[#2FBCAB] hover:text-white text-sm font-semibold transition-colors"
             style={{ fontFamily: 'var(--font-body)' }}
           >
             View all legal policies
@@ -317,7 +317,7 @@ export default function FAQ() {
       {/* CTA */}
       <section className="py-20 border-t border-white/8 text-center px-6">
         <h2 className="text-2xl md:text-4xl font-black text-white mb-4" style={{ fontFamily: 'var(--font-heading)' }}>
-          Still Have <span className="text-[#00B4B4]">Questions?</span>
+          Still Have <span className="text-[#2FBCAB]">Questions?</span>
         </h2>
         <p className="text-white/60 mb-8 max-w-md mx-auto">
           Our team is available on WhatsApp and typically responds within 1 hour during business hours. No question is too small.
